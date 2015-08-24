@@ -1,0 +1,13 @@
+box: wercker/default
+build:
+  steps:
+    - arjen/hugo-build:
+        version: "0.14"
+        theme: hyde-x
+        config: config.toml
+deploy:
+  steps:
+    - leipert/git-push@0.7.6:
+        gh_oauth: $GIT_TOKEN
+        basedir: public
+        branch: master
