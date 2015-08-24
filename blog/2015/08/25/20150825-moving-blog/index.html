@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title>Effectiveさお &middot; 遥佐保/はるかさお/Sao Haruka</title>
+  <title>[Hugo/wercker]ブログを移行しました &middot; 遥佐保/はるかさお/Sao Haruka</title>
 
   
   <link rel="stylesheet" href="http://h-sao.com/css/poole.css">
@@ -26,7 +26,7 @@
   
   
   
-  <link href="http://h-sao.com/index.xml" rel="alternate" type="application/rss+xml" title="Effectiveさお &middot; 遥佐保/はるかさお/Sao Haruka" />
+  
 
   <meta name="description" content="遥佐保/はるかさお/Sao Haruka">
   <meta name="keywords" content="C&#43;&#43;,C#">
@@ -71,20 +71,14 @@
 
 
 <div class="content container">
-  <div class="posts">
+  <div class="post">
+    <h1>[Hugo/wercker]ブログを移行しました</h1>
+    <span class="post-date">Aug 25, 2015 &middot; 1 minute read &middot; <a href="http://h-sao.com/blog/2015/08/25/20150825-moving-blog/#disqus_thread">Comments</a>
     
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://h-sao.com/blog/2015/08/25/20150825-moving-blog/">[Hugo/wercker]ブログを移行しました</a>
-      </h1>
-      <span class="post-date">Aug 25, 2015 &middot; 1 minute read &middot; <a href="http://h-sao.com/blog/2015/08/25/20150825-moving-blog/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="http://h-sao.com/categories/hugo">Hugo</a><a class="label" href="http://h-sao.com/categories/wercker">wercker</a>
-      </span>
-      
-      <p>ライブドアで書いていたブログ <a href="http://blog.livedoor.jp/haruka_sao/">「遥佐保の技術メモ」 http://blog.livedoor.jp/haruka_sao/</a> を移植することにしました</p>
+    <br/>
+    <a class="label" href="http://h-sao.com/categories/hugo">Hugo</a><a class="label" href="http://h-sao.com/categories/wercker">wercker</a>
+    </span>
+    <p>ライブドアで書いていたブログ <a href="http://blog.livedoor.jp/haruka_sao/">「遥佐保の技術メモ」 http://blog.livedoor.jp/haruka_sao/</a> を移植することにしました</p>
 
 <p>思えばライブドアはソースコードを表示するのには適していないブログでした…<br />
 2008年からなので、もう7年も!?<br />
@@ -137,167 +131,8 @@
 
 <p>またよろしくお願いしまーす！</p>
 
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://h-sao.com/blog/2014/02/24/20140224-c-anonymous-struct/">Anonymous Struct of C</a>
-      </h1>
-      <span class="post-date">Feb 24, 2014 &middot; 1 minute read &middot; <a href="http://h-sao.com/blog/2014/02/24/20140224-c-anonymous-struct/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="http://h-sao.com/categories/c">C&#43;&#43;</a>
-      </span>
-      
-      <p>Hi,</p>
-
-<p>It is very tedious to think about the name of a struct when you use to struct only once.<br />
-In such a case, Anonymous structure comes in handy.</p>
-
-<p>It is assigned to the anonymous struct</p>
-
-<pre><code class="language-cpp">struct{
-        char    1st_name[0x80];
-        char    2nd_name[0x80];
- 
-    } name_tbl[] = {
-        { &quot;Isami&quot;,   &quot;Kondou&quot; },
-        { &quot;Toshizo&quot;, &quot;Hijikata&quot; },
-        { &quot;Kogorou&quot;, &quot;Kathura&quot; },
-    };
- 
-    for( i = 0; i &lt; sizeof( name_tbl ); i ++ ){
-        printf( &quot;%s\n&quot;, name_tbl[ i ].1st_name );
-        printf( &quot;%s\n&quot;, name_tbl[ i ].2nd_name );
-    } 
-</code></pre>
-
-<p>This code is very straightforward!</p>
-
-<p>This method is effective only when there is no necessity that you use 2 times and this structure.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://h-sao.com/blog/2014/01/31/20140131-cpp-sample-program/">C,C&#43;&#43;,C&#43;&#43;/CLI sample program</a>
-      </h1>
-      <span class="post-date">Jan 31, 2014 &middot; 1 minute read &middot; <a href="http://h-sao.com/blog/2014/01/31/20140131-cpp-sample-program/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="http://h-sao.com/categories/c">C&#43;&#43;</a>
-      </span>
-      
-      
-
-<p>Hi,</p>
-
-<h2 id="c-program:bf4091ffa60ca36f559267997b5f6f35">C program</h2>
-
-<pre><code class="language-cpp">c00.c
-#include &lt;stdio.h&gt;
-
-int main()
-{
-    printf(&quot;This is a native C program.\n&quot;);
-    return 0;
-} 
-</code></pre>
-
-<p>compile</p>
-
-<pre><code>&gt; cl.exe c00.c
-</code></pre>
-
-<h2 id="c-program-1:bf4091ffa60ca36f559267997b5f6f35">C++ program</h2>
-
-<pre><code class="language-cpp">c01.cpp
-#include &lt;iostream&gt;
-
-int main()
-{
-    std::cout &lt;&lt; &quot;This is a native C++ program.&quot; &lt;&lt; std::endl;
-    return 0;
-}
-</code></pre>
-
-<p>compile</p>
-
-<pre><code>&gt; cl.exe /EHsc c01.cpp
-</code></pre>
-
-<h2 id="c-cli-program:bf4091ffa60ca36f559267997b5f6f35">C++/CLI program</h2>
-
-<pre><code class="language-cpp">c02.cpp
-int main()
-{
-    System::Console::WriteLine(&quot;This is a Visual C++ program.&quot;);
-}
-</code></pre>
-
-<p>compile</p>
-
-<pre><code>&gt; cl.exe /clr c02.cpp
-</code></pre>
-
-<p>That is very interesting!</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://h-sao.com/blog/2014/01/29/20140129-how-to-program-cppcx/">Lightning Talk:How to program C&#43;&#43;/CX</a>
-      </h1>
-      <span class="post-date">Jan 29, 2014 &middot; 1 minute read &middot; <a href="http://h-sao.com/blog/2014/01/29/20140129-how-to-program-cppcx/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="http://h-sao.com/categories/ccx">C&#43;&#43;CX</a><a class="label" href="http://h-sao.com/categories/c">C&#43;&#43;</a><a class="label" href="http://h-sao.com/categories/windowsruntime">WindowsRuntime</a>
-      </span>
-      
-      <p>Hi,</p>
-
-<p>The other day, I spoke about C++/CX in Lightning Talk.</p>
-
-<p>Click here for article</p>
-
-<p><a href="http://jyurimaru.info/data/20140118MetroTokyo03/20140118_cppcx_LT_en.pptx">PPTX-How to program c++/CX</a></p>
-
-<p><a href="http://jyurimaru.info/data/20140118MetroTokyo03/20140118_cppcx_LT_en.pdf">PDF -How to program c++/CX</a></p>
-
-<p>Take care!</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://h-sao.com/blog/2014/01/28/20140128-hello-world/">Hello World</a>
-      </h1>
-      <span class="post-date">Jan 28, 2014 &middot; 1 minute read &middot; <a href="http://h-sao.com/blog/2014/01/28/20140128-hello-world/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="http://h-sao.com/categories/diary">Diary</a>
-      </span>
-      
-      <p>Hi,</p>
-
-<p>I&rsquo;m Sao Haruka :)</p>
-
-<p>Japanese programmer</p>
-
-<p>I have started this English blog since Jan 28, 2014.</p>
-
-<p>Thank you.</p>
-
-      
-    </div>
-    
-    
-    
   </div>
+  <div id="disqus_thread"></div>
 </div>
 
 
@@ -310,6 +145,19 @@ var disqus_shortname = "harukasao";
     (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 }());
 </script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "harukasao";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 <script src="http://h-sao.com/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
