@@ -49,7 +49,7 @@ paginate = 10
 
     # Metadata used to drive integrations.
 #    googleAuthorship = "Your Google+ profile ID"
-    googleAnalytics = "UA-47564502-1"
+    googleAnalytics = "UA-66721712-1"
     gravatarHash = "0eb58d770d6e4766150ef7cb6cdce3c7"
 
     # Sidebar social links, these must be full URLs.
