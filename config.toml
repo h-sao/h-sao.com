@@ -8,7 +8,7 @@ theme = "hyde-x"
 paginate = 10
 
 [author]
-    name = "遥佐保/はるかさお/Sao Haruka"
+    name = "遥佐保/Sao Haruka"
 
 [permalinks]
     # Optional. Change the permalink format for the 'post' content type.
@@ -45,7 +45,7 @@ paginate = 10
 
     # Displays under the author name in the sidebar, keep it short.
     # You can use markdown here.
-    tagline = "C++/C#/Windowsで遊んでいますMicrosoft MVP for Windows Platform Development [Jan,2015-Dec,2015]/ Microsoft MVP for Client Development [Jan,2014-Dec,2014]/ Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]"
+    tagline = "C++/C#/Windowsで遊んでいます<br>Microsoft MVP for Windows Platform<br>Development [Jan,2015-Dec,2015]<br>Microsoft MVP for Client Development<br>[Jan,2014-Dec,2014]<br>Microsoft MVP for Client App Dev<br>[Jan,2010-Dec,2013]"
 
 	home = "SiteTop"
 
