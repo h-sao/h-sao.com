@@ -47,6 +47,8 @@ paginate = 10
     # You can use markdown here.
     tagline = "C++/C#/Windowsで遊んでいますMicrosoft MVP for Windows Platform Development [Jan,2015-Dec,2015]/ Microsoft MVP for Client Development [Jan,2014-Dec,2014]/ Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]"
 
+	home = "SiteTop"
+
     # Metadata used to drive integrations.
 #    googleAuthorship = "Your Google+ profile ID"
     googleAnalytics = "UA-47564502-1"
@@ -59,3 +61,5 @@ paginate = 10
 #    googleplus = "https://plus.google.com/106462274497419316996"
 #    facebook = "https://www.facebook.com/xxxxx"
     twitter = "https://twitter.com/hr_sao"
+
+	rss = true
