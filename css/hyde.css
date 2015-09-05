@@ -66,8 +66,10 @@ html {
     top: 0;
     left: 0;
     bottom: 0; */
-    margin-left:42rem;
-    width: 18rem;
+    /*margin-left:42rem;*/
+    margin-left:40rem;
+    /* width: 18rem; */
+    width: 15rem;
     text-align: left;
   }
 }
