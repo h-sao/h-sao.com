@@ -169,10 +169,10 @@ ROMとか焼き直すと良いらしいですけど、まだやってないで�
     
     <item>
       <title>[Hugo]ブログ構築メモ(1)-Hugoとテンプレート</title>
-      <link>http://h-sao.com/blog/2015/09/09/20150909-hugoandtheme/</link>
+      <link>http://h-sao.com/blog/2015/09/09/hugoandtheme/</link>
       <pubDate>Wed, 09 Sep 2015 01:11:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/09/09/20150909-hugoandtheme/</guid>
+      <guid>http://h-sao.com/blog/2015/09/09/hugoandtheme/</guid>
       <description>
 
 &lt;p&gt;Windows10のノートPCに &lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; というスタティックジェネレーターをインストールして、このブログを構築しています&lt;br /&gt;
@@ -193,7 +193,7 @@ ROMとか焼き直すと良いらしいですけど、まだやってないで�
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;インストール-というか単なるexeファイル設置:4bdf01fc5571bbce0be5cf2d1a2c398a&#34;&gt;インストール (というか単なるexeファイル設置)&lt;/h2&gt;
+&lt;h2 id=&#34;インストール-というか単なるexeファイル設置:0ac06b5261622021717117556fa75a4c&#34;&gt;インストール (というか単なるexeファイル設置)&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;最新バージョン取得&lt;br /&gt;
@@ -211,7 +211,7 @@ Hugoはexeだけで動くので、適当なディレクトリに置きます&lt;
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;ブログ新規作成:4bdf01fc5571bbce0be5cf2d1a2c398a&#34;&gt;ブログ新規作成&lt;/h2&gt;
+&lt;h2 id=&#34;ブログ新規作成:0ac06b5261622021717117556fa75a4c&#34;&gt;ブログ新規作成&lt;/h2&gt;
 
 &lt;p&gt;Windows標準のコマンドプロンプトで作業します&lt;br /&gt;
 このとき既に、ブログを作ろうとするディレクトリが存在していたら、ブログ作成は失敗するので、気を付けてください&lt;/p&gt;
@@ -258,7 +258,7 @@ C:\Users\haruk\Dropbox\sites\Blog&amp;gt;
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;テンプレート適用:4bdf01fc5571bbce0be5cf2d1a2c398a&#34;&gt;テンプレート適用&lt;/h2&gt;
+&lt;h2 id=&#34;テンプレート適用:0ac06b5261622021717117556fa75a4c&#34;&gt;テンプレート適用&lt;/h2&gt;
 
 &lt;p&gt;GitHubから有志の人たちのテンプレートを拝借してきます&lt;/p&gt;
 
@@ -340,7 +340,7 @@ C:\Users\haruk\Dropbox\sites\Blog\themes&amp;gt;
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;ブログ投稿:4bdf01fc5571bbce0be5cf2d1a2c398a&#34;&gt;ブログ投稿&lt;/h2&gt;
+&lt;h2 id=&#34;ブログ投稿:0ac06b5261622021717117556fa75a4c&#34;&gt;ブログ投稿&lt;/h2&gt;
 
 &lt;p&gt;contentの 下に postディレクトリを作り、ブログ更新するMDファイルを置きます&lt;/p&gt;
 
@@ -396,7 +396,7 @@ Press Ctrl+C to stop
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;簡単に構築は出来たが:4bdf01fc5571bbce0be5cf2d1a2c398a&#34;&gt;簡単に構築は出来たが…&lt;/h2&gt;
+&lt;h2 id=&#34;簡単に構築は出来たが:0ac06b5261622021717117556fa75a4c&#34;&gt;簡単に構築は出来たが…&lt;/h2&gt;
 
 &lt;p&gt;ここまでだと結構簡単にできますが、ここから先は、自分で頑張るしかない部分です…&lt;/p&gt;
 
