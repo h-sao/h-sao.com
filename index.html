@@ -78,6 +78,169 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="http://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/">[Android]Xiaomi Redmi Note2にGooglePlayをインストールする</a>
+      </h1>
+      <span class="post-date">Oct 6, 2015 &middot; 1 minute read &middot; <a href="http://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="http://h-sao.com/categories/xiaomi">Xiaomi</a><a class="label" href="http://h-sao.com/categories/android">Android</a>
+      </span>
+      
+      
+
+<p>クロスプラットフォームで開発していると、やはり最新の端末が欲しくなりますよね～</p>
+
+<p>１年以内発売の iPhone と Windows Phone は持っているのですが<br />
+そろそろ新しい Android が欲しい～と思っていたので、買ってしまいました</p>
+
+<p>シンガポール旅行に行った際に、ブギスの電気屋街、<a href="http://www.simlimsquare.com.sg/">Sim Lim Square（シムリム スクウェア）</a>で、今をトキメク Xiaomi（しゃおみ）デバイスを購入しました</p>
+
+<ul>
+<li><strong>Xiaomi</strong><br />
+<a href="http://www.mi.com/">http://www.mi.com/</a></li>
+</ul>
+
+<p><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_00.JPG" alt="" />
+</p>
+
+<p>全部で6Fまでありましたが、結局1Fのお店の品ぞろえが一番まとまってる印象でした<br />
+Xiaomi正規店も1Fに入っていました</p>
+
+<hr />
+
+<h2 id="xiaomi-redmi-note-2:c3da2b2064682e0806e5e1e872f70d59">Xiaomi Redmi Note 2</h2>
+
+<p>購入したのは、<strong>Xiaomi Redmi Note 2</strong></p>
+
+<table style="border-style: none;">
+ <tr>
+   <td style="border-style: none;"><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_01.JPG"></td>
+   <td style="border-style: none;"><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_02.JPG"></td>
+ </tr>
+</table>
+
+<p>画像のように、デフォルトでは中国語のアプリがたくさん入っています<br />
+そして、Google Play Store は入っていません！</p>
+
+<p>デフォルトのIMEが Buidu なので、まぁこのままでは、日本語が打てません(&gt;&lt;;)</p>
+
+<p>なので Google Play Store をインストールする方法をメモしておきます</p>
+
+<hr />
+
+<h2 id="googleplay-installer-apkが最適解:c3da2b2064682e0806e5e1e872f70d59">GooglePlay installer APKが最適解</h2>
+
+<p>検索すると色々な方法が出てくるのですが、おそらく、<strong>Google installer のAPKを直接インストールする</strong>のが、手っ取り早いです<br />
+（チャイナストアやMIストアからGooglePlayらしきものをインストールしても、わたしの場合は、動作しませんでした）</p>
+
+<p>情報元はこちらの Xiaomi公式コミュニティ掲示板です</p>
+
+<ul>
+<li><strong>[System Tools] Find all the Google Apps in Google installer!</strong>　　
+<a href="http://en.miui.com/thread-3998-1-1.html">http://en.miui.com/thread-3998-1-1.html</a></li>
+</ul>
+
+<p>Xiaomiはすごくコミュニティも発達してるんですよね～ちゃんと英語の掲示板なので、読めました(^_^)</p>
+
+<p>上記サイトにある、GooglePlayを入れるための Google installer をAPKからインストールします</p>
+
+<blockquote>
+<p>Google installer谷歌应用下载器.apk<br />
+(1009.36 KB, Downloads: 237400)
+<img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_03.png" alt="" />
+</p>
+</blockquote>
+
+<p>PCから落とすなどするよりも、直接 Xiaomi デバイスからダウンロードした方が、早いと思います<br />
+もしかしたら、MIアカウントを作らないとダウンロード出来ないかもしれません（わたしは作りました）</p>
+
+<hr />
+
+<h2 id="androidがセキュア過ぎて-思った順番にインストール出来ない:c3da2b2064682e0806e5e1e872f70d59">Androidがセキュア過ぎて、思った順番にインストール出来ない</h2>
+
+<p>installer を入れると、以下の４つがインストール可能になります</p>
+
+<ol>
+<li>Google Services Framework</li>
+<li>Google Account Manager</li>
+<li>Google Play services</li>
+<li>Google Play Store</li>
+</ol>
+
+<p>そのままインストールしたら良いので、おそらく、この順番でインストールが走ると思います<br />
+（ここ、画面キャプチャを取り忘れたので申し訳ない）</p>
+
+<p>ところが、1番目をインストールしようとすると、本当にインストールしていいかどうかの許可画面が出ますよね、こんな感じに…<br />
+（イメージ画像です↓↓↓）</p>
+
+<p><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_04.png" alt="" />
+</p>
+
+<p>この画面で 「1番のアプリに対して」ユーザが許可を押そうとするときに、すでに「2番目のインストール」が動いてしまうのです</p>
+
+<p>結果的に、 「1番のアプリの許可画面」は裏にまわってしまい<br />
+「2番目のアプリの許可画面」が一番手前に来ることになります<br />
+つまり最終的には、「4番目のアプリの許可画面」が最前面になります</p>
+
+<p>入れたいアプリは Google Play Store なので、それでも良いかなと思って<br />
+４→３→２→１の順にインストールするんですけど、<br />
+お察しの通り、Google Play Store は起動しません<br />
+おそらく、Google Services Framework とかが、Google Play Store のインストールに必要なんじゃないかなーと思います</p>
+
+<p>なので、いったん、Google Play services、Google Play Store をアンインストールし、再度、Google Play services、Google Play Store をインストールします</p>
+
+<p>いやー(~0~)　これで、わたしの端末で、Google Play が動くようになりました！<br />
+ﾊﾟﾁﾊﾟﾁﾊﾟﾁ o(^ｰ^)o☆o(^ｰ^)oﾊﾟﾁﾊﾟﾁ</p>
+
+<p><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_05.jpg" alt="" />
+</p>
+
+<hr />
+
+<h2 id="その他-xiaomi-デバイスで気づいたところ:c3da2b2064682e0806e5e1e872f70d59">その他、Xiaomi デバイスで気づいたところ</h2>
+
+<h4 id="日本語モードはない:c3da2b2064682e0806e5e1e872f70d59">日本語モードはない</h4>
+
+<p>日本語モードは入っていません<br />
+ROMとか焼き直すと良いらしいですけど、まだやってないです</p>
+
+<h4 id="permissions-アプリがうれしい:c3da2b2064682e0806e5e1e872f70d59">Permissions アプリがうれしい</h4>
+
+<p>デフォルトで入っている Permittions アプリが最高に便利</p>
+
+<table style="border-style: none;">
+ <tr>
+   <td style="border-style: none;">各アプリ毎の許可</td>
+   <td style="border-style: none;">どのアプリが使ってるか</td>
+ </tr>
+ <tr>
+   <td style="border-style: none;"><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_07.png"></td>
+   <td style="border-style: none;"><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_06.png"></td>
+ </tr>
+</table>
+
+<h4 id="simは２枚ささる:c3da2b2064682e0806e5e1e872f70d59">SIMは２枚ささる</h4>
+
+<p>両方LTEをつかめます<br />
+ただし、片方がLTEをつかんでいるときは、もう一方はつかめない仕様です</p>
+
+<p>なので、日本で、１番目にDocomoを刺して、２番目にauを刺す、とかして<br />
+１番目はLTEでデータ通信、２番目はauで電話とメールのみ<br />
+とかにしたくても、ちょっと難しいかも<br />
+日本は今現在、ほぼLTEになってしまってるので、そういう活用は出来なさそうかも…？</p>
+
+<p>どちらにしても、技適通ってない端末なので、日本では使っちゃダメ</p>
+
+<h4 id="まとめ:c3da2b2064682e0806e5e1e872f70d59">まとめ</h4>
+
+<p>もろもろ満足しています<br />
+同じようにシンガポールや中国で購入した方の参考になれば～</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="http://h-sao.com/blog/2015/09/09/20150909-hugoandtheme/">[Hugo]ブログ構築メモ(1)-Hugoとテンプレート</a>
       </h1>
       <span class="post-date">Sep 9, 2015 &middot; 2 minute read &middot; <a href="http://h-sao.com/blog/2015/09/09/20150909-hugoandtheme/#disqus_thread">Comments</a>
@@ -329,9 +492,9 @@ CMSに当たり前にあって、Hugoには無い機能を、実装していく�
     
     <div class="post">
       <h1 class="post-title">
-        <a href="http://h-sao.com/blog/2015/08/25/20150825-moving-blog/">[Hugo/wercker]ブログを移行しました</a>
+        <a href="http://h-sao.com/blog/2015/08/25/moving-blog/">[Hugo/wercker]ブログを移行しました</a>
       </h1>
-      <span class="post-date">Aug 25, 2015 &middot; 1 minute read &middot; <a href="http://h-sao.com/blog/2015/08/25/20150825-moving-blog/#disqus_thread">Comments</a>
+      <span class="post-date">Aug 25, 2015 &middot; 1 minute read &middot; <a href="http://h-sao.com/blog/2015/08/25/moving-blog/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="http://h-sao.com/categories/hugo">Hugo</a><a class="label" href="http://h-sao.com/categories/wercker">wercker</a>
@@ -395,9 +558,9 @@ CMSに当たり前にあって、Hugoには無い機能を、実装していく�
     
     <div class="post">
       <h1 class="post-title">
-        <a href="http://h-sao.com/blog/2014/02/24/20140224-c-anonymous-struct/">Anonymous Struct of C</a>
+        <a href="http://h-sao.com/blog/2014/02/24/c-anonymous-struct/">Anonymous Struct of C</a>
       </h1>
-      <span class="post-date">Feb 24, 2014 &middot; 1 minute read &middot; <a href="http://h-sao.com/blog/2014/02/24/20140224-c-anonymous-struct/#disqus_thread">Comments</a>
+      <span class="post-date">Feb 24, 2014 &middot; 1 minute read &middot; <a href="http://h-sao.com/blog/2014/02/24/c-anonymous-struct/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="http://h-sao.com/categories/c">C&#43;&#43;</a>
@@ -435,9 +598,9 @@ In such a case, Anonymous structure comes in handy.</p>
     
     <div class="post">
       <h1 class="post-title">
-        <a href="http://h-sao.com/blog/2014/01/31/20140131-cpp-sample-program/">C,C&#43;&#43;,C&#43;&#43;/CLI sample program</a>
+        <a href="http://h-sao.com/blog/2014/01/31/cpp-sample-program/">C,C&#43;&#43;,C&#43;&#43;/CLI sample program</a>
       </h1>
-      <span class="post-date">Jan 31, 2014 &middot; 1 minute read &middot; <a href="http://h-sao.com/blog/2014/01/31/20140131-cpp-sample-program/#disqus_thread">Comments</a>
+      <span class="post-date">Jan 31, 2014 &middot; 1 minute read &middot; <a href="http://h-sao.com/blog/2014/01/31/cpp-sample-program/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="http://h-sao.com/categories/c">C&#43;&#43;</a>
@@ -447,7 +610,7 @@ In such a case, Anonymous structure comes in handy.</p>
 
 <p>Hi,</p>
 
-<h2 id="c-program:bf4091ffa60ca36f559267997b5f6f35">C program</h2>
+<h2 id="c-program:71d03e7a0a57c60955d3d7e735a1eb01">C program</h2>
 
 <pre><code class="language-cpp">c00.c
 #include &lt;stdio.h&gt;
@@ -464,7 +627,7 @@ int main()
 <pre><code>&gt; cl.exe c00.c
 </code></pre>
 
-<h2 id="c-program-1:bf4091ffa60ca36f559267997b5f6f35">C++ program</h2>
+<h2 id="c-program-1:71d03e7a0a57c60955d3d7e735a1eb01">C++ program</h2>
 
 <pre><code class="language-cpp">c01.cpp
 #include &lt;iostream&gt;
@@ -481,7 +644,7 @@ int main()
 <pre><code>&gt; cl.exe /EHsc c01.cpp
 </code></pre>
 
-<h2 id="c-cli-program:bf4091ffa60ca36f559267997b5f6f35">C++/CLI program</h2>
+<h2 id="c-cli-program:71d03e7a0a57c60955d3d7e735a1eb01">C++/CLI program</h2>
 
 <pre><code class="language-cpp">c02.cpp
 int main()
@@ -502,9 +665,9 @@ int main()
     
     <div class="post">
       <h1 class="post-title">
-        <a href="http://h-sao.com/blog/2014/01/29/20140129-how-to-program-cppcx/">Lightning Talk:How to program C&#43;&#43;/CX</a>
+        <a href="http://h-sao.com/blog/2014/01/29/how-to-program-cppcx/">Lightning Talk:How to program C&#43;&#43;/CX</a>
       </h1>
-      <span class="post-date">Jan 29, 2014 &middot; 1 minute read &middot; <a href="http://h-sao.com/blog/2014/01/29/20140129-how-to-program-cppcx/#disqus_thread">Comments</a>
+      <span class="post-date">Jan 29, 2014 &middot; 1 minute read &middot; <a href="http://h-sao.com/blog/2014/01/29/how-to-program-cppcx/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="http://h-sao.com/categories/ccx">C&#43;&#43;CX</a><a class="label" href="http://h-sao.com/categories/c">C&#43;&#43;</a><a class="label" href="http://h-sao.com/categories/windowsruntime">WindowsRuntime</a>
@@ -527,9 +690,9 @@ int main()
     
     <div class="post">
       <h1 class="post-title">
-        <a href="http://h-sao.com/blog/2014/01/28/20140128-hello-world/">Hello World</a>
+        <a href="http://h-sao.com/blog/2014/01/28/hello-world/">Hello World</a>
       </h1>
-      <span class="post-date">Jan 28, 2014 &middot; 1 minute read &middot; <a href="http://h-sao.com/blog/2014/01/28/20140128-hello-world/#disqus_thread">Comments</a>
+      <span class="post-date">Jan 28, 2014 &middot; 1 minute read &middot; <a href="http://h-sao.com/blog/2014/01/28/hello-world/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="http://h-sao.com/categories/diary">Diary</a>

@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://h-sao.com/</loc>
-    <lastmod>2015-09-09T01:11:00+09:00</lastmod>
+    <lastmod>2015-10-06T04:00:00+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/</loc>
+    <lastmod>2015-10-06T04:00:00+09:00</lastmod>
   </url>
   
   <url>
@@ -13,27 +18,27 @@
   </url>
   
   <url>
-    <loc>http://h-sao.com/blog/2015/08/25/20150825-moving-blog/</loc>
+    <loc>http://h-sao.com/blog/2015/08/25/moving-blog/</loc>
     <lastmod>2015-08-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://h-sao.com/blog/2014/02/24/20140224-c-anonymous-struct/</loc>
+    <loc>http://h-sao.com/blog/2014/02/24/c-anonymous-struct/</loc>
     <lastmod>2014-02-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://h-sao.com/blog/2014/01/31/20140131-cpp-sample-program/</loc>
+    <loc>http://h-sao.com/blog/2014/01/31/cpp-sample-program/</loc>
     <lastmod>2014-01-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://h-sao.com/blog/2014/01/29/20140129-how-to-program-cppcx/</loc>
+    <loc>http://h-sao.com/blog/2014/01/29/how-to-program-cppcx/</loc>
     <lastmod>2014-01-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://h-sao.com/blog/2014/01/28/20140128-hello-world/</loc>
+    <loc>http://h-sao.com/blog/2014/01/28/hello-world/</loc>
     <lastmod>2014-01-28T00:00:00+00:00</lastmod>
   </url>
   

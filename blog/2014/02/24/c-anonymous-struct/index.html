@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title>Hugo &middot; 遥佐保/Sao Haruka</title>
+  <title>Anonymous Struct of C &middot; 遥佐保/Sao Haruka</title>
 
   
   <link rel="stylesheet" href="http://h-sao.com/css/poole.css">
@@ -26,7 +26,7 @@
   
   
   
-  <link href="http://h-sao.com/categories/hugo/index.xml" rel="alternate" type="application/rss+xml" title="Effectiveさお &middot; 遥佐保/Sao Haruka" />
+  
 
   <meta name="description" content="遥佐保/はるかさお/Sao Haruka">
   <meta name="keywords" content="C&#43;&#43;,C#">
@@ -60,7 +60,7 @@
       
       <a href="https://twitter.com/hr_sao"><i class="fa fa-twitter-square fa-3x"></i></a>
       
-      <a href="http://h-sao.com/categories/hugo/index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      <a href="" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
       </li>
     </ul>
 
@@ -73,24 +73,68 @@
 
 
 <div class="content container">
-  <ul class="posts">
-  
-    <li><a href="http://h-sao.com/blog/2015/09/09/20150909-hugoandtheme/">[Hugo]ブログ構築メモ(1)-Hugoとテンプレート</a>
+  <div class="post">
+    <h1>Anonymous Struct of C</h1>
+    <span class="post-date">Feb 24, 2014 &middot; 1 minute read &middot; <a href="http://h-sao.com/blog/2014/02/24/c-anonymous-struct/#disqus_thread">Comments</a>
     
-    &middot;
-    <a class="label" href="http://h-sao.com/categories/hugo">Hugo</a>
+    <br/>
+    <a class="label" href="http://h-sao.com/categories/c">C&#43;&#43;</a>
     </span>
-    &middot; <time>Sep 9, 2015</time></li>
-  
-    <li><a href="http://h-sao.com/blog/2015/08/25/moving-blog/">[Hugo/wercker]ブログを移行しました</a>
-    
-    &middot;
-    <a class="label" href="http://h-sao.com/categories/hugo">Hugo</a><a class="label" href="http://h-sao.com/categories/wercker">wercker</a>
-    </span>
-    &middot; <time>Aug 25, 2015</time></li>
-  
-  </ul>
+    <p>Hi,</p>
+
+<p>It is very tedious to think about the name of a struct when you use to struct only once.<br />
+In such a case, Anonymous structure comes in handy.</p>
+
+<p>It is assigned to the anonymous struct</p>
+
+<pre><code class="language-cpp">struct{
+        char    1st_name[0x80];
+        char    2nd_name[0x80];
+ 
+    } name_tbl[] = {
+        { &quot;Isami&quot;,   &quot;Kondou&quot; },
+        { &quot;Toshizo&quot;, &quot;Hijikata&quot; },
+        { &quot;Kogorou&quot;, &quot;Kathura&quot; },
+    };
+ 
+    for( i = 0; i &lt; sizeof( name_tbl ); i ++ ){
+        printf( &quot;%s\n&quot;, name_tbl[ i ].1st_name );
+        printf( &quot;%s\n&quot;, name_tbl[ i ].2nd_name );
+    } 
+</code></pre>
+
+<p>This code is very straightforward!</p>
+
+<p>This method is effective only when there is no necessity that you use 2 times and this structure.</p>
+
+  </div>
+  <div id="disqus_thread"></div>
 </div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "harukasao";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "harukasao";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
 <script src="http://h-sao.com/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 

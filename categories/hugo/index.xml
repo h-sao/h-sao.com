@@ -257,10 +257,10 @@ CMSに当たり前にあって、Hugoには無い機能を、実装していく�
     
     <item>
       <title>[Hugo/wercker]ブログを移行しました</title>
-      <link>http://h-sao.com/blog/2015/08/25/20150825-moving-blog/</link>
+      <link>http://h-sao.com/blog/2015/08/25/moving-blog/</link>
       <pubDate>Tue, 25 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/08/25/20150825-moving-blog/</guid>
+      <guid>http://h-sao.com/blog/2015/08/25/moving-blog/</guid>
       <description>&lt;p&gt;ライブドアで書いていたブログ &lt;a href=&#34;http://blog.livedoor.jp/haruka_sao/&#34;&gt;「遥佐保の技術メモ」 http://blog.livedoor.jp/haruka_sao/&lt;/a&gt; を移植することにしました&lt;/p&gt;
 
 &lt;p&gt;思えばライブドアはソースコードを表示するのには適していないブログでした…&lt;br /&gt;
