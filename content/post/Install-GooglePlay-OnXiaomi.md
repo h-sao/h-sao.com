@@ -98,7 +98,7 @@ installer を入れると、以下の４つがインストール可能になり�
 
 いやー(~0~)　これで、わたしの端末で、Google Play が動くようになりました！
 
-![](/pic/InstallGooglePlayOnXiaomiRedmiNote2_05.jpg)
+![](/pic/InstallGooglePlayOnXiaomiRedmiNote2_05.JPG)
 
 ----------
 ## その他、Xiaomi デバイスで気づいたところ ##
