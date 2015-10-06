@@ -96,8 +96,7 @@ installer を入れると、以下の４つがインストール可能になり�
 
 なので、いったん、Google Play services、Google Play Store をアンインストールし、再度、Google Play services、Google Play Store をインストールします
 
-いやー(~0~)　これで、わたしの端末で、Google Play が動くようになりました！  
-ﾊﾟﾁﾊﾟﾁﾊﾟﾁ o(^ｰ^)o☆o(^ｰ^)oﾊﾟﾁﾊﾟﾁ 
+いやー(~0~)　これで、わたしの端末で、Google Play が動くようになりました！
 
 ![](/pic/InstallGooglePlayOnXiaomiRedmiNote2_05.jpg)
 
@@ -140,3 +139,4 @@ ROMとか焼き直すと良いらしいですけど、まだやってないで�
 
 もろもろ満足しています  
 同じようにシンガポールや中国で購入した方の参考になれば～
+
