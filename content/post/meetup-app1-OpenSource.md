@@ -14,6 +14,10 @@ categories = ["Community", "OpenSource"]
 * ビジネスにおけるオープンソースの利用価値  
 [https://speakerdeck.com/harukasao/21-opensource-value](https://speakerdeck.com/harukasao/21-opensource-value)
 
+<script async class="speakerdeck-embed" data-id="59c8b5f6dfa649309199bcd9ac3103fe" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+
+
 仰々しいタイトルが付いていますが、完全に私見まとめを発表させて頂きました
 
 オープンソースだけというよりは、最後の方は、普通に製品やサービスのロードマップ、ビジネスモデル的な観点になりました  
