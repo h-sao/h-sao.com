@@ -2,7 +2,7 @@
 date = "2015-11-21T16:00:00+09:00"
 draft = false
 title = "[勉強会] meetup app@1 でオープンソースについて発表しました"
-tags = ["Community", "OpenSource"]
+categories = ["Community", "OpenSource"]
 
 +++
 
