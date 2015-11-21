@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Community on Effectiveさお</title>
+    <link>http://h-sao.com/categories/community/</link>
+    <description>Recent content in Community on Effectiveさお</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Nov 2015 16:00:00 +0900</lastBuildDate>
+    <atom:link href="http://h-sao.com/categories/community/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[勉強会] meetup app@1 でオープンソースについて発表しました</title>
+      <link>http://h-sao.com/blog/2015/11/21/meetup-app1-opensource/</link>
+      <pubDate>Sat, 21 Nov 2015 16:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2015/11/21/meetup-app1-opensource/</guid>
+      <description>&lt;p&gt;2015/11/21 Sat meetup app@1 という勉強会を開催しました&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://meetupapp.doorkeeper.jp/events/33820&#34;&gt;https://meetupapp.doorkeeper.jp/events/33820&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ビジネスにおけるオープンソースの利用価値&lt;br /&gt;
+&lt;a href=&#34;https://speakerdeck.com/harukasao/21-opensource-value&#34;&gt;https://speakerdeck.com/harukasao/21-opensource-value&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;仰々しいタイトルが付いていますが、完全に私見まとめを発表させて頂きました&lt;/p&gt;
+
+&lt;p&gt;オープンソースだけというよりは、最後の方は、普通に製品やサービスのロードマップ、ビジネスモデル的な観点になりました&lt;br /&gt;
+もちろんこれが全てではないと思うし、わたしはマーケティングのプロでもないので間違っているかもしれないですけど&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
