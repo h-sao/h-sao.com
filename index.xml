@@ -5,9 +5,511 @@
     <link>http://h-sao.com/</link>
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 21 Nov 2015 16:00:00 +0900</lastBuildDate>
+    <language>ja-jp</language>
+    <lastBuildDate>Sun, 13 Dec 2015 23:30:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Hugo] ブログ構築メモ(2)-テンプレートの更新方法（CSSはメインではない）</title>
+      <link>http://h-sao.com/blog/2015/12/13/change-theme-to-minimalist/</link>
+      <pubDate>Sun, 13 Dec 2015 23:30:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2015/12/13/change-theme-to-minimalist/</guid>
+      <description>
+
+&lt;p&gt;前回、スタティックジェネレーターのHugoを使って、&lt;a href=&#34;https://github.com/h-sao/Blog/tree/gh-pages&#34;&gt;GitHub Pages&lt;/a&gt; にブログを展開する方法を記載しました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[Hugo]ブログ構築メモ(1)-Hugoとテンプレート&lt;br /&gt;
+&lt;a href=&#34;http://h-sao.com/blog/2015/09/09/hugoandtheme/&#34;&gt;http://h-sao.com/blog/2015/09/09/HugoAndTheme/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;このとき、「デザインと機能を諦めた」と書きましたが&lt;br /&gt;
+その続きをひそかにポチポチとやっておりました…&lt;br /&gt;
+しかし、ポチポチやる日々が辛くなり、ついにはブログ更新そのものが怠ることに…&lt;/p&gt;
+
+&lt;h1 id=&#34;一向に進まない理由:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;一向に進まない理由&lt;/h1&gt;
+
+&lt;p&gt;一人ではWebのフロントエンドのノウハウもなく、もう無理かもーと思っていたことを&lt;br /&gt;
+&lt;a href=&#34;http://www.misuzilla.org/&#34;&gt;@mayuki&lt;/a&gt; さんに相談したところ、こんなアドバイスを頂きました&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;CSSってイマドキ、モバイル対応などで複雑なので、デザインを一から自分で書き起こすのは辞めた方がいい&lt;br /&gt;
+いつまでたっても、モノが出来上がらない&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;CSSデザイン&amp;rdquo; を触るのは最後&lt;br /&gt;
+先に &amp;ldquo;テンプレート&amp;rdquo; を駆使して、自分なりの配置にするのがおススメ&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;つまり&lt;br /&gt;
+&lt;strong&gt;機能のテンプレートは他から持ってこれるがデザインはあらかじめ好みのものを選ぶ方が良い&lt;/strong&gt;&lt;br /&gt;
+というアドバイスでした&lt;/p&gt;
+
+&lt;p&gt;あれ？前回わたしが書いた時には、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;結局はデザインよりも機能が一番多いのがいいんでない？という発想で選びました&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;おお、まったく逆ですね…&lt;br /&gt;
+デザインさておき、機能重視してたので、うまくいかなかったのか…！！！&lt;/p&gt;
+
+&lt;h1 id=&#34;好みっぽく-かつシンプルなテンプレート:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;好みっぽく、かつシンプルなテンプレート&lt;/h1&gt;
+
+&lt;p&gt;とまぁ、素人くさい話で本当に恐縮ですが、気持ち改め、シンプルで改変しやすそうなデザインのテンプレートを引っ張ってきました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;minimalist&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&#34;https://github.com/digitalcraftsman/hugo-minimalist-theme/&#34;&gt;https://github.com/digitalcraftsman/hugo-minimalist-theme/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Theme-To-Minimalist0.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;これは相談したその場で&lt;a href=&#34;http://www.misuzilla.org/&#34;&gt;@mayuki&lt;/a&gt; さんが、ちゃちゃっとテストするために触ってくれたテンプレートです&lt;/p&gt;
+
+&lt;p&gt;彼はものの10分程度で、わたしのやりたいことを目の前でやってくれたので、とても参考になりました&lt;br /&gt;
+ありがとうございます～（涙目）&lt;/p&gt;
+
+&lt;h2 id=&#34;最初に見る場所はhtmlテンプレート:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;最初に見る場所はHTMLテンプレート&lt;/h2&gt;
+
+&lt;p&gt;やったことはまず、&lt;strong&gt;themes &amp;gt; minimalist &amp;gt; layouts&lt;/strong&gt; の下を見るようにしました&lt;br /&gt;
+わたしの環境だと C:\Users\haruk\Dropbox\sites\Blog\themes\minimalist\layouts になります&lt;/p&gt;
+
+&lt;p&gt;ここから必要そうな機能の、HTMLテンプレートを作っていきます&lt;br /&gt;
+わたしの場合、以下の機能（テンプレートとなるブロックと名付けます）が不足していました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ヘッダーに &amp;ldquo;About me&amp;rdquo; と &amp;ldquo;Tags&amp;rdquo; のリンクをつけたい&lt;/li&gt;
+&lt;li&gt;最新ポストの表示&lt;/li&gt;
+&lt;li&gt;タグ表示&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;こんな感じです&lt;/p&gt;
+
+&lt;h2 id=&#34;ヘッダーに直接何か書いてみる:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;ヘッダーに直接何か書いてみる&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;themes &amp;gt; minimalist &amp;gt; layouts &amp;gt; partials &amp;gt; header.html&lt;/strong&gt; がヘッダーに相当します&lt;/p&gt;
+
+&lt;p&gt;素人のわたしが混乱する原因として&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hugoの機能がわからない&lt;/li&gt;
+&lt;li&gt;テンプレートの更新方法がわからない&lt;/li&gt;
+&lt;li&gt;CSSの更新方法がわからない&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;こんな感じでしょうか(+_+)&lt;/p&gt;
+
+&lt;p&gt;まぁHTMLタグの直書きであれば、なんとかなるだろうの勢いで、まずは、提供されている minimalist テンプレート（HTML）の中身を更新しちゃうことにします&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Hugo的作法としては、管理ディレクトリ直下の &lt;strong&gt;layouts&lt;/strong&gt; を更新すべきらしいのですが、色々やっているうちに訳が分からなくなるので、やめました…&lt;br /&gt;
+もしかしたらHugoはファイル管理とか命名規則が、えいやっっっなのかもしれない？&lt;br /&gt;
+とにかく（わたしの能力不足なんでしょうけど）思うように管理できなかった&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;オレオレ topbar-layer classの追加&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;header class=&amp;quot;site-header&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;transparent-layer&amp;quot;&amp;gt;
+    &amp;lt;h2&amp;gt;{{ .Site.Params.header_title }}&amp;lt;/h2&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/header&amp;gt;
+  &amp;lt;div class=&amp;quot;topbar-layer&amp;quot;&amp;gt;
+    &amp;lt;a href=&amp;quot;{{ .Site.BaseURL }}about&amp;quot;&amp;gt;About me&amp;lt;/a&amp;gt;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;
+    &amp;lt;a href=&amp;quot;{{ .Site.BaseURL }}tags&amp;quot;&amp;gt;Tags&amp;lt;/a&amp;gt;
+ &amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;出力結果
+&lt;img src=&#34;http://h-sao.com/pic/Change-Theme-To-Minimalist1.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;ヘッダーと本文の間に、バーを入れることが出来ました&lt;/p&gt;
+
+&lt;p&gt;ちなみに Hugo は、デフォルトで &lt;strong&gt;[サイトURL]/tags/&lt;/strong&gt; というタグ一覧のHTMLを生成してくれます&lt;/p&gt;
+
+&lt;h2 id=&#34;ブロックとして設置出来た後に-cssを触る:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;ブロックとして設置出来た後に、CSSを触る&lt;/h2&gt;
+
+&lt;p&gt;勘所のある人には、こいつはなんというツマラナイことを書いてるんだ！？と思われるかもしれませんが、これも経験なんで許してください…書いててつらい…&lt;/p&gt;
+
+&lt;p&gt;気を取り直して、いよいよCSSを触ります&lt;/p&gt;
+
+&lt;p&gt;自分の追加した &amp;ldquo;topbar-layer&amp;rdquo; を追加します&lt;br /&gt;
+といっても、同じヘッダの &amp;ldquo;transparent-layer&amp;rdquo; をコピペする気まんまんです&lt;/p&gt;
+
+&lt;p&gt;幸いなことに、この minimalist のテンプレートはとてもシンプルで、触るファイルは１つのみ！
+&lt;strong&gt;themes &amp;gt; minimalist &amp;gt; static &amp;gt; css &amp;gt; styles.css&lt;/strong&gt; に、&amp;rdquo;transparent-layer&amp;rdquo; のパクリ設定を追加します&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.topbar-layer {
+  width: 100%;
+  height: 100%;
+  background-color: #252a2c;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #e0e0e0;
+  text-align: center;
+  position: relative;
+  line-height: 50px;
+  height: 50px;
+  transition: all 0.3s ease;
+}
+
+.topbar-layer a{
+    color: #a2a2a2;
+}
+.topbar-layer a:hover {
+    color: #fff;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;出力結果
+&lt;img src=&#34;http://h-sao.com/pic/Change-Theme-To-Minimalist2.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;高さなど一部、自分で調整&lt;br /&gt;
+これくらいならできた…&lt;/p&gt;
+
+&lt;h1 id=&#34;私的作業コスト比-デザイン調整-テンプレート調整:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;(私的作業コスト比)デザイン調整＞テンプレート調整&lt;/h1&gt;
+
+&lt;p&gt;わたしがプログラム目線だからかもしれませんが、実際このブログでは、出来てなかった機能（タグと最新ポスト表示）を難なく実装することは出来ました&lt;/p&gt;
+
+&lt;p&gt;Hugoが高機能ということ、公式ドキュメントがそこそこ充実してることなど、調べればなんとかなるもんです&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;タグなどのソートの方法&lt;br /&gt;
+&lt;a href=&#34;https://gohugo.io/templates/list/&#34;&gt;https://gohugo.io/templates/list/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;まぁ実は、最新投稿表示の際には、表示させたくない静的なサイト（About me ページなど) をはじいたりするために&lt;br /&gt;
+ちょっと工夫が必要だったのですが、その話はまた今度…&lt;/p&gt;
+
+&lt;p&gt;とにかく、デザインをいじるのは難しい…！&lt;br /&gt;
+テンプレートを触ることに特化し、デザインは最後の最後にちょっとだけ手を入れる&lt;br /&gt;
+という方針が吉でした&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.misuzilla.org/&#34;&gt;@mayuki&lt;/a&gt; さん、アドバイスほんとにありがとーヽ(｀▽´)/&lt;/p&gt;
+
+&lt;p&gt;引き続きがんばります…！&lt;/p&gt;
+
+&lt;p&gt;また、RSSフィードが乱れるかもしれませんが、ご容赦くださいませ…&lt;/p&gt;
+
+&lt;p&gt;（次回へ続く）&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>http://h-sao.com/about/</link>
+      <pubDate>Sun, 13 Dec 2015 12:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/about/</guid>
+      <description>
+
+&lt;p&gt;Akiko Kawai (a.k.a. Sao Haruka)&lt;br /&gt;
+Twitter: &lt;a href=&#34;https://twitter.com/hr_sao&#34;&gt;@hr_sao&lt;/a&gt;&lt;br /&gt;
+Github: &lt;a href=&#34;https://github.com/h-sao&#34;&gt;h-sao&lt;/a&gt;&lt;br /&gt;
+mail: haruka.sao@gmail.com&lt;/p&gt;
+
+&lt;h1 id=&#34;slides-publications:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Slides, Publications&lt;/h1&gt;
+
+&lt;h2 id=&#34;2015:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;2015&lt;/h2&gt;
+
+&lt;p&gt;Nov 21, 2015 &lt;a href=&#34;http://meetupapp.io/&#34;&gt;meepup app@1&lt;/a&gt;&lt;br /&gt;
+ビジネスにおけるオープンソースの利用価値 &lt;a href=&#34;https://speakerdeck.com/harukasao/21-opensource-value&#34;&gt;[SpeakerDeck]&lt;/a&gt; &lt;a href=&#34;http://jyurimaru.info/data/20151121OpenSourceValue/20151121_OpenSourceValue.pptx&#34;&gt;[PPTX]&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Sep 16, 2015 &lt;a href=&#34;https://roommetro.doorkeeper.jp/events/30482&#34;&gt;Metro.cs#1&lt;/a&gt;&lt;br /&gt;
+ParadoxのLiveScripting事情 &lt;a href=&#34;https://speakerdeck.com/harukasao/16-roslyn-paradox-livescripting&#34;&gt;[SpeakerDeck]&lt;/a&gt; &lt;a href=&#34;http://jyurimaru.info/data/20150916ParadoxLiveScripting/20150916_RoslynParadoxLiveScripting.pptx&#34;&gt;[PPTX]&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Aug 26, 2015 &lt;a href=&#34;http://cedec.cesa.or.jp/2015/session/ENG/7172.html&#34;&gt;CEDEC2015&lt;/a&gt;&lt;br /&gt;
+Androidハイパフォーマンス・プログラミング -First Step of Vulkan Port for Paradox- &lt;a href=&#34;http://www.siliconstudio.co.jp/rd/presentations/#CEDEC2015&#34;&gt;[PPTX]&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Jul 25, 2015 &lt;a href=&#34;http://metrostyledev.net/index.php/event/20150725/&#34;&gt;めとべや大阪#31&lt;/a&gt;&lt;br /&gt;
+Roslynを使ったLiveScriptingでゲーム開発&lt;/p&gt;
+
+&lt;p&gt;Feb 28, 2015 &lt;a href=&#34;http://metrostyledev.net/index.php/event/20150228/&#34;&gt;めとべや大阪#30&lt;/a&gt;&lt;br /&gt;
+開発者が &amp;ldquo;とりあえず&amp;rdquo; 使うためのClient Hyper-V&lt;/p&gt;
+
+&lt;p&gt;Jan 31, 2015 &lt;a href=&#34;http://connpass.com/event/10478/&#34;&gt;2015 MVP Community Camp Osaka&lt;/a&gt;&lt;br /&gt;
+クロスプラットフォーム開発の紹介&lt;/p&gt;
+
+&lt;h2 id=&#34;2014:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;2014&lt;/h2&gt;
+
+&lt;p&gt;Dec 20, 2014 &lt;a href=&#34;https://atnd.org/events/60042&#34;&gt;C++11勉強会＠大阪（ゆるめ）&lt;/a&gt;&lt;br /&gt;
+ C++テンプレート完全ガイド読書会 の特別篇(vol.21) /初心者向けにC++11の機能を紹介する勉強会&lt;/p&gt;
+
+&lt;p&gt;Sep 16, 2014 &lt;a href=&#34;http://metrostyledev.net/index.php/event/20140917/&#34;&gt;Room metro #27 大阪&lt;/a&gt;&lt;br /&gt;
+Paradoxでテトリスを作ろう！&lt;/p&gt;
+
+&lt;p&gt;Aug 29, 2014 &lt;a href=&#34;https://hokurikunet.doorkeeper.jp/events/13746&#34;&gt;Hokuriku.netvol.15&lt;/a&gt;&lt;br /&gt;
+Introducing Windows Runtime&lt;/p&gt;
+
+&lt;p&gt;Jul 25, 2014 &lt;a href=&#34;https://rad-studio-osaka.doorkeeper.jp/events/12713&#34;&gt;第１回 RAD Studio勉強会@Osaka/Delphi / C++Builder&lt;/a&gt;&lt;br /&gt;
+appmethodのお話&lt;/p&gt;
+
+&lt;p&gt;Jul 11, 2014 &lt;a href=&#34;http://metrostyledev.net/index.php/event/20140712/&#34;&gt;Room metro #26 大阪&lt;/a&gt;&lt;br /&gt;
+cocos2d触ってみました&lt;/p&gt;
+
+&lt;p&gt;May 9, 2014 &lt;a href=&#34;https://vshtc.doorkeeper.jp/events/10442&#34;&gt;非同期勉強会&lt;/a&gt;&lt;br /&gt;
+C++/CXの非同期処理まとめ～VC++とC++/CXについて～&lt;/p&gt;
+
+&lt;p&gt;Mar 21, 2014 MVP Community Camp 2014
+VC++まわりの非同期処理&lt;/p&gt;
+
+&lt;p&gt;Feb 2, 2014 MVP Open Day 2014&lt;br /&gt;
+Torinoご紹介&lt;/p&gt;
+
+&lt;p&gt;Jan 18, 2014 &lt;a href=&#34;http://metrostyledev.net/index.php/event/20140118/&#34;&gt;めとべや東京#3&lt;/a&gt;&lt;br /&gt;
+C++/CX推奨プログラミング&lt;/p&gt;
+
+&lt;h2 id=&#34;2013:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;2013&lt;/h2&gt;
+
+&lt;p&gt;Oct 31, 2013 &lt;a href=&#34;http://metrostyledev.net/index.php/event/20131012/&#34;&gt;めとべや東京#2&lt;/a&gt;&lt;br /&gt;
+C++/CXの紹介&lt;/p&gt;
+
+&lt;p&gt;Aug 3, 2013 &lt;a href=&#34;http://atnd.org/events/40509&#34;&gt;Hokuriku.net vol.12&lt;/a&gt;&lt;br /&gt;
+WindowsストアアプリをC++/CXで作る&lt;/p&gt;
+
+&lt;p&gt;Jun 6, 2013 &lt;a href=&#34;http://metrostyledev.net/index.php/event/20130606/&#34;&gt;Room metro #17 大阪&lt;/a&gt;&lt;br /&gt;
+C++/CXで簡単に通信:Casablanca&lt;/p&gt;
+
+&lt;p&gt;May 11, 2013 Community Open Day 2013&lt;br /&gt;
+帰ってきたC++&lt;/p&gt;
+
+&lt;p&gt;Mar 16, 2013 &lt;a href=&#34;http://metrostyledev.net/index.php/event/20130316/&#34;&gt;Room metro #14 大阪&lt;/a&gt;&lt;br /&gt;
+DirectXをWinRTに移植する&lt;/p&gt;
+
+&lt;p&gt;Feb 02, 2013 &lt;a href=&#34;https://sites.google.com/site/itmysterysoup/sessions/01okinawa&#34;&gt;ITごった煮勉強会@沖縄&lt;/a&gt;&lt;br /&gt;
+これから始めるC++&lt;/p&gt;
+
+&lt;h2 id=&#34;2012:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;2012&lt;/h2&gt;
+
+&lt;p&gt;Nov 7, 2012 &lt;a href=&#34;https://atnd.org/events/33713&#34;&gt;Specialist presents WindowsPhoneArch #3&lt;/a&gt;&lt;br /&gt;
+Phone Gap であそぶ&lt;/p&gt;
+
+&lt;p&gt;Oct 27, 2012 &lt;a href=&#34;http://www.wankuma.com/seminar/20121027osaka52/&#34;&gt;わんくま同盟大阪勉強会#52&lt;/a&gt;&lt;br /&gt;
+Windowsストアアプリの実行環境とWinRTの仕組み&lt;/p&gt;
+
+&lt;p&gt;Oct 17, 2014 &lt;a href=&#34;http://atnd.org/events/32753&#34;&gt;Specialist presents WindowsPhoneArch#2&lt;/a&gt;&lt;br /&gt;
+Phone Gap について&lt;/p&gt;
+
+&lt;p&gt;Oct 6, 2012 &lt;a href=&#34;http://heroshima.jp/EventInfo/28th&#34;&gt;第28回.NET 勉強会 / ヒーロー島&lt;/a&gt;&lt;br /&gt;
+WinRTってなんだろう&lt;/p&gt;
+
+&lt;p&gt;Sep 14, 2012 &lt;a href=&#34;http://atnd.org/events/31412&#34;&gt;PhoneGap-UserGroup 第2回勉強会@大阪&lt;/a&gt;&lt;br /&gt;
+PhoneGapでWindowsPhone&lt;/p&gt;
+
+&lt;p&gt;Aug 30, 2012 &lt;a href=&#34;http://metrostyledev.net/index.php/event/20120830/&#34;&gt;MetroStyleDeveloper#05大阪&lt;/a&gt;&lt;br /&gt;
+WinRT 実践～C++/CX編～&lt;/p&gt;
+
+&lt;p&gt;Jun 02, 2012 &lt;a href=&#34;http://www.wankuma.com/seminar/20120602osaka49/&#34;&gt;わんくま同盟 大阪勉強会 #49&lt;/a&gt;&lt;br /&gt;
+Windows 8でDirectXを使ってみよう！&lt;/p&gt;
+
+&lt;p&gt;Apr 21, 2012 &lt;a href=&#34;http://gihyo.jp/news/report/2012/05/1501&#34;&gt;プログラミング生放送勉強会 第15回＠大阪&lt;/a&gt;&lt;br /&gt;
+Metro styl apps の ALL テクノロジ★早めぐり紹介 ＆  C++ ネイティブアプリケーションフィーチャー！&lt;/p&gt;
+
+&lt;p&gt;Apr 14, 2012 &lt;a href=&#34;http://sqlworld.org/event/20120414/&#34;&gt;SQLWorld★大阪#9&lt;/a&gt;&lt;br /&gt;
+OracleとSQLServerの比較：基礎編&lt;/p&gt;
+
+&lt;p&gt;Jan 21, 2012 &lt;a href=&#34;http://metrostyledev.net/index.php/event/20120121/&#34;&gt;MetroStyleDeveloper#01大阪&lt;/a&gt;&lt;br /&gt;
+C++でMetroStyleAppsを開発するということは&lt;/p&gt;
+
+&lt;h2 id=&#34;2011:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;2011&lt;/h2&gt;
+
+&lt;p&gt;Dec 07, 2011 &lt;a href=&#34;http://www.infinityventures.com/ivs/&#34;&gt;IVS&lt;/a&gt;&lt;br /&gt;
+Windows8の紹介&lt;/p&gt;
+
+&lt;p&gt;Nov 19, 2011 第25回 .NET 勉強会 / ヒーロー島&lt;br /&gt;
+WinRTとMetroStyleApps入門
+&lt;a href=&#34;http://jyurimaru.info/data/20111119HeroShima25/20111119_sao.pdf&#34;&gt;[PDF]&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Nov 12, 2011 &lt;a href=&#34;http://k-of.jp/2011/list_seminar.html#10F-SAL&#34;&gt;関西オープンソース2011&lt;/a&gt;&lt;br /&gt;
+Lightning Talks of Women in Kansai～Silverlightの紹介～&lt;/p&gt;
+
+&lt;p&gt;Oct 15, 2011 &lt;a href=&#34;http://sqlworld.org/event/201110151/&#34;&gt;SQLWorld★大阪#7&lt;/a&gt;&lt;br /&gt;
+リアルSQLServerの提案&lt;/p&gt;
+
+&lt;p&gt;Aug 29, 2011 &lt;a href=&#34;http://tanoapp.tworks.jp/2011/08/19/%E6%A5%BD%E3%81%97%E3%81%84%E3%82%A2%E3%83%97%E3%83%AA%E5%88%B6%E4%BD%9C%E3%81%AE%E4%BC%9A-12/&#34;&gt;楽しいアプリ制作の会#12&lt;/a&gt;&lt;br /&gt;
+WindowsPhoneとAndroidの比較 &lt;a href=&#34;http://jyurimaru.info/data/20110829tanoapp12/20110829_Sao.pptx&#34;&gt;[PPTX]&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Aug 20, 2011 &lt;a href=&#34;http://atnd.org/events/17395&#34;&gt;WindowsPhoneArch@神戸&lt;/a&gt;&lt;br /&gt;
+XNAアプリ→WindowsPhone ＼(＼◇￣ )ﾍﾝ~( ￣▽/)ゝｼﾝ!!! ＼(○ ｀O´ ○)/ﾄｩｰｰ!! &lt;a href=&#34;http://jyurimaru.info/data/20110820Arch/20110820_Sao.pptx&#34;&gt;[PPTX]&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Jul 8, 2011 &lt;a href=&#34;http://www.fxug.net/modules/bwiki/index.php?FxUG%CA%D9%B6%AF%B2%F1%C2%E8147%B2%F3%A1%F7%C2%E7%BA%E5&#34;&gt;FxUG勉強会第147回@大阪&lt;/a&gt;&lt;br /&gt;
+FlexとSilverlightのスマートフォン体験/Silverlight × WindowsPhone/Flex × Android&lt;/p&gt;
+
+&lt;p&gt;Jul 2, 2011 &lt;a href=&#34;http://sumaben.jp/?SPWorkshopKansai16&#34;&gt;スマートフォン勉強会@関西#16&lt;/a&gt;&lt;br /&gt;
+Silverlightのデータバインデイングについて&lt;/p&gt;
+
+&lt;p&gt;Jun 11, 2011 &lt;a href=&#34;http://pronama.wordpress.com/2011/05/09/pronama-9-at-osaka/&#34;&gt;プログラミング生放送 第9回＠大阪&lt;/a&gt;&lt;br /&gt;
+Silverlightで3D表示する方法/WebでもWindowsPhone7も&lt;/p&gt;
+
+&lt;p&gt;May 13, 2011 &lt;a href=&#34;http://www.fxug.net/modules/bwiki/index.php?FxUG%CA%D9%B6%AF%B2%F1%C2%E8141%B2%F3%A1%F7%C2%E7%BA%E5&#34;&gt;FxUG勉強会第141回@大阪&lt;/a&gt;&lt;br /&gt;
+WindowsPhone7★Silverlight/XNAで初めての3D描画/WebでもWindowsPhone7も&lt;/p&gt;
+
+&lt;p&gt;May 7, 2011 &lt;a href=&#34;http://atnd.org/events/14697&#34;&gt;関西ゲームプログラミング勉強会&lt;/a&gt;&lt;br /&gt;
+XNA(Silverlight)で初めての3D描画/WebでもWindowsPhone7も&lt;/p&gt;
+
+&lt;p&gt;Apr 23, 2011 &lt;a href=&#34;http://www.wankuma.com/seminar/20110423tokyo58/&#34;&gt;わんくま同盟 東京勉強会 #58&lt;/a&gt;&lt;br /&gt;
+特殊相対性理論の紹介～SketchFlowでの資料作成も紹介～&lt;/p&gt;
+
+&lt;p&gt;Apr 16, 2011 &lt;a href=&#34;http://sqlworld.org/event/20110416/&#34;&gt;SQLWorld★大阪#5&lt;/a&gt;&lt;br /&gt;
+SQLServerへのアクセス～いろんな言語でやってみます～&lt;/p&gt;
+
+&lt;p&gt;Apr 15, 2011 &lt;a href=&#34;http://www.agilejapan.org/satellite.html#osaka&#34;&gt;アジャイルジャパン2011大阪サテライト&lt;/a&gt;
+SIerから見た開発案件の進め方～ウォーターフォールモデルとアジャイルモデルのハイブリッド～&lt;/p&gt;
+
+&lt;p&gt;Mar 26, 2011 &lt;a href=&#34;http://sumaben.jp/?SPWorkshopKansai14&#34;&gt;スマートフォン勉強会@関西#14&lt;/a&gt;&lt;br /&gt;
+WindowsPhone7でSilverlightを有効に使うために&lt;/p&gt;
+
+&lt;p&gt;Feb 12, 2011 &lt;a href=&#34;http://www.seshop.com/se/timetable/2#2&#34;&gt;DeveloperSummit2011&lt;/a&gt;&lt;br /&gt;
+SilverlightとAzureで魅せる未来&lt;/p&gt;
+
+&lt;p&gt;Jan 29, 2011 &lt;a href=&#34;http://sqlworld.org/event/20110129/&#34;&gt;SQLWorld★大阪#4&lt;/a&gt;&lt;br /&gt;
+実践★ER図のちゃんとした書き方&lt;/p&gt;
+
+&lt;p&gt;Jan 21, 2011 &lt;a href=&#34;http://vsug.jp/tabid/228/EventID/16/Default.aspx&#34;&gt;Bar VSUG Vol.7 大阪会場&lt;/a&gt;
+コミュニティを語ろう&lt;/p&gt;
+
+&lt;h2 id=&#34;2010:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;2010&lt;/h2&gt;
+
+&lt;p&gt;Dec 4, 2010 &lt;a href=&#34;http://silverlightsquare.com/silverlight15.html&#34;&gt;Silverlightを囲む会in大阪#15&lt;/a&gt;&lt;br /&gt;
+Windows AzureでSilverlightアプリを動かします&lt;/p&gt;
+
+&lt;p&gt;OCt 30, 2010 OITEC 岡山勉強会第7回&lt;br /&gt;
+SilverlightとWindows Identity Foundation&lt;/p&gt;
+
+&lt;p&gt;Oct 9, 2010 &lt;a href=&#34;http://sqlworld.org/event/20101009/&#34;&gt;SQLWorld★大阪#3&lt;/a&gt;&lt;br /&gt;
+実践！DB正規化&lt;/p&gt;
+
+&lt;p&gt;Sep 25, 2010 第18回 .NET 勉強会 / ヒーロー島&lt;br /&gt;
+Silverlightでアニメーション&lt;/p&gt;
+
+&lt;p&gt;Aug 27, 2010 &lt;a href=&#34;http://www.microsoft.com/japan/teched/2010/session/session.aspx#bof&#34;&gt;Tech Ed Japan 2010 Bof&lt;/a&gt;&lt;br /&gt;
+SilverlightとWPF(Windows Identity Foundation)のアプリケーション連携&lt;/p&gt;
+
+&lt;p&gt;Jul 3, 2010 OITEC勉強会第6回&lt;br /&gt;
+SilverlightとSharePoint2010の紹介&lt;/p&gt;
+
+&lt;p&gt;Jun 26, 2010 &lt;a href=&#34;http://silverlightsquare.com/silverlight14.html&#34;&gt;Silverlightを囲む会in大阪#14&lt;/a&gt;&lt;br /&gt;
+Silverlightの基本の話&lt;/p&gt;
+
+&lt;p&gt;Jun 19, 2010 &lt;a href=&#34;http://silverlightsquare.com/nagoya03.html&#34;&gt;Silverlightを囲む会in名古屋#3&lt;/a&gt;&lt;br /&gt;
+FlashユーザがSilverlightに移るための勉強方法&lt;/p&gt;
+
+&lt;p&gt;May 26, 2010 &lt;a href=&#34;http://silverlightsquare.com/index.php/silverlight13.html&#34;&gt;Silverlightを囲む会in大阪#13&lt;/a&gt;&lt;br /&gt;
+初心者のためのSilverlight解説&lt;/p&gt;
+
+&lt;p&gt;May 22, 2010 &lt;a href=&#34;http://vsug.jp/tabid/228/EventID/10/Default.aspx&#34;&gt;VSUG Day 2010 Summer&lt;/a&gt;&lt;br /&gt;
+Silverlight4とSharePoint Server2010&lt;/p&gt;
+
+&lt;p&gt;Apr 10, 2010 &lt;a href=&#34;http://www.wankuma.com/seminar/20100410osaka35/Default.aspx&#34;&gt;わんくま同盟大阪勉強会#35&lt;/a&gt;&lt;br /&gt;
+Silverlight4とSharePoint　Server2010&lt;/p&gt;
+
+&lt;p&gt;Mar 27, 2010 &lt;a href=&#34;http://silverlightsquare.com/index.php/tokyo01.html&#34;&gt;Silverlightを囲む会in東京#1&lt;/a&gt;&lt;br /&gt;
+なぜRIA-Silverligh-なのか？&lt;/p&gt;
+
+&lt;p&gt;Feb 26, 2010 &lt;a href=&#34;http://silverlightsquare.com/silverlight12.html&#34;&gt;Silverlightを囲む会in大阪#12&lt;/a&gt;&lt;br /&gt;
+実践！SketchFlow&lt;/p&gt;
+
+&lt;h2 id=&#34;2009:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;2009&lt;/h2&gt;
+
+&lt;p&gt;Dec 16, 2009 &lt;a href=&#34;http://silverlightsquare.com/index.php/silverlight11.html&#34;&gt;Silverlightを囲む会in大阪#11&lt;/a&gt;&lt;br /&gt;
+ExpressionBlendでSketchFlow&lt;/p&gt;
+
+&lt;p&gt;Nov 22, 2011 &lt;a href=&#34;http://silverlightsquare.com/index.php/nagoya01.html&#34;&gt;Silverlightを囲む会in名古屋#1&lt;/a&gt;&lt;br /&gt;
+ExpressionBlendを触ってみよう&lt;/p&gt;
+
+&lt;p&gt;Sep 12, 2009 &lt;a href=&#34;http://silverlightsquare.com/index.php/hokuriku00.html&#34;&gt;Silverlight Users Group Hokuriku 立ち上げイベント&lt;/a&gt;&lt;br /&gt;
+Silverlight入門&lt;/p&gt;
+
+&lt;p&gt;Aug 28, 2009 &lt;a href=&#34;http://www.microsoft.com/japan/teched/2009/connect/LT/lt03_07.aspx&#34;&gt;TechEd2009ライトニングトーク&lt;/a&gt;&lt;br /&gt;
+Silverlight基本のキ～概要から既存サイトとの連携まで～&lt;/p&gt;
+
+&lt;p&gt;Aug 22, 2009 &lt;a href=&#34;http://www.fxug.net/modules/bwiki/index.php?Flex%CA%D9%B6%AF%B2%F1%C2%E878%B2%F3%A1%F7%CC%BE%B8%C5%B2%B0%BB%B2%B2%C3%BC%F5%C9%D5&#34;&gt;Flex勉強会第78回＠名古屋&lt;/a&gt;&lt;br /&gt;
+Silverlight事例紹介&lt;/p&gt;
+
+&lt;p&gt;Aug 8, 2009 &lt;a href=&#34;http://www.wankuma.com/seminar/20090808tokyo/Default.aspx&#34;&gt;わんくまっちゃ445同盟 featuring Silverlight Square&lt;/a&gt;&lt;br /&gt;
+AMF Messaging with Silverlight&lt;/p&gt;
+
+&lt;p&gt;Jul 19, 2009 &lt;a href=&#34;http://silverlightsquare.com/index.php/silverlightin8.html&#34;&gt;Silverlightを囲む会in大阪 #8&lt;/a&gt;&lt;br /&gt;
+SilverlightでAMF入門&lt;br /&gt;
+Silverlight事例紹介&lt;/p&gt;
+
+&lt;p&gt;May 16, 2009 &lt;a href=&#34;http://www.wankuma.com/seminar/20090516tokyo33/Default.aspx&#34;&gt;わんくま同盟 東京勉強会 #33&lt;/a&gt;&lt;br /&gt;
+Silverlight勉強会の紹介&lt;/p&gt;
+
+&lt;p&gt;Mar 18, 2009 &lt;a href=&#34;http://www.hidebohz.com/meeting/20090321.html&#34;&gt;第16回NT-Committee2九州勉強会&lt;/a&gt;&lt;br /&gt;
+基礎からわかる！SilverlightでRIA開発&lt;/p&gt;
+
+&lt;p&gt;Feb 7, 2009 &lt;a href=&#34;http://clr-h.jp/%E6%B4%BB%E5%8B%95%E5%AE%9F%E7%B8%BE/&#34;&gt;CLR/H Tech Day 2009&lt;/a&gt;&lt;br /&gt;
+Silverlightでアニメーション&lt;/p&gt;
+
+&lt;h2 id=&#34;2008:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;2008&lt;/h2&gt;
+
+&lt;p&gt;Dec 19, 2008 &lt;a href=&#34;http://www.fxug.net/modules/bwiki/index.php?Flex3%CA%D9%B6%AF%B2%F1%C2%E859%B2%F3%A1%F7%C2%E7%BA%E5%BB%B2%B2%C3%BC%F5%C9%D5&#34;&gt;Flex3勉強会第59回＠大阪&lt;/a&gt;&lt;br /&gt;
+Silverlightの紹介&lt;/p&gt;
+
+&lt;p&gt;Dec 6, 2008 &lt;a href=&#34;http://vsug.jp/tabid/228/EventID/2/Default.aspx&#34;&gt;VSUG Day 2008 Winter&lt;/a&gt;&lt;br /&gt;
+Silverlight2で作るアニメーションのご紹介&lt;/p&gt;
+
+&lt;p&gt;Nov 22, 2008 &lt;a href=&#34;http://www.silverlightsquare.com/page_1225424487838.html&#34;&gt;Silverlghtを囲む会in大阪#5&lt;/a&gt;&lt;br /&gt;
+Flex &amp;amp; Silverlight体験記&lt;/p&gt;
+
+&lt;p&gt;Nov 8, 2008 &lt;a href=&#34;http://k-of.jp/2008/list_seminar.html#63&#34;&gt;関西オープンソース2008&lt;/a&gt;&lt;br /&gt;
+Silverlightの紹介 ～Silverlightを囲む会in大阪#KOF2008～&lt;/p&gt;
+
+&lt;p&gt;Nov 1, 2008 &lt;a href=&#34;http://sites.google.com/site/miedotnet/news/1&#34;&gt;東海.NET勉強会&lt;/a&gt;&lt;br /&gt;
+WPFの基礎&lt;/p&gt;
+
+&lt;p&gt;Sep 25, 2008 &lt;a href=&#34;http://vsug.jp/tabid/178/articleid/35/Default.aspx&#34;&gt;VSUG コラム&lt;/a&gt;&lt;br /&gt;
+ソースコードとの付き合い方&lt;/p&gt;
+
+&lt;h1 id=&#34;sampel-code-tools:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Sampel code/tools&lt;/h1&gt;
+
+&lt;p&gt;Work in progress&amp;hellip;&lt;/p&gt;
+
+&lt;h1 id=&#34;主催勉強会:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;主催勉強会&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;meetup app (Nov 21, 2015 - currently)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Metro.cs (Sep 16, 2015 - currently)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://metrostyledev.net/&#34;&gt;Room metro 大阪&lt;/a&gt; (Jan 28, 2013 - Jul 25, 2015)&lt;br /&gt;
+seminar total number 12&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://sites.google.com/site/efcpp01/&#34;&gt;C++テンプレート完全ガイド読書会&lt;/a&gt; (Jun 20, 2014 - Feb 23, 2015)&lt;br /&gt;
+seminar total number 25&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://sites.google.com/site/efcpp01/&#34;&gt;Exceptional C++読書会&lt;/a&gt; (Jun 21, 2013 - Dec 21, 2013)&lt;br /&gt;
+seminar total number 21&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://metrostyledev.net/&#34;&gt;Room metro 東京&lt;/a&gt; (Feb 27, 2013 - Jun 6, 2013)&lt;br /&gt;
+seminar total number 3&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://sites.google.com/site/efcpp01/&#34;&gt;Effective C++読書会&lt;/a&gt; (Jun 18, 2012 - Dec 18, 2012)&lt;br /&gt;
+seminar total number 12&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://metrostyledev.net/&#34;&gt;MetroStyleDevelper&lt;/a&gt; (Jan 21, 2012 - Jan 23, 2013)&lt;br /&gt;
+seminar total number 11&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://boostjp.github.io/study_meeting.html&#34;&gt;Boost.勉強会&lt;/a&gt; (#12大阪: Jun 22, 2012, #16大阪: Sep 19, 2014)&lt;br /&gt;
+seminar total number 2&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://silverlightsquare.com/&#34;&gt;Silverlightを囲む会&lt;/a&gt; (Mar 14, 2008 - Aug 25, 2012)&lt;br /&gt;
+seminar total number 29&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>[勉強会] meetup app@1 でオープンソースについて発表しました</title>
@@ -629,17 +1131,6 @@ int main()
 &lt;p&gt;I have started this English blog since Jan 28, 2014.&lt;/p&gt;
 
 &lt;p&gt;Thank you.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://h-sao.com/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://h-sao.com/about/</guid>
-      <description>&lt;p&gt;遥佐保&lt;br /&gt;
-はるかさおですー&lt;/p&gt;
 </description>
     </item>
     
