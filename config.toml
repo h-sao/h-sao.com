@@ -4,7 +4,7 @@ title = "Effectiveさお"
 # Define how many pages appear per site
 paginate = 10
 # Enable comments powered by Disqus by entering your disqus shortname
-# disqusShortname = "harukasao"
+disqusShortname = "harukasao"
 theme = "minimalist"
 
 [author]
