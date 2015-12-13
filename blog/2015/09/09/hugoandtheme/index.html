@@ -1,0 +1,566 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Effectiveさお</title>
+        <meta name="author">
+        <meta name="description" content="The awesome blog of Sao Haruka.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.14" />
+          <link href="http://h-sao.compost/index.xml" rel="alternate" type="application/rss+xml" title="Effectiveさお" />
+          <link href="http://h-sao.compost/index.xml" rel="feed" type="application/rss+xml" title="Effectiveさお" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://h-sao.comcss/styles.css">
+        <link rel="icon" href="http://h-sao.comfavicon.png">
+        <link rel="apple-touch-icon" href="http://h-sao.comapple-touch-icon.png" />
+        <link rel="stylesheet" href="http://h-sao.comcss/highlightjs/monokai.css">
+        <script src="http://h-sao.comjs/vendor/modernizr-2.8.0.min.js"></script>
+        <style>
+        .site-header h2 .logo {
+        background: url(http://h-sao.compic/top.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(http://h-sao.compic/top.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(http://h-sao.compic/top.jpg) no-repeat center center;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2><a href="http://h-sao.com">Effectiveさお</a></h2>
+          </div>
+        </header>
+          <div class="pankuzu-layer">
+              <a href="http://h-sao.comabout">About me</a>&nbsp;&nbsp;&nbsp;
+              <a href="http://h-sao.comtags">Tags</a>
+          </div>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn" href="http://h-sao.com" title="Back to home">&laquo; Back to home</a>
+            
+<h1><a href="http://h-sao.com/blog/2015/09/09/hugoandtheme/" title="[Hugo]ブログ構築メモ(1)-Hugoとテンプレート">[Hugo]ブログ構築メモ(1)-Hugoとテンプレート</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2015.09.09">2015.09.09</time>
+&middot; Tagged in
+    
+    <a href="http://h-sao.comtags/hugo">hugo</a>
+    
+    
+
+</span>
+</footer>
+ </footer>
+            
+
+<p>Windows10のノートPCに <a href="http://gohugo.io/">Hugo</a> というスタティックジェネレーターをインストールして、このブログを構築しています<br />
+作ったブログは、<a href="https://github.com/h-sao/Blog">GitHub Pages</a> にアップして運用しています</p>
+
+<p>今のところ気に入っているのは</p>
+
+<blockquote>
+<ol>
+<li>ブログの管理が GitHubで行えること</li>
+<li>ブログ用の運用サーバーが不要なこと (ありがとう！GitHub)</li>
+<li>GitHubにPushしたら、werckerの自動ビルドでGitHubPagesにアップすること</li>
+</ol>
+</blockquote>
+
+<p>この3点かなー<br />
+今日は上から2番目までのブログ構築部分（つまりHugoの部分）をメモしておきます</p>
+
+<hr />
+
+<h2 id="インストール-というか単なるexeファイル設置:0ac06b5261622021717117556fa75a4c">インストール (というか単なるexeファイル設置)</h2>
+
+<ul>
+<li>最新バージョン取得<br />
+<a href="https://github.com/spf13/hugo/releases">https://github.com/spf13/hugo/releases</a></li>
+</ul>
+
+<p>わたしが 2015/9/9 現在ダウンロードしたバージョンは <strong>v0.14</strong> です<br />
+Hugoはexeだけで動くので、適当なディレクトリに置きます<br />
+わたしは</p>
+
+<pre><code>C:\Library\Hugo\bin\hugo.exe
+</code></pre>
+
+<p>に設置することにしました</p>
+
+<hr />
+
+<h2 id="ブログ新規作成:0ac06b5261622021717117556fa75a4c">ブログ新規作成</h2>
+
+<p>Windows標準のコマンドプロンプトで作業します<br />
+このとき既に、ブログを作ろうとするディレクトリが存在していたら、ブログ作成は失敗するので、気を付けてください</p>
+
+<blockquote>
+<p>FATAL: 2015/09/09 C:\Users\haruk\Dropbox\sites\Blog already exists and is not empty</p>
+</blockquote>
+
+<p>リネームなどして、再チャレンジ<br />
+うまくいくと、何の反応もなく終わります</p>
+
+<pre><code>C:\Users\haruk\Dropbox\sites&gt;c:\Library\Hugo\bin\hugo.exe new site Blog
+
+C:\Users\haruk\Dropbox\sites&gt;
+</code></pre>
+
+<p>ディレクトリ構造の確認</p>
+
+<pre><code>C:\Users\haruk\Dropbox\sites&gt;cd Blog
+C:\Users\haruk\Dropbox\sites\Blog&gt;dir
+ ドライブ C のボリューム ラベルは MyWindows です
+ ボリューム シリアル番号は xxxx-xxxx です
+
+ C:\Users\haruk\Dropbox\sites\Blog のディレクトリ
+
+ 2015/09/09  20:29&lt;DIR&gt;  .
+ 2015/09/09  20:29&lt;DIR&gt;  ..
+ 2015/09/09  20:28   270 .gitignore
+ 2015/09/09  20:28&lt;DIR&gt;  archetypes
+ 2015/09/09  20:28   107 config.toml
+ 2015/09/09  20:28&lt;DIR&gt;  content
+ 2015/09/09  20:28&lt;DIR&gt;  data
+ 2015/09/09  20:28&lt;DIR&gt;  layouts
+ 2015/09/09  20:2836 README.md
+ 2015/09/09  20:28&lt;DIR&gt;  static
+   3 個のファイル 413 バイト
+   7 個のディレクトリ  80,351,985,664 バイトの空き領域
+
+C:\Users\haruk\Dropbox\sites\Blog&gt;
+</code></pre>
+
+<p>あっという間に自作ブログのベースは完了です<br />
+次はテンプレートを落としてきます</p>
+
+<hr />
+
+<h2 id="テンプレート適用:0ac06b5261622021717117556fa75a4c">テンプレート適用</h2>
+
+<p>GitHubから有志の人たちのテンプレートを拝借してきます</p>
+
+<ul>
+<li>Hugo Themes Repo<br />
+<a href="https://github.com/spf13/hugoThemes">https://github.com/spf13/hugoThemes</a></li>
+</ul>
+
+<p>たくさんテーマがあるけど、<del>まじでうざいテーマしかない</del><br />
+おっと失礼しました<br />
+自己主張が激しいテーマが多いです</p>
+
+<p>とりあえず、GitHubのスター数が多いテンプレートをチェックしてみました<br />
+中でも一番自分が気に入ったものが、<strong>hyde-x</strong></p>
+
+<ul>
+<li>zyro/hyde-x<br />
+<a href="https://github.com/zyro/hyde-x">https://github.com/zyro/hyde-x</a></li>
+</ul>
+
+<p>テンプレートは自分のサイトの顔になるので、色々悩みましたが<br />
+結局はデザインよりも機能が一番多いのがいいんでない？という発想で選びました</p>
+
+<p>コンフィグファイルに</p>
+
+<ul>
+<li>GoogleAnalytics</li>
+<li>GitHub</li>
+<li>Bitbucket</li>
+<li>LinkedIn</li>
+<li>Facebook</li>
+<li>Twitter</li>
+<li>GooglePlus</li>
+<li>Gravatar</li>
+</ul>
+
+<p>が揃っていたので、自分であれこれする手間も省けるかなーという印象</p>
+
+<p>GooglePlusはもう今ではダサいんじゃね？<br />
+というアドバイスを受けたので有効にしていません＼(^o^)／<br />
+同様、Gravatarもいらんやろ…と思いましたが、アイコン代わりに仕方なく使いました</p>
+
+<blockquote>
+<p>Gravaterは自分でハッシュ作成をしないといけなかった<br />
+とゆーか、こんな変換くらいサイトで提供してよ…
+イマドキプログラマに変なところで手間かけさすなよなーいやまじで(&lsquo;ε&rsquo;)<br />
+<a href="https://ja.gravatar.com/site/implement/hash/">https://ja.gravatar.com/site/implement/hash/</a></p>
+</blockquote>
+
+<p>話が多少逸れましたが、この hyde-x をテーマとして、Gitコマンドを使って適用します</p>
+
+<blockquote>
+<p>わたしは、SourceTree内蔵のGitを使ってみました<br />
+%USERPROFILE%\AppData\Local\Atlassian\SourceTree\git_local\bin<br />
+(参考)<a href="https://answers.atlassian.com/questions/245850/how-to-run-a-git-command-as-a-custom-action">https://answers.atlassian.com/questions/245850/how-to-run-a-git-command-as-a-custom-action</a></p>
+
+<p>&ldquo;c:\Program Files (x86)\Git\bin\git.exe　とか持っているなら、それでも可</p>
+</blockquote>
+
+<p>themes ディレクトリの下で作業します</p>
+
+<pre><code>C:\Users\haruk\Dropbox\sites\Blog\themes&gt;C:\Users\haruk\AppData\Local\Atlassian\SourceTree\git_local\bin\git.exe clone https://github.com/zyro/hyde-x
+Cloning into 'hyde-x'...
+remote: Counting objects: 358, done.
+remote: Total 358 (delta 0), reused 0 (delta 0), pack-reused 358
+Receiving objects: 100% (358/358), 253.37 KiB | 175.00 KiB/s, done.
+Resolving deltas: 100% (153/153), done.
+Checking connectivity... done.
+
+C:\Users\haruk\Dropbox\sites\Blog\themes&gt;
+</code></pre>
+
+<p><strong>C:\Users\haruk\Dropbox\sites\Blog\config.toml</strong> をhyde-x用に修正しましょう<br />
+<a href="https://github.com/zyro/hyde-x">hyde-xテーマのサイト</a>に解説が書いてあるので、それをそのままコピペします<br />
+タイトルやTwitterアカウントなど、自分に必要な情報を更新します</p>
+
+<p>他のジェネレータも同様ですが、<br />
+コンフィグは結構、個別テーマに依存した項目になっているので（元のHugoの機能が少ない）別テーマでは使えないかもしれない点は注意です</p>
+
+<hr />
+
+<h2 id="ブログ投稿:0ac06b5261622021717117556fa75a4c">ブログ投稿</h2>
+
+<p>contentの 下に postディレクトリを作り、ブログ更新するMDファイルを置きます</p>
+
+<pre><code>C:\Users\haruk\Dropbox\sites\Blog\content\post
+</code></pre>
+
+<p>わたしの場合、hyde-x が post の下、という仕様だったからであって<br />
+他のテンプレでは違うかもしれません<br />
+とにかく、ここの post の下に、以下のマークダウンファイルを用意します</p>
+
+<p><strong><20150909-HugoInstallAndTheme.md></strong></p>
+
+<pre><code>+++
+date = &quot;2015-09-09T01:11:00+09:00&quot;
+draft = false
+title = &quot;[Hugo]Hugoブログ構築メモ-WindowsインストールとHugoテンプレート&quot;
+categories = [&quot;Hugo&quot;]
+
++++
+
+Windows10のノートPCに [Hugo](http://gohugo.io/) というスタティックジェネレーターをインストールして、このブログを構築しています  
+...（以下略）
+
+</code></pre>
+
+<p>ルート C:\Users\haruk\Dropbox\sites\Blog\　に移動し、Hugoコマンドを実行します</p>
+
+<pre><code>C:\Users\haruk\Dropbox\sites\Blog\themes&gt;cd ..
+
+C:\Users\haruk\Dropbox\sites\Blog&gt;c:\Library\Hugo\bin\hugo.exe server -w
+0 draft content
+0 future content
+5 pages created
+1 paginator pages created
+5 categories created
+in 201 ms
+Watching for changes in C:\Users\haruk\Dropbox\sites\Blog/{data,content,layouts,static,themes\hyde-x}
+Serving pages from C:\Users\haruk\Dropbox\sites\Blog\public
+Web Server is available at http://127.0.0.1:1313/
+Press Ctrl+C to stop
+</code></pre>
+
+<p>ブラウザで <a href="http://127.0.0.1:1313/">http://127.0.0.1:1313/</a> にアクセスすると、サイトが出来ています<br />
+実際には、public 以下にHTMLがジェネレートされているので、public以下を自分の GitHub の gh-pages ブランチにアップすると、自前ブログの完成(^^)</p>
+
+<p>これも余談ですが、CNAMEファイルを置くと、独自ドメインが使えますね　　
+（これ、ファイル名が大文字じゃないとダメでした）</p>
+
+<ul>
+<li>わたしのgh-pages の参考です<br />
+<a href="https://github.com/h-sao/Blog/tree/gh-pages">https://github.com/h-sao/Blog/tree/gh-pages</a></li>
+</ul>
+
+<hr />
+
+<h2 id="簡単に構築は出来たが:0ac06b5261622021717117556fa75a4c">簡単に構築は出来たが…</h2>
+
+<p>ここまでだと結構簡単にできますが、ここから先は、自分で頑張るしかない部分です…</p>
+
+<p>何がって？<br />
+結局最初に諦めた、デザインのことと<br />
+CMSに当たり前にあって、Hugoには無い機能を、実装していく必要があります</p>
+
+<p>今のこのブログは、先ほどの hyde-x テンプレートを改変しまくっています<br />
+とはいえ、トライ＆エラーの繰り返しだったので、解説まではできないかも…<br />
+テンプレートやHugo本体の解説は、また気が向いたときにするということで許してください</p>
+
+<p>それよりは次回は、CIツールである wercker の設定をメモします<br />
+（次へ続く）</p>
+
+            <ul class="share-buttons">
+    <li>Share this article:</li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f09%2f09%2fhugoandtheme%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook"></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bHugo%5d%e3%83%96%e3%83%ad%e3%82%b0%e6%a7%8b%e7%af%89%e3%83%a1%e3%83%a2%281%29-Hugo%e3%81%a8%e3%83%86%e3%83%b3%e3%83%97%e3%83%ac%e3%83%bc%e3%83%88&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f09%2f09%2fhugoandtheme%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Tweet this article"></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f09%2f09%2fhugoandtheme%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google&#43;"></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f09%2f09%2fhugoandtheme%2f&title=%5bHugo%5d%e3%83%96%e3%83%ad%e3%82%b0%e6%a7%8b%e7%af%89%e3%83%a1%e3%83%a2%281%29-Hugo%e3%81%a8%e3%83%86%e3%83%b3%e3%83%97%e3%83%ac%e3%83%bc%e3%83%88" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title="Share on Linkedin"></a>
+    </li>
+</ul>
+
+        </article>
+        <div class="comments">
+            <h3>Comments</h3>
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'harukasao';
+    var disqus_identifier = 'http:\/\/h-sao.com\/blog\/2015\/09\/09\/hugoandtheme\/';
+    var disqus_title = '[Hugo]ブログ構築メモ(1)-Hugoとテンプレート';
+    var disqus_url = 'http:\/\/h-sao.com\/blog\/2015\/09\/09\/hugoandtheme\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="http://h-sao.compic/saoharuka128.png" alt="遥佐保/Sao Haruka" />
+  <p class="name">by 
+  <strong>遥佐保/Sao Haruka</strong></p>
+  <p class="address">Japan</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="http://h-sao.compost/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <p  class="address">
+    <a href="http://mvp.microsoft.com/ja-jp/mvp/Akiko%20Kawai-4027291" target="_blank">
+    <img src="http://h-sao.compic/MVPLogo.png"  width="120" border="0" alt="mvp_logo" hspace="5" /></a><br>
+      Microsoft MVP for Windows Platform Development [Jan,2015-Dec,2015]
+      Microsoft MVP for Client Development [Jan,2014-Dec,2014]
+      Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]
+  </p>
+  <br>
+</aside>
+
+
+    <aside class="posted-list">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Recent Posts</h2>
+            </div>
+            <div class="list-group">
+                
+                    
+                        <a href="/blog/2015/12/13/change-theme-to-minimalist/" class="list-group-item">[Hugo] ブログ構築メモ(2)-テンプレートの更新方法（CSSはメインではない）</a><br>
+                    
+                
+                    
+                
+                    
+                        <a href="/blog/2015/11/21/meetup-app1-opensource/" class="list-group-item">[勉強会] meetup app@1 でオープンソースについて発表しました</a><br>
+                    
+                
+                    
+                        <a href="/blog/2015/10/06/install-googleplay-onxiaomi/" class="list-group-item">[Android]Xiaomi Redmi Note2にGooglePlayをインストールする</a><br>
+                    
+                
+                    
+                        <a href="/blog/2015/09/09/hugoandtheme/" class="list-group-item">[Hugo]ブログ構築メモ(1)-Hugoとテンプレート</a><br>
+                    
+                
+                    
+                        <a href="/blog/2015/08/25/moving-blog/" class="list-group-item">[Hugo/wercker]ブログを移行しました</a><br>
+                    
+                
+                    
+                        <a href="/blog/2014/02/24/c-anonymous-struct/" class="list-group-item">Anonymous Struct of C</a><br>
+                    
+                
+                    
+                        <a href="/blog/2014/01/31/cpp-sample-program/" class="list-group-item">C,C&#43;&#43;,C&#43;&#43;/CLI sample program</a><br>
+                    
+                
+                    
+                        <a href="/blog/2014/01/29/how-to-program-cppcx/" class="list-group-item">Lightning Talk:How to program C&#43;&#43;/CX</a><br>
+                    
+                
+                    
+                        <a href="/blog/2014/01/28/hello-world/" class="list-group-item">Hello World</a><br>
+                    
+                
+            </div>
+
+            <div class="panel-heading">
+                <h2 class="panel-title">Tags</h2>
+            </div>
+            <div class="list-group">
+                    
+                    
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com/tags/android" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        android
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com/tags/community" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        community
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com/tags/cpp" style="font-size: 17px;">
+                    
+                        <span class="badge">3</span>
+                        cpp
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com/tags/cppcx" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        cppcx
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com/tags/diary" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        diary
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com/tags/hugo" style="font-size: 17px;">
+                    
+                        <span class="badge">3</span>
+                        hugo
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com/tags/opensource" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        opensource
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com/tags/wercker" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        wercker
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com/tags/windowsruntime" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        windowsruntime
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com/tags/xiaomi" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        xiaomi
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+            </div>
+
+            <br>
+            <div class="panel-heading">
+                <h2 class="panel-title">Previous Blog Post</h2>
+            </div>
+            <div class="list-group">
+                <a href="http://blog.livedoor.jp/haruka_sao/" target="_blank">http://blog.livedoor.jp/haruka_sao/</a>
+            </div>
+        </div>
+  <br><br>
+</aside>
+
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="http://h-sao.compost/index.xml" title="RSS"></a>
+        <p>&copy; 2015 &middot; Copyright © Sao Haruka<br> Powered by <a href="http://gohugo.io">Hugo</a>.</p>
+  </div>
+</footer>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="http:\/\/h-sao.comjs/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://h-sao.comjs/plugins.js"></script>
+
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount','UA-66721712-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+
