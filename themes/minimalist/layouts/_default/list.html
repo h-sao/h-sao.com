@@ -1,0 +1,30 @@
+{{ partial "header" . }}
+<div class="container clearfix">
+    <main role="main" class="content">
+        <a class="btn" href="{{ .Site.BaseURL }}" title="{{ .Site.Data.l10n.article.back_to_home }}">&laquo; {{ .Site.Data.l10n.article.back_to_home }}</a>
+        <div align="center">
+            <h1>
+                &quot;<script language="JavaScript"><!--
+                var $dir = location.href.split("/");
+                var $dir2 = $dir[$dir.length -2];
+                document.write($dir2);
+                // --></script>&quot;
+            </h1>
+        </div>
+        <br>
+
+        {{ $paginator := .Paginate .Data.Pages.ByPublishDate }}
+        {{ range $paginator.Pages }}
+            {{ partial "article-header" . }} </footer>
+                {{ .Content}}
+            {{ partial "article-share" . }}
+            <hr>
+        {{ end }}
+
+        {{ partial "pagination" . }}
+    </main>
+
+    {{ partial "author" . }}
+    {{ partial "posted-list" . }}
+</div>
+{{ partial "footer" . }}
