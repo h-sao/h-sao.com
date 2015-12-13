@@ -2,8 +2,7 @@
 date = "2014-01-28"
 draft = false
 title = "Hello World"
-categories = ["Diary"]
-
+tags = ["Diary"]
 +++
 
 Hi,

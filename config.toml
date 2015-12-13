@@ -1,65 +1,44 @@
-# baseurl = "http://h-sao.github.io"
 baseurl = "http://h-sao.com"
+languageCode = "ja-jp"
 title = "Effectiveさお"
-languageCode = "en-us"
-disqusShortname = "harukasao"
-MetaDataFormat = "toml"
-theme = "hyde-x"
+# Define how many pages appear per site
 paginate = 10
+# Enable comments powered by Disqus by entering your disqus shortname
+# disqusShortname = "harukasao"
+theme = "minimalist"
 
 [author]
     name = "遥佐保/Sao Haruka"
+
+[params]
+    site_author = "遥佐保/Sao Haruka"
+    site_description = "The awesome blog of Sao Haruka."
+    location = "Japan"
+    # All paths are relative to the baseurl. Put your files
+    # somewhere in the static folder.
+    avatar = "pic/saoharuka128.png"
+    header_background = "pic/top.jpg"
+    header_title = "Effectiveさお"
+    copyright = "Copyright © Sao Haruka<br> Powered by [Hugo](http://gohugo.io)."
+
+    # Enable gogle analytics by entering your tracking code
+    google_analytics = "UA-66721712-1"
+
+[social]
+    # Add your social network accounts to the profile section on the left
+    # by entering your username. The links to your account will be
+    # create automatically.
+    twitter   = "hr_sao"
+    facebook  = ""
+    linkedin  = ""
+    behance   = ""
+    dribbble  = ""
+    instagram = ""
+    github    = "h-sao"
+    gplus     = ""
 
 [permalinks]
     # Optional. Change the permalink format for the 'post' content type.
     # The format shown here is the same one Jekyll/Octopress uses by default.
     # post = "/blog/:year/:month/:day/:title/"
     post = "/blog/:year/:month/:day/:filename/"
-
-[indexes]
-    # Optional. Use if you want tags and lists.
-    category = "categories"
-
-#
-# All parameters below here are optional and can be mixed and matched.
-#
-[params]
-
-    # If false display full article contents in blog index.
-    # Otherwise show description and 'read on' link to individual blog post page.
-    # Default (if ommitted) is true.
-    truncate = false
-
-    # Used when a given page doesn't set its own.
-    defaultDescription = "遥佐保/はるかさお/Sao Haruka"
-    defaultKeywords = "C++,C#"
-
-    # Changes sidebar background and link/accent colours.
-    # See below for more colour options.
-    # This also works: "theme-base-08 layout-reverse", or just "layout-reverse".
-    theme = "theme-base-08"
-
-    # Select a syntax highight.
-    # Check the static/css/highlight directory for options.
-    highlight = "sunburst"
-
-    # Displays under the author name in the sidebar, keep it short.
-    # You can use markdown here.
-    tagline = "C++/C#/Windowsで遊んでいます<br>Microsoft MVP for Windows Platform<br>Development [Jan,2015-Dec,2015]<br>Microsoft MVP for Client Development<br>[Jan,2014-Dec,2014]<br>Microsoft MVP for Client App Dev<br>[Jan,2010-Dec,2013]"
-
-	home = "SiteTop"
-
-    # Metadata used to drive integrations.
-#    googleAuthorship = "Your Google+ profile ID"
-    googleAnalytics = "UA-66721712-1"
-    gravatarHash = "0eb58d770d6e4766150ef7cb6cdce3c7"
-
-    # Sidebar social links, these must be full URLs.
-    github = "https://github.com/h-sao"
-    bitbucket = ""
-    linkedin = ""
-#    googleplus = "https://plus.google.com/106462274497419316996"
-#    facebook = "https://www.facebook.com/xxxxx"
-    twitter = "https://twitter.com/hr_sao"
-
-	rss = true

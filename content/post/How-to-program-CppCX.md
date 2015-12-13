@@ -2,8 +2,7 @@
 date = "2014-01-29"
 draft = false
 title = "Lightning Talk:How to program C++/CX"
-categories = ["C++CX", "C++", "WindowsRuntime"]
-
+tags = ["CppCx", "Cpp", "WindowsRuntime"]
 +++
 
 Hi,

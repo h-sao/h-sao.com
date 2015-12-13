@@ -2,8 +2,7 @@
 date = "2015-08-25"
 draft = false
 title = "[Hugo/wercker]ブログを移行しました"
-categories = ["Hugo", "wercker"]
-
+tags = ["Hugo", "wercker"]
 +++
 
 ライブドアで書いていたブログ [「遥佐保の技術メモ」 http://blog.livedoor.jp/haruka_sao/](http://blog.livedoor.jp/haruka_sao/) を移植することにしました  

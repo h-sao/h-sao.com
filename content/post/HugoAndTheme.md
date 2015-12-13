@@ -2,8 +2,7 @@
 date = "2015-09-09T01:11:00+09:00"
 draft = false
 title = "[Hugo]ブログ構築メモ(1)-Hugoとテンプレート"
-categories = ["Hugo"]
-
+tags = ["Hugo"]
 +++
 
 Windows10のノートPCに [Hugo](http://gohugo.io/) というスタティックジェネレーターをインストールして、このブログを構築しています  

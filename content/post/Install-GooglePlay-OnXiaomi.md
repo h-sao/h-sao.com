@@ -2,7 +2,7 @@
 date = "2015-10-06T04:00:00+09:00"
 draft = false
 title = "[Android]Xiaomi Redmi Note2にGooglePlayをインストールする"
-categories = ["Xiaomi", "Android"]
+tags = ["Xiaomi", "Android"]
 +++
 
 クロスプラットフォームで開発していると、やはり最新の端末が欲しくなりますよね～

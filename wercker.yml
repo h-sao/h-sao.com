@@ -3,7 +3,7 @@ build:
   steps:
     - arjen/hugo-build:
         version: "0.14"
-        theme: hyde-x
+        theme: minimalist
         config: config.toml
 deploy:
   steps:

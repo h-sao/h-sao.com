@@ -2,8 +2,7 @@
 date = "2014-01-31"
 draft = false
 title = "C,C++,C++/CLI sample program"
-categories = ["C++"]
-
+tags = ["Cpp"]
 +++
 
 Hi,

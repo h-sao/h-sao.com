@@ -2,8 +2,7 @@
 date = "2014-02-24"
 draft = false
 title = "Anonymous Struct of C"
-categories = ["C++"]
-
+tags = ["Cpp"]
 +++
 
 Hi,
