@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://h-sao.com/</loc>
+    <lastmod>2015-12-13T23:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/blog/2015/12/13/change-theme-to-minimalist/</loc>
+    <lastmod>2015-12-13T23:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/about/</loc>
+    <lastmod>2015-12-13T12:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/blog/2015/11/21/meetup-app1-opensource/</loc>
+    <lastmod>2015-11-21T16:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/</loc>
+    <lastmod>2015-10-06T04:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/blog/2015/09/09/hugoandtheme/</loc>
+    <lastmod>2015-09-09T01:11:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/blog/2015/08/25/moving-blog/</loc>
+    <lastmod>2015-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/blog/2014/02/24/c-anonymous-struct/</loc>
+    <lastmod>2014-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/blog/2014/01/31/cpp-sample-program/</loc>
+    <lastmod>2014-01-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/blog/2014/01/29/how-to-program-cppcx/</loc>
+    <lastmod>2014-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/blog/2014/01/28/hello-world/</loc>
+    <lastmod>2014-01-28T00:00:00+00:00</lastmod>
+  </url>
+  
+</urlset>

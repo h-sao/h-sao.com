@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Effectiveさお</title>
+    <link>http://h-sao.com/post/</link>
+    <description>Recent content in Posts on Effectiveさお</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sun, 13 Dec 2015 23:30:00 +0900</lastBuildDate>
+    <atom:link href="http://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Hugo] ブログ構築メモ(2)-テンプレートの更新方法（CSSはメインではない）</title>
+      <link>http://h-sao.com/blog/2015/12/13/change-theme-to-minimalist/</link>
+      <pubDate>Sun, 13 Dec 2015 23:30:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2015/12/13/change-theme-to-minimalist/</guid>
+      <description>
+
+&lt;p&gt;前回、スタティックジェネレーターのHugoを使って、&lt;a href=&#34;https://github.com/h-sao/Blog/tree/gh-pages&#34;&gt;GitHub Pages&lt;/a&gt; にブログを展開する方法を記載しました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[Hugo]ブログ構築メモ(1)-Hugoとテンプレート&lt;br /&gt;
+&lt;a href=&#34;http://h-sao.com/blog/2015/09/09/hugoandtheme/&#34;&gt;http://h-sao.com/blog/2015/09/09/HugoAndTheme/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;このとき、「デザインと機能を諦めた」と書きましたが&lt;br /&gt;
+その続きをひそかにポチポチとやっておりました…&lt;br /&gt;
+しかし、ポチポチやる日々が辛くなり、ついにはブログ更新そのものが怠ることに…&lt;/p&gt;
+
+&lt;h1 id=&#34;一向に進まない理由:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;一向に進まない理由&lt;/h1&gt;
+
+&lt;p&gt;一人ではWebのフロントエンドのノウハウもなく、もう無理かもーと思っていたことを&lt;br /&gt;
+&lt;a href=&#34;http://www.misuzilla.org/&#34;&gt;@mayuki&lt;/a&gt; さんに相談したところ、こんなアドバイスを頂きました&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;CSSってイマドキ、モバイル対応などで複雑なので、デザインを一から自分で書き起こすのは辞めた方がいい&lt;br /&gt;
+いつまでたっても、モノが出来上がらない&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;CSSデザイン&amp;rdquo; を触るのは最後&lt;br /&gt;
+先に &amp;ldquo;テンプレート&amp;rdquo; を駆使して、自分なりの配置にするのがおススメ&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;つまり&lt;br /&gt;
+&lt;strong&gt;機能のテンプレートは他から持ってこれるがデザインはあらかじめ好みのものを選ぶ方が良い&lt;/strong&gt;&lt;br /&gt;
+というアドバイスでした&lt;/p&gt;
+
+&lt;p&gt;あれ？前回わたしが書いた時には、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;結局はデザインよりも機能が一番多いのがいいんでない？という発想で選びました&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;おお、まったく逆ですね…&lt;br /&gt;
+デザインさておき、機能重視してたので、うまくいかなかったのか…！！！&lt;/p&gt;
+
+&lt;h1 id=&#34;好みっぽく-かつシンプルなテンプレート:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;好みっぽく、かつシンプルなテンプレート&lt;/h1&gt;
+
+&lt;p&gt;とまぁ、素人くさい話で本当に恐縮ですが、気持ち改め、シンプルで改変しやすそうなデザインのテンプレートを引っ張ってきました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;minimalist&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&#34;https://github.com/digitalcraftsman/hugo-minimalist-theme/&#34;&gt;https://github.com/digitalcraftsman/hugo-minimalist-theme/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Theme-To-Minimalist0.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;これは相談したその場で&lt;a href=&#34;http://www.misuzilla.org/&#34;&gt;@mayuki&lt;/a&gt; さんが、ちゃちゃっとテストするために触ってくれたテンプレートです&lt;/p&gt;
+
+&lt;p&gt;彼はものの10分程度で、わたしのやりたいことを目の前でやってくれたので、とても参考になりました&lt;br /&gt;
+ありがとうございます～（涙目）&lt;/p&gt;
+
+&lt;h2 id=&#34;最初に見る場所はhtmlテンプレート:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;最初に見る場所はHTMLテンプレート&lt;/h2&gt;
+
+&lt;p&gt;やったことはまず、&lt;strong&gt;themes &amp;gt; minimalist &amp;gt; layouts&lt;/strong&gt; の下を見るようにしました&lt;br /&gt;
+わたしの環境だと C:\Users\haruk\Dropbox\sites\Blog\themes\minimalist\layouts になります&lt;/p&gt;
+
+&lt;p&gt;ここから必要そうな機能の、HTMLテンプレートを作っていきます&lt;br /&gt;
+わたしの場合、以下の機能（テンプレートとなるブロックと名付けます）が不足していました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ヘッダーに &amp;ldquo;About me&amp;rdquo; と &amp;ldquo;Tags&amp;rdquo; のリンクをつけたい&lt;/li&gt;
+&lt;li&gt;最新ポストの表示&lt;/li&gt;
+&lt;li&gt;タグ表示&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;こんな感じです&lt;/p&gt;
+
+&lt;h2 id=&#34;ヘッダーに直接何か書いてみる:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;ヘッダーに直接何か書いてみる&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;themes &amp;gt; minimalist &amp;gt; layouts &amp;gt; partials &amp;gt; header.html&lt;/strong&gt; がヘッダーに相当します&lt;/p&gt;
+
+&lt;p&gt;素人のわたしが混乱する原因として&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hugoの機能がわからない&lt;/li&gt;
+&lt;li&gt;テンプレートの更新方法がわからない&lt;/li&gt;
+&lt;li&gt;CSSの更新方法がわからない&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;こんな感じでしょうか(+_+)&lt;/p&gt;
+
+&lt;p&gt;まぁHTMLタグの直書きであれば、なんとかなるだろうの勢いで、まずは、提供されている minimalist テンプレート（HTML）の中身を更新しちゃうことにします&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Hugo的作法としては、管理ディレクトリ直下の &lt;strong&gt;layouts&lt;/strong&gt; を更新すべきらしいのですが、色々やっているうちに訳が分からなくなるので、やめました…&lt;br /&gt;
+もしかしたらHugoはファイル管理とか命名規則が、えいやっっっなのかもしれない？&lt;br /&gt;
+とにかく（わたしの能力不足なんでしょうけど）思うように管理できなかった&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;オレオレ topbar-layer classの追加&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;header class=&amp;quot;site-header&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;transparent-layer&amp;quot;&amp;gt;
+    &amp;lt;h2&amp;gt;{{ .Site.Params.header_title }}&amp;lt;/h2&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/header&amp;gt;
+  &amp;lt;div class=&amp;quot;topbar-layer&amp;quot;&amp;gt;
+    &amp;lt;a href=&amp;quot;{{ .Site.BaseURL }}about&amp;quot;&amp;gt;About me&amp;lt;/a&amp;gt;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;
+    &amp;lt;a href=&amp;quot;{{ .Site.BaseURL }}tags&amp;quot;&amp;gt;Tags&amp;lt;/a&amp;gt;
+ &amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;出力結果
+&lt;img src=&#34;http://h-sao.com/pic/Change-Theme-To-Minimalist1.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;ヘッダーと本文の間に、バーを入れることが出来ました&lt;/p&gt;
+
+&lt;p&gt;ちなみに Hugo は、デフォルトで &lt;strong&gt;[サイトURL]/tags/&lt;/strong&gt; というタグ一覧のHTMLを生成してくれます&lt;/p&gt;
+
+&lt;h2 id=&#34;ブロックとして設置出来た後に-cssを触る:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;ブロックとして設置出来た後に、CSSを触る&lt;/h2&gt;
+
+&lt;p&gt;勘所のある人には、こいつはなんというツマラナイことを書いてるんだ！？と思われるかもしれませんが、これも経験なんで許してください…書いててつらい…&lt;/p&gt;
+
+&lt;p&gt;気を取り直して、いよいよCSSを触ります&lt;/p&gt;
+
+&lt;p&gt;自分の追加した &amp;ldquo;topbar-layer&amp;rdquo; を追加します&lt;br /&gt;
+といっても、同じヘッダの &amp;ldquo;transparent-layer&amp;rdquo; をコピペする気まんまんです&lt;/p&gt;
+
+&lt;p&gt;幸いなことに、この minimalist のテンプレートはとてもシンプルで、触るファイルは１つのみ！
+&lt;strong&gt;themes &amp;gt; minimalist &amp;gt; static &amp;gt; css &amp;gt; styles.css&lt;/strong&gt; に、&amp;rdquo;transparent-layer&amp;rdquo; のパクリ設定を追加します&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.topbar-layer {
+  width: 100%;
+  height: 100%;
+  background-color: #252a2c;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #e0e0e0;
+  text-align: center;
+  position: relative;
+  line-height: 50px;
+  height: 50px;
+  transition: all 0.3s ease;
+}
+
+.topbar-layer a{
+    color: #a2a2a2;
+}
+.topbar-layer a:hover {
+    color: #fff;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;出力結果
+&lt;img src=&#34;http://h-sao.com/pic/Change-Theme-To-Minimalist2.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;高さなど一部、自分で調整&lt;br /&gt;
+これくらいならできた…&lt;/p&gt;
+
+&lt;h1 id=&#34;私的作業コスト比-デザイン調整-テンプレート調整:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;(私的作業コスト比)デザイン調整＞テンプレート調整&lt;/h1&gt;
+
+&lt;p&gt;わたしがプログラム目線だからかもしれませんが、実際このブログでは、出来てなかった機能（タグと最新ポスト表示）を難なく実装することは出来ました&lt;/p&gt;
+
+&lt;p&gt;Hugoが高機能ということ、公式ドキュメントがそこそこ充実してることなど、調べればなんとかなるもんです&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;タグなどのソートの方法&lt;br /&gt;
+&lt;a href=&#34;https://gohugo.io/templates/list/&#34;&gt;https://gohugo.io/templates/list/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;まぁ実は、最新投稿表示の際には、表示させたくない静的なサイト（About me ページなど) をはじいたりするために&lt;br /&gt;
+ちょっと工夫が必要だったのですが、その話はまた今度…&lt;/p&gt;
+
+&lt;p&gt;とにかく、デザインをいじるのは難しい…！&lt;br /&gt;
+テンプレートを触ることに特化し、デザインは最後の最後にちょっとだけ手を入れる&lt;br /&gt;
+という方針が吉でした&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.misuzilla.org/&#34;&gt;@mayuki&lt;/a&gt; さん、アドバイスほんとにありがとーヽ(｀▽´)/&lt;/p&gt;
+
+&lt;p&gt;引き続きがんばります…！&lt;/p&gt;
+
+&lt;p&gt;また、RSSフィードが乱れるかもしれませんが、ご容赦くださいませ…&lt;/p&gt;
+
+&lt;p&gt;（次回へ続く）&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[勉強会] meetup app@1 でオープンソースについて発表しました</title>
+      <link>http://h-sao.com/blog/2015/11/21/meetup-app1-opensource/</link>
+      <pubDate>Sat, 21 Nov 2015 16:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2015/11/21/meetup-app1-opensource/</guid>
+      <description>&lt;p&gt;2015/11/21 Sat meetup app@1 という勉強会を開催しました&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://meetupapp.doorkeeper.jp/events/33820&#34;&gt;https://meetupapp.doorkeeper.jp/events/33820&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ビジネスにおけるオープンソースの利用価値&lt;br /&gt;
+&lt;a href=&#34;https://speakerdeck.com/harukasao/21-opensource-value&#34;&gt;https://speakerdeck.com/harukasao/21-opensource-value&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;59c8b5f6dfa649309199bcd9ac3103fe&#34; data-ratio=&#34;1.77777777777778&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;仰々しいタイトルが付いていますが、完全に私見まとめを発表させて頂きました&lt;/p&gt;
+
+&lt;p&gt;オープンソースだけというよりは、最後の方は、普通に製品やサービスのロードマップ、ビジネスモデル的な観点になりました&lt;br /&gt;
+もちろんこれが全てではないと思うし、わたしはマーケティングのプロでもないので間違っているかもしれないですけど&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[Android]Xiaomi Redmi Note2にGooglePlayをインストールする</title>
+      <link>http://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/</link>
+      <pubDate>Tue, 06 Oct 2015 04:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/</guid>
+      <description>
+
+&lt;p&gt;クロスプラットフォームで開発していると、やはり最新の端末が欲しくなりますよね～&lt;/p&gt;
+
+&lt;p&gt;１年以内発売の iPhone と Windows Phone は持っているのですが&lt;br /&gt;
+そろそろ新しい Android が欲しい～と思っていたので、買ってしまいました&lt;/p&gt;
+
+&lt;p&gt;シンガポール旅行に行った際に、ブギスの電気屋街、&lt;a href=&#34;http://www.simlimsquare.com.sg/&#34;&gt;Sim Lim Square（シムリム スクウェア）&lt;/a&gt;で、今をトキメク Xiaomi（しゃおみ）デバイスを購入しました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Xiaomi&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&#34;http://www.mi.com/&#34;&gt;http://www.mi.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_00.JPG&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;全部で6Fまでありましたが、結局1Fのお店の品ぞろえが一番まとまってる印象でした&lt;br /&gt;
+Xiaomi正規店も1Fに入っていました&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;xiaomi-redmi-note-2:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;Xiaomi Redmi Note 2&lt;/h2&gt;
+
+&lt;p&gt;購入したのは、&lt;strong&gt;Xiaomi Redmi Note 2&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table style=&#34;border-style: none;&#34;&gt;
+ &lt;tr&gt;
+   &lt;td style=&#34;border-style: none;&#34;&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_01.JPG&#34;&gt;&lt;/td&gt;
+   &lt;td style=&#34;border-style: none;&#34;&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_02.JPG&#34;&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;画像のように、デフォルトでは中国語のアプリがたくさん入っています&lt;br /&gt;
+そして、Google Play Store は入っていません！&lt;/p&gt;
+
+&lt;p&gt;デフォルトのIMEが Buidu なので、まぁこのままでは、日本語が打てません(&amp;gt;&amp;lt;;)&lt;/p&gt;
+
+&lt;p&gt;なので Google Play Store をインストールする方法をメモしておきます&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;googleplay-installer-apkが最適解:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;GooglePlay installer APKが最適解&lt;/h2&gt;
+
+&lt;p&gt;検索すると色々な方法が出てくるのですが、おそらく、&lt;strong&gt;Google installer のAPKを直接インストールする&lt;/strong&gt;のが、手っ取り早いです&lt;br /&gt;
+（チャイナストアやMIストアからGooglePlayらしきものをインストールしても、わたしの場合は、動作しませんでした）&lt;/p&gt;
+
+&lt;p&gt;情報元はこちらの Xiaomi公式コミュニティ掲示板です&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;[System Tools] Find all the Google Apps in Google installer!&lt;/strong&gt;　　
+&lt;a href=&#34;http://en.miui.com/thread-3998-1-1.html&#34;&gt;http://en.miui.com/thread-3998-1-1.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Xiaomiはすごくコミュニティも発達してるんですよね～ちゃんと英語の掲示板なので、読めました(^_^)&lt;/p&gt;
+
+&lt;p&gt;上記サイトにある、GooglePlayを入れるための Google installer をAPKからインストールします&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Google installer谷歌应用下载器.apk&lt;br /&gt;
+(1009.36 KB, Downloads: 237400)
+&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_03.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;PCから落とすなどするよりも、直接 Xiaomi デバイスからダウンロードした方が、早いと思います&lt;br /&gt;
+もしかしたら、MIアカウントを作らないとダウンロード出来ないかもしれません（わたしは作りました）&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;androidがセキュア過ぎて-思った順番にインストール出来ない:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;Androidがセキュア過ぎて、思った順番にインストール出来ない&lt;/h2&gt;
+
+&lt;p&gt;installer を入れると、以下の４つがインストール可能になります&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Google Services Framework&lt;/li&gt;
+&lt;li&gt;Google Account Manager&lt;/li&gt;
+&lt;li&gt;Google Play services&lt;/li&gt;
+&lt;li&gt;Google Play Store&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;そのままインストールしたら良いので、おそらく、この順番でインストールが走ると思います&lt;br /&gt;
+（ここ、画面キャプチャを取り忘れたので申し訳ない）&lt;/p&gt;
+
+&lt;p&gt;ところが、1番目をインストールしようとすると、本当にインストールしていいかどうかの許可画面が出ますよね、こんな感じに…&lt;br /&gt;
+（イメージ画像です↓↓↓）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_04.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;この画面で 「1番のアプリに対して」ユーザが許可を押そうとするときに、すでに「2番目のインストール」が動いてしまうのです&lt;/p&gt;
+
+&lt;p&gt;結果的に、 「1番のアプリの許可画面」は裏にまわってしまい&lt;br /&gt;
+「2番目のアプリの許可画面」が一番手前に来ることになります&lt;br /&gt;
+つまり最終的には、「4番目のアプリの許可画面」が最前面になります&lt;/p&gt;
+
+&lt;p&gt;入れたいアプリは Google Play Store なので、それでも良いかなと思って&lt;br /&gt;
+４→３→２→１の順にインストールするんですけど、&lt;br /&gt;
+お察しの通り、Google Play Store は起動しません&lt;br /&gt;
+おそらく、Google Services Framework とかが、Google Play Store のインストールに必要なんじゃないかなーと思います&lt;/p&gt;
+
+&lt;p&gt;なので、いったん、Google Play services、Google Play Store をアンインストールし、再度、Google Play services、Google Play Store をインストールします&lt;/p&gt;
+
+&lt;p&gt;いやー(~0~)　これで、わたしの端末で、Google Play が動くようになりました！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_05.JPG&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;その他-xiaomi-デバイスで気づいたところ:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;その他、Xiaomi デバイスで気づいたところ&lt;/h2&gt;
+
+&lt;h4 id=&#34;日本語モードはない:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;日本語モードはない&lt;/h4&gt;
+
+&lt;p&gt;日本語モードは入っていません&lt;br /&gt;
+ROMとか焼き直すと良いらしいですけど、まだやってないです&lt;/p&gt;
+
+&lt;h4 id=&#34;permissions-アプリがうれしい:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;Permissions アプリがうれしい&lt;/h4&gt;
+
+&lt;p&gt;デフォルトで入っている Permittions アプリが最高に便利&lt;/p&gt;
+
+&lt;table style=&#34;border-style: none;&#34;&gt;
+ &lt;tr&gt;
+   &lt;td style=&#34;border-style: none;&#34;&gt;各アプリ毎の許可&lt;/td&gt;
+   &lt;td style=&#34;border-style: none;&#34;&gt;どのアプリが使ってるか&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+   &lt;td style=&#34;border-style: none;&#34;&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_07.png&#34;&gt;&lt;/td&gt;
+   &lt;td style=&#34;border-style: none;&#34;&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_06.png&#34;&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&#34;simは２枚ささる:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;SIMは２枚ささる&lt;/h4&gt;
+
+&lt;p&gt;両方LTEをつかめます&lt;br /&gt;
+ただし、片方がLTEをつかんでいるときは、もう一方はつかめない仕様です&lt;/p&gt;
+
+&lt;p&gt;なので、日本で、１番目にDocomoを刺して、２番目にauを刺す、とかして&lt;br /&gt;
+１番目はLTEでデータ通信、２番目はauで電話とメールのみ&lt;br /&gt;
+とかにしたくても、ちょっと難しいかも&lt;br /&gt;
+日本は今現在、ほぼLTEになってしまってるので、そういう活用は出来なさそうかも…？&lt;/p&gt;
+
+&lt;p&gt;どちらにしても、技適通ってない端末なので、日本では使っちゃダメ&lt;/p&gt;
+
+&lt;h4 id=&#34;まとめ:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;まとめ&lt;/h4&gt;
+
+&lt;p&gt;もろもろ満足しています&lt;br /&gt;
+同じようにシンガポールや中国で購入した方の参考になれば～&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[Hugo]ブログ構築メモ(1)-Hugoとテンプレート</title>
+      <link>http://h-sao.com/blog/2015/09/09/hugoandtheme/</link>
+      <pubDate>Wed, 09 Sep 2015 01:11:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2015/09/09/hugoandtheme/</guid>
+      <description>
+
+&lt;p&gt;Windows10のノートPCに &lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; というスタティックジェネレーターをインストールして、このブログを構築しています&lt;br /&gt;
+作ったブログは、&lt;a href=&#34;https://github.com/h-sao/Blog&#34;&gt;GitHub Pages&lt;/a&gt; にアップして運用しています&lt;/p&gt;
+
+&lt;p&gt;今のところ気に入っているのは&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;ブログの管理が GitHubで行えること&lt;/li&gt;
+&lt;li&gt;ブログ用の運用サーバーが不要なこと (ありがとう！GitHub)&lt;/li&gt;
+&lt;li&gt;GitHubにPushしたら、werckerの自動ビルドでGitHubPagesにアップすること&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;この3点かなー&lt;br /&gt;
+今日は上から2番目までのブログ構築部分（つまりHugoの部分）をメモしておきます&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;インストール-というか単なるexeファイル設置:0ac06b5261622021717117556fa75a4c&#34;&gt;インストール (というか単なるexeファイル設置)&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;最新バージョン取得&lt;br /&gt;
+&lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;https://github.com/spf13/hugo/releases&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;わたしが 2015/9/9 現在ダウンロードしたバージョンは &lt;strong&gt;v0.14&lt;/strong&gt; です&lt;br /&gt;
+Hugoはexeだけで動くので、適当なディレクトリに置きます&lt;br /&gt;
+わたしは&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;C:\Library\Hugo\bin\hugo.exe
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;に設置することにしました&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;ブログ新規作成:0ac06b5261622021717117556fa75a4c&#34;&gt;ブログ新規作成&lt;/h2&gt;
+
+&lt;p&gt;Windows標準のコマンドプロンプトで作業します&lt;br /&gt;
+このとき既に、ブログを作ろうとするディレクトリが存在していたら、ブログ作成は失敗するので、気を付けてください&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;FATAL: 2015/09/09 C:\Users\haruk\Dropbox\sites\Blog already exists and is not empty&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;リネームなどして、再チャレンジ&lt;br /&gt;
+うまくいくと、何の反応もなく終わります&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;C:\Users\haruk\Dropbox\sites&amp;gt;c:\Library\Hugo\bin\hugo.exe new site Blog
+
+C:\Users\haruk\Dropbox\sites&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ディレクトリ構造の確認&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;C:\Users\haruk\Dropbox\sites&amp;gt;cd Blog
+C:\Users\haruk\Dropbox\sites\Blog&amp;gt;dir
+ ドライブ C のボリューム ラベルは MyWindows です
+ ボリューム シリアル番号は xxxx-xxxx です
+
+ C:\Users\haruk\Dropbox\sites\Blog のディレクトリ
+
+ 2015/09/09  20:29&amp;lt;DIR&amp;gt;  .
+ 2015/09/09  20:29&amp;lt;DIR&amp;gt;  ..
+ 2015/09/09  20:28   270 .gitignore
+ 2015/09/09  20:28&amp;lt;DIR&amp;gt;  archetypes
+ 2015/09/09  20:28   107 config.toml
+ 2015/09/09  20:28&amp;lt;DIR&amp;gt;  content
+ 2015/09/09  20:28&amp;lt;DIR&amp;gt;  data
+ 2015/09/09  20:28&amp;lt;DIR&amp;gt;  layouts
+ 2015/09/09  20:2836 README.md
+ 2015/09/09  20:28&amp;lt;DIR&amp;gt;  static
+   3 個のファイル 413 バイト
+   7 個のディレクトリ  80,351,985,664 バイトの空き領域
+
+C:\Users\haruk\Dropbox\sites\Blog&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;あっという間に自作ブログのベースは完了です&lt;br /&gt;
+次はテンプレートを落としてきます&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;テンプレート適用:0ac06b5261622021717117556fa75a4c&#34;&gt;テンプレート適用&lt;/h2&gt;
+
+&lt;p&gt;GitHubから有志の人たちのテンプレートを拝借してきます&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hugo Themes Repo&lt;br /&gt;
+&lt;a href=&#34;https://github.com/spf13/hugoThemes&#34;&gt;https://github.com/spf13/hugoThemes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;たくさんテーマがあるけど、&lt;del&gt;まじでうざいテーマしかない&lt;/del&gt;&lt;br /&gt;
+おっと失礼しました&lt;br /&gt;
+自己主張が激しいテーマが多いです&lt;/p&gt;
+
+&lt;p&gt;とりあえず、GitHubのスター数が多いテンプレートをチェックしてみました&lt;br /&gt;
+中でも一番自分が気に入ったものが、&lt;strong&gt;hyde-x&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;zyro/hyde-x&lt;br /&gt;
+&lt;a href=&#34;https://github.com/zyro/hyde-x&#34;&gt;https://github.com/zyro/hyde-x&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;テンプレートは自分のサイトの顔になるので、色々悩みましたが&lt;br /&gt;
+結局はデザインよりも機能が一番多いのがいいんでない？という発想で選びました&lt;/p&gt;
+
+&lt;p&gt;コンフィグファイルに&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GoogleAnalytics&lt;/li&gt;
+&lt;li&gt;GitHub&lt;/li&gt;
+&lt;li&gt;Bitbucket&lt;/li&gt;
+&lt;li&gt;LinkedIn&lt;/li&gt;
+&lt;li&gt;Facebook&lt;/li&gt;
+&lt;li&gt;Twitter&lt;/li&gt;
+&lt;li&gt;GooglePlus&lt;/li&gt;
+&lt;li&gt;Gravatar&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;が揃っていたので、自分であれこれする手間も省けるかなーという印象&lt;/p&gt;
+
+&lt;p&gt;GooglePlusはもう今ではダサいんじゃね？&lt;br /&gt;
+というアドバイスを受けたので有効にしていません＼(^o^)／&lt;br /&gt;
+同様、Gravatarもいらんやろ…と思いましたが、アイコン代わりに仕方なく使いました&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Gravaterは自分でハッシュ作成をしないといけなかった&lt;br /&gt;
+とゆーか、こんな変換くらいサイトで提供してよ…
+イマドキプログラマに変なところで手間かけさすなよなーいやまじで(&amp;lsquo;ε&amp;rsquo;)&lt;br /&gt;
+&lt;a href=&#34;https://ja.gravatar.com/site/implement/hash/&#34;&gt;https://ja.gravatar.com/site/implement/hash/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;話が多少逸れましたが、この hyde-x をテーマとして、Gitコマンドを使って適用します&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;わたしは、SourceTree内蔵のGitを使ってみました&lt;br /&gt;
+%USERPROFILE%\AppData\Local\Atlassian\SourceTree\git_local\bin&lt;br /&gt;
+(参考)&lt;a href=&#34;https://answers.atlassian.com/questions/245850/how-to-run-a-git-command-as-a-custom-action&#34;&gt;https://answers.atlassian.com/questions/245850/how-to-run-a-git-command-as-a-custom-action&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;c:\Program Files (x86)\Git\bin\git.exe　とか持っているなら、それでも可&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;themes ディレクトリの下で作業します&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;C:\Users\haruk\Dropbox\sites\Blog\themes&amp;gt;C:\Users\haruk\AppData\Local\Atlassian\SourceTree\git_local\bin\git.exe clone https://github.com/zyro/hyde-x
+Cloning into &#39;hyde-x&#39;...
+remote: Counting objects: 358, done.
+remote: Total 358 (delta 0), reused 0 (delta 0), pack-reused 358
+Receiving objects: 100% (358/358), 253.37 KiB | 175.00 KiB/s, done.
+Resolving deltas: 100% (153/153), done.
+Checking connectivity... done.
+
+C:\Users\haruk\Dropbox\sites\Blog\themes&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;C:\Users\haruk\Dropbox\sites\Blog\config.toml&lt;/strong&gt; をhyde-x用に修正しましょう&lt;br /&gt;
+&lt;a href=&#34;https://github.com/zyro/hyde-x&#34;&gt;hyde-xテーマのサイト&lt;/a&gt;に解説が書いてあるので、それをそのままコピペします&lt;br /&gt;
+タイトルやTwitterアカウントなど、自分に必要な情報を更新します&lt;/p&gt;
+
+&lt;p&gt;他のジェネレータも同様ですが、&lt;br /&gt;
+コンフィグは結構、個別テーマに依存した項目になっているので（元のHugoの機能が少ない）別テーマでは使えないかもしれない点は注意です&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;ブログ投稿:0ac06b5261622021717117556fa75a4c&#34;&gt;ブログ投稿&lt;/h2&gt;
+
+&lt;p&gt;contentの 下に postディレクトリを作り、ブログ更新するMDファイルを置きます&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;C:\Users\haruk\Dropbox\sites\Blog\content\post
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;わたしの場合、hyde-x が post の下、という仕様だったからであって&lt;br /&gt;
+他のテンプレでは違うかもしれません&lt;br /&gt;
+とにかく、ここの post の下に、以下のマークダウンファイルを用意します&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;20150909-HugoInstallAndTheme.md&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+++
+date = &amp;quot;2015-09-09T01:11:00+09:00&amp;quot;
+draft = false
+title = &amp;quot;[Hugo]Hugoブログ構築メモ-WindowsインストールとHugoテンプレート&amp;quot;
+categories = [&amp;quot;Hugo&amp;quot;]
+
++++
+
+Windows10のノートPCに [Hugo](http://gohugo.io/) というスタティックジェネレーターをインストールして、このブログを構築しています  
+...（以下略）
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ルート C:\Users\haruk\Dropbox\sites\Blog\　に移動し、Hugoコマンドを実行します&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;C:\Users\haruk\Dropbox\sites\Blog\themes&amp;gt;cd ..
+
+C:\Users\haruk\Dropbox\sites\Blog&amp;gt;c:\Library\Hugo\bin\hugo.exe server -w
+0 draft content
+0 future content
+5 pages created
+1 paginator pages created
+5 categories created
+in 201 ms
+Watching for changes in C:\Users\haruk\Dropbox\sites\Blog/{data,content,layouts,static,themes\hyde-x}
+Serving pages from C:\Users\haruk\Dropbox\sites\Blog\public
+Web Server is available at http://127.0.0.1:1313/
+Press Ctrl+C to stop
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ブラウザで &lt;a href=&#34;http://127.0.0.1:1313/&#34;&gt;http://127.0.0.1:1313/&lt;/a&gt; にアクセスすると、サイトが出来ています&lt;br /&gt;
+実際には、public 以下にHTMLがジェネレートされているので、public以下を自分の GitHub の gh-pages ブランチにアップすると、自前ブログの完成(^^)&lt;/p&gt;
+
+&lt;p&gt;これも余談ですが、CNAMEファイルを置くと、独自ドメインが使えますね　　
+（これ、ファイル名が大文字じゃないとダメでした）&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;わたしのgh-pages の参考です&lt;br /&gt;
+&lt;a href=&#34;https://github.com/h-sao/Blog/tree/gh-pages&#34;&gt;https://github.com/h-sao/Blog/tree/gh-pages&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;簡単に構築は出来たが:0ac06b5261622021717117556fa75a4c&#34;&gt;簡単に構築は出来たが…&lt;/h2&gt;
+
+&lt;p&gt;ここまでだと結構簡単にできますが、ここから先は、自分で頑張るしかない部分です…&lt;/p&gt;
+
+&lt;p&gt;何がって？&lt;br /&gt;
+結局最初に諦めた、デザインのことと&lt;br /&gt;
+CMSに当たり前にあって、Hugoには無い機能を、実装していく必要があります&lt;/p&gt;
+
+&lt;p&gt;今のこのブログは、先ほどの hyde-x テンプレートを改変しまくっています&lt;br /&gt;
+とはいえ、トライ＆エラーの繰り返しだったので、解説まではできないかも…&lt;br /&gt;
+テンプレートやHugo本体の解説は、また気が向いたときにするということで許してください&lt;/p&gt;
+
+&lt;p&gt;それよりは次回は、CIツールである wercker の設定をメモします&lt;br /&gt;
+（次へ続く）&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[Hugo/wercker]ブログを移行しました</title>
+      <link>http://h-sao.com/blog/2015/08/25/moving-blog/</link>
+      <pubDate>Tue, 25 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://h-sao.com/blog/2015/08/25/moving-blog/</guid>
+      <description>&lt;p&gt;ライブドアで書いていたブログ &lt;a href=&#34;http://blog.livedoor.jp/haruka_sao/&#34;&gt;「遥佐保の技術メモ」 http://blog.livedoor.jp/haruka_sao/&lt;/a&gt; を移植することにしました&lt;/p&gt;
+
+&lt;p&gt;思えばライブドアはソースコードを表示するのには適していないブログでした…&lt;br /&gt;
+2008年からなので、もう7年も!?&lt;br /&gt;
+かなり気づくのが遅かったですね…&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hugo - &lt;a href=&#34;https://gohugo.io/&#34;&gt;https://gohugo.io/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;もともと、&lt;strong&gt;Sao`s Closed Circle&lt;/strong&gt; というGitHub Pages の練習用のブログを &lt;a href=&#34;http://jekyllbootstrap.com/&#34;&gt;JekyllBootstrap&lt;/a&gt; で作っていました&lt;br /&gt;
+今回からは、ツールも新たに &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; を使うようにしました&lt;/p&gt;
+
+&lt;p&gt;書くほどのお知らせじゃないですが、このブログはHugoという静的サイトジェネレーターで作っています、静的、つまりただのHTMLです&lt;br /&gt;
+自前運用です&lt;br /&gt;
+ここ5年くらい前？から流行っているらしいです&lt;br /&gt;
+最近は技術系以外でもよく使われているらしいです&lt;/p&gt;
+
+&lt;p&gt;どのジェネレーターが良いかと言うのは、よくわからないですけど&lt;br /&gt;
+&lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;（Rubyベース）が有名なのかなーと思います&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Static Site Generators&lt;/strong&gt; まとめによるとJekyllはGithubスター数がトップですね&lt;br /&gt;
+（Static Site Generatorsは、ちまたの静的サイトジネェレータ一覧です）&lt;br /&gt;
+&lt;a href=&#34;https://staticsitegenerators.net/&#34;&gt;https://staticsitegenerators.net/&lt;/a&gt;&lt;br /&gt;
+こうしてみると、Hugoは後発ながら結構人気みたい&lt;/p&gt;
+
+&lt;p&gt;Jekyllはとても高機能で（イイコトなんですけど）&lt;br /&gt;
+でもわたし、Rubyがよくわからなくて（すまん…Web屋さんじゃないの…）&lt;br /&gt;
+そんなときにGoで作られた、ちょっぱや生成のHugoを知ってしまったら、もうJekyllには戻れなくなりました、haha&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Jekyllの方が事例も多いし、検索ですぐ解決できるけど、ちょっとジェネレートの時間がかかるのが弱点かも&lt;br /&gt;
+たいして記事数のないわたしでもそう思いましたから、記事数の多い人に取ったらちょっとイライラの原因だったかもしれませんね&lt;/p&gt;
+
+&lt;p&gt;Hugoは、機能あれもない、これもないの、(ヾﾉ･∀･`)ﾅｲﾅｲずくし&lt;br /&gt;
+けどそこが良い！シンプルで良いんです！(_≧Д≦)ﾉ彡☆&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;wercker - &lt;a href=&#34;http://wercker.com/&#34;&gt;http://wercker.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;さらに、生成するだけでなく、CIサービスである &lt;a href=&#34;http://wercker.com/&#34;&gt;wercker&lt;/a&gt; を使って、GitHubにプッシュしたら自動でデプロイするという仕組みにしました&lt;br /&gt;
+これを構築したメモもおいおい記載していくつもりです&lt;br /&gt;
+（そうしないと自分が忘れてしまう…）&lt;/p&gt;
+
+&lt;p&gt;このブログ自体もまだまだ作り中で、色々と足りてない機能が多いのですが、勉強しながら追加していこうと思います&lt;/p&gt;
+
+&lt;p&gt;過去ブログの情報移植もこれからです&lt;br /&gt;
+（RSSが変に更新されるかもしれません）&lt;/p&gt;
+
+&lt;p&gt;気持ちも新たに、役立つ情報を発信していければと思っています！&lt;/p&gt;
+
+&lt;p&gt;またよろしくお願いしまーす！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Anonymous Struct of C</title>
+      <link>http://h-sao.com/blog/2014/02/24/c-anonymous-struct/</link>
+      <pubDate>Mon, 24 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://h-sao.com/blog/2014/02/24/c-anonymous-struct/</guid>
+      <description>&lt;p&gt;Hi,&lt;/p&gt;
+
+&lt;p&gt;It is very tedious to think about the name of a struct when you use to struct only once.&lt;br /&gt;
+In such a case, Anonymous structure comes in handy.&lt;/p&gt;
+
+&lt;p&gt;It is assigned to the anonymous struct&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;struct{
+        char    1st_name[0x80];
+        char    2nd_name[0x80];
+ 
+    } name_tbl[] = {
+        { &amp;quot;Isami&amp;quot;,   &amp;quot;Kondou&amp;quot; },
+        { &amp;quot;Toshizo&amp;quot;, &amp;quot;Hijikata&amp;quot; },
+        { &amp;quot;Kogorou&amp;quot;, &amp;quot;Kathura&amp;quot; },
+    };
+ 
+    for( i = 0; i &amp;lt; sizeof( name_tbl ); i ++ ){
+        printf( &amp;quot;%s\n&amp;quot;, name_tbl[ i ].1st_name );
+        printf( &amp;quot;%s\n&amp;quot;, name_tbl[ i ].2nd_name );
+    } 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This code is very straightforward!&lt;/p&gt;
+
+&lt;p&gt;This method is effective only when there is no necessity that you use 2 times and this structure.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>C,C&#43;&#43;,C&#43;&#43;/CLI sample program</title>
+      <link>http://h-sao.com/blog/2014/01/31/cpp-sample-program/</link>
+      <pubDate>Fri, 31 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://h-sao.com/blog/2014/01/31/cpp-sample-program/</guid>
+      <description>
+
+&lt;p&gt;Hi,&lt;/p&gt;
+
+&lt;h2 id=&#34;c-program:71d03e7a0a57c60955d3d7e735a1eb01&#34;&gt;C program&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;c00.c
+#include &amp;lt;stdio.h&amp;gt;
+
+int main()
+{
+    printf(&amp;quot;This is a native C program.\n&amp;quot;);
+    return 0;
+} 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;compile&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; cl.exe c00.c
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;c-program-1:71d03e7a0a57c60955d3d7e735a1eb01&#34;&gt;C++ program&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;c01.cpp
+#include &amp;lt;iostream&amp;gt;
+
+int main()
+{
+    std::cout &amp;lt;&amp;lt; &amp;quot;This is a native C++ program.&amp;quot; &amp;lt;&amp;lt; std::endl;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;compile&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; cl.exe /EHsc c01.cpp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;c-cli-program:71d03e7a0a57c60955d3d7e735a1eb01&#34;&gt;C++/CLI program&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;c02.cpp
+int main()
+{
+    System::Console::WriteLine(&amp;quot;This is a Visual C++ program.&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;compile&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; cl.exe /clr c02.cpp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That is very interesting!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Lightning Talk:How to program C&#43;&#43;/CX</title>
+      <link>http://h-sao.com/blog/2014/01/29/how-to-program-cppcx/</link>
+      <pubDate>Wed, 29 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://h-sao.com/blog/2014/01/29/how-to-program-cppcx/</guid>
+      <description>&lt;p&gt;Hi,&lt;/p&gt;
+
+&lt;p&gt;The other day, I spoke about C++/CX in Lightning Talk.&lt;/p&gt;
+
+&lt;p&gt;Click here for article&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://jyurimaru.info/data/20140118MetroTokyo03/20140118_cppcx_LT_en.pptx&#34;&gt;PPTX-How to program c++/CX&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://jyurimaru.info/data/20140118MetroTokyo03/20140118_cppcx_LT_en.pdf&#34;&gt;PDF -How to program c++/CX&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Take care!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>http://h-sao.com/blog/2014/01/28/hello-world/</link>
+      <pubDate>Tue, 28 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://h-sao.com/blog/2014/01/28/hello-world/</guid>
+      <description>&lt;p&gt;Hi,&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m Sao Haruka :)&lt;/p&gt;
+
+&lt;p&gt;Japanese programmer&lt;/p&gt;
+
+&lt;p&gt;I have started this English blog since Jan 28, 2014.&lt;/p&gt;
+
+&lt;p&gt;Thank you.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
