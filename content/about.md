@@ -31,7 +31,7 @@ Feb 28, 2015 [めとべや大阪#30](http://metrostyledev.net/index.php/event/20
 開発者が "とりあえず" 使うためのClient Hyper-V
 
 Jan 31, 2015 [2015 MVP Community Camp Osaka](http://connpass.com/event/10478/)  
-クロスプラットフォーム開発の紹介
+クロスプラットフォーム開発の紹介 [\[SpeakerDeck\]](https://speakerdeck.com/harukasao/2015-mvp-community-camp-osaka) [\[PPTX\]](http://jyurimaru.info/data/20150131MVPCommunityCamp/20150131_corss-platform_dev_public.pptx)
 
 ## 2014
 Dec 20, 2014 [C++11勉強会＠大阪（ゆるめ）](https://atnd.org/events/60042)  
@@ -282,20 +282,20 @@ seminar total number 12
 - [C++テンプレート完全ガイド読書会](https://sites.google.com/site/efcpp01/) (Jun 20, 2014 - Feb 23, 2015)  
 seminar total number 25
 
+- [Boost.勉強会](http://boostjp.github.io/study_meeting.html) (#12大阪: Jun 22, 2012, #16大阪: Sep 19, 2014)  
+seminar total number 2
+
 - [Exceptional C++読書会](https://sites.google.com/site/efcpp01/) (Jun 21, 2013 - Dec 21, 2013)  
 seminar total number 21
 
 - [Room metro 東京](http://metrostyledev.net/) (Feb 27, 2013 - Jun 6, 2013)  
 seminar total number 3
 
-- [Effective C++読書会](https://sites.google.com/site/efcpp01/) (Jun 18, 2012 - Dec 18, 2012)  
-seminar total number 12
-
 - [MetroStyleDevelper](http://metrostyledev.net/) (Jan 21, 2012 - Jan 23, 2013)   
 seminar total number 11
 
-- [Boost.勉強会](http://boostjp.github.io/study_meeting.html) (#12大阪: Jun 22, 2012, #16大阪: Sep 19, 2014)  
-seminar total number 2
+- [Effective C++読書会](https://sites.google.com/site/efcpp01/) (Jun 18, 2012 - Dec 18, 2012)  
+seminar total number 12
 
 - [Silverlightを囲む会](http://silverlightsquare.com/) (Mar 14, 2008 - Aug 25, 2012)  
 seminar total number 29
