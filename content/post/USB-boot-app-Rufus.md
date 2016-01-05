@@ -1,7 +1,7 @@
 +++
 date = "2016-01-06T01:50:00+09:00"
 draft = false
-title = "[Utility] ISOファイルからBoot用USBを作成する"
+title = "[Utility] ISOファイルからBoot用USBを作成するアプリRufus"
 tags = ["Utility"]
 +++
 
