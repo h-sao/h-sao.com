@@ -6,8 +6,50 @@
     <description>Recent content in Posts on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 04 Jan 2016 16:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 06 Jan 2016 01:50:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Utility] ISOファイルからBoot用USBを作成する</title>
+      <link>http://h-sao.com/blog/2016/01/06/usb-boot-app-rufus/</link>
+      <pubDate>Wed, 06 Jan 2016 01:50:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/01/06/usb-boot-app-rufus/</guid>
+      <description>&lt;p&gt;Windows10 の isoファイルからUBSインストールメディアを作りたいと思ったときに、便利なソフトを見つけました&lt;/p&gt;
+
+&lt;p&gt;実際は、「USB ブート 作成」などなどで検索すれば、やり方はいくらでも載ってるんですけど&lt;br /&gt;
+省コストで、ぱぱっとやりたいことを実現してくれたので、紹介しておきます&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rufus&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&#34;http://rufus.akeo.ie/&#34;&gt;http://rufus.akeo.ie/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;このソフトを使ったら、簡単にUBSインストールメディアを作成出来ます&lt;/p&gt;
+
+&lt;p&gt;配布されているアプリはEXE単体のみ！&lt;br /&gt;
+2016年1月6日現在、バージョンは　Rufus2.6 で、&amp;rdquo;rufus-2.6.exe&amp;rdquo; のみで動作します&lt;br /&gt;
+シンプルで良いですね&lt;/p&gt;
+
+&lt;p&gt;利用した感じは以下のような雰囲気でした&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ISOイメージを選択&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/USB-boot-app-Rufus_00.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;USBの元データ消しちゃうよーの警告&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/USB-boot-app-Rufus_01.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;UBSインストールメディア作成中&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/USB-boot-app-Rufus_02.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;日本語にも対応しているし、お手軽でおススメです&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[Diary] 2016年もよろしくお願いします</title>
