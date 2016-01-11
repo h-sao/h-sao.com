@@ -90,10 +90,10 @@
 <pre><code>// BG_shader.shader
 // 最小限の ShaderLab
 Shader &quot;Custom/BG_shader&quot; {
-	SubShader
-	{
-		Pass {}
-	}
+    SubShader
+    {
+        Pass {}
+    }
 }
 </code></pre>
 
@@ -111,47 +111,47 @@ Shader &quot;Custom/BG_shader&quot; {
 <pre><code>// BG_shader.shader
 // 黄色くグラデーションする
 Shader &quot;Custom/BG_shader&quot; {
-	SubShader
-	{
-		Pass{
-			CGPROGRAM
-			#pragma vertex vert
-			#pragma fragment frag
+    SubShader
+    {
+        Pass{
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
 
-			// VS2015のグラフィックデバックON
-			#pragma enable_d3d11_debug_symbols
+            // VS2015のグラフィックデバックON
+            #pragma enable_d3d11_debug_symbols
 
-			struct VertexInput {
-				float4 pos:	POSITION;		// 3D空間座標
-				float2 uv:	TEXCOORD0;		// テクスチャ座標
-			};
+            struct VertexInput {
+                float4 pos:  POSITION;    // 3D空間座標
+                float2 uv:   TEXCOORD0;   // テクスチャ座標
+            };
 
-			struct VertexOutput {
-				float4 v:	SV_POSITION;	// 2D座標
-				float2 uv:	TEXCOORD0;		// テクスチャ座標
-			};
+            struct VertexOutput {
+                float4 v:    SV_POSITION; // 2D座標
+                float2 uv:   TEXCOORD0;   // テクスチャ座標
+            };
 
-			// 頂点 shader
-			VertexOutput vert(VertexInput input)
-			{
-				VertexOutput output;
-				output.v = mul(UNITY_MATRIX_MVP, input.pos);
-				output.uv = input.uv;
+            // 頂点 shader
+            VertexOutput vert(VertexInput input)
+            {
+                VertexOutput output;
+                output.v = mul(UNITY_MATRIX_MVP, input.pos);
+                output.uv = input.uv;
 
-				return output;
-			}
+                return output;
+            }
 
-			// ピクセル shader
-			fixed4 frag( VertexOutput output) : SV_Target
-			{
-				float2 tex = output.uv;
-				// 黄色→白色のグラデーション
-				return fixed4( 1.0, 1.0, 1.0 - tex.y, 1.0);
-			}
+            // ピクセル shader
+            fixed4 frag( VertexOutput output) : SV_Target
+            {
+                float2 tex = output.uv;
+                // 黄色→白色のグラデーション
+                return fixed4( 1.0, 1.0, 1.0 - tex.y, 1.0);
+            }
 
-			ENDCG
-		}
-	}
+            ENDCG
+        }
+    }
 }
 </code></pre>
 
@@ -181,10 +181,10 @@ Sprite Renderer に登録するマテリアルには、テクスチャが必要�
 シェーダーに戻って、言われているとおり、 _MainTex にテクスチャを登録します</p>
 
 <pre><code>// BG_shader.shader の Properties を追加
-	Properties
-	{
-		_MainTex( &quot;2D Texture&quot;, 2D ) = &quot;white&quot; {}
-	}
+    Properties
+    {
+        _MainTex( &quot;2D Texture&quot;, 2D ) = &quot;white&quot; {}
+    }
 </code></pre>
 
 <p>テクスチャを登録できるし、デフォルトでは white テクスチャを使いますよ。という意味になります<br />
@@ -358,6 +358,10 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
             <div class="list-group">
                 
                     
+                        <a href="/blog/2016/01/12/windows-printscreen-key-on-mac/" class="list-group-item">[Mac] Windows Bootcamp 時の PrintScreen</a><br>
+                    
+                
+                    
                         <a href="/blog/2016/01/11/unity-shader-2dsprite/" class="list-group-item">[Unity] 2D Spriteにシェーダーをかける</a><br>
                     
                 
@@ -389,10 +393,6 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
                 
                     
                         <a href="/blog/2015/08/25/moving-blog/" class="list-group-item">[Hugo/wercker]ブログを移行しました</a><br>
-                    
-                
-                    
-                        <a href="/blog/2014/02/24/c-anonymous-struct/" class="list-group-item">Anonymous Struct of C</a><br>
                     
                 
             </div>
@@ -461,6 +461,16 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
                     
                         <span class="badge">3</span>
                         hugo
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/mac" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        mac
                     </a>
                     </u> &nbsp; 
                     

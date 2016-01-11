@@ -6,8 +6,57 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 11 Jan 2016 18:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 12 Jan 2016 02:00:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Mac] Windows Bootcamp 時の PrintScreen</title>
+      <link>http://h-sao.com/blog/2016/01/12/windows-printscreen-key-on-mac/</link>
+      <pubDate>Tue, 12 Jan 2016 02:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/01/12/windows-printscreen-key-on-mac/</guid>
+      <description>
+
+&lt;h2 id=&#34;windows-on-mac-の時の-printscreen-キーは:28ff6b8500383674a2e314be4d4c1516&#34;&gt;Windows on Mac の時の PrintScreen キーは？&lt;/h2&gt;
+
+&lt;p&gt;Macの上で、BootCamp で Windows を動作させているときにはにゃんと！「Print Screen」キーがありません（そらそうだ）&lt;br /&gt;
+当然なんですけど、いつもいつも検索しては忘れて…を繰り返すので、いい加減、覚える&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;画面全体コピー&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;アクティブウィンドウコピー&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Windows&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Print Screen&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Alt + Print Screen&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Windows on Mac&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Fn + Shift + F11&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Fn + Shift + Option + F11&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Mac&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Shft + Command + 3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Shft + Command + 4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;（Mac の Shft + Command + 4　は、画面の範囲選択です）&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
     
     <item>
       <title>[Unity] 2D Spriteにシェーダーをかける</title>
@@ -44,10 +93,10 @@
 &lt;pre&gt;&lt;code&gt;// BG_shader.shader
 // 最小限の ShaderLab
 Shader &amp;quot;Custom/BG_shader&amp;quot; {
-	SubShader
-	{
-		Pass {}
-	}
+    SubShader
+    {
+        Pass {}
+    }
 }
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -65,47 +114,47 @@ Shader &amp;quot;Custom/BG_shader&amp;quot; {
 &lt;pre&gt;&lt;code&gt;// BG_shader.shader
 // 黄色くグラデーションする
 Shader &amp;quot;Custom/BG_shader&amp;quot; {
-	SubShader
-	{
-		Pass{
-			CGPROGRAM
-			#pragma vertex vert
-			#pragma fragment frag
+    SubShader
+    {
+        Pass{
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
 
-			// VS2015のグラフィックデバックON
-			#pragma enable_d3d11_debug_symbols
+            // VS2015のグラフィックデバックON
+            #pragma enable_d3d11_debug_symbols
 
-			struct VertexInput {
-				float4 pos:	POSITION;		// 3D空間座標
-				float2 uv:	TEXCOORD0;		// テクスチャ座標
-			};
+            struct VertexInput {
+                float4 pos:  POSITION;    // 3D空間座標
+                float2 uv:   TEXCOORD0;   // テクスチャ座標
+            };
 
-			struct VertexOutput {
-				float4 v:	SV_POSITION;	// 2D座標
-				float2 uv:	TEXCOORD0;		// テクスチャ座標
-			};
+            struct VertexOutput {
+                float4 v:    SV_POSITION; // 2D座標
+                float2 uv:   TEXCOORD0;   // テクスチャ座標
+            };
 
-			// 頂点 shader
-			VertexOutput vert(VertexInput input)
-			{
-				VertexOutput output;
-				output.v = mul(UNITY_MATRIX_MVP, input.pos);
-				output.uv = input.uv;
+            // 頂点 shader
+            VertexOutput vert(VertexInput input)
+            {
+                VertexOutput output;
+                output.v = mul(UNITY_MATRIX_MVP, input.pos);
+                output.uv = input.uv;
 
-				return output;
-			}
+                return output;
+            }
 
-			// ピクセル shader
-			fixed4 frag( VertexOutput output) : SV_Target
-			{
-				float2 tex = output.uv;
-				// 黄色→白色のグラデーション
-				return fixed4( 1.0, 1.0, 1.0 - tex.y, 1.0);
-			}
+            // ピクセル shader
+            fixed4 frag( VertexOutput output) : SV_Target
+            {
+                float2 tex = output.uv;
+                // 黄色→白色のグラデーション
+                return fixed4( 1.0, 1.0, 1.0 - tex.y, 1.0);
+            }
 
-			ENDCG
-		}
-	}
+            ENDCG
+        }
+    }
 }
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -135,10 +184,10 @@ Sprite Renderer に登録するマテリアルには、テクスチャが必要�
 シェーダーに戻って、言われているとおり、 _MainTex にテクスチャを登録します&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;// BG_shader.shader の Properties を追加
-	Properties
-	{
-		_MainTex( &amp;quot;2D Texture&amp;quot;, 2D ) = &amp;quot;white&amp;quot; {}
-	}
+    Properties
+    {
+        _MainTex( &amp;quot;2D Texture&amp;quot;, 2D ) = &amp;quot;white&amp;quot; {}
+    }
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;テクスチャを登録できるし、デフォルトでは white テクスチャを使いますよ。という意味になります&lt;br /&gt;

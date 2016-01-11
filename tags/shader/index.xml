@@ -44,10 +44,10 @@
 &lt;pre&gt;&lt;code&gt;// BG_shader.shader
 // 最小限の ShaderLab
 Shader &amp;quot;Custom/BG_shader&amp;quot; {
-	SubShader
-	{
-		Pass {}
-	}
+    SubShader
+    {
+        Pass {}
+    }
 }
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -65,47 +65,47 @@ Shader &amp;quot;Custom/BG_shader&amp;quot; {
 &lt;pre&gt;&lt;code&gt;// BG_shader.shader
 // 黄色くグラデーションする
 Shader &amp;quot;Custom/BG_shader&amp;quot; {
-	SubShader
-	{
-		Pass{
-			CGPROGRAM
-			#pragma vertex vert
-			#pragma fragment frag
+    SubShader
+    {
+        Pass{
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
 
-			// VS2015のグラフィックデバックON
-			#pragma enable_d3d11_debug_symbols
+            // VS2015のグラフィックデバックON
+            #pragma enable_d3d11_debug_symbols
 
-			struct VertexInput {
-				float4 pos:	POSITION;		// 3D空間座標
-				float2 uv:	TEXCOORD0;		// テクスチャ座標
-			};
+            struct VertexInput {
+                float4 pos:  POSITION;    // 3D空間座標
+                float2 uv:   TEXCOORD0;   // テクスチャ座標
+            };
 
-			struct VertexOutput {
-				float4 v:	SV_POSITION;	// 2D座標
-				float2 uv:	TEXCOORD0;		// テクスチャ座標
-			};
+            struct VertexOutput {
+                float4 v:    SV_POSITION; // 2D座標
+                float2 uv:   TEXCOORD0;   // テクスチャ座標
+            };
 
-			// 頂点 shader
-			VertexOutput vert(VertexInput input)
-			{
-				VertexOutput output;
-				output.v = mul(UNITY_MATRIX_MVP, input.pos);
-				output.uv = input.uv;
+            // 頂点 shader
+            VertexOutput vert(VertexInput input)
+            {
+                VertexOutput output;
+                output.v = mul(UNITY_MATRIX_MVP, input.pos);
+                output.uv = input.uv;
 
-				return output;
-			}
+                return output;
+            }
 
-			// ピクセル shader
-			fixed4 frag( VertexOutput output) : SV_Target
-			{
-				float2 tex = output.uv;
-				// 黄色→白色のグラデーション
-				return fixed4( 1.0, 1.0, 1.0 - tex.y, 1.0);
-			}
+            // ピクセル shader
+            fixed4 frag( VertexOutput output) : SV_Target
+            {
+                float2 tex = output.uv;
+                // 黄色→白色のグラデーション
+                return fixed4( 1.0, 1.0, 1.0 - tex.y, 1.0);
+            }
 
-			ENDCG
-		}
-	}
+            ENDCG
+        }
+    }
 }
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -135,10 +135,10 @@ Sprite Renderer に登録するマテリアルには、テクスチャが必要�
 シェーダーに戻って、言われているとおり、 _MainTex にテクスチャを登録します&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;// BG_shader.shader の Properties を追加
-	Properties
-	{
-		_MainTex( &amp;quot;2D Texture&amp;quot;, 2D ) = &amp;quot;white&amp;quot; {}
-	}
+    Properties
+    {
+        _MainTex( &amp;quot;2D Texture&amp;quot;, 2D ) = &amp;quot;white&amp;quot; {}
+    }
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;テクスチャを登録できるし、デフォルトでは white テクスチャを使いますよ。という意味になります&lt;br /&gt;

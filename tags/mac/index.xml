@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac on Effectiveさお</title>
+    <link>http://h-sao.com/tags/mac/</link>
+    <description>Recent content in Mac on Effectiveさお</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Tue, 12 Jan 2016 02:00:00 +0900</lastBuildDate>
+    <atom:link href="http://h-sao.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Mac] Windows Bootcamp 時の PrintScreen</title>
+      <link>http://h-sao.com/blog/2016/01/12/windows-printscreen-key-on-mac/</link>
+      <pubDate>Tue, 12 Jan 2016 02:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/01/12/windows-printscreen-key-on-mac/</guid>
+      <description>
+
+&lt;h2 id=&#34;windows-on-mac-の時の-printscreen-キーは:28ff6b8500383674a2e314be4d4c1516&#34;&gt;Windows on Mac の時の PrintScreen キーは？&lt;/h2&gt;
+
+&lt;p&gt;Macの上で、BootCamp で Windows を動作させているときにはにゃんと！「Print Screen」キーがありません（そらそうだ）&lt;br /&gt;
+当然なんですけど、いつもいつも検索しては忘れて…を繰り返すので、いい加減、覚える&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;画面全体コピー&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;アクティブウィンドウコピー&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Windows&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Print Screen&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Alt + Print Screen&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Windows on Mac&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Fn + Shift + F11&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Fn + Shift + Option + F11&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Mac&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Shft + Command + 3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Shft + Command + 4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;（Mac の Shft + Command + 4　は、画面の範囲選択です）&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
