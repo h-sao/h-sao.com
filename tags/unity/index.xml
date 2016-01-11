@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unity on Effectiveさお</title>
+    <link>http://h-sao.com/tags/unity/</link>
+    <description>Recent content in Unity on Effectiveさお</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 11 Jan 2016 18:00:00 +0900</lastBuildDate>
+    <atom:link href="http://h-sao.com/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Unity] 2D Spriteにシェーダーをかける</title>
+      <link>http://h-sao.com/blog/2016/01/11/unity-shader-2dsprite/</link>
+      <pubDate>Mon, 11 Jan 2016 18:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/01/11/unity-shader-2dsprite/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://h-sao.com/blog/2016/01/04/hello2016/&#34;&gt;今年の初めに&lt;/a&gt;、「Game a Week」という開発手法がすごい！っと書きました&lt;br /&gt;
+とりあえず、週に一度は成果物を公開する、の部分を真似してみようかなと&lt;br /&gt;
+（やってみて気が付きましたが、実は1週間って、結構長いです）&lt;/p&gt;
+
+&lt;p&gt;今をトキメクGame Engine: &lt;strong&gt;Unity&lt;/strong&gt; について、去年から触る機会があり、ポチポチとやっております&lt;/p&gt;
+
+&lt;p&gt;そしてこれは既知の情報ですが、先週は2Dスプライトにシンプルなグラデーションのシェーダーを適用してみました&lt;/p&gt;
+
+&lt;p&gt;やってみると判るのですが、Unity ではスプライトにシンプルシェーダーだけを適用しようと思っても出来なくて、&lt;br /&gt;
+先に結論を書いておくと、スプライトとして扱う場合は必ず何かしらのテクスチャアセットが必要でした&lt;br /&gt;
+そのメモと感想文になります&lt;/p&gt;
+
+&lt;p&gt;2016年1月11日現在、Unityのバージョンは 5.3.1 です&lt;/p&gt;
+
+&lt;h1 id=&#34;unity-のシェーダー言語-shaderlab:9da674eae95fd048ddb2e278fe6c87b1&#34;&gt;Unity のシェーダー言語：ShaderLab&lt;/h1&gt;
+
+&lt;p&gt;Unity のシェーダーは 「ShaderLab」 という Unity オリジナルのシェーダー言語で記載することになります&lt;br /&gt;
+といっても HLSL のラッパーのような言語なので、Unity で使うときのお作法であり、Unity と シェーダーの仲介役の言語、と思って良いみたい&lt;/p&gt;
+
+&lt;h2 id=&#34;最小限の-shaderlab:9da674eae95fd048ddb2e278fe6c87b1&#34;&gt;最小限の ShaderLab&lt;/h2&gt;
+
+&lt;p&gt;最小限の ShaderLab の枠組みはこんな感じ&lt;br /&gt;
+（これより削ると、エラーが出た）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// BG_shader.shader
+// 最小限の ShaderLab
+Shader &amp;quot;Custom/BG_shader&amp;quot; {
+	SubShader
+	{
+		Pass {}
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;実際に、このカスタムシェーダーをマテリアルに適用するとこんな感じ&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_00.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;何もしないマテリアルを作ることが出来ました&lt;/p&gt;
+
+&lt;h2 id=&#34;シンプルなグラデーション:9da674eae95fd048ddb2e278fe6c87b1&#34;&gt;シンプルなグラデーション&lt;/h2&gt;
+
+&lt;p&gt;今回、ゲーム背景を単純なカラーグラデーションにしようと思ったので、そういうシンプルシェーダーを書いていきます&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// BG_shader.shader
+// 黄色くグラデーションする
+Shader &amp;quot;Custom/BG_shader&amp;quot; {
+	SubShader
+	{
+		Pass{
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+
+			// VS2015のグラフィックデバックON
+			#pragma enable_d3d11_debug_symbols
+
+			struct VertexInput {
+				float4 pos:	POSITION;		// 3D空間座標
+				float2 uv:	TEXCOORD0;		// テクスチャ座標
+			};
+
+			struct VertexOutput {
+				float4 v:	SV_POSITION;	// 2D座標
+				float2 uv:	TEXCOORD0;		// テクスチャ座標
+			};
+
+			// 頂点 shader
+			VertexOutput vert(VertexInput input)
+			{
+				VertexOutput output;
+				output.v = mul(UNITY_MATRIX_MVP, input.pos);
+				output.uv = input.uv;
+
+				return output;
+			}
+
+			// ピクセル shader
+			fixed4 frag( VertexOutput output) : SV_Target
+			{
+				float2 tex = output.uv;
+				// 黄色→白色のグラデーション
+				return fixed4( 1.0, 1.0, 1.0 - tex.y, 1.0);
+			}
+
+			ENDCG
+		}
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ちょっとマテリアルではわかりにくいですけど、一応、線形にグラデーションされています&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_01.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h1 id=&#34;2d-sprite-に適用する方法:9da674eae95fd048ddb2e278fe6c87b1&#34;&gt;2D Sprite に適用する方法&lt;/h1&gt;
+
+&lt;p&gt;シンプルなシェーダーとマテリアルが出来たので、実際に、Sprite に登録します&lt;/p&gt;
+
+&lt;h2 id=&#34;sprite-と-material-だけでは足りない:9da674eae95fd048ddb2e278fe6c87b1&#34;&gt;Sprite と Material だけでは足りない&lt;/h2&gt;
+
+&lt;p&gt;ただし、ちょっとここでクセがあって、このマテリアルを Sprite にアタッチしても、何も起こりません&lt;br /&gt;
+それどころか、ワーニングメッセージが…&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_02.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Material does not have a _MainTex texture property. It is required for SpriteRenderer.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;あら…&lt;br /&gt;
+Sprite Renderer に登録するマテリアルには、テクスチャが必要ということみたいです&lt;br /&gt;
+シェーダーに戻って、言われているとおり、 _MainTex にテクスチャを登録します&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// BG_shader.shader の Properties を追加
+	Properties
+	{
+		_MainTex( &amp;quot;2D Texture&amp;quot;, 2D ) = &amp;quot;white&amp;quot; {}
+	}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;テクスチャを登録できるし、デフォルトでは white テクスチャを使いますよ。という意味になります&lt;br /&gt;
+ちなみに、_MainTex() の内蔵テクスチャには&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;white&lt;/li&gt;
+&lt;li&gt;black&lt;/li&gt;
+&lt;li&gt;gray&lt;/li&gt;
+&lt;li&gt;bump&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;の4種類が用意されています&lt;br /&gt;
+* ShaderLab: Properties - Unity Documentation&lt;br /&gt;
+ &lt;a href=&#34;http://docs.unity3d.com/Manual/SL-Properties.html&#34;&gt;http://docs.unity3d.com/Manual/SL-Properties.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_03.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;マテリアルにテクスチャを持つ設定にしました&lt;/p&gt;
+
+&lt;h2 id=&#34;sprite-には-ベースとしてリアルな-texture-が必要:9da674eae95fd048ddb2e278fe6c87b1&#34;&gt;Sprite には、ベースとしてリアルな Texture が必要&lt;/h2&gt;
+
+&lt;p&gt;Sprite のワーニングも消えたのですが、やはりシーンに Sprite object が表示されません&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_04.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;どうやら、Sprite はあくまで、テクスチャ画像を表示させるための機能に特化しており、マテリアルだけでは動作しない様です&lt;/p&gt;
+
+&lt;p&gt;仕方がないので、Sprite 用のテクスチャを用意します&lt;br /&gt;
+サイズ感がよくわからなかったのですが、 white.jpg という 8*8 のテクスチャを Assets の下に入れました&lt;/p&gt;
+
+&lt;p&gt;Sprite の Inspector にて、Sprite Rendere &amp;gt; Sprite にて white テクスチャを選択します&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;あぁ…これ、デフォルトで白いテクスチャくらい、システムで用意してほしいなかと思いましたが、まぁしょーがないです&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_05.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;でたー&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_06.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h1 id=&#34;まとめ:9da674eae95fd048ddb2e278fe6c87b1&#34;&gt;まとめ&lt;/h1&gt;
+
+&lt;p&gt;シンプルな 3D model では&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Mesh Renderer&lt;/strong&gt;&lt;br /&gt;
+→ &lt;strong&gt;Material&lt;/strong&gt; (たとえば Standard Shader)&lt;br /&gt;
+　→ &lt;strong&gt;Texture&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;という構造なので、&lt;/p&gt;
+
+&lt;p&gt;2D Sprite では&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sprite Renderer&lt;/strong&gt;&lt;br /&gt;
+→ &lt;strong&gt;Material&lt;/strong&gt; or &lt;strong&gt;Texture&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;なのかなーと思っていたのですが、実際には&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sprite Renderer&lt;/strong&gt;&lt;br /&gt;
+→ &lt;strong&gt;Material&lt;/strong&gt;&lt;br /&gt;
+　→ &lt;strong&gt;Texture&lt;/strong&gt; (Shader の _MainTex() )&lt;br /&gt;
+→ &lt;strong&gt;Sprite&lt;/strong&gt;&lt;br /&gt;
+　→ &lt;strong&gt;Texture&lt;/strong&gt; (リアル画像)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;という構造が必要でした&lt;/p&gt;
+
+&lt;p&gt;これを受けて、&lt;/p&gt;
+
+&lt;p&gt;「え、シンプルなシェーダーのみを適用したいなら、&lt;br /&gt;
+Sprite でなくて 3D Plane Model にしたらいいんでない？」&lt;/p&gt;
+
+&lt;p&gt;という疑問が出てきましたが、&lt;br /&gt;
+実際のゲーム制作においては、シチュエーション依存ですかね…&lt;br /&gt;
+今回のわたしの場合は、Sprite を採用しました&lt;/p&gt;
+
+&lt;p&gt;この記事の Unity プロジェクト（ソース、アセット）を Github に置いておきます&lt;br /&gt;
+&lt;a href=&#34;https://github.com/h-sao/UnitySampleCode/tree/master/SpriteGradationalShader&#34;&gt;https://github.com/h-sao/UnitySampleCode/tree/master/SpriteGradationalShader&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;何かの参考になれば幸いです&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
