@@ -57,6 +57,64 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2014/02/24/c-anonymous-struct/" title="Anonymous Struct of C">Anonymous Struct of C</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2014.02.24">2014.02.24</time>
+&middot; Tagged in
+    
+    <a href="http://h-sao.com/tags/cpp">cpp</a>
+    
+    
+
+</span>
+</footer>
+ </footer>
+                <p>Hi,</p>
+
+<p>It is very tedious to think about the name of a struct when you use to struct only once.<br />
+In such a case, Anonymous structure comes in handy.</p>
+
+<p>It is assigned to the anonymous struct</p>
+
+<pre><code class="language-cpp">struct{
+        char    1st_name[0x80];
+        char    2nd_name[0x80];
+ 
+    } name_tbl[] = {
+        { &quot;Isami&quot;,   &quot;Kondou&quot; },
+        { &quot;Toshizo&quot;, &quot;Hijikata&quot; },
+        { &quot;Kogorou&quot;, &quot;Kathura&quot; },
+    };
+ 
+    for( i = 0; i &lt; sizeof( name_tbl ); i ++ ){
+        printf( &quot;%s\n&quot;, name_tbl[ i ].1st_name );
+        printf( &quot;%s\n&quot;, name_tbl[ i ].2nd_name );
+    } 
+</code></pre>
+
+<p>This code is very straightforward!</p>
+
+<p>This method is effective only when there is no necessity that you use 2 times and this structure.</p>
+
+            <ul class="share-buttons">
+    <li>Share this article:</li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f02%2f24%2fc-anonymous-struct%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook"></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Anonymous%20Struct%20of%20C&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f02%2f24%2fc-anonymous-struct%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Tweet this article"></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f02%2f24%2fc-anonymous-struct%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google&#43;"></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f02%2f24%2fc-anonymous-struct%2f&title=Anonymous%20Struct%20of%20C" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title="Share on Linkedin"></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2014/01/31/cpp-sample-program/" title="C,C&#43;&#43;,C&#43;&#43;/CLI sample program">C,C&#43;&#43;,C&#43;&#43;/CLI sample program</a></h1>
 
 <footer class="post-info">Posted on <span class="post-meta"><time datetime="2014.01.31">2014.01.31</time>
@@ -295,6 +353,10 @@ int main()
             <div class="list-group">
                 
                     
+                        <a href="/blog/2016/03/27/information-ebisu-cpp-vol3/" class="list-group-item">[勉強会] ebisu_effective_modern.cpp vol.3やりますよ</a><br>
+                    
+                
+                    
                         <a href="/blog/2016/01/12/windows-printscreen-key-on-mac/" class="list-group-item">[Mac] Windows Bootcamp 時の PrintScreen</a><br>
                     
                 
@@ -326,10 +388,6 @@ int main()
                 
                     
                         <a href="/blog/2015/09/09/hugoandtheme/" class="list-group-item">[Hugo]ブログ構築メモ(1)-Hugoとテンプレート</a><br>
-                    
-                
-                    
-                        <a href="/blog/2015/08/25/moving-blog/" class="list-group-item">[Hugo/wercker]ブログを移行しました</a><br>
                     
                 
             </div>
@@ -364,9 +422,9 @@ int main()
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/cpp" style="font-size: 17px;">
+                    <a href="http://h-sao.com//tags/cpp" style="font-size: 20px;">
                     
-                        <span class="badge">3</span>
+                        <span class="badge">4</span>
                         cpp
                     </a>
                     </u> &nbsp; 
@@ -388,6 +446,16 @@ int main()
                     
                         <span class="badge">2</span>
                         diary
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/ebisucpp" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        ebisucpp
                     </a>
                     </u> &nbsp; 
                     

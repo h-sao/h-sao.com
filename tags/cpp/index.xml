@@ -6,8 +6,48 @@
     <description>Recent content in Cpp on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 24 Feb 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 27 Mar 2016 20:30:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[勉強会] ebisu_effective_modern.cpp vol.3やりますよ</title>
+      <link>http://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</link>
+      <pubDate>Sun, 27 Mar 2016 20:30:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</guid>
+      <description>
+
+&lt;h2 id=&#34;ebisu-effective-modern-cppって:09f27b4d8c49aabd39d7184e2e33816a&#34;&gt;ebisu_effective_modern.cppって？&lt;/h2&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Information-ebisu-cpp-vol3_00.png&#34; alt=&#34;&#34; /&gt;
+
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;東京の恵比寿でC++について、みんなの意見を聞きながら本を読み進める勉強会を開いています&lt;/p&gt;
+
+&lt;p&gt;昔、大阪でC++の読書会を開催していたのですが、それが結構役に立って面白かったので、東京でも開催してみよう！と思い、始めてみました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;ebisu_effective_modern.cpp vol.3&lt;br /&gt;
+2016/3/31 (木) 20:00-21:30 東京恵比寿&lt;br /&gt;
+&lt;a href=&#34;http://ebisu-effective-modern-cpp.connpass.com/event/29324/&#34;&gt;http://ebisu-effective-modern-cpp.connpass.com/event/29324/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ちなみに大阪はこちらで絶賛開催中ですよ～！&lt;br /&gt;
+大阪C++読書会&lt;br /&gt;
+&lt;a href=&#34;http://cpp-osaka.connpass.com/&#34;&gt;http://cpp-osaka.connpass.com/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ネタが無いと勉強や会話もしずらいので、&lt;br /&gt;
+&lt;strong&gt;「Effective Modern C ーC11/14プログラムを進化させる42項目」&lt;/strong&gt; を元に進めています&lt;/p&gt;
+
+&lt;p&gt;今回は、&lt;strong&gt;５章 右辺値参照、ムーブセマンティックス、完全転送&lt;/strong&gt; について…&lt;br /&gt;
+前回の vol.2 では、基本的なムーブの動きを簡単に抑えた程度になったので、あまり深いところまでは進めませんでした&lt;br /&gt;
+書籍の内容にぐいぐい追いつけるように頑張りますよ～&lt;/p&gt;
+
+&lt;p&gt;興味ある方はどうぞ、お気軽にお越しください(^^)/&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Anonymous Struct of C</title>
