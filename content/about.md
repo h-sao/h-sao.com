@@ -13,7 +13,14 @@ mail: haruka.sao@gmail.com
 
 # Slides, Publications
 
+## 2016
+
+Jan 26, 2016 Microsoft Xbox イベント（インターナル）  
+Open Source Software - Full C# Game Engine "Xenko"
+
 ## 2015
+
+Nov 25, 2016 Family Game Forum in Shanghai（インターナル）  
 
 Nov 21, 2015 [meepup app@1](http://meetupapp.io/)  
 ビジネスにおけるオープンソースの利用価値 [\[SpeakerDeck\]](https://speakerdeck.com/harukasao/21-opensource-value) [\[PPTX\]](http://jyurimaru.info/data/20151121OpenSourceValue/20151121_OpenSourceValue.pptx)
@@ -272,9 +279,14 @@ Work in progress...
 
 # 主催勉強会
 
-- meetup app (Nov 21, 2015 - currently)
+- ebisu_effective_modern.cpp (Mar 3, 2016 - currently)  
+seminar total number 3
 
-- Metro.cs (Sep 16, 2015 - currently)
+- meetup app (Nov 21, 2015 - currently)  
+seminar total number 1
+
+- Metro.cs (Sep 16, 2015 - currently)  
+seminar total number 1
 
 - [Room metro 大阪](http://metrostyledev.net/) (Jan 28, 2013 - Jul 25, 2015)  
 seminar total number 12
