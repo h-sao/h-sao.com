@@ -103,7 +103,7 @@ c:\\Users\\[ユーザ名]\\.ssh\\ に保存された id_rsa.pub （わたしの�
 
 自分のアカウントの **Settings > SSH and GPG keys > New SSH key** をクリックすると、先ほど作った公開鍵を登録することができます
 
-<img src="/pic/Generate-ssh-key-for GitHub_01.png" style="border:solid 5px #e6e6e6"/>
+<img src="/pic/Generate-ssh-key-for-GitHub_01.png" style="border:solid 5px #e6e6e6"/>
 
 先ほど作った id_rsa.pub 公開鍵を登録しましょう！  
 くれぐれも id_rsa の秘密鍵の方ではないので、お間違え無く！
