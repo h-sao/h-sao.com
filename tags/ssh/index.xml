@@ -116,7 +116,7 @@ $
 
 &lt;p&gt;自分のアカウントの &lt;strong&gt;Settings &amp;gt; SSH and GPG keys &amp;gt; New SSH key&lt;/strong&gt; をクリックすると、先ほど作った公開鍵を登録することができます&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for GitHub_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
 
 &lt;p&gt;先ほど作った id_rsa.pub 公開鍵を登録しましょう！&lt;br /&gt;
 くれぐれも id_rsa の秘密鍵の方ではないので、お間違え無く！&lt;/p&gt;
