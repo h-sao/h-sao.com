@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://h-sao.com/</loc>
-    <lastmod>2016-03-27T20:30:00+09:00</lastmod>
+    <lastmod>2016-05-07T15:23:30+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</loc>
+    <lastmod>2016-05-07T15:23:30+09:00</lastmod>
   </url>
   
   <url>
@@ -60,6 +65,11 @@
   <url>
     <loc>http://h-sao.com/blog/2015/08/25/moving-blog/</loc>
     <lastmod>2015-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/blog/2015/05/11/install-log-for-homebrew/</loc>
+    <lastmod>2015-05-11T03:05:44+09:00</lastmod>
   </url>
   
   <url>
