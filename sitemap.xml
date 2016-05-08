@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://h-sao.com/</loc>
-    <lastmod>2016-05-07T15:23:30+09:00</lastmod>
+    <lastmod>2016-05-08T14:00:00+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/blog/2016/05/08/change-unity-window-size/</loc>
+    <lastmod>2016-05-08T14:00:00+09:00</lastmod>
   </url>
   
   <url>
@@ -70,6 +75,16 @@
   <url>
     <loc>http://h-sao.com/blog/2015/05/11/install-log-for-homebrew/</loc>
     <lastmod>2015-05-11T03:05:44+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/blog/2015/04/13/download-pmp-logo/</loc>
+    <lastmod>2015-04-13T22:30:04+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/blog/2015/03/13/install-android-apk/</loc>
+    <lastmod>2015-03-13T22:00:51+09:00</lastmod>
   </url>
   
   <url>

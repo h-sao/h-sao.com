@@ -6,8 +6,177 @@
     <description>Recent content in Posts on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 07 May 2016 15:23:30 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 08 May 2016 14:00:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Unity] PC実行時のWindowsサイズの設定の仕方＆起動時フック</title>
+      <link>http://h-sao.com/blog/2016/05/08/change-unity-window-size/</link>
+      <pubDate>Sun, 08 May 2016 14:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/05/08/change-unity-window-size/</guid>
+      <description>
+
+&lt;p&gt;Unityのバグなのか、わたしの使い方が悪いのか？&lt;br /&gt;
+PC実行時のウィンドウサイズの設定が、思うようにできなかったので&lt;br /&gt;
+その解決メモです&lt;/p&gt;
+
+&lt;h1 id=&#34;pcで実行したら全画面:a0801ebf74281b4200348d8e7619641e&#34;&gt;PCで実行したら全画面…&lt;/h1&gt;
+
+&lt;p&gt;Unityのプロジェクトファイルを新規作成して&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;File&amp;rdquo; → &amp;ldquo;Build &amp;amp; Run&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;を選択すると、ビルドが走り、実際に exe が実行されます&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Unity-window-size_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;へぇ、画面解像度( Screen resolution )とか、ここで変えることが出来るんだ～&lt;br /&gt;
+と思って解像度設定を変更し、&amp;rdquo;Play!&amp;rdquo; で起動させると、いちおう思ったサイズで起動することが出来ます&lt;/p&gt;
+
+&lt;h1 id=&#34;unityプロジェクトに-plyaer-settings-がある:a0801ebf74281b4200348d8e7619641e&#34;&gt;Unityプロジェクトに Plyaer Settings がある&lt;/h1&gt;
+
+&lt;p&gt;ユーザに毎回ウィンドウサイズを選択させるのも、なんだかねぇ…ということで、ちゃんと設定したいと思います&lt;/p&gt;
+
+&lt;p&gt;Unityのメニューの&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;File&amp;rdquo; → &amp;ldquo;Build Settings&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Build Settings を選択すると、ビルドに関する設定が変更できるようです&lt;br /&gt;
+下にある、&amp;rdquo;Player Settings&amp;rdquo; を選択すると、
+インスペクタウィンドウが出ます&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Unity-window-size_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;ここで、起動時の Player Settings が出来るようですが…&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Unity-window-size_02.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;「Resolution」 の 「&lt;strong&gt;Default Is Full Screen&lt;/strong&gt;」 のチェックボックスを外しましょう&lt;br /&gt;
+ついでに、「Standalone Player Options」 の &lt;strong&gt;「Display Resolution Dialog」 を　「Disable」&lt;/strong&gt;　にしておきます&lt;/p&gt;
+
+&lt;p&gt;これで exe を実行するたびに 「FixSizeWindows Configuration」 は開かなくなります&lt;/p&gt;
+
+&lt;p&gt;「Resolution」 には、「Default Screen Width/Height」 がありますが、、、&lt;br /&gt;
+ここで設定を変えても、ウィンドウサイズは変わりません&lt;br /&gt;
+（なんでやねん…＞＜）&lt;/p&gt;
+
+&lt;p&gt;どうやら、「前回起動したときのウィンドウサイズ」で起動するみたいです…&lt;br /&gt;
+Development Build にしても、しなくても、結果は一緒でした&lt;br /&gt;
+初期起動のサイズは、ここじゃないのかな…(´・ω・｀)&lt;/p&gt;
+
+&lt;p&gt;余談ですが、ここで変えた設定は、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;.\ProjectSettings\ProjectSettings.asset&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;の中に、テキストファイルで保存されます&lt;/p&gt;
+
+&lt;h1 id=&#34;ウィンドウサイズはプログラムで変更:a0801ebf74281b4200348d8e7619641e&#34;&gt;ウィンドウサイズはプログラムで変更&lt;/h1&gt;
+
+&lt;p&gt;仕方がないので、スクリプトで記載します&lt;/p&gt;
+
+&lt;p&gt;Unityのメニュー &lt;strong&gt;Assets &amp;gt; Create &amp;gt; C# Script&lt;/strong&gt; で新規スクリプトを作ります&lt;/p&gt;
+
+&lt;p&gt;わたしは適当に GameInitial と名付けました（Unity の Project 内に、GameInitial の C#ファイルが追加されます）&lt;/p&gt;
+
+&lt;h2 id=&#34;いーっちばん最初のゲーム起動時をフックしたい:a0801ebf74281b4200348d8e7619641e&#34;&gt;いーっちばん最初のゲーム起動時をフックしたい？&lt;/h2&gt;
+
+&lt;p&gt;もちろん、ウィンドウサイズを変更したいためです&lt;br /&gt;
+解像度が小さい/大きいなど&lt;br /&gt;
+起動したときに、クライアント端末によってウィンドウサイズを変えたいとかあると思います&lt;/p&gt;
+
+&lt;p&gt;たぶん、現状の Unity 5.3系の最速フック方法は、&lt;strong&gt;RuntimeInitializeOnLoadMethod&lt;/strong&gt; ではないかと…&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;RuntimeInitializeOnLoadMethodAttribute&lt;br /&gt;
+&lt;a href=&#34;http://docs.unity3d.com/ScriptReference/RuntimeInitializeOnLoadMethodAttribute.html&#34;&gt;http://docs.unity3d.com/ScriptReference/RuntimeInitializeOnLoadMethodAttribute.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ユーザがアクションを起こす前に動くらしいですが&lt;br /&gt;
+実際やってみると、ロゴ起動画面の方が先に動くので&lt;br /&gt;
+ほんとの意味の一番最初のウィンドウサイズは、ここでは遅いみたいです&lt;/p&gt;
+
+&lt;p&gt;一応サンプルコード&lt;br /&gt;
+MonoBehaviour は無くても動くみたいです&lt;br /&gt;
+あと、オブジェクトなどにスクリプトをアタッチしなくてもOKです&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c#&#34;&gt;using UnityEngine;
+
+public class GameInitial //: MonoBehaviour
+{
+    [RuntimeInitializeOnLoadMethod]
+    static void OnRuntimeMethodLoad()
+    {
+        Screen.SetResolution( 640, 960, false, 60);
+
+    }
+
+    //// Use this for initialization
+    //void Start()
+    //{
+
+    //}
+
+    //// Update is called once per frame
+    //void Update()
+    //{
+
+    //}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;自分が知らないだけかもしれませんが、 RuntimeInitializeOnLoadMethodAttribute より早い時点で自分の処理を差し込むことは出来ないみたい…&lt;/p&gt;
+
+&lt;h1 id=&#34;ウィンドウサイズを指定できるコマンドライン引数がある:a0801ebf74281b4200348d8e7619641e&#34;&gt;ウィンドウサイズを指定できるコマンドライン引数がある！&lt;/h1&gt;
+
+&lt;p&gt;結局、起動時のウィンドウサイズは結局どこで更新するんでしょうか…？&lt;/p&gt;
+
+&lt;p&gt;実は、飛び道具的ですが、exe の引数に渡せるみたいです…！（そこか…＞＜&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;「Unity スタンドアロンプレイヤーのコマンドライン引数」の項
+&lt;a href=&#34;http://docs.unity3d.com/ja/current/Manual/CommandLineArguments.html&#34;&gt;http://docs.unity3d.com/ja/current/Manual/CommandLineArguments.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;自分で作った exe の引数に&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;-screen-width ：幅&lt;/li&gt;
+&lt;li&gt;-screen-height ：高さ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;を渡してあげればOKでした&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; xxx.exe -screen-width 300 -screen-height 300
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;小さいスクリーンサイズで起動したのちに…&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Unity-window-size_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;自分の指定した Screen.SetResolution サイズで起動&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Unity-window-size_04.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;つまり、引数に自分で好きな数値を渡せるようになってるので&lt;br /&gt;
+それと、Screen.SetResolution の指定を同じ大きさにしておけば&lt;br /&gt;
+最初から自分自身でサイズを調整できますね&lt;/p&gt;
+
+&lt;p&gt;なんだろなー&lt;br /&gt;
+なんで起動時のサイズくらい、すんなり設定できないんでしょうか…謎や～&lt;/p&gt;
+
+&lt;p&gt;もしかしたら、無料版では起動時のロゴを外せないようにするために、プログラマは触れないようになってるのかなー？&lt;/p&gt;
+
+&lt;p&gt;ともあれ、意図したことは出来るようになっているので、まぁ良しとします！&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続</title>
@@ -1620,125 +1789,141 @@ CMSに当たり前にあって、Hugoには無い機能を、実装していく�
       <pubDate>Mon, 11 May 2015 03:05:44 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2015/05/11/install-log-for-homebrew/</guid>
-      <description>&lt;div&gt;&lt;div&gt;&lt;b&gt;Homebrew&lt;/b&gt;とは、Mac上のアプリケーションパッケージを管理するソフトです&lt;br /&gt;&lt;br /&gt;詳しくはこちら↓↓↓に書かれているのですが、自分のメモとログを残します&lt;br /&gt;&lt;br /&gt;&lt;/div&gt;＊MacにHomebrewをインストールする - Qiita&lt;/div&gt;&lt;div&gt;&lt;a  target=&#34;_blank&#34; href=&#34;http://qiita.com/is0me/items/475fdbc4d770534f9ef1&#34;&gt;http://qiita.com/is0me/items/475fdbc4d770534f9ef1&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;＊Homebrewの本家&lt;br /&gt;&lt;a  target=&#34;_blank&#34; href=&#34;http://brew.sh/&#34;&gt;http://brew.sh/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;Macでのインストールログ&lt;br /&gt;&lt;/div&gt;&lt;blockquote&gt;&lt;div&gt;&lt;div&gt;&lt;span  style=&#34;color: rgb(255, 0, 255);&#34;&gt;## Homebrew入ってない状態&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;MacProSao:~ Sao$ brew&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;-bash: brew: command not found&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&amp;nbsp;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;span  style=&#34;color: rgb(255, 0, 255);&#34;&gt;## VIMでバッシュプロファイル作成&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;MacProSao:~ Sao$ &lt;span  style=&#34;color: rgb(255, 0, 255);&#34;&gt;vim .bash_profile&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;br /&gt;&lt;div&gt;&lt;div&gt;MacProSao:~ Sao$ &lt;span  style=&#34;color: rgb(255, 0, 255);&#34;&gt;more .bash_profile&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;span  style=&#34;color: rgb(255, 0, 255);&#34;&gt;export PATH=/usr/local:$PATH&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;br /&gt;&lt;div&gt;&lt;div&gt;MacProSao:~ Sao$ pwd&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;/Users/Sao&lt;/div&gt;&lt;/div&gt;&lt;br /&gt;&lt;div&gt;&lt;div&gt;&lt;span  style=&#34;color: rgb(255, 0, 255);&#34;&gt;## /usr/local の作成&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;MacProSao:usr Sao$ &lt;span  style=&#34;color: rgb(255, 0, 255);&#34;&gt;sudo mkdir /usr/local/&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;br /&gt;&lt;div&gt;&lt;div&gt;WARNING: Improper use of the sudo command could lead to data loss&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;or the deletion of important system files. Please double-check your&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;typing when using sudo. Type &#34;man sudo&#34; for more information.&lt;/div&gt;&lt;/div&gt;&lt;br /&gt;&lt;div&gt;&lt;div&gt;To proceed, enter your password, or type Ctrl-C to abort.&lt;/div&gt;&lt;/div&gt;&lt;br /&gt;&lt;div&gt;&lt;div&gt;Password:&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;MacProSao:usr Sao$ ls -al&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;total 8&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;drwxr-xr-x@ &amp;nbsp; 12 root &amp;nbsp;wheel &amp;nbsp; &amp;nbsp;408 &amp;nbsp;5 11 02:24 .&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;drwxr-xr-x &amp;nbsp; &amp;nbsp;30 root &amp;nbsp;wheel &amp;nbsp; 1088 &amp;nbsp;5 11 02:17 ..&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;drwxr-xr-x &amp;nbsp; &amp;nbsp; 5 root &amp;nbsp;wheel &amp;nbsp; &amp;nbsp;170 &amp;nbsp;9 10 &amp;nbsp;2014 X11&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;lrwxr-xr-x &amp;nbsp; &amp;nbsp; 1 root &amp;nbsp;wheel &amp;nbsp; &amp;nbsp; &amp;nbsp;3 &amp;nbsp;2 22 18:01 X11R6 -&amp;gt; X11&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;drwxr-xr-x &amp;nbsp;1053 root &amp;nbsp;wheel &amp;nbsp;35802 &amp;nbsp;5 &amp;nbsp;2 23:30 bin&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;drwxr-xr-x &amp;nbsp; 257 root &amp;nbsp;wheel &amp;nbsp; 8738 &amp;nbsp;5 11 01:25 include&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;drwxr-xr-x &amp;nbsp; 271 root &amp;nbsp;wheel &amp;nbsp; 9214 &amp;nbsp;5 11 01:25 lib&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;drwxr-xr-x &amp;nbsp; 170 root &amp;nbsp;wheel &amp;nbsp; 5780 &amp;nbsp;4 26 13:43 libexec&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;drwxr-xr-x &amp;nbsp; &amp;nbsp; 2 root &amp;nbsp;wheel &amp;nbsp; &amp;nbsp; 68 &amp;nbsp;5 11 02:24 local&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;drwxr-xr-x &amp;nbsp; 244 root &amp;nbsp;wheel &amp;nbsp; 8296 &amp;nbsp;4 26 13:40 sbin&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;drwxr-xr-x &amp;nbsp; &amp;nbsp;44 root &amp;nbsp;wheel &amp;nbsp; 1496 &amp;nbsp;5 11 01:25 share&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;drwxr-xr-x &amp;nbsp; &amp;nbsp; 4 root &amp;nbsp;wheel &amp;nbsp; &amp;nbsp;136 &amp;nbsp;2 22 17:56 standalone&lt;/div&gt;&lt;/div&gt;&lt;br /&gt;&lt;div&gt;&lt;div&gt;&lt;span  style=&#34;color: rgb(255, 0, 255);&#34;&gt;## Homebrewのインストール&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;MacProSao:usr Sao$ &lt;span  style=&#34;color: rgb(255, 0, 255);&#34;&gt;ruby -e &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&#34;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;==&amp;gt; This script will install:&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;/usr/local/bin/brew&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;/usr/local/Library/...&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;/usr/local/share/man/man1/brew.1&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;==&amp;gt; The following directories will be made group writable:&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;/usr/local/.&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;==&amp;gt; The following directories will have their group set to admin:&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;/usr/local/.&lt;/div&gt;&lt;/div&gt;&lt;br /&gt;&lt;div&gt;&lt;div&gt;Press RETURN to continue or any other key to abort&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;==&amp;gt; /usr/bin/sudo /bin/chmod g+rwx /usr/local/.&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;==&amp;gt; /usr/bin/sudo /usr/bin/chgrp admin /usr/local/.&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;==&amp;gt; /usr/bin/sudo /bin/mkdir /Library/Caches/Homebrew&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;==&amp;gt; /usr/bin/sudo /bin/chmod g+rwx /Library/Caches/Homebrew&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;==&amp;gt; Downloading and installing Homebrew...&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;remote: Counting objects: 3572, done.&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;remote: Compressing objects: 100% (3421/3421), done.&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;remote: Total 3572 (delta 35), reused 1459 (delta 18), pack-reused 0&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;Receiving objects: 100% (3572/3572), 2.72 MiB | 2.47 MiB/s, done.&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;Resolving deltas: 100% (35/35), done.&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;From https://github.com/Homebrew/homebrew&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&amp;nbsp;* [new branch] &amp;nbsp; &amp;nbsp; &amp;nbsp;master &amp;nbsp; &amp;nbsp; -&amp;gt; origin/master&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;HEAD is now at c007efc Riak 2.1.1&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;==&amp;gt; Installation successful!&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;==&amp;gt; Next steps&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;Run `brew help` to get started&lt;/div&gt;&lt;/div&gt;&lt;br /&gt;&lt;div&gt;&lt;div&gt;&lt;span  style=&#34;color: rgb(255, 0, 255);&#34;&gt;## プロファイル読み込み&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;MacProSao:~ Sao$ &lt;span  style=&#34;color: rgb(255, 0, 255);&#34;&gt;source .bash_profile&lt;/span&gt;&amp;nbsp;&lt;/div&gt;&lt;/div&gt;&lt;br /&gt;&lt;div&gt;&lt;div&gt;&lt;span  style=&#34;color: rgb(255, 0, 255);&#34;&gt;## バージョン確認&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;MacProSao:~ Sao$ &lt;span  style=&#34;color: rgb(255, 0, 255);&#34;&gt;brew -v&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;span  style=&#34;color: rgb(255, 0, 255);&#34;&gt;Homebrew 0.9.5&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&amp;nbsp;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;MacProSao:~ Sao$&amp;nbsp;&lt;/div&gt;&lt;/div&gt;&lt;/blockquote&gt;
-&lt;div&gt;Hugoを入れるためにインストールしてみました&lt;br /&gt;ついにわたしもGoを使う日が来るなんて…(ﾟ∇ﾟ ;)&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Anonymous Struct of C</title>
-      <link>http://h-sao.com/blog/2014/02/24/c-anonymous-struct/</link>
-      <pubDate>Mon, 24 Feb 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://h-sao.com/blog/2014/02/24/c-anonymous-struct/</guid>
-      <description>&lt;p&gt;Hi,&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;Homebrew&lt;/strong&gt; とは、Mac上のアプリケーションパッケージを管理するソフトです&lt;/p&gt;
 
-&lt;p&gt;It is very tedious to think about the name of a struct when you use to struct only once.&lt;br /&gt;
-In such a case, Anonymous structure comes in handy.&lt;/p&gt;
+&lt;p&gt;詳しくはこちら↓↓↓に書かれているのですが、自分のメモとログを残します&lt;/p&gt;
 
-&lt;p&gt;It is assigned to the anonymous struct&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;MacにHomebrewをインストールする - Qiita&lt;br /&gt;
+&lt;a href=&#34;http://qiita.com/is0me/items/475fdbc4d770534f9ef1&#34;&gt;http://qiita.com/is0me/items/475fdbc4d770534f9ef1&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;struct{
-        char    1st_name[0x80];
-        char    2nd_name[0x80];
+&lt;li&gt;&lt;p&gt;Homebrewの本家&lt;br /&gt;
+&lt;a href=&#34;http://brew.sh/&#34;&gt;http://brew.sh/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Macでのインストールログ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;## Homebrew入ってない状態
+MacProSao:~ Sao$ brew
+-bash: brew: command not found
  
-    } name_tbl[] = {
-        { &amp;quot;Isami&amp;quot;,   &amp;quot;Kondou&amp;quot; },
-        { &amp;quot;Toshizo&amp;quot;, &amp;quot;Hijikata&amp;quot; },
-        { &amp;quot;Kogorou&amp;quot;, &amp;quot;Kathura&amp;quot; },
-    };
+## VIMでバッシュプロファイル作成
+MacProSao:~ Sao$ vim .bash_profile
+
+MacProSao:~ Sao$ more .bash_profile 
+export PATH=/usr/local:$PATH
+
+MacProSao:~ Sao$ pwd
+/Users/Sao
+
+## /usr/local の作成 
+MacProSao:usr Sao$ sudo mkdir /usr/local/
+
+WARNING: Improper use of the sudo command could lead to data loss
+or the deletion of important system files. Please double-check your
+typing when using sudo. Type &amp;quot;man sudo&amp;quot; for more information.
+
+To proceed, enter your password, or type Ctrl-C to abort.
+
+Password:
+MacProSao:usr Sao$ ls -al
+total 8
+drwxr-xr-x@   12 root  wheel    408  5 11 02:24 .
+drwxr-xr-x    30 root  wheel   1088  5 11 02:17 ..
+drwxr-xr-x     5 root  wheel    170  9 10  2014 X11
+lrwxr-xr-x     1 root  wheel      3  2 22 18:01 X11R6 -&amp;gt; X11
+drwxr-xr-x  1053 root  wheel  35802  5  2 23:30 bin
+drwxr-xr-x   257 root  wheel   8738  5 11 01:25 include
+drwxr-xr-x   271 root  wheel   9214  5 11 01:25 lib
+drwxr-xr-x   170 root  wheel   5780  4 26 13:43 libexec
+drwxr-xr-x     2 root  wheel     68  5 11 02:24 local
+drwxr-xr-x   244 root  wheel   8296  4 26 13:40 sbin
+drwxr-xr-x    44 root  wheel   1496  5 11 01:25 share
+drwxr-xr-x     4 root  wheel    136  2 22 17:56 standalone
+
+## Homebrewのインストール
+MacProSao:usr Sao$ ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
+==&amp;gt; This script will install:
+/usr/local/bin/brew
+/usr/local/Library/...
+/usr/local/share/man/man1/brew.1
+==&amp;gt; The following directories will be made group writable:
+/usr/local/.
+==&amp;gt; The following directories will have their group set to admin:
+/usr/local/.
+
+Press RETURN to continue or any other key to abort
+==&amp;gt; /usr/bin/sudo /bin/chmod g+rwx /usr/local/.
+==&amp;gt; /usr/bin/sudo /usr/bin/chgrp admin /usr/local/.
+==&amp;gt; /usr/bin/sudo /bin/mkdir /Library/Caches/Homebrew
+==&amp;gt; /usr/bin/sudo /bin/chmod g+rwx /Library/Caches/Homebrew
+==&amp;gt; Downloading and installing Homebrew...
+remote: Counting objects: 3572, done.
+remote: Compressing objects: 100% (3421/3421), done.
+remote: Total 3572 (delta 35), reused 1459 (delta 18), pack-reused 0
+Receiving objects: 100% (3572/3572), 2.72 MiB | 2.47 MiB/s, done.
+Resolving deltas: 100% (35/35), done.
+From https://github.com/Homebrew/homebrew
+ * [new branch]      master     -&amp;gt; origin/master
+HEAD is now at c007efc Riak 2.1.1
+==&amp;gt; Installation successful!
+==&amp;gt; Next steps
+Run `brew help` to get started
+
+## プロファイル読み込み 
+MacProSao:~ Sao$ source .bash_profile 
+
+## バージョン確認
+MacProSao:~ Sao$ brew -v
+Homebrew 0.9.5
  
-    for( i = 0; i &amp;lt; sizeof( name_tbl ); i ++ ){
-        printf( &amp;quot;%s\n&amp;quot;, name_tbl[ i ].1st_name );
-        printf( &amp;quot;%s\n&amp;quot;, name_tbl[ i ].2nd_name );
-    } 
+MacProSao:~ Sao$ 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This code is very straightforward!&lt;/p&gt;
-
-&lt;p&gt;This method is effective only when there is no necessity that you use 2 times and this structure.&lt;/p&gt;
+&lt;p&gt;Hugoを入れるためにインストールしてみました&lt;br /&gt;
+ついにわたしもGoを使う日が来るなんて…(ﾟ∇ﾟ ;)&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>C,C&#43;&#43;,C&#43;&#43;/CLI sample program</title>
-      <link>http://h-sao.com/blog/2014/01/31/cpp-sample-program/</link>
-      <pubDate>Fri, 31 Jan 2014 00:00:00 +0000</pubDate>
+      <title>[PMP] PMPロゴのダウンロード場所</title>
+      <link>http://h-sao.com/blog/2015/04/13/download-pmp-logo/</link>
+      <pubDate>Mon, 13 Apr 2015 22:30:04 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/01/31/cpp-sample-program/</guid>
+      <guid>http://h-sao.com/blog/2015/04/13/download-pmp-logo/</guid>
+      <description>&lt;p&gt;何かと探したけど、全く判らなかった…&lt;br /&gt;&lt;br /&gt;「PMP ロゴ ダウンロード」で検索に引っかかる情報が、個人的に理解できなかった&lt;br /&gt;古いのか、単にわたしのITリテラシーが低いだけなのか…&lt;br /&gt;&lt;br /&gt;PMIサイトの中にあります&lt;br /&gt;&lt;br /&gt;&lt;img  class=&#34;pict&#34; hspace=&#34;5&#34; alt=&#34;PMPLogo&#34; border=&#34;0&#34; height=&#34;462&#34; width=&#34;510&#34; src=&#34;http://h-sao.com/pic/Download-PMP-Logo_00.png&#34;&gt;&lt;br /&gt;&lt;br /&gt;&lt;blockquote&gt;Certifications&lt;br /&gt;　&amp;gt;Certification Program&lt;br /&gt;　　&amp;gt;左の MyPMP&lt;br /&gt;　　　&amp;gt; PMP Logo&lt;/blockquote&gt;&lt;br /&gt;ここからダウンロードできます&lt;br /&gt;&lt;br /&gt;Certifications のページって、思いつかなかったですよ…(&amp;gt;o&amp;lt;&amp;ldquo;)&lt;br /&gt;&lt;br /&gt;ちなみに、追い打ちをかけるように、Chrome で JPGをダウンロードがうまく出来なかった&lt;br /&gt;
+　※ PMP_Business_Card_Logo.ashx　って……（＞＜）&lt;br /&gt;&lt;br /&gt;IEだと、JPGロゴがダウンロード出来ましたよ&amp;nbsp;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[Android] 開発者向けオプション表示とAPKインストールコマンド</title>
+      <link>http://h-sao.com/blog/2015/03/13/install-android-apk/</link>
+      <pubDate>Fri, 13 Mar 2015 22:00:51 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2015/03/13/install-android-apk/</guid>
       <description>
 
-&lt;p&gt;Hi,&lt;/p&gt;
+&lt;p&gt;ずいぶん昔から出ている情報ですが、メモっときます&lt;br /&gt;&lt;br /&gt;Android端末に自作アプリを入れるシンプルな方法です&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;c-program:71d03e7a0a57c60955d3d7e735a1eb01&#34;&gt;C program&lt;/h2&gt;
+&lt;h1 id=&#34;android端末での準備:b6f199fdd59a36219ff7ec007f2868f1&#34;&gt;Android端末での準備&lt;/h1&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;c00.c
-#include &amp;lt;stdio.h&amp;gt;
+&lt;p&gt;Android4.2以降の端末だと「開発者向けオプション」が非表示になってるので&lt;br /&gt;&lt;br /&gt;USBデバッグを有効にしたい場合は&lt;br /&gt;&lt;blockquote&gt;端末情報&amp;nbsp;＞ ビルド番号&lt;/blockquote&gt;&lt;br /&gt;このビルド番号を7回クリックしたら、「開発者向けオプション」が表示されます&lt;br /&gt;&lt;br /&gt;やっておくことは&lt;br /&gt;&lt;ul&gt;&lt;li&gt;設定 ＞ セキュリティ ＞ 提供元不明のアプリ　ON&lt;/li&gt;&lt;li&gt;設定 ＞ 開発者向けオプション ＞ USBデバッグ　ON&lt;/li&gt;&lt;li&gt;デバイスを提供している会社のサイトから、Android用SDKドライバをインストールする&lt;/li&gt;&lt;/ul&gt;こんなところでOK&lt;br /&gt;&lt;br /&gt;（参考）&lt;br /&gt;&lt;div&gt;&lt;a  href=&#34;http://www.yahoo-help.jp/app/answers/detail/p/601/a_id/54447/~/usb%E3%83%87%E3%83%90%E3%83%83%E3%82%B0%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%99%E3%82%8B%E3%80%81%E6%8F%90%E4%BE%9B%E5%85%83%E4%B8%8D%E6%98%8E%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%82%92%E8%A8%B1%E5%8F%AF%E3%81%99%E3%82%8B&#34; target=&#34;_blank&#34;&gt;USBデバッグを有効にする、提供元不明アプリのインストールを許可する - Yahoo!スマホマネージャーヘルプ&amp;nbsp;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;&lt;/p&gt;
 
-int main()
-{
-    printf(&amp;quot;This is a native C program.\n&amp;quot;);
-    return 0;
-} 
+&lt;h1 id=&#34;android端末にapkをインストール:b6f199fdd59a36219ff7ec007f2868f1&#34;&gt;Android端末にAPKをインストール&lt;/h1&gt;
+
+&lt;p&gt;AndroidSDKをインストールした場所に adb tool が入っています&lt;br /&gt;&lt;br /&gt;わたしの場合は&amp;nbsp;C:\Library\android-sdk にインストールしたので、adb.exe は&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;C:\Library\android-sdk\platform-tools\adb.exe&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;よく他のサイトで、PCの環境変数パスに、C:\Library\android-sdk\platform-tools を追加設定する、というのを見かけますが&lt;br /&gt;単にこの abd.exe を使うだけであれば、環境変数への追加は必要ないです&lt;br /&gt;&lt;br /&gt;UBSでAndroid端末をPCに接続した状態で&lt;br /&gt;手元の MyApp.apk をインストールするコマンドはこちら&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt; adb install -r MyApp.apk
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;compile&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; cl.exe c00.c
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;c-program-1:71d03e7a0a57c60955d3d7e735a1eb01&#34;&gt;C++ program&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;c01.cpp
-#include &amp;lt;iostream&amp;gt;
-
-int main()
-{
-    std::cout &amp;lt;&amp;lt; &amp;quot;This is a native C++ program.&amp;quot; &amp;lt;&amp;lt; std::endl;
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;compile&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; cl.exe /EHsc c01.cpp
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;c-cli-program:71d03e7a0a57c60955d3d7e735a1eb01&#34;&gt;C++/CLI program&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;c02.cpp
-int main()
-{
-    System::Console::WriteLine(&amp;quot;This is a Visual C++ program.&amp;quot;);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;compile&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; cl.exe /clr c02.cpp
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;That is very interesting!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Lightning Talk:How to program C&#43;&#43;/CX</title>
-      <link>http://h-sao.com/blog/2014/01/29/how-to-program-cppcx/</link>
-      <pubDate>Wed, 29 Jan 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://h-sao.com/blog/2014/01/29/how-to-program-cppcx/</guid>
-      <description>&lt;p&gt;Hi,&lt;/p&gt;
-
-&lt;p&gt;The other day, I spoke about C++/CX in Lightning Talk.&lt;/p&gt;
-
-&lt;p&gt;Click here for article&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://jyurimaru.info/data/20140118MetroTokyo03/20140118_cppcx_LT_en.pptx&#34;&gt;PPTX-How to program c++/CX&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://jyurimaru.info/data/20140118MetroTokyo03/20140118_cppcx_LT_en.pdf&#34;&gt;PDF -How to program c++/CX&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Take care!&lt;/p&gt;
+&lt;p&gt;さくっとインストールできました&lt;br /&gt;&lt;br /&gt;デバイスからAPKリンクをつつくなどでも良いのですが&lt;br /&gt;開発者っぽい感じかつ、&lt;br /&gt;ちょっと手元でAPKを試したい時の参考までに(^^)/&lt;/p&gt;
 </description>
     </item>
     

@@ -57,6 +57,198 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2016/05/08/change-unity-window-size/" title="[Unity] PC実行時のWindowsサイズの設定の仕方＆起動時フック">[Unity] PC実行時のWindowsサイズの設定の仕方＆起動時フック</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.05.08">2016.05.08</time>
+&middot; 
+    
+    <a href="http://h-sao.com/tags/unity">unity</a>
+    
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>Unityのバグなのか、わたしの使い方が悪いのか？<br />
+PC実行時のウィンドウサイズの設定が、思うようにできなかったので<br />
+その解決メモです</p>
+
+<h1 id="pcで実行したら全画面:a0801ebf74281b4200348d8e7619641e">PCで実行したら全画面…</h1>
+
+<p>Unityのプロジェクトファイルを新規作成して</p>
+
+<blockquote>
+<p>&ldquo;File&rdquo; → &ldquo;Build &amp; Run&rdquo;</p>
+</blockquote>
+
+<p>を選択すると、ビルドが走り、実際に exe が実行されます</p>
+
+<p><img src="/pic/Change-Unity-window-size_01.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>へぇ、画面解像度( Screen resolution )とか、ここで変えることが出来るんだ～<br />
+と思って解像度設定を変更し、&rdquo;Play!&rdquo; で起動させると、いちおう思ったサイズで起動することが出来ます</p>
+
+<h1 id="unityプロジェクトに-plyaer-settings-がある:a0801ebf74281b4200348d8e7619641e">Unityプロジェクトに Plyaer Settings がある</h1>
+
+<p>ユーザに毎回ウィンドウサイズを選択させるのも、なんだかねぇ…ということで、ちゃんと設定したいと思います</p>
+
+<p>Unityのメニューの</p>
+
+<blockquote>
+<p>&ldquo;File&rdquo; → &ldquo;Build Settings&rdquo;</p>
+</blockquote>
+
+<p>Build Settings を選択すると、ビルドに関する設定が変更できるようです<br />
+下にある、&rdquo;Player Settings&rdquo; を選択すると、
+インスペクタウィンドウが出ます</p>
+
+<p><img src="/pic/Change-Unity-window-size_00.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>ここで、起動時の Player Settings が出来るようですが…</p>
+
+<p><img src="/pic/Change-Unity-window-size_02.png" alt="" />
+</p>
+
+<p>「Resolution」 の 「<strong>Default Is Full Screen</strong>」 のチェックボックスを外しましょう<br />
+ついでに、「Standalone Player Options」 の <strong>「Display Resolution Dialog」 を　「Disable」</strong>　にしておきます</p>
+
+<p>これで exe を実行するたびに 「FixSizeWindows Configuration」 は開かなくなります</p>
+
+<p>「Resolution」 には、「Default Screen Width/Height」 がありますが、、、<br />
+ここで設定を変えても、ウィンドウサイズは変わりません<br />
+（なんでやねん…＞＜）</p>
+
+<p>どうやら、「前回起動したときのウィンドウサイズ」で起動するみたいです…<br />
+Development Build にしても、しなくても、結果は一緒でした<br />
+初期起動のサイズは、ここじゃないのかな…(´・ω・｀)</p>
+
+<p>余談ですが、ここで変えた設定は、</p>
+
+<ul>
+<li>.\ProjectSettings\ProjectSettings.asset</li>
+</ul>
+
+<p>の中に、テキストファイルで保存されます</p>
+
+<h1 id="ウィンドウサイズはプログラムで変更:a0801ebf74281b4200348d8e7619641e">ウィンドウサイズはプログラムで変更</h1>
+
+<p>仕方がないので、スクリプトで記載します</p>
+
+<p>Unityのメニュー <strong>Assets &gt; Create &gt; C# Script</strong> で新規スクリプトを作ります</p>
+
+<p>わたしは適当に GameInitial と名付けました（Unity の Project 内に、GameInitial の C#ファイルが追加されます）</p>
+
+<h2 id="いーっちばん最初のゲーム起動時をフックしたい:a0801ebf74281b4200348d8e7619641e">いーっちばん最初のゲーム起動時をフックしたい？</h2>
+
+<p>もちろん、ウィンドウサイズを変更したいためです<br />
+解像度が小さい/大きいなど<br />
+起動したときに、クライアント端末によってウィンドウサイズを変えたいとかあると思います</p>
+
+<p>たぶん、現状の Unity 5.3系の最速フック方法は、<strong>RuntimeInitializeOnLoadMethod</strong> ではないかと…</p>
+
+<ul>
+<li>RuntimeInitializeOnLoadMethodAttribute<br />
+<a href="http://docs.unity3d.com/ScriptReference/RuntimeInitializeOnLoadMethodAttribute.html">http://docs.unity3d.com/ScriptReference/RuntimeInitializeOnLoadMethodAttribute.html</a></li>
+</ul>
+
+<p>ユーザがアクションを起こす前に動くらしいですが<br />
+実際やってみると、ロゴ起動画面の方が先に動くので<br />
+ほんとの意味の一番最初のウィンドウサイズは、ここでは遅いみたいです</p>
+
+<p>一応サンプルコード<br />
+MonoBehaviour は無くても動くみたいです<br />
+あと、オブジェクトなどにスクリプトをアタッチしなくてもOKです</p>
+
+<pre><code class="language-c#">using UnityEngine;
+
+public class GameInitial //: MonoBehaviour
+{
+    [RuntimeInitializeOnLoadMethod]
+    static void OnRuntimeMethodLoad()
+    {
+        Screen.SetResolution( 640, 960, false, 60);
+
+    }
+
+    //// Use this for initialization
+    //void Start()
+    //{
+
+    //}
+
+    //// Update is called once per frame
+    //void Update()
+    //{
+
+    //}
+}
+</code></pre>
+
+<p>自分が知らないだけかもしれませんが、 RuntimeInitializeOnLoadMethodAttribute より早い時点で自分の処理を差し込むことは出来ないみたい…</p>
+
+<h1 id="ウィンドウサイズを指定できるコマンドライン引数がある:a0801ebf74281b4200348d8e7619641e">ウィンドウサイズを指定できるコマンドライン引数がある！</h1>
+
+<p>結局、起動時のウィンドウサイズは結局どこで更新するんでしょうか…？</p>
+
+<p>実は、飛び道具的ですが、exe の引数に渡せるみたいです…！（そこか…＞＜</p>
+
+<ul>
+<li>「Unity スタンドアロンプレイヤーのコマンドライン引数」の項
+<a href="http://docs.unity3d.com/ja/current/Manual/CommandLineArguments.html">http://docs.unity3d.com/ja/current/Manual/CommandLineArguments.html</a></li>
+</ul>
+
+<p>自分で作った exe の引数に</p>
+
+<ul>
+<li>-screen-width ：幅</li>
+<li>-screen-height ：高さ</li>
+</ul>
+
+<p>を渡してあげればOKでした</p>
+
+<pre><code>&gt; xxx.exe -screen-width 300 -screen-height 300
+</code></pre>
+
+<p>小さいスクリーンサイズで起動したのちに…</p>
+
+<p><img src="/pic/Change-Unity-window-size_03.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>自分の指定した Screen.SetResolution サイズで起動</p>
+
+<p><img src="/pic/Change-Unity-window-size_04.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>つまり、引数に自分で好きな数値を渡せるようになってるので<br />
+それと、Screen.SetResolution の指定を同じ大きさにしておけば<br />
+最初から自分自身でサイズを調整できますね</p>
+
+<p>なんだろなー<br />
+なんで起動時のサイズくらい、すんなり設定できないんでしょうか…謎や～</p>
+
+<p>もしかしたら、無料版では起動時のロゴを外せないようにするために、プログラマは触れないようになってるのかなー？</p>
+
+<p>ともあれ、意図したことは出来るようになっているので、まぁ良しとします！</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f08%2fchange-unity-window-size%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bUnity%5d%20PC%e5%ae%9f%e8%a1%8c%e6%99%82%e3%81%aeWindows%e3%82%b5%e3%82%a4%e3%82%ba%e3%81%ae%e8%a8%ad%e5%ae%9a%e3%81%ae%e4%bb%95%e6%96%b9%ef%bc%86%e8%b5%b7%e5%8b%95%e6%99%82%e3%83%95%e3%83%83%e3%82%af&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f08%2fchange-unity-window-size%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f08%2fchange-unity-window-size%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f08%2fchange-unity-window-size%2f&title=%5bUnity%5d%20PC%e5%ae%9f%e8%a1%8c%e6%99%82%e3%81%aeWindows%e3%82%b5%e3%82%a4%e3%82%ba%e3%81%ae%e8%a8%ad%e5%ae%9a%e3%81%ae%e4%bb%95%e6%96%b9%ef%bc%86%e8%b5%b7%e5%8b%95%e6%99%82%e3%83%95%e3%83%83%e3%82%af" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2016/01/11/unity-shader-2dsprite/" title="[Unity] 2D Spriteにシェーダーをかける">[Unity] 2D Spriteにシェーダーをかける</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.01.11">2016.01.11</time>
@@ -346,10 +538,10 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
   <p  class="address">
     <a href="http://mvp.microsoft.com/ja-jp/mvp/Akiko%20Kawai-4027291" target="_blank">
     <img src="http://h-sao.com/pic/MVPLogo.png"  width="120" border="0" alt="mvp_logo" hspace="5" /></a><br>
-      Microsoft MVP for Windows Development [Jan,2016-Dec,2016]
-      Microsoft MVP for Windows Platform Development [Jan,2015-Dec,2015]
-      Microsoft MVP for Client Development [Jan,2014-Dec,2014]
-      Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]
+	  Microsoft MVP for Windows Development<br> [Jan,2016-Dec,2016]<br>
+      Microsoft MVP for Windows Platform Development<br> [Jan,2015-Dec,2015]<br>
+      Microsoft MVP for Client Development<br> [Jan,2014-Dec,2014]<br>
+      Microsoft MVP for Client App Dev<br> [Jan,2010-Dec,2013]<br>
   </p>
   <br>
 </aside>
@@ -361,6 +553,10 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
                 <h2 class="panel-title">Recent Posts</h2>
             </div>
             <div class="list-group">
+                
+                    
+                        <a href="/blog/2016/05/08/change-unity-window-size/" class="list-group-item">[Unity] PC実行時のWindowsサイズの設定の仕方＆起動時フック</a><br>
+                    
                 
                     
                         <a href="/blog/2016/05/07/generate-ssh-key-for-github/" class="list-group-item">[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続</a><br>
@@ -396,10 +592,6 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
                         <a href="/blog/2015/11/21/meetup-app1-opensource/" class="list-group-item">[勉強会] meetup app@1 でオープンソースについて発表しました</a><br>
                     
                 
-                    
-                        <a href="/blog/2015/10/06/install-googleplay-onxiaomi/" class="list-group-item">[Android]Xiaomi Redmi Note2にGooglePlayをインストールする</a><br>
-                    
-                
             </div>
 
             <div class="panel-heading">
@@ -412,9 +604,9 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/android" style="font-size: 11px;">
+                    <a href="http://h-sao.com//tags/android" style="font-size: 14px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">2</span>
                         android
                     </a>
                     </u> &nbsp; 
@@ -532,6 +724,16 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
                     
                     
                     <u>
+                    <a href="http://h-sao.com//tags/pmp" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        pmp
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
                     <a href="http://h-sao.com//tags/shader" style="font-size: 11px;">
                     
                         <span class="badge">1</span>
@@ -552,9 +754,9 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/unity" style="font-size: 11px;">
+                    <a href="http://h-sao.com//tags/unity" style="font-size: 14px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">2</span>
                         unity
                     </a>
                     </u> &nbsp; 
