@@ -45,6 +45,189 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/" title="[Android]Xiaomi Redmi Note2にGooglePlayをインストールする">[Android]Xiaomi Redmi Note2にGooglePlayをインストールする</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2015.10.06">2015.10.06</time>
+&middot; 
+    
+    <a href="http://h-sao.com/tags/xiaomi">xiaomi</a>
+    , 
+    
+    <a href="http://h-sao.com/tags/android">android</a>
+    
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>クロスプラットフォームで開発していると、やはり最新の端末が欲しくなりますよね～</p>
+
+<p>１年以内発売の iPhone と Windows Phone は持っているのですが<br />
+そろそろ新しい Android が欲しい～と思っていたので、買ってしまいました</p>
+
+<p>シンガポール旅行に行った際に、ブギスの電気屋街、<a href="http://www.simlimsquare.com.sg/">Sim Lim Square（シムリム スクウェア）</a>で、今をトキメク Xiaomi（しゃおみ）デバイスを購入しました</p>
+
+<ul>
+<li><strong>Xiaomi</strong><br />
+<a href="http://www.mi.com/">http://www.mi.com/</a></li>
+</ul>
+
+<p><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_00.JPG" alt="" />
+</p>
+
+<p>全部で6Fまでありましたが、結局1Fのお店の品ぞろえが一番まとまってる印象でした<br />
+Xiaomi正規店も1Fに入っていました</p>
+
+<hr />
+
+<h2 id="xiaomi-redmi-note-2:c3da2b2064682e0806e5e1e872f70d59">Xiaomi Redmi Note 2</h2>
+
+<p>購入したのは、<strong>Xiaomi Redmi Note 2</strong></p>
+
+<table style="border-style: none;">
+ <tr>
+   <td style="border-style: none;"><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_01.JPG"></td>
+   <td style="border-style: none;"><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_02.JPG"></td>
+ </tr>
+</table>
+
+<p>画像のように、デフォルトでは中国語のアプリがたくさん入っています<br />
+そして、Google Play Store は入っていません！</p>
+
+<p>デフォルトのIMEが Buidu なので、まぁこのままでは、日本語が打てません(&gt;&lt;;)</p>
+
+<p>なので Google Play Store をインストールする方法をメモしておきます</p>
+
+<hr />
+
+<h2 id="googleplay-installer-apkが最適解:c3da2b2064682e0806e5e1e872f70d59">GooglePlay installer APKが最適解</h2>
+
+<p>検索すると色々な方法が出てくるのですが、おそらく、<strong>Google installer のAPKを直接インストールする</strong>のが、手っ取り早いです<br />
+（チャイナストアやMIストアからGooglePlayらしきものをインストールしても、わたしの場合は、動作しませんでした）</p>
+
+<p>情報元はこちらの Xiaomi公式コミュニティ掲示板です</p>
+
+<ul>
+<li><strong>[System Tools] Find all the Google Apps in Google installer!</strong>　　
+<a href="http://en.miui.com/thread-3998-1-1.html">http://en.miui.com/thread-3998-1-1.html</a></li>
+</ul>
+
+<p>Xiaomiはすごくコミュニティも発達してるんですよね～ちゃんと英語の掲示板なので、読めました(^_^)</p>
+
+<p>上記サイトにある、GooglePlayを入れるための Google installer をAPKからインストールします</p>
+
+<blockquote>
+<p>Google installer谷歌应用下载器.apk<br />
+(1009.36 KB, Downloads: 237400)
+<img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_03.png" alt="" />
+</p>
+</blockquote>
+
+<p>PCから落とすなどするよりも、直接 Xiaomi デバイスからダウンロードした方が、早いと思います<br />
+もしかしたら、MIアカウントを作らないとダウンロード出来ないかもしれません（わたしは作りました）</p>
+
+<hr />
+
+<h2 id="androidがセキュア過ぎて-思った順番にインストール出来ない:c3da2b2064682e0806e5e1e872f70d59">Androidがセキュア過ぎて、思った順番にインストール出来ない</h2>
+
+<p>installer を入れると、以下の４つがインストール可能になります</p>
+
+<ol>
+<li>Google Services Framework</li>
+<li>Google Account Manager</li>
+<li>Google Play services</li>
+<li>Google Play Store</li>
+</ol>
+
+<p>そのままインストールしたら良いので、おそらく、この順番でインストールが走ると思います<br />
+（ここ、画面キャプチャを取り忘れたので申し訳ない）</p>
+
+<p>ところが、1番目をインストールしようとすると、本当にインストールしていいかどうかの許可画面が出ますよね、こんな感じに…<br />
+（イメージ画像です↓↓↓）</p>
+
+<p><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_04.png" alt="" />
+</p>
+
+<p>この画面で 「1番のアプリに対して」ユーザが許可を押そうとするときに、すでに「2番目のインストール」が動いてしまうのです</p>
+
+<p>結果的に、 「1番のアプリの許可画面」は裏にまわってしまい<br />
+「2番目のアプリの許可画面」が一番手前に来ることになります<br />
+つまり最終的には、「4番目のアプリの許可画面」が最前面になります</p>
+
+<p>入れたいアプリは Google Play Store なので、それでも良いかなと思って<br />
+４→３→２→１の順にインストールするんですけど、<br />
+お察しの通り、Google Play Store は起動しません<br />
+おそらく、Google Services Framework とかが、Google Play Store のインストールに必要なんじゃないかなーと思います</p>
+
+<p>なので、いったん、Google Play services、Google Play Store をアンインストールし、再度、Google Play services、Google Play Store をインストールします</p>
+
+<p>いやー(~0~)　これで、わたしの端末で、Google Play が動くようになりました！</p>
+
+<p><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_05.JPG" alt="" />
+</p>
+
+<hr />
+
+<h2 id="その他-xiaomi-デバイスで気づいたところ:c3da2b2064682e0806e5e1e872f70d59">その他、Xiaomi デバイスで気づいたところ</h2>
+
+<h4 id="日本語モードはない:c3da2b2064682e0806e5e1e872f70d59">日本語モードはない</h4>
+
+<p>日本語モードは入っていません<br />
+ROMとか焼き直すと良いらしいですけど、まだやってないです</p>
+
+<h4 id="permissions-アプリがうれしい:c3da2b2064682e0806e5e1e872f70d59">Permissions アプリがうれしい</h4>
+
+<p>デフォルトで入っている Permittions アプリが最高に便利</p>
+
+<table style="border-style: none;">
+ <tr>
+   <td style="border-style: none;">各アプリ毎の許可</td>
+   <td style="border-style: none;">どのアプリが使ってるか</td>
+ </tr>
+ <tr>
+   <td style="border-style: none;"><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_07.png"></td>
+   <td style="border-style: none;"><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_06.png"></td>
+ </tr>
+</table>
+
+<h4 id="simは２枚ささる:c3da2b2064682e0806e5e1e872f70d59">SIMは２枚ささる</h4>
+
+<p>両方LTEをつかめます<br />
+ただし、片方がLTEをつかんでいるときは、もう一方はつかめない仕様です</p>
+
+<p>なので、日本で、１番目にDocomoを刺して、２番目にauを刺す、とかして<br />
+１番目はLTEでデータ通信、２番目はauで電話とメールのみ<br />
+とかにしたくても、ちょっと難しいかも<br />
+日本は今現在、ほぼLTEになってしまってるので、そういう活用は出来なさそうかも…？</p>
+
+<p>どちらにしても、技適通ってない端末なので、日本では使っちゃダメ</p>
+
+<h4 id="まとめ:c3da2b2064682e0806e5e1e872f70d59">まとめ</h4>
+
+<p>もろもろ満足しています<br />
+同じようにシンガポールや中国で購入した方の参考になれば～</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f10%2f06%2finstall-googleplay-onxiaomi%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bAndroid%5dXiaomi%20Redmi%20Note2%e3%81%abGooglePlay%e3%82%92%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%99%e3%82%8b&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f10%2f06%2finstall-googleplay-onxiaomi%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f10%2f06%2finstall-googleplay-onxiaomi%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f10%2f06%2finstall-googleplay-onxiaomi%2f&title=%5bAndroid%5dXiaomi%20Redmi%20Note2%e3%81%abGooglePlay%e3%82%92%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2015/09/09/hugoandtheme/" title="[Hugo]ブログ構築メモ(1)-Hugoとテンプレート">[Hugo]ブログ構築メモ(1)-Hugoとテンプレート</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2015.09.09">2015.09.09</time>
@@ -614,6 +797,142 @@ MacProSao:~ Sao$
             <hr>
         
             
+<h1><a href="http://h-sao.com/blog/2015/03/03/reset-line-to-gitextensions/" title="[GitExtensions] 行単位で変更をリセットするRコマンド">[GitExtensions] 行単位で変更をリセットするRコマンド</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2015.03.03">2015.03.03</time>
+&middot; 
+    
+    <a href="http://h-sao.com/tags/gitextensions">gitextensions</a>
+    , 
+    
+    <a href="http://h-sao.com/tags/git">git</a>
+    
+    
+
+</span>
+</footer>
+ </footer>
+                <p><strong>GitExtensions</strong> を使ってみました</p>
+
+<ul>
+<li><a href="http://gitextensions.github.io/">http://gitextensions.github.io/</a></li>
+</ul>
+
+<p>GitExtensions では、commit 時に、行を選択して<br />
+その選択部分だけをリセットする（コミット前に合わせる）という機能があります</p>
+
+<ul>
+<li>Commit - Git Extensions 2.48 documentation<br />
+<a href="http://git-extensions-documentation.readthedocs.org/en/latest/commit.html">http://git-extensions-documentation.readthedocs.org/en/latest/commit.html</a></li>
+</ul>
+
+<p>以下↓↓↓のような適当なファイルがコミットされていたとします</p>
+
+<p><img src="/pic/Reset-line-to-GitExtensions_00.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>ファイルの下に、変更を追加してみました</p>
+
+<p><img src="/pic/Reset-line-to-GitExtensions_01.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>Giet Extensionsを見ると、ファイルが変更されたので、Commit(1) になっています</p>
+
+<p><img src="/pic/Reset-line-to-GitExtensions_02.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>差分は、以下のような感じ<br />
+追加した 「20」、 「100&hellip;」 の数字が、緑色の変更分として表れていますね</p>
+
+<p><img src="/pic/Reset-line-to-GitExtensions_03.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>実は、これは作成中のプログラムなどで、<br />
+「100&hellip;」 の部分は、Commit には不要だったとします</p>
+
+<p>そこで、以下のように、Commit には不要だなと思った部分を選択して [R] キーを押してみます</p>
+
+<p><img src="/pic/Reset-line-to-GitExtensions_04.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>以下↓↓↓のような感じで、ここの行消してもいいの？と聞いてくれます</p>
+
+<p><img src="/pic/Reset-line-to-GitExtensions_05.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>「はい」にすると、元のファイルから、選択した行を削除してくれます</p>
+
+<p><img src="/pic/Reset-line-to-GitExtensions_06.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>この動作は、Commitした/しないに関わらず、元ファイルに反映されます</p>
+
+<p>「はい」を押したあとのファイルの状態↓↓↓</p>
+
+<p><img src="/pic/Reset-line-to-GitExtensions_07.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>あぁーあそこ、削除しとかなきゃ。。。<br />
+というときに、元ファイルに戻ってから、再度コミットする、<br />
+という手間が省けます</p>
+
+<p>便利やね(^^)/</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f03%2f03%2freset-line-to-gitextensions%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGitExtensions%5d%20%e8%a1%8c%e5%8d%98%e4%bd%8d%e3%81%a7%e5%a4%89%e6%9b%b4%e3%82%92%e3%83%aa%e3%82%bb%e3%83%83%e3%83%88%e3%81%99%e3%82%8bR%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f03%2f03%2freset-line-to-gitextensions%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f03%2f03%2freset-line-to-gitextensions%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f03%2f03%2freset-line-to-gitextensions%2f&title=%5bGitExtensions%5d%20%e8%a1%8c%e5%8d%98%e4%bd%8d%e3%81%a7%e5%a4%89%e6%9b%b4%e3%82%92%e3%83%aa%e3%82%bb%e3%83%83%e3%83%88%e3%81%99%e3%82%8bR%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
+<h1><a href="http://h-sao.com/blog/2015/01/31/presentation-mvp-comunity-camp-osaka2015/" title="[勉強会]2015 MVP Community Camp～大阪～「クロスプラットフォーム開発 の紹介」">[勉強会]2015 MVP Community Camp～大阪～「クロスプラットフォーム開発 の紹介」</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2015.01.31">2015.01.31</time>
+&middot; 
+    
+    <a href="http://h-sao.com/tags/community">community</a>
+    
+    
+
+</span>
+</footer>
+ </footer>
+                <p>2015/1/31 に 2015 MVP Community Camp～大阪～ というイベントが開催されました</p>
+
+<p><a href="http://connpass.com/event/10478/">http://connpass.com/event/10478/</a></p>
+
+<p><img src="/pic/Presentation-MVP-Comunity-Camp-Osaka2015_00.png" alt="" />
+</p>
+
+<p>そちらで一枠セッションをさせていただきました</p>
+
+<script async class="speakerdeck-embed" data-id="e4069115d62544e69234860e5dcd2764" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+<p>実際には指摘通り、あまりクロスプラットフォームの話は入ってなくて申し訳ないです<br /><br />ちなみに 2015/1/31 現在、Visual Studio 2015 はまだCPTなので<br />この資料に記載している情報は未確定、未実装ですが<br /><br />mobile first and cloud first の思想は<br />Satya Nadilla からのメッセージということで<br />受け取っていただければと思います<br /></p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f01%2f31%2fpresentation-mvp-comunity-camp-osaka2015%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5b%e5%8b%89%e5%bc%b7%e4%bc%9a%5d2015%20MVP%20Community%20Camp%ef%bd%9e%e5%a4%a7%e9%98%aa%ef%bd%9e%e3%80%8c%e3%82%af%e3%83%ad%e3%82%b9%e3%83%97%e3%83%a9%e3%83%83%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a0%e9%96%8b%e7%99%ba%20%e3%81%ae%e7%b4%b9%e4%bb%8b%e3%80%8d&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f01%2f31%2fpresentation-mvp-comunity-camp-osaka2015%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f01%2f31%2fpresentation-mvp-comunity-camp-osaka2015%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f01%2f31%2fpresentation-mvp-comunity-camp-osaka2015%2f&title=%5b%e5%8b%89%e5%bc%b7%e4%bc%9a%5d2015%20MVP%20Community%20Camp%ef%bd%9e%e5%a4%a7%e9%98%aa%ef%bd%9e%e3%80%8c%e3%82%af%e3%83%ad%e3%82%b9%e3%83%97%e3%83%a9%e3%83%83%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a0%e9%96%8b%e7%99%ba%20%e3%81%ae%e7%b4%b9%e4%bb%8b%e3%80%8d" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2014/02/24/c-anonymous-struct/" title="Anonymous Struct of C">Anonymous Struct of C</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2014.02.24">2014.02.24</time>
@@ -756,96 +1075,6 @@ int main()
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2014/01/29/how-to-program-cppcx/" title="Lightning Talk:How to program C&#43;&#43;/CX">Lightning Talk:How to program C&#43;&#43;/CX</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2014.01.29">2014.01.29</time>
-&middot; 
-    
-    <a href="http://h-sao.com/tags/cppcx">cppcx</a>
-    , 
-    
-    <a href="http://h-sao.com/tags/cpp">cpp</a>
-    , 
-    
-    <a href="http://h-sao.com/tags/windowsruntime">windowsruntime</a>
-    
-    
-
-</span>
-</footer>
- </footer>
-                <p>Hi,</p>
-
-<p>The other day, I spoke about C++/CX in Lightning Talk.</p>
-
-<p>Click here for article</p>
-
-<p><a href="http://jyurimaru.info/data/20140118MetroTokyo03/20140118_cppcx_LT_en.pptx">PPTX-How to program c++/CX</a></p>
-
-<p><a href="http://jyurimaru.info/data/20140118MetroTokyo03/20140118_cppcx_LT_en.pdf">PDF -How to program c++/CX</a></p>
-
-<p>Take care!</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f29%2fhow-to-program-cppcx%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=Lightning%20Talk%3aHow%20to%20program%20C%2b%2b%2fCX&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f29%2fhow-to-program-cppcx%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f29%2fhow-to-program-cppcx%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f29%2fhow-to-program-cppcx%2f&title=Lightning%20Talk%3aHow%20to%20program%20C%2b%2b%2fCX" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
-            
-<h1><a href="http://h-sao.com/blog/2014/01/28/hello-world/" title="Hello World">Hello World</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2014.01.28">2014.01.28</time>
-&middot; 
-    
-    <a href="http://h-sao.com/tags/diary">diary</a>
-    
-    
-
-</span>
-</footer>
- </footer>
-                <p>Hi,</p>
-
-<p>I&rsquo;m Sao Haruka :)</p>
-
-<p>Japanese programmer</p>
-
-<p>I have started this English blog since Jan 28, 2014.</p>
-
-<p>Thank you.</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f28%2fhello-world%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=Hello%20World&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f28%2fhello-world%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f28%2fhello-world%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f28%2fhello-world%2f&title=Hello%20World" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -853,9 +1082,11 @@ int main()
 	<a class="btn newer" href="/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 2  2</p>
+	<p class="counter"> 2  3</p>
 
 
+	
+	<a class="btn older" href="/page/3/" title=""> &raquo;</a>
 	
 
 </nav>
@@ -909,6 +1140,10 @@ int main()
             <div class="list-group">
                 
                     
+                        <a href="/blog/2016/05/09/add-ssh-config-for-git/" class="list-group-item">[SSH] 複数キー接続のconfig記載について</a><br>
+                    
+                
+                    
                         <a href="/blog/2016/05/08/change-unity-window-size/" class="list-group-item">[Unity] PC実行時のWindowsサイズの設定の仕方＆起動時フック</a><br>
                     
                 
@@ -942,10 +1177,6 @@ int main()
                 
                     
                 
-                    
-                        <a href="/blog/2015/11/21/meetup-app1-opensource/" class="list-group-item">[勉強会] meetup app@1 でオープンソースについて発表しました</a><br>
-                    
-                
             </div>
 
             <div class="panel-heading">
@@ -968,9 +1199,9 @@ int main()
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/community" style="font-size: 11px;">
+                    <a href="http://h-sao.com//tags/community" style="font-size: 14px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">2</span>
                         community
                     </a>
                     </u> &nbsp; 
@@ -1018,9 +1249,9 @@ int main()
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/git" style="font-size: 11px;">
+                    <a href="http://h-sao.com//tags/git" style="font-size: 17px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">3</span>
                         git
                     </a>
                     </u> &nbsp; 
@@ -1028,9 +1259,9 @@ int main()
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/gitextensions" style="font-size: 11px;">
+                    <a href="http://h-sao.com//tags/gitextensions" style="font-size: 14px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">2</span>
                         gitextensions
                     </a>
                     </u> &nbsp; 
@@ -1098,9 +1329,9 @@ int main()
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/ssh" style="font-size: 11px;">
+                    <a href="http://h-sao.com//tags/ssh" style="font-size: 14px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">2</span>
                         ssh
                     </a>
                     </u> &nbsp; 

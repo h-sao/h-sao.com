@@ -6,8 +6,49 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 08 May 2016 14:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 09 May 2016 23:30:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[SSH] 複数キー接続のconfig記載について</title>
+      <link>http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</link>
+      <pubDate>Mon, 09 May 2016 23:30:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</guid>
+      <description>
+
+&lt;p&gt;前回、&lt;br /&gt;
+&lt;a href=&#34;http://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/&#34;&gt;[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続&lt;/a&gt;&lt;br /&gt;
+で Gitサーバにアクセスするための ssh 接続について記載しました&lt;/p&gt;
+
+&lt;p&gt;その追記メモです&lt;/p&gt;
+
+&lt;h2 id=&#34;ssh-config-ファイルに記載する内容:40fd596bc366136a529c8fca3b216d01&#34;&gt;.\.ssh\config ファイルに記載する内容&lt;/h2&gt;
+
+&lt;p&gt;Git アクセス に ssh を利用する際に、複数アカウントを利用したい&lt;br /&gt;
+つまり、複数 ssh キーを利用したい&lt;br /&gt;
+という場合についてです&lt;/p&gt;
+
+&lt;p&gt;もし、&lt;strong&gt;利用するキーの名前が id_rsa であれば&lt;br /&gt;
+これはデフォルトで認識される名前なので、わざわざ .\.ssh\config ファイルに記載しなくても接続OK&lt;/strong&gt;でした&lt;/p&gt;
+
+&lt;p&gt;つまり例えば、&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;元々 社内用 Git サーバのアクセスに id_rsa を利用していた&lt;/li&gt;
+&lt;li&gt;追加で、GitHub にアクセスするキー（github_rsa など別名称）を作成した&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;こんな場合があったとします&lt;/p&gt;
+
+&lt;p&gt;.\.ssh\config ファイルに記載する内容は 2. の github_rsa のものだけでOKです&lt;/p&gt;
+
+&lt;p&gt;もちろん、 1. の id_rsa を書いても問題ないですし、コンフィグにちゃんと記載されている方が、後々判りやすいと思いますが&lt;br /&gt;
+無理に config に追記しなくてもわたしの環境では問題なく接続できました&lt;/p&gt;
+
+&lt;p&gt;参考までに～(^^)/&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[Unity] PC実行時のWindowsサイズの設定の仕方＆起動時フック</title>
@@ -579,6 +620,13 @@ remote.origin.url=&lt;span class=&#34;hljs-keyword&#34;&gt;https://github.com/h-
 &lt;ul&gt;
 &lt;li&gt;Windowsにgitをインストールしてgithubにpushするまで - karakaram-blog&lt;br /&gt;
 &lt;a href=&#34;http://www.karakaram.com/git-install&#34;&gt;http://www.karakaram.com/git-install&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;追記記事書きました-2016-5-9:f13cf594333c590d11f34a491d786d48&#34;&gt;追記記事書きました(2016/5/9)&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[SSH] 複数キー接続のconfig記載について&lt;br /&gt;
+&lt;a href=&#34;http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/&#34;&gt;http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -2199,17 +2247,6 @@ MacProSao:~ Sao$
 
 &lt;p&gt;Hugoを入れるためにインストールしてみました&lt;br /&gt;
 ついにわたしもGoを使う日が来るなんて…(ﾟ∇ﾟ ;)&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[PMP] PMPロゴのダウンロード場所</title>
-      <link>http://h-sao.com/blog/2015/04/13/download-pmp-logo/</link>
-      <pubDate>Mon, 13 Apr 2015 22:30:04 +0900</pubDate>
-      
-      <guid>http://h-sao.com/blog/2015/04/13/download-pmp-logo/</guid>
-      <description>&lt;p&gt;何かと探したけど、全く判らなかった…&lt;br /&gt;&lt;br /&gt;「PMP ロゴ ダウンロード」で検索に引っかかる情報が、個人的に理解できなかった&lt;br /&gt;古いのか、単にわたしのITリテラシーが低いだけなのか…&lt;br /&gt;&lt;br /&gt;PMIサイトの中にあります&lt;br /&gt;&lt;br /&gt;&lt;img  class=&#34;pict&#34; hspace=&#34;5&#34; alt=&#34;PMPLogo&#34; border=&#34;0&#34; height=&#34;462&#34; width=&#34;510&#34; src=&#34;http://h-sao.com/pic/Download-PMP-Logo_00.png&#34;&gt;&lt;br /&gt;&lt;br /&gt;&lt;blockquote&gt;Certifications&lt;br /&gt;　&amp;gt;Certification Program&lt;br /&gt;　　&amp;gt;左の MyPMP&lt;br /&gt;　　　&amp;gt; PMP Logo&lt;/blockquote&gt;&lt;br /&gt;ここからダウンロードできます&lt;br /&gt;&lt;br /&gt;Certifications のページって、思いつかなかったですよ…(&amp;gt;o&amp;lt;&amp;ldquo;)&lt;br /&gt;&lt;br /&gt;ちなみに、追い打ちをかけるように、Chrome で JPGをダウンロードがうまく出来なかった&lt;br /&gt;
-　※ PMP_Business_Card_Logo.ashx　って……（＞＜）&lt;br /&gt;&lt;br /&gt;IEだと、JPGロゴがダウンロード出来ましたよ&amp;nbsp;&lt;/p&gt;
 </description>
     </item>
     

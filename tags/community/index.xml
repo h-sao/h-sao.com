@@ -33,5 +33,26 @@
 </description>
     </item>
     
+    <item>
+      <title>[勉強会]2015 MVP Community Camp～大阪～「クロスプラットフォーム開発 の紹介」</title>
+      <link>http://h-sao.com/blog/2015/01/31/presentation-mvp-comunity-camp-osaka2015/</link>
+      <pubDate>Sat, 31 Jan 2015 17:38:14 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2015/01/31/presentation-mvp-comunity-camp-osaka2015/</guid>
+      <description>&lt;p&gt;2015/1/31 に 2015 MVP Community Camp～大阪～ というイベントが開催されました&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://connpass.com/event/10478/&#34;&gt;http://connpass.com/event/10478/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Presentation-MVP-Comunity-Camp-Osaka2015_00.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;そちらで一枠セッションをさせていただきました&lt;/p&gt;
+
+&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;e4069115d62544e69234860e5dcd2764&#34; data-ratio=&#34;1.77777777777778&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;実際には指摘通り、あまりクロスプラットフォームの話は入ってなくて申し訳ないです&lt;br /&gt;&lt;br /&gt;ちなみに 2015/1/31 現在、Visual Studio 2015 はまだCPTなので&lt;br /&gt;この資料に記載している情報は未確定、未実装ですが&lt;br /&gt;&lt;br /&gt;mobile first and cloud first の思想は&lt;br /&gt;Satya Nadilla からのメッセージということで&lt;br /&gt;受け取っていただければと思います&lt;br /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

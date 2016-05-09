@@ -6,8 +6,49 @@
     <description>Recent content in Ssh on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 07 May 2016 15:23:30 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 09 May 2016 23:30:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[SSH] 複数キー接続のconfig記載について</title>
+      <link>http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</link>
+      <pubDate>Mon, 09 May 2016 23:30:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</guid>
+      <description>
+
+&lt;p&gt;前回、&lt;br /&gt;
+&lt;a href=&#34;http://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/&#34;&gt;[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続&lt;/a&gt;&lt;br /&gt;
+で Gitサーバにアクセスするための ssh 接続について記載しました&lt;/p&gt;
+
+&lt;p&gt;その追記メモです&lt;/p&gt;
+
+&lt;h2 id=&#34;ssh-config-ファイルに記載する内容:40fd596bc366136a529c8fca3b216d01&#34;&gt;.\.ssh\config ファイルに記載する内容&lt;/h2&gt;
+
+&lt;p&gt;Git アクセス に ssh を利用する際に、複数アカウントを利用したい&lt;br /&gt;
+つまり、複数 ssh キーを利用したい&lt;br /&gt;
+という場合についてです&lt;/p&gt;
+
+&lt;p&gt;もし、&lt;strong&gt;利用するキーの名前が id_rsa であれば&lt;br /&gt;
+これはデフォルトで認識される名前なので、わざわざ .\.ssh\config ファイルに記載しなくても接続OK&lt;/strong&gt;でした&lt;/p&gt;
+
+&lt;p&gt;つまり例えば、&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;元々 社内用 Git サーバのアクセスに id_rsa を利用していた&lt;/li&gt;
+&lt;li&gt;追加で、GitHub にアクセスするキー（github_rsa など別名称）を作成した&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;こんな場合があったとします&lt;/p&gt;
+
+&lt;p&gt;.\.ssh\config ファイルに記載する内容は 2. の github_rsa のものだけでOKです&lt;/p&gt;
+
+&lt;p&gt;もちろん、 1. の id_rsa を書いても問題ないですし、コンフィグにちゃんと記載されている方が、後々判りやすいと思いますが&lt;br /&gt;
+無理に config に追記しなくてもわたしの環境では問題なく接続できました&lt;/p&gt;
+
+&lt;p&gt;参考までに～(^^)/&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続</title>
@@ -410,6 +451,13 @@ remote.origin.url=&lt;span class=&#34;hljs-keyword&#34;&gt;https://github.com/h-
 &lt;ul&gt;
 &lt;li&gt;Windowsにgitをインストールしてgithubにpushするまで - karakaram-blog&lt;br /&gt;
 &lt;a href=&#34;http://www.karakaram.com/git-install&#34;&gt;http://www.karakaram.com/git-install&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;追記記事書きました-2016-5-9:f13cf594333c590d11f34a491d786d48&#34;&gt;追記記事書きました(2016/5/9)&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[SSH] 複数キー接続のconfig記載について&lt;br /&gt;
+&lt;a href=&#34;http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/&#34;&gt;http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

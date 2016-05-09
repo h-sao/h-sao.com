@@ -6,8 +6,49 @@
     <description>Recent content in Git on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 07 May 2016 15:23:30 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 09 May 2016 23:30:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[SSH] 複数キー接続のconfig記載について</title>
+      <link>http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</link>
+      <pubDate>Mon, 09 May 2016 23:30:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</guid>
+      <description>
+
+&lt;p&gt;前回、&lt;br /&gt;
+&lt;a href=&#34;http://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/&#34;&gt;[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続&lt;/a&gt;&lt;br /&gt;
+で Gitサーバにアクセスするための ssh 接続について記載しました&lt;/p&gt;
+
+&lt;p&gt;その追記メモです&lt;/p&gt;
+
+&lt;h2 id=&#34;ssh-config-ファイルに記載する内容:40fd596bc366136a529c8fca3b216d01&#34;&gt;.\.ssh\config ファイルに記載する内容&lt;/h2&gt;
+
+&lt;p&gt;Git アクセス に ssh を利用する際に、複数アカウントを利用したい&lt;br /&gt;
+つまり、複数 ssh キーを利用したい&lt;br /&gt;
+という場合についてです&lt;/p&gt;
+
+&lt;p&gt;もし、&lt;strong&gt;利用するキーの名前が id_rsa であれば&lt;br /&gt;
+これはデフォルトで認識される名前なので、わざわざ .\.ssh\config ファイルに記載しなくても接続OK&lt;/strong&gt;でした&lt;/p&gt;
+
+&lt;p&gt;つまり例えば、&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;元々 社内用 Git サーバのアクセスに id_rsa を利用していた&lt;/li&gt;
+&lt;li&gt;追加で、GitHub にアクセスするキー（github_rsa など別名称）を作成した&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;こんな場合があったとします&lt;/p&gt;
+
+&lt;p&gt;.\.ssh\config ファイルに記載する内容は 2. の github_rsa のものだけでOKです&lt;/p&gt;
+
+&lt;p&gt;もちろん、 1. の id_rsa を書いても問題ないですし、コンフィグにちゃんと記載されている方が、後々判りやすいと思いますが&lt;br /&gt;
+無理に config に追記しなくてもわたしの環境では問題なく接続できました&lt;/p&gt;
+
+&lt;p&gt;参考までに～(^^)/&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続</title>
@@ -411,6 +452,79 @@ remote.origin.url=&lt;span class=&#34;hljs-keyword&#34;&gt;https://github.com/h-
 &lt;li&gt;Windowsにgitをインストールしてgithubにpushするまで - karakaram-blog&lt;br /&gt;
 &lt;a href=&#34;http://www.karakaram.com/git-install&#34;&gt;http://www.karakaram.com/git-install&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&#34;追記記事書きました-2016-5-9:f13cf594333c590d11f34a491d786d48&#34;&gt;追記記事書きました(2016/5/9)&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[SSH] 複数キー接続のconfig記載について&lt;br /&gt;
+&lt;a href=&#34;http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/&#34;&gt;http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[GitExtensions] 行単位で変更をリセットするRコマンド</title>
+      <link>http://h-sao.com/blog/2015/03/03/reset-line-to-gitextensions/</link>
+      <pubDate>Tue, 03 Mar 2015 22:00:28 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2015/03/03/reset-line-to-gitextensions/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;GitExtensions&lt;/strong&gt; を使ってみました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://gitextensions.github.io/&#34;&gt;http://gitextensions.github.io/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;GitExtensions では、commit 時に、行を選択して&lt;br /&gt;
+その選択部分だけをリセットする（コミット前に合わせる）という機能があります&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Commit - Git Extensions 2.48 documentation&lt;br /&gt;
+&lt;a href=&#34;http://git-extensions-documentation.readthedocs.org/en/latest/commit.html&#34;&gt;http://git-extensions-documentation.readthedocs.org/en/latest/commit.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;以下↓↓↓のような適当なファイルがコミットされていたとします&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;ファイルの下に、変更を追加してみました&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;Giet Extensionsを見ると、ファイルが変更されたので、Commit(1) になっています&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_02.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;差分は、以下のような感じ&lt;br /&gt;
+追加した 「20」、 「100&amp;hellip;」 の数字が、緑色の変更分として表れていますね&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;実は、これは作成中のプログラムなどで、&lt;br /&gt;
+「100&amp;hellip;」 の部分は、Commit には不要だったとします&lt;/p&gt;
+
+&lt;p&gt;そこで、以下のように、Commit には不要だなと思った部分を選択して [R] キーを押してみます&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_04.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;以下↓↓↓のような感じで、ここの行消してもいいの？と聞いてくれます&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_05.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;「はい」にすると、元のファイルから、選択した行を削除してくれます&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_06.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;この動作は、Commitした/しないに関わらず、元ファイルに反映されます&lt;/p&gt;
+
+&lt;p&gt;「はい」を押したあとのファイルの状態↓↓↓&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_07.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;あぁーあそこ、削除しとかなきゃ。。。&lt;br /&gt;
+というときに、元ファイルに戻ってから、再度コミットする、&lt;br /&gt;
+という手間が省けます&lt;/p&gt;
+
+&lt;p&gt;便利やね(^^)/&lt;/p&gt;
 </description>
     </item>
     

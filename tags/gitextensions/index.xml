@@ -411,6 +411,79 @@ remote.origin.url=&lt;span class=&#34;hljs-keyword&#34;&gt;https://github.com/h-
 &lt;li&gt;Windowsにgitをインストールしてgithubにpushするまで - karakaram-blog&lt;br /&gt;
 &lt;a href=&#34;http://www.karakaram.com/git-install&#34;&gt;http://www.karakaram.com/git-install&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&#34;追記記事書きました-2016-5-9:f13cf594333c590d11f34a491d786d48&#34;&gt;追記記事書きました(2016/5/9)&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[SSH] 複数キー接続のconfig記載について&lt;br /&gt;
+&lt;a href=&#34;http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/&#34;&gt;http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[GitExtensions] 行単位で変更をリセットするRコマンド</title>
+      <link>http://h-sao.com/blog/2015/03/03/reset-line-to-gitextensions/</link>
+      <pubDate>Tue, 03 Mar 2015 22:00:28 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2015/03/03/reset-line-to-gitextensions/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;GitExtensions&lt;/strong&gt; を使ってみました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://gitextensions.github.io/&#34;&gt;http://gitextensions.github.io/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;GitExtensions では、commit 時に、行を選択して&lt;br /&gt;
+その選択部分だけをリセットする（コミット前に合わせる）という機能があります&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Commit - Git Extensions 2.48 documentation&lt;br /&gt;
+&lt;a href=&#34;http://git-extensions-documentation.readthedocs.org/en/latest/commit.html&#34;&gt;http://git-extensions-documentation.readthedocs.org/en/latest/commit.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;以下↓↓↓のような適当なファイルがコミットされていたとします&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;ファイルの下に、変更を追加してみました&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;Giet Extensionsを見ると、ファイルが変更されたので、Commit(1) になっています&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_02.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;差分は、以下のような感じ&lt;br /&gt;
+追加した 「20」、 「100&amp;hellip;」 の数字が、緑色の変更分として表れていますね&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;実は、これは作成中のプログラムなどで、&lt;br /&gt;
+「100&amp;hellip;」 の部分は、Commit には不要だったとします&lt;/p&gt;
+
+&lt;p&gt;そこで、以下のように、Commit には不要だなと思った部分を選択して [R] キーを押してみます&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_04.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;以下↓↓↓のような感じで、ここの行消してもいいの？と聞いてくれます&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_05.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;「はい」にすると、元のファイルから、選択した行を削除してくれます&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_06.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;この動作は、Commitした/しないに関わらず、元ファイルに反映されます&lt;/p&gt;
+
+&lt;p&gt;「はい」を押したあとのファイルの状態↓↓↓&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_07.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;あぁーあそこ、削除しとかなきゃ。。。&lt;br /&gt;
+というときに、元ファイルに戻ってから、再度コミットする、&lt;br /&gt;
+という手間が省けます&lt;/p&gt;
+
+&lt;p&gt;便利やね(^^)/&lt;/p&gt;
 </description>
     </item>
     

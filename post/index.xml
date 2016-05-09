@@ -6,8 +6,49 @@
     <description>Recent content in Posts on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 08 May 2016 14:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 09 May 2016 23:30:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[SSH] 複数キー接続のconfig記載について</title>
+      <link>http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</link>
+      <pubDate>Mon, 09 May 2016 23:30:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</guid>
+      <description>
+
+&lt;p&gt;前回、&lt;br /&gt;
+&lt;a href=&#34;http://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/&#34;&gt;[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続&lt;/a&gt;&lt;br /&gt;
+で Gitサーバにアクセスするための ssh 接続について記載しました&lt;/p&gt;
+
+&lt;p&gt;その追記メモです&lt;/p&gt;
+
+&lt;h2 id=&#34;ssh-config-ファイルに記載する内容:40fd596bc366136a529c8fca3b216d01&#34;&gt;.\.ssh\config ファイルに記載する内容&lt;/h2&gt;
+
+&lt;p&gt;Git アクセス に ssh を利用する際に、複数アカウントを利用したい&lt;br /&gt;
+つまり、複数 ssh キーを利用したい&lt;br /&gt;
+という場合についてです&lt;/p&gt;
+
+&lt;p&gt;もし、&lt;strong&gt;利用するキーの名前が id_rsa であれば&lt;br /&gt;
+これはデフォルトで認識される名前なので、わざわざ .\.ssh\config ファイルに記載しなくても接続OK&lt;/strong&gt;でした&lt;/p&gt;
+
+&lt;p&gt;つまり例えば、&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;元々 社内用 Git サーバのアクセスに id_rsa を利用していた&lt;/li&gt;
+&lt;li&gt;追加で、GitHub にアクセスするキー（github_rsa など別名称）を作成した&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;こんな場合があったとします&lt;/p&gt;
+
+&lt;p&gt;.\.ssh\config ファイルに記載する内容は 2. の github_rsa のものだけでOKです&lt;/p&gt;
+
+&lt;p&gt;もちろん、 1. の id_rsa を書いても問題ないですし、コンフィグにちゃんと記載されている方が、後々判りやすいと思いますが&lt;br /&gt;
+無理に config に追記しなくてもわたしの環境では問題なく接続できました&lt;/p&gt;
+
+&lt;p&gt;参考までに～(^^)/&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[Unity] PC実行時のWindowsサイズの設定の仕方＆起動時フック</title>
@@ -579,6 +620,13 @@ remote.origin.url=&lt;span class=&#34;hljs-keyword&#34;&gt;https://github.com/h-
 &lt;ul&gt;
 &lt;li&gt;Windowsにgitをインストールしてgithubにpushするまで - karakaram-blog&lt;br /&gt;
 &lt;a href=&#34;http://www.karakaram.com/git-install&#34;&gt;http://www.karakaram.com/git-install&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;追記記事書きました-2016-5-9:f13cf594333c590d11f34a491d786d48&#34;&gt;追記記事書きました(2016/5/9)&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[SSH] 複数キー接続のconfig記載について&lt;br /&gt;
+&lt;a href=&#34;http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/&#34;&gt;http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -1893,37 +1941,6 @@ MacProSao:~ Sao$
       <guid>http://h-sao.com/blog/2015/04/13/download-pmp-logo/</guid>
       <description>&lt;p&gt;何かと探したけど、全く判らなかった…&lt;br /&gt;&lt;br /&gt;「PMP ロゴ ダウンロード」で検索に引っかかる情報が、個人的に理解できなかった&lt;br /&gt;古いのか、単にわたしのITリテラシーが低いだけなのか…&lt;br /&gt;&lt;br /&gt;PMIサイトの中にあります&lt;br /&gt;&lt;br /&gt;&lt;img  class=&#34;pict&#34; hspace=&#34;5&#34; alt=&#34;PMPLogo&#34; border=&#34;0&#34; height=&#34;462&#34; width=&#34;510&#34; src=&#34;http://h-sao.com/pic/Download-PMP-Logo_00.png&#34;&gt;&lt;br /&gt;&lt;br /&gt;&lt;blockquote&gt;Certifications&lt;br /&gt;　&amp;gt;Certification Program&lt;br /&gt;　　&amp;gt;左の MyPMP&lt;br /&gt;　　　&amp;gt; PMP Logo&lt;/blockquote&gt;&lt;br /&gt;ここからダウンロードできます&lt;br /&gt;&lt;br /&gt;Certifications のページって、思いつかなかったですよ…(&amp;gt;o&amp;lt;&amp;ldquo;)&lt;br /&gt;&lt;br /&gt;ちなみに、追い打ちをかけるように、Chrome で JPGをダウンロードがうまく出来なかった&lt;br /&gt;
 　※ PMP_Business_Card_Logo.ashx　って……（＞＜）&lt;br /&gt;&lt;br /&gt;IEだと、JPGロゴがダウンロード出来ましたよ&amp;nbsp;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[Android] 開発者向けオプション表示とAPKインストールコマンド</title>
-      <link>http://h-sao.com/blog/2015/03/13/install-android-apk/</link>
-      <pubDate>Fri, 13 Mar 2015 22:00:51 +0900</pubDate>
-      
-      <guid>http://h-sao.com/blog/2015/03/13/install-android-apk/</guid>
-      <description>
-
-&lt;p&gt;ずいぶん昔から出ている情報ですが、メモっときます&lt;br /&gt;&lt;br /&gt;Android端末に自作アプリを入れるシンプルな方法です&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;android端末での準備:b6f199fdd59a36219ff7ec007f2868f1&#34;&gt;Android端末での準備&lt;/h1&gt;
-
-&lt;p&gt;Android4.2以降の端末だと「開発者向けオプション」が非表示になってるので&lt;br /&gt;&lt;br /&gt;USBデバッグを有効にしたい場合は&lt;br /&gt;&lt;blockquote&gt;端末情報&amp;nbsp;＞ ビルド番号&lt;/blockquote&gt;&lt;br /&gt;このビルド番号を7回クリックしたら、「開発者向けオプション」が表示されます&lt;br /&gt;&lt;br /&gt;やっておくことは&lt;br /&gt;&lt;ul&gt;&lt;li&gt;設定 ＞ セキュリティ ＞ 提供元不明のアプリ　ON&lt;/li&gt;&lt;li&gt;設定 ＞ 開発者向けオプション ＞ USBデバッグ　ON&lt;/li&gt;&lt;li&gt;デバイスを提供している会社のサイトから、Android用SDKドライバをインストールする&lt;/li&gt;&lt;/ul&gt;こんなところでOK&lt;br /&gt;&lt;br /&gt;（参考）&lt;br /&gt;&lt;div&gt;&lt;a  href=&#34;http://www.yahoo-help.jp/app/answers/detail/p/601/a_id/54447/~/usb%E3%83%87%E3%83%90%E3%83%83%E3%82%B0%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%99%E3%82%8B%E3%80%81%E6%8F%90%E4%BE%9B%E5%85%83%E4%B8%8D%E6%98%8E%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%82%92%E8%A8%B1%E5%8F%AF%E3%81%99%E3%82%8B&#34; target=&#34;_blank&#34;&gt;USBデバッグを有効にする、提供元不明アプリのインストールを許可する - Yahoo!スマホマネージャーヘルプ&amp;nbsp;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;android端末にapkをインストール:b6f199fdd59a36219ff7ec007f2868f1&#34;&gt;Android端末にAPKをインストール&lt;/h1&gt;
-
-&lt;p&gt;AndroidSDKをインストールした場所に adb tool が入っています&lt;br /&gt;&lt;br /&gt;わたしの場合は&amp;nbsp;C:\Library\android-sdk にインストールしたので、adb.exe は&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;C:\Library\android-sdk\platform-tools\adb.exe&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;よく他のサイトで、PCの環境変数パスに、C:\Library\android-sdk\platform-tools を追加設定する、というのを見かけますが&lt;br /&gt;単にこの abd.exe を使うだけであれば、環境変数への追加は必要ないです&lt;br /&gt;&lt;br /&gt;UBSでAndroid端末をPCに接続した状態で&lt;br /&gt;手元の MyApp.apk をインストールするコマンドはこちら&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt; adb install -r MyApp.apk
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;さくっとインストールできました&lt;br /&gt;&lt;br /&gt;デバイスからAPKリンクをつつくなどでも良いのですが&lt;br /&gt;開発者っぽい感じかつ、&lt;br /&gt;ちょっと手元でAPKを試したい時の参考までに(^^)/&lt;/p&gt;
 </description>
     </item>
     
