@@ -401,3 +401,8 @@ remote.origin.url=<span class="hljs-keyword">https://github.com/h-sao/xxx.git</s
 
 - Windowsにgitをインストールしてgithubにpushするまで - karakaram-blog  
 [http://www.karakaram.com/git-install](http://www.karakaram.com/git-install)
+
+## 追記記事書きました(2016/5/9)
+
+- [SSH] 複数キー接続のconfig記載について  
+[http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/](http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/)
