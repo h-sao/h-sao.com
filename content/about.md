@@ -11,6 +11,27 @@ Github: [h-sao](https://github.com/h-sao)
 mail: haruka.sao@gmail.com  
 
 
+# Portrait
+
+## ebisu_effective_modern.cpp vol.3 - Mar 31, 2016
+
+- ebisu C++ 読書会進行の様子
+
+![](/pic/Portrait-ebisucpp03.png)
+
+## CEDEC2015 - Aug 26, 2015
+
+- 「Androidハイパフォーマンス・プログラミング」にて
+
+![](/pic/Portrait-CEDEC2015.png)
+
+## Metro.cs #1 - Sep 16, 2015
+
+- Roslynを使ったLiveScripting開発
+
+![](/pic/Portrait-Metrocs01.png)
+
+
 # Slides, Publications
 
 ## 2016
@@ -280,7 +301,7 @@ Work in progress...
 # 主催勉強会
 
 - ebisu_effective_modern.cpp (Mar 3, 2016 - currently)  
-seminar total number 4
+seminar total number 5
 
 - meetup app (Nov 21, 2015 - currently)  
 seminar total number 1
