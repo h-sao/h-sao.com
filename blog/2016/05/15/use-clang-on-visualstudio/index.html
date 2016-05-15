@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Shader &middot; Effectiveさお</title>
+        <title>Effectiveさお</title>
         <meta name="author">
         <meta name="description" content="The awesome blog of Sao Haruka.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,283 +40,233 @@
               <a href="http://h-sao.com/about">About me</a>
           </div>
 
+
 <div class="container clearfix">
     <main role="main" class="content">
-        <a class="btn" href="http://h-sao.com/" title="">&laquo; </a>
-        <div align="center">
-            <h1>
-                &quot;<script language="JavaScript"><!--
-                var $dir = location.href.split("/");
-                var $dir2 = $dir[$dir.length -2];
-                document.write($dir2);
-                </script>&quot;
-            </h1>
-        </div>
-        <br>
-
-        
-        
+        <article class="post">
+            <a class="btn" href="http://h-sao.com/" title="">&laquo; </a>
             
-<h1><a href="http://h-sao.com/blog/2016/01/11/unity-shader-2dsprite/" title="[Unity] 2D Spriteにシェーダーをかける">[Unity] 2D Spriteにシェーダーをかける</a></h1>
+<h1><a href="http://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/" title="[C&#43;&#43;] VisualStusio2015でClangを使う設定">[C&#43;&#43;] VisualStusio2015でClangを使う設定</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.01.11">2016.01.11</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.05.15">2016.05.15</time>
 &middot; 
     
-    <a href="http://h-sao.com/tags/unity">unity</a>
+    <a href="http://h-sao.com/tags/cpp">cpp</a>
     , 
     
-    <a href="http://h-sao.com/tags/shader">shader</a>
+    <a href="http://h-sao.com/tags/clang">clang</a>
     
     
 
 </span>
 </footer>
  </footer>
-                
+            
 
-<p><a href="/blog/2016/01/04/hello2016/">今年の初めに</a>、「Game a Week」という開発手法がすごい！っと書きました<br />
-とりあえず、週に一度は成果物を公開する、の部分を真似してみようかなと<br />
-（やってみて気が付きましたが、実は1週間って、結構長いです）</p>
+<p>今日は Clang with Microsoft CodeGen の設定などについて、メモしておきます</p>
 
-<p>今をトキメクGame Engine: <strong>Unity</strong> について、去年から触る機会があり、ポチポチとやっております</p>
+<p>先人たちが既に色々と試している内容と対して変わりませんが、そもそも日本語の情報も少ないので、何かの足しになればと思います</p>
 
-<p>そしてこれは既知の情報ですが、先週は2Dスプライトにシンプルなグラデーションのシェーダーを適用してみました</p>
+<h1 id="clang-with-microsoft-codegen-is-here:2cbfe712d76fdfc5483adda9c9ba8965">&ldquo;Clang with Microsoft CodeGen&rdquo; is here!</h1>
 
-<p>やってみると判るのですが、Unity ではスプライトにシンプルシェーダーだけを適用しようと思っても出来なくて、<br />
-先に結論を書いておくと、スプライトとして扱う場合は必ず何かしらのテクスチャアセットが必要でした<br />
-そのメモと感想文になります</p>
+<p>最近はすっかり、クロスプラットフォームやオープンソースに力を入れているマイクロソフト社のツールセットの中に、Clang対応ってのがあります</p>
 
-<p>2016年1月11日現在、Unityのバージョンは 5.3.1 です</p>
+<p>2015年の年末にですが、Clang が正式に Visual Studio 2015 Update1 で利用できるよ～<br />
+とVC++チームブログで発表されていました</p>
 
-<h1 id="unity-のシェーダー言語-shaderlab:9da674eae95fd048ddb2e278fe6c87b1">Unity のシェーダー言語：ShaderLab</h1>
+<ul>
+<li><p>Clang with Microsoft CodeGen in VS 2015 Update 1 - Visual C++ Team Blog<br />
+<a href="https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/">https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/</a></p></li>
 
-<p>Unity のシェーダーは 「ShaderLab」 という Unity オリジナルのシェーダー言語で記載することになります<br />
-といっても HLSL のラッパーのような言語なので、Unity で使うときのお作法であり、Unity と シェーダーの仲介役の言語、と思って良いみたい</p>
+<li><p>Clang with Microsoft CodeGen (March 2016) released- Visual C++ Team Blog<br />
+<a href="https://blogs.msdn.microsoft.com/vcblog/2016/03/31/clang-with-microsoft-codegen-march-2016-released/">https://blogs.msdn.microsoft.com/vcblog/2016/03/31/clang-with-microsoft-codegen-march-2016-released/</a></p></li>
+</ul>
 
-<h2 id="最小限の-shaderlab:9da674eae95fd048ddb2e278fe6c87b1">最小限の ShaderLab</h2>
+<p>良いですねー(^^)<br />
+現在のVS2015には <strong>Clang with Microsoft CodeGen</strong> というツールセットが提供されており、目玉はなんといっても、Clang のデバックを Visual Studioのエディターで確認できるところでしょうか！</p>
 
-<p>最小限の ShaderLab の枠組みはこんな感じ<br />
-（これより削ると、エラーが出た）</p>
+<p>他にも、Clang でコンパイルしたobjと VC でコンパイルしたobjがリンクできるところもすごいです<br />
+既存資産をフル活用出来そうですね</p>
 
-<pre><code>// BG_shader.shader
-// 最小限の ShaderLab
-Shader &quot;Custom/BG_shader&quot; {
-    SubShader
-    {
-        Pass {}
-    }
+<blockquote>
+<p>（2016/5/15現在、Visual Studio 2015 Update2 が最新です）<br />
+<a href="https://www.visualstudio.com/ja-jp/news/vs2015-update2-vs.aspx">https://www.visualstudio.com/ja-jp/news/vs2015-update2-vs.aspx</a></p>
+</blockquote>
+
+<hr />
+
+<p>LLVM側にも記事が上がっています</p>
+
+<ul>
+<li>Getting Started with the LLVM System using Microsoft Visual Studio - LLVM本家<br />
+<a href="http://llvm.org/docs/GettingStartedVS.html">http://llvm.org/docs/GettingStartedVS.html</a></li>
+</ul>
+
+<hr />
+
+<p>日本でも既に先人が試されているので、読んでみると良いと思います</p>
+
+<ul>
+<li><p>Clang/C2をコマンドプロンプトで使ってみる - イグトランスの頭の中（のかけら）<br />
+<a href="http://dev.activebasic.com/egtra/2015/12/09/850/">http://dev.activebasic.com/egtra/2015/12/09/850/</a></p></li>
+
+<li><p>Clang with Microsoft CodeGenがでたので試す - C++初心者Advent Calendar 2015 9日目<br />
+<a href="http://qiita.com/yumetodo/items/bd41f31f39dd590e8c80">http://qiita.com/yumetodo/items/bd41f31f39dd590e8c80</a></p></li>
+</ul>
+
+<hr />
+
+<p>ちなみに、この Clang with Microsoft CodeGen は VC++チームブログにも &ldquo;a.k.a. Clang/C2&rdquo; と記載されており、別名を <strong>Clang/C2</strong> というようです</p>
+
+<p>また、今回対応している <strong>Clang 側のバージョンは 3.7</strong> です</p>
+
+<h1 id="clang-exe-の場所:2cbfe712d76fdfc5483adda9c9ba8965">clang.exe の場所</h1>
+
+<h3 id="clang:2cbfe712d76fdfc5483adda9c9ba8965">Clang</h3>
+
+<pre><code class="language-xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Clang 3.7\bin\x86\clang.exe
+</code></pre>
+
+<h3 id="ちなみにvc:2cbfe712d76fdfc5483adda9c9ba8965">ちなみにVC++</h3>
+
+<pre><code class="language-xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe
+</code></pre>
+
+<p>どちらでも、コマンドプロンプトでコンパイル可能です</p>
+
+<h1 id="vsでのコンパイラの切り替え設定:2cbfe712d76fdfc5483adda9c9ba8965">VSでのコンパイラの切り替え設定</h1>
+
+<p>Visual Stidon 2015 上で &ldquo;Alt + F7&rdquo; を押すか</p>
+
+<blockquote>
+<p>プロジェクト &gt; [プロジェクト名]のプロパティ</p>
+</blockquote>
+
+<p>で設定UIを表示させます</p>
+
+<blockquote>
+<p>構成プロパティ &gt; 全般 &gt; プラットフォームツールセット</p>
+</blockquote>
+
+<p>この項目を &ldquo;Clang 3.7 with Microsoft CodeGen (v140_clang_3_7)&rdquo; に変更するだけです</p>
+
+<p><img src="/pic/Use-Clang-on-VisualStudio_00.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>結構簡単＼(^o^)／</p>
+
+<h1 id="ソリューション作成は何でもok:2cbfe712d76fdfc5483adda9c9ba8965">ソリューション作成は何でもOK</h1>
+
+<p>上記の様に、コンパイラが簡単に切り替えられるので、空のプロジェクトでも、Win32コンソールアプリケーションでもOKです</p>
+
+<p>一応、Clangっぽいプロジェクトはあるんですけど、いきなり dll というのもなんだか敷居が高いので、</p>
+
+<p><img src="/pic/Use-Clang-on-VisualStudio_01.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>exe を作りたいだけなら、Win32コンソールアプリケーションで良いと思います</p>
+
+<h1 id="余談-文字コードはutf8の方が良い-様な気がする:2cbfe712d76fdfc5483adda9c9ba8965">[余談]文字コードはUTF8の方が良い(様な気がする)</h1>
+
+<p>最初に書いておくと、Sift-JIS でも Clang/C2 でコンパイルは通ります</p>
+
+<p>…なのですが、一応、なんとなく</p>
+
+<p>個々の環境によって異なるのかもしれませんが<br />
+わたしがVS2015で作成した cpp ファイルは、デフォルトで Sift-JIS になります</p>
+
+<p>既に、<a href="https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/">VC++チームブログ</a> にはこんな感じで↓↓↓</p>
+
+<blockquote>
+<p>If source files in the project you are trying to convert are UTF-16 encoded, you will need to resave them as UTF-8 when Clang gives you an error about UTF-16 encoded source with BOM.</p>
+</blockquote>
+
+<p>UTF-16はだめらしいです<br />
+Sift-JIS は無関係かもしれませんが、一応…</p>
+
+<h1 id="サンプルコード:2cbfe712d76fdfc5483adda9c9ba8965">サンプルコード</h1>
+
+<p><a href="http://cpprefjp.github.io/">cpprefjp</a> を参照して、サンプルコードを書いてみました</p>
+
+<ul>
+<li>constexprの制限緩和
+<a href="http://cpprefjp.github.io/lang/cpp14/relaxing_constraints_on_constexpr.html">http://cpprefjp.github.io/lang/cpp14/relaxing_constraints_on_constexpr.html</a></li>
+</ul>
+
+<p>VC2015 Update2 では未対応だけど、Clang 3.7 は対応しているというコードです</p>
+
+<pre><code class="language-cpp">#include &quot;stdafx.h&quot;
+#include &lt;iostream&gt;
+
+constexpr int f()
+{
+	int result = 0;
+	return result;
+}
+
+int main()
+{
+	std::cout &lt;&lt; &quot;Hello: &quot; &lt;&lt; f() &lt;&lt; std::endl;
+
+	return 0;
 }
 </code></pre>
 
-<p>実際に、このカスタムシェーダーをマテリアルに適用するとこんな感じ</p>
+<h2 id="visual-studio-2015-v140-でコンパイルすると-エラー:2cbfe712d76fdfc5483adda9c9ba8965">Visual Studio 2015 (v140) でコンパイルすると、エラー</h2>
 
-<p><img src="/pic/Unity-Shader-2DSprite_00.png" alt="" />
+<p><img src="/pic/Use-Clang-on-VisualStudio_02.png" alt="" />
 </p>
 
-<p>何もしないマテリアルを作ることが出来ました</p>
+<p>VS2015 ではまだ、constexpr関数内の変数宣言がエラーになる様です</p>
 
-<h2 id="シンプルなグラデーション:9da674eae95fd048ddb2e278fe6c87b1">シンプルなグラデーション</h2>
+<h2 id="clang-3-7-with-microsoft-codegen-v140-clang-3-7-でのコンパイル:2cbfe712d76fdfc5483adda9c9ba8965">Clang 3.7 with Microsoft CodeGen (v140_clang_3_7) でのコンパイル</h2>
 
-<p>今回、ゲーム背景を単純なカラーグラデーションにしようと思ったので、そういうシンプルシェーダーを書いていきます</p>
+<p><img src="/pic/Use-Clang-on-VisualStudio_03.png" style="border:solid 5px #e6e6e6"/></p>
 
-<pre><code>// BG_shader.shader
-// 黄色くグラデーションする
-Shader &quot;Custom/BG_shader&quot; {
-    SubShader
-    {
-        Pass{
-            CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
+<p>Clang はOKです<br />
+いい感じに動作しました！</p>
 
-            // VS2015のグラフィックデバックON
-            #pragma enable_d3d11_debug_symbols
+<hr />
 
-            struct VertexInput {
-                float4 pos:  POSITION;    // 3D空間座標
-                float2 uv:   TEXCOORD0;   // テクスチャ座標
-            };
+<p>VC++も Clang も、VS上でデバック出来るのは良いですね<br />
+噂には聞いていましたが、自分で動作させてみると、感激するもんがあります</p>
 
-            struct VertexOutput {
-                float4 v:    SV_POSITION; // 2D座標
-                float2 uv:   TEXCOORD0;   // テクスチャ座標
-            };
-
-            // 頂点 shader
-            VertexOutput vert(VertexInput input)
-            {
-                VertexOutput output;
-                output.v = mul(UNITY_MATRIX_MVP, input.pos);
-                output.uv = input.uv;
-
-                return output;
-            }
-
-            // ピクセル shader
-            fixed4 frag( VertexOutput output) : SV_Target
-            {
-                float2 tex = output.uv;
-                // 黄色→白色のグラデーション
-                return fixed4( 1.0, 1.0, 1.0 - tex.y, 1.0);
-            }
-
-            ENDCG
-        }
-    }
-}
-</code></pre>
-
-<p>ちょっとマテリアルではわかりにくいですけど、一応、線形にグラデーションされています</p>
-
-<p><img src="/pic/Unity-Shader-2DSprite_01.png" alt="" />
-</p>
-
-<h1 id="2d-sprite-に適用する方法:9da674eae95fd048ddb2e278fe6c87b1">2D Sprite に適用する方法</h1>
-
-<p>シンプルなシェーダーとマテリアルが出来たので、実際に、Sprite に登録します</p>
-
-<h2 id="sprite-と-material-だけでは足りない:9da674eae95fd048ddb2e278fe6c87b1">Sprite と Material だけでは足りない</h2>
-
-<p>ただし、ちょっとここでクセがあって、このマテリアルを Sprite にアタッチしても、何も起こりません<br />
-それどころか、ワーニングメッセージが…</p>
-
-<p><img src="/pic/Unity-Shader-2DSprite_02.png" alt="" />
-</p>
-
-<blockquote>
-<p>Material does not have a _MainTex texture property. It is required for SpriteRenderer.</p>
-</blockquote>
-
-<p>あら…<br />
-Sprite Renderer に登録するマテリアルには、テクスチャが必要ということみたいです<br />
-シェーダーに戻って、言われているとおり、 _MainTex にテクスチャを登録します</p>
-
-<pre><code>// BG_shader.shader の Properties を追加
-    Properties
-    {
-        _MainTex( &quot;2D Texture&quot;, 2D ) = &quot;white&quot; {}
-    }
-</code></pre>
-
-<p>テクスチャを登録できるし、デフォルトでは white テクスチャを使いますよ。という意味になります<br />
-ちなみに、_MainTex() の内蔵テクスチャには</p>
-
-<ul>
-<li>white</li>
-<li>black</li>
-<li>gray</li>
-<li>bump</li>
-</ul>
-
-<p>の4種類が用意されています<br />
-* ShaderLab: Properties - Unity Documentation<br />
- <a href="http://docs.unity3d.com/Manual/SL-Properties.html">http://docs.unity3d.com/Manual/SL-Properties.html</a></p>
-
-<p><img src="/pic/Unity-Shader-2DSprite_03.png" alt="" />
-</p>
-
-<p>マテリアルにテクスチャを持つ設定にしました</p>
-
-<h2 id="sprite-には-ベースとしてリアルな-texture-が必要:9da674eae95fd048ddb2e278fe6c87b1">Sprite には、ベースとしてリアルな Texture が必要</h2>
-
-<p>Sprite のワーニングも消えたのですが、やはりシーンに Sprite object が表示されません</p>
-
-<p><img src="/pic/Unity-Shader-2DSprite_04.png" alt="" />
-</p>
-
-<p>どうやら、Sprite はあくまで、テクスチャ画像を表示させるための機能に特化しており、マテリアルだけでは動作しない様です</p>
-
-<p>仕方がないので、Sprite 用のテクスチャを用意します<br />
-サイズ感がよくわからなかったのですが、 white.jpg という 8*8 のテクスチャを Assets の下に入れました</p>
-
-<p>Sprite の Inspector にて、Sprite Rendere &gt; Sprite にて white テクスチャを選択します</p>
-
-<blockquote>
-<p>あぁ…これ、デフォルトで白いテクスチャくらい、システムで用意してほしいなかと思いましたが、まぁしょーがないです<br />
-<img src="/pic/Unity-Shader-2DSprite_05.png" alt="" />
-</p>
-</blockquote>
-
-<p>でたー</p>
-
-<p><img src="/pic/Unity-Shader-2DSprite_06.png" alt="" />
-</p>
-
-<h1 id="まとめ:9da674eae95fd048ddb2e278fe6c87b1">まとめ</h1>
-
-<p>シンプルな 3D model では</p>
-
-<ul>
-<li><strong>Mesh Renderer</strong><br />
-→ <strong>Material</strong> (たとえば Standard Shader)<br />
-　→ <strong>Texture</strong><br /></li>
-</ul>
-
-<p>という構造なので、</p>
-
-<p>2D Sprite では</p>
-
-<ul>
-<li><strong>Sprite Renderer</strong><br />
-→ <strong>Material</strong> or <strong>Texture</strong></li>
-</ul>
-
-<p>なのかなーと思っていたのですが、実際には</p>
-
-<ul>
-<li><strong>Sprite Renderer</strong><br />
-→ <strong>Material</strong><br />
-　→ <strong>Texture</strong> (Shader の _MainTex() )<br />
-→ <strong>Sprite</strong><br />
-　→ <strong>Texture</strong> (リアル画像)</li>
-</ul>
-
-<p>という構造が必要でした</p>
-
-<p>これを受けて、</p>
-
-<p>「え、シンプルなシェーダーのみを適用したいなら、<br />
-Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
-
-<p>という疑問が出てきましたが、<br />
-実際のゲーム制作においては、シチュエーション依存ですかね…<br />
-今回のわたしの場合は、Sprite を採用しました</p>
-
-<p>この記事の Unity プロジェクト（ソース、アセット）を Github に置いておきます<br />
-<a href="https://github.com/h-sao/UnitySampleCode/tree/master/SpriteGradationalShader">https://github.com/h-sao/UnitySampleCode/tree/master/SpriteGradationalShader</a></p>
-
-<p>何かの参考になれば幸いです</p>
+<p>今はまだプレビューらしいので、早く安定化して欲しいですね～</p>
 
             <ul class="share-buttons">
     <li></li>
     <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f01%2f11%2funity-shader-2dsprite%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f15%2fuse-clang-on-visualstudio%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bUnity%5d%202D%20Sprite%e3%81%ab%e3%82%b7%e3%82%a7%e3%83%bc%e3%83%80%e3%83%bc%e3%82%92%e3%81%8b%e3%81%91%e3%82%8b&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f01%2f11%2funity-shader-2dsprite%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5d%20VisualStusio2015%e3%81%a7Clang%e3%82%92%e4%bd%bf%e3%81%86%e8%a8%ad%e5%ae%9a&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f15%2fuse-clang-on-visualstudio%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f01%2f11%2funity-shader-2dsprite%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f15%2fuse-clang-on-visualstudio%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f01%2f11%2funity-shader-2dsprite%2f&title=%5bUnity%5d%202D%20Sprite%e3%81%ab%e3%82%b7%e3%82%a7%e3%83%bc%e3%83%80%e3%83%bc%e3%82%92%e3%81%8b%e3%81%91%e3%82%8b" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f15%2fuse-clang-on-visualstudio%2f&title=%5bC%2b%2b%5d%20VisualStusio2015%e3%81%a7Clang%e3%82%92%e4%bd%bf%e3%81%86%e8%a8%ad%e5%ae%9a" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 
-            <hr>
-        
+        </article>
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'harukasao';
+    var disqus_identifier = 'http:\/\/h-sao.com\/blog\/2016\/05\/15\/use-clang-on-visualstudio\/';
+    var disqus_title = '[C\x2b\x2b] VisualStusio2015でClangを使う設定';
+    var disqus_url = 'http:\/\/h-sao.com\/blog\/2016\/05\/15\/use-clang-on-visualstudio\/';
 
-        <div class="pagination">
-<nav>
-
-	<p class="counter"> 1  1</p>
-
-
-</nav>
-</div>
-
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
     </main>
-
     <aside class="author">
   <img class="profile-image" src="http://h-sao.com/pic/saoharuka128.png" alt="遥佐保/Sao Haruka" />
   <p class="name"> 
@@ -637,6 +587,7 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
 
 
 </div>
+
 <footer class="main-footer">
   <div class="container clearfix">
         <a class="icon-rss" href="http://h-sao.com/post/index.xml" title="RSS"></a>

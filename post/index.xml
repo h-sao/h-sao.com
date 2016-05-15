@@ -6,8 +6,186 @@
     <description>Recent content in Posts on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 09 May 2016 23:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 15 May 2016 23:30:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[C&#43;&#43;] VisualStusio2015でClangを使う設定</title>
+      <link>http://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/</link>
+      <pubDate>Sun, 15 May 2016 23:30:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/</guid>
+      <description>
+
+&lt;p&gt;今日は Clang with Microsoft CodeGen の設定などについて、メモしておきます&lt;/p&gt;
+
+&lt;p&gt;先人たちが既に色々と試している内容と対して変わりませんが、そもそも日本語の情報も少ないので、何かの足しになればと思います&lt;/p&gt;
+
+&lt;h1 id=&#34;clang-with-microsoft-codegen-is-here:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;&amp;ldquo;Clang with Microsoft CodeGen&amp;rdquo; is here!&lt;/h1&gt;
+
+&lt;p&gt;最近はすっかり、クロスプラットフォームやオープンソースに力を入れているマイクロソフト社のツールセットの中に、Clang対応ってのがあります&lt;/p&gt;
+
+&lt;p&gt;2015年の年末にですが、Clang が正式に Visual Studio 2015 Update1 で利用できるよ～&lt;br /&gt;
+とVC++チームブログで発表されていました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Clang with Microsoft CodeGen in VS 2015 Update 1 - Visual C++ Team Blog&lt;br /&gt;
+&lt;a href=&#34;https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/&#34;&gt;https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Clang with Microsoft CodeGen (March 2016) released- Visual C++ Team Blog&lt;br /&gt;
+&lt;a href=&#34;https://blogs.msdn.microsoft.com/vcblog/2016/03/31/clang-with-microsoft-codegen-march-2016-released/&#34;&gt;https://blogs.msdn.microsoft.com/vcblog/2016/03/31/clang-with-microsoft-codegen-march-2016-released/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;良いですねー(^^)&lt;br /&gt;
+現在のVS2015には &lt;strong&gt;Clang with Microsoft CodeGen&lt;/strong&gt; というツールセットが提供されており、目玉はなんといっても、Clang のデバックを Visual Studioのエディターで確認できるところでしょうか！&lt;/p&gt;
+
+&lt;p&gt;他にも、Clang でコンパイルしたobjと VC でコンパイルしたobjがリンクできるところもすごいです&lt;br /&gt;
+既存資産をフル活用出来そうですね&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;（2016/5/15現在、Visual Studio 2015 Update2 が最新です）&lt;br /&gt;
+&lt;a href=&#34;https://www.visualstudio.com/ja-jp/news/vs2015-update2-vs.aspx&#34;&gt;https://www.visualstudio.com/ja-jp/news/vs2015-update2-vs.aspx&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;LLVM側にも記事が上がっています&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Getting Started with the LLVM System using Microsoft Visual Studio - LLVM本家&lt;br /&gt;
+&lt;a href=&#34;http://llvm.org/docs/GettingStartedVS.html&#34;&gt;http://llvm.org/docs/GettingStartedVS.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;日本でも既に先人が試されているので、読んでみると良いと思います&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Clang/C2をコマンドプロンプトで使ってみる - イグトランスの頭の中（のかけら）&lt;br /&gt;
+&lt;a href=&#34;http://dev.activebasic.com/egtra/2015/12/09/850/&#34;&gt;http://dev.activebasic.com/egtra/2015/12/09/850/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Clang with Microsoft CodeGenがでたので試す - C++初心者Advent Calendar 2015 9日目&lt;br /&gt;
+&lt;a href=&#34;http://qiita.com/yumetodo/items/bd41f31f39dd590e8c80&#34;&gt;http://qiita.com/yumetodo/items/bd41f31f39dd590e8c80&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;ちなみに、この Clang with Microsoft CodeGen は VC++チームブログにも &amp;ldquo;a.k.a. Clang/C2&amp;rdquo; と記載されており、別名を &lt;strong&gt;Clang/C2&lt;/strong&gt; というようです&lt;/p&gt;
+
+&lt;p&gt;また、今回対応している &lt;strong&gt;Clang 側のバージョンは 3.7&lt;/strong&gt; です&lt;/p&gt;
+
+&lt;h1 id=&#34;clang-exe-の場所:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;clang.exe の場所&lt;/h1&gt;
+
+&lt;h3 id=&#34;clang:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;Clang&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Clang 3.7\bin\x86\clang.exe
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ちなみにvc:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;ちなみにVC++&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;どちらでも、コマンドプロンプトでコンパイル可能です&lt;/p&gt;
+
+&lt;h1 id=&#34;vsでのコンパイラの切り替え設定:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;VSでのコンパイラの切り替え設定&lt;/h1&gt;
+
+&lt;p&gt;Visual Stidon 2015 上で &amp;ldquo;Alt + F7&amp;rdquo; を押すか&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;プロジェクト &amp;gt; [プロジェクト名]のプロパティ&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;で設定UIを表示させます&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;構成プロパティ &amp;gt; 全般 &amp;gt; プラットフォームツールセット&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;この項目を &amp;ldquo;Clang 3.7 with Microsoft CodeGen (v140_clang_3_7)&amp;rdquo; に変更するだけです&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Use-Clang-on-VisualStudio_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;結構簡単＼(^o^)／&lt;/p&gt;
+
+&lt;h1 id=&#34;ソリューション作成は何でもok:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;ソリューション作成は何でもOK&lt;/h1&gt;
+
+&lt;p&gt;上記の様に、コンパイラが簡単に切り替えられるので、空のプロジェクトでも、Win32コンソールアプリケーションでもOKです&lt;/p&gt;
+
+&lt;p&gt;一応、Clangっぽいプロジェクトはあるんですけど、いきなり dll というのもなんだか敷居が高いので、&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Use-Clang-on-VisualStudio_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;exe を作りたいだけなら、Win32コンソールアプリケーションで良いと思います&lt;/p&gt;
+
+&lt;h1 id=&#34;余談-文字コードはutf8の方が良い-様な気がする:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;[余談]文字コードはUTF8の方が良い(様な気がする)&lt;/h1&gt;
+
+&lt;p&gt;最初に書いておくと、Sift-JIS でも Clang/C2 でコンパイルは通ります&lt;/p&gt;
+
+&lt;p&gt;…なのですが、一応、なんとなく&lt;/p&gt;
+
+&lt;p&gt;個々の環境によって異なるのかもしれませんが&lt;br /&gt;
+わたしがVS2015で作成した cpp ファイルは、デフォルトで Sift-JIS になります&lt;/p&gt;
+
+&lt;p&gt;既に、&lt;a href=&#34;https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/&#34;&gt;VC++チームブログ&lt;/a&gt; にはこんな感じで↓↓↓&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If source files in the project you are trying to convert are UTF-16 encoded, you will need to resave them as UTF-8 when Clang gives you an error about UTF-16 encoded source with BOM.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;UTF-16はだめらしいです&lt;br /&gt;
+Sift-JIS は無関係かもしれませんが、一応…&lt;/p&gt;
+
+&lt;h1 id=&#34;サンプルコード:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;サンプルコード&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://cpprefjp.github.io/&#34;&gt;cpprefjp&lt;/a&gt; を参照して、サンプルコードを書いてみました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;constexprの制限緩和
+&lt;a href=&#34;http://cpprefjp.github.io/lang/cpp14/relaxing_constraints_on_constexpr.html&#34;&gt;http://cpprefjp.github.io/lang/cpp14/relaxing_constraints_on_constexpr.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;VC2015 Update2 では未対応だけど、Clang 3.7 は対応しているというコードです&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;stdafx.h&amp;quot;
+#include &amp;lt;iostream&amp;gt;
+
+constexpr int f()
+{
+	int result = 0;
+	return result;
+}
+
+int main()
+{
+	std::cout &amp;lt;&amp;lt; &amp;quot;Hello: &amp;quot; &amp;lt;&amp;lt; f() &amp;lt;&amp;lt; std::endl;
+
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;visual-studio-2015-v140-でコンパイルすると-エラー:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;Visual Studio 2015 (v140) でコンパイルすると、エラー&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Use-Clang-on-VisualStudio_02.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;VS2015 ではまだ、constexpr関数内の変数宣言がエラーになる様です&lt;/p&gt;
+
+&lt;h2 id=&#34;clang-3-7-with-microsoft-codegen-v140-clang-3-7-でのコンパイル:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;Clang 3.7 with Microsoft CodeGen (v140_clang_3_7) でのコンパイル&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Use-Clang-on-VisualStudio_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;Clang はOKです&lt;br /&gt;
+いい感じに動作しました！&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;VC++も Clang も、VS上でデバック出来るのは良いですね&lt;br /&gt;
+噂には聞いていましたが、自分で動作させてみると、感激するもんがあります&lt;/p&gt;
+
+&lt;p&gt;今はまだプレビューらしいので、早く安定化して欲しいですね～&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[SSH] 複数キー接続のconfig記載について</title>
@@ -1930,17 +2108,6 @@ MacProSao:~ Sao$
 
 &lt;p&gt;Hugoを入れるためにインストールしてみました&lt;br /&gt;
 ついにわたしもGoを使う日が来るなんて…(ﾟ∇ﾟ ;)&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[PMP] PMPロゴのダウンロード場所</title>
-      <link>http://h-sao.com/blog/2015/04/13/download-pmp-logo/</link>
-      <pubDate>Mon, 13 Apr 2015 22:30:04 +0900</pubDate>
-      
-      <guid>http://h-sao.com/blog/2015/04/13/download-pmp-logo/</guid>
-      <description>&lt;p&gt;何かと探したけど、全く判らなかった…&lt;br /&gt;&lt;br /&gt;「PMP ロゴ ダウンロード」で検索に引っかかる情報が、個人的に理解できなかった&lt;br /&gt;古いのか、単にわたしのITリテラシーが低いだけなのか…&lt;br /&gt;&lt;br /&gt;PMIサイトの中にあります&lt;br /&gt;&lt;br /&gt;&lt;img  class=&#34;pict&#34; hspace=&#34;5&#34; alt=&#34;PMPLogo&#34; border=&#34;0&#34; height=&#34;462&#34; width=&#34;510&#34; src=&#34;http://h-sao.com/pic/Download-PMP-Logo_00.png&#34;&gt;&lt;br /&gt;&lt;br /&gt;&lt;blockquote&gt;Certifications&lt;br /&gt;　&amp;gt;Certification Program&lt;br /&gt;　　&amp;gt;左の MyPMP&lt;br /&gt;　　　&amp;gt; PMP Logo&lt;/blockquote&gt;&lt;br /&gt;ここからダウンロードできます&lt;br /&gt;&lt;br /&gt;Certifications のページって、思いつかなかったですよ…(&amp;gt;o&amp;lt;&amp;ldquo;)&lt;br /&gt;&lt;br /&gt;ちなみに、追い打ちをかけるように、Chrome で JPGをダウンロードがうまく出来なかった&lt;br /&gt;
-　※ PMP_Business_Card_Logo.ashx　って……（＞＜）&lt;br /&gt;&lt;br /&gt;IEだと、JPGロゴがダウンロード出来ましたよ&amp;nbsp;&lt;/p&gt;
 </description>
     </item>
     

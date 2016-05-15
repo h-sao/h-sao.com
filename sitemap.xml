@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://h-sao.com/</loc>
-    <lastmod>2016-05-09T23:30:00+09:00</lastmod>
+    <lastmod>2016-05-15T23:30:00+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/</loc>
+    <lastmod>2016-05-15T23:30:00+09:00</lastmod>
   </url>
   
   <url>

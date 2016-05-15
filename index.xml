@@ -6,8 +6,186 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 09 May 2016 23:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 15 May 2016 23:30:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[C&#43;&#43;] VisualStusio2015でClangを使う設定</title>
+      <link>http://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/</link>
+      <pubDate>Sun, 15 May 2016 23:30:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/</guid>
+      <description>
+
+&lt;p&gt;今日は Clang with Microsoft CodeGen の設定などについて、メモしておきます&lt;/p&gt;
+
+&lt;p&gt;先人たちが既に色々と試している内容と対して変わりませんが、そもそも日本語の情報も少ないので、何かの足しになればと思います&lt;/p&gt;
+
+&lt;h1 id=&#34;clang-with-microsoft-codegen-is-here:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;&amp;ldquo;Clang with Microsoft CodeGen&amp;rdquo; is here!&lt;/h1&gt;
+
+&lt;p&gt;最近はすっかり、クロスプラットフォームやオープンソースに力を入れているマイクロソフト社のツールセットの中に、Clang対応ってのがあります&lt;/p&gt;
+
+&lt;p&gt;2015年の年末にですが、Clang が正式に Visual Studio 2015 Update1 で利用できるよ～&lt;br /&gt;
+とVC++チームブログで発表されていました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Clang with Microsoft CodeGen in VS 2015 Update 1 - Visual C++ Team Blog&lt;br /&gt;
+&lt;a href=&#34;https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/&#34;&gt;https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Clang with Microsoft CodeGen (March 2016) released- Visual C++ Team Blog&lt;br /&gt;
+&lt;a href=&#34;https://blogs.msdn.microsoft.com/vcblog/2016/03/31/clang-with-microsoft-codegen-march-2016-released/&#34;&gt;https://blogs.msdn.microsoft.com/vcblog/2016/03/31/clang-with-microsoft-codegen-march-2016-released/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;良いですねー(^^)&lt;br /&gt;
+現在のVS2015には &lt;strong&gt;Clang with Microsoft CodeGen&lt;/strong&gt; というツールセットが提供されており、目玉はなんといっても、Clang のデバックを Visual Studioのエディターで確認できるところでしょうか！&lt;/p&gt;
+
+&lt;p&gt;他にも、Clang でコンパイルしたobjと VC でコンパイルしたobjがリンクできるところもすごいです&lt;br /&gt;
+既存資産をフル活用出来そうですね&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;（2016/5/15現在、Visual Studio 2015 Update2 が最新です）&lt;br /&gt;
+&lt;a href=&#34;https://www.visualstudio.com/ja-jp/news/vs2015-update2-vs.aspx&#34;&gt;https://www.visualstudio.com/ja-jp/news/vs2015-update2-vs.aspx&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;LLVM側にも記事が上がっています&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Getting Started with the LLVM System using Microsoft Visual Studio - LLVM本家&lt;br /&gt;
+&lt;a href=&#34;http://llvm.org/docs/GettingStartedVS.html&#34;&gt;http://llvm.org/docs/GettingStartedVS.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;日本でも既に先人が試されているので、読んでみると良いと思います&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Clang/C2をコマンドプロンプトで使ってみる - イグトランスの頭の中（のかけら）&lt;br /&gt;
+&lt;a href=&#34;http://dev.activebasic.com/egtra/2015/12/09/850/&#34;&gt;http://dev.activebasic.com/egtra/2015/12/09/850/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Clang with Microsoft CodeGenがでたので試す - C++初心者Advent Calendar 2015 9日目&lt;br /&gt;
+&lt;a href=&#34;http://qiita.com/yumetodo/items/bd41f31f39dd590e8c80&#34;&gt;http://qiita.com/yumetodo/items/bd41f31f39dd590e8c80&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;ちなみに、この Clang with Microsoft CodeGen は VC++チームブログにも &amp;ldquo;a.k.a. Clang/C2&amp;rdquo; と記載されており、別名を &lt;strong&gt;Clang/C2&lt;/strong&gt; というようです&lt;/p&gt;
+
+&lt;p&gt;また、今回対応している &lt;strong&gt;Clang 側のバージョンは 3.7&lt;/strong&gt; です&lt;/p&gt;
+
+&lt;h1 id=&#34;clang-exe-の場所:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;clang.exe の場所&lt;/h1&gt;
+
+&lt;h3 id=&#34;clang:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;Clang&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Clang 3.7\bin\x86\clang.exe
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ちなみにvc:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;ちなみにVC++&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;どちらでも、コマンドプロンプトでコンパイル可能です&lt;/p&gt;
+
+&lt;h1 id=&#34;vsでのコンパイラの切り替え設定:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;VSでのコンパイラの切り替え設定&lt;/h1&gt;
+
+&lt;p&gt;Visual Stidon 2015 上で &amp;ldquo;Alt + F7&amp;rdquo; を押すか&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;プロジェクト &amp;gt; [プロジェクト名]のプロパティ&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;で設定UIを表示させます&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;構成プロパティ &amp;gt; 全般 &amp;gt; プラットフォームツールセット&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;この項目を &amp;ldquo;Clang 3.7 with Microsoft CodeGen (v140_clang_3_7)&amp;rdquo; に変更するだけです&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Use-Clang-on-VisualStudio_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;結構簡単＼(^o^)／&lt;/p&gt;
+
+&lt;h1 id=&#34;ソリューション作成は何でもok:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;ソリューション作成は何でもOK&lt;/h1&gt;
+
+&lt;p&gt;上記の様に、コンパイラが簡単に切り替えられるので、空のプロジェクトでも、Win32コンソールアプリケーションでもOKです&lt;/p&gt;
+
+&lt;p&gt;一応、Clangっぽいプロジェクトはあるんですけど、いきなり dll というのもなんだか敷居が高いので、&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Use-Clang-on-VisualStudio_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;exe を作りたいだけなら、Win32コンソールアプリケーションで良いと思います&lt;/p&gt;
+
+&lt;h1 id=&#34;余談-文字コードはutf8の方が良い-様な気がする:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;[余談]文字コードはUTF8の方が良い(様な気がする)&lt;/h1&gt;
+
+&lt;p&gt;最初に書いておくと、Sift-JIS でも Clang/C2 でコンパイルは通ります&lt;/p&gt;
+
+&lt;p&gt;…なのですが、一応、なんとなく&lt;/p&gt;
+
+&lt;p&gt;個々の環境によって異なるのかもしれませんが&lt;br /&gt;
+わたしがVS2015で作成した cpp ファイルは、デフォルトで Sift-JIS になります&lt;/p&gt;
+
+&lt;p&gt;既に、&lt;a href=&#34;https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/&#34;&gt;VC++チームブログ&lt;/a&gt; にはこんな感じで↓↓↓&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If source files in the project you are trying to convert are UTF-16 encoded, you will need to resave them as UTF-8 when Clang gives you an error about UTF-16 encoded source with BOM.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;UTF-16はだめらしいです&lt;br /&gt;
+Sift-JIS は無関係かもしれませんが、一応…&lt;/p&gt;
+
+&lt;h1 id=&#34;サンプルコード:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;サンプルコード&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://cpprefjp.github.io/&#34;&gt;cpprefjp&lt;/a&gt; を参照して、サンプルコードを書いてみました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;constexprの制限緩和
+&lt;a href=&#34;http://cpprefjp.github.io/lang/cpp14/relaxing_constraints_on_constexpr.html&#34;&gt;http://cpprefjp.github.io/lang/cpp14/relaxing_constraints_on_constexpr.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;VC2015 Update2 では未対応だけど、Clang 3.7 は対応しているというコードです&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;stdafx.h&amp;quot;
+#include &amp;lt;iostream&amp;gt;
+
+constexpr int f()
+{
+	int result = 0;
+	return result;
+}
+
+int main()
+{
+	std::cout &amp;lt;&amp;lt; &amp;quot;Hello: &amp;quot; &amp;lt;&amp;lt; f() &amp;lt;&amp;lt; std::endl;
+
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;visual-studio-2015-v140-でコンパイルすると-エラー:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;Visual Studio 2015 (v140) でコンパイルすると、エラー&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Use-Clang-on-VisualStudio_02.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;VS2015 ではまだ、constexpr関数内の変数宣言がエラーになる様です&lt;/p&gt;
+
+&lt;h2 id=&#34;clang-3-7-with-microsoft-codegen-v140-clang-3-7-でのコンパイル:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;Clang 3.7 with Microsoft CodeGen (v140_clang_3_7) でのコンパイル&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Use-Clang-on-VisualStudio_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;Clang はOKです&lt;br /&gt;
+いい感じに動作しました！&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;VC++も Clang も、VS上でデバック出来るのは良いですね&lt;br /&gt;
+噂には聞いていましたが、自分で動作させてみると、感激するもんがあります&lt;/p&gt;
+
+&lt;p&gt;今はまだプレビューらしいので、早く安定化して欲しいですね～&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[SSH] 複数キー接続のconfig記載について</title>
@@ -1356,6 +1534,35 @@ Twitter: &lt;a href=&#34;https://twitter.com/hr_sao&#34;&gt;@hr_sao&lt;/a&gt;&lt
 Github: &lt;a href=&#34;https://github.com/h-sao&#34;&gt;h-sao&lt;/a&gt;&lt;br /&gt;
 mail: haruka.sao@gmail.com&lt;/p&gt;
 
+&lt;h1 id=&#34;portrait:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Portrait&lt;/h1&gt;
+
+&lt;h2 id=&#34;ebisu-effective-modern-cpp-vol-3-mar-31-2016:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;ebisu_effective_modern.cpp vol.3 - Mar 31, 2016&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ebisu C++ 読書会進行の様子&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Portrait-ebisucpp03.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;cedec2015-aug-26-2015:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;CEDEC2015 - Aug 26, 2015&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;「Androidハイパフォーマンス・プログラミング」にて&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Portrait-CEDEC2015.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;metro-cs-1-sep-16-2015:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Metro.cs #1 - Sep 16, 2015&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Roslynを使ったLiveScripting開発&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Portrait-Metrocs01.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
 &lt;h1 id=&#34;slides-publications:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Slides, Publications&lt;/h1&gt;
 
 &lt;h2 id=&#34;2016:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;2016&lt;/h2&gt;
@@ -1625,7 +1832,7 @@ WPFの基礎&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;ebisu_effective_modern.cpp (Mar 3, 2016 - currently)&lt;br /&gt;
-seminar total number 4&lt;/p&gt;&lt;/li&gt;
+seminar total number 5&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;meetup app (Nov 21, 2015 - currently)&lt;br /&gt;
 seminar total number 1&lt;/p&gt;&lt;/li&gt;
@@ -2145,108 +2352,6 @@ CMSに当たり前にあって、Hugoには無い機能を、実装していく�
 &lt;p&gt;気持ちも新たに、役立つ情報を発信していければと思っています！&lt;/p&gt;
 
 &lt;p&gt;またよろしくお願いしまーす！&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[Mac] Homebrewインストールログ</title>
-      <link>http://h-sao.com/blog/2015/05/11/install-log-for-homebrew/</link>
-      <pubDate>Mon, 11 May 2015 03:05:44 +0900</pubDate>
-      
-      <guid>http://h-sao.com/blog/2015/05/11/install-log-for-homebrew/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Homebrew&lt;/strong&gt; とは、Mac上のアプリケーションパッケージを管理するソフトです&lt;/p&gt;
-
-&lt;p&gt;詳しくはこちら↓↓↓に書かれているのですが、自分のメモとログを残します&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;MacにHomebrewをインストールする - Qiita&lt;br /&gt;
-&lt;a href=&#34;http://qiita.com/is0me/items/475fdbc4d770534f9ef1&#34;&gt;http://qiita.com/is0me/items/475fdbc4d770534f9ef1&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Homebrewの本家&lt;br /&gt;
-&lt;a href=&#34;http://brew.sh/&#34;&gt;http://brew.sh/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Macでのインストールログ&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;## Homebrew入ってない状態
-MacProSao:~ Sao$ brew
--bash: brew: command not found
- 
-## VIMでバッシュプロファイル作成
-MacProSao:~ Sao$ vim .bash_profile
-
-MacProSao:~ Sao$ more .bash_profile 
-export PATH=/usr/local:$PATH
-
-MacProSao:~ Sao$ pwd
-/Users/Sao
-
-## /usr/local の作成 
-MacProSao:usr Sao$ sudo mkdir /usr/local/
-
-WARNING: Improper use of the sudo command could lead to data loss
-or the deletion of important system files. Please double-check your
-typing when using sudo. Type &amp;quot;man sudo&amp;quot; for more information.
-
-To proceed, enter your password, or type Ctrl-C to abort.
-
-Password:
-MacProSao:usr Sao$ ls -al
-total 8
-drwxr-xr-x@   12 root  wheel    408  5 11 02:24 .
-drwxr-xr-x    30 root  wheel   1088  5 11 02:17 ..
-drwxr-xr-x     5 root  wheel    170  9 10  2014 X11
-lrwxr-xr-x     1 root  wheel      3  2 22 18:01 X11R6 -&amp;gt; X11
-drwxr-xr-x  1053 root  wheel  35802  5  2 23:30 bin
-drwxr-xr-x   257 root  wheel   8738  5 11 01:25 include
-drwxr-xr-x   271 root  wheel   9214  5 11 01:25 lib
-drwxr-xr-x   170 root  wheel   5780  4 26 13:43 libexec
-drwxr-xr-x     2 root  wheel     68  5 11 02:24 local
-drwxr-xr-x   244 root  wheel   8296  4 26 13:40 sbin
-drwxr-xr-x    44 root  wheel   1496  5 11 01:25 share
-drwxr-xr-x     4 root  wheel    136  2 22 17:56 standalone
-
-## Homebrewのインストール
-MacProSao:usr Sao$ ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
-==&amp;gt; This script will install:
-/usr/local/bin/brew
-/usr/local/Library/...
-/usr/local/share/man/man1/brew.1
-==&amp;gt; The following directories will be made group writable:
-/usr/local/.
-==&amp;gt; The following directories will have their group set to admin:
-/usr/local/.
-
-Press RETURN to continue or any other key to abort
-==&amp;gt; /usr/bin/sudo /bin/chmod g+rwx /usr/local/.
-==&amp;gt; /usr/bin/sudo /usr/bin/chgrp admin /usr/local/.
-==&amp;gt; /usr/bin/sudo /bin/mkdir /Library/Caches/Homebrew
-==&amp;gt; /usr/bin/sudo /bin/chmod g+rwx /Library/Caches/Homebrew
-==&amp;gt; Downloading and installing Homebrew...
-remote: Counting objects: 3572, done.
-remote: Compressing objects: 100% (3421/3421), done.
-remote: Total 3572 (delta 35), reused 1459 (delta 18), pack-reused 0
-Receiving objects: 100% (3572/3572), 2.72 MiB | 2.47 MiB/s, done.
-Resolving deltas: 100% (35/35), done.
-From https://github.com/Homebrew/homebrew
- * [new branch]      master     -&amp;gt; origin/master
-HEAD is now at c007efc Riak 2.1.1
-==&amp;gt; Installation successful!
-==&amp;gt; Next steps
-Run `brew help` to get started
-
-## プロファイル読み込み 
-MacProSao:~ Sao$ source .bash_profile 
-
-## バージョン確認
-MacProSao:~ Sao$ brew -v
-Homebrew 0.9.5
- 
-MacProSao:~ Sao$ 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Hugoを入れるためにインストールしてみました&lt;br /&gt;
-ついにわたしもGoを使う日が来るなんて…(ﾟ∇ﾟ ;)&lt;/p&gt;
 </description>
     </item>
     
