@@ -228,6 +228,25 @@ int main()
     </item>
     
     <item>
+      <title>[C&#43;&#43;/CX] MVP Community Camp 2014大阪で「VC&#43;&#43;まわりの非同期処理」セッションしました</title>
+      <link>http://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/</link>
+      <pubDate>Sun, 23 Mar 2014 00:25:28 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/</guid>
+      <description>&lt;p&gt;MVP Community Camp 2014大阪にて、VC++系のセッションをさせて頂きました&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;MVP Community Camp 2014大阪会場&lt;/b&gt;&lt;br /&gt;
+&lt;code&gt;http://atnd.org/event/E0024087&lt;/code&gt; (リンク先は削除されている模様です)&lt;/p&gt;
+
+&lt;p&gt;当日利用した資料はこちら！&lt;/p&gt;
+
+&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;e0404a3c131a4376b01390157d5532f3&#34; data-ratio=&#34;1.77777777777778&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;br /&gt;　&lt;a  target=&#34;_blank&#34; href=&#34;http://jyurimaru.info/data/20140322CommunityOpenDay2014/20140322VC++async.pptx&#34;&gt;pptx版はこちら&lt;/a&gt;&amp;nbsp; ←セッション時の私的メモが欄外に載っています&lt;br /&gt;　&lt;a  target=&#34;_blank&#34; href=&#34;http://jyurimaru.info/data/20140322CommunityOpenDay2014/20140322VC++async.pdf&#34;&gt;PDF版はこちら&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;序盤はわたしの追体験発表みたいになってしまいました&lt;br /&gt;同じような疑問を持っている人や、その人なりの解釈の手助けになる様であればと思って記載しています&lt;br /&gt;&lt;br /&gt;後半部分は、VC++での非同期処理の触りだけになっていますが&lt;br /&gt;非同期での例外や中断など、C++/CXのWIndowsストアアプリでは興味深い仕組みが色々あるので&lt;br /&gt;この続きになる情報も、もっと自分なりに勉強して発信していきたいなー&lt;br /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Anonymous Struct of C</title>
       <link>http://h-sao.com/blog/2014/02/24/c-anonymous-struct/</link>
       <pubDate>Mon, 24 Feb 2014 00:00:00 +0000</pubDate>

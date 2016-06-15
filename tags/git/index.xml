@@ -528,5 +528,39 @@ remote.origin.url=&lt;span class=&#34;hljs-keyword&#34;&gt;https://github.com/h-
 </description>
     </item>
     
+    <item>
+      <title>[Git] ローカルを強制上書きして、作業をなかったことにしたい</title>
+      <link>http://h-sao.com/blog/2014/02/03/force-reset-my-git-repository/</link>
+      <pubDate>Mon, 03 Feb 2014 18:54:41 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2014/02/03/force-reset-my-git-repository/</guid>
+      <description>&lt;p&gt;ローカルの作業が何やらおかしくなったから&lt;br /&gt;
+リモートのファイル内容に戻したい～という時&lt;br /&gt;
+以下のコマンドでさくっと戻りました&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;git fetch origin
+git reset --hard origin/master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ツールなどで強制的にsyncさせようとしても&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;failed to sync this branch&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;という悲しいお知らせが出て、結局 Git Bash に行くことになりますので……&lt;/p&gt;
+
+&lt;p&gt;（参考リンク）&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;gitでリモートのブランチにローカルを強制一致させたい時&lt;br /&gt;
+&lt;a href=&#34;http://qiita.com/ms2sato/items/72b48c1b1923beb1e186&#34;&gt;http://qiita.com/ms2sato/items/72b48c1b1923beb1e186&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;How to reset my local repository to be just like the remote repository HEAD&lt;br /&gt;
+&lt;a href=&#34;http://stackoverflow.com/questions/1628088/how-to-reset-my-local-repository-to-be-just-like-the-remote-repository-head&#34;&gt;http://stackoverflow.com/questions/1628088/how-to-reset-my-local-repository-to-be-just-like-the-remote-repository-head&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
