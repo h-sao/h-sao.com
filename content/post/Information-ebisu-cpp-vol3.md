@@ -2,7 +2,7 @@
 date = "2016-03-27T20:30:00+09:00"
 draft = false
 title = "[勉強会] ebisu_effective_modern.cpp vol.3やりますよ"
-tags = ["Cpp","ebisucpp"]
+tags = ["Cpp","ebisucpp", "Community"]
 +++
 
 ## ebisu_effective_modern.cppって？
