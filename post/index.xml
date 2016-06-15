@@ -6,8 +6,43 @@
     <description>Recent content in Posts on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 15 May 2016 23:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jun 2016 12:30:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Windows10] シャットダウンができない対策</title>
+      <link>http://h-sao.com/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/</link>
+      <pubDate>Wed, 15 Jun 2016 12:30:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/</guid>
+      <description>&lt;p&gt;Windows10 でシャットダウンが出来ない現象にあった方はいらっしゃいますか～？&lt;/p&gt;
+
+&lt;p&gt;わたしもそんな一人でした……(^_^;)&lt;/p&gt;
+
+&lt;p&gt;シャットダウンを選択しても、勝手に再起動するんです…　
+やめてぇ～(つд⊂)ｴｰﾝ&lt;/p&gt;
+
+&lt;p&gt;実はこれ、「&lt;strong&gt;高速スタートアップ&lt;/strong&gt;」の設定が効いているときになるPCがあるようです&lt;br /&gt;
+※会社のインフラ詳しい方に教えて頂きました！&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;コントロールパネル&lt;br /&gt;
+　&amp;gt; システムとセキュリティ&lt;br /&gt;
+　　&amp;gt; 電源オプション&lt;br /&gt;
+　　　&amp;gt; 電源ボタンの動作の選択&lt;br /&gt;
+　　　　&amp;gt; 現在利用可の出ない設定を変更します&lt;br /&gt;
+　　　　　&amp;gt; 高速スタートアップを有効にする&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;今すぐ、「高速スタートアップを有効にする」のチェックボックスを外しましょう！&lt;/p&gt;
+
+&lt;p&gt;わたしの場合は、これで、無限再起動が無くなりました(●´ω｀●)&lt;/p&gt;
+
+&lt;p&gt;よかった。。。いつもバイオス画面になったのを見計らって、ブチギリしてたんですよ…( ；∀；)&lt;/p&gt;
+
+&lt;p&gt;シャットダウンが出来ない人の助けになればと思います！&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[C&#43;&#43;] VisualStusio2015でClangを使う設定</title>
@@ -2006,41 +2041,6 @@ CMSに当たり前にあって、Hugoには無い機能を、実装していく�
 &lt;p&gt;気持ちも新たに、役立つ情報を発信していければと思っています！&lt;/p&gt;
 
 &lt;p&gt;またよろしくお願いしまーす！&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[Windows10] シャットダウンができない対策</title>
-      <link>http://h-sao.com/blog/2015/06/15/recommend-uncheck-fast-startup-for-windows10/</link>
-      <pubDate>Mon, 15 Jun 2015 12:30:00 +0900</pubDate>
-      
-      <guid>http://h-sao.com/blog/2015/06/15/recommend-uncheck-fast-startup-for-windows10/</guid>
-      <description>&lt;p&gt;Windows10 でシャットダウンが出来ない現象にあった方はいらっしゃいますか～？&lt;/p&gt;
-
-&lt;p&gt;わたしもそんな一人でした……(^_^;)&lt;/p&gt;
-
-&lt;p&gt;シャットダウンを選択しても、勝手に再起動するんです…　
-やめてぇ～(つд⊂)ｴｰﾝ&lt;/p&gt;
-
-&lt;p&gt;実はこれ、「&lt;strong&gt;高速スタートアップ&lt;/strong&gt;」の設定が効いているときになるPCがあるようです&lt;br /&gt;
-※会社のインフラ詳しい方に教えて頂きました！&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;コントロールパネル&lt;br /&gt;
-　&amp;gt; システムとセキュリティ&lt;br /&gt;
-　　&amp;gt; 電源オプション&lt;br /&gt;
-　　　&amp;gt; 電源ボタンの動作の選択&lt;br /&gt;
-　　　　&amp;gt; 現在利用可の出ない設定を変更します&lt;br /&gt;
-　　　　　&amp;gt; 高速スタートアップを有効にする&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;今すぐ、「高速スタートアップを有効にする」のチェックボックスを外しましょう！&lt;/p&gt;
-
-&lt;p&gt;わたしの場合は、これで、無限再起動が無くなりました(●´ω｀●)&lt;/p&gt;
-
-&lt;p&gt;よかった。。。いつもバイオス画面になったのを見計らって、ブチギリしてたんですよ…( ；∀；)&lt;/p&gt;
-
-&lt;p&gt;シャットダウンが出来ない人の助けになればと思います！&lt;/p&gt;
 </description>
     </item>
     

@@ -6,8 +6,43 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 15 May 2016 23:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jun 2016 12:30:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Windows10] シャットダウンができない対策</title>
+      <link>http://h-sao.com/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/</link>
+      <pubDate>Wed, 15 Jun 2016 12:30:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/</guid>
+      <description>&lt;p&gt;Windows10 でシャットダウンが出来ない現象にあった方はいらっしゃいますか～？&lt;/p&gt;
+
+&lt;p&gt;わたしもそんな一人でした……(^_^;)&lt;/p&gt;
+
+&lt;p&gt;シャットダウンを選択しても、勝手に再起動するんです…　
+やめてぇ～(つд⊂)ｴｰﾝ&lt;/p&gt;
+
+&lt;p&gt;実はこれ、「&lt;strong&gt;高速スタートアップ&lt;/strong&gt;」の設定が効いているときになるPCがあるようです&lt;br /&gt;
+※会社のインフラ詳しい方に教えて頂きました！&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;コントロールパネル&lt;br /&gt;
+　&amp;gt; システムとセキュリティ&lt;br /&gt;
+　　&amp;gt; 電源オプション&lt;br /&gt;
+　　　&amp;gt; 電源ボタンの動作の選択&lt;br /&gt;
+　　　　&amp;gt; 現在利用可の出ない設定を変更します&lt;br /&gt;
+　　　　　&amp;gt; 高速スタートアップを有効にする&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;今すぐ、「高速スタートアップを有効にする」のチェックボックスを外しましょう！&lt;/p&gt;
+
+&lt;p&gt;わたしの場合は、これで、無限再起動が無くなりました(●´ω｀●)&lt;/p&gt;
+
+&lt;p&gt;よかった。。。いつもバイオス画面になったのを見計らって、ブチギリしてたんですよ…( ；∀；)&lt;/p&gt;
+
+&lt;p&gt;シャットダウンが出来ない人の助けになればと思います！&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[C&#43;&#43;] VisualStusio2015でClangを使う設定</title>
@@ -2296,67 +2331,6 @@ CMSに当たり前にあって、Hugoには無い機能を、実装していく�
 
 &lt;p&gt;それよりは次回は、CIツールである wercker の設定をメモします&lt;br /&gt;
 （次へ続く）&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[Hugo/wercker]ブログを移行しました</title>
-      <link>http://h-sao.com/blog/2015/08/25/moving-blog/</link>
-      <pubDate>Tue, 25 Aug 2015 00:00:00 +0000</pubDate>
-      
-      <guid>http://h-sao.com/blog/2015/08/25/moving-blog/</guid>
-      <description>&lt;p&gt;ライブドアで書いていたブログ &lt;a href=&#34;http://blog.livedoor.jp/haruka_sao/&#34;&gt;「遥佐保の技術メモ」 http://blog.livedoor.jp/haruka_sao/&lt;/a&gt; を移植することにしました&lt;/p&gt;
-
-&lt;p&gt;思えばライブドアはソースコードを表示するのには適していないブログでした…&lt;br /&gt;
-2008年からなので、もう7年も!?&lt;br /&gt;
-かなり気づくのが遅かったですね…&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Hugo - &lt;a href=&#34;https://gohugo.io/&#34;&gt;https://gohugo.io/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;もともと、&lt;strong&gt;Sao`s Closed Circle&lt;/strong&gt; というGitHub Pages の練習用のブログを &lt;a href=&#34;http://jekyllbootstrap.com/&#34;&gt;JekyllBootstrap&lt;/a&gt; で作っていました&lt;br /&gt;
-今回からは、ツールも新たに &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; を使うようにしました&lt;/p&gt;
-
-&lt;p&gt;書くほどのお知らせじゃないですが、このブログはHugoという静的サイトジェネレーターで作っています、静的、つまりただのHTMLです&lt;br /&gt;
-自前運用です&lt;br /&gt;
-ここ5年くらい前？から流行っているらしいです&lt;br /&gt;
-最近は技術系以外でもよく使われているらしいです&lt;/p&gt;
-
-&lt;p&gt;どのジェネレーターが良いかと言うのは、よくわからないですけど&lt;br /&gt;
-&lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;（Rubyベース）が有名なのかなーと思います&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Static Site Generators&lt;/strong&gt; まとめによるとJekyllはGithubスター数がトップですね&lt;br /&gt;
-（Static Site Generatorsは、ちまたの静的サイトジネェレータ一覧です）&lt;br /&gt;
-&lt;a href=&#34;https://staticsitegenerators.net/&#34;&gt;https://staticsitegenerators.net/&lt;/a&gt;&lt;br /&gt;
-こうしてみると、Hugoは後発ながら結構人気みたい&lt;/p&gt;
-
-&lt;p&gt;Jekyllはとても高機能で（イイコトなんですけど）&lt;br /&gt;
-でもわたし、Rubyがよくわからなくて（すまん…Web屋さんじゃないの…）&lt;br /&gt;
-そんなときにGoで作られた、ちょっぱや生成のHugoを知ってしまったら、もうJekyllには戻れなくなりました、haha&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;Jekyllの方が事例も多いし、検索ですぐ解決できるけど、ちょっとジェネレートの時間がかかるのが弱点かも&lt;br /&gt;
-たいして記事数のないわたしでもそう思いましたから、記事数の多い人に取ったらちょっとイライラの原因だったかもしれませんね&lt;/p&gt;
-
-&lt;p&gt;Hugoは、機能あれもない、これもないの、(ヾﾉ･∀･`)ﾅｲﾅｲずくし&lt;br /&gt;
-けどそこが良い！シンプルで良いんです！(_≧Д≦)ﾉ彡☆&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;wercker - &lt;a href=&#34;http://wercker.com/&#34;&gt;http://wercker.com/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;さらに、生成するだけでなく、CIサービスである &lt;a href=&#34;http://wercker.com/&#34;&gt;wercker&lt;/a&gt; を使って、GitHubにプッシュしたら自動でデプロイするという仕組みにしました&lt;br /&gt;
-これを構築したメモもおいおい記載していくつもりです&lt;br /&gt;
-（そうしないと自分が忘れてしまう…）&lt;/p&gt;
-
-&lt;p&gt;このブログ自体もまだまだ作り中で、色々と足りてない機能が多いのですが、勉強しながら追加していこうと思います&lt;/p&gt;
-
-&lt;p&gt;過去ブログの情報移植もこれからです&lt;br /&gt;
-（RSSが変に更新されるかもしれません）&lt;/p&gt;
-
-&lt;p&gt;気持ちも新たに、役立つ情報を発信していければと思っています！&lt;/p&gt;
-
-&lt;p&gt;またよろしくお願いしまーす！&lt;/p&gt;
 </description>
     </item>
     
