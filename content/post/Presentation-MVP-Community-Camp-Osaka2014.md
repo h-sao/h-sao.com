@@ -2,7 +2,7 @@
 date = "2014-03-23T00:25:28+09:00"
 draft = false
 title = "[C++/CX] MVP Community Camp 2014大阪で「VC++まわりの非同期処理」セッションしました"
-tags = ["Cpp", "Cppcx"]
+tags = ["Cpp", "Cppcx", "Community"]
 +++
 
 
