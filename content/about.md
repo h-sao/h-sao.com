@@ -306,7 +306,7 @@ Work in progress...
 # 主催勉強会
 
 - ebisu_effective_modern.cpp (Mar 3, 2016 - currently)  
-seminar total number 5
+seminar total number 7
 
 - meetup app (Nov 21, 2015 - currently)  
 seminar total number 1
