@@ -228,6 +228,34 @@ int main()
     </item>
     
     <item>
+      <title>[C&#43;&#43;11] 参考リンク情報</title>
+      <link>http://h-sao.com/blog/2014/12/19/cpp11-link-note/</link>
+      <pubDate>Fri, 19 Dec 2014 12:30:41 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2014/12/19/cpp11-link-note/</guid>
+      <description>&lt;p&gt;C++11について調べているときに参考になった情報源のメモ&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;C++11/14/17 Features In VS 2015 Preview - Visual C++ Team Blog&lt;br /&gt;
+&lt;a href=&#34;http://blogs.msdn.com/b/vcblog/archive/2014/11/17/c-11-14-17-features-in-vs-2015-preview.aspx&#34;&gt;http://blogs.msdn.com/b/vcblog/archive/2014/11/17/c-11-14-17-features-in-vs-2015-preview.aspx&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;VS2013とVS2015 previewで利用できる機能一覧が乗っている&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;C++11 - the new ISO C++ standard　（和訳版）&lt;br /&gt;
+&lt;del&gt;http://　www32.ocn.ne.jp/~ons/text/CPP0xFAQ.html.ja&lt;/del&gt; (現在リンク切れ)&lt;br /&gt;
+ビャーネさんのC++11に対するコメント&lt;br /&gt;
+原文はこちら→&lt;a href=&#34;http://www.stroustrup.com/C++11FAQ.html&#34;&gt;http://www.stroustrup.com/C++11FAQ.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;C++11 の機能 (Modern C++) のサポート&lt;br /&gt;
+&lt;a href=&#34;http://msdn.microsoft.com/ja-jp/library/hh567368.aspx&#34;&gt;http://msdn.microsoft.com/ja-jp/library/hh567368.aspx&lt;/a&gt;&lt;br /&gt;
+VC++でのC++11の機能一覧&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>[C&#43;&#43;/CX] MVP Community Camp 2014大阪で「VC&#43;&#43;まわりの非同期処理」セッションしました</title>
       <link>http://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/</link>
       <pubDate>Sun, 23 Mar 2014 00:25:28 +0900</pubDate>

@@ -1,0 +1,566 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Oracle &middot; Effectiveさお</title>
+        <meta name="author">
+        <meta name="description" content="The awesome blog of Sao Haruka.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.14" />
+          <link href="http://h-sao.com/post/index.xml" rel="alternate" type="application/rss+xml" title="Effectiveさお" />
+          <link href="http://h-sao.com/post/index.xml" rel="feed" type="application/rss+xml" title="Effectiveさお" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://h-sao.com/css/styles.css">
+        <link rel="icon" href="http://h-sao.com/favicon.png">
+        <link rel="apple-touch-icon" href="http://h-sao.com/apple-touch-icon.png" />
+        <link rel="stylesheet" href="http://h-sao.com/css/highlightjs/monokai.css">
+        <script src="http://h-sao.com/js/vendor/modernizr-2.8.0.min.js"></script>
+        <style>
+        .site-header h2 .logo {
+        background: url(http://h-sao.com/pic/SiteTop.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(http://h-sao.com/pic/SiteTop.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(http://h-sao.com/pic/SiteTop.jpg) no-repeat center center;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2><a href="http://h-sao.com">Effectiveさお</a></h2>
+          </div>
+        </header>
+          <div class="pankuzu-layer">
+              <a href="http://h-sao.com/about">About me</a>
+          </div>
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <a class="btn" href="http://h-sao.com/" title="">&laquo; </a>
+        <div align="center">
+            <h1>
+                &quot;<script language="JavaScript"><!--
+                var $dir = location.href.split("/");
+                var $dir2 = $dir[$dir.length -2];
+                document.write($dir2);
+                </script>&quot;
+            </h1>
+        </div>
+        <br>
+
+        
+        
+            
+<h1><a href="http://h-sao.com/blog/2014/04/19/about-powershell-x32-and-x64/" title="[PowerShell] 32bitと64bitの使い分け">[PowerShell] 32bitと64bitの使い分け</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2014.04.19">2014.04.19</time>
+&middot; 
+    
+    <a href="http://h-sao.com/tags/powershell">powershell</a>
+    , 
+    
+    <a href="http://h-sao.com/tags/oracle">oracle</a>
+    
+    
+
+</span>
+</footer>
+ </footer>
+                <p><a href="http://blog.livedoor.jp/haruka_sao/archives/52067968.html">http://blog.livedoor.jp/haruka_sao/archives/52067968.html</a></p>
+
+<p>PowerShellにはちゃんと 32bit版と 64bit版が備わっています</p>
+
+<p>Windows2008 R2<br />
+Windows2012 R2<br />
+共に同じ場所にあります(~o~)</p>
+
+<p>64bit版<br />
+<strong>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</strong></p>
+
+<p>32bit版<br />
+<strong>C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe</strong></p>
+
+<p>デフォルトの64bitマシンであれば、コンソールで</p>
+
+<pre><code>&gt; powershell
+</code></pre>
+
+<p>とすると、64bitモードが立ち上がります</p>
+
+<p>これはどういうことかというと、64bitのアプリから使うライブラリなどは、64bitでないとダメってことです</p>
+
+<p>何にはまったかというと、PowerShell から System.Data.OracleClient に接続するとき</p>
+
+<p>たとえDBサーバが 64bit Oracle だったとしても<br />
+Oracle Client はデフォルトでは 32bit になっているようです</p>
+
+<p>powershell から oracle に接続しようとしたときこんな感じになります</p>
+
+<pre><code># アセンブリのロード
+[void][System.Reflection.Assembly]::LoadWithPartialName(&quot;System.Data.OracleClient&quot;)
+
+# 接続
+$conn_str = &quot;Data Source=saoDB;User ID=sao;Password=password;Integrated Security=false;&quot;
+$ora_conn = New-Object System.Data.OracleClient.OracleConnection($conn_str)
+
+# インスタンス
+$ora_cmd = New-Object System.Data.OracleClient.OracleCommand
+$ora_cmd.Connection = $ora_conn
+
+# データベースに接続
+$ora_conn.Open()
+</code></pre>
+
+<p>（参考）powerShellからOracleを使う（接続・切断）<br />
+<a href="http://harikofu.blog.fc2.com/blog-entry-114.html">http://harikofu.blog.fc2.com/blog-entry-114.html</a></p>
+
+<p>このDB接続直後に、64bit のPowerShell だと<br />
+こんなエラーが出ます</p>
+
+<pre><code>&quot;0&quot; 個の引数を指定して &quot;Open&quot; を呼び出し中に例外が発生しました: &quot;Oracle クライアント ライブラリを読み込もうとしましたが、BadImageFormatException が発行されました。この問題は、32 ビットの Oracle クライアント コンポーネントが
+インストールされている環境で 64 ビット モードを実行すると発生します。&quot;
+発生場所 行:1 文字:22
++ $ora_conn.Open &lt;&lt;&lt;&lt; ()
+    + CategoryInfo          : NotSpecified: (:) []、MethodInvocationException
+    + FullyQualifiedErrorId : DotNetMethodException
+</code></pre>
+
+<p>問題解決方法は2つ</p>
+
+<ul>
+<li>Oracle Client を 64bit版をインストールする（たとえDBサーバ上であっても…</li>
+<li>呼び出す側のPowerShellを 32bit版にする</li>
+</ul>
+
+<p>既存の稼働環境に影響を与えない様にするという意味では<br />
+不毛ですが後者を選択すると波風立てずにコトを済ませられます</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f19%2fabout-powershell-x32-and-x64%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bPowerShell%5d%2032bit%e3%81%a864bit%e3%81%ae%e4%bd%bf%e3%81%84%e5%88%86%e3%81%91&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f19%2fabout-powershell-x32-and-x64%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f19%2fabout-powershell-x32-and-x64%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f19%2fabout-powershell-x32-and-x64%2f&title=%5bPowerShell%5d%2032bit%e3%81%a864bit%e3%81%ae%e4%bd%bf%e3%81%84%e5%88%86%e3%81%91" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+
+        <div class="pagination">
+<nav>
+
+	<p class="counter"> 1  1</p>
+
+
+</nav>
+</div>
+
+    </main>
+
+    <aside class="author">
+  <img class="profile-image" src="http://h-sao.com/pic/saoharuka128.png" alt="遥佐保/Sao Haruka" />
+  <p class="name"> 
+  <strong>遥佐保/Sao Haruka</strong></p>
+  <p class="address">Japan</p>
+  <p class="link"></p>
+  <ul class="social">
+    <li><a href="//twitter.com/hr_sao" class="icon-twitter" target="_blank" title="Twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/h-sao" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+<li><a href="http://h-sao.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <p  class="address">
+    <a href="http://mvp.microsoft.com/ja-jp/mvp/Akiko%20Kawai-4027291" target="_blank">
+    <img src="http://h-sao.com/pic/MVPLogo.png"  width="120" border="0" alt="mvp_logo" hspace="5" /></a><br>
+	  Microsoft MVP for Windows Development<br> [Jan,2016-Dec,2016]<br>
+      Microsoft MVP for Windows Platform Development<br> [Jan,2015-Dec,2015]<br>
+      Microsoft MVP for Client Development<br> [Jan,2014-Dec,2014]<br>
+      Microsoft MVP for Client App Dev<br> [Jan,2010-Dec,2013]<br>
+  </p>
+  <br>
+</aside>
+
+
+    <aside class="posted-list">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Recent Posts</h2>
+            </div>
+            <div class="list-group">
+                
+                    
+                        <a href="/blog/2016/07/19/english-study-hucker/" class="list-group-item">[English] Study Hacker English Companyに通ったら英語苦手じゃなくなったよ</a><br>
+                    
+                
+                    
+                        <a href="/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/" class="list-group-item">[Windows10] シャットダウンができない対策</a><br>
+                    
+                
+                    
+                        <a href="/blog/2016/05/15/use-clang-on-visualstudio/" class="list-group-item">[C&#43;&#43;] VisualStusio2015でClangを使う設定</a><br>
+                    
+                
+                    
+                        <a href="/blog/2016/05/09/add-ssh-config-for-git/" class="list-group-item">[SSH] 複数キー接続のconfig記載について</a><br>
+                    
+                
+                    
+                        <a href="/blog/2016/05/08/change-unity-window-size/" class="list-group-item">[Unity] PC実行時のWindowsサイズの設定の仕方＆起動時フック</a><br>
+                    
+                
+                    
+                        <a href="/blog/2016/05/07/generate-ssh-key-for-github/" class="list-group-item">[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続</a><br>
+                    
+                
+                    
+                        <a href="/blog/2016/03/27/information-ebisu-cpp-vol3/" class="list-group-item">[勉強会] ebisu_effective_modern.cpp vol.3やりますよ</a><br>
+                    
+                
+                    
+                        <a href="/blog/2016/01/12/windows-printscreen-key-on-mac/" class="list-group-item">[Mac] Windows Bootcamp 時の PrintScreen</a><br>
+                    
+                
+                    
+                        <a href="/blog/2016/01/11/unity-shader-2dsprite/" class="list-group-item">[Unity] 2D Spriteにシェーダーをかける</a><br>
+                    
+                
+                    
+                        <a href="/blog/2016/01/06/usb-boot-app-rufus/" class="list-group-item">[Utility] ISOファイルからBoot用USBを作成するアプリRufus</a><br>
+                    
+                
+            </div>
+
+            <div class="panel-heading">
+                <h2 class="panel-title">Tags</h2>
+            </div>
+            <div class="list-group">
+                    
+                    
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/android" style="font-size: 14px;">
+                    
+                        <span class="badge">2</span>
+                        android
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/clang" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        clang
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/community" style="font-size: 23px;">
+                    
+                        <span class="badge">5</span>
+                        community
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/cpp" style="font-size: 29px;">
+                    
+                        <span class="badge">7</span>
+                        cpp
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/cppcx" style="font-size: 14px;">
+                    
+                        <span class="badge">2</span>
+                        cppcx
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/dialy" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        dialy
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/diary" style="font-size: 17px;">
+                    
+                        <span class="badge">3</span>
+                        diary
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/ebisucpp" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        ebisucpp
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/english" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        english
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/git" style="font-size: 20px;">
+                    
+                        <span class="badge">4</span>
+                        git
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/gitextensions" style="font-size: 14px;">
+                    
+                        <span class="badge">2</span>
+                        gitextensions
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/github" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        github
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/hugo" style="font-size: 17px;">
+                    
+                        <span class="badge">3</span>
+                        hugo
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/mac" style="font-size: 14px;">
+                    
+                        <span class="badge">2</span>
+                        mac
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/opensource" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        opensource
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/oracle" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        oracle
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/pmp" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        pmp
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/powershell" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        powershell
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/shader" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        shader
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/ssh" style="font-size: 14px;">
+                    
+                        <span class="badge">2</span>
+                        ssh
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/unity" style="font-size: 14px;">
+                    
+                        <span class="badge">2</span>
+                        unity
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/utility" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        utility
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/wercker" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        wercker
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/windows10" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        windows10
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/windowsruntime" style="font-size: 14px;">
+                    
+                        <span class="badge">2</span>
+                        windowsruntime
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/xiaomi" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        xiaomi
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+            </div>
+
+            <br>
+            <div class="panel-heading">
+                <h2 class="panel-title">Previous Blog Post</h2>
+            </div>
+            <div class="list-group">
+                <a href="http://blog.livedoor.jp/haruka_sao/" target="_blank">http://blog.livedoor.jp/haruka_sao/</a>
+            </div>
+        </div>
+  <br><br>
+</aside>
+
+
+</div>
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="http://h-sao.com/post/index.xml" title="RSS"></a>
+        <p>&copy; 2016 &middot; Copyright © Sao Haruka<br> Powered by <a href="http://gohugo.io">Hugo</a>.</p>
+  </div>
+</footer>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="http:\/\/h-sao.com\/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://h-sao.com/js/plugins.js"></script>
+
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount','UA-66721712-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

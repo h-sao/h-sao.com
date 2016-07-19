@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://h-sao.com/</loc>
-    <lastmod>2016-06-15T12:30:00+09:00</lastmod>
+    <lastmod>2016-07-19T23:30:00+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/blog/2016/07/19/english-study-hucker/</loc>
+    <lastmod>2016-07-19T23:30:00+09:00</lastmod>
   </url>
   
   <url>
@@ -118,8 +123,18 @@
   </url>
   
   <url>
+    <loc>http://h-sao.com/blog/2014/12/19/cpp11-link-note/</loc>
+    <lastmod>2014-12-19T12:30:41+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://h-sao.com/blog/2014/08/31/hokuriku-net-vol-15-introducing-windows-runtime/</loc>
     <lastmod>2014-08-31T12:35:04+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/blog/2014/04/19/about-powershell-x32-and-x64/</loc>
+    <lastmod>2014-04-19T21:46:45+09:00</lastmod>
   </url>
   
   <url>
