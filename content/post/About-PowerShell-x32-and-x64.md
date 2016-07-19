@@ -5,8 +5,6 @@ title = "[PowerShell] 32bitと64bitの使い分け"
 tags = ["PowerShell", "Oracle"]
 +++
 
-http://blog.livedoor.jp/haruka_sao/archives/52067968.html
-
 PowerShellにはちゃんと 32bit版と 64bit版が備わっています
 
 Windows2008 R2  
