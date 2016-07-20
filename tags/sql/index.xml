@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sql on Effectiveさお</title>
+    <link>http://h-sao.com/tags/sql/</link>
+    <description>Recent content in Sql on Effectiveさお</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Thu, 10 Apr 2014 18:00:15 +0900</lastBuildDate>
+    <atom:link href="http://h-sao.com/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Oracle]テーブル・カラム名が不明でもDBに入っている値を検索したい</title>
+      <link>http://h-sao.com/blog/2014/04/10/mining-for-value-from-db/</link>
+      <pubDate>Thu, 10 Apr 2014 18:00:15 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2014/04/10/mining-for-value-from-db/</guid>
+      <description>&lt;p&gt;見知らぬデータベースを渡され、中を解析したい時…&lt;/p&gt;
+
+&lt;p&gt;ありますよね？ありますよね！？&lt;/p&gt;
+
+&lt;p&gt;全テーブルの全列に入っている値を横断検索したいという要求、あるんじゃないでしょうか？&lt;/p&gt;
+
+&lt;p&gt;探したら同じことを考えている人が居ました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;全テーブルの全列の値の検索方法について - Oracle Community&lt;br /&gt;
+&lt;a href=&#34;https://community.oracle.com/thread/2334738?tstart=0&#34;&gt;https://community.oracle.com/thread/2334738?tstart=0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;方法は2種類&lt;br /&gt;
+一つは &lt;strong&gt;dmp 出力して、テキスト検索&lt;/strong&gt; をするというもの&lt;br /&gt;
+だいぶ力技ですけど、確かに、確実に検索できますね…&lt;/p&gt;
+
+&lt;p&gt;もう一つの方法は、&lt;strong&gt;PL/SQL で全データを総検索&lt;/strong&gt; するというもの&lt;/p&gt;
+
+&lt;p&gt;この方法、&lt;br /&gt;
+やってみると、良い感じに動きます&lt;br /&gt;
+お勧めです&lt;br /&gt;
+テーブル名やカラム名が判らなくても、動きますしね！&lt;/p&gt;
+
+&lt;p&gt;めっちゃ感激したので、この記事にも SQL を載せておきます&lt;/p&gt;
+
+&lt;p&gt;このサンプルでは、全ての値に 「あ」 が入っているデータを検索します&lt;br /&gt;
+どのテーブルの、どのカラムに、何件入っているかが判ります&lt;/p&gt;
+
+&lt;p&gt;う、嬉しい～!!!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;declare
+ sSQL VARCHAR2(128);
+ sDATA VARCHAR2(500);
+ type cursor_type is ref cursor;
+ cur_search cursor_type;
+ vCount INTEGER;
+ ERR_CODE NUMBER := 0;
+ ERR_MSG VARCHAR(255);
+begin
+ for vRec in (select COLUMN_NAME,TABLE_NAME from USER_TAB_COLS where DATA_TYPE like &#39;%CHAR%&#39;)
+ loop
+  begin
+    open cur_search for &#39;select count(*) as cnt from &#39; || vRec.TABLE_NAME || &#39; where &#39; || vRec.COLUMN_NAME || &#39; like &#39;&#39;%あ%&#39;&#39;&#39;;
+        fetch cur_search into vCount;
+        if vCount &amp;gt; 0 then
+          dbms_output.put_line(vRec.TABLE_NAME || &#39;.&#39; || vRec.COLUMN_NAME || &#39;:&#39; || vCount || &#39;件あり&#39;);
+        end if;
+        close cur_search;
+  exception
+   WHEN OTHERS THEN
+    ERR_CODE := SQLCODE;
+    ERR_MSG  := SUBSTRB(SQLERRM,1,255);
+    dbms_output.put_line(&#39;error:&#39; || ERR_CODE || &#39; &#39; || ERR_MSG || &#39; &#39; || vRec.TABLE_NAME || &#39;.&#39; || vRec.COLUMN_NAME);
+  end;
+ end loop;
+end;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;DBの構造を解析するツールは結構探せばあるのですが、データの中身となると、調べるのは手間ですよね…&lt;br /&gt;
+このSQLには助けられました～&lt;/p&gt;
+
+&lt;p&gt;話は変わりますが、&lt;br /&gt;
+DB系のクライアントツールで、わたしがよく使っているのは  &lt;strong&gt;A5:SQL Mk-2&lt;/strong&gt; （フリーソフト）です&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A5:SQL Mk-2 : SQL Development Studio&lt;br /&gt;
+&lt;a href=&#34;http://a5m2.mmatsubara.com/&#34;&gt;http://a5m2.mmatsubara.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Oracle, SQLServer, MySQL など多くのDBに対応しています&lt;br /&gt;
+一番うれしいのは、Oracle への接続に、Oracle Client が無くても接続できる所ですね&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;OCI経由か、直接 IPアドレスなどを指定して接続するかを選択できる！！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ER図も自動生成してくれるし、&lt;br /&gt;
+めっちゃ、現場で役立ってます&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

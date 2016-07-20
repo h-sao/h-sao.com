@@ -6,8 +6,122 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 19 Jul 2016 23:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 20 Jul 2016 20:00:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[GitHub] GitHubリポジトリを別アカウントに移動させる</title>
+      <link>http://h-sao.com/blog/2016/07/20/transfer-github-repository/</link>
+      <pubDate>Wed, 20 Jul 2016 20:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/07/20/transfer-github-repository/</guid>
+      <description>
+
+&lt;p&gt;旧 Github Micro Plan では、プライベートリポジトリは5つまでしか持てませんでしたが&lt;br /&gt;
+最近は Presonal Plan に変更されて、リポジトリ制限数が無制限になりましたね&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GitHub価格ページ&lt;br /&gt;
+&lt;a href=&#34;https://github.com/pricing&#34;&gt;https://github.com/pricing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;それを受けて、手元で持っている複数の Micro Plan アカウントを、一つのアカウントにまとめる作業を行いました&lt;/p&gt;
+
+&lt;p&gt;あるGithubのリポジトリを別アカウントに移管する、という意味になります&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;移動元個人アカウント(XXX)のリポジトリ(X-REPO)&lt;br /&gt;
+　　　↓&lt;br /&gt;
+移動先個人アカウント(YYY)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ドキドキしたけど、結構すんなり出来たので、別にドキドキする必要なかった(^^;)&lt;/p&gt;
+
+&lt;p&gt;とはいえ、わたしの様な小心者が、他にもいらっしゃるかもしれないので&lt;br /&gt;
+（あと、忘れた頃の未来の自分のため^^;）&lt;br /&gt;
+手順を詳細に載せときます&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;giuhub上での操作-移動元:0d9c0c49199defc16c526eaa049a2428&#34;&gt;GiuHub上での操作(移動元)&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;移動元(XXX)のアカウントで GitHub にログインします&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;移動元(XXX)のGitHubのリポジトリ(X-REPO)の &lt;strong&gt;Settings＞ Options&lt;/strong&gt; に行きます&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Transfer-GitHub-repository_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;一番下に Denger Zone があるので、そこの &lt;strong&gt;Transfer&lt;/strong&gt; をクリックして、移動させます&lt;br /&gt;
+（まだ、いきなりは移動しないよ）&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Transfer-GitHub-repository_01.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;移動元(XXX)のリポジトリ名(X-REPO)&lt;/strong&gt;、&lt;strong&gt;移動先のアカウント名(YYY)&lt;/strong&gt; を入力します&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Transfer-GitHub-repository_02.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;br /&gt;
+これで、リポジトリを移動させる準備が出来ました&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;移動元リポジトリ(X-REPO)は、移動先アカウント(YYY)の許可待ち状態になります&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Transfer-GitHub-repository_03.png&#34; alt=&#34;&#34; /&gt;
+&lt;br /&gt;
+この状態であれば、Abort transferを押して、まだ移管を取り消すことが出来ますね！&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;その後-移動先アカウント-yyy-にメールが届く:0d9c0c49199defc16c526eaa049a2428&#34;&gt;その後、移動先アカウント(YYY)にメールが届く&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;こんなメールが移動先アカウント(YYY)に届きます&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;＜タイトル＞
+[GitHub] Repository transfer from @XXX (XXX/X-REPO)
+
+＜内容＞ 
+Hello YYY,
+
+@XXX wants to transfer the XXX/X-REPO repository to YYY/X-REPO. To accept the transfer, visit this link:
+
+    (★ここにリンクが記載されている)
+
+If you don’t accept the transfer, it’ll expire in about a day.
+
+Questions? Problems? Email support@github.com any time.
+
+Thanks,
+Your friends at GitHub
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ここで★のリンクをクリックすると、突然の移動完了です&lt;br /&gt;
+お気を付けください(^_^;)&lt;/p&gt;
+
+&lt;p&gt;というわけで、ドキドキしながら★をクリックします&lt;/p&gt;
+
+&lt;h1 id=&#34;すぐに-移動元アカウント-xxx-にメールが届く:0d9c0c49199defc16c526eaa049a2428&#34;&gt;すぐに、移動元アカウント(XXX)にメールが届く&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;移動元アカウント(XXX)の方に、通知メールが届きます&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;
+YYY added you to X-REPO
+
+You can now push to this repository.
+
+---
+View it on GitHub:
+https://github.com/YYY/X-REPO
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これで、完全に移動が完了しました&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;結構すんなりすぎて、あっけない感じです&lt;/p&gt;
+
+&lt;p&gt;issue、Collaborators など、リポジトリに必要な情報がまるっと移動できるので、とても便利でした&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[English] Study Hacker English Companyに通ったら英語苦手じゃなくなったよ</title>
@@ -2306,163 +2420,6 @@ seminar total number 29&lt;/p&gt;&lt;/li&gt;
 
 &lt;p&gt;オープンソースだけというよりは、最後の方は、普通に製品やサービスのロードマップ、ビジネスモデル的な観点になりました&lt;br /&gt;
 もちろんこれが全てではないと思うし、わたしはマーケティングのプロでもないので間違っているかもしれないですけど&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[Android]Xiaomi Redmi Note2にGooglePlayをインストールする</title>
-      <link>http://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/</link>
-      <pubDate>Tue, 06 Oct 2015 04:00:00 +0900</pubDate>
-      
-      <guid>http://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/</guid>
-      <description>
-
-&lt;p&gt;クロスプラットフォームで開発していると、やはり最新の端末が欲しくなりますよね～&lt;/p&gt;
-
-&lt;p&gt;１年以内発売の iPhone と Windows Phone は持っているのですが&lt;br /&gt;
-そろそろ新しい Android が欲しい～と思っていたので、買ってしまいました&lt;/p&gt;
-
-&lt;p&gt;シンガポール旅行に行った際に、ブギスの電気屋街、&lt;a href=&#34;http://www.simlimsquare.com.sg/&#34;&gt;Sim Lim Square（シムリム スクウェア）&lt;/a&gt;で、今をトキメク Xiaomi（しゃおみ）デバイスを購入しました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Xiaomi&lt;/strong&gt;&lt;br /&gt;
-&lt;a href=&#34;http://www.mi.com/&#34;&gt;http://www.mi.com/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_00.JPG&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;全部で6Fまでありましたが、結局1Fのお店の品ぞろえが一番まとまってる印象でした&lt;br /&gt;
-Xiaomi正規店も1Fに入っていました&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;xiaomi-redmi-note-2:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;Xiaomi Redmi Note 2&lt;/h2&gt;
-
-&lt;p&gt;購入したのは、&lt;strong&gt;Xiaomi Redmi Note 2&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table style=&#34;border-style: none;&#34;&gt;
- &lt;tr&gt;
-   &lt;td style=&#34;border-style: none;&#34;&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_01.JPG&#34;&gt;&lt;/td&gt;
-   &lt;td style=&#34;border-style: none;&#34;&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_02.JPG&#34;&gt;&lt;/td&gt;
- &lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;p&gt;画像のように、デフォルトでは中国語のアプリがたくさん入っています&lt;br /&gt;
-そして、Google Play Store は入っていません！&lt;/p&gt;
-
-&lt;p&gt;デフォルトのIMEが Buidu なので、まぁこのままでは、日本語が打てません(&amp;gt;&amp;lt;;)&lt;/p&gt;
-
-&lt;p&gt;なので Google Play Store をインストールする方法をメモしておきます&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;googleplay-installer-apkが最適解:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;GooglePlay installer APKが最適解&lt;/h2&gt;
-
-&lt;p&gt;検索すると色々な方法が出てくるのですが、おそらく、&lt;strong&gt;Google installer のAPKを直接インストールする&lt;/strong&gt;のが、手っ取り早いです&lt;br /&gt;
-（チャイナストアやMIストアからGooglePlayらしきものをインストールしても、わたしの場合は、動作しませんでした）&lt;/p&gt;
-
-&lt;p&gt;情報元はこちらの Xiaomi公式コミュニティ掲示板です&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;[System Tools] Find all the Google Apps in Google installer!&lt;/strong&gt;　　
-&lt;a href=&#34;http://en.miui.com/thread-3998-1-1.html&#34;&gt;http://en.miui.com/thread-3998-1-1.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Xiaomiはすごくコミュニティも発達してるんですよね～ちゃんと英語の掲示板なので、読めました(^_^)&lt;/p&gt;
-
-&lt;p&gt;上記サイトにある、GooglePlayを入れるための Google installer をAPKからインストールします&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Google installer谷歌应用下载器.apk&lt;br /&gt;
-(1009.36 KB, Downloads: 237400)
-&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_03.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;PCから落とすなどするよりも、直接 Xiaomi デバイスからダウンロードした方が、早いと思います&lt;br /&gt;
-もしかしたら、MIアカウントを作らないとダウンロード出来ないかもしれません（わたしは作りました）&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;androidがセキュア過ぎて-思った順番にインストール出来ない:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;Androidがセキュア過ぎて、思った順番にインストール出来ない&lt;/h2&gt;
-
-&lt;p&gt;installer を入れると、以下の４つがインストール可能になります&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Google Services Framework&lt;/li&gt;
-&lt;li&gt;Google Account Manager&lt;/li&gt;
-&lt;li&gt;Google Play services&lt;/li&gt;
-&lt;li&gt;Google Play Store&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;そのままインストールしたら良いので、おそらく、この順番でインストールが走ると思います&lt;br /&gt;
-（ここ、画面キャプチャを取り忘れたので申し訳ない）&lt;/p&gt;
-
-&lt;p&gt;ところが、1番目をインストールしようとすると、本当にインストールしていいかどうかの許可画面が出ますよね、こんな感じに…&lt;br /&gt;
-（イメージ画像です↓↓↓）&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_04.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;この画面で 「1番のアプリに対して」ユーザが許可を押そうとするときに、すでに「2番目のインストール」が動いてしまうのです&lt;/p&gt;
-
-&lt;p&gt;結果的に、 「1番のアプリの許可画面」は裏にまわってしまい&lt;br /&gt;
-「2番目のアプリの許可画面」が一番手前に来ることになります&lt;br /&gt;
-つまり最終的には、「4番目のアプリの許可画面」が最前面になります&lt;/p&gt;
-
-&lt;p&gt;入れたいアプリは Google Play Store なので、それでも良いかなと思って&lt;br /&gt;
-４→３→２→１の順にインストールするんですけど、&lt;br /&gt;
-お察しの通り、Google Play Store は起動しません&lt;br /&gt;
-おそらく、Google Services Framework とかが、Google Play Store のインストールに必要なんじゃないかなーと思います&lt;/p&gt;
-
-&lt;p&gt;なので、いったん、Google Play services、Google Play Store をアンインストールし、再度、Google Play services、Google Play Store をインストールします&lt;/p&gt;
-
-&lt;p&gt;いやー(~0~)　これで、わたしの端末で、Google Play が動くようになりました！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_05.JPG&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;その他-xiaomi-デバイスで気づいたところ:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;その他、Xiaomi デバイスで気づいたところ&lt;/h2&gt;
-
-&lt;h4 id=&#34;日本語モードはない:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;日本語モードはない&lt;/h4&gt;
-
-&lt;p&gt;日本語モードは入っていません&lt;br /&gt;
-ROMとか焼き直すと良いらしいですけど、まだやってないです&lt;/p&gt;
-
-&lt;h4 id=&#34;permissions-アプリがうれしい:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;Permissions アプリがうれしい&lt;/h4&gt;
-
-&lt;p&gt;デフォルトで入っている Permittions アプリが最高に便利&lt;/p&gt;
-
-&lt;table style=&#34;border-style: none;&#34;&gt;
- &lt;tr&gt;
-   &lt;td style=&#34;border-style: none;&#34;&gt;各アプリ毎の許可&lt;/td&gt;
-   &lt;td style=&#34;border-style: none;&#34;&gt;どのアプリが使ってるか&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
-   &lt;td style=&#34;border-style: none;&#34;&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_07.png&#34;&gt;&lt;/td&gt;
-   &lt;td style=&#34;border-style: none;&#34;&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_06.png&#34;&gt;&lt;/td&gt;
- &lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&#34;simは２枚ささる:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;SIMは２枚ささる&lt;/h4&gt;
-
-&lt;p&gt;両方LTEをつかめます&lt;br /&gt;
-ただし、片方がLTEをつかんでいるときは、もう一方はつかめない仕様です&lt;/p&gt;
-
-&lt;p&gt;なので、日本で、１番目にDocomoを刺して、２番目にauを刺す、とかして&lt;br /&gt;
-１番目はLTEでデータ通信、２番目はauで電話とメールのみ&lt;br /&gt;
-とかにしたくても、ちょっと難しいかも&lt;br /&gt;
-日本は今現在、ほぼLTEになってしまってるので、そういう活用は出来なさそうかも…？&lt;/p&gt;
-
-&lt;p&gt;どちらにしても、技適通ってない端末なので、日本では使っちゃダメ&lt;/p&gt;
-
-&lt;h4 id=&#34;まとめ:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;まとめ&lt;/h4&gt;
-
-&lt;p&gt;もろもろ満足しています&lt;br /&gt;
-同じようにシンガポールや中国で購入した方の参考になれば～&lt;/p&gt;
 </description>
     </item>
     

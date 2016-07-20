@@ -6,8 +6,122 @@
     <description>Recent content in Posts on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 19 Jul 2016 23:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 20 Jul 2016 20:00:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[GitHub] GitHubリポジトリを別アカウントに移動させる</title>
+      <link>http://h-sao.com/blog/2016/07/20/transfer-github-repository/</link>
+      <pubDate>Wed, 20 Jul 2016 20:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/07/20/transfer-github-repository/</guid>
+      <description>
+
+&lt;p&gt;旧 Github Micro Plan では、プライベートリポジトリは5つまでしか持てませんでしたが&lt;br /&gt;
+最近は Presonal Plan に変更されて、リポジトリ制限数が無制限になりましたね&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GitHub価格ページ&lt;br /&gt;
+&lt;a href=&#34;https://github.com/pricing&#34;&gt;https://github.com/pricing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;それを受けて、手元で持っている複数の Micro Plan アカウントを、一つのアカウントにまとめる作業を行いました&lt;/p&gt;
+
+&lt;p&gt;あるGithubのリポジトリを別アカウントに移管する、という意味になります&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;移動元個人アカウント(XXX)のリポジトリ(X-REPO)&lt;br /&gt;
+　　　↓&lt;br /&gt;
+移動先個人アカウント(YYY)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ドキドキしたけど、結構すんなり出来たので、別にドキドキする必要なかった(^^;)&lt;/p&gt;
+
+&lt;p&gt;とはいえ、わたしの様な小心者が、他にもいらっしゃるかもしれないので&lt;br /&gt;
+（あと、忘れた頃の未来の自分のため^^;）&lt;br /&gt;
+手順を詳細に載せときます&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;giuhub上での操作-移動元:0d9c0c49199defc16c526eaa049a2428&#34;&gt;GiuHub上での操作(移動元)&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;移動元(XXX)のアカウントで GitHub にログインします&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;移動元(XXX)のGitHubのリポジトリ(X-REPO)の &lt;strong&gt;Settings＞ Options&lt;/strong&gt; に行きます&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Transfer-GitHub-repository_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;一番下に Denger Zone があるので、そこの &lt;strong&gt;Transfer&lt;/strong&gt; をクリックして、移動させます&lt;br /&gt;
+（まだ、いきなりは移動しないよ）&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Transfer-GitHub-repository_01.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;移動元(XXX)のリポジトリ名(X-REPO)&lt;/strong&gt;、&lt;strong&gt;移動先のアカウント名(YYY)&lt;/strong&gt; を入力します&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Transfer-GitHub-repository_02.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;br /&gt;
+これで、リポジトリを移動させる準備が出来ました&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;移動元リポジトリ(X-REPO)は、移動先アカウント(YYY)の許可待ち状態になります&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Transfer-GitHub-repository_03.png&#34; alt=&#34;&#34; /&gt;
+&lt;br /&gt;
+この状態であれば、Abort transferを押して、まだ移管を取り消すことが出来ますね！&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;その後-移動先アカウント-yyy-にメールが届く:0d9c0c49199defc16c526eaa049a2428&#34;&gt;その後、移動先アカウント(YYY)にメールが届く&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;こんなメールが移動先アカウント(YYY)に届きます&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;＜タイトル＞
+[GitHub] Repository transfer from @XXX (XXX/X-REPO)
+
+＜内容＞ 
+Hello YYY,
+
+@XXX wants to transfer the XXX/X-REPO repository to YYY/X-REPO. To accept the transfer, visit this link:
+
+    (★ここにリンクが記載されている)
+
+If you don’t accept the transfer, it’ll expire in about a day.
+
+Questions? Problems? Email support@github.com any time.
+
+Thanks,
+Your friends at GitHub
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ここで★のリンクをクリックすると、突然の移動完了です&lt;br /&gt;
+お気を付けください(^_^;)&lt;/p&gt;
+
+&lt;p&gt;というわけで、ドキドキしながら★をクリックします&lt;/p&gt;
+
+&lt;h1 id=&#34;すぐに-移動元アカウント-xxx-にメールが届く:0d9c0c49199defc16c526eaa049a2428&#34;&gt;すぐに、移動元アカウント(XXX)にメールが届く&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;移動元アカウント(XXX)の方に、通知メールが届きます&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;
+YYY added you to X-REPO
+
+You can now push to this repository.
+
+---
+View it on GitHub:
+https://github.com/YYY/X-REPO
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これで、完全に移動が完了しました&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;結構すんなりすぎて、あっけない感じです&lt;/p&gt;
+
+&lt;p&gt;issue、Collaborators など、リポジトリに必要な情報がまるっと移動できるので、とても便利でした&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[English] Study Hacker English Companyに通ったら英語苦手じゃなくなったよ</title>
@@ -2112,252 +2226,6 @@ ROMとか焼き直すと良いらしいですけど、まだやってないで�
 
 &lt;p&gt;もろもろ満足しています&lt;br /&gt;
 同じようにシンガポールや中国で購入した方の参考になれば～&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[Hugo]ブログ構築メモ(1)-Hugoとテンプレート</title>
-      <link>http://h-sao.com/blog/2015/09/09/hugoandtheme/</link>
-      <pubDate>Wed, 09 Sep 2015 01:11:00 +0900</pubDate>
-      
-      <guid>http://h-sao.com/blog/2015/09/09/hugoandtheme/</guid>
-      <description>
-
-&lt;p&gt;Windows10のノートPCに &lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; というスタティックジェネレーターをインストールして、このブログを構築しています&lt;br /&gt;
-作ったブログは、&lt;a href=&#34;https://github.com/h-sao/Blog&#34;&gt;GitHub Pages&lt;/a&gt; にアップして運用しています&lt;/p&gt;
-
-&lt;p&gt;今のところ気に入っているのは&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;ブログの管理が GitHubで行えること&lt;/li&gt;
-&lt;li&gt;ブログ用の運用サーバーが不要なこと (ありがとう！GitHub)&lt;/li&gt;
-&lt;li&gt;GitHubにPushしたら、werckerの自動ビルドでGitHubPagesにアップすること&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;この3点かなー&lt;br /&gt;
-今日は上から2番目までのブログ構築部分（つまりHugoの部分）をメモしておきます&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;インストール-というか単なるexeファイル設置:0ac06b5261622021717117556fa75a4c&#34;&gt;インストール (というか単なるexeファイル設置)&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;最新バージョン取得&lt;br /&gt;
-&lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;https://github.com/spf13/hugo/releases&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;わたしが 2015/9/9 現在ダウンロードしたバージョンは &lt;strong&gt;v0.14&lt;/strong&gt; です&lt;br /&gt;
-Hugoはexeだけで動くので、適当なディレクトリに置きます&lt;br /&gt;
-わたしは&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;C:\Library\Hugo\bin\hugo.exe
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;に設置することにしました&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;ブログ新規作成:0ac06b5261622021717117556fa75a4c&#34;&gt;ブログ新規作成&lt;/h2&gt;
-
-&lt;p&gt;Windows標準のコマンドプロンプトで作業します&lt;br /&gt;
-このとき既に、ブログを作ろうとするディレクトリが存在していたら、ブログ作成は失敗するので、気を付けてください&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;FATAL: 2015/09/09 C:\Users\haruk\Dropbox\sites\Blog already exists and is not empty&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;リネームなどして、再チャレンジ&lt;br /&gt;
-うまくいくと、何の反応もなく終わります&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;C:\Users\haruk\Dropbox\sites&amp;gt;c:\Library\Hugo\bin\hugo.exe new site Blog
-
-C:\Users\haruk\Dropbox\sites&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ディレクトリ構造の確認&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;C:\Users\haruk\Dropbox\sites&amp;gt;cd Blog
-C:\Users\haruk\Dropbox\sites\Blog&amp;gt;dir
- ドライブ C のボリューム ラベルは MyWindows です
- ボリューム シリアル番号は xxxx-xxxx です
-
- C:\Users\haruk\Dropbox\sites\Blog のディレクトリ
-
- 2015/09/09  20:29&amp;lt;DIR&amp;gt;  .
- 2015/09/09  20:29&amp;lt;DIR&amp;gt;  ..
- 2015/09/09  20:28   270 .gitignore
- 2015/09/09  20:28&amp;lt;DIR&amp;gt;  archetypes
- 2015/09/09  20:28   107 config.toml
- 2015/09/09  20:28&amp;lt;DIR&amp;gt;  content
- 2015/09/09  20:28&amp;lt;DIR&amp;gt;  data
- 2015/09/09  20:28&amp;lt;DIR&amp;gt;  layouts
- 2015/09/09  20:2836 README.md
- 2015/09/09  20:28&amp;lt;DIR&amp;gt;  static
-   3 個のファイル 413 バイト
-   7 個のディレクトリ  80,351,985,664 バイトの空き領域
-
-C:\Users\haruk\Dropbox\sites\Blog&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;あっという間に自作ブログのベースは完了です&lt;br /&gt;
-次はテンプレートを落としてきます&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;テンプレート適用:0ac06b5261622021717117556fa75a4c&#34;&gt;テンプレート適用&lt;/h2&gt;
-
-&lt;p&gt;GitHubから有志の人たちのテンプレートを拝借してきます&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Hugo Themes Repo&lt;br /&gt;
-&lt;a href=&#34;https://github.com/spf13/hugoThemes&#34;&gt;https://github.com/spf13/hugoThemes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;たくさんテーマがあるけど、&lt;del&gt;まじでうざいテーマしかない&lt;/del&gt;&lt;br /&gt;
-おっと失礼しました&lt;br /&gt;
-自己主張が激しいテーマが多いです&lt;/p&gt;
-
-&lt;p&gt;とりあえず、GitHubのスター数が多いテンプレートをチェックしてみました&lt;br /&gt;
-中でも一番自分が気に入ったものが、&lt;strong&gt;hyde-x&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;zyro/hyde-x&lt;br /&gt;
-&lt;a href=&#34;https://github.com/zyro/hyde-x&#34;&gt;https://github.com/zyro/hyde-x&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;テンプレートは自分のサイトの顔になるので、色々悩みましたが&lt;br /&gt;
-結局はデザインよりも機能が一番多いのがいいんでない？という発想で選びました&lt;/p&gt;
-
-&lt;p&gt;コンフィグファイルに&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;GoogleAnalytics&lt;/li&gt;
-&lt;li&gt;GitHub&lt;/li&gt;
-&lt;li&gt;Bitbucket&lt;/li&gt;
-&lt;li&gt;LinkedIn&lt;/li&gt;
-&lt;li&gt;Facebook&lt;/li&gt;
-&lt;li&gt;Twitter&lt;/li&gt;
-&lt;li&gt;GooglePlus&lt;/li&gt;
-&lt;li&gt;Gravatar&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;が揃っていたので、自分であれこれする手間も省けるかなーという印象&lt;/p&gt;
-
-&lt;p&gt;GooglePlusはもう今ではダサいんじゃね？&lt;br /&gt;
-というアドバイスを受けたので有効にしていません＼(^o^)／&lt;br /&gt;
-同様、Gravatarもいらんやろ…と思いましたが、アイコン代わりに仕方なく使いました&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Gravaterは自分でハッシュ作成をしないといけなかった&lt;br /&gt;
-とゆーか、こんな変換くらいサイトで提供してよ…
-イマドキプログラマに変なところで手間かけさすなよなーいやまじで(&amp;lsquo;ε&amp;rsquo;)&lt;br /&gt;
-&lt;a href=&#34;https://ja.gravatar.com/site/implement/hash/&#34;&gt;https://ja.gravatar.com/site/implement/hash/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;話が多少逸れましたが、この hyde-x をテーマとして、Gitコマンドを使って適用します&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;わたしは、SourceTree内蔵のGitを使ってみました&lt;br /&gt;
-%USERPROFILE%\AppData\Local\Atlassian\SourceTree\git_local\bin&lt;br /&gt;
-(参考)&lt;a href=&#34;https://answers.atlassian.com/questions/245850/how-to-run-a-git-command-as-a-custom-action&#34;&gt;https://answers.atlassian.com/questions/245850/how-to-run-a-git-command-as-a-custom-action&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&amp;ldquo;c:\Program Files (x86)\Git\bin\git.exe　とか持っているなら、それでも可&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;themes ディレクトリの下で作業します&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;C:\Users\haruk\Dropbox\sites\Blog\themes&amp;gt;C:\Users\haruk\AppData\Local\Atlassian\SourceTree\git_local\bin\git.exe clone https://github.com/zyro/hyde-x
-Cloning into &#39;hyde-x&#39;...
-remote: Counting objects: 358, done.
-remote: Total 358 (delta 0), reused 0 (delta 0), pack-reused 358
-Receiving objects: 100% (358/358), 253.37 KiB | 175.00 KiB/s, done.
-Resolving deltas: 100% (153/153), done.
-Checking connectivity... done.
-
-C:\Users\haruk\Dropbox\sites\Blog\themes&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;C:\Users\haruk\Dropbox\sites\Blog\config.toml&lt;/strong&gt; をhyde-x用に修正しましょう&lt;br /&gt;
-&lt;a href=&#34;https://github.com/zyro/hyde-x&#34;&gt;hyde-xテーマのサイト&lt;/a&gt;に解説が書いてあるので、それをそのままコピペします&lt;br /&gt;
-タイトルやTwitterアカウントなど、自分に必要な情報を更新します&lt;/p&gt;
-
-&lt;p&gt;他のジェネレータも同様ですが、&lt;br /&gt;
-コンフィグは結構、個別テーマに依存した項目になっているので（元のHugoの機能が少ない）別テーマでは使えないかもしれない点は注意です&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;ブログ投稿:0ac06b5261622021717117556fa75a4c&#34;&gt;ブログ投稿&lt;/h2&gt;
-
-&lt;p&gt;contentの 下に postディレクトリを作り、ブログ更新するMDファイルを置きます&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;C:\Users\haruk\Dropbox\sites\Blog\content\post
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;わたしの場合、hyde-x が post の下、という仕様だったからであって&lt;br /&gt;
-他のテンプレでは違うかもしれません&lt;br /&gt;
-とにかく、ここの post の下に、以下のマークダウンファイルを用意します&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;20150909-HugoInstallAndTheme.md&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;+++
-date = &amp;quot;2015-09-09T01:11:00+09:00&amp;quot;
-draft = false
-title = &amp;quot;[Hugo]Hugoブログ構築メモ-WindowsインストールとHugoテンプレート&amp;quot;
-categories = [&amp;quot;Hugo&amp;quot;]
-
-+++
-
-Windows10のノートPCに [Hugo](http://gohugo.io/) というスタティックジェネレーターをインストールして、このブログを構築しています  
-...（以下略）
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ルート C:\Users\haruk\Dropbox\sites\Blog\　に移動し、Hugoコマンドを実行します&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;C:\Users\haruk\Dropbox\sites\Blog\themes&amp;gt;cd ..
-
-C:\Users\haruk\Dropbox\sites\Blog&amp;gt;c:\Library\Hugo\bin\hugo.exe server -w
-0 draft content
-0 future content
-5 pages created
-1 paginator pages created
-5 categories created
-in 201 ms
-Watching for changes in C:\Users\haruk\Dropbox\sites\Blog/{data,content,layouts,static,themes\hyde-x}
-Serving pages from C:\Users\haruk\Dropbox\sites\Blog\public
-Web Server is available at http://127.0.0.1:1313/
-Press Ctrl+C to stop
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ブラウザで &lt;a href=&#34;http://127.0.0.1:1313/&#34;&gt;http://127.0.0.1:1313/&lt;/a&gt; にアクセスすると、サイトが出来ています&lt;br /&gt;
-実際には、public 以下にHTMLがジェネレートされているので、public以下を自分の GitHub の gh-pages ブランチにアップすると、自前ブログの完成(^^)&lt;/p&gt;
-
-&lt;p&gt;これも余談ですが、CNAMEファイルを置くと、独自ドメインが使えますね　　
-（これ、ファイル名が大文字じゃないとダメでした）&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;わたしのgh-pages の参考です&lt;br /&gt;
-&lt;a href=&#34;https://github.com/h-sao/Blog/tree/gh-pages&#34;&gt;https://github.com/h-sao/Blog/tree/gh-pages&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;簡単に構築は出来たが:0ac06b5261622021717117556fa75a4c&#34;&gt;簡単に構築は出来たが…&lt;/h2&gt;
-
-&lt;p&gt;ここまでだと結構簡単にできますが、ここから先は、自分で頑張るしかない部分です…&lt;/p&gt;
-
-&lt;p&gt;何がって？&lt;br /&gt;
-結局最初に諦めた、デザインのことと&lt;br /&gt;
-CMSに当たり前にあって、Hugoには無い機能を、実装していく必要があります&lt;/p&gt;
-
-&lt;p&gt;今のこのブログは、先ほどの hyde-x テンプレートを改変しまくっています&lt;br /&gt;
-とはいえ、トライ＆エラーの繰り返しだったので、解説まではできないかも…&lt;br /&gt;
-テンプレートやHugo本体の解説は、また気が向いたときにするということで許してください&lt;/p&gt;
-
-&lt;p&gt;それよりは次回は、CIツールである wercker の設定をメモします&lt;br /&gt;
-（次へ続く）&lt;/p&gt;
 </description>
     </item>
     
