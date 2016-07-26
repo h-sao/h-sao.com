@@ -6,15 +6,15 @@
     <description>Recent content in Windows10 on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 21 Jul 2016 20:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 26 Jul 2016 21:00:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/tags/windows10/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>[Windows10] PCのGPUを確認する</title>
-      <link>http://h-sao.com/blog/2016/07/21/check-gpu-on-pc/</link>
-      <pubDate>Thu, 21 Jul 2016 20:30:00 +0900</pubDate>
+      <link>http://h-sao.com/blog/2016/07/26/check-gpu-on-pc/</link>
+      <pubDate>Tue, 26 Jul 2016 21:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/07/21/check-gpu-on-pc/</guid>
+      <guid>http://h-sao.com/blog/2016/07/26/check-gpu-on-pc/</guid>
       <description>&lt;p&gt;PCのGPU、つまりグラフィックボードってなんだろな？と思った時の操作メモです&lt;/p&gt;
 
 &lt;p&gt;対象は Windows10&lt;/p&gt;
