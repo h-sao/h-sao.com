@@ -305,14 +305,14 @@ Work in progress...
 
 # 主催勉強会
 
-- ebisu_effective_modern.cpp (Mar 3, 2016 - currently)  
-seminar total number 9
-
 - meetup app (Nov 21, 2015 - currently)  
 seminar total number 2
 
 - Metro.cs (Sep 16, 2015 - currently)  
 seminar total number 2
+
+- ebisu_effective_modern.cpp (Mar 3, 2016 - Jul 21, 2016)  
+seminar total number 10
 
 - [Room metro 大阪](http://metrostyledev.net/) (Jan 28, 2013 - Jul 25, 2015)  
 seminar total number 12
