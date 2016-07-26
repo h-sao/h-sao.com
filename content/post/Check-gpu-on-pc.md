@@ -1,5 +1,5 @@
 +++
-date = "2016-07-21T20:30:00+09:00"
+date = "2016-07-26T21:00:00+09:00"
 draft = false
 title = "[Windows10] PCのGPUを確認する"
 tags = ["Windows10"]
