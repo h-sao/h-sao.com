@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>404 Page not found &middot; Effectiveさお</title>
+        <title>Effectiveさお</title>
         <meta name="author">
         <meta name="description" content="The awesome blog of Sao Haruka.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,13 +40,113 @@
               <a href="http://h-sao.com/about">About me</a>
           </div>
 
+
 <div class="container clearfix">
     <main role="main" class="content">
+        <article class="post">
             <a class="btn" href="http://h-sao.com/" title="">&laquo; </a>
-            <h1></h1>
-            <p></p>
-    </main>
+            
+<h1><a href="http://h-sao.com/blog/2016/07/21/check-gpu-on-pc/" title="[Windows10] PCのGPUを確認する">[Windows10] PCのGPUを確認する</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.07.21">2016.07.21</time>
+&middot; 
     
+    <a href="http://h-sao.com/tags/windows10">windows10</a>
+    
+    
+
+</span>
+</footer>
+ </footer>
+            <p>PCのGPU、つまりグラフィックボードってなんだろな？と思った時の操作メモです</p>
+
+<p>対象は Windows10</p>
+
+<p>(1) まず Windows10 のディスプレイ画面を表示させます</p>
+
+<blockquote>
+<p>デスクトップ画面を右クリック<br />
+　＞ディスプレイ設定</p>
+</blockquote>
+
+<p>もしくは</p>
+
+<blockquote>
+<p>Windowsのスタートボタン<br />
+　＞設定<br />
+　　＞システム</p>
+</blockquote>
+
+<p>(2) 「ディスプレイの詳細設定」を選択！</p>
+
+<p><img src="/pic/Check-gpu-on-pc_00.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>(3) ディスプレイのカスタマイズの項目の中の、「アダプターのプロパティの表示」を選択！</p>
+
+<p><img src="/pic/Check-gpu-on-pc_01.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>(4) グラフィックボードの情報が出てきます</p>
+
+<p><img src="/pic/Check-gpu-on-pc_02.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>このPCはインテルボードでした</p>
+
+<hr />
+
+<p>別の調べ方としては、DirectX 診断ツール（dxdiag）を使う方法もあり</p>
+
+<p>dxdiag で検索すると、一致するコマンドが出てきます</p>
+
+<p><img src="/pic/Check-gpu-on-pc_03.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>実行すると、こんな感じで、表示を出してくれます</p>
+
+<p><img src="/pic/Check-gpu-on-pc_04.png" style="border:solid 5px #e6e6e6"/></p>
+
+<hr />
+
+<p>GPU…気になりますよね…<br />
+CPUは多少型が古くても、それほど差が出ないけど<br />
+GPUだけは新しい型のものにしとかないと…とかとか<br />
+私的にはこだわりたいのです！！！<br />
+（実行出来てるかどうかは…涙）</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f07%2f21%2fcheck-gpu-on-pc%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bWindows10%5d%20PC%e3%81%aeGPU%e3%82%92%e7%a2%ba%e8%aa%8d%e3%81%99%e3%82%8b&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f07%2f21%2fcheck-gpu-on-pc%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f07%2f21%2fcheck-gpu-on-pc%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f07%2f21%2fcheck-gpu-on-pc%2f&title=%5bWindows10%5d%20PC%e3%81%aeGPU%e3%82%92%e7%a2%ba%e8%aa%8d%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'harukasao';
+    var disqus_identifier = 'http:\/\/h-sao.com\/blog\/2016\/07\/21\/check-gpu-on-pc\/';
+    var disqus_title = '[Windows10] PCのGPUを確認する';
+    var disqus_url = 'http:\/\/h-sao.com\/blog\/2016\/07\/21\/check-gpu-on-pc\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+    </main>
     <aside class="author">
   <img class="profile-image" src="http://h-sao.com/pic/saoharuka128.png" alt="遥佐保/Sao Haruka" />
   <p class="name"> 
@@ -84,7 +184,7 @@
   <br>
 </aside>
 
-    
+
     <aside class="posted-list">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -427,6 +527,7 @@
 
 
 </div>
+
 <footer class="main-footer">
   <div class="container clearfix">
         <a class="icon-rss" href="http://h-sao.com/post/index.xml" title="RSS"></a>

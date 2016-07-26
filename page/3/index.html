@@ -45,6 +45,60 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2015/03/13/install-android-apk/" title="[Android] 開発者向けオプション表示とAPKインストールコマンド">[Android] 開発者向けオプション表示とAPKインストールコマンド</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2015.03.13">2015.03.13</time>
+&middot; 
+    
+    <a href="http://h-sao.com/tags/android">android</a>
+    
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>ずいぶん昔から出ている情報ですが、メモっときます<br /><br />Android端末に自作アプリを入れるシンプルな方法です<br /></p>
+
+<h1 id="android端末での準備:b6f199fdd59a36219ff7ec007f2868f1">Android端末での準備</h1>
+
+<p>Android4.2以降の端末だと「開発者向けオプション」が非表示になってるので<br /><br />USBデバッグを有効にしたい場合は<br /><blockquote>端末情報&nbsp;＞ ビルド番号</blockquote><br />このビルド番号を7回クリックしたら、「開発者向けオプション」が表示されます<br /><br />やっておくことは<br /><ul><li>設定 ＞ セキュリティ ＞ 提供元不明のアプリ　ON</li><li>設定 ＞ 開発者向けオプション ＞ USBデバッグ　ON</li><li>デバイスを提供している会社のサイトから、Android用SDKドライバをインストールする</li></ul>こんなところでOK<br /><br />（参考）<br /><div><a  href="http://www.yahoo-help.jp/app/answers/detail/p/601/a_id/54447/~/usb%E3%83%87%E3%83%90%E3%83%83%E3%82%B0%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%99%E3%82%8B%E3%80%81%E6%8F%90%E4%BE%9B%E5%85%83%E4%B8%8D%E6%98%8E%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%82%92%E8%A8%B1%E5%8F%AF%E3%81%99%E3%82%8B" target="_blank">USBデバッグを有効にする、提供元不明アプリのインストールを許可する - Yahoo!スマホマネージャーヘルプ&nbsp;</a></div><br /></p>
+
+<h1 id="android端末にapkをインストール:b6f199fdd59a36219ff7ec007f2868f1">Android端末にAPKをインストール</h1>
+
+<p>AndroidSDKをインストールした場所に adb tool が入っています<br /><br />わたしの場合は&nbsp;C:\Library\android-sdk にインストールしたので、adb.exe は</p>
+
+<blockquote>
+<p>C:\Library\android-sdk\platform-tools\adb.exe</p>
+</blockquote>
+
+<p>よく他のサイトで、PCの環境変数パスに、C:\Library\android-sdk\platform-tools を追加設定する、というのを見かけますが<br />単にこの abd.exe を使うだけであれば、環境変数への追加は必要ないです<br /><br />UBSでAndroid端末をPCに接続した状態で<br />手元の MyApp.apk をインストールするコマンドはこちら</p>
+
+<pre><code class="language-xml"> adb install -r MyApp.apk
+</code></pre>
+
+<p>さくっとインストールできました<br /><br />デバイスからAPKリンクをつつくなどでも良いのですが<br />開発者っぽい感じかつ、<br />ちょっと手元でAPKを試したい時の参考までに(^^)/</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f03%2f13%2finstall-android-apk%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bAndroid%5d%20%e9%96%8b%e7%99%ba%e8%80%85%e5%90%91%e3%81%91%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3%e8%a1%a8%e7%a4%ba%e3%81%a8APK%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f03%2f13%2finstall-android-apk%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f03%2f13%2finstall-android-apk%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f03%2f13%2finstall-android-apk%2f&title=%5bAndroid%5d%20%e9%96%8b%e7%99%ba%e8%80%85%e5%90%91%e3%81%91%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3%e8%a1%a8%e7%a4%ba%e3%81%a8APK%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2015/03/03/reset-line-to-gitextensions/" title="[GitExtensions] 行単位で変更をリセットするRコマンド">[GitExtensions] 行単位で変更をリセットするRコマンド</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2015.03.03">2015.03.03</time>
@@ -649,63 +703,6 @@ In such a case, Anonymous structure comes in handy.</p>
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2014/02/03/force-reset-my-git-repository/" title="[Git] ローカルを強制上書きして、作業をなかったことにしたい">[Git] ローカルを強制上書きして、作業をなかったことにしたい</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2014.02.03">2014.02.03</time>
-&middot; 
-    
-    <a href="http://h-sao.com/tags/git">git</a>
-    
-    
-
-</span>
-</footer>
- </footer>
-                <p>ローカルの作業が何やらおかしくなったから<br />
-リモートのファイル内容に戻したい～という時<br />
-以下のコマンドでさくっと戻りました</p>
-
-<pre><code class="language-cpp">git fetch origin
-git reset --hard origin/master
-</code></pre>
-
-<p>ツールなどで強制的にsyncさせようとしても</p>
-
-<blockquote>
-<p>failed to sync this branch</p>
-</blockquote>
-
-<p>という悲しいお知らせが出て、結局 Git Bash に行くことになりますので……</p>
-
-<p>（参考リンク）</p>
-
-<ul>
-<li><p>gitでリモートのブランチにローカルを強制一致させたい時<br />
-<a href="http://qiita.com/ms2sato/items/72b48c1b1923beb1e186">http://qiita.com/ms2sato/items/72b48c1b1923beb1e186</a></p></li>
-
-<li><p>How to reset my local repository to be just like the remote repository HEAD<br />
-<a href="http://stackoverflow.com/questions/1628088/how-to-reset-my-local-repository-to-be-just-like-the-remote-repository-head">http://stackoverflow.com/questions/1628088/how-to-reset-my-local-repository-to-be-just-like-the-remote-repository-head</a></p></li>
-</ul>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f02%2f03%2fforce-reset-my-git-repository%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGit%5d%20%e3%83%ad%e3%83%bc%e3%82%ab%e3%83%ab%e3%82%92%e5%bc%b7%e5%88%b6%e4%b8%8a%e6%9b%b8%e3%81%8d%e3%81%97%e3%81%a6%e3%80%81%e4%bd%9c%e6%a5%ad%e3%82%92%e3%81%aa%e3%81%8b%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8%e3%81%ab%e3%81%97%e3%81%9f%e3%81%84&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f02%2f03%2fforce-reset-my-git-repository%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f02%2f03%2fforce-reset-my-git-repository%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f02%2f03%2fforce-reset-my-git-repository%2f&title=%5bGit%5d%20%e3%83%ad%e3%83%bc%e3%82%ab%e3%83%ab%e3%82%92%e5%bc%b7%e5%88%b6%e4%b8%8a%e6%9b%b8%e3%81%8d%e3%81%97%e3%81%a6%e3%80%81%e4%bd%9c%e6%a5%ad%e3%82%92%e3%81%aa%e3%81%8b%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8%e3%81%ab%e3%81%97%e3%81%9f%e3%81%84" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -771,6 +768,10 @@ git reset --hard origin/master
             <div class="list-group">
                 
                     
+                        <a href="/blog/2016/07/21/check-gpu-on-pc/" class="list-group-item">[Windows10] PCのGPUを確認する</a><br>
+                    
+                
+                    
                         <a href="/blog/2016/07/20/transfer-github-repository/" class="list-group-item">[GitHub] GitHubリポジトリを別アカウントに移動させる</a><br>
                     
                 
@@ -804,10 +805,6 @@ git reset --hard origin/master
                 
                     
                         <a href="/blog/2016/01/12/windows-printscreen-key-on-mac/" class="list-group-item">[Mac] Windows Bootcamp 時の PrintScreen</a><br>
-                    
-                
-                    
-                        <a href="/blog/2016/01/11/unity-shader-2dsprite/" class="list-group-item">[Unity] 2D Spriteにシェーダーをかける</a><br>
                     
                 
             </div>
@@ -1062,9 +1059,9 @@ git reset --hard origin/master
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/windows10" style="font-size: 11px;">
+                    <a href="http://h-sao.com//tags/windows10" style="font-size: 14px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">2</span>
                         windows10
                     </a>
                     </u> &nbsp; 

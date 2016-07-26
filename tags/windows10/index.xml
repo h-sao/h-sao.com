@@ -6,8 +6,69 @@
     <description>Recent content in Windows10 on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 15 Jun 2016 12:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 21 Jul 2016 20:30:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/tags/windows10/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Windows10] PCのGPUを確認する</title>
+      <link>http://h-sao.com/blog/2016/07/21/check-gpu-on-pc/</link>
+      <pubDate>Thu, 21 Jul 2016 20:30:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/07/21/check-gpu-on-pc/</guid>
+      <description>&lt;p&gt;PCのGPU、つまりグラフィックボードってなんだろな？と思った時の操作メモです&lt;/p&gt;
+
+&lt;p&gt;対象は Windows10&lt;/p&gt;
+
+&lt;p&gt;(1) まず Windows10 のディスプレイ画面を表示させます&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;デスクトップ画面を右クリック&lt;br /&gt;
+　＞ディスプレイ設定&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;もしくは&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Windowsのスタートボタン&lt;br /&gt;
+　＞設定&lt;br /&gt;
+　　＞システム&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;(2) 「ディスプレイの詳細設定」を選択！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Check-gpu-on-pc_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;(3) ディスプレイのカスタマイズの項目の中の、「アダプターのプロパティの表示」を選択！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Check-gpu-on-pc_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;(4) グラフィックボードの情報が出てきます&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Check-gpu-on-pc_02.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;このPCはインテルボードでした&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;別の調べ方としては、DirectX 診断ツール（dxdiag）を使う方法もあり&lt;/p&gt;
+
+&lt;p&gt;dxdiag で検索すると、一致するコマンドが出てきます&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Check-gpu-on-pc_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;実行すると、こんな感じで、表示を出してくれます&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Check-gpu-on-pc_04.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;GPU…気になりますよね…&lt;br /&gt;
+CPUは多少型が古くても、それほど差が出ないけど&lt;br /&gt;
+GPUだけは新しい型のものにしとかないと…とかとか&lt;br /&gt;
+私的にはこだわりたいのです！！！&lt;br /&gt;
+（実行出来てるかどうかは…涙）&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[Windows10] シャットダウンができない対策</title>
