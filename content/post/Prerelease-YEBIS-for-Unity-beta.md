@@ -1,16 +1,16 @@
 +++
 date = "2016-08-09T18:00:00+09:00"
 draft = false
-title = "[Unity] ポストエフェクトプラグインのベータ版出してます"
+title = "[Unity] Unity用YEBISプラグインのお話してきました"
 tags = ["Unity"]
 +++
 
 たまには、仕事のお話を…  
-現在、Unityプラグインを開発中です
+現在、Unityのプラグインを絶賛開発中で、わたしも少し関わらせて頂いてます
 
 なんのプラグインかというと、ポストエフェクト処理がかけられる「YEBIS」というプロダクトのプラグイン化になります
 
-現在、ベータ版として期間限定のトライアルを出してます
+今、ベータ版として期間限定のトライアルを出し中。。
 
 - **YEBIS for Unity (beta)** ダウンロードサイト
 [https://siliconstudio.github.io/YebisForUnityBeta/](https://siliconstudio.github.io/YebisForUnityBeta/)
