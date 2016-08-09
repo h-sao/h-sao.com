@@ -6,8 +6,64 @@
     <description>Recent content in Unity on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 08 May 2016 14:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 09 Aug 2016 18:00:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Unity] ポストエフェクトプラグインのベータ版出してます</title>
+      <link>http://h-sao.com/blog/2016/08/09/prerelease-yebis-for-unity-beta/</link>
+      <pubDate>Tue, 09 Aug 2016 18:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/08/09/prerelease-yebis-for-unity-beta/</guid>
+      <description>&lt;p&gt;たまには、仕事のお話を…&lt;br /&gt;
+現在、Unityプラグインを開発中です&lt;/p&gt;
+
+&lt;p&gt;なんのプラグインかというと、ポストエフェクト処理がかけられる「YEBIS」というプロダクトのプラグイン化になります&lt;/p&gt;
+
+&lt;p&gt;現在、ベータ版として期間限定のトライアルを出してます&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;YEBIS for Unity (beta)&lt;/strong&gt; ダウンロードサイト
+&lt;a href=&#34;https://siliconstudio.github.io/YebisForUnityBeta/&#34;&gt;https://siliconstudio.github.io/YebisForUnityBeta/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;あぁ、なんでUnityのアセットストアじゃないのかって…？&lt;/p&gt;
+
+&lt;p&gt;実は、「特濃！ゲーム開発塾５」というイベントでこのプラグインの話をしてきたのですが、ストアの申請が間に合わず…＞＜&lt;br /&gt;
+とりあえず、GitHub Pagesに置いてます&lt;br /&gt;
+（なので、アセットストアに公開するまでの、期間限定サイトです）&lt;/p&gt;
+
+&lt;p&gt;ちなみに、イベントURLはこれ&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;特濃！ゲーム開発塾５&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&#34;http://eventregist.com/e/tokunou5&#34;&gt;http://eventregist.com/e/tokunou5&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://www.facebook.com/IwateGameFactory/&#34;&gt;https://www.facebook.com/IwateGameFactory/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;岩手県盛岡市はIT支援がとても盛んらしく、こんなゲーム開発者向けのお祭りイベントがあるんですね~&lt;/p&gt;
+
+&lt;p&gt;わたしが参加した日程は 8月9日(火)&lt;br /&gt;
+対象となる人はプログラマー、もしくはプログラムを将来仕事にしたい人向け&lt;br /&gt;
+現在、DMM.comラボにてプロデューサをされている松本卓也さんがメイン講師をされました&lt;/p&gt;
+
+&lt;p&gt;わたしは３０分ほどセッション時間を頂き、このUnityプラグインのお話をさせて頂きました&lt;br /&gt;
+発表に利用した資料はこれです&lt;/p&gt;
+
+&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;5106b47adb0c4f2286a4654095b81fc4&#34; data-ratio=&#34;1.77777777777778&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;ベータ版なので動作不安定な点がいくつもあるのですが、人柱的に試しても良いかなーという心優しい方は、トライしてみてくださいm(__)m&lt;/p&gt;
+
+&lt;p&gt;ちなみにドキュメントはこちら&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;SiliconStudio/YEBIS-plugins - GitHub&lt;br /&gt;
+&lt;a href=&#34;https://github.com/SiliconStudio/YEBIS-plugins&#34;&gt;https://github.com/SiliconStudio/YEBIS-plugins&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;トップは英語で書かれてますが、実は日本語のドキュメントしか今は無いです&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[Unity] PC実行時のWindowsサイズの設定の仕方＆起動時フック</title>
