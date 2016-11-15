@@ -391,5 +391,46 @@ int main()
 </description>
     </item>
     
+    <item>
+      <title>[C/C&#43;&#43;] 割り算を使わないで割り算する方法</title>
+      <link>http://h-sao.com/blog/2008/07/29/how-to-divide-without-division/</link>
+      <pubDate>Tue, 29 Jul 2008 01:17:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2008/07/29/how-to-divide-without-division/</guid>
+      <description>&lt;p&gt;ビット・シフトの計算の練習問題＜上級編＞です&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Q. 割り算をシフトと引き算のみで表現しなさい&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;A. 回答&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;// x / y = ans
+// x: 分子
+// y: 分母
+// ans:答え
+
+ans = 0;
+ while( x &amp;gt;= y ){
+    dammy = y;
+    syou = 1;
+    while( x &amp;gt;= dammy ){            // 割られる数を超えるまで割る数をシフト
+        dammy = dammy &amp;lt;&amp;lt; 1;
+        syou  = syou  &amp;lt;&amp;lt; 1;
+    }
+    
+    dammy = dammy &amp;gt;&amp;gt; 1;             // 超える手前まで戻す
+    syou = syou &amp;gt;&amp;gt; 1;
+    
+    x = x - dammy;                  // 筆算
+    ans = ans + syou;               // 答え
+ }
+ printf( &amp;quot;%d ・・・%d\n&amp;quot;, ans, x );
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;新人研修などにどうでしょう？&lt;/p&gt;
+
+&lt;p&gt;※ 実は最後に足し算使ってますね…(&amp;gt;_&amp;lt;)&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

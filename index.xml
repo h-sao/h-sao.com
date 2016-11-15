@@ -6,8 +6,114 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 09 Aug 2016 18:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 15 Nov 2016 19:00:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Maya] Maya2015設定ウィンドウの開き方</title>
+      <link>http://h-sao.com/blog/2016/11/15/settings-maya2015-part1/</link>
+      <pubDate>Tue, 15 Nov 2016 19:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/11/15/settings-maya2015-part1/</guid>
+      <description>
+
+&lt;p&gt;Mayaはいろんな機能がありますね…&lt;br /&gt;
+設定の開き方すら判らないという恥ずかしい思いをよくしているので、いざというときの自分のメモです&lt;/p&gt;
+
+&lt;p&gt;記載環境は、Maya2015 on Windows10 です&lt;/p&gt;
+
+&lt;h2 id=&#34;レンダリングエンジンの変更:355fcbaa8dfe550d1200f82d421d5c35&#34;&gt;レンダリングエンジンの変更&lt;/h2&gt;
+
+&lt;p&gt;Mayaのデフォルトレンダリングは &lt;strong&gt;OpenGL&lt;/strong&gt; になっています&lt;br /&gt;
+&lt;strong&gt;DirectX11&lt;/strong&gt; に変更する方法&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;プリファレンスウィンドウを開きます&lt;br /&gt;
+&lt;strong&gt;Windows&lt;/strong&gt;&lt;br /&gt;
+　&amp;gt; &lt;strong&gt;Settings/Prederences&lt;/strong&gt;&lt;br /&gt;
+　　&amp;gt; &lt;strong&gt;Preferences&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Display&lt;/strong&gt; カテゴリの &lt;strong&gt;Viewport 2.0&lt;/strong&gt; に&lt;br /&gt;
+Rendering engine を変更できるドロップダウンリストがあるので、そこで変更できる&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;レンダー設定:355fcbaa8dfe550d1200f82d421d5c35&#34;&gt;レンダー設定&lt;/h2&gt;
+
+&lt;p&gt;上記はレンダリングエンジンについてでしたが、レンダリングの設定を触るところはまた別の箇所になっています&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;レンダー設定のウィンドウを開きます&lt;br /&gt;
+&lt;strong&gt;Windows&lt;/strong&gt;&lt;br /&gt;
+　&amp;gt; &lt;strong&gt;Rendering Editors&lt;/strong&gt;&lt;br /&gt;
+　　&amp;gt; &lt;strong&gt;Render Settings&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_04.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;レンダー設定ウィンドウ&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_05.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;使うレンダリングの設定を、ここで選ぶことが出来ます&lt;br /&gt;
+わたしの場合は Maya Hardware 2.0 を選択したりしてます&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_06.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;ハードウェアレンダラ2-0設定:355fcbaa8dfe550d1200f82d421d5c35&#34;&gt;ハードウェアレンダラ2.0設定&lt;/h2&gt;
+
+&lt;p&gt;浮動小数レンダーターゲットを有効化したいとき&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;この画面は、Maya2015固有みたいです&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Mayaの作業画面（ビューポート）の &lt;strong&gt;Renderer&lt;/strong&gt; の &lt;strong&gt;Viewport2.0&lt;/strong&gt; の横にある、四角いチェックを押してみます&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_02.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Hardware Renderer 2.0 Settings&lt;/strong&gt; のウィンドウが表示されます&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;精度を上げた浮動小数レンダリングをするには&lt;br /&gt;
+&lt;strong&gt;Floating Point Render Target&lt;/strong&gt; の Enable にチェックを入れます&lt;br /&gt;
+フォーマットは、16bit と 32bit が選択できました&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;カメラの設定:355fcbaa8dfe550d1200f82d421d5c35&#34;&gt;カメラの設定&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;カメラアトリビュートを出すには&lt;br /&gt;
+Mayaの作業画面（ビューポート）の &lt;strong&gt;View&lt;/strong&gt; の &lt;strong&gt;Select Camera&lt;/strong&gt; を選択します&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_07.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Attribute Editor&lt;/strong&gt; がぽこっと現れます&lt;br /&gt;
+違うものが現れたときには、&lt;br /&gt;
+横のタブに &lt;strong&gt;persp&lt;/strong&gt;, &lt;strong&gt;perspShape&lt;/strong&gt;&lt;br /&gt;
+縦のタブに &lt;strong&gt;Channel Box/Layer Editor&lt;/strong&gt;, &lt;strong&gt;Attribute Editor&lt;/strong&gt; があるので&lt;br /&gt;
+開きたいものを選択します&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_08.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;インストールされているプラグイン:355fcbaa8dfe550d1200f82d421d5c35&#34;&gt;インストールされているプラグイン&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;プラグインマネージャを開きます&lt;br /&gt;
+&lt;strong&gt;Windows&lt;/strong&gt;&lt;br /&gt;
+　&amp;gt; &lt;strong&gt;Settings/Prederences&lt;/strong&gt;&lt;br /&gt;
+　　&amp;gt; &lt;strong&gt;Plug-in Manager&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_09.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;プラグイン一覧がここで見れます&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_10.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;自分の必要なメモ書きでした&lt;br /&gt;
+Mayaは奥が深いですね～&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[Unity] Unity用YEBISプラグインのお話してきました</title>
@@ -1965,203 +2071,6 @@ C++の勉強会や集まりなど、筋トレは続けたいです…&lt;/p&gt;
 今年は自分のかかわる範囲を広げて、世の中の技術を幅広く知って発信する活動を行っていきます //ビシッ&lt;/p&gt;
 
 &lt;p&gt;ではでは、2016年も、どうぞ、よろしくお願いします！&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[Hugo] ブログ構築メモ(2)-テンプレートの更新方法（CSSはメインではない）</title>
-      <link>http://h-sao.com/blog/2015/12/13/change-theme-to-minimalist/</link>
-      <pubDate>Sun, 13 Dec 2015 23:30:00 +0900</pubDate>
-      
-      <guid>http://h-sao.com/blog/2015/12/13/change-theme-to-minimalist/</guid>
-      <description>
-
-&lt;p&gt;前回、スタティックジェネレーターのHugoを使って、&lt;a href=&#34;https://github.com/h-sao/Blog/tree/gh-pages&#34;&gt;GitHub Pages&lt;/a&gt; にブログを展開する方法を記載しました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;[Hugo]ブログ構築メモ(1)-Hugoとテンプレート&lt;br /&gt;
-&lt;a href=&#34;http://h-sao.com/blog/2015/09/09/hugoandtheme/&#34;&gt;http://h-sao.com/blog/2015/09/09/HugoAndTheme/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;このとき、「デザインと機能を諦めた」と書きましたが&lt;br /&gt;
-その続きをひそかにポチポチとやっておりました…&lt;br /&gt;
-しかし、ポチポチやる日々が辛くなり、ついにはブログ更新そのものが怠ることに…&lt;/p&gt;
-
-&lt;h1 id=&#34;一向に進まない理由:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;一向に進まない理由&lt;/h1&gt;
-
-&lt;p&gt;一人ではWebのフロントエンドのノウハウもなく、もう無理かもーと思っていたことを&lt;br /&gt;
-&lt;a href=&#34;http://www.misuzilla.org/&#34;&gt;@mayuki&lt;/a&gt; さんに相談したところ、こんなアドバイスを頂きました&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;CSSってイマドキ、モバイル対応などで複雑なので、デザインを一から自分で書き起こすのは辞めた方がいい&lt;br /&gt;
-いつまでたっても、モノが出来上がらない&lt;/p&gt;
-
-&lt;p&gt;&amp;ldquo;CSSデザイン&amp;rdquo; を触るのは最後&lt;br /&gt;
-先に &amp;ldquo;テンプレート&amp;rdquo; を駆使して、自分なりの配置にするのがおススメ&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;つまり&lt;br /&gt;
-&lt;strong&gt;機能のテンプレートは他から持ってこれるがデザインはあらかじめ好みのものを選ぶ方が良い&lt;/strong&gt;&lt;br /&gt;
-というアドバイスでした&lt;/p&gt;
-
-&lt;p&gt;あれ？前回わたしが書いた時には、&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;結局はデザインよりも機能が一番多いのがいいんでない？という発想で選びました&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;おお、まったく逆ですね…&lt;br /&gt;
-デザインさておき、機能重視してたので、うまくいかなかったのか…！！！&lt;/p&gt;
-
-&lt;h1 id=&#34;好みっぽく-かつシンプルなテンプレート:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;好みっぽく、かつシンプルなテンプレート&lt;/h1&gt;
-
-&lt;p&gt;とまぁ、素人くさい話で本当に恐縮ですが、気持ち改め、シンプルで改変しやすそうなデザインのテンプレートを引っ張ってきました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;minimalist&lt;/strong&gt;&lt;br /&gt;
-&lt;a href=&#34;https://github.com/digitalcraftsman/hugo-minimalist-theme/&#34;&gt;https://github.com/digitalcraftsman/hugo-minimalist-theme/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Theme-To-Minimalist0.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;これは相談したその場で&lt;a href=&#34;http://www.misuzilla.org/&#34;&gt;@mayuki&lt;/a&gt; さんが、ちゃちゃっとテストするために触ってくれたテンプレートです&lt;/p&gt;
-
-&lt;p&gt;彼はものの10分程度で、わたしのやりたいことを目の前でやってくれたので、とても参考になりました&lt;br /&gt;
-ありがとうございます～（涙目）&lt;/p&gt;
-
-&lt;h2 id=&#34;最初に見る場所はhtmlテンプレート:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;最初に見る場所はHTMLテンプレート&lt;/h2&gt;
-
-&lt;p&gt;やったことはまず、&lt;strong&gt;themes &amp;gt; minimalist &amp;gt; layouts&lt;/strong&gt; の下を見るようにしました&lt;br /&gt;
-わたしの環境だと C:\Users\haruk\Dropbox\sites\Blog\themes\minimalist\layouts になります&lt;/p&gt;
-
-&lt;p&gt;ここから必要そうな機能の、HTMLテンプレートを作っていきます&lt;br /&gt;
-わたしの場合、以下の機能（テンプレートとなるブロックと名付けます）が不足していました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ヘッダーに &amp;ldquo;About me&amp;rdquo; などのリンクをつけたい&lt;/li&gt;
-&lt;li&gt;最新ポストの表示&lt;/li&gt;
-&lt;li&gt;タグ表示&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;こんな感じです&lt;/p&gt;
-
-&lt;h2 id=&#34;ヘッダーに直接何か書いてみる:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;ヘッダーに直接何か書いてみる&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;themes &amp;gt; minimalist &amp;gt; layouts &amp;gt; partials &amp;gt; header.html&lt;/strong&gt; がヘッダーに相当します&lt;/p&gt;
-
-&lt;p&gt;素人のわたしが混乱する原因として&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Hugoの機能がわからない&lt;/li&gt;
-&lt;li&gt;テンプレートの更新方法がわからない&lt;/li&gt;
-&lt;li&gt;CSSの更新方法がわからない&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;こんな感じでしょうか(+_+)&lt;/p&gt;
-
-&lt;p&gt;まぁHTMLタグの直書きであれば、なんとかなるだろうの勢いで、まずは、提供されている minimalist テンプレート（HTML）の中身を更新しちゃうことにします&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Hugo的作法としては、管理ディレクトリ直下の &lt;strong&gt;layouts&lt;/strong&gt; を更新すべきらしいのですが、色々やっているうちに訳が分からなくなるので、やめました…&lt;br /&gt;
-もしかしたらHugoはファイル管理とか命名規則が、えいやっっっなのかもしれない？&lt;br /&gt;
-とにかく（わたしの能力不足なんでしょうけど）思うように管理できなかった&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;オレオレ topbar-layer classの追加&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;header class=&amp;quot;site-header&amp;quot;&amp;gt;
-  &amp;lt;div class=&amp;quot;transparent-layer&amp;quot;&amp;gt;
-    &amp;lt;h2&amp;gt;{{ .Site.Params.header_title }}&amp;lt;/h2&amp;gt;
-  &amp;lt;/div&amp;gt;
-&amp;lt;/header&amp;gt;
-  &amp;lt;div class=&amp;quot;topbar-layer&amp;quot;&amp;gt;
-    &amp;lt;a href=&amp;quot;{{ .Site.BaseURL }}about&amp;quot;&amp;gt;About me&amp;lt;/a&amp;gt;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;
-    &amp;lt;a href=&amp;quot;{{ .Site.BaseURL }}tags&amp;quot;&amp;gt;Tags&amp;lt;/a&amp;gt;
- &amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;出力結果
-&lt;img src=&#34;http://h-sao.com/pic/Change-Theme-To-Minimalist1.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;ヘッダーと本文の間に、バーを入れることが出来ました&lt;/p&gt;
-
-&lt;p&gt;ちなみに Hugo は、デフォルトで &lt;strong&gt;[サイトURL]/tags/&lt;/strong&gt; というタグ一覧のHTMLを生成してくれます&lt;/p&gt;
-
-&lt;h2 id=&#34;ブロックとして設置出来た後に-cssを触る:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;ブロックとして設置出来た後に、CSSを触る&lt;/h2&gt;
-
-&lt;p&gt;勘所のある人には、こいつはなんというツマラナイことを書いてるんだ！？と思われるかもしれませんが、これも経験なんで許してください…書いててつらい…&lt;/p&gt;
-
-&lt;p&gt;気を取り直して、いよいよCSSを触ります&lt;/p&gt;
-
-&lt;p&gt;自分の追加した &amp;ldquo;topbar-layer&amp;rdquo; を追加します&lt;br /&gt;
-といっても、同じヘッダの &amp;ldquo;transparent-layer&amp;rdquo; をコピペする気まんまんです&lt;/p&gt;
-
-&lt;p&gt;幸いなことに、この minimalist のテンプレートはとてもシンプルで、触るファイルは１つのみ！
-&lt;strong&gt;themes &amp;gt; minimalist &amp;gt; static &amp;gt; css &amp;gt; styles.css&lt;/strong&gt; に、&amp;rdquo;transparent-layer&amp;rdquo; のパクリ設定を追加します&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.topbar-layer {
-  width: 100%;
-  height: 100%;
-  background-color: #252a2c;
-
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  color: #e0e0e0;
-  text-align: center;
-  position: relative;
-  line-height: 50px;
-  height: 50px;
-  transition: all 0.3s ease;
-}
-
-.topbar-layer a{
-    color: #a2a2a2;
-}
-.topbar-layer a:hover {
-    color: #fff;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;出力結果
-&lt;img src=&#34;http://h-sao.com/pic/Change-Theme-To-Minimalist2.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;高さなど一部、自分で調整&lt;br /&gt;
-これくらいならできた…&lt;/p&gt;
-
-&lt;h1 id=&#34;私的作業コスト比-デザイン調整-テンプレート調整:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;(私的作業コスト比)デザイン調整＞テンプレート調整&lt;/h1&gt;
-
-&lt;p&gt;わたしがプログラム目線だからかもしれませんが、実際このブログでは、出来てなかった機能（タグと最新ポスト表示）を難なく実装することは出来ました&lt;/p&gt;
-
-&lt;p&gt;Hugoが高機能ということ、公式ドキュメントがそこそこ充実してることなど、調べればなんとかなるもんです&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;タグなどのソートの方法&lt;br /&gt;
-&lt;a href=&#34;https://gohugo.io/templates/list/&#34;&gt;https://gohugo.io/templates/list/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;まぁ実は、最新投稿表示の際には、表示させたくない静的なサイト（About me ページなど) をはじいたりするために&lt;br /&gt;
-ちょっと工夫が必要だったのですが、その話はまた今度…&lt;/p&gt;
-
-&lt;p&gt;とにかく、デザインをいじるのは難しい…！&lt;br /&gt;
-テンプレートを触ることに特化し、デザインは最後の最後にちょっとだけ手を入れる&lt;br /&gt;
-という方針が吉でした&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.misuzilla.org/&#34;&gt;@mayuki&lt;/a&gt; さん、アドバイスほんとにありがとーヽ(｀▽´)/&lt;/p&gt;
-
-&lt;p&gt;引き続きがんばります…！&lt;/p&gt;
-
-&lt;p&gt;また、RSSフィードが乱れるかもしれませんが、ご容赦くださいませ…&lt;/p&gt;
-
-&lt;p&gt;（次回へ続く）&lt;/p&gt;
 </description>
     </item>
     

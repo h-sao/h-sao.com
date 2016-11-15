@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://h-sao.com/</loc>
-    <lastmod>2016-08-09T18:00:00+09:00</lastmod>
+    <lastmod>2016-11-15T19:00:00+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/blog/2016/11/15/settings-maya2015-part1/</loc>
+    <lastmod>2016-11-15T19:00:00+09:00</lastmod>
   </url>
   
   <url>
@@ -185,6 +190,11 @@
   <url>
     <loc>http://h-sao.com/blog/2014/01/28/hello-world/</loc>
     <lastmod>2014-01-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/blog/2008/07/29/how-to-divide-without-division/</loc>
+    <lastmod>2008-07-29T01:17:00+09:00</lastmod>
   </url>
   
 </urlset>
