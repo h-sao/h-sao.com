@@ -6,8 +6,77 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 15 Nov 2016 19:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 16 Nov 2016 20:45:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[UE4] Unreal Engine4のインストール要件</title>
+      <link>http://h-sao.com/blog/2016/11/16/ue4-install-requirements/</link>
+      <pubDate>Wed, 16 Nov 2016 20:45:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/11/16/ue4-install-requirements/</guid>
+      <description>&lt;p&gt;仕事上、色んな Game Engine を試しておりまして&lt;br /&gt;
+先日、クリーンで、比較的低スペックな Windows10 PC に&lt;br /&gt;
+Epic さんの Unreal Engine 4 をインストールしたときに、はふん？と思った件のメモです&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Enreal Engine 4 のダウンロード&lt;/strong&gt; はダッシュボードから出来ます (ログインが必要)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Enreal Engine 4 ダウンロード&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&#34;https://www.unrealengine.com/dashboard&#34;&gt;https://www.unrealengine.com/dashboard&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/UE4-install-requirements1.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;迷わず、Windows のプラットフォームを選択！&lt;/p&gt;
+
+&lt;p&gt;落としてきた EpicGamesLauncherInstaller-2.12.14-3176191.msi (2016/11/16現在) を実行します&lt;/p&gt;
+
+&lt;p&gt;あれ？&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/UE4-install-requirements0.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;コンピューターにXINPUT1_3.dll がないため、プログラムを開始できません。この問題を解決するには、プログラムを再インストールしてみてください。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;はて。。。何やら懐かしい香りのDLL名がエラーに上がっています(￣▽￣)&lt;/p&gt;
+
+&lt;p&gt;UE4 のインストール要件って、なんだったっけ？と思ったのですが、ダウンロードの画面には、何も書かれてないんですよね～&lt;/p&gt;
+
+&lt;p&gt;よく判らないから、ドキュメントを見てみよう！ということで&lt;br /&gt;
+「ハードウェア＆ソフトウェア仕様」のドキュメントサイトを見ていくと&lt;br /&gt;
+ソフトウェアのインストール要件が書かれていました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;ハードウェア＆ソフトウェア仕様&lt;br /&gt;
+&lt;a href=&#34;https://docs.unrealengine.com/latest/JPN/GettingStarted/RecommendedSpecifications/index.html&#34;&gt;https://docs.unrealengine.com/latest/JPN/GettingStarted/RecommendedSpecifications/index.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;エンジンの実行環境&lt;br /&gt;
+OS : Windows 7 / 8 64-bit&lt;br /&gt;
+&lt;strong&gt;DirectX Runtime : &lt;a href=&#34;https://www.microsoft.com/en-us/download/details.aspx?id=8109&#34;&gt;DirectX End-User Runtimes (June 2010)&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;おぉぉ、&lt;strong&gt;DXのランタイム&lt;/strong&gt;！お前さんだったのかぁ～&lt;/p&gt;
+
+&lt;p&gt;というわけで、&lt;strong&gt;DirectX End-User Runtimes (June 2010)&lt;/strong&gt; を入れたら、すんなり UE4 のインストールは出来ました(^o^)&lt;/p&gt;
+
+&lt;p&gt;ランチャーのランタイムエラーが判りにくいよ…と思ったけど&lt;br /&gt;
+これくらいのことはゲーム開発する人にとったら、許容範囲ですかね(^^;)&lt;/p&gt;
+
+&lt;p&gt;あと実は、UE4 は Win10 を&lt;br /&gt;
+今日現在で、オフィシャルにはサポートしてないのかぁと思いました&lt;/p&gt;
+
+&lt;p&gt;単にドキュメントの更新の問題かしら？？？&lt;/p&gt;
+
+&lt;p&gt;まぁ今のところ、わたしの Windows10 の環境では&lt;br /&gt;
+問題なく UE4 の開発環境は動いてるので、特に問題ないです(^^)&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[Maya] Maya2015設定ウィンドウの開き方</title>
@@ -1910,167 +1979,6 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」&lt;/p&gt
 &lt;/blockquote&gt;
 
 &lt;p&gt;日本語にも対応しているし、お手軽でおススメです&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[Diary] 2016年もよろしくお願いします</title>
-      <link>http://h-sao.com/blog/2016/01/04/hello2016/</link>
-      <pubDate>Mon, 04 Jan 2016 16:30:00 +0900</pubDate>
-      
-      <guid>http://h-sao.com/blog/2016/01/04/hello2016/</guid>
-      <description>
-
-&lt;p&gt;遥佐保（はるか・さお）です&lt;br /&gt;
-今年もよろしくお願いしますと共に、去年から気になっていることも踏まえて、記載しています&lt;/p&gt;
-
-&lt;h2 id=&#34;msmvp-2016年1月度受賞:583f6a8c6309cdb9fd99833cc7732617&#34;&gt;MSMVP 2016年1月度受賞&lt;/h2&gt;
-
-&lt;p&gt;今年もマイクロソフトさまより MVP を再受賞させて頂きました&lt;/p&gt;
-
-&lt;p&gt;カテゴリー名称は Windows Development となります
-昨年と変わらず、クライアントサイドの技術カテゴリーでの受賞となります&lt;/p&gt;
-
-&lt;p&gt;自分ひとりだけでは、とても活動は続けられませんでした&lt;br /&gt;
-気さくに相談できる相手が、周りにたくさん居てくださるおかげです&lt;/p&gt;
-
-&lt;p&gt;プラス思考でこれからも色々な情報発信を行っていきたいと思います&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/MVPLogo.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&#34;コミュニティ活動:583f6a8c6309cdb9fd99833cc7732617&#34;&gt;コミュニティ活動&lt;/h2&gt;
-
-&lt;p&gt;ブログ移転を機会に、自分の歴史ページを作りました&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://h-sao.com/about/&#34;&gt;http://h-sao.com/about/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;いやーよくわかりますね、自分の活動履歴が…ヽ(｀▽´)/&lt;br /&gt;
-リンクなどまだ未記載のものがほどんどですけど、頃を見て更新していきます&lt;/p&gt;
-
-&lt;p&gt;去年はセッション6回、勉強会主催8回/スタッフ3回でした&lt;br /&gt;
-環境が変わったこともあり、例年よりはちょっと少なかったかも&lt;/p&gt;
-
-&lt;h2 id=&#34;東京生活:583f6a8c6309cdb9fd99833cc7732617&#34;&gt;東京生活&lt;/h2&gt;
-
-&lt;p&gt;あまり自身のことはこれまで書いてこなかったのですが、今年は活動場所を大阪から東京に移しました&lt;br /&gt;
-慣れたような慣れないような？まぁそれでも元気にやっています&lt;/p&gt;
-
-&lt;p&gt;完全に私見ですが、文化の違いを一番痛感したのは食事でしょうか…&lt;br /&gt;
-東京はどのお店も蕎麦と寿司が美味しい気がします&lt;br /&gt;
-逆に他の和食系は、関西とちょっと料理法が違うようで、最初はかなり衝撃的でした(^^;)&lt;br /&gt;
-あぁ、お好み焼き定食が懐かしい限りです(^^) 東京にはありません&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;年越しそば、美味しかった(^ω^)
-&lt;img src=&#34;http://h-sao.com/pic/Hello2016_01.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;仕事が変わったので、出社時間が遅い環境になりました、朝弱いので、本当にアリガタイ…&lt;/p&gt;
-
-&lt;h2 id=&#34;グラフィック技術:583f6a8c6309cdb9fd99833cc7732617&#34;&gt;グラフィック技術&lt;/h2&gt;
-
-&lt;p&gt;元々コンシューマーゲームでエフェクトシステム全般（パーティクル、スプライト、フィルター系など）を担当していたので、そこでの知識が多少生かせるような形になりました&lt;/p&gt;
-
-&lt;p&gt;一番の衝撃は、Vulkanの低レイヤAPIを見て、まじ時代錯誤？いややわーこれ管理するのんーと(笑)&lt;/p&gt;
-
-&lt;p&gt;今まだ正式に情報は出ていませんが、このNVIDIAが出しているムービーはすごく判りやすくて、いい内容です&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;NVIDIA SIGGRAPH 2015 Conference（英語、１時間あるよ）&lt;br /&gt;
-&lt;a href=&#34;https://www.youtube.com/watch?v=8xBuAdnIrJQ&#34;&gt;https://www.youtube.com/watch?v=8xBuAdnIrJQ&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Metalにしろ、これにしろ&lt;br /&gt;
-ひとつのゲームチームで対応できる範囲を超えてる感じはあります(^^;)&lt;/p&gt;
-
-&lt;h2 id=&#34;インディゲーム開発者:583f6a8c6309cdb9fd99833cc7732617&#34;&gt;インディゲーム開発者&lt;/h2&gt;
-
-&lt;p&gt;去年はインディゲーマーの方々と知り合えたのは本当に自分にとってラッキーでした&lt;/p&gt;
-
-&lt;p&gt;彼らと話をしていたら、やりたいことは何なのか？→ゲーム作りに専念したい&lt;br /&gt;
-といった、物事の真の部分（みたいなもの）を、純粋に考えられるようになりました&lt;/p&gt;
-
-&lt;p&gt;そこには、製品も開発言語もただの道具で、本当にやりたいことがあるなら能力は後から付いてくる&lt;br /&gt;
-という、ごく自然で純粋な情熱が溢れていました&lt;/p&gt;
-
-&lt;p&gt;中でも、「&lt;strong&gt;Game a Week&lt;/strong&gt;」という開発手法は衝撃的です&lt;br /&gt;
-知ってましたか？1週間に1本、ゲームを作るのです&lt;br /&gt;
-どんなにクソゲーでも、作る期間は1週間&lt;br /&gt;
-そしてそれを公開すべしと&lt;/p&gt;
-
-&lt;p&gt;言い出したのは &lt;a href=&#34;https://twitter.com/tha_rami&#34;&gt;Rami Ismail&lt;/a&gt;さんらしいです、カッコいいよ…&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Game A Week: Getting Experienced At Failure&lt;br /&gt;
-&lt;a href=&#34;http://www.gamasutra.com/blogs/RamiIsmail/20140226/211807/Game_A_Week_Getting_Experienced_At_Failure.php&#34;&gt;http://www.gamasutra.com/blogs/RamiIsmail/20140226/211807/Game_A_Week_Getting_Experienced_At_Failure.php&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;彼に触発されて作り始めたという、&lt;a href=&#34;https://twitter.com/moppppin&#34;&gt;もっぴん&lt;/a&gt;さんの Downwell は本当に尊敬すべき実践ですね&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Downwell&lt;br /&gt;
-&lt;a href=&#34;https://itunes.apple.com/jp/app/downwell/id1032708262&#34;&gt;https://itunes.apple.com/jp/app/downwell/id1032708262&lt;/a&gt;&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Hello2016_00.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;社内インディ:583f6a8c6309cdb9fd99833cc7732617&#34;&gt;社内インディ&lt;/h2&gt;
-
-&lt;p&gt;言葉の通り、社内インディゲームを作っていました&lt;br /&gt;
-2つチャレンジし、1つはまぁ遊べる程度になり、もう1つはモックで終了してしまいました&lt;/p&gt;
-
-&lt;p&gt;プログラマ（自分）と、デザイナーの人と二人でやったのは、実は初めての体験です&lt;br /&gt;
-わたしは大人数で作った経験しかなかったのでかなり不安でしたが、意外とやれるもんやなー、と思いました&lt;/p&gt;
-
-&lt;p&gt;一番大事なのは、「操作デモ」と「デモゲーム」は違うということ&lt;/p&gt;
-
-&lt;p&gt;デモゲームは、あくまでゲームなんで、未完成でもいいからとにかく面白い要素がないとダメなんですよね…&lt;br /&gt;
-それに比べて、単に操作できるだけのアプリは、ただのデモです&lt;br /&gt;
-その違いを理解できる人、できない人がこの世の中にいることを痛感し、喧嘩もした年でした&lt;/p&gt;
-
-&lt;p&gt;この活動は、今年はもう少しピッチ上げて、一番下に書いた個人活動と共に、これからも続けていきたいです&lt;/p&gt;
-
-&lt;h2 id=&#34;英語:583f6a8c6309cdb9fd99833cc7732617&#34;&gt;英語&lt;/h2&gt;
-
-&lt;p&gt;去年から職場で英会話が必要になりました&lt;br /&gt;
-はじめは戸惑いましたが、&lt;br /&gt;
-最近はそんなに困らなくなりました&lt;/p&gt;
-
-&lt;p&gt;というのは、わたしの英語力が上がったのではなく&lt;br /&gt;
-技術的なベースをお互い持っているから、話し方のコツが判った、というオチなんですけど…&lt;/p&gt;
-
-&lt;p&gt;つまりカジュアルな日常会話はダメです、これ、とても難しいですね～&lt;br /&gt;
-あと、交渉前提のディスカッションも難しい&lt;br /&gt;
-とはいえ物おじせずにしゃべれるようになれたのは、良かったかなと思っています&lt;/p&gt;
-
-&lt;p&gt;引き続き、英会話の勉強しないとなーを実感しているところです&lt;br /&gt;
-もうちょっと長い文章がしゃべれるようにならないと、これ以上は一生上達しない気がします&lt;/p&gt;
-
-&lt;h2 id=&#34;エレキギター:583f6a8c6309cdb9fd99833cc7732617&#34;&gt;エレキギター&lt;/h2&gt;
-
-&lt;p&gt;大阪で教えていただいていた先生に、帰省の際にレッスンしてもらっています&lt;br /&gt;
-さすがに触る機会はちょっと減っちゃったけど、期間が開いてもできる練習法を教えてもらって、楽しくやってます&lt;/p&gt;
-
-&lt;p&gt;これもこれで続けていくぞー(^o^)&lt;/p&gt;
-
-&lt;h2 id=&#34;もろもろ踏まえた今年の私的キーワード:583f6a8c6309cdb9fd99833cc7732617&#34;&gt;もろもろ踏まえた今年の私的キーワード&lt;/h2&gt;
-
-&lt;p&gt;仕事では大きな案件が決まったので、今年は佳境な年になりそうです&lt;/p&gt;
-
-&lt;p&gt;去年は仕事で、C#ばかり触っていたので、C++のプロジェクトを作成する機会が激減しました&lt;br /&gt;
-少し離れて思うのは、C++脳はC#では使わない能力が必要とされるので、筋トレみたいに続けとかないと辛いなぁというところでしょうか&lt;br /&gt;
-C++の勉強会や集まりなど、筋トレは続けたいです…&lt;/p&gt;
-
-&lt;p&gt;あと、これは相当難しいのですが、Game a Week はチャレンジしたい…せめて4回くらいは回したいですね（低い目標のくせに、宣言してすみません&lt;br /&gt;
-月曜0:00～日曜23:59ということなので、今日は一つ、プロジェクトを作りました&lt;br /&gt;
-口だけの結果が伴わない最低な奴にならないように（独自ルールに変えるかもしれませんが！）チャレンジしていきます&lt;/p&gt;
-
-&lt;p&gt;最後に、コミュニティ活動は、メインはもちろん「オープンソース」関係&lt;br /&gt;
-ただ、自分はサーバーサイドの人ではないので、フロントエンド系の技術がメインになると思います&lt;br /&gt;
-今年は自分のかかわる範囲を広げて、世の中の技術を幅広く知って発信する活動を行っていきます //ビシッ&lt;/p&gt;
-
-&lt;p&gt;ではでは、2016年も、どうぞ、よろしくお願いします！&lt;/p&gt;
 </description>
     </item>
     

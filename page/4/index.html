@@ -45,6 +45,221 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2014/04/19/about-powershell-x32-and-x64/" title="[PowerShell] 32bitと64bitの使い分け">[PowerShell] 32bitと64bitの使い分け</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2014.04.19">2014.04.19</time>
+&middot; 
+    
+    <a href="http://h-sao.com/tags/powershell">powershell</a>
+    , 
+    
+    <a href="http://h-sao.com/tags/oracle">oracle</a>
+    
+    
+
+</span>
+</footer>
+ </footer>
+                <p>PowerShellにはちゃんと 32bit版と 64bit版が備わっています</p>
+
+<p>Windows2008 R2<br />
+Windows2012 R2<br />
+共に同じ場所にあります(~o~)</p>
+
+<p>64bit版<br />
+<strong>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</strong></p>
+
+<p>32bit版<br />
+<strong>C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe</strong></p>
+
+<p>デフォルトの64bitマシンであれば、コンソールで</p>
+
+<pre><code>&gt; powershell
+</code></pre>
+
+<p>とすると、64bitモードが立ち上がります</p>
+
+<p>これはどういうことかというと、64bitのアプリから使うライブラリなどは、64bitでないとダメってことです</p>
+
+<p>何にはまったかというと、PowerShell から System.Data.OracleClient に接続するとき</p>
+
+<p>たとえDBサーバが 64bit Oracle だったとしても<br />
+Oracle Client はデフォルトでは 32bit になっているようです</p>
+
+<p>powershell から oracle に接続しようとしたときこんな感じになります</p>
+
+<pre><code># アセンブリのロード
+[void][System.Reflection.Assembly]::LoadWithPartialName(&quot;System.Data.OracleClient&quot;)
+
+# 接続
+$conn_str = &quot;Data Source=saoDB;User ID=sao;Password=password;Integrated Security=false;&quot;
+$ora_conn = New-Object System.Data.OracleClient.OracleConnection($conn_str)
+
+# インスタンス
+$ora_cmd = New-Object System.Data.OracleClient.OracleCommand
+$ora_cmd.Connection = $ora_conn
+
+# データベースに接続
+$ora_conn.Open()
+</code></pre>
+
+<p>（参考）powerShellからOracleを使う（接続・切断）<br />
+<a href="http://harikofu.blog.fc2.com/blog-entry-114.html">http://harikofu.blog.fc2.com/blog-entry-114.html</a></p>
+
+<p>このDB接続直後に、64bit のPowerShell だと<br />
+こんなエラーが出ます</p>
+
+<pre><code>&quot;0&quot; 個の引数を指定して &quot;Open&quot; を呼び出し中に例外が発生しました: &quot;Oracle クライアント ライブラリを読み込もうとしましたが、BadImageFormatException が発行されました。この問題は、32 ビットの Oracle クライアント コンポーネントが
+インストールされている環境で 64 ビット モードを実行すると発生します。&quot;
+発生場所 行:1 文字:22
++ $ora_conn.Open &lt;&lt;&lt;&lt; ()
+    + CategoryInfo          : NotSpecified: (:) []、MethodInvocationException
+    + FullyQualifiedErrorId : DotNetMethodException
+</code></pre>
+
+<p>問題解決方法は2つ</p>
+
+<ul>
+<li>Oracle Client を 64bit版をインストールする（たとえDBサーバ上であっても…</li>
+<li>呼び出す側のPowerShellを 32bit版にする</li>
+</ul>
+
+<p>既存の稼働環境に影響を与えない様にするという意味では<br />
+不毛ですが後者を選択すると波風立てずにコトを済ませられます</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f19%2fabout-powershell-x32-and-x64%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bPowerShell%5d%2032bit%e3%81%a864bit%e3%81%ae%e4%bd%bf%e3%81%84%e5%88%86%e3%81%91&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f19%2fabout-powershell-x32-and-x64%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f19%2fabout-powershell-x32-and-x64%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f19%2fabout-powershell-x32-and-x64%2f&title=%5bPowerShell%5d%2032bit%e3%81%a864bit%e3%81%ae%e4%bd%bf%e3%81%84%e5%88%86%e3%81%91" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
+<h1><a href="http://h-sao.com/blog/2014/04/10/mining-for-value-from-db/" title="[Oracle]テーブル・カラム名が不明でもDBに入っている値を検索したい">[Oracle]テーブル・カラム名が不明でもDBに入っている値を検索したい</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2014.04.10">2014.04.10</time>
+&middot; 
+    
+    <a href="http://h-sao.com/tags/oracle">oracle</a>
+    , 
+    
+    <a href="http://h-sao.com/tags/sql">sql</a>
+    
+    
+
+</span>
+</footer>
+ </footer>
+                <p>見知らぬデータベースを渡され、中を解析したい時…</p>
+
+<p>ありますよね？ありますよね！？</p>
+
+<p>全テーブルの全列に入っている値を横断検索したいという要求、あるんじゃないでしょうか？</p>
+
+<p>探したら同じことを考えている人が居ました</p>
+
+<ul>
+<li>全テーブルの全列の値の検索方法について - Oracle Community<br />
+<a href="https://community.oracle.com/thread/2334738?tstart=0">https://community.oracle.com/thread/2334738?tstart=0</a></li>
+</ul>
+
+<p>方法は2種類<br />
+一つは <strong>dmp 出力して、テキスト検索</strong> をするというもの<br />
+だいぶ力技ですけど、確かに、確実に検索できますね…</p>
+
+<p>もう一つの方法は、<strong>PL/SQL で全データを総検索</strong> するというもの</p>
+
+<p>この方法、<br />
+やってみると、良い感じに動きます<br />
+お勧めです<br />
+テーブル名やカラム名が判らなくても、動きますしね！</p>
+
+<p>めっちゃ感激したので、この記事にも SQL を載せておきます</p>
+
+<p>このサンプルでは、全ての値に 「あ」 が入っているデータを検索します<br />
+どのテーブルの、どのカラムに、何件入っているかが判ります</p>
+
+<p>う、嬉しい～!!!</p>
+
+<pre><code class="language-sql">declare
+ sSQL VARCHAR2(128);
+ sDATA VARCHAR2(500);
+ type cursor_type is ref cursor;
+ cur_search cursor_type;
+ vCount INTEGER;
+ ERR_CODE NUMBER := 0;
+ ERR_MSG VARCHAR(255);
+begin
+ for vRec in (select COLUMN_NAME,TABLE_NAME from USER_TAB_COLS where DATA_TYPE like '%CHAR%')
+ loop
+  begin
+    open cur_search for 'select count(*) as cnt from ' || vRec.TABLE_NAME || ' where ' || vRec.COLUMN_NAME || ' like ''%あ%''';
+        fetch cur_search into vCount;
+        if vCount &gt; 0 then
+          dbms_output.put_line(vRec.TABLE_NAME || '.' || vRec.COLUMN_NAME || ':' || vCount || '件あり');
+        end if;
+        close cur_search;
+  exception
+   WHEN OTHERS THEN
+    ERR_CODE := SQLCODE;
+    ERR_MSG  := SUBSTRB(SQLERRM,1,255);
+    dbms_output.put_line('error:' || ERR_CODE || ' ' || ERR_MSG || ' ' || vRec.TABLE_NAME || '.' || vRec.COLUMN_NAME);
+  end;
+ end loop;
+end;
+</code></pre>
+
+<p>DBの構造を解析するツールは結構探せばあるのですが、データの中身となると、調べるのは手間ですよね…<br />
+このSQLには助けられました～</p>
+
+<p>話は変わりますが、<br />
+DB系のクライアントツールで、わたしがよく使っているのは  <strong>A5:SQL Mk-2</strong> （フリーソフト）です</p>
+
+<ul>
+<li>A5:SQL Mk-2 : SQL Development Studio<br />
+<a href="http://a5m2.mmatsubara.com/">http://a5m2.mmatsubara.com/</a></li>
+</ul>
+
+<p>Oracle, SQLServer, MySQL など多くのDBに対応しています<br />
+一番うれしいのは、Oracle への接続に、Oracle Client が無くても接続できる所ですね</p>
+
+<blockquote>
+<p>OCI経由か、直接 IPアドレスなどを指定して接続するかを選択できる！！</p>
+</blockquote>
+
+<p>ER図も自動生成してくれるし、<br />
+めっちゃ、現場で役立ってます</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f10%2fmining-for-value-from-db%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bOracle%5d%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%83%bb%e3%82%ab%e3%83%a9%e3%83%a0%e5%90%8d%e3%81%8c%e4%b8%8d%e6%98%8e%e3%81%a7%e3%82%82DB%e3%81%ab%e5%85%a5%e3%81%a3%e3%81%a6%e3%81%84%e3%82%8b%e5%80%a4%e3%82%92%e6%a4%9c%e7%b4%a2%e3%81%97%e3%81%9f%e3%81%84&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f10%2fmining-for-value-from-db%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f10%2fmining-for-value-from-db%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f10%2fmining-for-value-from-db%2f&title=%5bOracle%5d%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%83%bb%e3%82%ab%e3%83%a9%e3%83%a0%e5%90%8d%e3%81%8c%e4%b8%8d%e6%98%8e%e3%81%a7%e3%82%82DB%e3%81%ab%e5%85%a5%e3%81%a3%e3%81%a6%e3%81%84%e3%82%8b%e5%80%a4%e3%82%92%e6%a4%9c%e7%b4%a2%e3%81%97%e3%81%9f%e3%81%84" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/" title="[C&#43;&#43;/CX] MVP Community Camp 2014大阪で「VC&#43;&#43;まわりの非同期処理」セッションしました">[C&#43;&#43;/CX] MVP Community Camp 2014大阪で「VC&#43;&#43;まわりの非同期処理」セッションしました</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2014.03.23">2014.03.23</time>
@@ -509,6 +724,10 @@ ans = 0;
             <div class="list-group">
                 
                     
+                        <a href="/blog/2016/11/16/ue4-install-requirements/" class="list-group-item">[UE4] Unreal Engine4のインストール要件</a><br>
+                    
+                
+                    
                         <a href="/blog/2016/11/15/settings-maya2015-part1/" class="list-group-item">[Maya] Maya2015設定ウィンドウの開き方</a><br>
                     
                 
@@ -542,10 +761,6 @@ ans = 0;
                 
                     
                         <a href="/blog/2016/05/08/change-unity-window-size/" class="list-group-item">[Unity] PC実行時のWindowsサイズの設定の仕方＆起動時フック</a><br>
-                    
-                
-                    
-                        <a href="/blog/2016/05/07/generate-ssh-key-for-github/" class="list-group-item">[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続</a><br>
                     
                 
             </div>
@@ -740,9 +955,9 @@ ans = 0;
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/powershell" style="font-size: 11px;">
+                    <a href="http://h-sao.com//tags/powershell" style="font-size: 14px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">2</span>
                         powershell
                     </a>
                     </u> &nbsp; 
@@ -774,6 +989,16 @@ ans = 0;
                     
                         <span class="badge">2</span>
                         ssh
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/ue4" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        ue4
                     </a>
                     </u> &nbsp; 
                     
