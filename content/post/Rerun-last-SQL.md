@@ -2,7 +2,7 @@
 date = "2014-01-18T00:53:07+09:00"
 draft = false
 title = "[Oracle] 直前のSQLを再実行する"
-tags = ["SQL"]
+tags = ["SQL", "Oracle"]
 +++
 
 OracleのコマンドラインでSQLを実行させるときのメモ
