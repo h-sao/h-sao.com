@@ -6,8 +6,173 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 16 Nov 2016 20:45:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 21 Dec 2016 18:00:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Outlook] 使わなくなったOutlook on the webの予定表（カレンダー）を削除する方法</title>
+      <link>http://h-sao.com/blog/2016/12/21/delete-outlook-on-the-web-data/</link>
+      <pubDate>Wed, 21 Dec 2016 18:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2016/12/21/delete-outlook-on-the-web-data/</guid>
+      <description>
+
+&lt;p&gt;Office365とかの Outlook カレンダーではなく&lt;br /&gt;
+Webベースでアクセスできる &lt;strong&gt;Outlook on the web&lt;/strong&gt; について&lt;br /&gt;
+データの削除がとてもややこしかったので、ちょっとメモしておきたいと思います&lt;/p&gt;
+
+&lt;h2 id=&#34;かつての-windows-liveカレンダー:58a9045b1ecad794704a80a1c7937ed1&#34;&gt;かつての Windows Liveカレンダー&lt;/h2&gt;
+
+&lt;p&gt;昔は、Windows Liveカレンダーという名称で、カレンダーサービスがあったのですが&lt;br /&gt;
+最近になり、Outlook on the web というサービス名に変わった様です&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://calendar.live.com/calendar/calendar.aspx&#34;&gt;https://calendar.live.com/calendar/calendar.aspx&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;それに伴い、ちょっとずつ使い勝手も変わってきたりして…&lt;/p&gt;
+
+&lt;p&gt;わたし自身が&lt;br /&gt;
+Googleにもカレンダーがあり、サイボウズにもあり…カレンダーだらけだったので&lt;br /&gt;
+ちょっと過去データを整理しようと思ったのが、このブログのきっかけです&lt;/p&gt;
+
+&lt;p&gt;以降、「予定表」とあるのは、カレンダーの事を指しています&lt;br /&gt;
+マイクロソフトさんの用語で統一して書きたいと思います&lt;/p&gt;
+
+&lt;h2 id=&#34;問題点が２つ起きた:58a9045b1ecad794704a80a1c7937ed1&#34;&gt;問題点が２つ起きた&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Outlook on the web のメインの予定表が消せない&lt;/li&gt;
+&lt;li&gt;Windows10 カレンダーアプリの情報が同期されない（消せない）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;今日はこれを解決したいと思います…&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;問題1-不要な予定表を削除したいが-メインは消せない:58a9045b1ecad794704a80a1c7937ed1&#34;&gt;＜問題1＞不要な予定表を削除したいが、メインは消せない&lt;/h2&gt;
+
+&lt;p&gt;実際に、オフィシャルサイトには、予定表の削除の方法は書いていないのです…&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Outlook on the web で予定表を使用する&lt;br /&gt;
+&lt;a href=&#34;https://support.office.com/ja-jp/article/Outlook-on-the-web-%E3%81%A7%E4%BA%88%E5%AE%9A%E8%A1%A8%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B-8cfd8a5e-de9a-4468-9225-8611c8c8c7b0&#34;&gt;https://support.office.com/ja-jp/article/Outlook-on-the-web-で予定表を使用する-8cfd8a5e-de9a-4468-9225-8611c8c8c7b0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;しかし、Outlook on the web の方で、予定表を削除することは出来るようです&lt;br /&gt;
+該当する予定表の上で、右クリックしたら、&amp;rdquo;削除&amp;rdquo; が出てきます&lt;br /&gt;
+↓↓↓&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Delete-Outlook-on-the-web-data_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;しかし、メインの予定表は消せないみたいです&lt;br /&gt;
+（削除が出てこない）&lt;br /&gt;
+↓↓↓&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Delete-Outlook-on-the-web-data_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;とにかく情報を整理したいだけなのに…(+o+)&lt;/p&gt;
+
+&lt;h2 id=&#34;問題2-windows10-カレンダーアプリの情報は削除されない:58a9045b1ecad794704a80a1c7937ed1&#34;&gt;＜問題2＞Windows10 カレンダーアプリの情報は削除されない&lt;/h2&gt;
+
+&lt;p&gt;メイン以外の予定表は消せるので、Outlook on the web上で操作するんですけど&lt;br /&gt;
+クライアントアプリである、Windows10 付随のカレンダーには、一向に反映されません&lt;/p&gt;
+
+&lt;p&gt;あれ、消したはずの予定表がいつまで経っても消えない…&lt;br /&gt;
+↓↓↓&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Delete-Outlook-on-the-web-data_02.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;解決方法-web上では無理-outlookクライアントを使う:58a9045b1ecad794704a80a1c7937ed1&#34;&gt;＜解決方法＞Web上では無理、Outlookクライアントを使う&lt;/h2&gt;
+
+&lt;p&gt;Outlook on the web だけでは無理なのが良く判ったので&lt;br /&gt;
+&lt;strong&gt;Outlookのクライアントメールソフト&lt;/strong&gt; を使ってみました&lt;/p&gt;
+
+&lt;p&gt;Officeで使えるPC上にインストールするあれです&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;まず、メニュー &amp;gt; ファイル &amp;gt; 情報　に行きます&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Delete-Outlook-on-the-web-data_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;「アカウント情報」の下の「アカウントの追加」で、問題となっているマイクロソフトアカウント
+（旧Windows Live カレンダーアカウント）を追加します&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Delete-Outlook-on-the-web-data_04.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;問題となっている登録したアカウントを選んだ状態で、
+Outlookアプリの左下に表示されている（と思う）「…」を選ぶと、「フォルダー」という項目が選択できるので、
+それを選びます&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Delete-Outlook-on-the-web-data_05.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;なんと！？削除済みアイテムの中に、さっき消した予定表が入っていました！&lt;br /&gt;
+さくっと「フォルダーを空にする」を選びましょう&lt;br /&gt;
+（その画像は取り忘れちゃいましたが…操作する箇所はこれです）&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Delete-Outlook-on-the-web-data_06.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;これで、Windows10のカレンダーアプリの情報も更新され、削除した予定表は消えました…！やったー！&lt;br /&gt;
+※ただし、即時反映ってん訳じゃなさそうでした、しばらく時間がかかるっぽいです
+&lt;img src=&#34;http://h-sao.com/pic/Delete-Outlook-on-the-web-data_07.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;これで ＜問題2＞のほうは解決しました&lt;br /&gt;
+あとは、＜問題1＞のメイン予定表が消せない件ですね…&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;メイン予定表は削除できない、なら、せめて予定表に入っている項目を全削除してやる！というのが、以下の試みです&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;引き続き、Outlookクライアントを使います&lt;br /&gt;
+アカウントの「予定表」を選択した状態で&lt;br /&gt;
+ビューの変更 &amp;gt; 一覧  を選択します&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Delete-Outlook-on-the-web-data_08.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;これまで登録している予定の一覧が表示されます&lt;br /&gt;
+どれか選択した状態で、「Ctrl + A」で予定を全選択します&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Delete-Outlook-on-the-web-data_10.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;あとは「Delete」を押して、全選択すれば、&lt;br /&gt;
+内容をとにかく消すことには成功します&lt;br /&gt;
+（予定表そのものは消せない様ですが）&lt;br /&gt;
+消す前に、一応以下の様な注意が出るので、思い切って「はい」をぽちっとな！&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Delete-Outlook-on-the-web-data_11.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;…過去に登録した項目は、メインの予定表からすべて消えました(●´ω｀●)&lt;br /&gt;
+いったんは、これで良しとしますかね…（´-`）.｡oO&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;後片付け-outlookクライアントからアカウントを削除:58a9045b1ecad794704a80a1c7937ed1&#34;&gt;＜後片付け＞Outlookクライアントからアカウントを削除&lt;/h2&gt;
+
+&lt;p&gt;Outlook on the webの予定表を消すためだけに&lt;br /&gt;
+Outlookクライアントにアカウントを登録したので、これを削除する画面キャプチャもついでに載せておきます&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;再び、メニュー &amp;gt; ファイル &amp;gt; 情報　に行き、「アカウントの設定」を選びます&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Delete-Outlook-on-the-web-data_12.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;先ほど登録した Outlook on the web 用のアカウントを選択し、「削除」を押します&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Delete-Outlook-on-the-web-data_13.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;これで後片付けも完了です&lt;/p&gt;
+
+&lt;p&gt;今回紹介した方法が、良いやり方かどうかは判りませんが&lt;br /&gt;
+似たような事で困っている人の助けになればと思います～(^^♪&lt;/p&gt;
+
+&lt;p&gt;（参考サイト）&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;【暫定解決策】Outlook.comのWebアプリで削除した予定表がアプリに残った時はPCのOutlookで「削除済みアイテム」を確認&lt;br /&gt;
+&lt;a href=&#34;http://blog.bari-ikutsu.com/entry/20151213_9138.html&#34;&gt;http://blog.bari-ikutsu.com/entry/20151213_9138.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>[UE4] Unreal Engine4のインストール要件</title>
@@ -1937,48 +2102,6 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」&lt;/p&gt
 &lt;a href=&#34;https://github.com/h-sao/UnitySampleCode/tree/master/SpriteGradationalShader&#34;&gt;https://github.com/h-sao/UnitySampleCode/tree/master/SpriteGradationalShader&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;何かの参考になれば幸いです&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[Utility] ISOファイルからBoot用USBを作成するアプリRufus</title>
-      <link>http://h-sao.com/blog/2016/01/06/usb-boot-app-rufus/</link>
-      <pubDate>Wed, 06 Jan 2016 01:50:00 +0900</pubDate>
-      
-      <guid>http://h-sao.com/blog/2016/01/06/usb-boot-app-rufus/</guid>
-      <description>&lt;p&gt;Windows10 の isoファイルからUBSインストールメディアを作りたいと思ったときに、便利なソフトを見つけました&lt;/p&gt;
-
-&lt;p&gt;実際は、「USB ブート 作成」などなどで検索すれば、やり方はいくらでも載ってるんですけど&lt;br /&gt;
-省コストで、ぱぱっとやりたいことを実現してくれたので、紹介しておきます&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Rufus&lt;/strong&gt;&lt;br /&gt;
-&lt;a href=&#34;http://rufus.akeo.ie/&#34;&gt;http://rufus.akeo.ie/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;このソフトを使ったら、簡単にUBSインストールメディアを作成出来ます&lt;/p&gt;
-
-&lt;p&gt;配布されているアプリはEXE単体のみ！&lt;br /&gt;
-2016年1月6日現在、バージョンは　Rufus2.6 で、&amp;rdquo;rufus-2.6.exe&amp;rdquo; のみで動作します&lt;br /&gt;
-シンプルで良いですね&lt;/p&gt;
-
-&lt;p&gt;利用した感じは以下のような雰囲気でした&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;ISOイメージを選択&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/USB-boot-app-Rufus_00.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;USBの元データ消しちゃうよーの警告&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/USB-boot-app-Rufus_01.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;UBSインストールメディア作成中&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/USB-boot-app-Rufus_02.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;日本語にも対応しているし、お手軽でおススメです&lt;/p&gt;
 </description>
     </item>
     

@@ -172,5 +172,49 @@ DB系のクライアントツールで、わたしがよく使っているのは
 </description>
     </item>
     
+    <item>
+      <title>[Oracle] 直前のSQLを再実行する</title>
+      <link>http://h-sao.com/blog/2014/01/18/rerun-last-sql/</link>
+      <pubDate>Sat, 18 Jan 2014 00:53:07 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2014/01/18/rerun-last-sql/</guid>
+      <description>&lt;p&gt;OracleのコマンドラインでSQLを実行させるときのメモ&lt;/p&gt;
+
+&lt;p&gt;直前のSQLコマンドを実行は / (スラッシュ)&lt;br /&gt;
+この場合、直前のバッファの内容は表示しません&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SQL&amp;gt; /
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;直前のバッファの内容を表示して実行するのは run コマンド&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SQL &amp;gt; run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;直前のバッファの内容を修正するには edit コマンド&lt;br /&gt;
+タイプミスなどを修正できます&lt;br /&gt;
+ただし、環境変数 &amp;ldquo;_editor&amp;rdquo; にエディタの設定をしておく必要があります&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SQL &amp;gt; define  _editor=vi
+SQL &amp;gt; edit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;（参考）&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;OracleのSQL*Plusで直前に実行したSQLを再実行&lt;br /&gt;
+&lt;a href=&#34;http://margrave.seesaa.net/article/127477048.html&#34;&gt;http://margrave.seesaa.net/article/127477048.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;SQL バッファの編集、エディタで編集する&lt;br /&gt;
+&lt;a href=&#34;http://www.shift-the-oracle.com/sqlplus/command/edit.html&#34;&gt;http://www.shift-the-oracle.com/sqlplus/command/edit.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;直前に実行したSQLをエディタで編集する&lt;br /&gt;
+&lt;a href=&#34;http://sakusakuit.blog.fc2.com/?m&amp;amp;no=15&#34;&gt;http://sakusakuit.blog.fc2.com/?m&amp;amp;no=15&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
