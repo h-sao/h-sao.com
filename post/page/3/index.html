@@ -57,6 +57,189 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/" title="[Android]Xiaomi Redmi Note2にGooglePlayをインストールする">[Android]Xiaomi Redmi Note2にGooglePlayをインストールする</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2015.10.06">2015.10.06</time>
+&middot; 
+    
+    <a href="http://h-sao.com/tags/xiaomi">xiaomi</a>
+    , 
+    
+    <a href="http://h-sao.com/tags/android">android</a>
+    
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>クロスプラットフォームで開発していると、やはり最新の端末が欲しくなりますよね～</p>
+
+<p>１年以内発売の iPhone と Windows Phone は持っているのですが<br />
+そろそろ新しい Android が欲しい～と思っていたので、買ってしまいました</p>
+
+<p>シンガポール旅行に行った際に、ブギスの電気屋街、<a href="http://www.simlimsquare.com.sg/">Sim Lim Square（シムリム スクウェア）</a>で、今をトキメク Xiaomi（しゃおみ）デバイスを購入しました</p>
+
+<ul>
+<li><strong>Xiaomi</strong><br />
+<a href="http://www.mi.com/">http://www.mi.com/</a></li>
+</ul>
+
+<p><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_00.JPG" alt="" />
+</p>
+
+<p>全部で6Fまでありましたが、結局1Fのお店の品ぞろえが一番まとまってる印象でした<br />
+Xiaomi正規店も1Fに入っていました</p>
+
+<hr />
+
+<h2 id="xiaomi-redmi-note-2:c3da2b2064682e0806e5e1e872f70d59">Xiaomi Redmi Note 2</h2>
+
+<p>購入したのは、<strong>Xiaomi Redmi Note 2</strong></p>
+
+<table style="border-style: none;">
+ <tr>
+   <td style="border-style: none;"><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_01.JPG"></td>
+   <td style="border-style: none;"><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_02.JPG"></td>
+ </tr>
+</table>
+
+<p>画像のように、デフォルトでは中国語のアプリがたくさん入っています<br />
+そして、Google Play Store は入っていません！</p>
+
+<p>デフォルトのIMEが Buidu なので、まぁこのままでは、日本語が打てません(&gt;&lt;;)</p>
+
+<p>なので Google Play Store をインストールする方法をメモしておきます</p>
+
+<hr />
+
+<h2 id="googleplay-installer-apkが最適解:c3da2b2064682e0806e5e1e872f70d59">GooglePlay installer APKが最適解</h2>
+
+<p>検索すると色々な方法が出てくるのですが、おそらく、<strong>Google installer のAPKを直接インストールする</strong>のが、手っ取り早いです<br />
+（チャイナストアやMIストアからGooglePlayらしきものをインストールしても、わたしの場合は、動作しませんでした）</p>
+
+<p>情報元はこちらの Xiaomi公式コミュニティ掲示板です</p>
+
+<ul>
+<li><strong>[System Tools] Find all the Google Apps in Google installer!</strong>　　
+<a href="http://en.miui.com/thread-3998-1-1.html">http://en.miui.com/thread-3998-1-1.html</a></li>
+</ul>
+
+<p>Xiaomiはすごくコミュニティも発達してるんですよね～ちゃんと英語の掲示板なので、読めました(^_^)</p>
+
+<p>上記サイトにある、GooglePlayを入れるための Google installer をAPKからインストールします</p>
+
+<blockquote>
+<p>Google installer谷歌应用下载器.apk<br />
+(1009.36 KB, Downloads: 237400)
+<img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_03.png" alt="" />
+</p>
+</blockquote>
+
+<p>PCから落とすなどするよりも、直接 Xiaomi デバイスからダウンロードした方が、早いと思います<br />
+もしかしたら、MIアカウントを作らないとダウンロード出来ないかもしれません（わたしは作りました）</p>
+
+<hr />
+
+<h2 id="androidがセキュア過ぎて-思った順番にインストール出来ない:c3da2b2064682e0806e5e1e872f70d59">Androidがセキュア過ぎて、思った順番にインストール出来ない</h2>
+
+<p>installer を入れると、以下の４つがインストール可能になります</p>
+
+<ol>
+<li>Google Services Framework</li>
+<li>Google Account Manager</li>
+<li>Google Play services</li>
+<li>Google Play Store</li>
+</ol>
+
+<p>そのままインストールしたら良いので、おそらく、この順番でインストールが走ると思います<br />
+（ここ、画面キャプチャを取り忘れたので申し訳ない）</p>
+
+<p>ところが、1番目をインストールしようとすると、本当にインストールしていいかどうかの許可画面が出ますよね、こんな感じに…<br />
+（イメージ画像です↓↓↓）</p>
+
+<p><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_04.png" alt="" />
+</p>
+
+<p>この画面で 「1番のアプリに対して」ユーザが許可を押そうとするときに、すでに「2番目のインストール」が動いてしまうのです</p>
+
+<p>結果的に、 「1番のアプリの許可画面」は裏にまわってしまい<br />
+「2番目のアプリの許可画面」が一番手前に来ることになります<br />
+つまり最終的には、「4番目のアプリの許可画面」が最前面になります</p>
+
+<p>入れたいアプリは Google Play Store なので、それでも良いかなと思って<br />
+４→３→２→１の順にインストールするんですけど、<br />
+お察しの通り、Google Play Store は起動しません<br />
+おそらく、Google Services Framework とかが、Google Play Store のインストールに必要なんじゃないかなーと思います</p>
+
+<p>なので、いったん、Google Play services、Google Play Store をアンインストールし、再度、Google Play services、Google Play Store をインストールします</p>
+
+<p>いやー(~0~)　これで、わたしの端末で、Google Play が動くようになりました！</p>
+
+<p><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_05.JPG" alt="" />
+</p>
+
+<hr />
+
+<h2 id="その他-xiaomi-デバイスで気づいたところ:c3da2b2064682e0806e5e1e872f70d59">その他、Xiaomi デバイスで気づいたところ</h2>
+
+<h4 id="日本語モードはない:c3da2b2064682e0806e5e1e872f70d59">日本語モードはない</h4>
+
+<p>日本語モードは入っていません<br />
+ROMとか焼き直すと良いらしいですけど、まだやってないです</p>
+
+<h4 id="permissions-アプリがうれしい:c3da2b2064682e0806e5e1e872f70d59">Permissions アプリがうれしい</h4>
+
+<p>デフォルトで入っている Permittions アプリが最高に便利</p>
+
+<table style="border-style: none;">
+ <tr>
+   <td style="border-style: none;">各アプリ毎の許可</td>
+   <td style="border-style: none;">どのアプリが使ってるか</td>
+ </tr>
+ <tr>
+   <td style="border-style: none;"><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_07.png"></td>
+   <td style="border-style: none;"><img src="/pic/InstallGooglePlayOnXiaomiRedmiNote2_06.png"></td>
+ </tr>
+</table>
+
+<h4 id="simは２枚ささる:c3da2b2064682e0806e5e1e872f70d59">SIMは２枚ささる</h4>
+
+<p>両方LTEをつかめます<br />
+ただし、片方がLTEをつかんでいるときは、もう一方はつかめない仕様です</p>
+
+<p>なので、日本で、１番目にDocomoを刺して、２番目にauを刺す、とかして<br />
+１番目はLTEでデータ通信、２番目はauで電話とメールのみ<br />
+とかにしたくても、ちょっと難しいかも<br />
+日本は今現在、ほぼLTEになってしまってるので、そういう活用は出来なさそうかも…？</p>
+
+<p>どちらにしても、技適通ってない端末なので、日本では使っちゃダメ</p>
+
+<h4 id="まとめ:c3da2b2064682e0806e5e1e872f70d59">まとめ</h4>
+
+<p>もろもろ満足しています<br />
+同じようにシンガポールや中国で購入した方の参考になれば～</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f10%2f06%2finstall-googleplay-onxiaomi%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bAndroid%5dXiaomi%20Redmi%20Note2%e3%81%abGooglePlay%e3%82%92%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%99%e3%82%8b&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f10%2f06%2finstall-googleplay-onxiaomi%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f10%2f06%2finstall-googleplay-onxiaomi%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f10%2f06%2finstall-googleplay-onxiaomi%2f&title=%5bAndroid%5dXiaomi%20Redmi%20Note2%e3%81%abGooglePlay%e3%82%92%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2015/09/09/hugoandtheme/" title="[Hugo]ブログ構築メモ(1)-Hugoとテンプレート">[Hugo]ブログ構築メモ(1)-Hugoとテンプレート</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2015.09.09">2015.09.09</time>
@@ -848,67 +1031,6 @@ VC++でのC++11の機能一覧</p></li>
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2014/08/31/hokuriku-net-vol-15-introducing-windows-runtime/" title="[勉強会] Introducing Windows Runtime：Hokuriku.NETvol.15の資料公開しました">[勉強会] Introducing Windows Runtime：Hokuriku.NETvol.15の資料公開しました</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2014.08.31">2014.08.31</time>
-&middot; 
-    
-    <a href="http://h-sao.com/tags/windowsruntime">windowsruntime</a>
-    , 
-    
-    <a href="http://h-sao.com/tags/community">community</a>
-    
-    
-
-</span>
-</footer>
- </footer>
-                <p>北陸にお邪魔しました！</p>
-
-<p>Hokuriku.NET vol.15<br />
-<a href="http://hokurikunet.doorkeeper.jp/events/13746">http://hokurikunet.doorkeeper.jp/events/13746</a></p>
-
-<p>その際にお話させて頂いた資料を公開します</p>
-
-<ul>
-<li>Introducing Windows Runtime</li>
-</ul>
-
-<script async class="speakerdeck-embed" data-id="8e94c968a4d442a2b54b54e4e7a48f3f" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
-
-<p>発表資料 pptx版 (こちらは欄外に私的メモが残っています)<br />
-<a href="http://jyurimaru.info/data/20140830Hokurikunet15/201400830_Introducing_Windows_Runtime_pub.pptx">http://jyurimaru.info/data/20140830Hokurikunet15/201400830_Introducing_Windows_Runtime_pub.pptx</a></p>
-
-<p>自分が調べてきたWindows Runtimeについての導入セッションとしては<br />
-これが最後になるかなー</p>
-
-<p>さてさて、福井に行ったわけですが、お蕎麦がとても美味しかったです(~o~)</p>
-
-<p><img src="/pic/Hokuriku-net-vol-15-Introducing-Windows-Runtime_00.png" alt="" />
-</p>
-
-<p>去年もお邪魔させて頂きましたが、今年もみなさま暖かく迎えて下さって<br />
-とても楽しかったです(^^)/</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f08%2f31%2fhokuriku-net-vol-15-introducing-windows-runtime%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5b%e5%8b%89%e5%bc%b7%e4%bc%9a%5d%20Introducing%20Windows%20Runtime%ef%bc%9aHokuriku.NETvol.15%e3%81%ae%e8%b3%87%e6%96%99%e5%85%ac%e9%96%8b%e3%81%97%e3%81%be%e3%81%97%e3%81%9f&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f08%2f31%2fhokuriku-net-vol-15-introducing-windows-runtime%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f08%2f31%2fhokuriku-net-vol-15-introducing-windows-runtime%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f08%2f31%2fhokuriku-net-vol-15-introducing-windows-runtime%2f&title=%5b%e5%8b%89%e5%bc%b7%e4%bc%9a%5d%20Introducing%20Windows%20Runtime%ef%bc%9aHokuriku.NETvol.15%e3%81%ae%e8%b3%87%e6%96%99%e5%85%ac%e9%96%8b%e3%81%97%e3%81%be%e3%81%97%e3%81%9f" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
@@ -975,6 +1097,10 @@ VC++でのC++11の機能一覧</p></li>
             <div class="list-group">
                 
                     
+                        <a href="/blog/2017/01/03/hello2017/" class="list-group-item">[Diary] 2017年もよろしくお願いします</a><br>
+                    
+                
+                    
                         <a href="/blog/2016/12/21/delete-outlook-on-the-web-data/" class="list-group-item">[Outlook] 使わなくなったOutlook on the webの予定表（カレンダー）を削除する方法</a><br>
                     
                 
@@ -1008,10 +1134,6 @@ VC++でのC++11の機能一覧</p></li>
                 
                     
                         <a href="/blog/2016/05/15/use-clang-on-visualstudio/" class="list-group-item">[C&#43;&#43;] VisualStusio2015でClangを使う設定</a><br>
-                    
-                
-                    
-                        <a href="/blog/2016/05/09/add-ssh-config-for-git/" class="list-group-item">[SSH] 複数キー接続のconfig記載について</a><br>
                     
                 
             </div>
@@ -1086,9 +1208,9 @@ VC++でのC++11の機能一覧</p></li>
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/diary" style="font-size: 17px;">
+                    <a href="http://h-sao.com//tags/diary" style="font-size: 20px;">
                     
-                        <span class="badge">3</span>
+                        <span class="badge">4</span>
                         diary
                     </a>
                     </u> &nbsp; 
@@ -1342,7 +1464,7 @@ VC++でのC++11の機能一覧</p></li>
 <footer class="main-footer">
   <div class="container clearfix">
         <a class="icon-rss" href="http://h-sao.com/post/index.xml" title="RSS"></a>
-        <p>&copy; 2016 &middot; Copyright © Sao Haruka<br> Powered by <a href="http://gohugo.io">Hugo</a>.</p>
+        <p>&copy; 2017 &middot; Copyright © Sao Haruka<br> Powered by <a href="http://gohugo.io">Hugo</a>.</p>
   </div>
 </footer>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
