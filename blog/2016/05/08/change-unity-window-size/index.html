@@ -7,7 +7,7 @@
         <meta name="author">
         <meta name="description" content="The awesome blog of Sao Haruka.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.14" />
+        <meta name="generator" content="Hugo 0.18.1" />
           <link href="http://h-sao.com/post/index.xml" rel="alternate" type="application/rss+xml" title="Effectiveさお" />
           <link href="http://h-sao.com/post/index.xml" rel="feed" type="application/rss+xml" title="Effectiveさお" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -64,7 +64,7 @@
 PC実行時のウィンドウサイズの設定が、思うようにできなかったので<br />
 その解決メモです</p>
 
-<h1 id="pcで実行したら全画面:a0801ebf74281b4200348d8e7619641e">PCで実行したら全画面…</h1>
+<h1 id="pcで実行したら全画面">PCで実行したら全画面…</h1>
 
 <p>Unityのプロジェクトファイルを新規作成して</p>
 
@@ -79,7 +79,7 @@ PC実行時のウィンドウサイズの設定が、思うようにできなか
 <p>へぇ、画面解像度( Screen resolution )とか、ここで変えることが出来るんだ～<br />
 と思って解像度設定を変更し、&rdquo;Play!&rdquo; で起動させると、いちおう思ったサイズで起動することが出来ます</p>
 
-<h1 id="unityプロジェクトに-plyaer-settings-がある:a0801ebf74281b4200348d8e7619641e">Unityプロジェクトに Plyaer Settings がある</h1>
+<h1 id="unityプロジェクトに-plyaer-settings-がある">Unityプロジェクトに Plyaer Settings がある</h1>
 
 <p>ユーザに毎回ウィンドウサイズを選択させるのも、なんだかねぇ…ということで、ちゃんと設定したいと思います</p>
 
@@ -97,8 +97,7 @@ PC実行時のウィンドウサイズの設定が、思うようにできなか
 
 <p>ここで、起動時の Player Settings が出来るようですが…</p>
 
-<p><img src="/pic/Change-Unity-window-size_02.png" alt="" />
-</p>
+<p><img src="/pic/Change-Unity-window-size_02.png" alt="" /></p>
 
 <p>「Resolution」 の 「<strong>Default Is Full Screen</strong>」 のチェックボックスを外しましょう<br />
 ついでに、「Standalone Player Options」 の <strong>「Display Resolution Dialog」 を　「Disable」</strong>　にしておきます</p>
@@ -121,7 +120,7 @@ Development Build にしても、しなくても、結果は一緒でした<br /
 
 <p>の中に、テキストファイルで保存されます</p>
 
-<h1 id="ウィンドウサイズはプログラムで変更:a0801ebf74281b4200348d8e7619641e">ウィンドウサイズはプログラムで変更</h1>
+<h1 id="ウィンドウサイズはプログラムで変更">ウィンドウサイズはプログラムで変更</h1>
 
 <p>仕方がないので、スクリプトで記載します</p>
 
@@ -129,7 +128,7 @@ Development Build にしても、しなくても、結果は一緒でした<br /
 
 <p>わたしは適当に GameInitial と名付けました（Unity の Project 内に、GameInitial の C#ファイルが追加されます）</p>
 
-<h2 id="いーっちばん最初のゲーム起動時をフックしたい:a0801ebf74281b4200348d8e7619641e">いーっちばん最初のゲーム起動時をフックしたい？</h2>
+<h2 id="いーっちばん最初のゲーム起動時をフックしたい">いーっちばん最初のゲーム起動時をフックしたい？</h2>
 
 <p>もちろん、ウィンドウサイズを変更したいためです<br />
 解像度が小さい/大きいなど<br />
@@ -177,7 +176,7 @@ public class GameInitial //: MonoBehaviour
 
 <p>自分が知らないだけかもしれませんが、 RuntimeInitializeOnLoadMethodAttribute より早い時点で自分の処理を差し込むことは出来ないみたい…</p>
 
-<h1 id="ウィンドウサイズを指定できるコマンドライン引数がある:a0801ebf74281b4200348d8e7619641e">ウィンドウサイズを指定できるコマンドライン引数がある！</h1>
+<h1 id="ウィンドウサイズを指定できるコマンドライン引数がある">ウィンドウサイズを指定できるコマンドライン引数がある！</h1>
 
 <p>結局、起動時のウィンドウサイズは結局どこで更新するんでしょうか…？</p>
 
@@ -301,6 +300,10 @@ public class GameInitial //: MonoBehaviour
             <div class="list-group">
                 
                     
+                        <a href="/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/" class="list-group-item">[Chrome] Google Chromeのマルチプロファイル設定</a><br>
+                    
+                
+                    
                         <a href="/blog/2017/01/03/hello2017/" class="list-group-item">[Diary] 2017年もよろしくお願いします</a><br>
                     
                 
@@ -336,10 +339,6 @@ public class GameInitial //: MonoBehaviour
                         <a href="/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/" class="list-group-item">[Windows10] シャットダウンができない対策</a><br>
                     
                 
-                    
-                        <a href="/blog/2016/05/15/use-clang-on-visualstudio/" class="list-group-item">[C&#43;&#43;] VisualStusio2015でClangを使う設定</a><br>
-                    
-                
             </div>
 
             <div class="panel-heading">
@@ -356,6 +355,16 @@ public class GameInitial //: MonoBehaviour
                     
                         <span class="badge">2</span>
                         android
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/chrome" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        chrome
                     </a>
                     </u> &nbsp; 
                     

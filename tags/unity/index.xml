@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unity on Effectiveさお</title>
-    <link>http://h-sao.com/tags/unity/</link>
+    <link>http://h-sao.com/tags/unity/index.xml</link>
     <description>Recent content in Unity on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 09 Aug 2016 18:00:00 +0900</lastBuildDate>
+    <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
     <atom:link href="http://h-sao.com/tags/unity/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -77,7 +77,7 @@
 PC実行時のウィンドウサイズの設定が、思うようにできなかったので&lt;br /&gt;
 その解決メモです&lt;/p&gt;
 
-&lt;h1 id=&#34;pcで実行したら全画面:a0801ebf74281b4200348d8e7619641e&#34;&gt;PCで実行したら全画面…&lt;/h1&gt;
+&lt;h1 id=&#34;pcで実行したら全画面&#34;&gt;PCで実行したら全画面…&lt;/h1&gt;
 
 &lt;p&gt;Unityのプロジェクトファイルを新規作成して&lt;/p&gt;
 
@@ -92,7 +92,7 @@ PC実行時のウィンドウサイズの設定が、思うようにできなか
 &lt;p&gt;へぇ、画面解像度( Screen resolution )とか、ここで変えることが出来るんだ～&lt;br /&gt;
 と思って解像度設定を変更し、&amp;rdquo;Play!&amp;rdquo; で起動させると、いちおう思ったサイズで起動することが出来ます&lt;/p&gt;
 
-&lt;h1 id=&#34;unityプロジェクトに-plyaer-settings-がある:a0801ebf74281b4200348d8e7619641e&#34;&gt;Unityプロジェクトに Plyaer Settings がある&lt;/h1&gt;
+&lt;h1 id=&#34;unityプロジェクトに-plyaer-settings-がある&#34;&gt;Unityプロジェクトに Plyaer Settings がある&lt;/h1&gt;
 
 &lt;p&gt;ユーザに毎回ウィンドウサイズを選択させるのも、なんだかねぇ…ということで、ちゃんと設定したいと思います&lt;/p&gt;
 
@@ -110,8 +110,7 @@ PC実行時のウィンドウサイズの設定が、思うようにできなか
 
 &lt;p&gt;ここで、起動時の Player Settings が出来るようですが…&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Unity-window-size_02.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Unity-window-size_02.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;「Resolution」 の 「&lt;strong&gt;Default Is Full Screen&lt;/strong&gt;」 のチェックボックスを外しましょう&lt;br /&gt;
 ついでに、「Standalone Player Options」 の &lt;strong&gt;「Display Resolution Dialog」 を　「Disable」&lt;/strong&gt;　にしておきます&lt;/p&gt;
@@ -134,7 +133,7 @@ Development Build にしても、しなくても、結果は一緒でした&lt;b
 
 &lt;p&gt;の中に、テキストファイルで保存されます&lt;/p&gt;
 
-&lt;h1 id=&#34;ウィンドウサイズはプログラムで変更:a0801ebf74281b4200348d8e7619641e&#34;&gt;ウィンドウサイズはプログラムで変更&lt;/h1&gt;
+&lt;h1 id=&#34;ウィンドウサイズはプログラムで変更&#34;&gt;ウィンドウサイズはプログラムで変更&lt;/h1&gt;
 
 &lt;p&gt;仕方がないので、スクリプトで記載します&lt;/p&gt;
 
@@ -142,7 +141,7 @@ Development Build にしても、しなくても、結果は一緒でした&lt;b
 
 &lt;p&gt;わたしは適当に GameInitial と名付けました（Unity の Project 内に、GameInitial の C#ファイルが追加されます）&lt;/p&gt;
 
-&lt;h2 id=&#34;いーっちばん最初のゲーム起動時をフックしたい:a0801ebf74281b4200348d8e7619641e&#34;&gt;いーっちばん最初のゲーム起動時をフックしたい？&lt;/h2&gt;
+&lt;h2 id=&#34;いーっちばん最初のゲーム起動時をフックしたい&#34;&gt;いーっちばん最初のゲーム起動時をフックしたい？&lt;/h2&gt;
 
 &lt;p&gt;もちろん、ウィンドウサイズを変更したいためです&lt;br /&gt;
 解像度が小さい/大きいなど&lt;br /&gt;
@@ -190,7 +189,7 @@ public class GameInitial //: MonoBehaviour
 
 &lt;p&gt;自分が知らないだけかもしれませんが、 RuntimeInitializeOnLoadMethodAttribute より早い時点で自分の処理を差し込むことは出来ないみたい…&lt;/p&gt;
 
-&lt;h1 id=&#34;ウィンドウサイズを指定できるコマンドライン引数がある:a0801ebf74281b4200348d8e7619641e&#34;&gt;ウィンドウサイズを指定できるコマンドライン引数がある！&lt;/h1&gt;
+&lt;h1 id=&#34;ウィンドウサイズを指定できるコマンドライン引数がある&#34;&gt;ウィンドウサイズを指定できるコマンドライン引数がある！&lt;/h1&gt;
 
 &lt;p&gt;結局、起動時のウィンドウサイズは結局どこで更新するんでしょうか…？&lt;/p&gt;
 
@@ -256,12 +255,12 @@ public class GameInitial //: MonoBehaviour
 
 &lt;p&gt;2016年1月11日現在、Unityのバージョンは 5.3.1 です&lt;/p&gt;
 
-&lt;h1 id=&#34;unity-のシェーダー言語-shaderlab:9da674eae95fd048ddb2e278fe6c87b1&#34;&gt;Unity のシェーダー言語：ShaderLab&lt;/h1&gt;
+&lt;h1 id=&#34;unity-のシェーダー言語-shaderlab&#34;&gt;Unity のシェーダー言語：ShaderLab&lt;/h1&gt;
 
 &lt;p&gt;Unity のシェーダーは 「ShaderLab」 という Unity オリジナルのシェーダー言語で記載することになります&lt;br /&gt;
 といっても HLSL のラッパーのような言語なので、Unity で使うときのお作法であり、Unity と シェーダーの仲介役の言語、と思って良いみたい&lt;/p&gt;
 
-&lt;h2 id=&#34;最小限の-shaderlab:9da674eae95fd048ddb2e278fe6c87b1&#34;&gt;最小限の ShaderLab&lt;/h2&gt;
+&lt;h2 id=&#34;最小限の-shaderlab&#34;&gt;最小限の ShaderLab&lt;/h2&gt;
 
 &lt;p&gt;最小限の ShaderLab の枠組みはこんな感じ&lt;br /&gt;
 （これより削ると、エラーが出た）&lt;/p&gt;
@@ -278,12 +277,11 @@ Shader &amp;quot;Custom/BG_shader&amp;quot; {
 
 &lt;p&gt;実際に、このカスタムシェーダーをマテリアルに適用するとこんな感じ&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_00.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_00.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;何もしないマテリアルを作ることが出来ました&lt;/p&gt;
 
-&lt;h2 id=&#34;シンプルなグラデーション:9da674eae95fd048ddb2e278fe6c87b1&#34;&gt;シンプルなグラデーション&lt;/h2&gt;
+&lt;h2 id=&#34;シンプルなグラデーション&#34;&gt;シンプルなグラデーション&lt;/h2&gt;
 
 &lt;p&gt;今回、ゲーム背景を単純なカラーグラデーションにしようと思ったので、そういうシンプルシェーダーを書いていきます&lt;/p&gt;
 
@@ -336,20 +334,18 @@ Shader &amp;quot;Custom/BG_shader&amp;quot; {
 
 &lt;p&gt;ちょっとマテリアルではわかりにくいですけど、一応、線形にグラデーションされています&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_01.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_01.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;2d-sprite-に適用する方法:9da674eae95fd048ddb2e278fe6c87b1&#34;&gt;2D Sprite に適用する方法&lt;/h1&gt;
+&lt;h1 id=&#34;2d-sprite-に適用する方法&#34;&gt;2D Sprite に適用する方法&lt;/h1&gt;
 
 &lt;p&gt;シンプルなシェーダーとマテリアルが出来たので、実際に、Sprite に登録します&lt;/p&gt;
 
-&lt;h2 id=&#34;sprite-と-material-だけでは足りない:9da674eae95fd048ddb2e278fe6c87b1&#34;&gt;Sprite と Material だけでは足りない&lt;/h2&gt;
+&lt;h2 id=&#34;sprite-と-material-だけでは足りない&#34;&gt;Sprite と Material だけでは足りない&lt;/h2&gt;
 
 &lt;p&gt;ただし、ちょっとここでクセがあって、このマテリアルを Sprite にアタッチしても、何も起こりません&lt;br /&gt;
 それどころか、ワーニングメッセージが…&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_02.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_02.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Material does not have a _MainTex texture property. It is required for SpriteRenderer.&lt;/p&gt;
@@ -380,17 +376,15 @@ Sprite Renderer に登録するマテリアルには、テクスチャが必要�
 * ShaderLab: Properties - Unity Documentation&lt;br /&gt;
  &lt;a href=&#34;http://docs.unity3d.com/Manual/SL-Properties.html&#34;&gt;http://docs.unity3d.com/Manual/SL-Properties.html&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_03.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_03.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;マテリアルにテクスチャを持つ設定にしました&lt;/p&gt;
 
-&lt;h2 id=&#34;sprite-には-ベースとしてリアルな-texture-が必要:9da674eae95fd048ddb2e278fe6c87b1&#34;&gt;Sprite には、ベースとしてリアルな Texture が必要&lt;/h2&gt;
+&lt;h2 id=&#34;sprite-には-ベースとしてリアルな-texture-が必要&#34;&gt;Sprite には、ベースとしてリアルな Texture が必要&lt;/h2&gt;
 
 &lt;p&gt;Sprite のワーニングも消えたのですが、やはりシーンに Sprite object が表示されません&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_04.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_04.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;どうやら、Sprite はあくまで、テクスチャ画像を表示させるための機能に特化しており、マテリアルだけでは動作しない様です&lt;/p&gt;
 
@@ -401,16 +395,14 @@ Sprite Renderer に登録するマテリアルには、テクスチャが必要�
 
 &lt;blockquote&gt;
 &lt;p&gt;あぁ…これ、デフォルトで白いテクスチャくらい、システムで用意してほしいなかと思いましたが、まぁしょーがないです&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_05.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_05.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;でたー&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_06.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_06.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;まとめ:9da674eae95fd048ddb2e278fe6c87b1&#34;&gt;まとめ&lt;/h1&gt;
+&lt;h1 id=&#34;まとめ&#34;&gt;まとめ&lt;/h1&gt;
 
 &lt;p&gt;シンプルな 3D model では&lt;/p&gt;
 

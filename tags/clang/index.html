@@ -7,7 +7,7 @@
         <meta name="author">
         <meta name="description" content="The awesome blog of Sao Haruka.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.14" />
+        <meta name="generator" content="Hugo 0.18.1" />
           <link href="http://h-sao.com/post/index.xml" rel="alternate" type="application/rss+xml" title="Effectiveさお" />
           <link href="http://h-sao.com/post/index.xml" rel="feed" type="application/rss+xml" title="Effectiveさお" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -78,7 +78,7 @@
 
 <p>先人たちが既に色々と試している内容と対して変わりませんが、そもそも日本語の情報も少ないので、何かの足しになればと思います</p>
 
-<h1 id="clang-with-microsoft-codegen-is-here:2cbfe712d76fdfc5483adda9c9ba8965">&ldquo;Clang with Microsoft CodeGen&rdquo; is here!</h1>
+<h1 id="clang-with-microsoft-codegen-is-here">&ldquo;Clang with Microsoft CodeGen&rdquo; is here!</h1>
 
 <p>最近はすっかり、クロスプラットフォームやオープンソースに力を入れているマイクロソフト社のツールセットの中に、Clang対応ってのがあります</p>
 
@@ -131,21 +131,21 @@
 
 <p>また、今回対応している <strong>Clang 側のバージョンは 3.7</strong> です</p>
 
-<h1 id="clang-exe-の場所:2cbfe712d76fdfc5483adda9c9ba8965">clang.exe の場所</h1>
+<h1 id="clang-exe-の場所">clang.exe の場所</h1>
 
-<h3 id="clang:2cbfe712d76fdfc5483adda9c9ba8965">Clang</h3>
+<h3 id="clang">Clang</h3>
 
 <pre><code class="language-xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Clang 3.7\bin\x86\clang.exe
 </code></pre>
 
-<h3 id="ちなみにvc:2cbfe712d76fdfc5483adda9c9ba8965">ちなみにVC++</h3>
+<h3 id="ちなみにvc">ちなみにVC++</h3>
 
 <pre><code class="language-xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe
 </code></pre>
 
 <p>どちらでも、コマンドプロンプトでコンパイル可能です</p>
 
-<h1 id="vsでのコンパイラの切り替え設定:2cbfe712d76fdfc5483adda9c9ba8965">VSでのコンパイラの切り替え設定</h1>
+<h1 id="vsでのコンパイラの切り替え設定">VSでのコンパイラの切り替え設定</h1>
 
 <p>Visual Stidon 2015 上で &ldquo;Alt + F7&rdquo; を押すか</p>
 
@@ -165,7 +165,7 @@
 
 <p>結構簡単＼(^o^)／</p>
 
-<h1 id="ソリューション作成は何でもok:2cbfe712d76fdfc5483adda9c9ba8965">ソリューション作成は何でもOK</h1>
+<h1 id="ソリューション作成は何でもok">ソリューション作成は何でもOK</h1>
 
 <p>上記の様に、コンパイラが簡単に切り替えられるので、空のプロジェクトでも、Win32コンソールアプリケーションでもOKです</p>
 
@@ -175,7 +175,7 @@
 
 <p>exe を作りたいだけなら、Win32コンソールアプリケーションで良いと思います</p>
 
-<h1 id="余談-文字コードはutf8の方が良い-様な気がする:2cbfe712d76fdfc5483adda9c9ba8965">[余談]文字コードはUTF8の方が良い(様な気がする)</h1>
+<h1 id="余談-文字コードはutf8の方が良い-様な気がする">[余談]文字コードはUTF8の方が良い(様な気がする)</h1>
 
 <p>最初に書いておくと、Sift-JIS でも Clang/C2 でコンパイルは通ります</p>
 
@@ -193,7 +193,7 @@
 <p>UTF-16はだめらしいです<br />
 Sift-JIS は無関係かもしれませんが、一応…</p>
 
-<h1 id="サンプルコード:2cbfe712d76fdfc5483adda9c9ba8965">サンプルコード</h1>
+<h1 id="サンプルコード">サンプルコード</h1>
 
 <p><a href="http://cpprefjp.github.io/">cpprefjp</a> を参照して、サンプルコードを書いてみました</p>
 
@@ -209,26 +209,25 @@ Sift-JIS は無関係かもしれませんが、一応…</p>
 
 constexpr int f()
 {
-	int result = 0;
-	return result;
+    int result = 0;
+    return result;
 }
 
 int main()
 {
-	std::cout &lt;&lt; &quot;Hello: &quot; &lt;&lt; f() &lt;&lt; std::endl;
+    std::cout &lt;&lt; &quot;Hello: &quot; &lt;&lt; f() &lt;&lt; std::endl;
 
-	return 0;
+    return 0;
 }
 </code></pre>
 
-<h2 id="visual-studio-2015-v140-でコンパイルすると-エラー:2cbfe712d76fdfc5483adda9c9ba8965">Visual Studio 2015 (v140) でコンパイルすると、エラー</h2>
+<h2 id="visual-studio-2015-v140-でコンパイルすると-エラー">Visual Studio 2015 (v140) でコンパイルすると、エラー</h2>
 
-<p><img src="/pic/Use-Clang-on-VisualStudio_02.png" alt="" />
-</p>
+<p><img src="/pic/Use-Clang-on-VisualStudio_02.png" alt="" /></p>
 
 <p>VS2015 ではまだ、constexpr関数内の変数宣言がエラーになる様です</p>
 
-<h2 id="clang-3-7-with-microsoft-codegen-v140-clang-3-7-でのコンパイル:2cbfe712d76fdfc5483adda9c9ba8965">Clang 3.7 with Microsoft CodeGen (v140_clang_3_7) でのコンパイル</h2>
+<h2 id="clang-3-7-with-microsoft-codegen-v140-clang-3-7-でのコンパイル">Clang 3.7 with Microsoft CodeGen (v140_clang_3_7) でのコンパイル</h2>
 
 <p><img src="/pic/Use-Clang-on-VisualStudio_03.png" style="border:solid 5px #e6e6e6"/></p>
 
@@ -318,6 +317,10 @@ int main()
             <div class="list-group">
                 
                     
+                        <a href="/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/" class="list-group-item">[Chrome] Google Chromeのマルチプロファイル設定</a><br>
+                    
+                
+                    
                         <a href="/blog/2017/01/03/hello2017/" class="list-group-item">[Diary] 2017年もよろしくお願いします</a><br>
                     
                 
@@ -353,10 +356,6 @@ int main()
                         <a href="/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/" class="list-group-item">[Windows10] シャットダウンができない対策</a><br>
                     
                 
-                    
-                        <a href="/blog/2016/05/15/use-clang-on-visualstudio/" class="list-group-item">[C&#43;&#43;] VisualStusio2015でClangを使う設定</a><br>
-                    
-                
             </div>
 
             <div class="panel-heading">
@@ -373,6 +372,16 @@ int main()
                     
                         <span class="badge">2</span>
                         android
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/chrome" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        chrome
                     </a>
                     </u> &nbsp; 
                     

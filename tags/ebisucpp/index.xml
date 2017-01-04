@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ebisucpp on Effectiveさお</title>
-    <link>http://h-sao.com/tags/ebisucpp/</link>
+    <link>http://h-sao.com/tags/ebisucpp/index.xml</link>
     <description>Recent content in Ebisucpp on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 27 Mar 2016 20:30:00 +0900</lastBuildDate>
+    <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
     <atom:link href="http://h-sao.com/tags/ebisucpp/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -17,11 +17,10 @@
       <guid>http://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</guid>
       <description>
 
-&lt;h2 id=&#34;ebisu-effective-modern-cppって:09f27b4d8c49aabd39d7184e2e33816a&#34;&gt;ebisu_effective_modern.cppって？&lt;/h2&gt;
+&lt;h2 id=&#34;ebisu-effective-modern-cppって&#34;&gt;ebisu_effective_modern.cppって？&lt;/h2&gt;
 
 &lt;p&gt;&lt;center&gt;
 &lt;img src=&#34;http://h-sao.com/pic/Information-ebisu-cpp-vol3_00.png&#34; alt=&#34;&#34; /&gt;
-
 &lt;/center&gt;&lt;/p&gt;
 
 &lt;p&gt;東京の恵比寿でC++について、みんなの意見を聞きながら本を読み進める勉強会を開いています&lt;/p&gt;

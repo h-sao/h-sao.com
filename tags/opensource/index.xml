@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Opensource on Effectiveさお</title>
-    <link>http://h-sao.com/tags/opensource/</link>
+    <link>http://h-sao.com/tags/opensource/index.xml</link>
     <description>Recent content in Opensource on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 21 Nov 2015 16:00:00 +0900</lastBuildDate>
+    <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
     <atom:link href="http://h-sao.com/tags/opensource/index.xml" rel="self" type="application/rss+xml" />
     
     <item>

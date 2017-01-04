@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sql on Effectiveさお</title>
-    <link>http://h-sao.com/tags/sql/</link>
+    <link>http://h-sao.com/tags/sql/index.xml</link>
     <description>Recent content in Sql on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 10 Apr 2014 18:00:15 +0900</lastBuildDate>
+    <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
     <atom:link href="http://h-sao.com/tags/sql/index.xml" rel="self" type="application/rss+xml" />
     
     <item>

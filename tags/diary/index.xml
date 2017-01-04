@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Diary on Effectiveさお</title>
-    <link>http://h-sao.com/tags/diary/</link>
+    <link>http://h-sao.com/tags/diary/index.xml</link>
     <description>Recent content in Diary on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 03 Jan 2017 16:00:00 +0900</lastBuildDate>
+    <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
     <atom:link href="http://h-sao.com/tags/diary/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -22,13 +22,12 @@
 &lt;p&gt;2017年最初のブログになります！&lt;br /&gt;
 今年もよろしくお願いします(^_^)&lt;/p&gt;
 
-&lt;h2 id=&#34;msmvp-2017年1月度受賞:c24e4adcaeba704d627a7dcdfbf7e807&#34;&gt;MSMVP 2017年1月度受賞&lt;/h2&gt;
+&lt;h2 id=&#34;msmvp-2017年1月度受賞&#34;&gt;MSMVP 2017年1月度受賞&lt;/h2&gt;
 
 &lt;p&gt;なんと、&lt;strong&gt;Microsoft Most Valuable Professional&lt;/strong&gt; の再受賞を &lt;strong&gt;Windows Development&lt;/strong&gt; のカテゴリで頂きました&lt;br /&gt;
 信じられないことに、8回目の受賞となります&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/MVPLogo.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/MVPLogo.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;去年はいろんなジャンルの技術を取り扱った勉強会を開催し&lt;br /&gt;
 何のかんのと楽しく過ごさせていただきました&lt;/p&gt;
@@ -63,7 +62,7 @@
 &lt;img src=&#34;http://h-sao.com/pic/Hello2017_00.JPG&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;昨年度の活動:c24e4adcaeba704d627a7dcdfbf7e807&#34;&gt;昨年度の活動&lt;/h2&gt;
+&lt;h2 id=&#34;昨年度の活動&#34;&gt;昨年度の活動&lt;/h2&gt;
 
 &lt;p&gt;去年は、ひそかに1月のマイクロソフト社主催のインターナルイベントにて、ちょっとだけセッション持たせていただいたのを皮切りに、小規模な講演をちょこちょこと、&lt;br /&gt;
 大きなところでは、&lt;strong&gt;C++、UI、Unity、Deep Learning&lt;/strong&gt; を特集した勉強会を開催するなど、&lt;br /&gt;
@@ -86,7 +85,7 @@
 &lt;img src=&#34;http://h-sao.com/pic/Hello2017_01.JPG&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;ソーシャルゲーム三昧:c24e4adcaeba704d627a7dcdfbf7e807&#34;&gt;ソーシャルゲーム三昧&lt;/h2&gt;
+&lt;h2 id=&#34;ソーシャルゲーム三昧&#34;&gt;ソーシャルゲーム三昧&lt;/h2&gt;
 
 &lt;p&gt;今年は…もうこれしかやってません&lt;br /&gt;
 毎日欠かすことなく、1日最低2時間やってます( ;∀;)&lt;br /&gt;
@@ -138,8 +137,7 @@
 
 &lt;blockquote&gt;
 &lt;p&gt;※ギルド内の掲示板で使えるスタンプもある&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Hello2017_03.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Hello2017_03.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;ただ、やり始めで分かったのは、&lt;br /&gt;
@@ -158,8 +156,7 @@
 &lt;p&gt;※ギルド内の過去の戦歴は誰でも閲覧できる&lt;br /&gt;
 しょぼい戦歴しか残ってない＝オーナーや執行役の責任（統率が取れていない）&lt;br /&gt;
 ということもあり、ゲーム内における役職者の責任は重大&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Hello2017_04.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Hello2017_04.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;実は昨年、ある案件でゲームプランナーさんの面接に関わらせて頂いたのですが&lt;br /&gt;
@@ -186,7 +183,7 @@
 &lt;p&gt;自分の仲間もログインしなくなって、システム的にも終了するまでは、わたしは続けてそうです&lt;br /&gt;
 この調子だと…(^▽^;)&lt;/p&gt;
 
-&lt;h2 id=&#34;今年は:c24e4adcaeba704d627a7dcdfbf7e807&#34;&gt;今年は？&lt;/h2&gt;
+&lt;h2 id=&#34;今年は&#34;&gt;今年は？&lt;/h2&gt;
 
 &lt;p&gt;こんな感じで、去年はソーシャルゲーム三昧でしたが&lt;br /&gt;
 今年は今、流行ってるらしい「&lt;strong&gt;MOBA&lt;/strong&gt;」ジャンルのゲームをやってみたいなーと思っています&lt;/p&gt;
@@ -226,8 +223,7 @@ Deep Learning へのチャレンジですかね&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;最後に2016年の年越しそば、おいしかった～(^ω^)&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Hello2017_06.JPG&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Hello2017_06.JPG&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;ではでは、2017年も、どうぞ、よろしくお願いします！&lt;/p&gt;
@@ -245,7 +241,7 @@ Deep Learning へのチャレンジですかね&lt;/p&gt;
 &lt;p&gt;遥佐保（はるか・さお）です&lt;br /&gt;
 今年もよろしくお願いしますと共に、去年から気になっていることも踏まえて、記載しています&lt;/p&gt;
 
-&lt;h2 id=&#34;msmvp-2016年1月度受賞:583f6a8c6309cdb9fd99833cc7732617&#34;&gt;MSMVP 2016年1月度受賞&lt;/h2&gt;
+&lt;h2 id=&#34;msmvp-2016年1月度受賞&#34;&gt;MSMVP 2016年1月度受賞&lt;/h2&gt;
 
 &lt;p&gt;今年もマイクロソフトさまより MVP を再受賞させて頂きました&lt;/p&gt;
 
@@ -257,10 +253,9 @@ Deep Learning へのチャレンジですかね&lt;/p&gt;
 
 &lt;p&gt;プラス思考でこれからも色々な情報発信を行っていきたいと思います&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/MVPLogo.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/MVPLogo.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;コミュニティ活動:583f6a8c6309cdb9fd99833cc7732617&#34;&gt;コミュニティ活動&lt;/h2&gt;
+&lt;h2 id=&#34;コミュニティ活動&#34;&gt;コミュニティ活動&lt;/h2&gt;
 
 &lt;p&gt;ブログ移転を機会に、自分の歴史ページを作りました&lt;/p&gt;
 
@@ -272,7 +267,7 @@ Deep Learning へのチャレンジですかね&lt;/p&gt;
 &lt;p&gt;去年はセッション6回、勉強会主催8回/スタッフ3回でした&lt;br /&gt;
 環境が変わったこともあり、例年よりはちょっと少なかったかも&lt;/p&gt;
 
-&lt;h2 id=&#34;東京生活:583f6a8c6309cdb9fd99833cc7732617&#34;&gt;東京生活&lt;/h2&gt;
+&lt;h2 id=&#34;東京生活&#34;&gt;東京生活&lt;/h2&gt;
 
 &lt;p&gt;あまり自身のことはこれまで書いてこなかったのですが、今年は活動場所を大阪から東京に移しました&lt;br /&gt;
 慣れたような慣れないような？まぁそれでも元気にやっています&lt;/p&gt;
@@ -284,13 +279,12 @@ Deep Learning へのチャレンジですかね&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;年越しそば、美味しかった(^ω^)
-&lt;img src=&#34;http://h-sao.com/pic/Hello2016_01.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Hello2016_01.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;仕事が変わったので、出社時間が遅い環境になりました、朝弱いので、本当にアリガタイ…&lt;/p&gt;
 
-&lt;h2 id=&#34;グラフィック技術:583f6a8c6309cdb9fd99833cc7732617&#34;&gt;グラフィック技術&lt;/h2&gt;
+&lt;h2 id=&#34;グラフィック技術&#34;&gt;グラフィック技術&lt;/h2&gt;
 
 &lt;p&gt;元々コンシューマーゲームでエフェクトシステム全般（パーティクル、スプライト、フィルター系など）を担当していたので、そこでの知識が多少生かせるような形になりました&lt;/p&gt;
 
@@ -306,7 +300,7 @@ Deep Learning へのチャレンジですかね&lt;/p&gt;
 &lt;p&gt;Metalにしろ、これにしろ&lt;br /&gt;
 ひとつのゲームチームで対応できる範囲を超えてる感じはあります(^^;)&lt;/p&gt;
 
-&lt;h2 id=&#34;インディゲーム開発者:583f6a8c6309cdb9fd99833cc7732617&#34;&gt;インディゲーム開発者&lt;/h2&gt;
+&lt;h2 id=&#34;インディゲーム開発者&#34;&gt;インディゲーム開発者&lt;/h2&gt;
 
 &lt;p&gt;去年はインディゲーマーの方々と知り合えたのは本当に自分にとってラッキーでした&lt;/p&gt;
 
@@ -336,7 +330,7 @@ Deep Learning へのチャレンジですかね&lt;/p&gt;
 &lt;img src=&#34;http://h-sao.com/pic/Hello2016_00.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;社内インディ:583f6a8c6309cdb9fd99833cc7732617&#34;&gt;社内インディ&lt;/h2&gt;
+&lt;h2 id=&#34;社内インディ&#34;&gt;社内インディ&lt;/h2&gt;
 
 &lt;p&gt;言葉の通り、社内インディゲームを作っていました&lt;br /&gt;
 2つチャレンジし、1つはまぁ遊べる程度になり、もう1つはモックで終了してしまいました&lt;/p&gt;
@@ -352,7 +346,7 @@ Deep Learning へのチャレンジですかね&lt;/p&gt;
 
 &lt;p&gt;この活動は、今年はもう少しピッチ上げて、一番下に書いた個人活動と共に、これからも続けていきたいです&lt;/p&gt;
 
-&lt;h2 id=&#34;英語:583f6a8c6309cdb9fd99833cc7732617&#34;&gt;英語&lt;/h2&gt;
+&lt;h2 id=&#34;英語&#34;&gt;英語&lt;/h2&gt;
 
 &lt;p&gt;去年から職場で英会話が必要になりました&lt;br /&gt;
 はじめは戸惑いましたが、&lt;br /&gt;
@@ -368,14 +362,14 @@ Deep Learning へのチャレンジですかね&lt;/p&gt;
 &lt;p&gt;引き続き、英会話の勉強しないとなーを実感しているところです&lt;br /&gt;
 もうちょっと長い文章がしゃべれるようにならないと、これ以上は一生上達しない気がします&lt;/p&gt;
 
-&lt;h2 id=&#34;エレキギター:583f6a8c6309cdb9fd99833cc7732617&#34;&gt;エレキギター&lt;/h2&gt;
+&lt;h2 id=&#34;エレキギター&#34;&gt;エレキギター&lt;/h2&gt;
 
 &lt;p&gt;大阪で教えていただいていた先生に、帰省の際にレッスンしてもらっています&lt;br /&gt;
 さすがに触る機会はちょっと減っちゃったけど、期間が開いてもできる練習法を教えてもらって、楽しくやってます&lt;/p&gt;
 
 &lt;p&gt;これもこれで続けていくぞー(^o^)&lt;/p&gt;
 
-&lt;h2 id=&#34;もろもろ踏まえた今年の私的キーワード:583f6a8c6309cdb9fd99833cc7732617&#34;&gt;もろもろ踏まえた今年の私的キーワード&lt;/h2&gt;
+&lt;h2 id=&#34;もろもろ踏まえた今年の私的キーワード&#34;&gt;もろもろ踏まえた今年の私的キーワード&lt;/h2&gt;
 
 &lt;p&gt;仕事では大きな案件が決まったので、今年は佳境な年になりそうです&lt;/p&gt;
 
@@ -403,8 +397,7 @@ C++の勉強会や集まりなど、筋トレは続けたいです…&lt;/p&gt;
       <guid>http://h-sao.com/blog/2015/01/02/hello2015/</guid>
       <description>&lt;p&gt;遥佐保（はるか・さお）です&lt;br /&gt;&lt;br /&gt;今年もマイクロソフトさまより MVP を受賞させて頂きました&lt;br /&gt;&lt;br /&gt;カテゴリー名称は &lt;b&gt;Windows Platform Development&lt;/b&gt; となります&lt;br /&gt;昨年と変わらず、クライアントサイドの技術カテゴリーでの受賞となります&lt;br /&gt;&lt;br /&gt;クライアントサイドというのは、わたしの解釈では、PCやモバイル端末に関する技術のことを指します&lt;br /&gt;わたしは特に、Windows Runtime について、知的好奇心を満たすための試みを去年はたくさん行いました&lt;br /&gt;これはサーバ、クラウドとはちょっとジャンルが違いますね&lt;br /&gt;また、開発言語やアプリケーションのジャンルとも少し違いますね&lt;br /&gt;&lt;br /&gt;そしてこの、マイクロソフトMVPとは、何かしらの形で技術コミュニティに貢献した結果、マイクロソフト社がアワードとして個人を表彰する制度のようです&lt;br /&gt;&lt;br /&gt;マイクロソフトの技術に中立的もしくは否定的な方にとったら&lt;br /&gt;お前だから何なんだよって思う方も多くいらっしゃると思います&lt;br /&gt;&lt;br /&gt;去年は非常にそれを多く感じた１年でもありました&lt;br /&gt;たぶんピュアなC++について、例年よりも、たくさん勉強したからですね(*´ω｀)&lt;br /&gt;&lt;br /&gt;OSS的な発想の方との関わりも例年に比べて多かったです&lt;br /&gt;マイクロソフトの好意的なコミュニティの輪から外れた体感も多く出来ました&lt;br /&gt;&lt;br /&gt;そこでは、勉強しようという姿勢が自分の中にあったら&lt;br /&gt;自分自身のメインが何であれ、全否定はされないということがよく判りました&lt;br /&gt;&lt;br /&gt;助けてくれる人も多くて、本当に本当に、沢山の人に助けられました&lt;br /&gt;お礼を自分のブログに書くなんて、とてもおこがましい行為なのですが、本当にありがとうございました&lt;br /&gt;&lt;br /&gt;MSマンセーのわたくしが記載するのも全くもってナンセンスではありますが&lt;br /&gt;今年も何かを維持し続けることが出来たというのは、自分でもまーよくやったんじゃないかと思います…&lt;br /&gt;&lt;br /&gt;自信をもって、謙虚を忘れず、これからも日々精進してゆきたいと思います&lt;br /&gt;&lt;br /&gt;これも、周りの方々のおかげです&lt;br /&gt;重ねてですが、本当にありがとうございました&lt;br /&gt;&lt;br /&gt;2015年もよろしくお願いします！&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/MVPLogo.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/MVPLogo.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

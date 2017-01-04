@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Powershell on Effectiveさお</title>
-    <link>http://h-sao.com/tags/powershell/</link>
+    <link>http://h-sao.com/tags/powershell/index.xml</link>
     <description>Recent content in Powershell on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 02 Jul 2014 17:46:00 +0900</lastBuildDate>
+    <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
     <atom:link href="http://h-sao.com/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -62,7 +62,7 @@ k01                            peach
 
 &lt;p&gt;これを一つづつ取り出して処理したい&lt;/p&gt;
 
-&lt;h2 id=&#34;単に-foreach-で取り出すとき:bc71bedf984eef88e654e05abbbd7081&#34;&gt;単に foreach で取り出すとき&lt;/h2&gt;
+&lt;h2 id=&#34;単に-foreach-で取り出すとき&#34;&gt;単に foreach で取り出すとき&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;PS C:\&amp;gt; foreach( $k in $tbl.Keys ){
 &amp;gt;&amp;gt;   Write-Output $k
@@ -81,7 +81,7 @@ orange
 -----
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;さらにソートして-foreach-で取り出すとき:bc71bedf984eef88e654e05abbbd7081&#34;&gt;さらにソートして foreach で取り出すとき&lt;/h2&gt;
+&lt;h2 id=&#34;さらにソートして-foreach-で取り出すとき&#34;&gt;さらにソートして foreach で取り出すとき&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;PS C:\&amp;gt; $tbl.GetEnumerator() | sort Value |
 &amp;gt;&amp;gt;   ForEach-Object{

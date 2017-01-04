@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mac on Effectiveさお</title>
-    <link>http://h-sao.com/tags/mac/</link>
+    <link>http://h-sao.com/tags/mac/index.xml</link>
     <description>Recent content in Mac on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 12 Jan 2016 02:00:00 +0900</lastBuildDate>
+    <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
     <atom:link href="http://h-sao.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -17,7 +17,7 @@
       <guid>http://h-sao.com/blog/2016/01/12/windows-printscreen-key-on-mac/</guid>
       <description>
 
-&lt;h2 id=&#34;windows-on-mac-の時の-printscreen-キーは:28ff6b8500383674a2e314be4d4c1516&#34;&gt;Windows on Mac の時の PrintScreen キーは？&lt;/h2&gt;
+&lt;h2 id=&#34;windows-on-mac-の時の-printscreen-キーは&#34;&gt;Windows on Mac の時の PrintScreen キーは？&lt;/h2&gt;
 
 &lt;p&gt;Macの上で、BootCamp で Windows を動作させているときにはにゃんと！「Print Screen」キーがありません（そらそうだ）&lt;br /&gt;
 当然なんですけど、いつもいつも検索しては忘れて…を繰り返すので、いい加減、覚える&lt;/p&gt;

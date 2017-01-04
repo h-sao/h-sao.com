@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xiaomi on Effectiveさお</title>
-    <link>http://h-sao.com/tags/xiaomi/</link>
+    <link>http://h-sao.com/tags/xiaomi/index.xml</link>
     <description>Recent content in Xiaomi on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 06 Oct 2015 04:00:00 +0900</lastBuildDate>
+    <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
     <atom:link href="http://h-sao.com/tags/xiaomi/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -29,15 +29,14 @@
 &lt;a href=&#34;http://www.mi.com/&#34;&gt;http://www.mi.com/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_00.JPG&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_00.JPG&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;全部で6Fまでありましたが、結局1Fのお店の品ぞろえが一番まとまってる印象でした&lt;br /&gt;
 Xiaomi正規店も1Fに入っていました&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;xiaomi-redmi-note-2:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;Xiaomi Redmi Note 2&lt;/h2&gt;
+&lt;h2 id=&#34;xiaomi-redmi-note-2&#34;&gt;Xiaomi Redmi Note 2&lt;/h2&gt;
 
 &lt;p&gt;購入したのは、&lt;strong&gt;Xiaomi Redmi Note 2&lt;/strong&gt;&lt;/p&gt;
 
@@ -57,7 +56,7 @@ Xiaomi正規店も1Fに入っていました&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;googleplay-installer-apkが最適解:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;GooglePlay installer APKが最適解&lt;/h2&gt;
+&lt;h2 id=&#34;googleplay-installer-apkが最適解&#34;&gt;GooglePlay installer APKが最適解&lt;/h2&gt;
 
 &lt;p&gt;検索すると色々な方法が出てくるのですが、おそらく、&lt;strong&gt;Google installer のAPKを直接インストールする&lt;/strong&gt;のが、手っ取り早いです&lt;br /&gt;
 （チャイナストアやMIストアからGooglePlayらしきものをインストールしても、わたしの場合は、動作しませんでした）&lt;/p&gt;
@@ -76,8 +75,7 @@ Xiaomi正規店も1Fに入っていました&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Google installer谷歌应用下载器.apk&lt;br /&gt;
 (1009.36 KB, Downloads: 237400)
-&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_03.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_03.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;PCから落とすなどするよりも、直接 Xiaomi デバイスからダウンロードした方が、早いと思います&lt;br /&gt;
@@ -85,7 +83,7 @@ Xiaomi正規店も1Fに入っていました&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;androidがセキュア過ぎて-思った順番にインストール出来ない:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;Androidがセキュア過ぎて、思った順番にインストール出来ない&lt;/h2&gt;
+&lt;h2 id=&#34;androidがセキュア過ぎて-思った順番にインストール出来ない&#34;&gt;Androidがセキュア過ぎて、思った順番にインストール出来ない&lt;/h2&gt;
 
 &lt;p&gt;installer を入れると、以下の４つがインストール可能になります&lt;/p&gt;
 
@@ -102,8 +100,7 @@ Xiaomi正規店も1Fに入っていました&lt;/p&gt;
 &lt;p&gt;ところが、1番目をインストールしようとすると、本当にインストールしていいかどうかの許可画面が出ますよね、こんな感じに…&lt;br /&gt;
 （イメージ画像です↓↓↓）&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_04.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_04.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;この画面で 「1番のアプリに対して」ユーザが許可を押そうとするときに、すでに「2番目のインストール」が動いてしまうのです&lt;/p&gt;
 
@@ -120,19 +117,18 @@ Xiaomi正規店も1Fに入っていました&lt;/p&gt;
 
 &lt;p&gt;いやー(~0~)　これで、わたしの端末で、Google Play が動くようになりました！&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_05.JPG&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_05.JPG&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;その他-xiaomi-デバイスで気づいたところ:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;その他、Xiaomi デバイスで気づいたところ&lt;/h2&gt;
+&lt;h2 id=&#34;その他-xiaomi-デバイスで気づいたところ&#34;&gt;その他、Xiaomi デバイスで気づいたところ&lt;/h2&gt;
 
-&lt;h4 id=&#34;日本語モードはない:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;日本語モードはない&lt;/h4&gt;
+&lt;h4 id=&#34;日本語モードはない&#34;&gt;日本語モードはない&lt;/h4&gt;
 
 &lt;p&gt;日本語モードは入っていません&lt;br /&gt;
 ROMとか焼き直すと良いらしいですけど、まだやってないです&lt;/p&gt;
 
-&lt;h4 id=&#34;permissions-アプリがうれしい:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;Permissions アプリがうれしい&lt;/h4&gt;
+&lt;h4 id=&#34;permissions-アプリがうれしい&#34;&gt;Permissions アプリがうれしい&lt;/h4&gt;
 
 &lt;p&gt;デフォルトで入っている Permittions アプリが最高に便利&lt;/p&gt;
 
@@ -147,7 +143,7 @@ ROMとか焼き直すと良いらしいですけど、まだやってないで�
  &lt;/tr&gt;
 &lt;/table&gt;
 
-&lt;h4 id=&#34;simは２枚ささる:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;SIMは２枚ささる&lt;/h4&gt;
+&lt;h4 id=&#34;simは２枚ささる&#34;&gt;SIMは２枚ささる&lt;/h4&gt;
 
 &lt;p&gt;両方LTEをつかめます&lt;br /&gt;
 ただし、片方がLTEをつかんでいるときは、もう一方はつかめない仕様です&lt;/p&gt;
@@ -159,7 +155,7 @@ ROMとか焼き直すと良いらしいですけど、まだやってないで�
 
 &lt;p&gt;どちらにしても、技適通ってない端末なので、日本では使っちゃダメ&lt;/p&gt;
 
-&lt;h4 id=&#34;まとめ:c3da2b2064682e0806e5e1e872f70d59&#34;&gt;まとめ&lt;/h4&gt;
+&lt;h4 id=&#34;まとめ&#34;&gt;まとめ&lt;/h4&gt;
 
 &lt;p&gt;もろもろ満足しています&lt;br /&gt;
 同じようにシンガポールや中国で購入した方の参考になれば～&lt;/p&gt;

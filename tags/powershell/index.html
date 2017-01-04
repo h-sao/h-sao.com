@@ -7,7 +7,7 @@
         <meta name="author">
         <meta name="description" content="The awesome blog of Sao Haruka.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.14" />
+        <meta name="generator" content="Hugo 0.18.1" />
           <link href="http://h-sao.com/post/index.xml" rel="alternate" type="application/rss+xml" title="Effectiveさお" />
           <link href="http://h-sao.com/post/index.xml" rel="feed" type="application/rss+xml" title="Effectiveさお" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -116,7 +116,7 @@ k01                            peach
 
 <p>これを一つづつ取り出して処理したい</p>
 
-<h2 id="単に-foreach-で取り出すとき:bc71bedf984eef88e654e05abbbd7081">単に foreach で取り出すとき</h2>
+<h2 id="単に-foreach-で取り出すとき">単に foreach で取り出すとき</h2>
 
 <pre><code>PS C:\&gt; foreach( $k in $tbl.Keys ){
 &gt;&gt;   Write-Output $k
@@ -135,7 +135,7 @@ orange
 -----
 </code></pre>
 
-<h2 id="さらにソートして-foreach-で取り出すとき:bc71bedf984eef88e654e05abbbd7081">さらにソートして foreach で取り出すとき</h2>
+<h2 id="さらにソートして-foreach-で取り出すとき">さらにソートして foreach で取り出すとき</h2>
 
 <pre><code>PS C:\&gt; $tbl.GetEnumerator() | sort Value |
 &gt;&gt;   ForEach-Object{
@@ -337,6 +337,10 @@ $ora_conn.Open()
             <div class="list-group">
                 
                     
+                        <a href="/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/" class="list-group-item">[Chrome] Google Chromeのマルチプロファイル設定</a><br>
+                    
+                
+                    
                         <a href="/blog/2017/01/03/hello2017/" class="list-group-item">[Diary] 2017年もよろしくお願いします</a><br>
                     
                 
@@ -372,10 +376,6 @@ $ora_conn.Open()
                         <a href="/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/" class="list-group-item">[Windows10] シャットダウンができない対策</a><br>
                     
                 
-                    
-                        <a href="/blog/2016/05/15/use-clang-on-visualstudio/" class="list-group-item">[C&#43;&#43;] VisualStusio2015でClangを使う設定</a><br>
-                    
-                
             </div>
 
             <div class="panel-heading">
@@ -392,6 +392,16 @@ $ora_conn.Open()
                     
                         <span class="badge">2</span>
                         android
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/chrome" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        chrome
                     </a>
                     </u> &nbsp; 
                     

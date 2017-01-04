@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Effectiveさお</title>
-    <link>http://h-sao.com/tags/hugo/</link>
+    <link>http://h-sao.com/tags/hugo/index.xml</link>
     <description>Recent content in Hugo on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 13 Dec 2015 23:30:00 +0900</lastBuildDate>
+    <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
     <atom:link href="http://h-sao.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -28,7 +28,7 @@
 その続きをひそかにポチポチとやっておりました…&lt;br /&gt;
 しかし、ポチポチやる日々が辛くなり、ついにはブログ更新そのものが怠ることに…&lt;/p&gt;
 
-&lt;h1 id=&#34;一向に進まない理由:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;一向に進まない理由&lt;/h1&gt;
+&lt;h1 id=&#34;一向に進まない理由&#34;&gt;一向に進まない理由&lt;/h1&gt;
 
 &lt;p&gt;一人ではWebのフロントエンドのノウハウもなく、もう無理かもーと思っていたことを&lt;br /&gt;
 &lt;a href=&#34;http://www.misuzilla.org/&#34;&gt;@mayuki&lt;/a&gt; さんに相談したところ、こんなアドバイスを頂きました&lt;/p&gt;
@@ -58,7 +58,7 @@
 &lt;p&gt;おお、まったく逆ですね…&lt;br /&gt;
 デザインさておき、機能重視してたので、うまくいかなかったのか…！！！&lt;/p&gt;
 
-&lt;h1 id=&#34;好みっぽく-かつシンプルなテンプレート:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;好みっぽく、かつシンプルなテンプレート&lt;/h1&gt;
+&lt;h1 id=&#34;好みっぽく-かつシンプルなテンプレート&#34;&gt;好みっぽく、かつシンプルなテンプレート&lt;/h1&gt;
 
 &lt;p&gt;とまぁ、素人くさい話で本当に恐縮ですが、気持ち改め、シンプルで改変しやすそうなデザインのテンプレートを引っ張ってきました&lt;/p&gt;
 
@@ -67,15 +67,14 @@
 &lt;a href=&#34;https://github.com/digitalcraftsman/hugo-minimalist-theme/&#34;&gt;https://github.com/digitalcraftsman/hugo-minimalist-theme/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Theme-To-Minimalist0.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Theme-To-Minimalist0.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;これは相談したその場で&lt;a href=&#34;http://www.misuzilla.org/&#34;&gt;@mayuki&lt;/a&gt; さんが、ちゃちゃっとテストするために触ってくれたテンプレートです&lt;/p&gt;
 
 &lt;p&gt;彼はものの10分程度で、わたしのやりたいことを目の前でやってくれたので、とても参考になりました&lt;br /&gt;
 ありがとうございます～（涙目）&lt;/p&gt;
 
-&lt;h2 id=&#34;最初に見る場所はhtmlテンプレート:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;最初に見る場所はHTMLテンプレート&lt;/h2&gt;
+&lt;h2 id=&#34;最初に見る場所はhtmlテンプレート&#34;&gt;最初に見る場所はHTMLテンプレート&lt;/h2&gt;
 
 &lt;p&gt;やったことはまず、&lt;strong&gt;themes &amp;gt; minimalist &amp;gt; layouts&lt;/strong&gt; の下を見るようにしました&lt;br /&gt;
 わたしの環境だと C:\Users\haruk\Dropbox\sites\Blog\themes\minimalist\layouts になります&lt;/p&gt;
@@ -91,7 +90,7 @@
 
 &lt;p&gt;こんな感じです&lt;/p&gt;
 
-&lt;h2 id=&#34;ヘッダーに直接何か書いてみる:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;ヘッダーに直接何か書いてみる&lt;/h2&gt;
+&lt;h2 id=&#34;ヘッダーに直接何か書いてみる&#34;&gt;ヘッダーに直接何か書いてみる&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;themes &amp;gt; minimalist &amp;gt; layouts &amp;gt; partials &amp;gt; header.html&lt;/strong&gt; がヘッダーに相当します&lt;/p&gt;
 
@@ -127,14 +126,13 @@
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;出力結果
-&lt;img src=&#34;http://h-sao.com/pic/Change-Theme-To-Minimalist1.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Change-Theme-To-Minimalist1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;ヘッダーと本文の間に、バーを入れることが出来ました&lt;/p&gt;
 
 &lt;p&gt;ちなみに Hugo は、デフォルトで &lt;strong&gt;[サイトURL]/tags/&lt;/strong&gt; というタグ一覧のHTMLを生成してくれます&lt;/p&gt;
 
-&lt;h2 id=&#34;ブロックとして設置出来た後に-cssを触る:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;ブロックとして設置出来た後に、CSSを触る&lt;/h2&gt;
+&lt;h2 id=&#34;ブロックとして設置出来た後に-cssを触る&#34;&gt;ブロックとして設置出来た後に、CSSを触る&lt;/h2&gt;
 
 &lt;p&gt;勘所のある人には、こいつはなんというツマラナイことを書いてるんだ！？と思われるかもしれませんが、これも経験なんで許してください…書いててつらい…&lt;/p&gt;
 
@@ -172,13 +170,12 @@
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;出力結果
-&lt;img src=&#34;http://h-sao.com/pic/Change-Theme-To-Minimalist2.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Change-Theme-To-Minimalist2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;高さなど一部、自分で調整&lt;br /&gt;
 これくらいならできた…&lt;/p&gt;
 
-&lt;h1 id=&#34;私的作業コスト比-デザイン調整-テンプレート調整:8f90eaeed5450de647ebc3995ce4d9f7&#34;&gt;(私的作業コスト比)デザイン調整＞テンプレート調整&lt;/h1&gt;
+&lt;h1 id=&#34;私的作業コスト比-デザイン調整-テンプレート調整&#34;&gt;(私的作業コスト比)デザイン調整＞テンプレート調整&lt;/h1&gt;
 
 &lt;p&gt;わたしがプログラム目線だからかもしれませんが、実際このブログでは、出来てなかった機能（タグと最新ポスト表示）を難なく実装することは出来ました&lt;/p&gt;
 
@@ -232,7 +229,7 @@
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;インストール-というか単なるexeファイル設置:0ac06b5261622021717117556fa75a4c&#34;&gt;インストール (というか単なるexeファイル設置)&lt;/h2&gt;
+&lt;h2 id=&#34;インストール-というか単なるexeファイル設置&#34;&gt;インストール (というか単なるexeファイル設置)&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;最新バージョン取得&lt;br /&gt;
@@ -250,7 +247,7 @@ Hugoはexeだけで動くので、適当なディレクトリに置きます&lt;
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;ブログ新規作成:0ac06b5261622021717117556fa75a4c&#34;&gt;ブログ新規作成&lt;/h2&gt;
+&lt;h2 id=&#34;ブログ新規作成&#34;&gt;ブログ新規作成&lt;/h2&gt;
 
 &lt;p&gt;Windows標準のコマンドプロンプトで作業します&lt;br /&gt;
 このとき既に、ブログを作ろうとするディレクトリが存在していたら、ブログ作成は失敗するので、気を付けてください&lt;/p&gt;
@@ -297,7 +294,7 @@ C:\Users\haruk\Dropbox\sites\Blog&amp;gt;
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;テンプレート適用:0ac06b5261622021717117556fa75a4c&#34;&gt;テンプレート適用&lt;/h2&gt;
+&lt;h2 id=&#34;テンプレート適用&#34;&gt;テンプレート適用&lt;/h2&gt;
 
 &lt;p&gt;GitHubから有志の人たちのテンプレートを拝借してきます&lt;/p&gt;
 
@@ -379,7 +376,7 @@ C:\Users\haruk\Dropbox\sites\Blog\themes&amp;gt;
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;ブログ投稿:0ac06b5261622021717117556fa75a4c&#34;&gt;ブログ投稿&lt;/h2&gt;
+&lt;h2 id=&#34;ブログ投稿&#34;&gt;ブログ投稿&lt;/h2&gt;
 
 &lt;p&gt;contentの 下に postディレクトリを作り、ブログ更新するMDファイルを置きます&lt;/p&gt;
 
@@ -435,7 +432,7 @@ Press Ctrl+C to stop
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;簡単に構築は出来たが:0ac06b5261622021717117556fa75a4c&#34;&gt;簡単に構築は出来たが…&lt;/h2&gt;
+&lt;h2 id=&#34;簡単に構築は出来たが&#34;&gt;簡単に構築は出来たが…&lt;/h2&gt;
 
 &lt;p&gt;ここまでだと結構簡単にできますが、ここから先は、自分で頑張るしかない部分です…&lt;/p&gt;
 

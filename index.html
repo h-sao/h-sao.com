@@ -7,7 +7,7 @@
         <meta name="author">
         <meta name="description" content="The awesome blog of Sao Haruka.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.14" />
+        <meta name="generator" content="Hugo 0.18.1" />
           <link href="http://h-sao.com/post/index.xml" rel="alternate" type="application/rss+xml" title="Effectiveさお" />
           <link href="http://h-sao.com/post/index.xml" rel="feed" type="application/rss+xml" title="Effectiveさお" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -45,6 +45,188 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/" title="[Chrome] Google Chromeのマルチプロファイル設定">[Chrome] Google Chromeのマルチプロファイル設定</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.01.04">2017.01.04</time>
+&middot; 
+    
+    <a href="http://h-sao.com/tags/chrome">chrome</a>
+    
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p><strong>Google Chrome</strong> を使って、Webサイトを開発をしている人向けの情報です</p>
+
+<p>自分のChromeのユーザプロファイラを使わずに、開発は別のプロファイラを使いたいってこと、ありますよね…？</p>
+
+<h2 id="プランa-ユーザプロファイラを切り替える">[プランA] ユーザプロファイラを切り替える</h2>
+
+<p>Google Chrome のユーザデータを、開発用と自分個人用とに分けたい<br />
+開発用のモバイルモードで見てるときに、普通にPCブラウジングがしたい</p>
+
+<p>とかいうときのために（か、どうか分かりませんが…）</p>
+
+<p>Google chrome は複数ユーザに対応しています</p>
+
+<ol>
+<li><p>chrome://settings/ にアクセス<br />
+もしくは、メニューの「設定」を押す</p></li>
+
+<li><p>「ユーザ」の設定項目があるので、追加します<br />
+<img src="/pic/How-to-use-multiple-browser-profiles-in-chrome_02.png" style="border:solid 5px #e6e6e6"/></p></li>
+
+<li><p>アイコンと名前を選択して「追加」します<br />
+（わたしの場合は適当に Development と付けました）<br />
+<img src="/pic/How-to-use-multiple-browser-profiles-in-chrome_03.png" style="border:solid 5px #e6e6e6"/></p></li>
+
+<li><p>ユーザ名が右上に表示されるようになり、新しい「Development」ユーザでブラウザが立ち上がります<br />
+<img src="/pic/How-to-use-multiple-browser-profiles-in-chrome_04.png" style="border:solid 5px #e6e6e6"/></p></li>
+</ol>
+
+<p>Extension や閲覧履歴は、完全に今まで使っていたものとは別になっているので<br />
+新規プロファイルが使い放題です(*ﾉωﾉ)</p>
+
+<p>これまで使っていたユーザは「ユーザ－１」<br />
+開発用のユーザは「Development」<br />
+で、使い分けることが可能になりました</p>
+
+<h2 id="おまけ-起動時に-development-ユーザを指定して起動する方法">[おまけ] 起動時に Development ユーザを指定して起動する方法</h2>
+
+<p>ちなみに、デフォルト起動はもちろん、これまで使っていた「ユーザー１」で立ち上がります</p>
+
+<p>ショートカットなどで、さっき作ったDevelopmentユーザがいきなり立ち上がって欲しいときは<br />
+以下のように「<strong>profile-directory</strong>」起動オプションを設定してあげると<br />
+任意のユーザプロファイルで立ち上がります</p>
+
+<pre><code>&quot;C:\Program Files (x86)\Google\Chrome\Application\chrome.exe&quot; --profile-directory=&quot;Profile 2&quot;
+</code></pre>
+
+<blockquote>
+<p>※Chromeのショートカット設定にしておくと便利です<br />
+<img src="/pic/How-to-use-multiple-browser-profiles-in-chrome_05.png" style="border:solid 5px #e6e6e6"/></p>
+</blockquote>
+
+<p>わたしの環境では、&rdquo;Peofile 2&rdquo;という名前でしたが、これは作った環境によって異なっているはずです</p>
+
+<p>Chromeユーザプロファイルのデフォルトの位置はこちら↓↓↓</p>
+
+<blockquote>
+<p><strong>&ldquo;C:\Users[Winユーザ名]\AppData\Local\Google\Chrome\User Data\Profile x&rdquo;</strong></p>
+</blockquote>
+
+<p>ちなみに、これまで使っていた自分の環境である「ユーザー１」は「<strong>Default</strong>」というディレクトリ名です</p>
+
+<blockquote>
+<p>&ldquo;C:\Users[Winユーザ名]\AppData\Local\Google\Chrome\User Data\Default&rdquo;</p>
+</blockquote>
+
+<hr />
+
+<p>さて、プランAのプロファイル切り替えでも、まぁ用途は足りるんですけど<br />
+1点だけ、気に入らないところがありました…</p>
+
+<p>確かに、完全にプロファイルは別になるのですが<br />
+<strong>起動時の画面サイズは、プロファイル間で共有されてしまう</strong>のです</p>
+
+<p>これを解消したい…！<br />
+それが次に示すプランBのパターンです</p>
+
+<h2 id="プランb-稼働環境を別物にする">[プランB] 稼働環境を別物にする</h2>
+
+<p>つまりプランAのままだと、</p>
+
+<blockquote>
+<p>自分でブラウジングしてる「ユーザー１」の画面サイズと<br />
+「Development」ユーザの画面サイズを、<br />
+個別に保存することは出来ない</p>
+</blockquote>
+
+<p>のです…<br />
+あぁ残念 xxx</p>
+
+<p>でも大丈夫(*ﾉωﾉ)</p>
+
+<p>方法がありました</p>
+
+<p>プロファイルの保存場所そのものを、別のディレクトリにすればOKでした</p>
+
+<p>指定するオプションは「<strong>user-data-dir</strong>」です</p>
+
+<pre><code>&quot;C:\Program Files (x86)\Google\Chrome\Application\chrome.exe&quot; --user-data-dir=&quot;C:\utils\chrome_dev_profile&quot;
+</code></pre>
+
+<blockquote>
+<p>※同じく、Chromeのショートカット設定の図、先ほどのプランAの profile-directory オプションは不要<br />
+<img src="/pic/How-to-use-multiple-browser-profiles-in-chrome_06.png" style="border:solid 5px #e6e6e6"/></p>
+</blockquote>
+
+<p>このオプションで指定するディレクトリは、どこでもいいみたいですが<br />
+出来ればデフォルトで利用している</p>
+
+<blockquote>
+<p>C:\Users[Winユーザ名]\AppData\Local\Google\Chrome\User Data</p>
+</blockquote>
+
+<p>の配下は、避けた方がいいかもしれません<br />
+（わたしの環境では、スタートページがちょっと変になりました。深追いして調べてないです…）</p>
+
+<hr />
+
+<p>プランA/Bのどちらでも、マルチプロファイラでブラウジングできるのですが<br />
+より独立した設定をしたい！という人には、プランBが私的にはお勧めです</p>
+
+<p>Chrome は起動オプションがいっぱいあって、他にも<br />
+Userエージェントを指定出来たり（<strong>user-agent</strong>）、<br />
+ブラウザの言語を指定したり（<strong>lang=en-US</strong>で英語になる）と<br />
+いろんな機能が用意されてるので<br />
+開発用途としてはなかなかいい感じだなと、今更ながら思いました(*´∇`)ﾉ</p>
+
+<hr />
+
+<p>＜参考＞</p>
+
+<p>ちなみに、Google Chrome の起動オプションは<br />
+公式ではちょっと探しにくかったんですけど（わたしの探し方が悪いかも…）<br />
+こちらの人のサイトが、簡潔で一覧性が高く、参考になりました(^▽^)/</p>
+
+<ul>
+<li>List of Chromium Command Line Switches - Peter Beverloo（英語）<br />
+<a href="http://peter.sh/experiments/chromium-command-line-switches/">http://peter.sh/experiments/chromium-command-line-switches/</a></li>
+</ul>
+
+<p>以下、日本語の参考サイト</p>
+
+<ul>
+<li><p>完全Google Chrome マルチユーザマニュアル　永久保存版 - This is Shinobu&rsquo;s Memorandum<br />
+<a href="http://saske18jp.blogspot.jp/2012/05/google-chrome.html">http://saske18jp.blogspot.jp/2012/05/google-chrome.html</a></p></li>
+
+<li><p>Google Chrome を別設定で複数起動させる方法 - digitalbox<br />
+<a href="http://digitalbox.jp/google-chrome-multiple-invoking/">http://digitalbox.jp/google-chrome-multiple-invoking/</a></p></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f01%2f04%2fhow-to-use-multiple-browser-profiles-in-chrome%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bChrome%5d%20Google%20Chrome%e3%81%ae%e3%83%9e%e3%83%ab%e3%83%81%e3%83%97%e3%83%ad%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e8%a8%ad%e5%ae%9a&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f01%2f04%2fhow-to-use-multiple-browser-profiles-in-chrome%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f01%2f04%2fhow-to-use-multiple-browser-profiles-in-chrome%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f01%2f04%2fhow-to-use-multiple-browser-profiles-in-chrome%2f&title=%5bChrome%5d%20Google%20Chrome%e3%81%ae%e3%83%9e%e3%83%ab%e3%83%81%e3%83%97%e3%83%ad%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e8%a8%ad%e5%ae%9a" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2017/01/03/hello2017/" title="[Diary] 2017年もよろしくお願いします">[Diary] 2017年もよろしくお願いします</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.01.03">2017.01.03</time>
@@ -64,13 +246,12 @@
 <p>2017年最初のブログになります！<br />
 今年もよろしくお願いします(^_^)</p>
 
-<h2 id="msmvp-2017年1月度受賞:c24e4adcaeba704d627a7dcdfbf7e807">MSMVP 2017年1月度受賞</h2>
+<h2 id="msmvp-2017年1月度受賞">MSMVP 2017年1月度受賞</h2>
 
 <p>なんと、<strong>Microsoft Most Valuable Professional</strong> の再受賞を <strong>Windows Development</strong> のカテゴリで頂きました<br />
 信じられないことに、8回目の受賞となります</p>
 
-<p><img src="/pic/MVPLogo.png" alt="" />
-</p>
+<p><img src="/pic/MVPLogo.png" alt="" /></p>
 
 <p>去年はいろんなジャンルの技術を取り扱った勉強会を開催し<br />
 何のかんのと楽しく過ごさせていただきました</p>
@@ -105,7 +286,7 @@
 <img src="/pic/Hello2017_00.JPG" alt="" /></li>
 </ul>
 
-<h2 id="昨年度の活動:c24e4adcaeba704d627a7dcdfbf7e807">昨年度の活動</h2>
+<h2 id="昨年度の活動">昨年度の活動</h2>
 
 <p>去年は、ひそかに1月のマイクロソフト社主催のインターナルイベントにて、ちょっとだけセッション持たせていただいたのを皮切りに、小規模な講演をちょこちょこと、<br />
 大きなところでは、<strong>C++、UI、Unity、Deep Learning</strong> を特集した勉強会を開催するなど、<br />
@@ -128,7 +309,7 @@
 <img src="/pic/Hello2017_01.JPG" alt="" /></li>
 </ul>
 
-<h2 id="ソーシャルゲーム三昧:c24e4adcaeba704d627a7dcdfbf7e807">ソーシャルゲーム三昧</h2>
+<h2 id="ソーシャルゲーム三昧">ソーシャルゲーム三昧</h2>
 
 <p>今年は…もうこれしかやってません<br />
 毎日欠かすことなく、1日最低2時間やってます( ;∀;)<br />
@@ -180,8 +361,7 @@
 
 <blockquote>
 <p>※ギルド内の掲示板で使えるスタンプもある<br />
-<img src="/pic/Hello2017_03.png" alt="" />
-</p>
+<img src="/pic/Hello2017_03.png" alt="" /></p>
 </blockquote>
 
 <p>ただ、やり始めで分かったのは、<br />
@@ -200,8 +380,7 @@
 <p>※ギルド内の過去の戦歴は誰でも閲覧できる<br />
 しょぼい戦歴しか残ってない＝オーナーや執行役の責任（統率が取れていない）<br />
 ということもあり、ゲーム内における役職者の責任は重大<br />
-<img src="/pic/Hello2017_04.png" alt="" />
-</p>
+<img src="/pic/Hello2017_04.png" alt="" /></p>
 </blockquote>
 
 <p>実は昨年、ある案件でゲームプランナーさんの面接に関わらせて頂いたのですが<br />
@@ -228,7 +407,7 @@
 <p>自分の仲間もログインしなくなって、システム的にも終了するまでは、わたしは続けてそうです<br />
 この調子だと…(^▽^;)</p>
 
-<h2 id="今年は:c24e4adcaeba704d627a7dcdfbf7e807">今年は？</h2>
+<h2 id="今年は">今年は？</h2>
 
 <p>こんな感じで、去年はソーシャルゲーム三昧でしたが<br />
 今年は今、流行ってるらしい「<strong>MOBA</strong>」ジャンルのゲームをやってみたいなーと思っています</p>
@@ -268,8 +447,7 @@ Deep Learning へのチャレンジですかね</p>
 
 <blockquote>
 <p>最後に2016年の年越しそば、おいしかった～(^ω^)<br />
-<img src="/pic/Hello2017_06.JPG" alt="" />
-</p>
+<img src="/pic/Hello2017_06.JPG" alt="" /></p>
 </blockquote>
 
 <p>ではでは、2017年も、どうぞ、よろしくお願いします！</p>
@@ -311,7 +489,7 @@ Deep Learning へのチャレンジですかね</p>
 Webベースでアクセスできる <strong>Outlook on the web</strong> について<br />
 データの削除がとてもややこしかったので、ちょっとメモしておきたいと思います</p>
 
-<h2 id="かつての-windows-liveカレンダー:58a9045b1ecad794704a80a1c7937ed1">かつての Windows Liveカレンダー</h2>
+<h2 id="かつての-windows-liveカレンダー">かつての Windows Liveカレンダー</h2>
 
 <p>昔は、Windows Liveカレンダーという名称で、カレンダーサービスがあったのですが<br />
 最近になり、Outlook on the web というサービス名に変わった様です</p>
@@ -327,7 +505,7 @@ Googleにもカレンダーがあり、サイボウズにもあり…カレン�
 <p>以降、「予定表」とあるのは、カレンダーの事を指しています<br />
 マイクロソフトさんの用語で統一して書きたいと思います</p>
 
-<h2 id="問題点が２つ起きた:58a9045b1ecad794704a80a1c7937ed1">問題点が２つ起きた</h2>
+<h2 id="問題点が２つ起きた">問題点が２つ起きた</h2>
 
 <ol>
 <li>Outlook on the web のメインの予定表が消せない</li>
@@ -340,7 +518,7 @@ Googleにもカレンダーがあり、サイボウズにもあり…カレン�
 
 <hr />
 
-<h2 id="問題1-不要な予定表を削除したいが-メインは消せない:58a9045b1ecad794704a80a1c7937ed1">＜問題1＞不要な予定表を削除したいが、メインは消せない</h2>
+<h2 id="問題1-不要な予定表を削除したいが-メインは消せない">＜問題1＞不要な予定表を削除したいが、メインは消せない</h2>
 
 <p>実際に、オフィシャルサイトには、予定表の削除の方法は書いていないのです…</p>
 
@@ -363,7 +541,7 @@ Googleにもカレンダーがあり、サイボウズにもあり…カレン�
 
 <p>とにかく情報を整理したいだけなのに…(+o+)</p>
 
-<h2 id="問題2-windows10-カレンダーアプリの情報は削除されない:58a9045b1ecad794704a80a1c7937ed1">＜問題2＞Windows10 カレンダーアプリの情報は削除されない</h2>
+<h2 id="問題2-windows10-カレンダーアプリの情報は削除されない">＜問題2＞Windows10 カレンダーアプリの情報は削除されない</h2>
 
 <p>メイン以外の予定表は消せるので、Outlook on the web上で操作するんですけど<br />
 クライアントアプリである、Windows10 付随のカレンダーには、一向に反映されません</p>
@@ -377,7 +555,7 @@ Googleにもカレンダーがあり、サイボウズにもあり…カレン�
 
 <hr />
 
-<h2 id="解決方法-web上では無理-outlookクライアントを使う:58a9045b1ecad794704a80a1c7937ed1">＜解決方法＞Web上では無理、Outlookクライアントを使う</h2>
+<h2 id="解決方法-web上では無理-outlookクライアントを使う">＜解決方法＞Web上では無理、Outlookクライアントを使う</h2>
 
 <p>Outlook on the web だけでは無理なのが良く判ったので<br />
 <strong>Outlookのクライアントメールソフト</strong> を使ってみました</p>
@@ -404,8 +582,7 @@ Outlookアプリの左下に表示されている（と思う）「…」を選�
 
 <li><p>これで、Windows10のカレンダーアプリの情報も更新され、削除した予定表は消えました…！やったー！<br />
 ※ただし、即時反映ってん訳じゃなさそうでした、しばらく時間がかかるっぽいです
-<img src="/pic/Delete-Outlook-on-the-web-data_07.png" alt="" />
-</p></li>
+<img src="/pic/Delete-Outlook-on-the-web-data_07.png" alt="" /></p></li>
 </ol>
 
 <p>これで ＜問題2＞のほうは解決しました<br />
@@ -437,7 +614,7 @@ Outlookアプリの左下に表示されている（と思う）「…」を選�
 
 <hr />
 
-<h2 id="後片付け-outlookクライアントからアカウントを削除:58a9045b1ecad794704a80a1c7937ed1">＜後片付け＞Outlookクライアントからアカウントを削除</h2>
+<h2 id="後片付け-outlookクライアントからアカウントを削除">＜後片付け＞Outlookクライアントからアカウントを削除</h2>
 
 <p>Outlook on the webの予定表を消すためだけに<br />
 Outlookクライアントにアカウントを登録したので、これを削除する画面キャプチャもついでに載せておきます</p>
@@ -592,7 +769,7 @@ OS : Windows 7 / 8 64-bit<br />
 
 <p>記載環境は、Maya2015 on Windows10 です</p>
 
-<h2 id="レンダリングエンジンの変更:355fcbaa8dfe550d1200f82d421d5c35">レンダリングエンジンの変更</h2>
+<h2 id="レンダリングエンジンの変更">レンダリングエンジンの変更</h2>
 
 <p>Mayaのデフォルトレンダリングは <strong>OpenGL</strong> になっています<br />
 <strong>DirectX11</strong> に変更する方法</p>
@@ -609,7 +786,7 @@ Rendering engine を変更できるドロップダウンリストがあるので
 <img src="/pic/Settings-Maya2015-part1_01.png" style="border:solid 5px #e6e6e6"/></p></li>
 </ol>
 
-<h2 id="レンダー設定:355fcbaa8dfe550d1200f82d421d5c35">レンダー設定</h2>
+<h2 id="レンダー設定">レンダー設定</h2>
 
 <p>上記はレンダリングエンジンについてでしたが、レンダリングの設定を触るところはまた別の箇所になっています</p>
 
@@ -625,11 +802,10 @@ Rendering engine を変更できるドロップダウンリストがあるので
 
 <li><p>使うレンダリングの設定を、ここで選ぶことが出来ます<br />
 わたしの場合は Maya Hardware 2.0 を選択したりしてます<br />
-<img src="/pic/Settings-Maya2015-part1_06.png" alt="" />
-</p></li>
+<img src="/pic/Settings-Maya2015-part1_06.png" alt="" /></p></li>
 </ol>
 
-<h2 id="ハードウェアレンダラ2-0設定:355fcbaa8dfe550d1200f82d421d5c35">ハードウェアレンダラ2.0設定</h2>
+<h2 id="ハードウェアレンダラ2-0設定">ハードウェアレンダラ2.0設定</h2>
 
 <p>浮動小数レンダーターゲットを有効化したいとき</p>
 
@@ -639,8 +815,7 @@ Rendering engine を変更できるドロップダウンリストがあるので
 
 <ol>
 <li><p>Mayaの作業画面（ビューポート）の <strong>Renderer</strong> の <strong>Viewport2.0</strong> の横にある、四角いチェックを押してみます<br />
-<img src="/pic/Settings-Maya2015-part1_02.png" alt="" />
-</p></li>
+<img src="/pic/Settings-Maya2015-part1_02.png" alt="" /></p></li>
 
 <li><p><strong>Hardware Renderer 2.0 Settings</strong> のウィンドウが表示されます<br />
 <img src="/pic/Settings-Maya2015-part1_03.png" style="border:solid 5px #e6e6e6"/></p></li>
@@ -650,24 +825,22 @@ Rendering engine を変更できるドロップダウンリストがあるので
 フォーマットは、16bit と 32bit が選択できました</p></li>
 </ol>
 
-<h2 id="カメラの設定:355fcbaa8dfe550d1200f82d421d5c35">カメラの設定</h2>
+<h2 id="カメラの設定">カメラの設定</h2>
 
 <ol>
 <li><p>カメラアトリビュートを出すには<br />
 Mayaの作業画面（ビューポート）の <strong>View</strong> の <strong>Select Camera</strong> を選択します<br />
-<img src="/pic/Settings-Maya2015-part1_07.png" alt="" />
-</p></li>
+<img src="/pic/Settings-Maya2015-part1_07.png" alt="" /></p></li>
 
 <li><p><strong>Attribute Editor</strong> がぽこっと現れます<br />
 違うものが現れたときには、<br />
 横のタブに <strong>persp</strong>, <strong>perspShape</strong><br />
 縦のタブに <strong>Channel Box/Layer Editor</strong>, <strong>Attribute Editor</strong> があるので<br />
 開きたいものを選択します<br />
-<img src="/pic/Settings-Maya2015-part1_08.png" alt="" />
-</p></li>
+<img src="/pic/Settings-Maya2015-part1_08.png" alt="" /></p></li>
 </ol>
 
-<h2 id="インストールされているプラグイン:355fcbaa8dfe550d1200f82d421d5c35">インストールされているプラグイン</h2>
+<h2 id="インストールされているプラグイン">インストールされているプラグイン</h2>
 
 <ol>
 <li><p>プラグインマネージャを開きます<br />
@@ -905,7 +1078,7 @@ GPUだけは新しい型のものにしとかないと…とかとか<br />
 
 <hr />
 
-<h1 id="giuhub上での操作-移動元:0d9c0c49199defc16c526eaa049a2428">GiuHub上での操作(移動元)</h1>
+<h1 id="giuhub上での操作-移動元">GiuHub上での操作(移動元)</h1>
 
 <ol>
 <li><p>移動元(XXX)のアカウントで GitHub にログインします</p></li>
@@ -915,20 +1088,18 @@ GPUだけは新しい型のものにしとかないと…とかとか<br />
 
 <li><p>一番下に Denger Zone があるので、そこの <strong>Transfer</strong> をクリックして、移動させます<br />
 （まだ、いきなりは移動しないよ）<br />
-<img src="/pic/Transfer-GitHub-repository_01.png" alt="" />
-</p></li>
+<img src="/pic/Transfer-GitHub-repository_01.png" alt="" /></p></li>
 
 <li><p><strong>移動元(XXX)のリポジトリ名(X-REPO)</strong>、<strong>移動先のアカウント名(YYY)</strong> を入力します<br />
 <img src="/pic/Transfer-GitHub-repository_02.png" style="border:solid 5px #e6e6e6"/><br />
 これで、リポジトリを移動させる準備が出来ました</p></li>
 
 <li><p>移動元リポジトリ(X-REPO)は、移動先アカウント(YYY)の許可待ち状態になります<br />
-<img src="/pic/Transfer-GitHub-repository_03.png" alt="" />
-<br />
+<img src="/pic/Transfer-GitHub-repository_03.png" alt="" /><br />
 この状態であれば、Abort transferを押して、まだ移管を取り消すことが出来ますね！</p></li>
 </ol>
 
-<h1 id="その後-移動先アカウント-yyy-にメールが届く:0d9c0c49199defc16c526eaa049a2428">その後、移動先アカウント(YYY)にメールが届く</h1>
+<h1 id="その後-移動先アカウント-yyy-にメールが届く">その後、移動先アカウント(YYY)にメールが届く</h1>
 
 <ol>
 <li>こんなメールが移動先アカウント(YYY)に届きます</li>
@@ -958,7 +1129,7 @@ Your friends at GitHub
 
 <p>というわけで、ドキドキしながら★をクリックします</p>
 
-<h1 id="すぐに-移動元アカウント-xxx-にメールが届く:0d9c0c49199defc16c526eaa049a2428">すぐに、移動元アカウント(XXX)にメールが届く</h1>
+<h1 id="すぐに-移動元アカウント-xxx-にメールが届く">すぐに、移動元アカウント(XXX)にメールが届く</h1>
 
 <ol>
 <li>移動元アカウント(XXX)の方に、通知メールが届きます</li>
@@ -1066,7 +1237,7 @@ TOEICの得点が上がったとか、ペラペラ話せるようになったと
 
 <p>そのへんの経緯を、ちょっと書き出してみたいと思います</p>
 
-<h1 id="英語が必要な環境でも-勉強はしない:9d49b0d5d59e5f7652c932a8634878f3">英語が必要な環境でも、勉強はしない</h1>
+<h1 id="英語が必要な環境でも-勉強はしない">英語が必要な環境でも、勉強はしない</h1>
 
 <p>アメリカ/カナダネイティブは、もうそれはそれは素晴らしい発音とナチュラルな言い回しをお持ちで、あぁ、あなたたちのその生まれ持った言語能力…天からのたまものですね…<br />
 何をどうあがいても、英語のネイティブに、わたしはなれないわけでございます</p>
@@ -1112,7 +1283,7 @@ TOEICの得点が上がったとか、ペラペラ話せるようになったと
 <p>現に、何年も日本に暮らしている海外の方でも、日本語が話せない人も、うちの会社には居てます<br />
 日本語判らないのに、どうやって日々生活してるんだろ…と思いますが、それでも何年も過ごせているのです</p>
 
-<h1 id="そもそも日本人向けの外部ツールが充実している:9d49b0d5d59e5f7652c932a8634878f3">そもそも日本人向けの外部ツールが充実している</h1>
+<h1 id="そもそも日本人向けの外部ツールが充実している">そもそも日本人向けの外部ツールが充実している</h1>
 
 <p>1年経ったら、英語がもうちょっと上手くなってるかなー？ふんふんふーん♪<br />
 と思っていた頃もありました……が、そんな奇跡は起きませんでした</p>
@@ -1157,7 +1328,7 @@ Googleは素直に単語のみを変換してくれます<br />
 
 <p>しかし、これではダメだ…＞＜</p>
 
-<h1 id="英語トレーニングとの出会い:9d49b0d5d59e5f7652c932a8634878f3">英語トレーニングとの出会い</h1>
+<h1 id="英語トレーニングとの出会い">英語トレーニングとの出会い</h1>
 
 <p>というわけで、英語やだやだ～Grammarlyがあるから、なんとでもなるし～<br />
 の日々を一転させたのは、英語の集中トレーニング「<strong>Study Hacker English Company</strong>」というトレーニングシステムとの出会いです</p>
@@ -1197,7 +1368,7 @@ Googleは素直に単語のみを変換してくれます<br />
 
 <p>でもやる気だけは…今度こそ…！</p>
 
-<h1 id="最初の1か月目:9d49b0d5d59e5f7652c932a8634878f3">最初の1か月目</h1>
+<h1 id="最初の1か月目">最初の1か月目</h1>
 
 <p>まず、英語トレーニングに高いお金を払って申し込んだものの、英語を毎日学習するクセがついていないので<br />
 宿題を出されても辛かったです</p>
@@ -1218,7 +1389,7 @@ Googleは素直に単語のみを変換してくれます<br />
 
 <p>内輪の定例会議で出てくる単語や言い回しには、それほどバリエーションが無いんだなーを実感した感じです</p>
 
-<h1 id="2か月目:9d49b0d5d59e5f7652c932a8634878f3">2か月目</h1>
+<h1 id="2か月目">2か月目</h1>
 
 <p>最初よりは慣れてきて、英語学習の際には</p>
 
@@ -1240,7 +1411,7 @@ Googleは素直に単語のみを変換してくれます<br />
 
 <p><strong>何度も何度も何度も繰り返すと、忘れる単語もあるけれども、徐々に覚えが定着する単語もある</strong>、ということが体感できるようになりました</p>
 
-<h1 id="最後の3か月目:9d49b0d5d59e5f7652c932a8634878f3">最後の3か月目</h1>
+<h1 id="最後の3か月目">最後の3か月目</h1>
 
 <p>シャドウイングは、英語を聞いて、発音をまねる訓練なんですけど<br />
 これは非常に口の筋肉をたくさん使うので、<br />
@@ -1270,7 +1441,7 @@ Googleは素直に単語のみを変換してくれます<br />
 
 <p>そんな思いもあって、1か月だけ延長させていただきました</p>
 
-<h1 id="オプションの4か月目:9d49b0d5d59e5f7652c932a8634878f3">オプションの4か月目</h1>
+<h1 id="オプションの4か月目">オプションの4か月目</h1>
 
 <p>単語は難しいし、トレーニングに利用する教材もだんだん早口なものになってきていて、いやはや、、大変でしたよ…</p>
 
@@ -1311,7 +1482,7 @@ Googleは素直に単語のみを変換してくれます<br />
 
 <p>と思えるタイミングが、なんとなく出てきたのも良かったのかもしれません</p>
 
-<h1 id="トレーニングを終えて:9d49b0d5d59e5f7652c932a8634878f3">トレーニングを終えて</h1>
+<h1 id="トレーニングを終えて">トレーニングを終えて</h1>
 
 <p>驚くべきことに、トレーニングを終えた今、自分で毎日やろうと決めた英語学習のタスクを、<br />
 自分で決めて、実践するということが、それほど苦じゃなくなりました</p>
@@ -1339,7 +1510,7 @@ Googleは素直に単語のみを変換してくれます<br />
 <p>TOEICの点が上がってるのかとか、しゃべれるようになったのかとか、外的成果物はそこまで試していないので、まだよくわかりませんが<br />
 とにかくこのトレーニングの経験を通して、英語の勉強を続けるのが、とても楽になりました</p>
 
-<h1 id="おまけ:9d49b0d5d59e5f7652c932a8634878f3">おまけ</h1>
+<h1 id="おまけ">おまけ</h1>
 
 <p>よく、外国語の学習には、その国の彼氏彼女を作るのが手っ取り早いと言いますが…</p>
 
@@ -1355,7 +1526,7 @@ Googleは素直に単語のみを変換してくれます<br />
 <p>ちゃんとした学習教材（これはドラマの会話とかでも良いんですけど）、を使って意識的に言語を学習しないと、特に会話は中途半端に通じるだけに危険！？と思った次第です<br />
 仕事で使うならね…</p>
 
-<h1 id="その後:9d49b0d5d59e5f7652c932a8634878f3">その後</h1>
+<h1 id="その後">その後</h1>
 
 <p>英語のトレーニングも終わったので、最近はSkype英会話を始めました</p>
 
@@ -1363,7 +1534,7 @@ Googleは素直に単語のみを変換してくれます<br />
 
 <p>まだ始めたばかりですが、またどこかで感想書くと思います</p>
 
-<h1 id="まとめ:9d49b0d5d59e5f7652c932a8634878f3">まとめ</h1>
+<h1 id="まとめ">まとめ</h1>
 
 <p>もともと英語が好きとか<br />
 帰国子女ですとか<br />
@@ -1463,210 +1634,6 @@ Googleは素直に単語のみを変換してくれます<br />
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/" title="[C&#43;&#43;] VisualStusio2015でClangを使う設定">[C&#43;&#43;] VisualStusio2015でClangを使う設定</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.05.15">2016.05.15</time>
-&middot; 
-    
-    <a href="http://h-sao.com/tags/cpp">cpp</a>
-    , 
-    
-    <a href="http://h-sao.com/tags/clang">clang</a>
-    
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>今日は Clang with Microsoft CodeGen の設定などについて、メモしておきます</p>
-
-<p>先人たちが既に色々と試している内容と対して変わりませんが、そもそも日本語の情報も少ないので、何かの足しになればと思います</p>
-
-<h1 id="clang-with-microsoft-codegen-is-here:2cbfe712d76fdfc5483adda9c9ba8965">&ldquo;Clang with Microsoft CodeGen&rdquo; is here!</h1>
-
-<p>最近はすっかり、クロスプラットフォームやオープンソースに力を入れているマイクロソフト社のツールセットの中に、Clang対応ってのがあります</p>
-
-<p>2015年の年末にですが、Clang が正式に Visual Studio 2015 Update1 で利用できるよ～<br />
-とVC++チームブログで発表されていました</p>
-
-<ul>
-<li><p>Clang with Microsoft CodeGen in VS 2015 Update 1 - Visual C++ Team Blog<br />
-<a href="https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/">https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/</a></p></li>
-
-<li><p>Clang with Microsoft CodeGen (March 2016) released- Visual C++ Team Blog<br />
-<a href="https://blogs.msdn.microsoft.com/vcblog/2016/03/31/clang-with-microsoft-codegen-march-2016-released/">https://blogs.msdn.microsoft.com/vcblog/2016/03/31/clang-with-microsoft-codegen-march-2016-released/</a></p></li>
-</ul>
-
-<p>良いですねー(^^)<br />
-現在のVS2015には <strong>Clang with Microsoft CodeGen</strong> というツールセットが提供されており、目玉はなんといっても、Clang のデバックを Visual Studioのエディターで確認できるところでしょうか！</p>
-
-<p>他にも、Clang でコンパイルしたobjと VC でコンパイルしたobjがリンクできるところもすごいです<br />
-既存資産をフル活用出来そうですね</p>
-
-<blockquote>
-<p>（2016/5/15現在、Visual Studio 2015 Update2 が最新です）<br />
-<a href="https://www.visualstudio.com/ja-jp/news/vs2015-update2-vs.aspx">https://www.visualstudio.com/ja-jp/news/vs2015-update2-vs.aspx</a></p>
-</blockquote>
-
-<hr />
-
-<p>LLVM側にも記事が上がっています</p>
-
-<ul>
-<li>Getting Started with the LLVM System using Microsoft Visual Studio - LLVM本家<br />
-<a href="http://llvm.org/docs/GettingStartedVS.html">http://llvm.org/docs/GettingStartedVS.html</a></li>
-</ul>
-
-<hr />
-
-<p>日本でも既に先人が試されているので、読んでみると良いと思います</p>
-
-<ul>
-<li><p>Clang/C2をコマンドプロンプトで使ってみる - イグトランスの頭の中（のかけら）<br />
-<a href="http://dev.activebasic.com/egtra/2015/12/09/850/">http://dev.activebasic.com/egtra/2015/12/09/850/</a></p></li>
-
-<li><p>Clang with Microsoft CodeGenがでたので試す - C++初心者Advent Calendar 2015 9日目<br />
-<a href="http://qiita.com/yumetodo/items/bd41f31f39dd590e8c80">http://qiita.com/yumetodo/items/bd41f31f39dd590e8c80</a></p></li>
-</ul>
-
-<hr />
-
-<p>ちなみに、この Clang with Microsoft CodeGen は VC++チームブログにも &ldquo;a.k.a. Clang/C2&rdquo; と記載されており、別名を <strong>Clang/C2</strong> というようです</p>
-
-<p>また、今回対応している <strong>Clang 側のバージョンは 3.7</strong> です</p>
-
-<h1 id="clang-exe-の場所:2cbfe712d76fdfc5483adda9c9ba8965">clang.exe の場所</h1>
-
-<h3 id="clang:2cbfe712d76fdfc5483adda9c9ba8965">Clang</h3>
-
-<pre><code class="language-xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Clang 3.7\bin\x86\clang.exe
-</code></pre>
-
-<h3 id="ちなみにvc:2cbfe712d76fdfc5483adda9c9ba8965">ちなみにVC++</h3>
-
-<pre><code class="language-xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe
-</code></pre>
-
-<p>どちらでも、コマンドプロンプトでコンパイル可能です</p>
-
-<h1 id="vsでのコンパイラの切り替え設定:2cbfe712d76fdfc5483adda9c9ba8965">VSでのコンパイラの切り替え設定</h1>
-
-<p>Visual Stidon 2015 上で &ldquo;Alt + F7&rdquo; を押すか</p>
-
-<blockquote>
-<p>プロジェクト &gt; [プロジェクト名]のプロパティ</p>
-</blockquote>
-
-<p>で設定UIを表示させます</p>
-
-<blockquote>
-<p>構成プロパティ &gt; 全般 &gt; プラットフォームツールセット</p>
-</blockquote>
-
-<p>この項目を &ldquo;Clang 3.7 with Microsoft CodeGen (v140_clang_3_7)&rdquo; に変更するだけです</p>
-
-<p><img src="/pic/Use-Clang-on-VisualStudio_00.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>結構簡単＼(^o^)／</p>
-
-<h1 id="ソリューション作成は何でもok:2cbfe712d76fdfc5483adda9c9ba8965">ソリューション作成は何でもOK</h1>
-
-<p>上記の様に、コンパイラが簡単に切り替えられるので、空のプロジェクトでも、Win32コンソールアプリケーションでもOKです</p>
-
-<p>一応、Clangっぽいプロジェクトはあるんですけど、いきなり dll というのもなんだか敷居が高いので、</p>
-
-<p><img src="/pic/Use-Clang-on-VisualStudio_01.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>exe を作りたいだけなら、Win32コンソールアプリケーションで良いと思います</p>
-
-<h1 id="余談-文字コードはutf8の方が良い-様な気がする:2cbfe712d76fdfc5483adda9c9ba8965">[余談]文字コードはUTF8の方が良い(様な気がする)</h1>
-
-<p>最初に書いておくと、Sift-JIS でも Clang/C2 でコンパイルは通ります</p>
-
-<p>…なのですが、一応、なんとなく</p>
-
-<p>個々の環境によって異なるのかもしれませんが<br />
-わたしがVS2015で作成した cpp ファイルは、デフォルトで Sift-JIS になります</p>
-
-<p>既に、<a href="https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/">VC++チームブログ</a> にはこんな感じで↓↓↓</p>
-
-<blockquote>
-<p>If source files in the project you are trying to convert are UTF-16 encoded, you will need to resave them as UTF-8 when Clang gives you an error about UTF-16 encoded source with BOM.</p>
-</blockquote>
-
-<p>UTF-16はだめらしいです<br />
-Sift-JIS は無関係かもしれませんが、一応…</p>
-
-<h1 id="サンプルコード:2cbfe712d76fdfc5483adda9c9ba8965">サンプルコード</h1>
-
-<p><a href="http://cpprefjp.github.io/">cpprefjp</a> を参照して、サンプルコードを書いてみました</p>
-
-<ul>
-<li>constexprの制限緩和
-<a href="http://cpprefjp.github.io/lang/cpp14/relaxing_constraints_on_constexpr.html">http://cpprefjp.github.io/lang/cpp14/relaxing_constraints_on_constexpr.html</a></li>
-</ul>
-
-<p>VC2015 Update2 では未対応だけど、Clang 3.7 は対応しているというコードです</p>
-
-<pre><code class="language-cpp">#include &quot;stdafx.h&quot;
-#include &lt;iostream&gt;
-
-constexpr int f()
-{
-	int result = 0;
-	return result;
-}
-
-int main()
-{
-	std::cout &lt;&lt; &quot;Hello: &quot; &lt;&lt; f() &lt;&lt; std::endl;
-
-	return 0;
-}
-</code></pre>
-
-<h2 id="visual-studio-2015-v140-でコンパイルすると-エラー:2cbfe712d76fdfc5483adda9c9ba8965">Visual Studio 2015 (v140) でコンパイルすると、エラー</h2>
-
-<p><img src="/pic/Use-Clang-on-VisualStudio_02.png" alt="" />
-</p>
-
-<p>VS2015 ではまだ、constexpr関数内の変数宣言がエラーになる様です</p>
-
-<h2 id="clang-3-7-with-microsoft-codegen-v140-clang-3-7-でのコンパイル:2cbfe712d76fdfc5483adda9c9ba8965">Clang 3.7 with Microsoft CodeGen (v140_clang_3_7) でのコンパイル</h2>
-
-<p><img src="/pic/Use-Clang-on-VisualStudio_03.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>Clang はOKです<br />
-いい感じに動作しました！</p>
-
-<hr />
-
-<p>VC++も Clang も、VS上でデバック出来るのは良いですね<br />
-噂には聞いていましたが、自分で動作させてみると、感激するもんがあります</p>
-
-<p>今はまだプレビューらしいので、早く安定化して欲しいですね～</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f15%2fuse-clang-on-visualstudio%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5d%20VisualStusio2015%e3%81%a7Clang%e3%82%92%e4%bd%bf%e3%81%86%e8%a8%ad%e5%ae%9a&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f15%2fuse-clang-on-visualstudio%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f15%2fuse-clang-on-visualstudio%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f15%2fuse-clang-on-visualstudio%2f&title=%5bC%2b%2b%5d%20VisualStusio2015%e3%81%a7Clang%e3%82%92%e4%bd%bf%e3%81%86%e8%a8%ad%e5%ae%9a" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -1730,6 +1697,10 @@ int main()
             <div class="list-group">
                 
                     
+                        <a href="/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/" class="list-group-item">[Chrome] Google Chromeのマルチプロファイル設定</a><br>
+                    
+                
+                    
                         <a href="/blog/2017/01/03/hello2017/" class="list-group-item">[Diary] 2017年もよろしくお願いします</a><br>
                     
                 
@@ -1765,10 +1736,6 @@ int main()
                         <a href="/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/" class="list-group-item">[Windows10] シャットダウンができない対策</a><br>
                     
                 
-                    
-                        <a href="/blog/2016/05/15/use-clang-on-visualstudio/" class="list-group-item">[C&#43;&#43;] VisualStusio2015でClangを使う設定</a><br>
-                    
-                
             </div>
 
             <div class="panel-heading">
@@ -1785,6 +1752,16 @@ int main()
                     
                         <span class="badge">2</span>
                         android
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/chrome" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        chrome
                     </a>
                     </u> &nbsp; 
                     

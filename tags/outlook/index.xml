@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Outlook on Effectiveさお</title>
-    <link>http://h-sao.com/tags/outlook/</link>
+    <link>http://h-sao.com/tags/outlook/index.xml</link>
     <description>Recent content in Outlook on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 21 Dec 2016 18:00:00 +0900</lastBuildDate>
+    <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
     <atom:link href="http://h-sao.com/tags/outlook/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -21,7 +21,7 @@
 Webベースでアクセスできる &lt;strong&gt;Outlook on the web&lt;/strong&gt; について&lt;br /&gt;
 データの削除がとてもややこしかったので、ちょっとメモしておきたいと思います&lt;/p&gt;
 
-&lt;h2 id=&#34;かつての-windows-liveカレンダー:58a9045b1ecad794704a80a1c7937ed1&#34;&gt;かつての Windows Liveカレンダー&lt;/h2&gt;
+&lt;h2 id=&#34;かつての-windows-liveカレンダー&#34;&gt;かつての Windows Liveカレンダー&lt;/h2&gt;
 
 &lt;p&gt;昔は、Windows Liveカレンダーという名称で、カレンダーサービスがあったのですが&lt;br /&gt;
 最近になり、Outlook on the web というサービス名に変わった様です&lt;/p&gt;
@@ -37,7 +37,7 @@ Googleにもカレンダーがあり、サイボウズにもあり…カレン�
 &lt;p&gt;以降、「予定表」とあるのは、カレンダーの事を指しています&lt;br /&gt;
 マイクロソフトさんの用語で統一して書きたいと思います&lt;/p&gt;
 
-&lt;h2 id=&#34;問題点が２つ起きた:58a9045b1ecad794704a80a1c7937ed1&#34;&gt;問題点が２つ起きた&lt;/h2&gt;
+&lt;h2 id=&#34;問題点が２つ起きた&#34;&gt;問題点が２つ起きた&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Outlook on the web のメインの予定表が消せない&lt;/li&gt;
@@ -50,7 +50,7 @@ Googleにもカレンダーがあり、サイボウズにもあり…カレン�
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;問題1-不要な予定表を削除したいが-メインは消せない:58a9045b1ecad794704a80a1c7937ed1&#34;&gt;＜問題1＞不要な予定表を削除したいが、メインは消せない&lt;/h2&gt;
+&lt;h2 id=&#34;問題1-不要な予定表を削除したいが-メインは消せない&#34;&gt;＜問題1＞不要な予定表を削除したいが、メインは消せない&lt;/h2&gt;
 
 &lt;p&gt;実際に、オフィシャルサイトには、予定表の削除の方法は書いていないのです…&lt;/p&gt;
 
@@ -73,7 +73,7 @@ Googleにもカレンダーがあり、サイボウズにもあり…カレン�
 
 &lt;p&gt;とにかく情報を整理したいだけなのに…(+o+)&lt;/p&gt;
 
-&lt;h2 id=&#34;問題2-windows10-カレンダーアプリの情報は削除されない:58a9045b1ecad794704a80a1c7937ed1&#34;&gt;＜問題2＞Windows10 カレンダーアプリの情報は削除されない&lt;/h2&gt;
+&lt;h2 id=&#34;問題2-windows10-カレンダーアプリの情報は削除されない&#34;&gt;＜問題2＞Windows10 カレンダーアプリの情報は削除されない&lt;/h2&gt;
 
 &lt;p&gt;メイン以外の予定表は消せるので、Outlook on the web上で操作するんですけど&lt;br /&gt;
 クライアントアプリである、Windows10 付随のカレンダーには、一向に反映されません&lt;/p&gt;
@@ -87,7 +87,7 @@ Googleにもカレンダーがあり、サイボウズにもあり…カレン�
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;解決方法-web上では無理-outlookクライアントを使う:58a9045b1ecad794704a80a1c7937ed1&#34;&gt;＜解決方法＞Web上では無理、Outlookクライアントを使う&lt;/h2&gt;
+&lt;h2 id=&#34;解決方法-web上では無理-outlookクライアントを使う&#34;&gt;＜解決方法＞Web上では無理、Outlookクライアントを使う&lt;/h2&gt;
 
 &lt;p&gt;Outlook on the web だけでは無理なのが良く判ったので&lt;br /&gt;
 &lt;strong&gt;Outlookのクライアントメールソフト&lt;/strong&gt; を使ってみました&lt;/p&gt;
@@ -114,8 +114,7 @@ Outlookアプリの左下に表示されている（と思う）「…」を選�
 
 &lt;li&gt;&lt;p&gt;これで、Windows10のカレンダーアプリの情報も更新され、削除した予定表は消えました…！やったー！&lt;br /&gt;
 ※ただし、即時反映ってん訳じゃなさそうでした、しばらく時間がかかるっぽいです
-&lt;img src=&#34;http://h-sao.com/pic/Delete-Outlook-on-the-web-data_07.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;&lt;/li&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Delete-Outlook-on-the-web-data_07.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;これで ＜問題2＞のほうは解決しました&lt;br /&gt;
@@ -147,7 +146,7 @@ Outlookアプリの左下に表示されている（と思う）「…」を選�
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;後片付け-outlookクライアントからアカウントを削除:58a9045b1ecad794704a80a1c7937ed1&#34;&gt;＜後片付け＞Outlookクライアントからアカウントを削除&lt;/h2&gt;
+&lt;h2 id=&#34;後片付け-outlookクライアントからアカウントを削除&#34;&gt;＜後片付け＞Outlookクライアントからアカウントを削除&lt;/h2&gt;
 
 &lt;p&gt;Outlook on the webの予定表を消すためだけに&lt;br /&gt;
 Outlookクライアントにアカウントを登録したので、これを削除する画面キャプチャもついでに載せておきます&lt;/p&gt;

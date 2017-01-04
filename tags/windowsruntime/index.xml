@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windowsruntime on Effectiveさお</title>
-    <link>http://h-sao.com/tags/windowsruntime/</link>
+    <link>http://h-sao.com/tags/windowsruntime/index.xml</link>
     <description>Recent content in Windowsruntime on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 31 Aug 2014 12:35:04 +0900</lastBuildDate>
+    <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
     <atom:link href="http://h-sao.com/tags/windowsruntime/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -36,8 +36,7 @@
 
 &lt;p&gt;さてさて、福井に行ったわけですが、お蕎麦がとても美味しかったです(~o~)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Hokuriku-net-vol-15-Introducing-Windows-Runtime_00.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Hokuriku-net-vol-15-Introducing-Windows-Runtime_00.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;去年もお邪魔させて頂きましたが、今年もみなさま暖かく迎えて下さって&lt;br /&gt;
 とても楽しかったです(^^)/&lt;/p&gt;

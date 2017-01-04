@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Utility on Effectiveさお</title>
-    <link>http://h-sao.com/tags/utility/</link>
+    <link>http://h-sao.com/tags/utility/index.xml</link>
     <description>Recent content in Utility on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 06 Jan 2016 01:50:00 +0900</lastBuildDate>
+    <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
     <atom:link href="http://h-sao.com/tags/utility/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -35,16 +35,13 @@
 
 &lt;blockquote&gt;
 &lt;p&gt;ISOイメージを選択&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/USB-boot-app-Rufus_00.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;img src=&#34;http://h-sao.com/pic/USB-boot-app-Rufus_00.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;USBの元データ消しちゃうよーの警告&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/USB-boot-app-Rufus_01.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;img src=&#34;http://h-sao.com/pic/USB-boot-app-Rufus_01.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;UBSインストールメディア作成中&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/USB-boot-app-Rufus_02.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;img src=&#34;http://h-sao.com/pic/USB-boot-app-Rufus_02.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;日本語にも対応しているし、お手軽でおススメです&lt;/p&gt;

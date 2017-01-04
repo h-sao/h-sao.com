@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wercker on Effectiveさお</title>
-    <link>http://h-sao.com/tags/wercker/</link>
+    <link>http://h-sao.com/tags/wercker/index.xml</link>
     <description>Recent content in Wercker on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 25 Aug 2015 00:00:00 +0000</lastBuildDate>
+    <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
     <atom:link href="http://h-sao.com/tags/wercker/index.xml" rel="self" type="application/rss+xml" />
     
     <item>

@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clang on Effectiveさお</title>
-    <link>http://h-sao.com/tags/clang/</link>
+    <link>http://h-sao.com/tags/clang/index.xml</link>
     <description>Recent content in Clang on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 15 May 2016 23:30:00 +0900</lastBuildDate>
+    <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
     <atom:link href="http://h-sao.com/tags/clang/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -21,7 +21,7 @@
 
 &lt;p&gt;先人たちが既に色々と試している内容と対して変わりませんが、そもそも日本語の情報も少ないので、何かの足しになればと思います&lt;/p&gt;
 
-&lt;h1 id=&#34;clang-with-microsoft-codegen-is-here:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;&amp;ldquo;Clang with Microsoft CodeGen&amp;rdquo; is here!&lt;/h1&gt;
+&lt;h1 id=&#34;clang-with-microsoft-codegen-is-here&#34;&gt;&amp;ldquo;Clang with Microsoft CodeGen&amp;rdquo; is here!&lt;/h1&gt;
 
 &lt;p&gt;最近はすっかり、クロスプラットフォームやオープンソースに力を入れているマイクロソフト社のツールセットの中に、Clang対応ってのがあります&lt;/p&gt;
 
@@ -74,21 +74,21 @@
 
 &lt;p&gt;また、今回対応している &lt;strong&gt;Clang 側のバージョンは 3.7&lt;/strong&gt; です&lt;/p&gt;
 
-&lt;h1 id=&#34;clang-exe-の場所:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;clang.exe の場所&lt;/h1&gt;
+&lt;h1 id=&#34;clang-exe-の場所&#34;&gt;clang.exe の場所&lt;/h1&gt;
 
-&lt;h3 id=&#34;clang:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;Clang&lt;/h3&gt;
+&lt;h3 id=&#34;clang&#34;&gt;Clang&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Clang 3.7\bin\x86\clang.exe
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;ちなみにvc:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;ちなみにVC++&lt;/h3&gt;
+&lt;h3 id=&#34;ちなみにvc&#34;&gt;ちなみにVC++&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;どちらでも、コマンドプロンプトでコンパイル可能です&lt;/p&gt;
 
-&lt;h1 id=&#34;vsでのコンパイラの切り替え設定:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;VSでのコンパイラの切り替え設定&lt;/h1&gt;
+&lt;h1 id=&#34;vsでのコンパイラの切り替え設定&#34;&gt;VSでのコンパイラの切り替え設定&lt;/h1&gt;
 
 &lt;p&gt;Visual Stidon 2015 上で &amp;ldquo;Alt + F7&amp;rdquo; を押すか&lt;/p&gt;
 
@@ -108,7 +108,7 @@
 
 &lt;p&gt;結構簡単＼(^o^)／&lt;/p&gt;
 
-&lt;h1 id=&#34;ソリューション作成は何でもok:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;ソリューション作成は何でもOK&lt;/h1&gt;
+&lt;h1 id=&#34;ソリューション作成は何でもok&#34;&gt;ソリューション作成は何でもOK&lt;/h1&gt;
 
 &lt;p&gt;上記の様に、コンパイラが簡単に切り替えられるので、空のプロジェクトでも、Win32コンソールアプリケーションでもOKです&lt;/p&gt;
 
@@ -118,7 +118,7 @@
 
 &lt;p&gt;exe を作りたいだけなら、Win32コンソールアプリケーションで良いと思います&lt;/p&gt;
 
-&lt;h1 id=&#34;余談-文字コードはutf8の方が良い-様な気がする:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;[余談]文字コードはUTF8の方が良い(様な気がする)&lt;/h1&gt;
+&lt;h1 id=&#34;余談-文字コードはutf8の方が良い-様な気がする&#34;&gt;[余談]文字コードはUTF8の方が良い(様な気がする)&lt;/h1&gt;
 
 &lt;p&gt;最初に書いておくと、Sift-JIS でも Clang/C2 でコンパイルは通ります&lt;/p&gt;
 
@@ -136,7 +136,7 @@
 &lt;p&gt;UTF-16はだめらしいです&lt;br /&gt;
 Sift-JIS は無関係かもしれませんが、一応…&lt;/p&gt;
 
-&lt;h1 id=&#34;サンプルコード:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;サンプルコード&lt;/h1&gt;
+&lt;h1 id=&#34;サンプルコード&#34;&gt;サンプルコード&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://cpprefjp.github.io/&#34;&gt;cpprefjp&lt;/a&gt; を参照して、サンプルコードを書いてみました&lt;/p&gt;
 
@@ -152,26 +152,25 @@ Sift-JIS は無関係かもしれませんが、一応…&lt;/p&gt;
 
 constexpr int f()
 {
-	int result = 0;
-	return result;
+    int result = 0;
+    return result;
 }
 
 int main()
 {
-	std::cout &amp;lt;&amp;lt; &amp;quot;Hello: &amp;quot; &amp;lt;&amp;lt; f() &amp;lt;&amp;lt; std::endl;
+    std::cout &amp;lt;&amp;lt; &amp;quot;Hello: &amp;quot; &amp;lt;&amp;lt; f() &amp;lt;&amp;lt; std::endl;
 
-	return 0;
+    return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;visual-studio-2015-v140-でコンパイルすると-エラー:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;Visual Studio 2015 (v140) でコンパイルすると、エラー&lt;/h2&gt;
+&lt;h2 id=&#34;visual-studio-2015-v140-でコンパイルすると-エラー&#34;&gt;Visual Studio 2015 (v140) でコンパイルすると、エラー&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Use-Clang-on-VisualStudio_02.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Use-Clang-on-VisualStudio_02.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;VS2015 ではまだ、constexpr関数内の変数宣言がエラーになる様です&lt;/p&gt;
 
-&lt;h2 id=&#34;clang-3-7-with-microsoft-codegen-v140-clang-3-7-でのコンパイル:2cbfe712d76fdfc5483adda9c9ba8965&#34;&gt;Clang 3.7 with Microsoft CodeGen (v140_clang_3_7) でのコンパイル&lt;/h2&gt;
+&lt;h2 id=&#34;clang-3-7-with-microsoft-codegen-v140-clang-3-7-でのコンパイル&#34;&gt;Clang 3.7 with Microsoft CodeGen (v140_clang_3_7) でのコンパイル&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Use-Clang-on-VisualStudio_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
 

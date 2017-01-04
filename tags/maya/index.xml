@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Maya on Effectiveさお</title>
-    <link>http://h-sao.com/tags/maya/</link>
+    <link>http://h-sao.com/tags/maya/index.xml</link>
     <description>Recent content in Maya on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 15 Nov 2016 19:00:00 +0900</lastBuildDate>
+    <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
     <atom:link href="http://h-sao.com/tags/maya/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -22,7 +22,7 @@
 
 &lt;p&gt;記載環境は、Maya2015 on Windows10 です&lt;/p&gt;
 
-&lt;h2 id=&#34;レンダリングエンジンの変更:355fcbaa8dfe550d1200f82d421d5c35&#34;&gt;レンダリングエンジンの変更&lt;/h2&gt;
+&lt;h2 id=&#34;レンダリングエンジンの変更&#34;&gt;レンダリングエンジンの変更&lt;/h2&gt;
 
 &lt;p&gt;Mayaのデフォルトレンダリングは &lt;strong&gt;OpenGL&lt;/strong&gt; になっています&lt;br /&gt;
 &lt;strong&gt;DirectX11&lt;/strong&gt; に変更する方法&lt;/p&gt;
@@ -39,7 +39,7 @@ Rendering engine を変更できるドロップダウンリストがあるので
 &lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&#34;レンダー設定:355fcbaa8dfe550d1200f82d421d5c35&#34;&gt;レンダー設定&lt;/h2&gt;
+&lt;h2 id=&#34;レンダー設定&#34;&gt;レンダー設定&lt;/h2&gt;
 
 &lt;p&gt;上記はレンダリングエンジンについてでしたが、レンダリングの設定を触るところはまた別の箇所になっています&lt;/p&gt;
 
@@ -55,11 +55,10 @@ Rendering engine を変更できるドロップダウンリストがあるので
 
 &lt;li&gt;&lt;p&gt;使うレンダリングの設定を、ここで選ぶことが出来ます&lt;br /&gt;
 わたしの場合は Maya Hardware 2.0 を選択したりしてます&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_06.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;&lt;/li&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_06.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&#34;ハードウェアレンダラ2-0設定:355fcbaa8dfe550d1200f82d421d5c35&#34;&gt;ハードウェアレンダラ2.0設定&lt;/h2&gt;
+&lt;h2 id=&#34;ハードウェアレンダラ2-0設定&#34;&gt;ハードウェアレンダラ2.0設定&lt;/h2&gt;
 
 &lt;p&gt;浮動小数レンダーターゲットを有効化したいとき&lt;/p&gt;
 
@@ -69,8 +68,7 @@ Rendering engine を変更できるドロップダウンリストがあるので
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Mayaの作業画面（ビューポート）の &lt;strong&gt;Renderer&lt;/strong&gt; の &lt;strong&gt;Viewport2.0&lt;/strong&gt; の横にある、四角いチェックを押してみます&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_02.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;&lt;/li&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_02.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Hardware Renderer 2.0 Settings&lt;/strong&gt; のウィンドウが表示されます&lt;br /&gt;
 &lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
@@ -80,24 +78,22 @@ Rendering engine を変更できるドロップダウンリストがあるので
 フォーマットは、16bit と 32bit が選択できました&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&#34;カメラの設定:355fcbaa8dfe550d1200f82d421d5c35&#34;&gt;カメラの設定&lt;/h2&gt;
+&lt;h2 id=&#34;カメラの設定&#34;&gt;カメラの設定&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;カメラアトリビュートを出すには&lt;br /&gt;
 Mayaの作業画面（ビューポート）の &lt;strong&gt;View&lt;/strong&gt; の &lt;strong&gt;Select Camera&lt;/strong&gt; を選択します&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_07.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;&lt;/li&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_07.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Attribute Editor&lt;/strong&gt; がぽこっと現れます&lt;br /&gt;
 違うものが現れたときには、&lt;br /&gt;
 横のタブに &lt;strong&gt;persp&lt;/strong&gt;, &lt;strong&gt;perspShape&lt;/strong&gt;&lt;br /&gt;
 縦のタブに &lt;strong&gt;Channel Box/Layer Editor&lt;/strong&gt;, &lt;strong&gt;Attribute Editor&lt;/strong&gt; があるので&lt;br /&gt;
 開きたいものを選択します&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_08.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;&lt;/li&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_08.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&#34;インストールされているプラグイン:355fcbaa8dfe550d1200f82d421d5c35&#34;&gt;インストールされているプラグイン&lt;/h2&gt;
+&lt;h2 id=&#34;インストールされているプラグイン&#34;&gt;インストールされているプラグイン&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;プラグインマネージャを開きます&lt;br /&gt;

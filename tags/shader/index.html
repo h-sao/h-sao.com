@@ -7,7 +7,7 @@
         <meta name="author">
         <meta name="description" content="The awesome blog of Sao Haruka.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.14" />
+        <meta name="generator" content="Hugo 0.18.1" />
           <link href="http://h-sao.com/post/index.xml" rel="alternate" type="application/rss+xml" title="Effectiveさお" />
           <link href="http://h-sao.com/post/index.xml" rel="feed" type="application/rss+xml" title="Effectiveさお" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -88,12 +88,12 @@
 
 <p>2016年1月11日現在、Unityのバージョンは 5.3.1 です</p>
 
-<h1 id="unity-のシェーダー言語-shaderlab:9da674eae95fd048ddb2e278fe6c87b1">Unity のシェーダー言語：ShaderLab</h1>
+<h1 id="unity-のシェーダー言語-shaderlab">Unity のシェーダー言語：ShaderLab</h1>
 
 <p>Unity のシェーダーは 「ShaderLab」 という Unity オリジナルのシェーダー言語で記載することになります<br />
 といっても HLSL のラッパーのような言語なので、Unity で使うときのお作法であり、Unity と シェーダーの仲介役の言語、と思って良いみたい</p>
 
-<h2 id="最小限の-shaderlab:9da674eae95fd048ddb2e278fe6c87b1">最小限の ShaderLab</h2>
+<h2 id="最小限の-shaderlab">最小限の ShaderLab</h2>
 
 <p>最小限の ShaderLab の枠組みはこんな感じ<br />
 （これより削ると、エラーが出た）</p>
@@ -110,12 +110,11 @@ Shader &quot;Custom/BG_shader&quot; {
 
 <p>実際に、このカスタムシェーダーをマテリアルに適用するとこんな感じ</p>
 
-<p><img src="/pic/Unity-Shader-2DSprite_00.png" alt="" />
-</p>
+<p><img src="/pic/Unity-Shader-2DSprite_00.png" alt="" /></p>
 
 <p>何もしないマテリアルを作ることが出来ました</p>
 
-<h2 id="シンプルなグラデーション:9da674eae95fd048ddb2e278fe6c87b1">シンプルなグラデーション</h2>
+<h2 id="シンプルなグラデーション">シンプルなグラデーション</h2>
 
 <p>今回、ゲーム背景を単純なカラーグラデーションにしようと思ったので、そういうシンプルシェーダーを書いていきます</p>
 
@@ -168,20 +167,18 @@ Shader &quot;Custom/BG_shader&quot; {
 
 <p>ちょっとマテリアルではわかりにくいですけど、一応、線形にグラデーションされています</p>
 
-<p><img src="/pic/Unity-Shader-2DSprite_01.png" alt="" />
-</p>
+<p><img src="/pic/Unity-Shader-2DSprite_01.png" alt="" /></p>
 
-<h1 id="2d-sprite-に適用する方法:9da674eae95fd048ddb2e278fe6c87b1">2D Sprite に適用する方法</h1>
+<h1 id="2d-sprite-に適用する方法">2D Sprite に適用する方法</h1>
 
 <p>シンプルなシェーダーとマテリアルが出来たので、実際に、Sprite に登録します</p>
 
-<h2 id="sprite-と-material-だけでは足りない:9da674eae95fd048ddb2e278fe6c87b1">Sprite と Material だけでは足りない</h2>
+<h2 id="sprite-と-material-だけでは足りない">Sprite と Material だけでは足りない</h2>
 
 <p>ただし、ちょっとここでクセがあって、このマテリアルを Sprite にアタッチしても、何も起こりません<br />
 それどころか、ワーニングメッセージが…</p>
 
-<p><img src="/pic/Unity-Shader-2DSprite_02.png" alt="" />
-</p>
+<p><img src="/pic/Unity-Shader-2DSprite_02.png" alt="" /></p>
 
 <blockquote>
 <p>Material does not have a _MainTex texture property. It is required for SpriteRenderer.</p>
@@ -212,17 +209,15 @@ Sprite Renderer に登録するマテリアルには、テクスチャが必要�
 * ShaderLab: Properties - Unity Documentation<br />
  <a href="http://docs.unity3d.com/Manual/SL-Properties.html">http://docs.unity3d.com/Manual/SL-Properties.html</a></p>
 
-<p><img src="/pic/Unity-Shader-2DSprite_03.png" alt="" />
-</p>
+<p><img src="/pic/Unity-Shader-2DSprite_03.png" alt="" /></p>
 
 <p>マテリアルにテクスチャを持つ設定にしました</p>
 
-<h2 id="sprite-には-ベースとしてリアルな-texture-が必要:9da674eae95fd048ddb2e278fe6c87b1">Sprite には、ベースとしてリアルな Texture が必要</h2>
+<h2 id="sprite-には-ベースとしてリアルな-texture-が必要">Sprite には、ベースとしてリアルな Texture が必要</h2>
 
 <p>Sprite のワーニングも消えたのですが、やはりシーンに Sprite object が表示されません</p>
 
-<p><img src="/pic/Unity-Shader-2DSprite_04.png" alt="" />
-</p>
+<p><img src="/pic/Unity-Shader-2DSprite_04.png" alt="" /></p>
 
 <p>どうやら、Sprite はあくまで、テクスチャ画像を表示させるための機能に特化しており、マテリアルだけでは動作しない様です</p>
 
@@ -233,16 +228,14 @@ Sprite Renderer に登録するマテリアルには、テクスチャが必要�
 
 <blockquote>
 <p>あぁ…これ、デフォルトで白いテクスチャくらい、システムで用意してほしいなかと思いましたが、まぁしょーがないです<br />
-<img src="/pic/Unity-Shader-2DSprite_05.png" alt="" />
-</p>
+<img src="/pic/Unity-Shader-2DSprite_05.png" alt="" /></p>
 </blockquote>
 
 <p>でたー</p>
 
-<p><img src="/pic/Unity-Shader-2DSprite_06.png" alt="" />
-</p>
+<p><img src="/pic/Unity-Shader-2DSprite_06.png" alt="" /></p>
 
-<h1 id="まとめ:9da674eae95fd048ddb2e278fe6c87b1">まとめ</h1>
+<h1 id="まとめ">まとめ</h1>
 
 <p>シンプルな 3D model では</p>
 
@@ -363,6 +356,10 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
             <div class="list-group">
                 
                     
+                        <a href="/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/" class="list-group-item">[Chrome] Google Chromeのマルチプロファイル設定</a><br>
+                    
+                
+                    
                         <a href="/blog/2017/01/03/hello2017/" class="list-group-item">[Diary] 2017年もよろしくお願いします</a><br>
                     
                 
@@ -398,10 +395,6 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
                         <a href="/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/" class="list-group-item">[Windows10] シャットダウンができない対策</a><br>
                     
                 
-                    
-                        <a href="/blog/2016/05/15/use-clang-on-visualstudio/" class="list-group-item">[C&#43;&#43;] VisualStusio2015でClangを使う設定</a><br>
-                    
-                
             </div>
 
             <div class="panel-heading">
@@ -418,6 +411,16 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
                     
                         <span class="badge">2</span>
                         android
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/chrome" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        chrome
                     </a>
                     </u> &nbsp; 
                     

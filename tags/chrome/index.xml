@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chrome on Effectiveさお</title>
+    <link>http://h-sao.com/tags/chrome/index.xml</link>
+    <description>Recent content in Chrome on Effectiveさお</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
+    <atom:link href="http://h-sao.com/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Chrome] Google Chromeのマルチプロファイル設定</title>
+      <link>http://h-sao.com/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/</link>
+      <pubDate>Wed, 04 Jan 2017 23:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Google Chrome&lt;/strong&gt; を使って、Webサイトを開発をしている人向けの情報です&lt;/p&gt;
+
+&lt;p&gt;自分のChromeのユーザプロファイラを使わずに、開発は別のプロファイラを使いたいってこと、ありますよね…？&lt;/p&gt;
+
+&lt;h2 id=&#34;プランa-ユーザプロファイラを切り替える&#34;&gt;[プランA] ユーザプロファイラを切り替える&lt;/h2&gt;
+
+&lt;p&gt;Google Chrome のユーザデータを、開発用と自分個人用とに分けたい&lt;br /&gt;
+開発用のモバイルモードで見てるときに、普通にPCブラウジングがしたい&lt;/p&gt;
+
+&lt;p&gt;とかいうときのために（か、どうか分かりませんが…）&lt;/p&gt;
+
+&lt;p&gt;Google chrome は複数ユーザに対応しています&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;chrome://settings/ にアクセス&lt;br /&gt;
+もしくは、メニューの「設定」を押す&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;「ユーザ」の設定項目があるので、追加します&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/How-to-use-multiple-browser-profiles-in-chrome_02.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;アイコンと名前を選択して「追加」します&lt;br /&gt;
+（わたしの場合は適当に Development と付けました）&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/How-to-use-multiple-browser-profiles-in-chrome_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ユーザ名が右上に表示されるようになり、新しい「Development」ユーザでブラウザが立ち上がります&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/How-to-use-multiple-browser-profiles-in-chrome_04.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Extension や閲覧履歴は、完全に今まで使っていたものとは別になっているので&lt;br /&gt;
+新規プロファイルが使い放題です(*ﾉωﾉ)&lt;/p&gt;
+
+&lt;p&gt;これまで使っていたユーザは「ユーザ－１」&lt;br /&gt;
+開発用のユーザは「Development」&lt;br /&gt;
+で、使い分けることが可能になりました&lt;/p&gt;
+
+&lt;h2 id=&#34;おまけ-起動時に-development-ユーザを指定して起動する方法&#34;&gt;[おまけ] 起動時に Development ユーザを指定して起動する方法&lt;/h2&gt;
+
+&lt;p&gt;ちなみに、デフォルト起動はもちろん、これまで使っていた「ユーザー１」で立ち上がります&lt;/p&gt;
+
+&lt;p&gt;ショートカットなどで、さっき作ったDevelopmentユーザがいきなり立ち上がって欲しいときは&lt;br /&gt;
+以下のように「&lt;strong&gt;profile-directory&lt;/strong&gt;」起動オプションを設定してあげると&lt;br /&gt;
+任意のユーザプロファイルで立ち上がります&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;C:\Program Files (x86)\Google\Chrome\Application\chrome.exe&amp;quot; --profile-directory=&amp;quot;Profile 2&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;※Chromeのショートカット設定にしておくと便利です&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/How-to-use-multiple-browser-profiles-in-chrome_05.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;わたしの環境では、&amp;rdquo;Peofile 2&amp;rdquo;という名前でしたが、これは作った環境によって異なっているはずです&lt;/p&gt;
+
+&lt;p&gt;Chromeユーザプロファイルのデフォルトの位置はこちら↓↓↓&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&amp;ldquo;C:\Users[Winユーザ名]\AppData\Local\Google\Chrome\User Data\Profile x&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ちなみに、これまで使っていた自分の環境である「ユーザー１」は「&lt;strong&gt;Default&lt;/strong&gt;」というディレクトリ名です&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;C:\Users[Winユーザ名]\AppData\Local\Google\Chrome\User Data\Default&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;さて、プランAのプロファイル切り替えでも、まぁ用途は足りるんですけど&lt;br /&gt;
+1点だけ、気に入らないところがありました…&lt;/p&gt;
+
+&lt;p&gt;確かに、完全にプロファイルは別になるのですが&lt;br /&gt;
+&lt;strong&gt;起動時の画面サイズは、プロファイル間で共有されてしまう&lt;/strong&gt;のです&lt;/p&gt;
+
+&lt;p&gt;これを解消したい…！&lt;br /&gt;
+それが次に示すプランBのパターンです&lt;/p&gt;
+
+&lt;h2 id=&#34;プランb-稼働環境を別物にする&#34;&gt;[プランB] 稼働環境を別物にする&lt;/h2&gt;
+
+&lt;p&gt;つまりプランAのままだと、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;自分でブラウジングしてる「ユーザー１」の画面サイズと&lt;br /&gt;
+「Development」ユーザの画面サイズを、&lt;br /&gt;
+個別に保存することは出来ない&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;のです…&lt;br /&gt;
+あぁ残念 xxx&lt;/p&gt;
+
+&lt;p&gt;でも大丈夫(*ﾉωﾉ)&lt;/p&gt;
+
+&lt;p&gt;方法がありました&lt;/p&gt;
+
+&lt;p&gt;プロファイルの保存場所そのものを、別のディレクトリにすればOKでした&lt;/p&gt;
+
+&lt;p&gt;指定するオプションは「&lt;strong&gt;user-data-dir&lt;/strong&gt;」です&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;C:\Program Files (x86)\Google\Chrome\Application\chrome.exe&amp;quot; --user-data-dir=&amp;quot;C:\utils\chrome_dev_profile&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;※同じく、Chromeのショートカット設定の図、先ほどのプランAの profile-directory オプションは不要&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/How-to-use-multiple-browser-profiles-in-chrome_06.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;このオプションで指定するディレクトリは、どこでもいいみたいですが&lt;br /&gt;
+出来ればデフォルトで利用している&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;C:\Users[Winユーザ名]\AppData\Local\Google\Chrome\User Data&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;の配下は、避けた方がいいかもしれません&lt;br /&gt;
+（わたしの環境では、スタートページがちょっと変になりました。深追いして調べてないです…）&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;プランA/Bのどちらでも、マルチプロファイラでブラウジングできるのですが&lt;br /&gt;
+より独立した設定をしたい！という人には、プランBが私的にはお勧めです&lt;/p&gt;
+
+&lt;p&gt;Chrome は起動オプションがいっぱいあって、他にも&lt;br /&gt;
+Userエージェントを指定出来たり（&lt;strong&gt;user-agent&lt;/strong&gt;）、&lt;br /&gt;
+ブラウザの言語を指定したり（&lt;strong&gt;lang=en-US&lt;/strong&gt;で英語になる）と&lt;br /&gt;
+いろんな機能が用意されてるので&lt;br /&gt;
+開発用途としてはなかなかいい感じだなと、今更ながら思いました(*´∇`)ﾉ&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;＜参考＞&lt;/p&gt;
+
+&lt;p&gt;ちなみに、Google Chrome の起動オプションは&lt;br /&gt;
+公式ではちょっと探しにくかったんですけど（わたしの探し方が悪いかも…）&lt;br /&gt;
+こちらの人のサイトが、簡潔で一覧性が高く、参考になりました(^▽^)/&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;List of Chromium Command Line Switches - Peter Beverloo（英語）&lt;br /&gt;
+&lt;a href=&#34;http://peter.sh/experiments/chromium-command-line-switches/&#34;&gt;http://peter.sh/experiments/chromium-command-line-switches/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;以下、日本語の参考サイト&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;完全Google Chrome マルチユーザマニュアル　永久保存版 - This is Shinobu&amp;rsquo;s Memorandum&lt;br /&gt;
+&lt;a href=&#34;http://saske18jp.blogspot.jp/2012/05/google-chrome.html&#34;&gt;http://saske18jp.blogspot.jp/2012/05/google-chrome.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Google Chrome を別設定で複数起動させる方法 - digitalbox&lt;br /&gt;
+&lt;a href=&#34;http://digitalbox.jp/google-chrome-multiple-invoking/&#34;&gt;http://digitalbox.jp/google-chrome-multiple-invoking/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

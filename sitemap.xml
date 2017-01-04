@@ -2,9 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://h-sao.com/</loc>
-    <lastmod>2017-01-03T16:00:00+09:00</lastmod>
-    <priority>0</priority>
+    <loc>http://h-sao.com/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/</loc>
+    <lastmod>2017-01-04T23:00:00+09:00</lastmod>
   </url>
   
   <url>
@@ -220,6 +219,215 @@
   <url>
     <loc>http://h-sao.com/blog/2008/07/29/how-to-divide-without-division/</loc>
     <lastmod>2008-07-29T01:17:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/</loc>
+    <lastmod>2015-12-13T12:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/android/</loc>
+    <lastmod>2015-10-06T04:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/chrome/</loc>
+    <lastmod>2017-01-04T23:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/clang/</loc>
+    <lastmod>2016-05-15T23:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/community/</loc>
+    <lastmod>2016-03-27T20:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/cpp/</loc>
+    <lastmod>2016-05-15T23:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/cppcx/</loc>
+    <lastmod>2014-03-23T00:25:28+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/dialy/</loc>
+    <lastmod>2016-07-19T23:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/diary/</loc>
+    <lastmod>2017-01-03T16:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/ebisucpp/</loc>
+    <lastmod>2016-03-27T20:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/</loc>
+    <lastmod>2017-01-04T23:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/english/</loc>
+    <lastmod>2016-07-19T23:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/git/</loc>
+    <lastmod>2016-05-09T23:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/gitextensions/</loc>
+    <lastmod>2016-05-07T15:23:30+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/github/</loc>
+    <lastmod>2016-07-20T20:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/hugo/</loc>
+    <lastmod>2015-12-13T23:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/mac/</loc>
+    <lastmod>2016-01-12T02:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/maya/</loc>
+    <lastmod>2016-11-15T19:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/opensource/</loc>
+    <lastmod>2015-11-21T16:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/oracle/</loc>
+    <lastmod>2014-04-19T21:46:45+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/outlook/</loc>
+    <lastmod>2016-12-21T18:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/pmp/</loc>
+    <lastmod>2015-04-13T22:30:04+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/post/</loc>
+    <lastmod>2017-01-04T23:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/powershell/</loc>
+    <lastmod>2014-07-02T17:46:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/shader/</loc>
+    <lastmod>2016-01-11T18:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/sql/</loc>
+    <lastmod>2014-04-10T18:00:15+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/ssh/</loc>
+    <lastmod>2016-05-09T23:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/ue4/</loc>
+    <lastmod>2016-11-16T20:45:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/unity/</loc>
+    <lastmod>2016-08-09T18:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/utility/</loc>
+    <lastmod>2016-01-06T01:50:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/wercker/</loc>
+    <lastmod>2015-08-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/windows10/</loc>
+    <lastmod>2016-07-26T21:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/windowsruntime/</loc>
+    <lastmod>2014-08-31T12:35:04+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/xiaomi/</loc>
+    <lastmod>2015-10-06T04:00:00+09:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

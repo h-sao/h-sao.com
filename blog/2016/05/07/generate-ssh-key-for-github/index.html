@@ -7,7 +7,7 @@
         <meta name="author">
         <meta name="description" content="The awesome blog of Sao Haruka.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.14" />
+        <meta name="generator" content="Hugo 0.18.1" />
           <link href="http://h-sao.com/post/index.xml" rel="alternate" type="application/rss+xml" title="Effectiveさお" />
           <link href="http://h-sao.com/post/index.xml" rel="feed" type="application/rss+xml" title="Effectiveさお" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -71,7 +71,7 @@
 
 <p>しょっちゅう作っては、作り方を忘れ、また検索で調べる…ということをしているので、sshキーの生成&amp;接続について、忘れないようにメモしておきます</p>
 
-<h1 id="gitサーバへsshキーを使って接続したい:f13cf594333c590d11f34a491d786d48">GitサーバへSSHキーを使って接続したい</h1>
+<h1 id="gitサーバへsshキーを使って接続したい">GitサーバへSSHキーを使って接続したい</h1>
 
 <p>Gitサーバに接続するには、</p>
 
@@ -103,7 +103,7 @@ Sourcetreeなどを使っていると、あまり認識してない人もいる�
 <p>あと、番外編として、 非推奨ですが https アクセスでIDとパスワードを毎回聞かれないようにする方法も最後にメモしておきます</p>
 </blockquote>
 
-<h1 id="キーの生成方法-ssh-keygen:f13cf594333c590d11f34a491d786d48">キーの生成方法 ssh-keygen</h1>
+<h1 id="キーの生成方法-ssh-keygen">キーの生成方法 ssh-keygen</h1>
 
 <p>ここは普通に<br />
 公開鍵と秘密鍵を作ればいいだけなので、知ってる人に取ったら何をいまさら…になりますが、一応メモ</p>
@@ -122,7 +122,7 @@ Sourcetreeなどを使っていると、あまり認識してない人もいる�
 
 <p>基本的には、何か聞かれてもエンターで進めばOKです</p>
 
-<p>デフォルトでは <strong>c:\Users\[ユーザ名]\.ssh\</strong> 以下に<strong>秘密鍵（id_rsa）</strong>と<strong>公開鍵（id_rsa.pub）</strong>のキーペアが作成されます</p>
+<p>デフォルトでは <strong>c:\Users\[ユーザ名]\.ssh\** 以下に</strong>秘密鍵（id_rsa）<strong>と</strong>公開鍵（id_rsa.pub）**のキーペアが作成されます</p>
 
 <p>Windowsだとキーの保存位置は c:\Users\[ユーザ名]\.ssh\ にしないといけません</p>
 
@@ -162,7 +162,7 @@ $
 
 <p>キーペアができたできた</p>
 
-<h1 id="sshキーをgithubに登録:f13cf594333c590d11f34a491d786d48">SSHキーをGitHubに登録</h1>
+<h1 id="sshキーをgithubに登録">SSHキーをGitHubに登録</h1>
 
 <p>c:\Users\[ユーザ名]\.ssh\ に保存された id_rsa.pub （わたしの場合はgithub_rsa.pub）を GitHubに登録します</p>
 
@@ -185,7 +185,7 @@ $
 
 <p><img src="/pic/Generate-ssh-key-for-GitHub_04.png" style="border:solid 5px #e6e6e6"/></p>
 
-<h1 id="openssh-モード:f13cf594333c590d11f34a491d786d48">OpenSSH モード</h1>
+<h1 id="openssh-モード">OpenSSH モード</h1>
 
 <p>GitExtensions で ssh 接続したい場合、<br />
 私的にはお勧めなのは、OpenSSHモードにすることです</p>
@@ -196,7 +196,7 @@ $
 
 <p>これで下準備はOK！</p>
 
-<h1 id="pcから-ssh-で接続テスト:f13cf594333c590d11f34a491d786d48">PCから ssh で接続テスト</h1>
+<h1 id="pcから-ssh-で接続テスト">PCから ssh で接続テスト</h1>
 
 <p>Git bash で接続テストしてみましょう</p>
 
@@ -207,7 +207,7 @@ $
 
 <p>確認パターンは２パターンあります</p>
 
-<h2 id="パターン1-id-rsa-で登録している-ssh-キーを利用する場合:f13cf594333c590d11f34a491d786d48">(パターン1) id_rsa で登録している ssh キーを利用する場合</h2>
+<h2 id="パターン1-id-rsa-で登録している-ssh-キーを利用する場合">(パターン1) id_rsa で登録している ssh キーを利用する場合</h2>
 
 <p>このコマンドで確認します</p>
 
@@ -240,7 +240,7 @@ Warning: Permanently added 'github.com,192.30.252.122' (RSA) to the list of know
 
 <p><img src="/pic/Generate-ssh-key-for-GitHub_09.png" style="border:solid 5px #e6e6e6"/></p>
 
-<h2 id="パターン2-独自の名前で作った-ssh-キーを利用する場合:f13cf594333c590d11f34a491d786d48">(パターン2) 独自の名前で作った ssh キーを利用する場合</h2>
+<h2 id="パターン2-独自の名前で作った-ssh-キーを利用する場合">(パターン2) 独自の名前で作った ssh キーを利用する場合</h2>
 
 <p>わたしの場合は、先ほど github_rsa という名前でキーを生成したので、こちらのパターンになりました</p>
 
@@ -319,7 +319,7 @@ config に設定した名前で　Host の名称アクセスすることが出�
 
 <p>これで、クライアントPCから GitHub に IDとパスワードを利用せずに接続することが出来ました！</p>
 
-<h1 id="まだgitextensions-から-ssh-アクセスは出来ない:f13cf594333c590d11f34a491d786d48">まだGitExtensions から ssh アクセスは出来ない</h1>
+<h1 id="まだgitextensions-から-ssh-アクセスは出来ない">まだGitExtensions から ssh アクセスは出来ない</h1>
 
 <p>さて、この状態で、GitExtensions のプッシュボタンを押して Pushしようとしても、IDとパスワードを聞かれます</p>
 
@@ -336,7 +336,7 @@ config に設定した名前で　Host の名称アクセスすることが出�
 
 <p>を認識させてあげないといけません</p>
 
-<h1 id="git-リポジトリに-ssh-接続設定を教える:f13cf594333c590d11f34a491d786d48">Git リポジトリに ssh 接続設定を教える</h1>
+<h1 id="git-リポジトリに-ssh-接続設定を教える">Git リポジトリに ssh 接続設定を教える</h1>
 
 <p>Git リポジトリの設定を Git bash のコマンドで見ることが出来ます</p>
 
@@ -427,7 +427,7 @@ branch.master.merge=<span class="hljs-string">refs/heads/master</span>
 <a href="http://qiita.com/shizuma/items/2b2f873a0034839e47ce">http://qiita.com/shizuma/items/2b2f873a0034839e47ce</a></li>
 </ul>
 
-<h1 id="番外編-httpsアクセスでidとパスワードを聞かれないようにする:f13cf594333c590d11f34a491d786d48">(番外編) httpsアクセスでIDとパスワードを聞かれないようにする</h1>
+<h1 id="番外編-httpsアクセスでidとパスワードを聞かれないようにする">(番外編) httpsアクセスでIDとパスワードを聞かれないようにする</h1>
 
 <p>ええ、今回、本当に色々と試しましたとも…</p>
 
@@ -464,7 +464,7 @@ remote.origin.url=<span class="hljs-keyword">https://github.com/h-sao/xxx.git</s
 <a href="http://www.karakaram.com/git-install">http://www.karakaram.com/git-install</a></li>
 </ul>
 
-<h2 id="追記記事書きました-2016-5-9:f13cf594333c590d11f34a491d786d48">追記記事書きました(2016/5/9)</h2>
+<h2 id="追記記事書きました-2016-5-9">追記記事書きました(2016/5/9)</h2>
 
 <ul>
 <li>[SSH] 複数キー接続のconfig記載について<br />
@@ -553,6 +553,10 @@ remote.origin.url=<span class="hljs-keyword">https://github.com/h-sao/xxx.git</s
             <div class="list-group">
                 
                     
+                        <a href="/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/" class="list-group-item">[Chrome] Google Chromeのマルチプロファイル設定</a><br>
+                    
+                
+                    
                         <a href="/blog/2017/01/03/hello2017/" class="list-group-item">[Diary] 2017年もよろしくお願いします</a><br>
                     
                 
@@ -588,10 +592,6 @@ remote.origin.url=<span class="hljs-keyword">https://github.com/h-sao/xxx.git</s
                         <a href="/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/" class="list-group-item">[Windows10] シャットダウンができない対策</a><br>
                     
                 
-                    
-                        <a href="/blog/2016/05/15/use-clang-on-visualstudio/" class="list-group-item">[C&#43;&#43;] VisualStusio2015でClangを使う設定</a><br>
-                    
-                
             </div>
 
             <div class="panel-heading">
@@ -608,6 +608,16 @@ remote.origin.url=<span class="hljs-keyword">https://github.com/h-sao/xxx.git</s
                     
                         <span class="badge">2</span>
                         android
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/chrome" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        chrome
                     </a>
                     </u> &nbsp; 
                     

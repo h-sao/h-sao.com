@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cppcx on Effectiveさお</title>
-    <link>http://h-sao.com/tags/cppcx/</link>
+    <link>http://h-sao.com/tags/cppcx/index.xml</link>
     <description>Recent content in Cppcx on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 23 Mar 2014 00:25:28 +0900</lastBuildDate>
+    <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
     <atom:link href="http://h-sao.com/tags/cppcx/index.xml" rel="self" type="application/rss+xml" />
     
     <item>

@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Effectiveさお</title>
-    <link>http://h-sao.com/tags/</link>
+    <link>http://h-sao.com/tags/index.xml</link>
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 13 Dec 2015 12:00:00 +0900</lastBuildDate>
+    <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
     <atom:link href="http://h-sao.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -27,43 +27,40 @@ Microsoft MVP for Windows Platform Development [Jan,2015-Dec,2015]&lt;br /&gt;
 Microsoft MVP for Client Development [Jan,2014-Dec,2014]&lt;br /&gt;
 Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]&lt;/p&gt;
 
-&lt;h1 id=&#34;portrait:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Portrait&lt;/h1&gt;
+&lt;h1 id=&#34;portrait&#34;&gt;Portrait&lt;/h1&gt;
 
-&lt;h2 id=&#34;ebisu-effective-modern-cpp-vol-3-mar-31-2016:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;ebisu_effective_modern.cpp vol.3 - Mar 31, 2016&lt;/h2&gt;
+&lt;h2 id=&#34;ebisu-effective-modern-cpp-vol-3-mar-31-2016&#34;&gt;ebisu_effective_modern.cpp vol.3 - Mar 31, 2016&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;ebisu C++ 読書会進行の様子&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Portrait-ebisucpp03.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Portrait-ebisucpp03.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;cedec2015-aug-26-2015:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;CEDEC2015 - Aug 26, 2015&lt;/h2&gt;
+&lt;h2 id=&#34;cedec2015-aug-26-2015&#34;&gt;CEDEC2015 - Aug 26, 2015&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;「Androidハイパフォーマンス・プログラミング」にて&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Portrait-CEDEC2015.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Portrait-CEDEC2015.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;metro-cs-1-sep-16-2015:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Metro.cs #1 - Sep 16, 2015&lt;/h2&gt;
+&lt;h2 id=&#34;metro-cs-1-sep-16-2015&#34;&gt;Metro.cs #1 - Sep 16, 2015&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Roslynを使ったLiveScripting開発&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Portrait-Metrocs01.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Portrait-Metrocs01.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;slides-publications:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Slides, Publications&lt;/h1&gt;
+&lt;h1 id=&#34;slides-publications&#34;&gt;Slides, Publications&lt;/h1&gt;
 
-&lt;h2 id=&#34;2016:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;2016&lt;/h2&gt;
+&lt;h2 id=&#34;2016&#34;&gt;2016&lt;/h2&gt;
 
 &lt;p&gt;Jan 26, 2016 Microsoft Xbox イベント（インターナル）&lt;br /&gt;
 Open Source Software - Full C# Game Engine &amp;ldquo;Xenko&amp;rdquo;&lt;/p&gt;
 
-&lt;h2 id=&#34;2015:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;2015&lt;/h2&gt;
+&lt;h2 id=&#34;2015&#34;&gt;2015&lt;/h2&gt;
 
 &lt;p&gt;Nov 25, 2016 Family Game Forum in Shanghai（インターナル）&lt;/p&gt;
 
@@ -85,7 +82,7 @@ Roslynを使ったLiveScriptingでゲーム開発&lt;/p&gt;
 &lt;p&gt;Jan 31, 2015 &lt;a href=&#34;http://connpass.com/event/10478/&#34;&gt;2015 MVP Community Camp Osaka&lt;/a&gt;&lt;br /&gt;
 クロスプラットフォーム開発の紹介 &lt;a href=&#34;https://speakerdeck.com/harukasao/2015-mvp-community-camp-osaka&#34;&gt;[SpeakerDeck]&lt;/a&gt; &lt;a href=&#34;http://jyurimaru.info/data/20150131MVPCommunityCamp/20150131_corss-platform_dev_public.pptx&#34;&gt;[PPTX]&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;2014:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;2014&lt;/h2&gt;
+&lt;h2 id=&#34;2014&#34;&gt;2014&lt;/h2&gt;
 
 &lt;p&gt;Dec 20, 2014 &lt;a href=&#34;https://atnd.org/events/60042&#34;&gt;C++11勉強会＠大阪（ゆるめ）&lt;/a&gt;&lt;br /&gt;
  C++テンプレート完全ガイド読書会 の特別篇(vol.21) /初心者向けにC++11の機能を紹介する勉強会&lt;/p&gt;
@@ -114,7 +111,7 @@ Torinoご紹介&lt;/p&gt;
 &lt;p&gt;Jan 18, 2014 &lt;a href=&#34;http://metrostyledev.net/index.php/event/20140118/&#34;&gt;めとべや東京#3&lt;/a&gt;&lt;br /&gt;
 C++/CX推奨プログラミング&lt;/p&gt;
 
-&lt;h2 id=&#34;2013:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;2013&lt;/h2&gt;
+&lt;h2 id=&#34;2013&#34;&gt;2013&lt;/h2&gt;
 
 &lt;p&gt;Oct 31, 2013 &lt;a href=&#34;http://metrostyledev.net/index.php/event/20131012/&#34;&gt;めとべや東京#2&lt;/a&gt;&lt;br /&gt;
 C++/CXの紹介&lt;/p&gt;
@@ -134,7 +131,7 @@ DirectXをWinRTに移植する&lt;/p&gt;
 &lt;p&gt;Feb 02, 2013 &lt;a href=&#34;https://sites.google.com/site/itmysterysoup/sessions/01okinawa&#34;&gt;ITごった煮勉強会@沖縄&lt;/a&gt;&lt;br /&gt;
 これから始めるC++&lt;/p&gt;
 
-&lt;h2 id=&#34;2012:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;2012&lt;/h2&gt;
+&lt;h2 id=&#34;2012&#34;&gt;2012&lt;/h2&gt;
 
 &lt;p&gt;Nov 7, 2012 &lt;a href=&#34;https://atnd.org/events/33713&#34;&gt;Specialist presents WindowsPhoneArch #3&lt;/a&gt;&lt;br /&gt;
 Phone Gap であそぶ&lt;/p&gt;
@@ -166,7 +163,7 @@ OracleとSQLServerの比較：基礎編&lt;/p&gt;
 &lt;p&gt;Jan 21, 2012 &lt;a href=&#34;http://metrostyledev.net/index.php/event/20120121/&#34;&gt;MetroStyleDeveloper#01大阪&lt;/a&gt;&lt;br /&gt;
 C++でMetroStyleAppsを開発するということは&lt;/p&gt;
 
-&lt;h2 id=&#34;2011:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;2011&lt;/h2&gt;
+&lt;h2 id=&#34;2011&#34;&gt;2011&lt;/h2&gt;
 
 &lt;p&gt;Dec 07, 2011 &lt;a href=&#34;http://www.infinityventures.com/ivs/&#34;&gt;IVS&lt;/a&gt;&lt;br /&gt;
 Windows8の紹介&lt;/p&gt;
@@ -223,7 +220,7 @@ SilverlightとAzureで魅せる未来&lt;/p&gt;
 &lt;p&gt;Jan 21, 2011 &lt;a href=&#34;http://vsug.jp/tabid/228/EventID/16/Default.aspx&#34;&gt;Bar VSUG Vol.7 大阪会場&lt;/a&gt;
 コミュニティを語ろう&lt;/p&gt;
 
-&lt;h2 id=&#34;2010:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;2010&lt;/h2&gt;
+&lt;h2 id=&#34;2010&#34;&gt;2010&lt;/h2&gt;
 
 &lt;p&gt;Dec 4, 2010 &lt;a href=&#34;http://silverlightsquare.com/silverlight15.html&#34;&gt;Silverlightを囲む会in大阪#15&lt;/a&gt;&lt;br /&gt;
 Windows AzureでSilverlightアプリを動かします&lt;/p&gt;
@@ -264,7 +261,7 @@ Silverlight4とSharePoint　Server2010&lt;/p&gt;
 &lt;p&gt;Feb 26, 2010 &lt;a href=&#34;http://silverlightsquare.com/silverlight12.html&#34;&gt;Silverlightを囲む会in大阪#12&lt;/a&gt;&lt;br /&gt;
 実践！SketchFlow&lt;/p&gt;
 
-&lt;h2 id=&#34;2009:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;2009&lt;/h2&gt;
+&lt;h2 id=&#34;2009&#34;&gt;2009&lt;/h2&gt;
 
 &lt;p&gt;Dec 16, 2009 &lt;a href=&#34;http://silverlightsquare.com/index.php/silverlight11.html&#34;&gt;Silverlightを囲む会in大阪#11&lt;/a&gt;&lt;br /&gt;
 ExpressionBlendでSketchFlow&lt;/p&gt;
@@ -297,7 +294,7 @@ Silverlight勉強会の紹介&lt;/p&gt;
 &lt;p&gt;Feb 7, 2009 &lt;a href=&#34;http://clr-h.jp/%E6%B4%BB%E5%8B%95%E5%AE%9F%E7%B8%BE/&#34;&gt;CLR/H Tech Day 2009&lt;/a&gt;&lt;br /&gt;
 Silverlightでアニメーション&lt;/p&gt;
 
-&lt;h2 id=&#34;2008:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;2008&lt;/h2&gt;
+&lt;h2 id=&#34;2008&#34;&gt;2008&lt;/h2&gt;
 
 &lt;p&gt;Dec 19, 2008 &lt;a href=&#34;http://www.fxug.net/modules/bwiki/index.php?Flex3%CA%D9%B6%AF%B2%F1%C2%E859%B2%F3%A1%F7%C2%E7%BA%E5%BB%B2%B2%C3%BC%F5%C9%D5&#34;&gt;Flex3勉強会第59回＠大阪&lt;/a&gt;&lt;br /&gt;
 Silverlightの紹介&lt;/p&gt;
@@ -317,11 +314,11 @@ WPFの基礎&lt;/p&gt;
 &lt;p&gt;Sep 25, 2008 &lt;a href=&#34;http://vsug.jp/tabid/178/articleid/35/Default.aspx&#34;&gt;VSUG コラム&lt;/a&gt;&lt;br /&gt;
 ソースコードとの付き合い方&lt;/p&gt;
 
-&lt;h1 id=&#34;sampel-code-tools:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Sampel code/tools&lt;/h1&gt;
+&lt;h1 id=&#34;sampel-code-tools&#34;&gt;Sampel code/tools&lt;/h1&gt;
 
 &lt;p&gt;Work in progress&amp;hellip;&lt;/p&gt;
 
-&lt;h1 id=&#34;主催勉強会:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;主催勉強会&lt;/h1&gt;
+&lt;h1 id=&#34;主催勉強会&#34;&gt;主催勉強会&lt;/h1&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;meetup app (Nov 21, 2015 - currently)&lt;br /&gt;
