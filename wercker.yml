@@ -2,7 +2,7 @@ box: wercker/default
 build:
   steps:
     - arjen/hugo-build:
-        version: "0.14"
+        version: "0.17"
         theme: minimalist
         config: config.toml
 deploy:
