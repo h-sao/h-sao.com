@@ -10,6 +10,47 @@
     <atom:link href="http://h-sao.com/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>[PowerShell] ファイル分割スクリプト</title>
+      <link>http://h-sao.com/blog/2014/07/17/divide-file-using-powershell/</link>
+      <pubDate>Thu, 17 Jul 2014 21:57:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2014/07/17/divide-file-using-powershell/</guid>
+      <description>&lt;p&gt;大きなファイルを分割する必要があって&lt;br /&gt;
+めっちゃ困りましたけど、また PowerShell で解決しました&lt;br /&gt;
+なかばやけくそ&lt;/p&gt;
+
+&lt;p&gt;＜sep.ps1＞&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;$my_path_name = &amp;quot;c:/tmp/&amp;quot;
+$my_file_name = &amp;quot;abc&amp;quot;
+$my_file_kind = &amp;quot;.log&amp;quot;
+$cut_num      = 2000    # 切り取る行数
+
+$my_file = $my_path_name + $my_file_name + $my_file_kind
+
+$count = 0;
+Get-Content $my_file -ReadCount $cut_num -Encoding UTF8 | 
+    ForEach-Object { 
+        $count ++
+        $cfs = &amp;quot;{0:D3}&amp;quot; -f $count;
+        $_ &amp;gt; ($my_path_name+$my_file_name+&#39;_&#39;+$cfs+$my_file_kind)
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;結果&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Divide-File-Using-PowerShell_00.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;あまり何も考えず、元ネタはこの方のブログですー&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;参考サイト：powershellが超便利 - fivegangstersのブログ&lt;br /&gt;
+&lt;a href=&#34;http://blog.livedoor.jp/fivegangsters/tag/powershell&#34;&gt;http://blog.livedoor.jp/fivegangsters/tag/powershell&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>[PowerShell] 連想配列をソートしてforeachで一個づつ取り出す</title>
       <link>http://h-sao.com/blog/2014/07/02/sort-arrays-and-retrieve-one-by-one-for-powershell/</link>
       <pubDate>Wed, 02 Jul 2014 17:46:00 +0900</pubDate>

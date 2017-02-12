@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Outlook &middot; Effectiveさお</title>
+        <title>Effectiveさお</title>
         <meta name="author">
         <meta name="description" content="The awesome blog of Sao Haruka.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,221 +40,93 @@
               <a href="http://h-sao.com/about">About me</a>
           </div>
 
+
 <div class="container clearfix">
     <main role="main" class="content">
-        <a class="btn" href="http://h-sao.com/" title="">&laquo; </a>
-        <div align="center">
-            <h1>
-                &quot;<script language="JavaScript"><!--
-                var $dir = location.href.split("/");
-                var $dir2 = $dir[$dir.length -2];
-                document.write($dir2);
-                </script>&quot;
-            </h1>
-        </div>
-        <br>
-
-        
-        
+        <article class="post">
+            <a class="btn" href="http://h-sao.com/" title="">&laquo; </a>
             
-<h1><a href="http://h-sao.com/blog/2016/12/21/delete-outlook-on-the-web-data/" title="[Outlook] 使わなくなったOutlook on the webの予定表（カレンダー）を削除する方法">[Outlook] 使わなくなったOutlook on the webの予定表（カレンダー）を削除する方法</a></h1>
+<h1><a href="http://h-sao.com/blog/2014/07/17/divide-file-using-powershell/" title="[PowerShell] ファイル分割スクリプト">[PowerShell] ファイル分割スクリプト</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.21">2016.12.21</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2014.07.17">2014.07.17</time>
 &middot; 
     
-    <a href="http://h-sao.com/tags/outlook">outlook</a>
+    <a href="http://h-sao.com/tags/powershell">powershell</a>
     
     
 
 </span>
 </footer>
  </footer>
-                
+            <p>大きなファイルを分割する必要があって<br />
+めっちゃ困りましたけど、また PowerShell で解決しました<br />
+なかばやけくそ</p>
 
-<p>Office365とかの Outlook カレンダーではなく<br />
-Webベースでアクセスできる <strong>Outlook on the web</strong> について<br />
-データの削除がとてもややこしかったので、ちょっとメモしておきたいと思います</p>
+<p>＜sep.ps1＞</p>
 
-<h2 id="かつての-windows-liveカレンダー">かつての Windows Liveカレンダー</h2>
+<pre><code class="language-c">$my_path_name = &quot;c:/tmp/&quot;
+$my_file_name = &quot;abc&quot;
+$my_file_kind = &quot;.log&quot;
+$cut_num      = 2000    # 切り取る行数
 
-<p>昔は、Windows Liveカレンダーという名称で、カレンダーサービスがあったのですが<br />
-最近になり、Outlook on the web というサービス名に変わった様です</p>
+$my_file = $my_path_name + $my_file_name + $my_file_kind
 
-<p><a href="https://calendar.live.com/calendar/calendar.aspx">https://calendar.live.com/calendar/calendar.aspx</a></p>
+$count = 0;
+Get-Content $my_file -ReadCount $cut_num -Encoding UTF8 | 
+    ForEach-Object { 
+        $count ++
+        $cfs = &quot;{0:D3}&quot; -f $count;
+        $_ &gt; ($my_path_name+$my_file_name+'_'+$cfs+$my_file_kind)
+    }
+</code></pre>
 
-<p>それに伴い、ちょっとずつ使い勝手も変わってきたりして…</p>
+<p>結果</p>
 
-<p>わたし自身が<br />
-Googleにもカレンダーがあり、サイボウズにもあり…カレンダーだらけだったので<br />
-ちょっと過去データを整理しようと思ったのが、このブログのきっかけです</p>
+<p><img src="/pic/Divide-File-Using-PowerShell_00.png" alt="" /></p>
 
-<p>以降、「予定表」とあるのは、カレンダーの事を指しています<br />
-マイクロソフトさんの用語で統一して書きたいと思います</p>
-
-<h2 id="問題点が２つ起きた">問題点が２つ起きた</h2>
-
-<ol>
-<li>Outlook on the web のメインの予定表が消せない</li>
-<li>Windows10 カレンダーアプリの情報が同期されない（消せない）</li>
-</ol>
-
-<p>今日はこれを解決したいと思います…</p>
-
-<hr />
-
-<hr />
-
-<h2 id="問題1-不要な予定表を削除したいが-メインは消せない">＜問題1＞不要な予定表を削除したいが、メインは消せない</h2>
-
-<p>実際に、オフィシャルサイトには、予定表の削除の方法は書いていないのです…</p>
+<p>あまり何も考えず、元ネタはこの方のブログですー</p>
 
 <ul>
-<li>Outlook on the web で予定表を使用する<br />
-<a href="https://support.office.com/ja-jp/article/Outlook-on-the-web-%E3%81%A7%E4%BA%88%E5%AE%9A%E8%A1%A8%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B-8cfd8a5e-de9a-4468-9225-8611c8c8c7b0">https://support.office.com/ja-jp/article/Outlook-on-the-web-で予定表を使用する-8cfd8a5e-de9a-4468-9225-8611c8c8c7b0</a></li>
-</ul>
-
-<p>しかし、Outlook on the web の方で、予定表を削除することは出来るようです<br />
-該当する予定表の上で、右クリックしたら、&rdquo;削除&rdquo; が出てきます<br />
-↓↓↓</p>
-
-<p><img src="/pic/Delete-Outlook-on-the-web-data_00.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>しかし、メインの予定表は消せないみたいです<br />
-（削除が出てこない）<br />
-↓↓↓</p>
-
-<p><img src="/pic/Delete-Outlook-on-the-web-data_01.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>とにかく情報を整理したいだけなのに…(+o+)</p>
-
-<h2 id="問題2-windows10-カレンダーアプリの情報は削除されない">＜問題2＞Windows10 カレンダーアプリの情報は削除されない</h2>
-
-<p>メイン以外の予定表は消せるので、Outlook on the web上で操作するんですけど<br />
-クライアントアプリである、Windows10 付随のカレンダーには、一向に反映されません</p>
-
-<p>あれ、消したはずの予定表がいつまで経っても消えない…<br />
-↓↓↓</p>
-
-<p><img src="/pic/Delete-Outlook-on-the-web-data_02.png" style="border:solid 5px #e6e6e6"/></p>
-
-<hr />
-
-<hr />
-
-<h2 id="解決方法-web上では無理-outlookクライアントを使う">＜解決方法＞Web上では無理、Outlookクライアントを使う</h2>
-
-<p>Outlook on the web だけでは無理なのが良く判ったので<br />
-<strong>Outlookのクライアントメールソフト</strong> を使ってみました</p>
-
-<p>Officeで使えるPC上にインストールするあれです</p>
-
-<ol>
-<li><p>まず、メニュー &gt; ファイル &gt; 情報　に行きます<br />
-<img src="/pic/Delete-Outlook-on-the-web-data_03.png" style="border:solid 5px #e6e6e6"/></p></li>
-
-<li><p>「アカウント情報」の下の「アカウントの追加」で、問題となっているマイクロソフトアカウント
-（旧Windows Live カレンダーアカウント）を追加します<br />
-<img src="/pic/Delete-Outlook-on-the-web-data_04.png" style="border:solid 5px #e6e6e6"/></p></li>
-
-<li><p>問題となっている登録したアカウントを選んだ状態で、
-Outlookアプリの左下に表示されている（と思う）「…」を選ぶと、「フォルダー」という項目が選択できるので、
-それを選びます<br />
-<img src="/pic/Delete-Outlook-on-the-web-data_05.png" style="border:solid 5px #e6e6e6"/></p></li>
-
-<li><p>なんと！？削除済みアイテムの中に、さっき消した予定表が入っていました！<br />
-さくっと「フォルダーを空にする」を選びましょう<br />
-（その画像は取り忘れちゃいましたが…操作する箇所はこれです）<br />
-<img src="/pic/Delete-Outlook-on-the-web-data_06.png" style="border:solid 5px #e6e6e6"/></p></li>
-
-<li><p>これで、Windows10のカレンダーアプリの情報も更新され、削除した予定表は消えました…！やったー！<br />
-※ただし、即時反映ってん訳じゃなさそうでした、しばらく時間がかかるっぽいです
-<img src="/pic/Delete-Outlook-on-the-web-data_07.png" alt="" /></p></li>
-</ol>
-
-<p>これで ＜問題2＞のほうは解決しました<br />
-あとは、＜問題1＞のメイン予定表が消せない件ですね…</p>
-
-<hr />
-
-<p>メイン予定表は削除できない、なら、せめて予定表に入っている項目を全削除してやる！というのが、以下の試みです</p>
-
-<ol>
-<li><p>引き続き、Outlookクライアントを使います<br />
-アカウントの「予定表」を選択した状態で<br />
-ビューの変更 &gt; 一覧  を選択します<br />
-<img src="/pic/Delete-Outlook-on-the-web-data_08.png" style="border:solid 5px #e6e6e6"/></p></li>
-
-<li><p>これまで登録している予定の一覧が表示されます<br />
-どれか選択した状態で、「Ctrl + A」で予定を全選択します<br />
-<img src="/pic/Delete-Outlook-on-the-web-data_10.png" style="border:solid 5px #e6e6e6"/></p></li>
-
-<li><p>あとは「Delete」を押して、全選択すれば、<br />
-内容をとにかく消すことには成功します<br />
-（予定表そのものは消せない様ですが）<br />
-消す前に、一応以下の様な注意が出るので、思い切って「はい」をぽちっとな！<br />
-<img src="/pic/Delete-Outlook-on-the-web-data_11.png" style="border:solid 5px #e6e6e6"/></p></li>
-</ol>
-
-<p>…過去に登録した項目は、メインの予定表からすべて消えました(●´ω｀●)<br />
-いったんは、これで良しとしますかね…（´-`）.｡oO</p>
-
-<hr />
-
-<h2 id="後片付け-outlookクライアントからアカウントを削除">＜後片付け＞Outlookクライアントからアカウントを削除</h2>
-
-<p>Outlook on the webの予定表を消すためだけに<br />
-Outlookクライアントにアカウントを登録したので、これを削除する画面キャプチャもついでに載せておきます</p>
-
-<ol>
-<li><p>再び、メニュー &gt; ファイル &gt; 情報　に行き、「アカウントの設定」を選びます<br />
-<img src="/pic/Delete-Outlook-on-the-web-data_12.png" style="border:solid 5px #e6e6e6"/></p></li>
-
-<li><p>先ほど登録した Outlook on the web 用のアカウントを選択し、「削除」を押します<br />
-<img src="/pic/Delete-Outlook-on-the-web-data_13.png" style="border:solid 5px #e6e6e6"/></p></li>
-</ol>
-
-<p>これで後片付けも完了です</p>
-
-<p>今回紹介した方法が、良いやり方かどうかは判りませんが<br />
-似たような事で困っている人の助けになればと思います～(^^♪</p>
-
-<p>（参考サイト）</p>
-
-<ul>
-<li>【暫定解決策】Outlook.comのWebアプリで削除した予定表がアプリに残った時はPCのOutlookで「削除済みアイテム」を確認<br />
-<a href="http://blog.bari-ikutsu.com/entry/20151213_9138.html">http://blog.bari-ikutsu.com/entry/20151213_9138.html</a></li>
+<li>参考サイト：powershellが超便利 - fivegangstersのブログ<br />
+<a href="http://blog.livedoor.jp/fivegangsters/tag/powershell">http://blog.livedoor.jp/fivegangsters/tag/powershell</a></li>
 </ul>
 
             <ul class="share-buttons">
     <li></li>
     <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f12%2f21%2fdelete-outlook-on-the-web-data%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f17%2fdivide-file-using-powershell%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bOutlook%5d%20%e4%bd%bf%e3%82%8f%e3%81%aa%e3%81%8f%e3%81%aa%e3%81%a3%e3%81%9fOutlook%20on%20the%20web%e3%81%ae%e4%ba%88%e5%ae%9a%e8%a1%a8%ef%bc%88%e3%82%ab%e3%83%ac%e3%83%b3%e3%83%80%e3%83%bc%ef%bc%89%e3%82%92%e5%89%8a%e9%99%a4%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f12%2f21%2fdelete-outlook-on-the-web-data%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bPowerShell%5d%20%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e5%88%86%e5%89%b2%e3%82%b9%e3%82%af%e3%83%aa%e3%83%97%e3%83%88&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f17%2fdivide-file-using-powershell%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f12%2f21%2fdelete-outlook-on-the-web-data%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f17%2fdivide-file-using-powershell%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f12%2f21%2fdelete-outlook-on-the-web-data%2f&title=%5bOutlook%5d%20%e4%bd%bf%e3%82%8f%e3%81%aa%e3%81%8f%e3%81%aa%e3%81%a3%e3%81%9fOutlook%20on%20the%20web%e3%81%ae%e4%ba%88%e5%ae%9a%e8%a1%a8%ef%bc%88%e3%82%ab%e3%83%ac%e3%83%b3%e3%83%80%e3%83%bc%ef%bc%89%e3%82%92%e5%89%8a%e9%99%a4%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f17%2fdivide-file-using-powershell%2f&title=%5bPowerShell%5d%20%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e5%88%86%e5%89%b2%e3%82%b9%e3%82%af%e3%83%aa%e3%83%97%e3%83%88" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 
-            <hr>
-        
+        </article>
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'harukasao';
+    var disqus_identifier = 'http:\/\/h-sao.com\/blog\/2014\/07\/17\/divide-file-using-powershell\/';
+    var disqus_title = '[PowerShell] ファイル分割スクリプト';
+    var disqus_url = 'http:\/\/h-sao.com\/blog\/2014\/07\/17\/divide-file-using-powershell\/';
 
-        <div class="pagination">
-<nav>
-
-	<p class="counter"> 1  1</p>
-
-
-</nav>
-</div>
-
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
     </main>
-
     <aside class="author">
   <img class="profile-image" src="http://h-sao.com/pic/saoharuka128.png" alt="遥佐保/Sao Haruka" />
   <p class="name"> 
@@ -675,6 +547,7 @@ Outlookクライアントにアカウントを登録したので、これを削�
 
 
 </div>
+
 <footer class="main-footer">
   <div class="container clearfix">
         <a class="icon-rss" href="http://h-sao.com/post/index.xml" title="RSS"></a>

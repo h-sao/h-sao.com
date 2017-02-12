@@ -57,6 +57,70 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2014/07/17/divide-file-using-powershell/" title="[PowerShell] ファイル分割スクリプト">[PowerShell] ファイル分割スクリプト</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2014.07.17">2014.07.17</time>
+&middot; 
+    
+    <a href="http://h-sao.com/tags/powershell">powershell</a>
+    
+    
+
+</span>
+</footer>
+ </footer>
+                <p>大きなファイルを分割する必要があって<br />
+めっちゃ困りましたけど、また PowerShell で解決しました<br />
+なかばやけくそ</p>
+
+<p>＜sep.ps1＞</p>
+
+<pre><code class="language-c">$my_path_name = &quot;c:/tmp/&quot;
+$my_file_name = &quot;abc&quot;
+$my_file_kind = &quot;.log&quot;
+$cut_num      = 2000    # 切り取る行数
+
+$my_file = $my_path_name + $my_file_name + $my_file_kind
+
+$count = 0;
+Get-Content $my_file -ReadCount $cut_num -Encoding UTF8 | 
+    ForEach-Object { 
+        $count ++
+        $cfs = &quot;{0:D3}&quot; -f $count;
+        $_ &gt; ($my_path_name+$my_file_name+'_'+$cfs+$my_file_kind)
+    }
+</code></pre>
+
+<p>結果</p>
+
+<p><img src="/pic/Divide-File-Using-PowerShell_00.png" alt="" /></p>
+
+<p>あまり何も考えず、元ネタはこの方のブログですー</p>
+
+<ul>
+<li>参考サイト：powershellが超便利 - fivegangstersのブログ<br />
+<a href="http://blog.livedoor.jp/fivegangsters/tag/powershell">http://blog.livedoor.jp/fivegangsters/tag/powershell</a></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f17%2fdivide-file-using-powershell%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bPowerShell%5d%20%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e5%88%86%e5%89%b2%e3%82%b9%e3%82%af%e3%83%aa%e3%83%97%e3%83%88&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f17%2fdivide-file-using-powershell%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f17%2fdivide-file-using-powershell%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f17%2fdivide-file-using-powershell%2f&title=%5bPowerShell%5d%20%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e5%88%86%e5%89%b2%e3%82%b9%e3%82%af%e3%83%aa%e3%83%97%e3%83%88" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2014/07/02/sort-arrays-and-retrieve-one-by-one-for-powershell/" title="[PowerShell] 連想配列をソートしてforeachで一個づつ取り出す">[PowerShell] 連想配列をソートしてforeachで一個づつ取り出す</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2014.07.02">2014.07.02</time>
@@ -588,9 +652,9 @@ $ora_conn.Open()
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/powershell" style="font-size: 14px;">
+                    <a href="http://h-sao.com//tags/powershell" style="font-size: 17px;">
                     
-                        <span class="badge">2</span>
+                        <span class="badge">3</span>
                         powershell
                     </a>
                     </u> &nbsp; 
