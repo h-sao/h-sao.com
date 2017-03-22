@@ -8,4 +8,4 @@ My personal website hosted on GitHub Pages.
 
 ## Built and Deployed with Wercker
 
-[![wercker status](https://app.wercker.com/status/0225de16ac6fa77c2263a5d6c4572560/m "wercker status")](https://app.wercker.com/project/bykey/0225de16ac6fa77c2263a5d6c4572560)
+[![wercker status](https://app.wercker.com/status/fa76cf0c30d8afa98f7052415e4f54a6/m/master "wercker status")](https://app.wercker.com/project/byKey/fa76cf0c30d8afa98f7052415e4f54a6)
