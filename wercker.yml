@@ -1,7 +1,14 @@
-box: golang:latest
+box: publysher/hugo
 build:
   steps:
     - arjen/hugo-build:
-        version: "HEAD"
+        version: "0.18.1"
         theme: minimalist
         config: config.toml
+
+deploy:
+  steps:
+    - leipert/git-push@0.7.6:
+        gh_oauth: $GIT_TOKEN
+        basedir: public
+        branch: gh-pages
