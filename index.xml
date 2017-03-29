@@ -7,8 +7,207 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <lastBuildDate>Wed, 04 Jan 2017 23:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 29 Mar 2017 20:30:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Anaconda] Anaconda for Windowsインストール方法</title>
+      <link>http://h-sao.com/blog/2017/03/29/how-to-install-anaconda-for-windows/</link>
+      <pubDate>Wed, 29 Mar 2017 20:30:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2017/03/29/how-to-install-anaconda-for-windows/</guid>
+      <description>
+
+&lt;p&gt;ちょっとPCのグラフィックボードを新しくしたので、TensorFlowでなんかモデルでも作ってみるかということで、Pythonを使うためにAnacondaをインストールしました&lt;/p&gt;
+
+&lt;p&gt;初回のインストールでは何も問題が起きなかったのですが、Anacondaのバージョンを上げようとして、なんか色々やってるうちに、エラーにはまったので、その解決メモです&lt;br /&gt;
+（ただし、あまり良い解決方法じゃありません、ごめんなさい）&lt;/p&gt;
+
+&lt;h1 id=&#34;anacondaのインストール&#34;&gt;Anacondaのインストール&lt;/h1&gt;
+
+&lt;p&gt;わたしの環境は以下です&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Windows10 x64&lt;/li&gt;
+&lt;li&gt;NVIDIA GeForce GTX 960&lt;/li&gt;
+&lt;li&gt;Anaconda 4.3.1 For Windows&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;このAnacondaは&lt;strong&gt;Python 3.6&lt;/strong&gt; に対応しています&lt;/p&gt;
+
+&lt;p&gt;Anaconda 4.3系は Pythonの 2.7, 3.4, 3.5, 3.6 をサポートしている様です&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ANACONDA CHANGELOG&lt;/strong&gt; - 2017-01-31 4.3.0 Highlightsより&lt;br /&gt;
+&lt;a href=&#34;https://docs.continuum.io/anaconda/changelog&#34;&gt;https://docs.continuum.io/anaconda/changelog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;実は、わたしは何度もAncondaのインストールとアンインストールを繰り返しました&lt;br /&gt;
+すると、再インストール時にはエラーメッセージ&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Failed to create anaconda menus&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;がインストール時に出るようになってしまいました&lt;br /&gt;
+インストールする権限の問題の様です&lt;br /&gt;
+おかしいなぁ…&lt;br /&gt;
+Administrator権限で起動してるのですが、出てしまいます…（´-`）.｡oO&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;これは、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;再インストールするディレクトリを変える&lt;/li&gt;
+&lt;li&gt;Just me インストール&lt;/li&gt;
+&lt;li&gt;Administrator権限で起動&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;この3点をすれば、怒られずにインストールできたのですが…&lt;/p&gt;
+
+&lt;p&gt;わたしのインストールしたいディレクトリは c:\utils\Anaconda3 なのです！&lt;/p&gt;
+
+&lt;p&gt;インストールしたいディレクトリを変更するって…ちょっとヤダなぁと思い&lt;br /&gt;
+ダメもとで&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;PCのインストール時に作った Administrator 権限のユーザでログイン&lt;/li&gt;
+&lt;li&gt;All Users インストール&lt;/li&gt;
+&lt;li&gt;更にAdministrator権限で起動&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;にしてみたら、うまく同じインストールディレクトリに&lt;br /&gt;
+再インストールすることが出来ました&lt;br /&gt;
+あまり良い解決方法じゃないけど…もう権限周りで困りたくないです＞＜。&lt;/p&gt;
+
+&lt;p&gt;あなこんだ for Windows 。。。難しいよ(&lt;em&gt;´ω｀&lt;/em&gt;)&lt;/p&gt;
+
+&lt;p&gt;インストーラーとWindowsの権限周りは、少し問題が残っている印象でした&lt;/p&gt;
+
+&lt;h1 id=&#34;tensorflow用の開発環境を切る&#34;&gt;TensorFlow用の開発環境を切る&lt;/h1&gt;
+
+&lt;p&gt;今の状態でダイレクトに作業しても良いんですけど&lt;br /&gt;
+他のプロジェクトや要件が出たときに困らないために、TensorFlow用の開発環境を切っておきます&lt;/p&gt;
+
+&lt;h2 id=&#34;1-conda-info-e-コマンドで確認します&#34;&gt;(1)&lt;strong&gt;conda info -e&lt;/strong&gt; コマンドで確認します&lt;/h2&gt;
+
+&lt;p&gt;インストール直後の環境は root 環境しかありません&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(C:\utils\Anaconda3) C:\Users\(インストールユーザ名)&amp;gt;conda info -e
+# conda environments:
+#
+root                  *  C:\utils\Anaconda3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;2-conda-create-でanacondaのtensorflow用環境を作ります&#34;&gt;(2)&lt;strong&gt;conda create&lt;/strong&gt; でAnacondaのTensorflow用環境を作ります&lt;/h2&gt;
+
+&lt;p&gt;引数：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;name: tensorflow (任意です)&lt;/li&gt;
+&lt;li&gt;python: &lt;strong&gt;3.5&lt;/strong&gt; (ここ重要！)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2017/3/29現在、公式では &lt;strong&gt;TensorFlowはPython 3.5系しかサポートしてない&lt;/strong&gt;らしいです&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Installing TensorFlow on Windows - TensorFlow公式&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&#34;https://www.tensorflow.org/install/install_windows&#34;&gt;https://www.tensorflow.org/install/install_windows&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;公式の言う通り、3.5を指定することにします&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;(C:\utils\Anaconda3) C:\Users\(インストールユーザ名)&amp;gt;conda create --name=tensorflow python=3.5
+Fetching package metadata ...........
+Solving package specifications: .
+
+Package plan for installation in environment C:\utils\Anaconda3\envs\tensorflow:
+
+The following NEW packages will be INSTALLED:
+
+    pip:            9.0.1-py35_1
+    python:         3.5.3-0
+    setuptools:     27.2.0-py35_1
+    vs2015_runtime: 14.0.25123-0
+    wheel:          0.29.0-py35_0
+
+Proceed ([y]/n)? y
+
+python-3.5.3-0 100% |###############################| Time: 0:00:07   4.27 MB/s
+setuptools-27. 100% |###############################| Time: 0:00:00   4.24 MB/s
+wheel-0.29.0-p 100% |###############################| Time: 0:00:00   4.35 MB/s
+pip-9.0.1-py35 100% |###############################| Time: 0:00:00   4.06 MB/s
+#
+# To activate this environment, use:
+# &amp;gt; activate tensorflow
+#
+# To deactivate this environment, use:
+# &amp;gt; deactivate tensorflow
+#
+# * for power-users using bash, you must source
+#
+
+
+(C:\utils\Anaconda3) C:\Users\(インストールユーザ名)&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;3-tensorflow-という環境が出来ました&#34;&gt;(3)&lt;strong&gt;tensorflow&lt;/strong&gt; という環境が出来ました&lt;/h2&gt;
+
+&lt;p&gt;さっきの condaコマンドで確認します&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(C:\utils\Anaconda3) C:\Users\(インストールユーザ名)&amp;gt;conda info -e
+# conda environments:
+#
+tensorflow               C:\utils\Anaconda3\envs\tensorflow
+root                  *  C:\utils\Anaconda3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;4-作った-tensorflow環境に切り替えます&#34;&gt;(4)作った tensorflow環境に切り替えます&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;activate&lt;/strong&gt;コマンドを使います&lt;br /&gt;
+ちなみに抜けたい時は、&lt;strong&gt;deactivate&lt;/strong&gt;です（が、わたしはあまり使う機会がないかな…）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;(C:\utils\Anaconda3) C:\Users\(インストールユーザ名)&amp;gt;activate tensorflow
+
+(tensorflow) C:\Users\(インストールユーザ名)&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;前に、作った環境の名前 &lt;strong&gt;(tensorflow)&lt;/strong&gt; が付くので、判りやすいですね！&lt;/p&gt;
+
+&lt;h2 id=&#34;余談-起動ディレクトリを変更する&#34;&gt;(余談)起動ディレクトリを変更する&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Anaconda3 (64-bit)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;わたしの場合、ここスタートアップの場所に Anaconda Prompt が入ってました&lt;/p&gt;
+
+&lt;p&gt;Anaconda Prompt のプロパティを開いて、開始するディレクトリを変更すればOKです&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/How-to-install-Anaconda-for-Windows_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;わたしは起動ディレクトリを、D:\dev\anaconda に変えました&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;ふー&lt;br /&gt;
+たったこんだけなんですけどねぇ…（´-`）.｡oO&lt;br /&gt;
+まごまごしてるわたし…&lt;/p&gt;
+
+&lt;p&gt;気を取り直して、次回は、&lt;strong&gt;TensorFlow on Windows&lt;/strong&gt;のインストール準備をします&lt;/p&gt;
+
+&lt;p&gt;＜その他参考＞&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Anaconda 4.3.1 For Windows (公式)&lt;br /&gt;
+&lt;a href=&#34;https://www.continuum.io/downloads&#34;&gt;https://www.continuum.io/downloads&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[Python]Anacondaで仮想環境を作る&lt;br /&gt;
+&lt;a href=&#34;http://qiita.com/supersaiakujin/items/50def6f33b79f9a61b18&#34;&gt;http://qiita.com/supersaiakujin/items/50def6f33b79f9a61b18&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>[Chrome] Google Chromeのマルチプロファイル設定</title>
@@ -2162,45 +2361,6 @@ remote.origin.url=&lt;span class=&#34;hljs-keyword&#34;&gt;https://github.com/h-
 &lt;li&gt;[SSH] 複数キー接続のconfig記載について&lt;br /&gt;
 &lt;a href=&#34;http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/&#34;&gt;http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[勉強会] ebisu_effective_modern.cpp vol.3やりますよ</title>
-      <link>http://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</link>
-      <pubDate>Sun, 27 Mar 2016 20:30:00 +0900</pubDate>
-      
-      <guid>http://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</guid>
-      <description>
-
-&lt;h2 id=&#34;ebisu-effective-modern-cppって&#34;&gt;ebisu_effective_modern.cppって？&lt;/h2&gt;
-
-&lt;p&gt;&lt;center&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Information-ebisu-cpp-vol3_00.png&#34; alt=&#34;&#34; /&gt;
-&lt;/center&gt;&lt;/p&gt;
-
-&lt;p&gt;東京の恵比寿でC++について、みんなの意見を聞きながら本を読み進める勉強会を開いています&lt;/p&gt;
-
-&lt;p&gt;昔、大阪でC++の読書会を開催していたのですが、それが結構役に立って面白かったので、東京でも開催してみよう！と思い、始めてみました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;ebisu_effective_modern.cpp vol.3&lt;br /&gt;
-2016/3/31 (木) 20:00-21:30 東京恵比寿&lt;br /&gt;
-&lt;a href=&#34;http://ebisu-effective-modern-cpp.connpass.com/event/29324/&#34;&gt;http://ebisu-effective-modern-cpp.connpass.com/event/29324/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;ちなみに大阪はこちらで絶賛開催中ですよ～！&lt;br /&gt;
-大阪C++読書会&lt;br /&gt;
-&lt;a href=&#34;http://cpp-osaka.connpass.com/&#34;&gt;http://cpp-osaka.connpass.com/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ネタが無いと勉強や会話もしずらいので、&lt;br /&gt;
-&lt;strong&gt;「Effective Modern C ーC11/14プログラムを進化させる42項目」&lt;/strong&gt; を元に進めています&lt;/p&gt;
-
-&lt;p&gt;今回は、&lt;strong&gt;５章 右辺値参照、ムーブセマンティックス、完全転送&lt;/strong&gt; について…&lt;br /&gt;
-前回の vol.2 では、基本的なムーブの動きを簡単に抑えた程度になったので、あまり深いところまでは進めませんでした&lt;br /&gt;
-書籍の内容にぐいぐい追いつけるように頑張りますよ～&lt;/p&gt;
-
-&lt;p&gt;興味ある方はどうぞ、お気軽にお越しください(^^)/&lt;/p&gt;
 </description>
     </item>
     

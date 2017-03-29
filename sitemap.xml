@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://h-sao.com/blog/2017/03/29/how-to-install-anaconda-for-windows/</loc>
+    <lastmod>2017-03-29T20:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://h-sao.com/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/</loc>
     <lastmod>2017-01-04T23:00:00+09:00</lastmod>
   </url>
@@ -233,6 +238,12 @@
   </url>
   
   <url>
+    <loc>http://h-sao.com/tags/anaconda/</loc>
+    <lastmod>2017-03-29T20:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://h-sao.com/tags/android/</loc>
     <lastmod>2015-10-06T04:00:00+09:00</lastmod>
     <priority>0</priority>
@@ -288,7 +299,7 @@
   
   <url>
     <loc>http://h-sao.com/</loc>
-    <lastmod>2017-01-04T23:00:00+09:00</lastmod>
+    <lastmod>2017-03-29T20:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -360,13 +371,19 @@
   
   <url>
     <loc>http://h-sao.com/post/</loc>
-    <lastmod>2017-01-04T23:00:00+09:00</lastmod>
+    <lastmod>2017-03-29T20:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://h-sao.com/tags/powershell/</loc>
     <lastmod>2014-07-17T21:57:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/python/</loc>
+    <lastmod>2017-03-29T20:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
