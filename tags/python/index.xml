@@ -89,7 +89,7 @@ Visual Studio 2015 の VC++14.0 まで対応しているみたいです&lt;br /&
 &lt;p&gt;NVIDIAのドライバも更新されるため、何度かチラチラと画面が黒くなりますが&lt;br /&gt;
 それ以外は特に問題もなく、Toolkitのインストールは完了します&lt;/p&gt;
 
-&lt;h1 id=&#34;2-nvidia-developer-menmership-に登録する&#34;&gt;2) NVIDIA Developer Menmership に登録する&lt;/h1&gt;
+&lt;h1 id=&#34;2-nvidia-developer-membership-に登録する&#34;&gt;2) NVIDIA Developer Membership に登録する&lt;/h1&gt;
 
 &lt;p&gt;さて、続いて &lt;strong&gt;cuDNN&lt;/strong&gt; をインストールする必要があります&lt;/p&gt;
 
@@ -101,7 +101,7 @@ Visual Studio 2015 の VC++14.0 まで対応しているみたいです&lt;br /&
 &lt;a href=&#34;https://developer.nvidia.com/cudnn&#34;&gt;https://developer.nvidia.com/cudnn&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;cuDNNをダウンロードするには、&lt;strong&gt;NVIDIA Developer Menmership に登録する必要があります&lt;/strong&gt;（登録だけなら、お金は要らなかった）&lt;br /&gt;
+&lt;p&gt;cuDNNをダウンロードするには、&lt;strong&gt;NVIDIA Developer Membership に登録する必要があります&lt;/strong&gt;（登録だけなら、お金は要らなかった）&lt;br /&gt;
 登録時に簡単な Survey がありますので、良しなに記載しておきます&lt;/p&gt;
 
 &lt;p&gt;登録完了すると、速攻で&lt;/p&gt;
@@ -111,7 +111,7 @@ Visual Studio 2015 の VC++14.0 まで対応しているみたいです&lt;br /&
 &lt;p&gt;という件名のメールが飛んできました&lt;br /&gt;
 中のリンクをクリックしたら、登録完了です&lt;/p&gt;
 
-&lt;p&gt;こんな感じで NVIDIA Developer Menmership への登録は瞬殺で終わりました&lt;br /&gt;
+&lt;p&gt;こんな感じで NVIDIA Developer Membership への登録は瞬殺で終わりました&lt;br /&gt;
 &lt;img src=&#34;http://h-sao.com/pic/How-to-install-TensorFlow-GPU-on-Windows_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;3-nvidia-cudnn-をインストールする-正確にはパスを通す&#34;&gt;3) NVIDIA cuDNN をインストールする（正確にはパスを通す）&lt;/h1&gt;
