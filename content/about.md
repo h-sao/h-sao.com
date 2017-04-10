@@ -11,8 +11,8 @@ Github: [h-sao](https://github.com/h-sao)
 mail: haruka.sao@gmail.com  
 
 
-[Microsoft MVP for Windows Development [Jan,2016-Dec,2016]](https://mvp.microsoft.com/ja-jp/PublicProfile/4027291)  
-Microsoft MVP for Windows Platform Development [Jan,2015-Dec,2017]  
+[Microsoft MVP for Windows Development [Jan,2016-Dec,2017]](https://mvp.microsoft.com/ja-jp/PublicProfile/4027291)  
+Microsoft MVP for Windows Platform Development [Jan,2015-Dec,2015]  
 Microsoft MVP for Client Development [Jan,2014-Dec,2014]  
 Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]  
 
