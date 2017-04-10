@@ -67,7 +67,7 @@ NVIDIAのドライバも更新されるため、何度かチラチラと画面�
 それ以外は特に問題もなく、Toolkitのインストールは完了します
 
 
-# 2) NVIDIA Developer Menmership に登録する
+# 2) NVIDIA Developer Membership に登録する
 
 さて、続いて **cuDNN** をインストールする必要があります
 
@@ -77,7 +77,7 @@ NVIDIAのドライバも更新されるため、何度かチラチラと画面�
 - **NVIDIA cuDNN - GPU Accelerated Deep Learning**  
 [https://developer.nvidia.com/cudnn](https://developer.nvidia.com/cudnn)
 
-cuDNNをダウンロードするには、**NVIDIA Developer Menmership に登録する必要があります**（登録だけなら、お金は要らなかった）  
+cuDNNをダウンロードするには、**NVIDIA Developer Membership に登録する必要があります**（登録だけなら、お金は要らなかった）  
 登録時に簡単な Survey がありますので、良しなに記載しておきます
 
 登録完了すると、速攻で
@@ -87,7 +87,7 @@ cuDNNをダウンロードするには、**NVIDIA Developer Menmership に登録
 という件名のメールが飛んできました  
 中のリンクをクリックしたら、登録完了です
 
-こんな感じで NVIDIA Developer Menmership への登録は瞬殺で終わりました   
+こんな感じで NVIDIA Developer Membership への登録は瞬殺で終わりました   
 <img src="/pic/How-to-install-TensorFlow-GPU-on-Windows_01.png" style="border:solid 5px #e6e6e6"/> 
 
 # 3) NVIDIA cuDNN をインストールする（正確にはパスを通す）
