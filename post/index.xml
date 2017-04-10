@@ -7,8 +7,518 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <lastBuildDate>Wed, 29 Mar 2017 20:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 10 Apr 2017 18:00:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[TensorFlow] TensorFlow on Windows GPU版インストール方法</title>
+      <link>http://h-sao.com/blog/2017/04/10/how-to-install-tensorflow-gpu-on-windows/</link>
+      <pubDate>Mon, 10 Apr 2017 18:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2017/04/10/how-to-install-tensorflow-gpu-on-windows/</guid>
+      <description>
+
+&lt;p&gt;前回、TensorFlowの環境を作るために、Anacondaをインストールしました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[Anaconda] Anaconda for Windowsインストール方法&lt;br /&gt;
+&lt;a href=&#34;http://h-sao.com/blog/2017/03/29/how-to-install-anaconda-for-windows/&#34;&gt;http://h-sao.com/blog/2017/03/29/how-to-install-anaconda-for-windows/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;その続きで、TensorFlow GPUバージョンを入れたいと思います&lt;/p&gt;
+
+&lt;p&gt;わたしの環境は以下です&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Windows10 x64&lt;/li&gt;
+&lt;li&gt;NVIDIA GeForce GTX 960&lt;/li&gt;
+&lt;li&gt;Anaconda 4.3.1 For Windows&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;はじめに&#34;&gt;はじめに…&lt;/h1&gt;
+
+&lt;p&gt;TensorFlow公式サイトのインストール方法では、残念ながらうまく動作させることは出来ませんでした…(´・ω・`)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;Installing TensorFlow on Windows&lt;/del&gt;&lt;br /&gt;
+（公式サイトだけど、2017/4/10時点、わたしの環境ではダメだった）&lt;br /&gt;
+&lt;del&gt;&lt;a href=&#34;https://www.tensorflow.org/install/install_windows&#34;&gt;https://www.tensorflow.org/install/install_windows&lt;/a&gt;&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;どこを見たら良いかというと、&lt;strong&gt;TensorFlowのGitHubの方&lt;/strong&gt; です…！！！&lt;br /&gt;
+&lt;strong&gt;ここ見るべし(。-`ω-)ｸﾜﾜｯ&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;TensorFlow-Github-Install_Windows&lt;/strong&gt; tensorflow/tensorflow/docs_src/install/install_windows.md&lt;br /&gt;
+&lt;a href=&#34;https://github.com/tensorflow/tensorflow/blob/master/tensorflow/docs_src/install/install_windows.md&#34;&gt;https://github.com/tensorflow/tensorflow/blob/master/tensorflow/docs_src/install/install_windows.md&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;今回の全インストールログは、わたしのGistにアップしておきました&lt;br /&gt;
+→ &lt;a href=&#34;https://gist.github.com/h-sao/b7ab04b3ba3fe8a9e41ec8af76da7559&#34;&gt;Install_log_on_Windows_for_TensorFlow_GPU.log&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;では、やった手順を記載します！&lt;/p&gt;
+
+&lt;h1 id=&#34;1-nvidia-cuda-toolkit-をインストールする&#34;&gt;1) NVIDIA CUDA Toolkit をインストールする&lt;/h1&gt;
+
+&lt;p&gt;TensorFlowにはCPU版とGPU版が提供されています&lt;/p&gt;
+
+&lt;p&gt;CPUのみでも動くのですけど&lt;br /&gt;
+開発環境の構築というのはなんともめんどくさいので&lt;br /&gt;
+最初に出来る事をやっとくことにします&lt;/p&gt;
+
+&lt;p&gt;まずは、&lt;strong&gt;CUDA&lt;/strong&gt; のインストール&lt;br /&gt;
+※CUDAとは、GPUを活用するための開発環境です&lt;br /&gt;
+　GPUを使うには、NVIDIAのCUDAを入れる必要があります&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;CUDA Installation Guide for Microsoft Windows&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&#34;http://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/&#34;&gt;http://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/&lt;/a&gt;&lt;br /&gt;
+2017/4/10時点の NVIDIA CUDA Toolkit のバージョンは 8.0.61 です (Windows10)&lt;br /&gt;
+1.3GBありました！&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/How-to-install-TensorFlow-GPU-on-Windows_00.jpg&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;わたしは &lt;strong&gt;Visual Studio 2017 を入れているのですが、まだサポートされてないよ&lt;/strong&gt; って出ました&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;NVIDIA の公式によると、2017/4/10時点では&lt;br /&gt;
+Visual Studio 2015 の VC++14.0 まで対応しているみたいです&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/How-to-install-TensorFlow-GPU-on-Windows_02.jpg&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;NVIDIAのドライバも更新されるため、何度かチラチラと画面が黒くなりますが&lt;br /&gt;
+それ以外は特に問題もなく、Toolkitのインストールは完了します&lt;/p&gt;
+
+&lt;h1 id=&#34;2-nvidia-developer-menmership-に登録する&#34;&gt;2) NVIDIA Developer Menmership に登録する&lt;/h1&gt;
+
+&lt;p&gt;さて、続いて &lt;strong&gt;cuDNN&lt;/strong&gt; をインストールする必要があります&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;cuDNN&lt;/strong&gt; は The NVIDIA CUDA Deep Neural Network library の略&lt;br /&gt;
+つまりCUDAのライブラリ群です&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;NVIDIA cuDNN - GPU Accelerated Deep Learning&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&#34;https://developer.nvidia.com/cudnn&#34;&gt;https://developer.nvidia.com/cudnn&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;cuDNNをダウンロードするには、&lt;strong&gt;NVIDIA Developer Menmership に登録する必要があります&lt;/strong&gt;（登録だけなら、お金は要らなかった）&lt;br /&gt;
+登録時に簡単な Survey がありますので、良しなに記載しておきます&lt;/p&gt;
+
+&lt;p&gt;登録完了すると、速攻で&lt;/p&gt;
+
+&lt;p&gt;「Please confirm your email to join the Accelerated Computing Developer Program」&lt;/p&gt;
+
+&lt;p&gt;という件名のメールが飛んできました&lt;br /&gt;
+中のリンクをクリックしたら、登録完了です&lt;/p&gt;
+
+&lt;p&gt;こんな感じで NVIDIA Developer Menmership への登録は瞬殺で終わりました&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/How-to-install-TensorFlow-GPU-on-Windows_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;3-nvidia-cudnn-をインストールする-正確にはパスを通す&#34;&gt;3) NVIDIA cuDNN をインストールする（正確にはパスを通す）&lt;/h1&gt;
+
+&lt;p&gt;登録が済んだら、cuDNN をダウンロード出来ます&lt;br /&gt;
+※ここでもまた、Survey があります(^^；&lt;/p&gt;
+
+&lt;p&gt;先ほどインストールした CUDA Toolkit は 8.0 なので、それに対応した cuDNN v6.0 を選択！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/How-to-install-TensorFlow-GPU-on-Windows_03.jpg&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;落としてきたのはただのZIPファイルなので、展開し、好きなディレクトリに設置します&lt;br /&gt;
+わたしの場合は、 &lt;strong&gt;D:\Library\cuda&lt;/strong&gt; というディレクトリを作って置きました&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;もしくは、cuda と cuDNN のバージョンは必ず一致しないと行けないようなので&lt;br /&gt;
+cudaのインストールパス&lt;br /&gt;
+（C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin）&lt;br /&gt;
+に手コピーするのも、一つの手らしいです&lt;br /&gt;
+cudaディレクトリにコピーした人はパスを設定しなくていいので、以下は飛ばしてください&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;このパス（わたしの場合、D:\Library\cuda\bin）が Anaconda 環境から見えるように、Windowsのパスを設定しておきます&lt;br /&gt;
+パスを通すのくらいは…と思いましたが、ついでにキャプチャは取ったので、それだけ載せておきますね&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;コントロールパネルのシステムを開く&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/How-to-install-TensorFlow-GPU-on-Windows_04.jpg&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;システムプロパティの環境設定を開く&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/How-to-install-TensorFlow-GPU-on-Windows_05.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;自分の環境設定のパスを編集する&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/How-to-install-TensorFlow-GPU-on-Windows_06.jpg&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;パスを新規追加&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/How-to-install-TensorFlow-GPU-on-Windows_07.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;一応、パスが通ってることを path コマンドでチェックしとく&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/How-to-install-TensorFlow-GPU-on-Windows_08.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ま、こんな感じです&lt;/p&gt;
+
+&lt;h1 id=&#34;4-tensorflow-on-windows-gpu-のインストール&#34;&gt;4) TensorFlow on Windows (GPU) のインストール&lt;/h1&gt;
+
+&lt;p&gt;いよいよ TensorFlow のインストールを行います&lt;/p&gt;
+
+&lt;p&gt;最初に、Anaconda Promptを開いて、環境をTensorFlow用のやつに変えておきます（&lt;a href=&#34;http://h-sao.com/blog/2017/03/29/how-to-install-anaconda-for-windows/&#34;&gt;前回の記事&lt;/a&gt;で書いたやつです）&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;activateコマンドで環境を切り替えておく&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;#Change env
+
+(C:\utils\Anaconda3) D:\dev\anaconda&amp;gt;activate tensorflow
+
+(tensorflow) D:\dev\anaconda&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;(以下、失敗手順も含んでいます)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;pip コマンドを使ってTensorFlow　GPU をインストールする&lt;br /&gt;
+（実はこの動作は 2017/4/10現在、間違っています）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;# Installed TensorFlow (1st time, error occurred.)
+
+(tensorflow) D:\dev\anaconda&amp;gt;pip install --upgrade tensorflow-gpu
+Collecting tensorflow-gpu
+  Downloading tensorflow_gpu-1.0.1-cp35-cp35m-win_amd64.whl (43.1MB)
+
+（中略）
+
+Successfully installed appdirs-1.4.3 numpy-1.12.1 packaging-16.8 protobuf-3.2.0 pyparsing-2.2.0 setuptools-34.3.3 six-1.10.0 tensorflow-gpu-1.0.1
+
+（中略）
+
+FileNotFoundError: [WinError 2] The system cannot find the file specified: &#39;C:\\utils\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\setuptools-27.2.0-py3.5.egg&#39;
+
+(tensorflow) D:\dev\anaconda&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Tensorflowのインストールは出来ましたが、一番最後、なにやらファイルが無いとエラーが出ています&lt;br /&gt;
+よくわからない(￣▽￣)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;インポートの動作確認してみますが、うまくいってないよう…&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;cudnn64_5.dllが無い&lt;/strong&gt; って言われる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;# Check import version
+
+(tensorflow) D:\dev\anaconda&amp;gt;python
+Python 3.5.3 |Continuum Analytics, Inc.| (default, Feb 22 2017, 21:28:42) [MSC v.1900 64 bit (AMD64)] on win32
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt; import tensorflow
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cublas64_80.dll locally
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:126] Couldn&#39;t open CUDA library cudnn64_5.dll
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\cuda\cuda_dnn.cc:3517] Unable to load cuDNN DSO
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cufft64_80.dll locally
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library nvcuda.dll locally
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library curand64_80.dll locally
+&amp;gt;&amp;gt;&amp;gt; print( tensorflow.__version__)
+1.0.1
+&amp;gt;&amp;gt;&amp;gt; exit()
+
+(tensorflow) D:\dev\anaconda&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;あれ？&lt;br /&gt;
+ちゃんと&lt;strong&gt;CUDA8.0 に対応した cuDNN6.0 を入れたのに&lt;/strong&gt;…(´・ω・`)&lt;/p&gt;
+
+&lt;p&gt;良く見てみると、わたしの落としてきた cuDNN の DLL は &lt;strong&gt;cudnn64_6.dll&lt;/strong&gt;&lt;br /&gt;
+エラーが出てるDLLは &lt;strong&gt;cudnn64_5.dll&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;…もうGetできなくね？？？(;^_^A&lt;br /&gt;
+。&lt;br /&gt;
+。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;暫定対応&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;調べてもよく判らなかったので&lt;br /&gt;
+持ってるDLLのファイル名を変更して使うことにしました(*ﾉωﾉ)&lt;br /&gt;
+なんか今後問題でそうですが、致し方なし…&lt;br /&gt;
+誰か、解決策あるなら教えて下さい（T▽T）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/How-to-install-TensorFlow-GPU-on-Windows_09.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;再度、インポート動作確認&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TensorFlowのバージョンは 1.0.1、インストールしまして、インポートでのエラーは出なくなりましたが…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;(tensorflow) D:\dev\anaconda&amp;gt;python
+Python 3.5.3 |Continuum Analytics, Inc.| (default, Feb 22 2017, 21:28:42) [MSC v.1900 64 bit (AMD64)] on win32
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt; import tensorflow
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cublas64_80.dll locally
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cudnn64_5.dll locally
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cufft64_80.dll locally
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library nvcuda.dll locally
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library curand64_80.dll locally
+&amp;gt;&amp;gt;&amp;gt; print( tensorflow.__version__)
+1.0.1
+&amp;gt;&amp;gt;&amp;gt; exit()
+
+(tensorflow) D:\dev\anaconda&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;実はこの後、Hello TensorFlow! を表示しようとして、別の &lt;strong&gt;OpKernel&lt;/strong&gt; エラーが大量発生します&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&amp;lsquo;op: &amp;ldquo;BestSplits&amp;rdquo; device_type: &amp;ldquo;CPU&amp;rdquo;&amp;lsquo;) for unknown op: BestSplits&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;なんだよこれは…(。-`ω-)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;# Remained the same error too. (OpKernel error)
+
+(tensorflow) D:\dev\anaconda&amp;gt;python
+Python 3.5.3 |Continuum Analytics, Inc.| (default, Feb 22 2017, 21:28:42) [MSC v.1900 64 bit (AMD64)] on win32
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt; import tensorflow as tf
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cublas64_80.dll locally
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cudnn64_5.dll locally
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cufft64_80.dll locally
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library nvcuda.dll locally
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library curand64_80.dll locally
+&amp;gt;&amp;gt;&amp;gt; hello = tf.constant(&#39;Hello tensorflow!&#39;)
+&amp;gt;&amp;gt;&amp;gt; sess = tf.Session()
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:885] Found device 0 with properties:
+name: GeForce GTX 960
+major: 5 minor: 2 memoryClockRate (GHz) 1.253
+pciBusID 0000:05:00.0
+Total memory: 2.00GiB
+Free memory: 1.64GiB
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:906] DMA: 0
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:916] 0:   Y
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -&amp;gt; (device: 0, name: GeForce GTX 960, pci bus id: 0000:05:00.0)
+&amp;gt;&amp;gt;&amp;gt; print(sess.run(hello))
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &amp;quot;BestSplits&amp;quot; device_type: &amp;quot;CPU&amp;quot;&#39;) for unknown op: BestSplits
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &amp;quot;CountExtremelyRandomStats&amp;quot; device_type: &amp;quot;CPU&amp;quot;&#39;) for unknown op: CountExtremelyRandomStats
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &amp;quot;FinishedNodes&amp;quot; device_type: &amp;quot;CPU&amp;quot;&#39;) for unknown op: FinishedNodes
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &amp;quot;GrowTree&amp;quot; device_type: &amp;quot;CPU&amp;quot;&#39;) for unknown op: GrowTree
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &amp;quot;ReinterpretStringToFloat&amp;quot; device_type: &amp;quot;CPU&amp;quot;&#39;) for unknown op: ReinterpretStringToFloat
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &amp;quot;SampleInputs&amp;quot; device_type: &amp;quot;CPU&amp;quot;&#39;) for unknown op: SampleInputs
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &amp;quot;ScatterAddNdim&amp;quot; device_type: &amp;quot;CPU&amp;quot;&#39;) for unknown op: ScatterAddNdim
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &amp;quot;TopNInsert&amp;quot; device_type: &amp;quot;CPU&amp;quot;&#39;) for unknown op: TopNInsert
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &amp;quot;TopNRemove&amp;quot; device_type: &amp;quot;CPU&amp;quot;&#39;) for unknown op: TopNRemove
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &amp;quot;TreePredictions&amp;quot; device_type: &amp;quot;CPU&amp;quot;&#39;) for unknown op: TreePredictions
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &amp;quot;UpdateFertileSlots&amp;quot; device_type: &amp;quot;CPU&amp;quot;&#39;) for unknown op: UpdateFertileSlots
+b&#39;Hello tensorflow!&#39;
+&amp;gt;&amp;gt;&amp;gt; exit()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ここでようやく、インストールが上手く行ってないことに気が付きます(+o+)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;よし、気を取り直して&lt;br /&gt;
+&lt;strong&gt;公式サイトではなく、GitHubの方に書かれている、インストール方法&lt;/strong&gt; を参考にしてみます&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;さっき入れた TensorFlow1.0.1 をアンインストール&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;# Uninstalled TensorFlow
+
+(tensorflow) D:\dev\anaconda&amp;gt;pip uninstall tensorflow-gpu
+Uninstalling tensorflow-gpu-1.0.1:
+  c:\utils\anaconda3\envs\tensorflow\lib\site-packages\external\d3\d3.js
+  c:\utils\anaconda3\envs\tensorflow\lib\site-packages\external\d3\d3.min.js
+  
+（中略）
+
+  c:\utils\anaconda3\envs\tensorflow\scripts\tensorboard.exe
+Proceed (y/n)? y
+  Successfully uninstalled tensorflow-gpu-1.0.1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;再度、&lt;strong&gt;公式のGitHubの方に書かれているWindowsインストール方法を実施&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&#34;https://github.com/tensorflow/tensorflow/blob/master/tensorflow/docs_src/install/install_windows.md&#34;&gt;https://github.com/tensorflow/tensorflow/blob/master/tensorflow/docs_src/install/install_windows.md&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;※2017/4/10現在の情報です、&lt;strong&gt;正確には公式GitHubサイトを確認してください&lt;/strong&gt;&lt;br /&gt;
+&amp;gt; pip install &amp;ndash;ignore-installed &amp;ndash;upgrade &lt;a href=&#34;https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-1.1.0rc1-cp35-cp35m-win_amd64.whl&#34;&gt;https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-1.1.0rc1-cp35-cp35m-win_amd64.whl&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;# Re-install TensorFlow for Anaconda, it&#39;s best way for Anaconda/Windows user!
+
+(tensorflow) D:\dev\anaconda&amp;gt;pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-1.1.0rc1-cp35-cp35m-win_amd64.whl
+Collecting tensorflow-gpu==1.1.0rc1 from https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-1.1.0rc1-cp35-cp35m-win_amd64.whl
+  Downloading https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-1.1.0rc1-cp35-cp35m-win_amd64.whl (48.6MB)
+    100% |################################| 48.6MB 26kB/s
+Collecting werkzeug&amp;gt;=0.11.10 (from tensorflow-gpu==1.1.0rc1)
+  Downloading Werkzeug-0.12.1-py2.py3-none-any.whl (312kB)
+    100% |################################| 317kB 3.0MB/s
+Collecting numpy&amp;gt;=1.11.0 (from tensorflow-gpu==1.1.0rc1)
+  Using cached numpy-1.12.1-cp35-none-win_amd64.whl
+Collecting protobuf&amp;gt;=3.2.0 (from tensorflow-gpu==1.1.0rc1)
+  Using cached protobuf-3.2.0-py2.py3-none-any.whl
+Collecting six&amp;gt;=1.10.0 (from tensorflow-gpu==1.1.0rc1)
+  Using cached six-1.10.0-py2.py3-none-any.whl
+Collecting wheel&amp;gt;=0.26 (from tensorflow-gpu==1.1.0rc1)
+  Downloading wheel-0.29.0-py2.py3-none-any.whl (66kB)
+    100% |################################| 71kB 4.0MB/s
+Collecting setuptools (from protobuf&amp;gt;=3.2.0-&amp;gt;tensorflow-gpu==1.1.0rc1)
+  Using cached setuptools-34.3.3-py2.py3-none-any.whl
+Collecting packaging&amp;gt;=16.8 (from setuptools-&amp;gt;protobuf&amp;gt;=3.2.0-&amp;gt;tensorflow-gpu==1.1.0rc1)
+  Using cached packaging-16.8-py2.py3-none-any.whl
+Collecting appdirs&amp;gt;=1.4.0 (from setuptools-&amp;gt;protobuf&amp;gt;=3.2.0-&amp;gt;tensorflow-gpu==1.1.0rc1)
+  Using cached appdirs-1.4.3-py2.py3-none-any.whl
+Collecting pyparsing (from packaging&amp;gt;=16.8-&amp;gt;setuptools-&amp;gt;protobuf&amp;gt;=3.2.0-&amp;gt;tensorflow-gpu==1.1.0rc1)
+  Using cached pyparsing-2.2.0-py2.py3-none-any.whl
+Installing collected packages: werkzeug, numpy, six, pyparsing, packaging, appdirs, setuptools, protobuf, wheel, tensorflow-gpu
+Successfully installed appdirs-1.4.3 numpy-1.12.1 packaging-16.8 protobuf-3.2.0 pyparsing-2.2.0 setuptools-34.3.3 six-1.10.0 tensorflow-gpu-1.1.0rc1 werkzeug-0.12.1 wheel-0.29.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;TensorFlowのバージョンは 1.1.0rc1 になりました&lt;br /&gt;
+（2017/4/10現在）&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hello TensorFlow! の表示で動作確認&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;# Hello TensorFlow!
+
+(tensorflow) D:\dev\anaconda&amp;gt;python
+Python 3.5.3 |Continuum Analytics, Inc.| (default, Feb 22 2017, 21:28:42) [MSC v.1900 64 bit (AMD64)] on win32
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt; import tensorflow as tf
+&amp;gt;&amp;gt;&amp;gt; hello = tf.constant(&#39;Hello tensorflow&#39;)
+&amp;gt;&amp;gt;&amp;gt; sess = tf.Session()
+2017-04-07 17:55:06.792343: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use SSE instructions, but these are available on your machine and could speed up CPU computations.
+2017-04-07 17:55:06.794854: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use SSE2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-04-07 17:55:06.795650: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use SSE3 instructions, but these are available on your machine and could speed up CPU computations.
+2017-04-07 17:55:06.798303: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-04-07 17:55:06.798924: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-04-07 17:55:06.799553: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-04-07 17:55:07.171447: I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:887] Found device 0 with properties:
+name: GeForce GTX 960
+major: 5 minor: 2 memoryClockRate (GHz) 1.253
+pciBusID 0000:05:00.0
+Total memory: 2.00GiB
+Free memory: 1.64GiB
+2017-04-07 17:55:07.171652: I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:908] DMA: 0
+2017-04-07 17:55:07.178823: I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:918] 0:   Y
+2017-04-07 17:55:07.180026: I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:977] Creating TensorFlow device (/gpu:0) -&amp;gt; (device: 0, name: GeForce GTX 960, pci bus id: 0000:05:00.0)
+&amp;gt;&amp;gt;&amp;gt; print(sess.run(hello))
+b&#39;Hello tensorflow&#39;
+&amp;gt;&amp;gt;&amp;gt; exit()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでOpKernelエラーは出なくなりましたし、GPU利用のログも出ていますね&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;name: GeForce GTX 960&lt;br /&gt;
+major: 5 minor: 2 memoryClockRate (GHz) 1.253&lt;br /&gt;
+&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ほっ…(≧▽≦)&lt;/p&gt;
+
+&lt;h1 id=&#34;おまけ-sseのワーニングを消すには&#34;&gt;（おまけ）SSEのワーニングを消すには？&lt;/h1&gt;
+
+&lt;p&gt;しかし良く見て！？&lt;br /&gt;
+エラーは消えたけど、ワーニングは出てるよっ！？！？&lt;/p&gt;
+
+&lt;p&gt;どうやらこれについては、本家GitHub issue でも取りざたされています&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ldquo;The TensorFlow library wasn&amp;rsquo;t compiled to use SSE instructions, but these are available on your machine and could speed up CPU computations&amp;rdquo; in &amp;ldquo;Hello, TensorFlow!&amp;rdquo; program&lt;/strong&gt; #7778&lt;br /&gt;
+&lt;a href=&#34;https://github.com/tensorflow/tensorflow/issues/7778&#34;&gt;https://github.com/tensorflow/tensorflow/issues/7778&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;意味は、ソースからコンパイルし直したら、CPUが早くなるんじゃね？というお知らせの様です&lt;/p&gt;
+
+&lt;p&gt;うーん…GPUで動かしてるのにCPUを早くする？？よくわからんです&lt;/p&gt;
+
+&lt;p&gt;これは放置でも動作に問題ないらしいのですが、見たくない場合は、ログレベルを変更したら見えなくなると、issueに記載がありました&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;import os&lt;br /&gt;
+os.environ[&amp;lsquo;TF_CPP_MIN_LOG_LEVEL&amp;rsquo;]=&amp;lsquo;2&amp;rsquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;こんな感じですっきりしました&lt;br /&gt;
+GPUの確認ログも消えちゃいますけど…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Changed worning level
+
+(tensorflow) D:\dev\anaconda&amp;gt;python
+Python 3.5.3 |Continuum Analytics, Inc.| (default, Feb 22 2017, 21:28:42) [MSC v.1900 64 bit (AMD64)] on win32
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt; import os
+&amp;gt;&amp;gt;&amp;gt; os.environ[&#39;TF_CPP_MIN_LOG_LEVEL&#39;]=&#39;2&#39;
+&amp;gt;&amp;gt;&amp;gt; import tensorflow as tf
+&amp;gt;&amp;gt;&amp;gt; hello = tf.constant(&#39;Hello tensorflow&#39;)
+&amp;gt;&amp;gt;&amp;gt; sess = tf.Session()
+&amp;gt;&amp;gt;&amp;gt; print(sess.run(hello))
+b&#39;Hello tensorflow&#39;
+&amp;gt;&amp;gt;&amp;gt; exit()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;とりあえず、TensorFlow on Windows (GPU) のインストールと、最初の動作確認は完了しました&lt;/p&gt;
+
+&lt;p&gt;作業の全ログはこちらに置いています…&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Install_log_on_Windows_for_TensorFlow_GPU.log - Gist/h-sao&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&#34;https://gist.github.com/h-sao/b7ab04b3ba3fe8a9e41ec8af76da7559&#34;&gt;https://gist.github.com/h-sao/b7ab04b3ba3fe8a9e41ec8af76da7559&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;おつかれさまでした～&lt;/p&gt;
+
+&lt;h2 id=&#34;その他ポイント1-anacondaではpipを使う&#34;&gt;その他ポイント1：Anacondaではpipを使う&lt;/h2&gt;
+
+&lt;p&gt;Anacondaでインストールする場合は、pipを使う（pip3 は無いみたい）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;(tensorflow) D:\dev\anaconda&amp;gt;pip3
+&#39;pip3&#39; is not recognized as an internal or external command,
+operable program or batch file.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;その他ポイント2-pythonのバージョンは3-5&#34;&gt;その他ポイント2：Pythonのバージョンは3.5&lt;/h2&gt;
+
+&lt;p&gt;Tensorflowは Python3.5系じゃないとだめ&lt;br /&gt;
+3.6に入れようとしたら、怒られました
+試しに、CPU版にしても怒られました&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;(ten) C:\Users\akiko.kawai&amp;gt;pip install tensorflow-gpu
+Collecting tensorflow-gpu
+  Could not find a version that satisfies the requirement tensorflow-gpu (from versions: )
+No matching distribution found for tensorflow-gpu
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;どうやら、pythonのバージョンは Windowsの場合3.5系でないと対応してないみたいです（2017/4/10現在）&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;（その他参考）&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;同じOpKernelエラー現象が出てる海外のも居た…&lt;br /&gt;
+Installation log of Tensorflow 1.0 on Windows using pip&lt;br /&gt;
+&lt;a href=&#34;https://gist.github.com/apacha/a595c244f90a27aced56f67f7598d90d&#34;&gt;https://gist.github.com/apacha/a595c244f90a27aced56f67f7598d90d&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
     
     <item>
       <title>[Anaconda] Anaconda for Windowsインストール方法</title>
@@ -1949,418 +2459,6 @@ public class GameInitial //: MonoBehaviour
 &lt;p&gt;もしかしたら、無料版では起動時のロゴを外せないようにするために、プログラマは触れないようになってるのかなー？&lt;/p&gt;
 
 &lt;p&gt;ともあれ、意図したことは出来るようになっているので、まぁ良しとします！&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続</title>
-      <link>http://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</link>
-      <pubDate>Sat, 07 May 2016 15:23:30 +0900</pubDate>
-      
-      <guid>http://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</guid>
-      <description>
-
-&lt;p&gt;しょっちゅう作っては、作り方を忘れ、また検索で調べる…ということをしているので、sshキーの生成&amp;amp;接続について、忘れないようにメモしておきます&lt;/p&gt;
-
-&lt;h1 id=&#34;gitサーバへsshキーを使って接続したい&#34;&gt;GitサーバへSSHキーを使って接続したい&lt;/h1&gt;
-
-&lt;p&gt;Gitサーバに接続するには、&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;http&lt;/li&gt;
-&lt;li&gt;ssh&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;この2種類の接続方法があるみたいです&lt;/p&gt;
-
-&lt;p&gt;Git接続用のクライアントアプリは、どっちで接続するか選択できるものもあるので&lt;br /&gt;
-Sourcetreeなどを使っていると、あまり認識してない人もいるかもしれません&lt;/p&gt;
-
-&lt;p&gt;今回、こんなクライアント環境で試しました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;自端末：Windows10 x64&lt;/li&gt;
-&lt;li&gt;Gitサーバ：GitHub&lt;/li&gt;
-&lt;li&gt;Gitクライアントアプリ：GitExtensions&lt;/li&gt;
-&lt;li&gt;Gitアクセスには、複数アカウントを利用している&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;これを試そうと思ったモチベーションは、push のたびに IDとパスワードを毎回聞かれるのがやだ、だからキーペアを利用して ssh アクセスにするんだー&lt;br /&gt;
-というところから始まってます&lt;/p&gt;
-
-&lt;p&gt;GitHub のIDとパスワードをスキップして、セキュアアクセスするのだ！という方の参考になればと思います！&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;あと、番外編として、 非推奨ですが https アクセスでIDとパスワードを毎回聞かれないようにする方法も最後にメモしておきます&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&#34;キーの生成方法-ssh-keygen&#34;&gt;キーの生成方法 ssh-keygen&lt;/h1&gt;
-
-&lt;p&gt;ここは普通に&lt;br /&gt;
-公開鍵と秘密鍵を作ればいいだけなので、知ってる人に取ったら何をいまさら…になりますが、一応メモ&lt;/p&gt;
-
-&lt;p&gt;Gitがインストールされているなら &lt;strong&gt;ssh-keygen&lt;/strong&gt; が使えますので、コマンドを打つだけ&lt;br /&gt;
-(コマンドを打たなくても、Gitのクライアントアプリが勝手にやってくれる場合もあります)&lt;/p&gt;
-
-&lt;p&gt;GitBash などを起動します&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;コマンドはこちら&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ ssh-keygen -t rsa
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;基本的には、何か聞かれてもエンターで進めばOKです&lt;/p&gt;
-
-&lt;p&gt;デフォルトでは &lt;strong&gt;c:\Users\[ユーザ名]\.ssh\** 以下に&lt;/strong&gt;秘密鍵（id_rsa）&lt;strong&gt;と&lt;/strong&gt;公開鍵（id_rsa.pub）**のキーペアが作成されます&lt;/p&gt;
-
-&lt;p&gt;Windowsだとキーの保存位置は c:\Users\[ユーザ名]\.ssh\ にしないといけません&lt;/p&gt;
-
-&lt;p&gt;わたしは、Github用のキーだと判るように、名前を github_rsa として作成しました&lt;br /&gt;
-（既に別の用途で id_rsa を使っているからです、つまり複数アカウントを利用しています）&lt;/p&gt;
-
-&lt;p&gt;実行結果はこれ↓↓↓&lt;/p&gt;
-
-&lt;pre&gt;&lt;div class=&#34;hljs&#34;&gt;(SHA256以下の箇所は、適当に x で書き換えています)
-
-haruka.sao@MyPC MINGW64 ~
-&lt;span class=&#34;hljs-keyword&#34;&gt;$ ssh-keygen -t rsa&lt;/span&gt;
-Generating public/private rsa key pair.
-&lt;span class=&#34;hljs-string&#34;&gt;Enter file in which to save the key (/c/Users/haruka.sao/.ssh/id_rsa):&lt;/span&gt; /c/Users/haruka.sao/.ssh/github_rsa
-&lt;span class=&#34;hljs-string&#34;&gt;Enter passphrase (empty for no passphrase):
-Enter same passphrase again:&lt;/span&gt;
-Your identification has been saved in /c/Users/haruka.sao/.ssh/github_rsa.
-Your public key has been saved in /c/Users/haruka.sao/.ssh/github_rsa.pub.
-The key fingerprint is:
-SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx haruka.sao@MyPC
-The key&#39;s randomart image is:
-+---[RSA 2048]----+
-|      x          |
-|      x          |
-|      x          |
-|      x          |
-|      x          |
-|      x          |
-|      x          |
-|      x          |
-|      x          |
-+----[SHA256]-----+
-
-haruka.sao@MyPC MINGW64 ~
-$
-&lt;/div&gt;&lt;/pre&gt;
-
-&lt;p&gt;キーペアができたできた&lt;/p&gt;
-
-&lt;h1 id=&#34;sshキーをgithubに登録&#34;&gt;SSHキーをGitHubに登録&lt;/h1&gt;
-
-&lt;p&gt;c:\Users\[ユーザ名]\.ssh\ に保存された id_rsa.pub （わたしの場合はgithub_rsa.pub）を GitHubに登録します&lt;/p&gt;
-
-&lt;p&gt;自分のアカウントの &lt;strong&gt;Settings &amp;gt; SSH and GPG keys &amp;gt; New SSH key&lt;/strong&gt; をクリックすると、先ほど作った公開鍵を登録することができます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;先ほど作った id_rsa.pub 公開鍵を登録しましょう！&lt;br /&gt;
-くれぐれも id_rsa の秘密鍵の方ではないので、お間違え無く！&lt;/p&gt;
-
-&lt;p&gt;id_rsa.pub の中身を見ればわかりますが、「&lt;strong&gt;ssh-rsa ……&lt;/strong&gt;」 から始まっているファイルになります&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_02.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;登録すると、こんな感じの記載になります&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;最後に、自分の秘密鍵が c:\Users\[ユーザ名]\.ssh\ に設置されていることを再確認！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_04.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;openssh-モード&#34;&gt;OpenSSH モード&lt;/h1&gt;
-
-&lt;p&gt;GitExtensions で ssh 接続したい場合、&lt;br /&gt;
-私的にはお勧めなのは、OpenSSHモードにすることです&lt;/p&gt;
-
-&lt;p&gt;※ PuTTYアクセスは、PuTTYの独自フォーマットのキーを登録するなどが必要ですので、わたしは利用をやめました&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_05.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;これで下準備はOK！&lt;/p&gt;
-
-&lt;h1 id=&#34;pcから-ssh-で接続テスト&#34;&gt;PCから ssh で接続テスト&lt;/h1&gt;
-
-&lt;p&gt;Git bash で接続テストしてみましょう&lt;/p&gt;
-
-&lt;p&gt;さっきの Git bash で、リポジトリの下まで移動します&lt;br /&gt;
-もしくは、GitExtensions から起動すると、初期ディレクトリはそのリポジトリの下になります&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_08.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;確認パターンは２パターンあります&lt;/p&gt;
-
-&lt;h2 id=&#34;パターン1-id-rsa-で登録している-ssh-キーを利用する場合&#34;&gt;(パターン1) id_rsa で登録している ssh キーを利用する場合&lt;/h2&gt;
-
-&lt;p&gt;このコマンドで確認します&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;$ ssh -T git@github.com
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;id_rsa&lt;/strong&gt; というファイル名を、ssh 接続では自動的に認識するようです&lt;/p&gt;
-
-&lt;p&gt;初回は、known_hosts に GitHub サーバを登録するよ？と聞いてくるので、 yes を入力します&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Hi [GitHubユーザ名]! You&amp;rsquo;ve successfully authenticated, but GitHub does not provide shell access.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;が表示されればOKです&lt;/p&gt;
-
-&lt;p&gt;わたしの実行結果はこちら↓↓↓&lt;/p&gt;
-
-&lt;pre&gt;&lt;div class=&#34;hljs&#34;&gt;
-&lt;span class=&#34;hljs-keyword&#34;&gt;$ ssh -T git@github.com&lt;/span&gt;
-The authenticity of host &#39;github.com (192.30.252.122)&#39; can&#39;t be established.
-RSA key fingerprint is xx:xx:xx:xx:xx:xx:
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added &#39;github.com,192.30.252.122&#39; (RSA) to the list of known hosts.
-&lt;span class=&#34;hljs-string&#34;&gt;Hi h-sao! You&#39;ve successfully authenticated,&lt;/span&gt; but GitHub does not provide shell access.
-
-&lt;/div&gt;&lt;/pre&gt;
-
-&lt;p&gt;known_hosts ファイルがこんな感じで作られました&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_09.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;パターン2-独自の名前で作った-ssh-キーを利用する場合&#34;&gt;(パターン2) 独自の名前で作った ssh キーを利用する場合&lt;/h2&gt;
-
-&lt;p&gt;わたしの場合は、先ほど github_rsa という名前でキーを生成したので、こちらのパターンになりました&lt;/p&gt;
-
-&lt;p&gt;まず、 github_rsa という独自名称を ssh アクセス時に認識させる必要があります&lt;/p&gt;
-
-&lt;p&gt;c:\Users\[ユーザ名]\.ssh\ 直下に config という名前のファイルを作成します&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;※この部分は、Gitうんぬんは関係のない、ssh 接続の話です&lt;br /&gt;
-　Windows の ssh 接続では c:\Users\[ユーザ名]\.ssh\config はすべてのSSH接続で共有されます&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;c:\Users\[ユーザ名]\.ssh\config の内容はこんな感じです&lt;/p&gt;
-
-&lt;pre&gt;&lt;div class=&#34;hljs&#34;&gt;
-Host &lt;span class=&#34;hljs-string&#34;&gt;my.github.server&lt;/span&gt;
-  HostName  &lt;span class=&#34;hljs-string&#34;&gt;github.com&lt;/span&gt;
-  Port      &lt;span class=&#34;hljs-string&#34;&gt;22&lt;/span&gt;
-  User      &lt;span class=&#34;hljs-string&#34;&gt;h-sao&lt;/span&gt;
-  IdentityFile  &lt;span class=&#34;hljs-string&#34;&gt;~/.ssh/github_rsa&lt;/span&gt;
-  TCPKeepAlive &lt;span class=&#34;hljs-string&#34;&gt;yes&lt;/span&gt;
-  IdentitiesOnly &lt;span class=&#34;hljs-string&#34;&gt;yes&lt;/span&gt;
-
-&lt;/div&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Host&lt;/strong&gt;&lt;br /&gt;
-アクセス識別子なので、どんな名前でもOK&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;HostName&lt;/strong&gt;&lt;br /&gt;
-実際にアクセスするアドレス&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Port&lt;/strong&gt;&lt;br /&gt;
-アクセスするポート番号、ssh(Secure Shell)の番号&lt;br /&gt;
-OpenSSHのデフォは22番なので、わざわざ書かなくてもいいのですが一応記載&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;User&lt;/strong&gt;&lt;br /&gt;
-GitHubユーザ名を入れます&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;IdentityFile&lt;/strong&gt;&lt;br /&gt;
-利用する ssh 秘密鍵ファイルのパス&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;TCPKeepAlive&lt;/strong&gt;：yes&lt;br /&gt;
-これもデフォは yes なのですが、念のため&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;IdentitiesOnly&lt;/strong&gt;：yes&lt;br /&gt;
-.ssh/config の設定を増やしていくと「Too many authentication failures」が出ることがあるらしいです、変なエラーはやなので、あらかじめ設定しておきます&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;＜参考リンク＞&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;SSHに公開鍵認証で接続する際に Too many authentication failures が出る - 6vox&lt;br /&gt;
-&lt;a href=&#34;http://blog.6vox.com/2014/11/ssh-too-many-authentication-failures.html&#34;&gt;http://blog.6vox.com/2014/11/ssh-too-many-authentication-failures.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;OpenSSH ssf_configの設定項目 - Life with IT&lt;br /&gt;
-&lt;a href=&#34;http://l-w-i.net/t/openssh/conf_001.txt&#34;&gt;http://l-w-i.net/t/openssh/conf_001.txt&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;ここまで準備したら、接続テストしましょう&lt;br /&gt;
-config に設定した名前で　Host の名称アクセスすることが出来ます！&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;$ ssh -T my.github.server
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;うまくいくと、パターン1と同じように、known hostに登録するかどうかを聞かれて、ファイルが作成されます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_10.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;また、&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Hi [GitHubユーザ名]! You&amp;rsquo;ve successfully authenticated, but GitHub does not provide shell access.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;こんな感じで、自分のGitHub名でアクセス出来たことが判ります&lt;br /&gt;
-いちおキャプチャ置いときます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_11.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;これで、クライアントPCから GitHub に IDとパスワードを利用せずに接続することが出来ました！&lt;/p&gt;
-
-&lt;h1 id=&#34;まだgitextensions-から-ssh-アクセスは出来ない&#34;&gt;まだGitExtensions から ssh アクセスは出来ない&lt;/h1&gt;
-
-&lt;p&gt;さて、この状態で、GitExtensions のプッシュボタンを押して Pushしようとしても、IDとパスワードを聞かれます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_06.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;Pushボタンを押すと…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_07.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;GitHub のアカウントとパスワードを聞かれます…&lt;br /&gt;
-どうやら &lt;strong&gt;https アクセスがデフォルト&lt;/strong&gt;みたいです&lt;/p&gt;
-
-&lt;p&gt;ちゃんと自身の Git リポジトリに ssh 接続するんだよー&lt;/p&gt;
-
-&lt;p&gt;を認識させてあげないといけません&lt;/p&gt;
-
-&lt;h1 id=&#34;git-リポジトリに-ssh-接続設定を教える&#34;&gt;Git リポジトリに ssh 接続設定を教える&lt;/h1&gt;
-
-&lt;p&gt;Git リポジトリの設定を Git bash のコマンドで見ることが出来ます&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ git config -l
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これらの設定は、Git リポジトリ直下にある .\.git\ 以下にあります&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;この下の config ファイルなどを直接編集しても反映されますが、コマンドを使った方が良いでしょう&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;わたしの場合の実行結果はこちら&lt;/p&gt;
-
-&lt;pre&gt;&lt;div class=&#34;hljs&#34;&gt;
-haruk@MACBOOKPROAKIKO ~/xxx (master)
-&lt;span class=&#34;hljs-keyword&#34;&gt;$ git config -l&lt;/span&gt;
-core.symlinks=&lt;span class=&#34;hljs-string&#34;&gt;false&lt;/span&gt;
-core.autocrlf=&lt;span class=&#34;hljs-string&#34;&gt;true&lt;/span&gt;
-color.diff=&lt;span class=&#34;hljs-string&#34;&gt;auto&lt;/span&gt;
-color.status=&lt;span class=&#34;hljs-string&#34;&gt;auto&lt;/span&gt;
-color.branch=&lt;span class=&#34;hljs-string&#34;&gt;auto&lt;/span&gt;
-color.interactive=&lt;span class=&#34;hljs-string&#34;&gt;true&lt;/span&gt;
-pack.packsizelimit=&lt;span class=&#34;hljs-string&#34;&gt;2g&lt;/span&gt;
-help.format=&lt;span class=&#34;hljs-string&#34;&gt;html&lt;/span&gt;
-http.sslcainfo=&lt;span class=&#34;hljs-string&#34;&gt;/bin/curl-ca-bundle.crt&lt;/span&gt;
-sendemail.smtpserver=&lt;span class=&#34;hljs-string&#34;&gt;/bin/msmtp.exe&lt;/span&gt;
-diff.astextplain.textconv=&lt;span class=&#34;hljs-string&#34;&gt;astextplain&lt;/span&gt;
-rebase.autosquash=&lt;span class=&#34;hljs-string&#34;&gt;true&lt;/span&gt;
-user.name=&lt;span class=&#34;hljs-string&#34;&gt;Sao Haruka&lt;/span&gt;
-user.email=&lt;span class=&#34;hljs-string&#34;&gt;xxx@yyy.tmp.com&lt;/span&gt;
-core.autocrlf=&lt;span class=&#34;hljs-string&#34;&gt;True&lt;/span&gt;
-core.excludesfile=&lt;span class=&#34;hljs-string&#34;&gt;C:\Users\haruk\Documents\gitignore_global.txt&lt;/span&gt;
-core.editor=&lt;span class=&#34;hljs-string&#34;&gt;&#34;C:/utils/GitExtensions/GitExtensions.exe&#34; fileeditor&lt;/span&gt;
-merge.tool=&lt;span class=&#34;hljs-string&#34;&gt;kdiff3&lt;/span&gt;
-diff.guitool=&lt;span class=&#34;hljs-string&#34;&gt;kdiff3&lt;/span&gt;
-difftool.kdiff3.path=&lt;span class=&#34;hljs-string&#34;&gt;C:/utils/KDiff3/kdiff3.exe&lt;/span&gt;
-mergetool.kdiff3.path=&lt;span class=&#34;hljs-string&#34;&gt;C:/utils/KDiff3/kdiff3.exe&lt;/span&gt;
-core.repositoryformatversion=&lt;span class=&#34;hljs-string&#34;&gt;0&lt;/span&gt;
-core.filemode=&lt;span class=&#34;hljs-string&#34;&gt;false&lt;/span&gt;
-core.bare=&lt;span class=&#34;hljs-string&#34;&gt;false&lt;/span&gt;
-core.logallrefupdates=&lt;span class=&#34;hljs-string&#34;&gt;true&lt;/span&gt;
-core.symlinks=&lt;span class=&#34;hljs-string&#34;&gt;false&lt;/span&gt;
-core.ignorecase=&lt;span class=&#34;hljs-string&#34;&gt;true&lt;/span&gt;
-core.hidedotfiles=&lt;span class=&#34;hljs-string&#34;&gt;dotGitOnly&lt;/span&gt;
-remote.origin.url=&lt;span class=&#34;hljs-keyword&#34;&gt;https://github.com/h-sao/xxx.git&lt;/span&gt;
-remote.origin.fetch=&lt;span class=&#34;hljs-string&#34;&gt;+refs/heads/*:refs/remotes/origin/*&lt;/span&gt;
-branch.master.remote=&lt;span class=&#34;hljs-string&#34;&gt;origin&lt;/span&gt;
-branch.master.merge=&lt;span class=&#34;hljs-string&#34;&gt;refs/heads/master&lt;/span&gt;
-
-&lt;/div&gt;&lt;/pre&gt;
-
-&lt;p&gt;上記の「&lt;strong&gt;remote.origin.url&lt;/strong&gt;」が Git サーバにアクセスするときの URL になるので、これを ssh でアクセスするように変更します&lt;/p&gt;
-
-&lt;p&gt;デフォルトの id_rsa を利用するときは&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;git@github.com:[ユーザID]/[リポジトリ].git&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;を設定します&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;$ git remote set-url origin git@github.com:h-sao/xxx.git
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;id_rsa じゃない、別名の ssh キーファイルを利用するときの設定は&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[Host名]:[ユーザID]/[リポジトリ].git&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;になります&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;$ git remote set-url origin my.github.server:h-sao/xxx.git
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;GitExtensions で Push してみましょう&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_12.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;URL の表記がちょっと変わりましたね&lt;br /&gt;
-無事、IDとパスワードを聞かれることなく、プッシュが成功しているはずです＼(^o^)／&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_13.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;やったー&lt;/p&gt;
-
-&lt;p&gt;＜参考リンク＞&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;gitHubでssh接続する手順~公開鍵・秘密鍵の生成から~ - Qiita&lt;br /&gt;
-&lt;a href=&#34;http://qiita.com/shizuma/items/2b2f873a0034839e47ce&#34;&gt;http://qiita.com/shizuma/items/2b2f873a0034839e47ce&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;番外編-httpsアクセスでidとパスワードを聞かれないようにする&#34;&gt;(番外編) httpsアクセスでIDとパスワードを聞かれないようにする&lt;/h1&gt;
-
-&lt;p&gt;ええ、今回、本当に色々と試しましたとも…&lt;/p&gt;
-
-&lt;p&gt;ssh ではなく https アクセスで、毎回アカウント情報を入力しない方法も調べました&lt;/p&gt;
-
-&lt;p&gt;あまりセキュアじゃないので、お勧めできませんが&lt;br /&gt;
-一応記載しておきます&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ git config -l 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;で調べた 「&lt;strong&gt;remote.origin.url&lt;/strong&gt;」 の初期の記載はこれでした&lt;/p&gt;
-
-&lt;pre&gt;&lt;div class=&#34;hljs&#34;&gt;
-remote.origin.url=&lt;span class=&#34;hljs-keyword&#34;&gt;https://github.com/h-sao/xxx.git&lt;/span&gt;
-
-&lt;/div&gt;&lt;/pre&gt;
-
-&lt;p&gt;この https アクセスの URL 中に、IDとパスワードを埋め込めばOKです&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;https://[ユーザID]:[パスワード]github.com/h-sao/xxx.git&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;やってみたけど、パスワードが丸々画面に表示されるので、よくないです…&lt;br /&gt;
-確かに、ssh キーファイルなど用意しなくてもいいので、便利ではありますが…＞＜；&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_14.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;利用は自己責任でお願いします&lt;/p&gt;
-
-&lt;p&gt;＜参考リンク＞&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Windowsにgitをインストールしてgithubにpushするまで - karakaram-blog&lt;br /&gt;
-&lt;a href=&#34;http://www.karakaram.com/git-install&#34;&gt;http://www.karakaram.com/git-install&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;追記記事書きました-2016-5-9&#34;&gt;追記記事書きました(2016/5/9)&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;[SSH] 複数キー接続のconfig記載について&lt;br /&gt;
-&lt;a href=&#34;http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/&#34;&gt;http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

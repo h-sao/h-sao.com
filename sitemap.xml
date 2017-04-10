@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://h-sao.com/blog/2017/04/10/how-to-install-tensorflow-gpu-on-windows/</loc>
+    <lastmod>2017-04-10T18:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://h-sao.com/blog/2017/03/29/how-to-install-anaconda-for-windows/</loc>
     <lastmod>2017-03-29T20:30:00+09:00</lastmod>
   </url>
@@ -239,7 +244,7 @@
   
   <url>
     <loc>http://h-sao.com/tags/anaconda/</loc>
-    <lastmod>2017-03-29T20:30:00+09:00</lastmod>
+    <lastmod>2017-04-10T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -299,7 +304,7 @@
   
   <url>
     <loc>http://h-sao.com/</loc>
-    <lastmod>2017-03-29T20:30:00+09:00</lastmod>
+    <lastmod>2017-04-10T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -371,7 +376,7 @@
   
   <url>
     <loc>http://h-sao.com/post/</loc>
-    <lastmod>2017-03-29T20:30:00+09:00</lastmod>
+    <lastmod>2017-04-10T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -383,7 +388,7 @@
   
   <url>
     <loc>http://h-sao.com/tags/python/</loc>
-    <lastmod>2017-03-29T20:30:00+09:00</lastmod>
+    <lastmod>2017-04-10T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -407,6 +412,12 @@
   
   <url>
     <loc>http://h-sao.com/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/tensorflow/</loc>
+    <lastmod>2017-04-10T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
