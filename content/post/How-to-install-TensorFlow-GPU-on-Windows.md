@@ -464,7 +464,7 @@ Tensorflowは Python3.5系じゃないとだめ
 試しに、CPU版にしても怒られました
 
 ```xml
-(ten) C:\Users\akiko.kawai>pip install tensorflow-gpu
+(tensorflow) D:\dev\anaconda>pip install tensorflow-gpu
 Collecting tensorflow-gpu
   Could not find a version that satisfies the requirement tensorflow-gpu (from versions: )
 No matching distribution found for tensorflow-gpu
