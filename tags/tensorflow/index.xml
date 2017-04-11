@@ -499,7 +499,7 @@ operable program or batch file.
 3.6に入れようとしたら、怒られました
 試しに、CPU版にしても怒られました&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;(ten) C:\Users\akiko.kawai&amp;gt;pip install tensorflow-gpu
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;(tensorflow) D:\dev\anaconda&amp;gt;pip install tensorflow-gpu
 Collecting tensorflow-gpu
   Could not find a version that satisfies the requirement tensorflow-gpu (from versions: )
 No matching distribution found for tensorflow-gpu
