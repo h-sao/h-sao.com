@@ -96,7 +96,13 @@ cuDNNをダウンロードするには、**NVIDIA Developer Membership に登録
 ※ここでもまた、Survey があります(^^；
 
 
-先ほどインストールした CUDA Toolkit は 8.0 なので、それに対応した cuDNN v6.0 を選択！
+先ほどインストールした CUDA Toolkit は 8.0 なので、それに対応した ~~cuDNN v6.0~~ を選択！  
+
+> 2017/4/17追記：  
+cuDNN6.0には 後程記述する cudnn64_5.dll が入っておらず  
+現時点ではTensorFlowのインポートでエラーが出ます  
+cuDNN v5.1 をダウンロードして、回避しました  
+scimprさん、教えて下さってありがとうございました
 
 <img src="/pic/How-to-install-TensorFlow-GPU-on-Windows_03.jpg" style="border:solid 5px #e6e6e6"/> 
 
@@ -215,12 +221,19 @@ I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stre
 
 - 暫定対応
 
-調べてもよく判らなかったので  
-持ってるDLLのファイル名を変更して使うことにしました(*ﾉωﾉ)  
-なんか今後問題でそうですが、致し方なし…  
+~~調べてもよく判らなかったので~~  
+~~持ってるDLLのファイル名を変更して使うことにしました(*ﾉωﾉ)~~  
+~~なんか今後問題でそうですが、致し方なし…~~  
 誰か、解決策あるなら教えて下さい（T▽T）
 
 <img src="/pic/How-to-install-TensorFlow-GPU-on-Windows_09.png" style="border:solid 5px #e6e6e6"/> 
+
+> 2017/4/17追記：  
+scimprさんに教えて頂きました  
+cuDNN5.1を選ぶと、cudnn64_5.dll が入っていますので、ここに書いたコピー暫定対応はしてはいけません！  
+cuDNN5.1でも問題なく TensorFlow 1.1.0rc1 は動いています！！
+
+
 
 ---
 
