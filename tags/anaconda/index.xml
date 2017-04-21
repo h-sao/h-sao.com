@@ -119,7 +119,15 @@ Visual Studio 2015 の VC++14.0 まで対応しているみたいです&lt;br /&
 &lt;p&gt;登録が済んだら、cuDNN をダウンロード出来ます&lt;br /&gt;
 ※ここでもまた、Survey があります(^^；&lt;/p&gt;
 
-&lt;p&gt;先ほどインストールした CUDA Toolkit は 8.0 なので、それに対応した cuDNN v6.0 を選択！&lt;/p&gt;
+&lt;p&gt;先ほどインストールした CUDA Toolkit は 8.0 なので、それに対応した &lt;del&gt;cuDNN v6.0&lt;/del&gt; を選択！&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;2017/4/17追記：&lt;br /&gt;
+cuDNN6.0には 後程記述する cudnn64_5.dll が入っておらず&lt;br /&gt;
+現時点ではTensorFlowのインポートでエラーが出ます&lt;br /&gt;
+cuDNN v5.1 をダウンロードして、回避しました&lt;br /&gt;
+scimprさん、教えて下さってありがとうございました&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/How-to-install-TensorFlow-GPU-on-Windows_03.jpg&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
 
@@ -243,12 +251,19 @@ I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stre
 &lt;li&gt;暫定対応&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;調べてもよく判らなかったので&lt;br /&gt;
-持ってるDLLのファイル名を変更して使うことにしました(*ﾉωﾉ)&lt;br /&gt;
-なんか今後問題でそうですが、致し方なし…&lt;br /&gt;
+&lt;p&gt;&lt;del&gt;調べてもよく判らなかったので&lt;/del&gt;&lt;br /&gt;
+&lt;del&gt;持ってるDLLのファイル名を変更して使うことにしました(*ﾉωﾉ)&lt;/del&gt;&lt;br /&gt;
+&lt;del&gt;なんか今後問題でそうですが、致し方なし…&lt;/del&gt;&lt;br /&gt;
 誰か、解決策あるなら教えて下さい（T▽T）&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/How-to-install-TensorFlow-GPU-on-Windows_09.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;2017/4/17追記：&lt;br /&gt;
+scimprさんに教えて頂きました&lt;br /&gt;
+cuDNN5.1を選ぶと、cudnn64_5.dll が入っていますので、ここに書いたコピー暫定対応はしてはいけません！&lt;br /&gt;
+cuDNN5.1でも問題なく TensorFlow 1.1.0rc1 は動いています！！&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;hr /&gt;
 
