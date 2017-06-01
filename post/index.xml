@@ -7,8 +7,111 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <lastBuildDate>Mon, 10 Apr 2017 18:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 01 Jun 2017 18:00:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[SSH] ポート指定GitサーバにSSHでアクセスできない時(Windows/GitExtensions)</title>
+      <link>http://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</link>
+      <pubDate>Thu, 01 Jun 2017 18:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</guid>
+      <description>
+
+&lt;h4 id=&#34;最近&#34;&gt;最近…&lt;/h4&gt;
+
+&lt;p&gt;機械学習関係をやってたんですけど、Unityをまた触ることになっています&lt;br /&gt;
+てんやわんやして、前回更新から2カ月も経ってしまった…(+o+)&lt;/p&gt;
+
+&lt;p&gt;今回また、タイトル名のGit/SSH関係でオロオロしたので、同現象で困ってる人の助けになれば幸いです&lt;/p&gt;
+
+&lt;h2 id=&#34;現象-初回ssh接続に失敗する&#34;&gt;(現象)初回SSH接続に失敗する&lt;/h2&gt;
+
+&lt;h4 id=&#34;環境&#34;&gt;環境&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Windows7/64bit&lt;/li&gt;
+&lt;li&gt;GitExtensions&lt;/li&gt;
+&lt;li&gt;キーペアを用いた認証でのSSH接続&lt;/li&gt;
+&lt;li&gt;GitサーバへのSSHアクセスは、オリジナルのポート番号を割り当てている&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;こんな環境で作業していました（古いPCからアクセスしたかったので、Win7なのです…）&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;初回クローンするために、Gitサーバにアクセスしようと、秘密鍵を .ssh ディレクトリ以下にコピーしておきます&lt;br /&gt;
+デフォルトのSSH秘密鍵置き場は&lt;br /&gt;
+&lt;strong&gt;c:\Users[ユーザ名].ssh/id_rsa&lt;/strong&gt;&lt;br /&gt;
+です&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;GitExtensionsを利用してGitリポジトリからクローンしようとすると、以下のエラーが…&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;fatal: Could not read from remote repository.&lt;/strong&gt;&lt;br /&gt;
+Please make sure you have the correct access rights and repository exists.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;え、なんで…？&lt;/p&gt;
+
+&lt;h2 id=&#34;解決-ポート番号ありでknown-hostsに登録する&#34;&gt;(解決)ポート番号ありでknown_hostsに登録する&lt;/h2&gt;
+
+&lt;p&gt;アドレスも合ってる！&lt;br /&gt;
+リポジトリもある！&lt;br /&gt;
+サーバには公開鍵、クライアントには秘密鍵を置いてる！&lt;/p&gt;
+
+&lt;p&gt;これでなぜアクセス出来ないのか、解明に半日かかってしまいました…トホホ&lt;br /&gt;
+自分のインフラ力の無さに涙が出そうです&lt;/p&gt;
+
+&lt;p&gt;答えを書きますと、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;先に&lt;strong&gt;コマンドプロンプトからSSHアクセス&lt;/strong&gt;を行っておく&lt;/li&gt;
+&lt;li&gt;ポート番号の指定がある場合は、&lt;strong&gt;ポート番号指定でアクセス&lt;/strong&gt;しておく&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;これで解決しました…(^_^;)&lt;/p&gt;
+
+&lt;p&gt;わたしの場合のポイントは、ポート指定でした&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;コマンドプロンプトを立ち上げます&lt;br /&gt;
+わたしの場合、GitExtensionsを使ってたので  &lt;strong&gt;Tools &amp;gt; Git bash&lt;/strong&gt; から立ち上げました&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;SSH のテスト接続を行います&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;$ssh git@[サーバアドレス] -p [SSHアクセスのポート番号]&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;そしたら、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Are you sure you want to continue connecting (yes/no)?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;と聞かれるので、すかさず &lt;strong&gt;yes&lt;/strong&gt; を！&lt;br /&gt;
+c:\Users[ユーザ名].ssh\known_hosts にアクセス情報が登録されます&lt;/p&gt;
+
+&lt;p&gt;これで GitExtensions に戻って新規クローン開始したら、拒否されることなくソースを取得できました！&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;最初に、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;$ssh git@[サーバアドレス]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;この状態で接続テストしてたんですけど、足りてないみたいでした&lt;/p&gt;
+
+&lt;p&gt;たったこれだけなんですけど、あまり情報が乗ってなかったように思いますので&lt;br /&gt;
+未来の自分へのメモ…&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[TensorFlow] TensorFlow on Windows GPU版インストール方法</title>
@@ -2306,174 +2409,6 @@ int main()
 無理に config に追記しなくてもわたしの環境では問題なく接続できました&lt;/p&gt;
 
 &lt;p&gt;参考までに～(^^)/&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[Unity] PC実行時のWindowsサイズの設定の仕方＆起動時フック</title>
-      <link>http://h-sao.com/blog/2016/05/08/change-unity-window-size/</link>
-      <pubDate>Sun, 08 May 2016 14:00:00 +0900</pubDate>
-      
-      <guid>http://h-sao.com/blog/2016/05/08/change-unity-window-size/</guid>
-      <description>
-
-&lt;p&gt;Unityのバグなのか、わたしの使い方が悪いのか？&lt;br /&gt;
-PC実行時のウィンドウサイズの設定が、思うようにできなかったので&lt;br /&gt;
-その解決メモです&lt;/p&gt;
-
-&lt;h1 id=&#34;pcで実行したら全画面&#34;&gt;PCで実行したら全画面…&lt;/h1&gt;
-
-&lt;p&gt;Unityのプロジェクトファイルを新規作成して&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;File&amp;rdquo; → &amp;ldquo;Build &amp;amp; Run&amp;rdquo;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;を選択すると、ビルドが走り、実際に exe が実行されます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Unity-window-size_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;へぇ、画面解像度( Screen resolution )とか、ここで変えることが出来るんだ～&lt;br /&gt;
-と思って解像度設定を変更し、&amp;rdquo;Play!&amp;rdquo; で起動させると、いちおう思ったサイズで起動することが出来ます&lt;/p&gt;
-
-&lt;h1 id=&#34;unityプロジェクトに-plyaer-settings-がある&#34;&gt;Unityプロジェクトに Plyaer Settings がある&lt;/h1&gt;
-
-&lt;p&gt;ユーザに毎回ウィンドウサイズを選択させるのも、なんだかねぇ…ということで、ちゃんと設定したいと思います&lt;/p&gt;
-
-&lt;p&gt;Unityのメニューの&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;File&amp;rdquo; → &amp;ldquo;Build Settings&amp;rdquo;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Build Settings を選択すると、ビルドに関する設定が変更できるようです&lt;br /&gt;
-下にある、&amp;rdquo;Player Settings&amp;rdquo; を選択すると、
-インスペクタウィンドウが出ます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Unity-window-size_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;ここで、起動時の Player Settings が出来るようですが…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Unity-window-size_02.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;「Resolution」 の 「&lt;strong&gt;Default Is Full Screen&lt;/strong&gt;」 のチェックボックスを外しましょう&lt;br /&gt;
-ついでに、「Standalone Player Options」 の &lt;strong&gt;「Display Resolution Dialog」 を　「Disable」&lt;/strong&gt;　にしておきます&lt;/p&gt;
-
-&lt;p&gt;これで exe を実行するたびに 「FixSizeWindows Configuration」 は開かなくなります&lt;/p&gt;
-
-&lt;p&gt;「Resolution」 には、「Default Screen Width/Height」 がありますが、、、&lt;br /&gt;
-ここで設定を変えても、ウィンドウサイズは変わりません&lt;br /&gt;
-（なんでやねん…＞＜）&lt;/p&gt;
-
-&lt;p&gt;どうやら、「前回起動したときのウィンドウサイズ」で起動するみたいです…&lt;br /&gt;
-Development Build にしても、しなくても、結果は一緒でした&lt;br /&gt;
-初期起動のサイズは、ここじゃないのかな…(´・ω・｀)&lt;/p&gt;
-
-&lt;p&gt;余談ですが、ここで変えた設定は、&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;.\ProjectSettings\ProjectSettings.asset&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;の中に、テキストファイルで保存されます&lt;/p&gt;
-
-&lt;h1 id=&#34;ウィンドウサイズはプログラムで変更&#34;&gt;ウィンドウサイズはプログラムで変更&lt;/h1&gt;
-
-&lt;p&gt;仕方がないので、スクリプトで記載します&lt;/p&gt;
-
-&lt;p&gt;Unityのメニュー &lt;strong&gt;Assets &amp;gt; Create &amp;gt; C# Script&lt;/strong&gt; で新規スクリプトを作ります&lt;/p&gt;
-
-&lt;p&gt;わたしは適当に GameInitial と名付けました（Unity の Project 内に、GameInitial の C#ファイルが追加されます）&lt;/p&gt;
-
-&lt;h2 id=&#34;いーっちばん最初のゲーム起動時をフックしたい&#34;&gt;いーっちばん最初のゲーム起動時をフックしたい？&lt;/h2&gt;
-
-&lt;p&gt;もちろん、ウィンドウサイズを変更したいためです&lt;br /&gt;
-解像度が小さい/大きいなど&lt;br /&gt;
-起動したときに、クライアント端末によってウィンドウサイズを変えたいとかあると思います&lt;/p&gt;
-
-&lt;p&gt;たぶん、現状の Unity 5.3系の最速フック方法は、&lt;strong&gt;RuntimeInitializeOnLoadMethod&lt;/strong&gt; ではないかと…&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;RuntimeInitializeOnLoadMethodAttribute&lt;br /&gt;
-&lt;a href=&#34;http://docs.unity3d.com/ScriptReference/RuntimeInitializeOnLoadMethodAttribute.html&#34;&gt;http://docs.unity3d.com/ScriptReference/RuntimeInitializeOnLoadMethodAttribute.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ユーザがアクションを起こす前に動くらしいですが&lt;br /&gt;
-実際やってみると、ロゴ起動画面の方が先に動くので&lt;br /&gt;
-ほんとの意味の一番最初のウィンドウサイズは、ここでは遅いみたいです&lt;/p&gt;
-
-&lt;p&gt;一応サンプルコード&lt;br /&gt;
-MonoBehaviour は無くても動くみたいです&lt;br /&gt;
-あと、オブジェクトなどにスクリプトをアタッチしなくてもOKです&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c#&#34;&gt;using UnityEngine;
-
-public class GameInitial //: MonoBehaviour
-{
-    [RuntimeInitializeOnLoadMethod]
-    static void OnRuntimeMethodLoad()
-    {
-        Screen.SetResolution( 640, 960, false, 60);
-
-    }
-
-    //// Use this for initialization
-    //void Start()
-    //{
-
-    //}
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-    //}
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;自分が知らないだけかもしれませんが、 RuntimeInitializeOnLoadMethodAttribute より早い時点で自分の処理を差し込むことは出来ないみたい…&lt;/p&gt;
-
-&lt;h1 id=&#34;ウィンドウサイズを指定できるコマンドライン引数がある&#34;&gt;ウィンドウサイズを指定できるコマンドライン引数がある！&lt;/h1&gt;
-
-&lt;p&gt;結局、起動時のウィンドウサイズは結局どこで更新するんでしょうか…？&lt;/p&gt;
-
-&lt;p&gt;実は、飛び道具的ですが、exe の引数に渡せるみたいです…！（そこか…＞＜&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;「Unity スタンドアロンプレイヤーのコマンドライン引数」の項
-&lt;a href=&#34;http://docs.unity3d.com/ja/current/Manual/CommandLineArguments.html&#34;&gt;http://docs.unity3d.com/ja/current/Manual/CommandLineArguments.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;自分で作った exe の引数に&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;-screen-width ：幅&lt;/li&gt;
-&lt;li&gt;-screen-height ：高さ&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;を渡してあげればOKでした&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; xxx.exe -screen-width 300 -screen-height 300
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;小さいスクリーンサイズで起動したのちに…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Unity-window-size_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;自分の指定した Screen.SetResolution サイズで起動&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Unity-window-size_04.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;つまり、引数に自分で好きな数値を渡せるようになってるので&lt;br /&gt;
-それと、Screen.SetResolution の指定を同じ大きさにしておけば&lt;br /&gt;
-最初から自分自身でサイズを調整できますね&lt;/p&gt;
-
-&lt;p&gt;なんだろなー&lt;br /&gt;
-なんで起動時のサイズくらい、すんなり設定できないんでしょうか…謎や～&lt;/p&gt;
-
-&lt;p&gt;もしかしたら、無料版では起動時のロゴを外せないようにするために、プログラマは触れないようになってるのかなー？&lt;/p&gt;
-
-&lt;p&gt;ともあれ、意図したことは出来るようになっているので、まぁ良しとします！&lt;/p&gt;
 </description>
     </item>
     

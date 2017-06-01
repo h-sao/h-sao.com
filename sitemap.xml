@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</loc>
+    <lastmod>2017-06-01T18:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://h-sao.com/blog/2017/04/10/how-to-install-tensorflow-gpu-on-windows/</loc>
     <lastmod>2017-04-10T18:00:00+09:00</lastmod>
   </url>
@@ -304,7 +309,7 @@
   
   <url>
     <loc>http://h-sao.com/</loc>
-    <lastmod>2017-04-10T18:00:00+09:00</lastmod>
+    <lastmod>2017-06-01T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -316,13 +321,13 @@
   
   <url>
     <loc>http://h-sao.com/tags/git/</loc>
-    <lastmod>2016-05-09T23:30:00+09:00</lastmod>
+    <lastmod>2017-06-01T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://h-sao.com/tags/gitextensions/</loc>
-    <lastmod>2016-05-07T15:23:30+09:00</lastmod>
+    <lastmod>2017-06-01T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -376,7 +381,7 @@
   
   <url>
     <loc>http://h-sao.com/post/</loc>
-    <lastmod>2017-04-10T18:00:00+09:00</lastmod>
+    <lastmod>2017-06-01T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -406,7 +411,7 @@
   
   <url>
     <loc>http://h-sao.com/tags/ssh/</loc>
-    <lastmod>2016-05-09T23:30:00+09:00</lastmod>
+    <lastmod>2017-06-01T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

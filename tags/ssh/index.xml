@@ -10,6 +10,109 @@
     <atom:link href="http://h-sao.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>[SSH] ポート指定GitサーバにSSHでアクセスできない時(Windows/GitExtensions)</title>
+      <link>http://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</link>
+      <pubDate>Thu, 01 Jun 2017 18:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</guid>
+      <description>
+
+&lt;h4 id=&#34;最近&#34;&gt;最近…&lt;/h4&gt;
+
+&lt;p&gt;機械学習関係をやってたんですけど、Unityをまた触ることになっています&lt;br /&gt;
+てんやわんやして、前回更新から2カ月も経ってしまった…(+o+)&lt;/p&gt;
+
+&lt;p&gt;今回また、タイトル名のGit/SSH関係でオロオロしたので、同現象で困ってる人の助けになれば幸いです&lt;/p&gt;
+
+&lt;h2 id=&#34;現象-初回ssh接続に失敗する&#34;&gt;(現象)初回SSH接続に失敗する&lt;/h2&gt;
+
+&lt;h4 id=&#34;環境&#34;&gt;環境&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Windows7/64bit&lt;/li&gt;
+&lt;li&gt;GitExtensions&lt;/li&gt;
+&lt;li&gt;キーペアを用いた認証でのSSH接続&lt;/li&gt;
+&lt;li&gt;GitサーバへのSSHアクセスは、オリジナルのポート番号を割り当てている&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;こんな環境で作業していました（古いPCからアクセスしたかったので、Win7なのです…）&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;初回クローンするために、Gitサーバにアクセスしようと、秘密鍵を .ssh ディレクトリ以下にコピーしておきます&lt;br /&gt;
+デフォルトのSSH秘密鍵置き場は&lt;br /&gt;
+&lt;strong&gt;c:\Users[ユーザ名].ssh/id_rsa&lt;/strong&gt;&lt;br /&gt;
+です&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;GitExtensionsを利用してGitリポジトリからクローンしようとすると、以下のエラーが…&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;fatal: Could not read from remote repository.&lt;/strong&gt;&lt;br /&gt;
+Please make sure you have the correct access rights and repository exists.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;え、なんで…？&lt;/p&gt;
+
+&lt;h2 id=&#34;解決-ポート番号ありでknown-hostsに登録する&#34;&gt;(解決)ポート番号ありでknown_hostsに登録する&lt;/h2&gt;
+
+&lt;p&gt;アドレスも合ってる！&lt;br /&gt;
+リポジトリもある！&lt;br /&gt;
+サーバには公開鍵、クライアントには秘密鍵を置いてる！&lt;/p&gt;
+
+&lt;p&gt;これでなぜアクセス出来ないのか、解明に半日かかってしまいました…トホホ&lt;br /&gt;
+自分のインフラ力の無さに涙が出そうです&lt;/p&gt;
+
+&lt;p&gt;答えを書きますと、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;先に&lt;strong&gt;コマンドプロンプトからSSHアクセス&lt;/strong&gt;を行っておく&lt;/li&gt;
+&lt;li&gt;ポート番号の指定がある場合は、&lt;strong&gt;ポート番号指定でアクセス&lt;/strong&gt;しておく&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;これで解決しました…(^_^;)&lt;/p&gt;
+
+&lt;p&gt;わたしの場合のポイントは、ポート指定でした&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;コマンドプロンプトを立ち上げます&lt;br /&gt;
+わたしの場合、GitExtensionsを使ってたので  &lt;strong&gt;Tools &amp;gt; Git bash&lt;/strong&gt; から立ち上げました&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;SSH のテスト接続を行います&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;$ssh git@[サーバアドレス] -p [SSHアクセスのポート番号]&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;そしたら、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Are you sure you want to continue connecting (yes/no)?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;と聞かれるので、すかさず &lt;strong&gt;yes&lt;/strong&gt; を！&lt;br /&gt;
+c:\Users[ユーザ名].ssh\known_hosts にアクセス情報が登録されます&lt;/p&gt;
+
+&lt;p&gt;これで GitExtensions に戻って新規クローン開始したら、拒否されることなくソースを取得できました！&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;最初に、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;$ssh git@[サーバアドレス]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;この状態で接続テストしてたんですけど、足りてないみたいでした&lt;/p&gt;
+
+&lt;p&gt;たったこれだけなんですけど、あまり情報が乗ってなかったように思いますので&lt;br /&gt;
+未来の自分へのメモ…&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>[SSH] 複数キー接続のconfig記載について</title>
       <link>http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</link>
       <pubDate>Mon, 09 May 2016 23:30:00 +0900</pubDate>
