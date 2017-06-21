@@ -7,8 +7,92 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <lastBuildDate>Thu, 01 Jun 2017 18:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 21 Jun 2017 18:00:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Unity] 常にカメラの前にSpriteを出す</title>
+      <link>http://h-sao.com/blog/2017/06/21/unity-sprite-on-front-of-camera/</link>
+      <pubDate>Wed, 21 Jun 2017 18:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2017/06/21/unity-sprite-on-front-of-camera/</guid>
+      <description>
+
+&lt;h2 id=&#34;unityでカメラに追従して-前面にspriteを出す方法&#34;&gt;Unityでカメラに追従して、前面にSpriteを出す方法&lt;/h2&gt;
+
+&lt;p&gt;これ、本当は、カメラの子供として指定すればもっと簡単なんですけど…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;testScript.transform.parent = Camera.main.transform
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;この場合、&lt;br /&gt;
+カメラにアニメーションが付いてる時（メインカメラは固定ポジションのままの時）に&lt;br /&gt;
+うまく乗せられなかったりして、&lt;br /&gt;
+面倒だなーと思い、Update毎に自分で位置を更新することにしました&lt;br /&gt;
+（変に親子関係があるのも、後で何か制限されたらやだなーとかとかもあり…）&lt;/p&gt;
+
+&lt;p&gt;以下を参考にしたら、簡単にカメラの前に表示するスプライトを簡単に表現できました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;カメラからの距離で求める錐台のサイズ&lt;br /&gt;
+&lt;a href=&#34;https://docs.unity3d.com/jp/540/Manual/FrustumSizeAtDistance.html&#34;&gt;https://docs.unity3d.com/jp/540/Manual/FrustumSizeAtDistance.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;public class TestExecutor : MonoBehaviour
+{
+    private Texture2D blackTexture;
+    private SpriteRenderer testSprite;
+
+    void Start()
+    {
+        // Create black texture
+        blackTexture = new Texture2D(32, 32, TextureFormat.RGB24, false);
+        blackTexture.SetPixel(0, 0, Color.white);
+        blackTexture.Apply();
+
+        // Create Sprite
+        var sprite = Sprite.Create(
+          texture: blackTexture,
+          rect: new Rect(0, 0, blackTexture.width, blackTexture.height),
+          pivot: new Vector2(0.5f, 0.5f)
+        );
+
+        // スクリプトからSprite生成
+        testSprite = new GameObject(&amp;quot;TestSprite&amp;quot;).AddComponent&amp;lt;SpriteRenderer&amp;gt;();
+        testSprite.sprite = sprite;
+    }
+
+    void Update()
+    {
+        var distance = 10f;
+
+        // カメラの前に置く距離に応じて、ワールド座標でのスクリーンサイズを求める
+        // (distance +1f) の意味は、スクリーンサイズよりちょい大きめで画面を覆いたいから
+        var worldScreenH = 2.0f * (distance + 1f) * Mathf.Tan(Camera.main.fieldOfView * 0.5f * Mathf.Deg2Rad);
+        var worldScreenW = worldScreenH * Camera.main.aspect;
+
+        // Spriteのサイズを調整
+        testSprite.transform.localScale = new Vector3(worldScreenW / testSprite.sprite.bounds.size.x, worldScreenH / testSprite.sprite.bounds.size.y);
+
+        // カメラの角度と位置をコピー、前に置くだけならforwardベクトルが便利
+        testSprite.transform.position = Camera.main.transform.position + testSprite.transform.forward.normalized * distance;
+        testSprite.transform.rotation = Camera.main.transform.rotation;
+        
+        // フェードとかさせたいなら、ここでαを調整
+        testSprite.color = new Color(0, 0, 0, fadingAlpha);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/h-sao/1871a05001c611436dd24b3b11fd9554&#34;&gt;Gist - Unity Sprite on front of camera&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;こんな感じで、Spriteがカメラにくっついてきてくれます&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Sprite-on-front-of-camera_00.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;忘れそうな自分へのメモ&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[SSH] ポート指定GitサーバにSSHでアクセスできない時(Windows/GitExtensions)</title>
@@ -2368,47 +2452,6 @@ int main()
 噂には聞いていましたが、自分で動作させてみると、感激するもんがあります&lt;/p&gt;
 
 &lt;p&gt;今はまだプレビューらしいので、早く安定化して欲しいですね～&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[SSH] 複数キー接続のconfig記載について</title>
-      <link>http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</link>
-      <pubDate>Mon, 09 May 2016 23:30:00 +0900</pubDate>
-      
-      <guid>http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</guid>
-      <description>
-
-&lt;p&gt;前回、&lt;br /&gt;
-&lt;a href=&#34;http://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/&#34;&gt;[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続&lt;/a&gt;&lt;br /&gt;
-で Gitサーバにアクセスするための ssh 接続について記載しました&lt;/p&gt;
-
-&lt;p&gt;その追記メモです&lt;/p&gt;
-
-&lt;h2 id=&#34;ssh-config-ファイルに記載する内容&#34;&gt;.\.ssh\config ファイルに記載する内容&lt;/h2&gt;
-
-&lt;p&gt;Git アクセス に ssh を利用する際に、複数アカウントを利用したい&lt;br /&gt;
-つまり、複数 ssh キーを利用したい&lt;br /&gt;
-という場合についてです&lt;/p&gt;
-
-&lt;p&gt;もし、&lt;strong&gt;利用するキーの名前が id_rsa であれば&lt;br /&gt;
-これはデフォルトで認識される名前なので、わざわざ .\.ssh\config ファイルに記載しなくても接続OK&lt;/strong&gt;でした&lt;/p&gt;
-
-&lt;p&gt;つまり例えば、&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;元々 社内用 Git サーバのアクセスに id_rsa を利用していた&lt;/li&gt;
-&lt;li&gt;追加で、GitHub にアクセスするキー（github_rsa など別名称）を作成した&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;こんな場合があったとします&lt;/p&gt;
-
-&lt;p&gt;.\.ssh\config ファイルに記載する内容は 2. の github_rsa のものだけでOKです&lt;/p&gt;
-
-&lt;p&gt;もちろん、 1. の id_rsa を書いても問題ないですし、コンフィグにちゃんと記載されている方が、後々判りやすいと思いますが&lt;br /&gt;
-無理に config に追記しなくてもわたしの環境では問題なく接続できました&lt;/p&gt;
-
-&lt;p&gt;参考までに～(^^)/&lt;/p&gt;
 </description>
     </item>
     

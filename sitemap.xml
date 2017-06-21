@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://h-sao.com/blog/2017/06/21/unity-sprite-on-front-of-camera/</loc>
+    <lastmod>2017-06-21T18:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</loc>
     <lastmod>2017-06-01T18:00:00+09:00</lastmod>
   </url>
@@ -309,7 +314,7 @@
   
   <url>
     <loc>http://h-sao.com/</loc>
-    <lastmod>2017-06-01T18:00:00+09:00</lastmod>
+    <lastmod>2017-06-21T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -381,7 +386,7 @@
   
   <url>
     <loc>http://h-sao.com/post/</loc>
-    <lastmod>2017-06-01T18:00:00+09:00</lastmod>
+    <lastmod>2017-06-21T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -434,7 +439,7 @@
   
   <url>
     <loc>http://h-sao.com/tags/unity/</loc>
-    <lastmod>2016-08-09T18:00:00+09:00</lastmod>
+    <lastmod>2017-06-21T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

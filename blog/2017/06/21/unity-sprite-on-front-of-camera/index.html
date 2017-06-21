@@ -46,12 +46,12 @@
         <article class="post">
             <a class="btn" href="http://h-sao.com/" title="">&laquo; </a>
             
-<h1><a href="http://h-sao.com/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/" title="[Chrome] Google Chromeのマルチプロファイル設定">[Chrome] Google Chromeのマルチプロファイル設定</a></h1>
+<h1><a href="http://h-sao.com/blog/2017/06/21/unity-sprite-on-front-of-camera/" title="[Unity] 常にカメラの前にSpriteを出す">[Unity] 常にカメラの前にSpriteを出す</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.01.04">2017.01.04</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.06.21">2017.06.21</time>
 &middot; 
     
-    <a href="http://h-sao.com/tags/chrome">chrome</a>
+    <a href="http://h-sao.com/tags/unity">unity</a>
     
     
 
@@ -60,168 +60,93 @@
  </footer>
             
 
-<p><strong>Google Chrome</strong> を使って、Webサイトの開発をしている人向けの情報です</p>
+<h2 id="unityでカメラに追従して-前面にspriteを出す方法">Unityでカメラに追従して、前面にSpriteを出す方法</h2>
 
-<p>自分のChromeのユーザプロファイラを使わずに、開発は別のプロファイラを使いたいってこと、ありますよね…？</p>
+<p>これ、本当は、カメラの子供として指定すればもっと簡単なんですけど…</p>
 
-<h2 id="プランa-ユーザプロファイラを切り替える">[プランA] ユーザプロファイラを切り替える</h2>
-
-<p>Google Chrome のユーザデータを、開発用と自分個人用とに分けたい<br />
-開発用のモバイルモードで見てるときに、普通にPCブラウジングがしたい</p>
-
-<p>とかいうときのために（か、どうか分かりませんが…）</p>
-
-<p>Google chrome は複数ユーザに対応しています</p>
-
-<ol>
-<li><p>chrome://settings/ にアクセス<br />
-もしくは、メニューの「設定」を押す</p></li>
-
-<li><p>「ユーザ」の設定項目があるので、追加します<br />
-<img src="/pic/How-to-use-multiple-browser-profiles-in-chrome_02.png" style="border:solid 5px #e6e6e6"/></p></li>
-
-<li><p>アイコンと名前を選択して「追加」します<br />
-（わたしの場合は適当に Development と付けました）<br />
-<img src="/pic/How-to-use-multiple-browser-profiles-in-chrome_03.png" style="border:solid 5px #e6e6e6"/></p></li>
-
-<li><p>ユーザ名が右上に表示されるようになり、新しい「Development」ユーザでブラウザが立ち上がります<br />
-<img src="/pic/How-to-use-multiple-browser-profiles-in-chrome_04.png" style="border:solid 5px #e6e6e6"/></p></li>
-</ol>
-
-<p>Extension や閲覧履歴は、完全に今まで使っていたものとは別になっているので<br />
-新規プロファイルが使い放題です(*ﾉωﾉ)</p>
-
-<p>これまで使っていたユーザは「ユーザ－１」<br />
-開発用のユーザは「Development」<br />
-で、使い分けることが可能になりました</p>
-
-<h2 id="おまけ-起動時に-development-ユーザを指定して起動する方法">[おまけ] 起動時に Development ユーザを指定して起動する方法</h2>
-
-<p>ちなみに、デフォルト起動はもちろん、これまで使っていた「ユーザー１」で立ち上がります</p>
-
-<p>ショートカットなどで、さっき作ったDevelopmentユーザがいきなり立ち上がって欲しいときは<br />
-以下のように「<strong>profile-directory</strong>」起動オプションを設定してあげると<br />
-任意のユーザプロファイルで立ち上がります</p>
-
-<pre><code>&quot;C:\Program Files (x86)\Google\Chrome\Application\chrome.exe&quot; --profile-directory=&quot;Profile 2&quot;
+<pre><code>testScript.transform.parent = Camera.main.transform
 </code></pre>
 
-<blockquote>
-<p>※Chromeのショートカット設定にしておくと便利です<br />
-<img src="/pic/How-to-use-multiple-browser-profiles-in-chrome_05.png" style="border:solid 5px #e6e6e6"/></p>
-</blockquote>
+<p>この場合、<br />
+カメラにアニメーションが付いてる時（メインカメラは固定ポジションのままの時）に<br />
+うまく乗せられなかったりして、<br />
+面倒だなーと思い、Update毎に自分で位置を更新することにしました<br />
+（変に親子関係があるのも、後で何か制限されたらやだなーとかとかもあり…）</p>
 
-<p>わたしの環境では、&rdquo;Peofile 2&rdquo;という名前でしたが、これは作った環境によって異なっているはずです</p>
+<p>以下を参考にしたら、簡単にカメラの前に表示するスプライトを簡単に表現できました</p>
 
-<p>Chromeユーザプロファイルのデフォルトの位置はこちら↓↓↓</p>
+<ul>
+<li>カメラからの距離で求める錐台のサイズ<br />
+<a href="https://docs.unity3d.com/jp/540/Manual/FrustumSizeAtDistance.html">https://docs.unity3d.com/jp/540/Manual/FrustumSizeAtDistance.html</a></li>
+</ul>
 
-<blockquote>
-<p><strong>&ldquo;C:\Users[Winユーザ名]\AppData\Local\Google\Chrome\User Data\Profile x&rdquo;</strong></p>
-</blockquote>
+<pre><code>public class TestExecutor : MonoBehaviour
+{
+    private Texture2D blackTexture;
+    private SpriteRenderer testSprite;
 
-<p>ちなみに、これまで使っていた自分の環境である「ユーザー１」は「<strong>Default</strong>」というディレクトリ名です</p>
+    void Start()
+    {
+        // Create black texture
+        blackTexture = new Texture2D(32, 32, TextureFormat.RGB24, false);
+        blackTexture.SetPixel(0, 0, Color.white);
+        blackTexture.Apply();
 
-<blockquote>
-<p>&ldquo;C:\Users[Winユーザ名]\AppData\Local\Google\Chrome\User Data\Default&rdquo;</p>
-</blockquote>
+        // Create Sprite
+        var sprite = Sprite.Create(
+          texture: blackTexture,
+          rect: new Rect(0, 0, blackTexture.width, blackTexture.height),
+          pivot: new Vector2(0.5f, 0.5f)
+        );
 
-<hr />
+        // スクリプトからSprite生成
+        testSprite = new GameObject(&quot;TestSprite&quot;).AddComponent&lt;SpriteRenderer&gt;();
+        testSprite.sprite = sprite;
+    }
 
-<p>さて、プランAのプロファイル切り替えでも、まぁ用途は足りるんですけど<br />
-1点だけ、気に入らないところがありました…</p>
+    void Update()
+    {
+        var distance = 10f;
 
-<p>確かに、完全にプロファイルは別になるのですが<br />
-<strong>起動時の画面サイズは、プロファイル間で共有されてしまう</strong>のです</p>
+        // カメラの前に置く距離に応じて、ワールド座標でのスクリーンサイズを求める
+        // (distance +1f) の意味は、スクリーンサイズよりちょい大きめで画面を覆いたいから
+        var worldScreenH = 2.0f * (distance + 1f) * Mathf.Tan(Camera.main.fieldOfView * 0.5f * Mathf.Deg2Rad);
+        var worldScreenW = worldScreenH * Camera.main.aspect;
 
-<p>これを解消したい…！<br />
-それが次に示すプランBのパターンです</p>
+        // Spriteのサイズを調整
+        testSprite.transform.localScale = new Vector3(worldScreenW / testSprite.sprite.bounds.size.x, worldScreenH / testSprite.sprite.bounds.size.y);
 
-<h2 id="プランb-稼働環境を別物にする">[プランB] 稼働環境を別物にする</h2>
-
-<p>つまりプランAのままだと、</p>
-
-<blockquote>
-<p>自分でブラウジングしてる「ユーザー１」の画面サイズと<br />
-「Development」ユーザの画面サイズを、<br />
-個別に保存することは出来ない</p>
-</blockquote>
-
-<p>のです…<br />
-あぁ残念 xxx</p>
-
-<p>でも大丈夫(*ﾉωﾉ)</p>
-
-<p>方法がありました</p>
-
-<p>プロファイルの保存場所そのものを、別のディレクトリにすればOKでした</p>
-
-<p>指定するオプションは「<strong>user-data-dir</strong>」です</p>
-
-<pre><code>&quot;C:\Program Files (x86)\Google\Chrome\Application\chrome.exe&quot; --user-data-dir=&quot;C:\utils\chrome_dev_profile&quot;
+        // カメラの角度と位置をコピー、前に置くだけならforwardベクトルが便利
+        testSprite.transform.position = Camera.main.transform.position + testSprite.transform.forward.normalized * distance;
+        testSprite.transform.rotation = Camera.main.transform.rotation;
+        
+        // フェードとかさせたいなら、ここでαを調整
+        testSprite.color = new Color(0, 0, 0, fadingAlpha);
+    }
+}
 </code></pre>
 
-<blockquote>
-<p>※同じく、Chromeのショートカット設定の図、先ほどのプランAの profile-directory オプションは不要<br />
-<img src="/pic/How-to-use-multiple-browser-profiles-in-chrome_06.png" style="border:solid 5px #e6e6e6"/></p>
-</blockquote>
+<p><a href="https://gist.github.com/h-sao/1871a05001c611436dd24b3b11fd9554">Gist - Unity Sprite on front of camera</a></p>
 
-<p>このオプションで指定するディレクトリは、どこでもいいみたいですが<br />
-出来ればデフォルトで利用している</p>
+<p>こんな感じで、Spriteがカメラにくっついてきてくれます</p>
 
-<blockquote>
-<p>C:\Users[Winユーザ名]\AppData\Local\Google\Chrome\User Data</p>
-</blockquote>
+<p><img src="/pic/Unity-Sprite-on-front-of-camera_00.gif" alt="" /></p>
 
-<p>の配下は、避けた方がいいかもしれません<br />
-（わたしの環境では、スタートページがちょっと変になりました。深追いして調べてないです…）</p>
-
-<hr />
-
-<p>プランA/Bのどちらでも、マルチプロファイラでブラウジングできるのですが<br />
-より独立した設定をしたい！という人には、プランBが私的にはお勧めです</p>
-
-<p>Chrome は起動オプションがいっぱいあって、他にも<br />
-Userエージェントを指定出来たり（<strong>user-agent</strong>）、<br />
-ブラウザの言語を指定したり（<strong>lang=en-US</strong>で英語になる）と<br />
-いろんな機能が用意されてるので<br />
-開発用途としてはなかなかいい感じだなと、今更ながら思いました(*´∇`)ﾉ</p>
-
-<hr />
-
-<p>＜参考＞</p>
-
-<p>ちなみに、Google Chrome の起動オプションは<br />
-公式ではちょっと探しにくかったんですけど（わたしの探し方が悪いかも…）<br />
-こちらの人のサイトが、簡潔で一覧性が高く、参考になりました(^▽^)/</p>
-
-<ul>
-<li>List of Chromium Command Line Switches - Peter Beverloo（英語）<br />
-<a href="http://peter.sh/experiments/chromium-command-line-switches/">http://peter.sh/experiments/chromium-command-line-switches/</a></li>
-</ul>
-
-<p>以下、日本語の参考サイト</p>
-
-<ul>
-<li><p>完全Google Chrome マルチユーザマニュアル　永久保存版 - This is Shinobu&rsquo;s Memorandum<br />
-<a href="http://saske18jp.blogspot.jp/2012/05/google-chrome.html">http://saske18jp.blogspot.jp/2012/05/google-chrome.html</a></p></li>
-
-<li><p>Google Chrome を別設定で複数起動させる方法 - digitalbox<br />
-<a href="http://digitalbox.jp/google-chrome-multiple-invoking/">http://digitalbox.jp/google-chrome-multiple-invoking/</a></p></li>
-</ul>
+<p>忘れそうな自分へのメモ</p>
 
             <ul class="share-buttons">
     <li></li>
     <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f01%2f04%2fhow-to-use-multiple-browser-profiles-in-chrome%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f06%2f21%2funity-sprite-on-front-of-camera%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bChrome%5d%20Google%20Chrome%e3%81%ae%e3%83%9e%e3%83%ab%e3%83%81%e3%83%97%e3%83%ad%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e8%a8%ad%e5%ae%9a&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f01%2f04%2fhow-to-use-multiple-browser-profiles-in-chrome%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bUnity%5d%20%e5%b8%b8%e3%81%ab%e3%82%ab%e3%83%a1%e3%83%a9%e3%81%ae%e5%89%8d%e3%81%abSprite%e3%82%92%e5%87%ba%e3%81%99&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f06%2f21%2funity-sprite-on-front-of-camera%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f01%2f04%2fhow-to-use-multiple-browser-profiles-in-chrome%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f06%2f21%2funity-sprite-on-front-of-camera%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f01%2f04%2fhow-to-use-multiple-browser-profiles-in-chrome%2f&title=%5bChrome%5d%20Google%20Chrome%e3%81%ae%e3%83%9e%e3%83%ab%e3%83%81%e3%83%97%e3%83%ad%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e8%a8%ad%e5%ae%9a" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f06%2f21%2funity-sprite-on-front-of-camera%2f&title=%5bUnity%5d%20%e5%b8%b8%e3%81%ab%e3%82%ab%e3%83%a1%e3%83%a9%e3%81%ae%e5%89%8d%e3%81%abSprite%e3%82%92%e5%87%ba%e3%81%99" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 
@@ -231,9 +156,9 @@ Userエージェントを指定出来たり（<strong>user-agent</strong>）、<
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'harukasao';
-    var disqus_identifier = 'http:\/\/h-sao.com\/blog\/2017\/01\/04\/how-to-use-multiple-browser-profiles-in-chrome\/';
-    var disqus_title = '[Chrome] Google Chromeのマルチプロファイル設定';
-    var disqus_url = 'http:\/\/h-sao.com\/blog\/2017\/01\/04\/how-to-use-multiple-browser-profiles-in-chrome\/';
+    var disqus_identifier = 'http:\/\/h-sao.com\/blog\/2017\/06\/21\/unity-sprite-on-front-of-camera\/';
+    var disqus_title = '[Unity] 常にカメラの前にSpriteを出す';
+    var disqus_url = 'http:\/\/h-sao.com\/blog\/2017\/06\/21\/unity-sprite-on-front-of-camera\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
