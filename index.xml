@@ -7,8 +7,151 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <lastBuildDate>Wed, 21 Jun 2017 18:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jul 2017 18:00:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Android] Hyper-Vで使うVisual Studio Emulator for Androidの最初の一歩</title>
+      <link>http://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</link>
+      <pubDate>Thu, 27 Jul 2017 18:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</guid>
+      <description>
+
+&lt;h2 id=&#34;どうもうまくandroidエミュレータが動かない&#34;&gt;どうもうまくAndroidエミュレータが動かない…&lt;/h2&gt;
+
+&lt;p&gt;いわゆる ADV Manager をつかって、Androidをエミューレートしたいのですが&lt;br /&gt;
+なぜかうまく起動しない…&lt;/p&gt;
+
+&lt;p&gt;環境&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Windows10 x64&lt;/li&gt;
+&lt;li&gt;Visual Studio 2017&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Android SDK Managerをよく見てみると、HAXM installer が &amp;ldquo;Not compatible with Windows&amp;rdquo; となっています&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;ふむ…&lt;br /&gt;
+無理矢理 HAXM のインストーラーをダウンロードしてきても、こんな感じでエラー&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This computer does not support Intel Virtualization Technology (VT-x) or it is being exclusively used by Hyper-V, HAXM cannot be installed.&lt;br /&gt;
+Please ensure Hyper-V is disabled in Windows Features, or refer to the Intel HAXM documentation for more information.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;なんですと…Hyper-Vが入ってたら使えないよだと…(｀・ω・´)&lt;/p&gt;
+
+&lt;p&gt;ワタクシ、&lt;strong&gt;Android 開発のために手元の Hyper-V を辞める事は出来ないデスヨ！&lt;/strong&gt;&lt;br /&gt;
+調べてみると「&lt;strong&gt;Visual Studio Emulator for Android&lt;/strong&gt;」というHyper-Vベースで動くエミュレーターが用意されているらしいので設定してみました&lt;/p&gt;
+
+&lt;h2 id=&#34;visual-studio-emulator-for-android&#34;&gt;Visual Studio Emulator for Android&lt;/h2&gt;
+
+&lt;p&gt;すでに色んな方が同じ様な記事を書かれていますが、わたくしも今一度、再確認でございます…&lt;/p&gt;
+
+&lt;h3 id=&#34;1-まず-hyper-v-が有効なこと&#34;&gt;1. まず、Hyper-V が有効なこと&lt;/h3&gt;
+
+&lt;p&gt;（Control Panle &amp;gt; Programs and Features &amp;gt; Turn Windows features on or off）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_02.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;2-visual-studio-2017のインストーラーで-visual-studio-emulator-for-android-を選択すること&#34;&gt;2. Visual Studio 2017のインストーラーで「Visual Studio Emulator for Android」を選択すること&lt;/h3&gt;
+
+&lt;p&gt;下の図では「Google Android Emulator」「HAXM」も選択してますが、はっきり言って&lt;br /&gt;
+この２つと、「Visual Studio Emulator for Android」は、排他の関係にあるので&lt;br /&gt;
+「Visual Studio Emulator for Android」だけ選択でOK&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;3-visual-studio-emulator-for-android-を立ち上げる&#34;&gt;3. 「Visual Studio Emulator for Android」を立ち上げる&lt;/h3&gt;
+
+&lt;p&gt;検索すると、インストールされてます&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_04.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;立ち上げたらこんな画面&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_05.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;これでまずは準備完了&lt;/p&gt;
+
+&lt;h2 id=&#34;エミュレーターの起動&#34;&gt;エミュレーターの起動&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-空のプロジェクトを作る&#34;&gt;1. 空のプロジェクトを作る&lt;/h3&gt;
+
+&lt;p&gt;わたしはC++で開発したかったので、Androidプロジェクトの「Native-Activity Application (Android)」で新規作成しました&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_06.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;デバックメニューに「Visual Studio Emulator for Android」の欄が増えてますね&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_07.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;（注意！）&lt;strong&gt;「x86」を選択しないと、このエミュレーターは出てきません！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;2-visual-studio-emulator-for-android-でandroidを起動させる&#34;&gt;2. 「Visual Studio Emulator for Android」でAndroidを起動させる&lt;/h3&gt;
+
+&lt;p&gt;先ほど立ち上げた「Visual Studio Emulator for Android」のメニューより、緑の三角印を押して、エミュレーターを起動させます&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_08.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_09.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;起動できた(｀・ω・´)&lt;/p&gt;
+
+&lt;h2 id=&#34;エミュレーターが起動しない時&#34;&gt;エミュレーターが起動しない時&lt;/h2&gt;
+
+&lt;p&gt;最初、わたしはエミュレーターが起動途中でストップしてしまいました(-_-)zzz&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_10.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The emulator is unable to connect to the device operating system:&lt;br /&gt;
+Could&amp;rsquo;t auto-detect the guest system IP address.&lt;br /&gt;
+Some functionality might be disabled.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;なんじゃこりゃ…(´・ω・`)&lt;br /&gt;
+IPうんぬんと書かれてるので、NWプロパティを見てみます&lt;/p&gt;
+
+&lt;p&gt;Conrtol Panel&lt;br /&gt;
+　＞ Network and Internet&lt;br /&gt;
+　　＞ Network Connections&lt;/p&gt;
+
+&lt;p&gt;Hyper-Vが「Visual Studio Emulator for Android」のために作ったと思われるアダプターがありました&lt;/p&gt;
+
+&lt;p&gt;わたしの場合&lt;br /&gt;
+&lt;strong&gt;vEthernet (Internal Ethernet Port Windows Phone Emulator Internal Switch)&lt;/strong&gt;&lt;br /&gt;
+という名前です&lt;/p&gt;
+
+&lt;p&gt;IPv4プロパティを見てみると、変なIPアドレスが割り当てられてる…？&lt;br /&gt;
+慌てて削除し、動的に変更する設定に変えます↓↓↓&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_11.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;いちお、NWアダプタは「識別されてないネットワーク」状態ですが&lt;br /&gt;
+エラー表示にはなっていません&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_14.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;この状態で、エミュレーターを起動させると、無事立ち上がりました(&lt;em&gt;^^&lt;/em&gt;)良かった！&lt;/p&gt;
+
+&lt;h2 id=&#34;エミュレーターでデバックする&#34;&gt;エミュレーターでデバックする&lt;/h2&gt;
+
+&lt;p&gt;VSに戻ってみると、こんな感じでエミュレーターがデバックで使えるようになってます！&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_12.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;VSからデバック実行させると&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_13.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;サンプルが動作しました&lt;/p&gt;
+
+&lt;p&gt;この状態でブレークポイントも効くので、まずは最初の設定完了って感じでしょうか&lt;br /&gt;
+パチパチ(&lt;em&gt;^^&lt;/em&gt;)&lt;/p&gt;
+
+&lt;p&gt;※ちなみに実機でデバックする時には、「x86」じゃなくて「ARM」など、その実機に合ったCPUを選択したらOKです&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[Unity] 常にカメラの前にSpriteを出す</title>
@@ -2275,183 +2418,6 @@ Googleは素直に単語のみを変換してくれます&lt;br /&gt;
 &lt;p&gt;よかった。。。いつもバイオス画面になったのを見計らって、ブチギリしてたんですよ…( ；∀；)&lt;/p&gt;
 
 &lt;p&gt;シャットダウンが出来ない人の助けになればと思います！&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[C&#43;&#43;] VisualStusio2015でClangを使う設定</title>
-      <link>http://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/</link>
-      <pubDate>Sun, 15 May 2016 23:30:00 +0900</pubDate>
-      
-      <guid>http://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/</guid>
-      <description>
-
-&lt;p&gt;今日は Clang with Microsoft CodeGen の設定などについて、メモしておきます&lt;/p&gt;
-
-&lt;p&gt;先人たちが既に色々と試している内容と対して変わりませんが、そもそも日本語の情報も少ないので、何かの足しになればと思います&lt;/p&gt;
-
-&lt;h1 id=&#34;clang-with-microsoft-codegen-is-here&#34;&gt;&amp;ldquo;Clang with Microsoft CodeGen&amp;rdquo; is here!&lt;/h1&gt;
-
-&lt;p&gt;最近はすっかり、クロスプラットフォームやオープンソースに力を入れているマイクロソフト社のツールセットの中に、Clang対応ってのがあります&lt;/p&gt;
-
-&lt;p&gt;2015年の年末にですが、Clang が正式に Visual Studio 2015 Update1 で利用できるよ～&lt;br /&gt;
-とVC++チームブログで発表されていました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Clang with Microsoft CodeGen in VS 2015 Update 1 - Visual C++ Team Blog&lt;br /&gt;
-&lt;a href=&#34;https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/&#34;&gt;https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Clang with Microsoft CodeGen (March 2016) released- Visual C++ Team Blog&lt;br /&gt;
-&lt;a href=&#34;https://blogs.msdn.microsoft.com/vcblog/2016/03/31/clang-with-microsoft-codegen-march-2016-released/&#34;&gt;https://blogs.msdn.microsoft.com/vcblog/2016/03/31/clang-with-microsoft-codegen-march-2016-released/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;良いですねー(^^)&lt;br /&gt;
-現在のVS2015には &lt;strong&gt;Clang with Microsoft CodeGen&lt;/strong&gt; というツールセットが提供されており、目玉はなんといっても、Clang のデバックを Visual Studioのエディターで確認できるところでしょうか！&lt;/p&gt;
-
-&lt;p&gt;他にも、Clang でコンパイルしたobjと VC でコンパイルしたobjがリンクできるところもすごいです&lt;br /&gt;
-既存資産をフル活用出来そうですね&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;（2016/5/15現在、Visual Studio 2015 Update2 が最新です）&lt;br /&gt;
-&lt;a href=&#34;https://www.visualstudio.com/ja-jp/news/vs2015-update2-vs.aspx&#34;&gt;https://www.visualstudio.com/ja-jp/news/vs2015-update2-vs.aspx&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;LLVM側にも記事が上がっています&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Getting Started with the LLVM System using Microsoft Visual Studio - LLVM本家&lt;br /&gt;
-&lt;a href=&#34;http://llvm.org/docs/GettingStartedVS.html&#34;&gt;http://llvm.org/docs/GettingStartedVS.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;日本でも既に先人が試されているので、読んでみると良いと思います&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Clang/C2をコマンドプロンプトで使ってみる - イグトランスの頭の中（のかけら）&lt;br /&gt;
-&lt;a href=&#34;http://dev.activebasic.com/egtra/2015/12/09/850/&#34;&gt;http://dev.activebasic.com/egtra/2015/12/09/850/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Clang with Microsoft CodeGenがでたので試す - C++初心者Advent Calendar 2015 9日目&lt;br /&gt;
-&lt;a href=&#34;http://qiita.com/yumetodo/items/bd41f31f39dd590e8c80&#34;&gt;http://qiita.com/yumetodo/items/bd41f31f39dd590e8c80&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;ちなみに、この Clang with Microsoft CodeGen は VC++チームブログにも &amp;ldquo;a.k.a. Clang/C2&amp;rdquo; と記載されており、別名を &lt;strong&gt;Clang/C2&lt;/strong&gt; というようです&lt;/p&gt;
-
-&lt;p&gt;また、今回対応している &lt;strong&gt;Clang 側のバージョンは 3.7&lt;/strong&gt; です&lt;/p&gt;
-
-&lt;h1 id=&#34;clang-exe-の場所&#34;&gt;clang.exe の場所&lt;/h1&gt;
-
-&lt;h3 id=&#34;clang&#34;&gt;Clang&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Clang 3.7\bin\x86\clang.exe
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;ちなみにvc&#34;&gt;ちなみにVC++&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;どちらでも、コマンドプロンプトでコンパイル可能です&lt;/p&gt;
-
-&lt;h1 id=&#34;vsでのコンパイラの切り替え設定&#34;&gt;VSでのコンパイラの切り替え設定&lt;/h1&gt;
-
-&lt;p&gt;Visual Stidon 2015 上で &amp;ldquo;Alt + F7&amp;rdquo; を押すか&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;プロジェクト &amp;gt; [プロジェクト名]のプロパティ&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;で設定UIを表示させます&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;構成プロパティ &amp;gt; 全般 &amp;gt; プラットフォームツールセット&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;この項目を &amp;ldquo;Clang 3.7 with Microsoft CodeGen (v140_clang_3_7)&amp;rdquo; に変更するだけです&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Use-Clang-on-VisualStudio_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;結構簡単＼(^o^)／&lt;/p&gt;
-
-&lt;h1 id=&#34;ソリューション作成は何でもok&#34;&gt;ソリューション作成は何でもOK&lt;/h1&gt;
-
-&lt;p&gt;上記の様に、コンパイラが簡単に切り替えられるので、空のプロジェクトでも、Win32コンソールアプリケーションでもOKです&lt;/p&gt;
-
-&lt;p&gt;一応、Clangっぽいプロジェクトはあるんですけど、いきなり dll というのもなんだか敷居が高いので、&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Use-Clang-on-VisualStudio_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;exe を作りたいだけなら、Win32コンソールアプリケーションで良いと思います&lt;/p&gt;
-
-&lt;h1 id=&#34;余談-文字コードはutf8の方が良い-様な気がする&#34;&gt;[余談]文字コードはUTF8の方が良い(様な気がする)&lt;/h1&gt;
-
-&lt;p&gt;最初に書いておくと、Sift-JIS でも Clang/C2 でコンパイルは通ります&lt;/p&gt;
-
-&lt;p&gt;…なのですが、一応、なんとなく&lt;/p&gt;
-
-&lt;p&gt;個々の環境によって異なるのかもしれませんが&lt;br /&gt;
-わたしがVS2015で作成した cpp ファイルは、デフォルトで Sift-JIS になります&lt;/p&gt;
-
-&lt;p&gt;既に、&lt;a href=&#34;https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/&#34;&gt;VC++チームブログ&lt;/a&gt; にはこんな感じで↓↓↓&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;If source files in the project you are trying to convert are UTF-16 encoded, you will need to resave them as UTF-8 when Clang gives you an error about UTF-16 encoded source with BOM.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;UTF-16はだめらしいです&lt;br /&gt;
-Sift-JIS は無関係かもしれませんが、一応…&lt;/p&gt;
-
-&lt;h1 id=&#34;サンプルコード&#34;&gt;サンプルコード&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://cpprefjp.github.io/&#34;&gt;cpprefjp&lt;/a&gt; を参照して、サンプルコードを書いてみました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;constexprの制限緩和
-&lt;a href=&#34;http://cpprefjp.github.io/lang/cpp14/relaxing_constraints_on_constexpr.html&#34;&gt;http://cpprefjp.github.io/lang/cpp14/relaxing_constraints_on_constexpr.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;VC2015 Update2 では未対応だけど、Clang 3.7 は対応しているというコードです&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;stdafx.h&amp;quot;
-#include &amp;lt;iostream&amp;gt;
-
-constexpr int f()
-{
-	int result = 0;
-	return result;
-}
-
-int main()
-{
-	std::cout &amp;lt;&amp;lt; &amp;quot;Hello: &amp;quot; &amp;lt;&amp;lt; f() &amp;lt;&amp;lt; std::endl;
-
-	return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;visual-studio-2015-v140-でコンパイルすると-エラー&#34;&gt;Visual Studio 2015 (v140) でコンパイルすると、エラー&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Use-Clang-on-VisualStudio_02.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;VS2015 ではまだ、constexpr関数内の変数宣言がエラーになる様です&lt;/p&gt;
-
-&lt;h2 id=&#34;clang-3-7-with-microsoft-codegen-v140-clang-3-7-でのコンパイル&#34;&gt;Clang 3.7 with Microsoft CodeGen (v140_clang_3_7) でのコンパイル&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Use-Clang-on-VisualStudio_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;Clang はOKです&lt;br /&gt;
-いい感じに動作しました！&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;VC++も Clang も、VS上でデバック出来るのは良いですね&lt;br /&gt;
-噂には聞いていましたが、自分で動作させてみると、感激するもんがあります&lt;/p&gt;
-
-&lt;p&gt;今はまだプレビューらしいので、早く安定化して欲しいですね～&lt;/p&gt;
 </description>
     </item>
     

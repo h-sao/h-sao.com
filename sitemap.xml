@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</loc>
+    <lastmod>2017-07-27T18:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://h-sao.com/blog/2017/06/21/unity-sprite-on-front-of-camera/</loc>
     <lastmod>2017-06-21T18:00:00+09:00</lastmod>
   </url>
@@ -260,7 +265,7 @@
   
   <url>
     <loc>http://h-sao.com/tags/android/</loc>
-    <lastmod>2015-10-06T04:00:00+09:00</lastmod>
+    <lastmod>2017-07-27T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -314,7 +319,7 @@
   
   <url>
     <loc>http://h-sao.com/</loc>
-    <lastmod>2017-06-21T18:00:00+09:00</lastmod>
+    <lastmod>2017-07-27T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -345,6 +350,12 @@
   <url>
     <loc>http://h-sao.com/tags/hugo/</loc>
     <lastmod>2015-12-13T23:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/hyper-v/</loc>
+    <lastmod>2017-07-27T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -386,7 +397,7 @@
   
   <url>
     <loc>http://h-sao.com/post/</loc>
-    <lastmod>2017-06-21T18:00:00+09:00</lastmod>
+    <lastmod>2017-07-27T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -446,6 +457,12 @@
   <url>
     <loc>http://h-sao.com/tags/utility/</loc>
     <lastmod>2016-01-06T01:50:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/visualstudio/</loc>
+    <lastmod>2017-07-27T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
