@@ -7,8 +7,100 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <lastBuildDate>Thu, 27 Jul 2017 18:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 18 Aug 2017 18:40:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Android] 謎のエラー「Unable to start debugging.」が出たときの対応</title>
+      <link>http://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/</link>
+      <pubDate>Fri, 18 Aug 2017 18:40:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/</guid>
+      <description>
+
+&lt;h2 id=&#34;androidデバッグで実行時エラー&#34;&gt;Androidデバッグで実行時エラー&lt;/h2&gt;
+
+&lt;p&gt;環境&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Windows10 x64&lt;/li&gt;
+&lt;li&gt;Visual Studio 2017&lt;/li&gt;
+&lt;li&gt;Project type: Native-Activity Application (Android)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ある時…Visual Studio で作っている Android プロジェクトが、実行時エラーになりました&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/How-to-fixed-error-Unable-to-start-debugging_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Unable to start debugging. Check your debugger settings by opening project properties and navigating to &amp;lsquo;Configuration Properties&amp;ndash;&amp;gt; Debugging&amp;rsquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;デバック出来ないからね！プロジェクトの設定見てね！的な意味みたいですが&lt;br /&gt;
+デバッグモードで動かしてるし…&lt;br /&gt;
+一体どこの何の事を言ってるのか判らない…＞＜。&lt;/p&gt;
+
+&lt;p&gt;リリースモードならOKなのかしら？と思っても、同様のエラー&amp;rdquo;(-&amp;ldquo;&amp;rdquo;-)&amp;rdquo;&lt;/p&gt;
+
+&lt;h2 id=&#34;解決案-わたしはこれでは解決しませんでしたが&#34;&gt;解決案（わたしはこれでは解決しませんでしたが）&lt;/h2&gt;
+
+&lt;p&gt;検索しても、実のある回答は特に出てこず…&lt;br /&gt;
+唯一、解決っぽいのが、NVIDIAさんのフォーラムに載ってました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;CodeWorks for Android 1R4: Unable to start debugging - NVIDIA DEVELOPER&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&#34;https://devtalk.nvidia.com/default/topic/957019/codeworks-for-android-1r4-unable-to-start-debugging/&#34;&gt;https://devtalk.nvidia.com/default/topic/957019/codeworks-for-android-1r4-unable-to-start-debugging/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;元ネタリンクはMicrosoftさんのGitHub情報みたいです&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;MEF - GitHub Microsoft/VSProjectSystem&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&#34;https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/mef.md#mef-inside-visual-studio&#34;&gt;https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/mef.md#mef-inside-visual-studio&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;簡単に言うと、VSの &lt;strong&gt;Developer Command Prompt&lt;/strong&gt; を使って、キャッシュクリアしてみたら？というもの&lt;br /&gt;
+やってみました&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Developer Command Prompt を検索して立ち上げる&lt;br /&gt;
+&lt;img src=&#34;http://h-sao.com/pic/How-to-fixed-error-Unable-to-start-debugging_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;以下のコマンドを打つ&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Devenv /UpdateConfiguration&lt;br /&gt;
+Devenv /ClearCache&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/How-to-fixed-error-Unable-to-start-debugging_02.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;もっともらしい対策なんですけど、わたしの実行時エラーは解決しませんでした&lt;br /&gt;
+何がダメなのだろ…((+_+))&lt;/p&gt;
+
+&lt;h2 id=&#34;わたしが解決した方法&#34;&gt;わたしが解決した方法&lt;/h2&gt;
+
+&lt;p&gt;で、実際の解決策ですが…&lt;br /&gt;
+すみません、散々あーだこーだ書いてますが&lt;br /&gt;
+&lt;strong&gt;スタートアッププロジェクトの設定もれ&lt;/strong&gt; でした…( ;∀;)&lt;br /&gt;
+いやはや、お恥ずかしい…&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/How-to-fixed-error-Unable-to-start-debugging_03.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Androidプロジェクトが参照する、別のプロジェクト達が&lt;br /&gt;
+同じソリューションファイルの中に複数存在しています&lt;/p&gt;
+
+&lt;p&gt;なのに、Androidプロジェクトを起動プロジェクトに設定しておらず…&lt;/p&gt;
+
+&lt;p&gt;ポカミスとはまさにこの事！( ;∀;)&lt;/p&gt;
+
+&lt;p&gt;なぜこれに気が付かなかったのか…相当焦ってて、周りが見えてなかったみたいです&lt;/p&gt;
+
+&lt;p&gt;二度と同じ過ちを繰り返さないように…＞＜。&lt;br /&gt;
+あと、同様のエラーで困ってる人の何かしらの参考になればと思います＞＜。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[Android] Hyper-Vで使うVisual Studio Emulator for Androidの最初の一歩</title>
@@ -2383,41 +2475,6 @@ Googleは素直に単語のみを変換してくれます&lt;br /&gt;
 わたしは行って良かったです&lt;/p&gt;
 
 &lt;p&gt;担当して下さったトレーナーの先生、ありがとうございました～(^^)/&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[Windows10] シャットダウンができない対策</title>
-      <link>http://h-sao.com/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/</link>
-      <pubDate>Wed, 15 Jun 2016 12:30:00 +0900</pubDate>
-      
-      <guid>http://h-sao.com/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/</guid>
-      <description>&lt;p&gt;Windows10 でシャットダウンが出来ない現象にあった方はいらっしゃいますか～？&lt;/p&gt;
-
-&lt;p&gt;わたしもそんな一人でした……(^_^;)&lt;/p&gt;
-
-&lt;p&gt;シャットダウンを選択しても、勝手に再起動するんです…　
-やめてぇ～(つд⊂)ｴｰﾝ&lt;/p&gt;
-
-&lt;p&gt;実はこれ、「&lt;strong&gt;高速スタートアップ&lt;/strong&gt;」の設定が効いているときになるPCがあるようです&lt;br /&gt;
-※会社のインフラ詳しい方に教えて頂きました！&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;コントロールパネル&lt;br /&gt;
-　&amp;gt; システムとセキュリティ&lt;br /&gt;
-　　&amp;gt; 電源オプション&lt;br /&gt;
-　　　&amp;gt; 電源ボタンの動作の選択&lt;br /&gt;
-　　　　&amp;gt; 現在利用可の出ない設定を変更します&lt;br /&gt;
-　　　　　&amp;gt; 高速スタートアップを有効にする&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;今すぐ、「高速スタートアップを有効にする」のチェックボックスを外しましょう！&lt;/p&gt;
-
-&lt;p&gt;わたしの場合は、これで、無限再起動が無くなりました(●´ω｀●)&lt;/p&gt;
-
-&lt;p&gt;よかった。。。いつもバイオス画面になったのを見計らって、ブチギリしてたんですよ…( ；∀；)&lt;/p&gt;
-
-&lt;p&gt;シャットダウンが出来ない人の助けになればと思います！&lt;/p&gt;
 </description>
     </item>
     
