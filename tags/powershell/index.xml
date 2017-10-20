@@ -10,6 +10,60 @@
     <atom:link href="http://h-sao.com/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>[PowerShell] ZoneIDとPowerShellの実行ポリシー</title>
+      <link>http://h-sao.com/blog/2017/10/20/zoneid_and_powershell_excutionpolicy/</link>
+      <pubDate>Fri, 20 Oct 2017 19:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2017/10/20/zoneid_and_powershell_excutionpolicy/</guid>
+      <description>&lt;p&gt;PowerShellでちょっとしたツールを動かそうと思って、初歩的なところであれ？となったので、書いておきます&lt;/p&gt;
+
+&lt;p&gt;PowerShellの実行ポリシー（Execution Policy）は、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;&amp;gt; Get-ExecutionPolicy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;このコマンドで確認できます&lt;/p&gt;
+
+&lt;p&gt;Windows10のデフォルトでは &lt;strong&gt;Restricted&lt;/strong&gt; になっていて、ps1 ファイルをコマンドライン上から実行することが出来ません&lt;br /&gt;
+なので&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;&amp;gt; Set-ExecutionPolicy RemoteSigned
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;を実行して、 &lt;strong&gt;RemoteSigned&lt;/strong&gt; にセキュリティポリシーを変更します&lt;/p&gt;
+
+&lt;p&gt;しかし、&lt;strong&gt;RemoteSigned&lt;/strong&gt; になってることを確認したのに、&lt;br /&gt;
+しかしなぜか、ps1 ファイルの実行時にセキュリティエラーとなってしまいました&lt;/p&gt;
+
+&lt;p&gt;なんだこれ（↓）は…？&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;セキュリティ エラー: PSSecurityException
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;なんでだろーと思ってたのですが、何てことはない&lt;br /&gt;
+実行しようとしてた ps1 ファイルは、インターネット越しに入手したものでした&lt;br /&gt;
+（自分のサイトから落としてきたんだけどね）&lt;/p&gt;
+
+&lt;p&gt;こんな感じ↓↓↓&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/ZoneID_and_PowerShell_ExcutionPolicy_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;どうやら、インターネット越しに入手したファイルには &lt;strong&gt;ZoneID&lt;/strong&gt; というのが付与されるらしく&lt;br /&gt;
+Windowsはローカルファイルと区別出来るようにしてくれてるんですね～&lt;/p&gt;
+
+&lt;p&gt;ローカルファイルとして扱いたい時には、ポチっと「&lt;strong&gt;ブロックの解除&lt;/strong&gt;」を押せばOKです&lt;/p&gt;
+
+&lt;p&gt;ちゃんと、ps1 ファイルが動作するようになりました(^^♪&lt;/p&gt;
+
+&lt;p&gt;ZoneID…知らなかった…＞＜。&lt;/p&gt;
+
+&lt;p&gt;参考：&lt;br /&gt;
+- WindowsでPowerShellスクリプトの実行セキュリティポリシーを変更する - @IT&lt;br /&gt;
+  &lt;a href=&#34;http://www.atmarkit.co.jp/ait/articles/0805/16/news139.html&#34;&gt;http://www.atmarkit.co.jp/ait/articles/0805/16/news139.html&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>[PowerShell] ファイル分割スクリプト</title>
       <link>http://h-sao.com/blog/2014/07/17/divide-file-using-powershell/</link>
       <pubDate>Thu, 17 Jul 2014 21:57:00 +0900</pubDate>

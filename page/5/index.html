@@ -45,6 +45,128 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2014/07/02/sort-arrays-and-retrieve-one-by-one-for-powershell/" title="[PowerShell] 連想配列をソートしてforeachで一個づつ取り出す">[PowerShell] 連想配列をソートしてforeachで一個づつ取り出す</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2014.07.02">2014.07.02</time>
+&middot; 
+    
+    <a href="http://h-sao.com/tags/powershell">powershell</a>
+    
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>PowerShell で連想配列を用いた時のソート＆foreach のサンプルがなかなか探せなかったのでメモします</p>
+
+<p>とある連想配列</p>
+
+<pre><code>PS C:\&gt; $tbl = @{
+&gt;&gt;       k00 = &quot;orange&quot;;
+&gt;&gt;       k01 = &quot;peach&quot;;
+&gt;&gt;       k02 = &quot;apple&quot;
+&gt;&gt;  }
+</code></pre>
+
+<p>出力は簡単</p>
+
+<pre><code>PS C:\&gt; $tbl
+
+Name                           Value
+----                           -----
+k01                            peach
+k02                            apple
+k00                            orange
+</code></pre>
+
+<p>ソートの出力も簡単</p>
+
+<pre><code>PS C:\&gt; $tbl.GetEnumerator() | Sort-Object Value
+
+Name                           Value
+----                           -----
+k02                            apple
+k00                            orange
+k01                            peach
+
+# もしくは
+
+PS C:\&gt; $tbl.GetEnumerator() | sort Value
+
+Name                           Value
+----                           -----
+k02                            apple
+k00                            orange
+k01                            peach
+</code></pre>
+
+<p>これを一つづつ取り出して処理したい</p>
+
+<h2 id="単に-foreach-で取り出すとき">単に foreach で取り出すとき</h2>
+
+<pre><code>PS C:\&gt; foreach( $k in $tbl.Keys ){
+&gt;&gt;   Write-Output $k
+&gt;&gt;   Write-Output $tbl[ $k ]
+&gt;&gt;   Write-Output '-----'
+&gt;&gt; }
+
+k01
+peach
+-----
+k02
+apple
+-----
+k00
+orange
+-----
+</code></pre>
+
+<h2 id="さらにソートして-foreach-で取り出すとき">さらにソートして foreach で取り出すとき</h2>
+
+<pre><code>PS C:\&gt; $tbl.GetEnumerator() | sort Value |
+&gt;&gt;   ForEach-Object{
+&gt;&gt;       Write-Output $_.Name
+&gt;&gt;       Write-Output $_.Value
+&gt;&gt;       Write-Output '-----'
+&gt;&gt;   }
+
+k02
+apple
+-----
+k00
+orange
+-----
+k01
+peach
+-----
+</code></pre>
+
+<p><strong>ForEach-Object</strong> を使いました
+ただの foreach() でも出来ると思うんですけど、私的用途が満たせたので、これ以上は調べてないです</p>
+
+<p>検索で、「powershell foreach ソート -perl」 などで検索しても、日本語の情報があまり出てこなかったので、参考になれば幸いです(^^)</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f02%2fsort-arrays-and-retrieve-one-by-one-for-powershell%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bPowerShell%5d%20%e9%80%a3%e6%83%b3%e9%85%8d%e5%88%97%e3%82%92%e3%82%bd%e3%83%bc%e3%83%88%e3%81%97%e3%81%a6foreach%e3%81%a7%e4%b8%80%e5%80%8b%e3%81%a5%e3%81%a4%e5%8f%96%e3%82%8a%e5%87%ba%e3%81%99&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f02%2fsort-arrays-and-retrieve-one-by-one-for-powershell%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f02%2fsort-arrays-and-retrieve-one-by-one-for-powershell%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f02%2fsort-arrays-and-retrieve-one-by-one-for-powershell%2f&title=%5bPowerShell%5d%20%e9%80%a3%e6%83%b3%e9%85%8d%e5%88%97%e3%82%92%e3%82%bd%e3%83%bc%e3%83%88%e3%81%97%e3%81%a6foreach%e3%81%a7%e4%b8%80%e5%80%8b%e3%81%a5%e3%81%a4%e5%8f%96%e3%82%8a%e5%87%ba%e3%81%99" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2014/04/19/about-powershell-x32-and-x64/" title="[PowerShell] 32bitと64bitの使い分け">[PowerShell] 32bitと64bitの使い分け</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2014.04.19">2014.04.19</time>
@@ -667,70 +789,6 @@ SQL &gt; edit
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2008/07/29/how-to-divide-without-division/" title="[C/C&#43;&#43;] 割り算を使わないで割り算する方法">[C/C&#43;&#43;] 割り算を使わないで割り算する方法</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2008.07.29">2008.07.29</time>
-&middot; 
-    
-    <a href="http://h-sao.com/tags/cpp">cpp</a>
-    
-    
-
-</span>
-</footer>
- </footer>
-                <p>ビット・シフトの計算の練習問題＜上級編＞です</p>
-
-<p><strong>Q. 割り算をシフトと引き算のみで表現しなさい</strong></p>
-
-<p><strong>A. 回答</strong></p>
-
-<pre><code class="language-cpp">// x / y = ans
-// x: 分子
-// y: 分母
-// ans:答え
-
-ans = 0;
- while( x &gt;= y ){
-    dammy = y;
-    syou = 1;
-    while( x &gt;= dammy ){            // 割られる数を超えるまで割る数をシフト
-        dammy = dammy &lt;&lt; 1;
-        syou  = syou  &lt;&lt; 1;
-    }
-    
-    dammy = dammy &gt;&gt; 1;             // 超える手前まで戻す
-    syou = syou &gt;&gt; 1;
-    
-    x = x - dammy;                  // 筆算
-    ans = ans + syou;               // 答え
- }
- printf( &quot;%d ・・・%d\n&quot;, ans, x );
-</code></pre>
-
-<p>新人研修などにどうでしょう？</p>
-
-<p>※ 実は最後に足し算使ってますね…(&gt;_&lt;)</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2008%2f07%2f29%2fhow-to-divide-without-division%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2fC%2b%2b%5d%20%e5%89%b2%e3%82%8a%e7%ae%97%e3%82%92%e4%bd%bf%e3%82%8f%e3%81%aa%e3%81%84%e3%81%a7%e5%89%b2%e3%82%8a%e7%ae%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2008%2f07%2f29%2fhow-to-divide-without-division%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2008%2f07%2f29%2fhow-to-divide-without-division%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2008%2f07%2f29%2fhow-to-divide-without-division%2f&title=%5bC%2fC%2b%2b%5d%20%e5%89%b2%e3%82%8a%e7%ae%97%e3%82%92%e4%bd%bf%e3%82%8f%e3%81%aa%e3%81%84%e3%81%a7%e5%89%b2%e3%82%8a%e7%ae%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -738,9 +796,11 @@ ans = 0;
 	<a class="btn newer" href="/page/4/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 5  5</p>
+	<p class="counter"> 5  6</p>
 
 
+	
+	<a class="btn older" href="/page/6/" title=""> &raquo;</a>
 	
 
 </nav>
@@ -794,6 +854,10 @@ ans = 0;
             <div class="list-group">
                 
                     
+                        <a href="/blog/2017/10/20/zoneid_and_powershell_excutionpolicy/" class="list-group-item">[PowerShell] ZoneIDとPowerShellの実行ポリシー</a><br>
+                    
+                
+                    
                         <a href="/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/" class="list-group-item">[Android] 謎のエラー「Unable to start debugging.」が出たときの対応</a><br>
                     
                 
@@ -827,10 +891,6 @@ ans = 0;
                 
                     
                         <a href="/blog/2016/12/21/delete-outlook-on-the-web-data/" class="list-group-item">[Outlook] 使わなくなったOutlook on the webの予定表（カレンダー）を削除する方法</a><br>
-                    
-                
-                    
-                        <a href="/blog/2016/11/16/ue4-install-requirements/" class="list-group-item">[UE4] Unreal Engine4のインストール要件</a><br>
                     
                 
             </div>
@@ -1065,9 +1125,9 @@ ans = 0;
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/powershell" style="font-size: 17px;">
+                    <a href="http://h-sao.com//tags/powershell" style="font-size: 20px;">
                     
-                        <span class="badge">3</span>
+                        <span class="badge">4</span>
                         powershell
                     </a>
                     </u> &nbsp; 

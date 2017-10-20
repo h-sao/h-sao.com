@@ -46,58 +46,77 @@
         <article class="post">
             <a class="btn" href="http://h-sao.com/" title="">&laquo; </a>
             
-<h1><a href="http://h-sao.com/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/" title="[Windows10] シャットダウンができない対策">[Windows10] シャットダウンができない対策</a></h1>
+<h1><a href="http://h-sao.com/blog/2017/10/20/zoneid_and_powershell_excutionpolicy/" title="[PowerShell] ZoneIDとPowerShellの実行ポリシー">[PowerShell] ZoneIDとPowerShellの実行ポリシー</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.06.15">2016.06.15</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.10.20">2017.10.20</time>
 &middot; 
     
-    <a href="http://h-sao.com/tags/windows10">windows10</a>
+    <a href="http://h-sao.com/tags/powershell">powershell</a>
     
     
 
 </span>
 </footer>
  </footer>
-            <p>Windows10 でシャットダウンが出来ない現象にあった方はいらっしゃいますか～？</p>
+            <p>PowerShellでちょっとしたツールを動かそうと思って、初歩的なところであれ？となったので、書いておきます</p>
 
-<p>わたしもそんな一人でした……(^_^;)</p>
+<p>PowerShellの実行ポリシー（Execution Policy）は、</p>
 
-<p>シャットダウンを選択しても、勝手に再起動するんです…　
-やめてぇ～(つд⊂)ｴｰﾝ</p>
+<pre><code class="language-c">&gt; Get-ExecutionPolicy
+</code></pre>
 
-<p>実はこれ、「<strong>高速スタートアップ</strong>」の設定が効いているときになるPCがあるようです<br />
-※会社のインフラ詳しい方に教えて頂きました！</p>
+<p>このコマンドで確認できます</p>
 
-<blockquote>
-<p>コントロールパネル<br />
-　&gt; システムとセキュリティ<br />
-　　&gt; 電源オプション<br />
-　　　&gt; 電源ボタンの動作の選択<br />
-　　　　&gt; 現在利用可の出ない設定を変更します<br />
-　　　　　&gt; 高速スタートアップを有効にする</p>
-</blockquote>
+<p>Windows10のデフォルトでは <strong>Restricted</strong> になっていて、ps1 ファイルをコマンドライン上から実行することが出来ません<br />
+なので</p>
 
-<p>今すぐ、「高速スタートアップを有効にする」のチェックボックスを外しましょう！</p>
+<pre><code class="language-c">&gt; Set-ExecutionPolicy RemoteSigned
+</code></pre>
 
-<p>わたしの場合は、これで、無限再起動が無くなりました(●´ω｀●)</p>
+<p>を実行して、 <strong>RemoteSigned</strong> にセキュリティポリシーを変更します</p>
 
-<p>よかった。。。いつもバイオス画面になったのを見計らって、ブチギリしてたんですよ…( ；∀；)</p>
+<p>しかし、<strong>RemoteSigned</strong> になってることを確認したのに、<br />
+しかしなぜか、ps1 ファイルの実行時にセキュリティエラーとなってしまいました</p>
 
-<p>シャットダウンが出来ない人の助けになればと思います！</p>
+<p>なんだこれ（↓）は…？</p>
+
+<pre><code class="language-c">セキュリティ エラー: PSSecurityException
+</code></pre>
+
+<p>なんでだろーと思ってたのですが、何てことはない<br />
+実行しようとしてた ps1 ファイルは、インターネット越しに入手したものでした<br />
+（自分のサイトから落としてきたんだけどね）</p>
+
+<p>こんな感じ↓↓↓</p>
+
+<p><img src="/pic/ZoneID_and_PowerShell_ExcutionPolicy_00.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>どうやら、インターネット越しに入手したファイルには <strong>ZoneID</strong> というのが付与されるらしく<br />
+Windowsはローカルファイルと区別出来るようにしてくれてるんですね～</p>
+
+<p>ローカルファイルとして扱いたい時には、ポチっと「<strong>ブロックの解除</strong>」を押せばOKです</p>
+
+<p>ちゃんと、ps1 ファイルが動作するようになりました(^^♪</p>
+
+<p>ZoneID…知らなかった…＞＜。</p>
+
+<p>参考：<br />
+- WindowsでPowerShellスクリプトの実行セキュリティポリシーを変更する - @IT<br />
+  <a href="http://www.atmarkit.co.jp/ait/articles/0805/16/news139.html">http://www.atmarkit.co.jp/ait/articles/0805/16/news139.html</a></p>
 
             <ul class="share-buttons">
     <li></li>
     <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f06%2f15%2frecommend-uncheck-fast-startup-for-windows10%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f10%2f20%2fzoneid_and_powershell_excutionpolicy%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bWindows10%5d%20%e3%82%b7%e3%83%a3%e3%83%83%e3%83%88%e3%83%80%e3%82%a6%e3%83%b3%e3%81%8c%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84%e5%af%be%e7%ad%96&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f06%2f15%2frecommend-uncheck-fast-startup-for-windows10%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bPowerShell%5d%20ZoneID%e3%81%a8PowerShell%e3%81%ae%e5%ae%9f%e8%a1%8c%e3%83%9d%e3%83%aa%e3%82%b7%e3%83%bc&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f10%2f20%2fzoneid_and_powershell_excutionpolicy%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f06%2f15%2frecommend-uncheck-fast-startup-for-windows10%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f10%2f20%2fzoneid_and_powershell_excutionpolicy%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f06%2f15%2frecommend-uncheck-fast-startup-for-windows10%2f&title=%5bWindows10%5d%20%e3%82%b7%e3%83%a3%e3%83%83%e3%83%88%e3%83%80%e3%82%a6%e3%83%b3%e3%81%8c%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84%e5%af%be%e7%ad%96" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f10%2f20%2fzoneid_and_powershell_excutionpolicy%2f&title=%5bPowerShell%5d%20ZoneID%e3%81%a8PowerShell%e3%81%ae%e5%ae%9f%e8%a1%8c%e3%83%9d%e3%83%aa%e3%82%b7%e3%83%bc" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 
@@ -107,9 +126,9 @@
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'harukasao';
-    var disqus_identifier = 'http:\/\/h-sao.com\/blog\/2016\/06\/15\/recommend-uncheck-fast-startup-for-windows10\/';
-    var disqus_title = '[Windows10] シャットダウンができない対策';
-    var disqus_url = 'http:\/\/h-sao.com\/blog\/2016\/06\/15\/recommend-uncheck-fast-startup-for-windows10\/';
+    var disqus_identifier = 'http:\/\/h-sao.com\/blog\/2017\/10\/20\/zoneid_and_powershell_excutionpolicy\/';
+    var disqus_title = '[PowerShell] ZoneIDとPowerShellの実行ポリシー';
+    var disqus_url = 'http:\/\/h-sao.com\/blog\/2017\/10\/20\/zoneid_and_powershell_excutionpolicy\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Effectiveさお</title>
+        <title>Effectiveさお &middot; Effectiveさお</title>
         <meta name="author">
         <meta name="description" content="The awesome blog of Sao Haruka.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,87 +40,91 @@
               <a href="http://h-sao.com/about">About me</a>
           </div>
 
-
 <div class="container clearfix">
     <main role="main" class="content">
-        <article class="post">
-            <a class="btn" href="http://h-sao.com/" title="">&laquo; </a>
+        
+        
             
-<h1><a href="http://h-sao.com/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/" title="[Windows10] シャットダウンができない対策">[Windows10] シャットダウンができない対策</a></h1>
+<h1><a href="http://h-sao.com/blog/2008/07/29/how-to-divide-without-division/" title="[C/C&#43;&#43;] 割り算を使わないで割り算する方法">[C/C&#43;&#43;] 割り算を使わないで割り算する方法</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.06.15">2016.06.15</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2008.07.29">2008.07.29</time>
 &middot; 
     
-    <a href="http://h-sao.com/tags/windows10">windows10</a>
+    <a href="http://h-sao.com/tags/cpp">cpp</a>
     
     
 
 </span>
 </footer>
  </footer>
-            <p>Windows10 でシャットダウンが出来ない現象にあった方はいらっしゃいますか～？</p>
+                <p>ビット・シフトの計算の練習問題＜上級編＞です</p>
 
-<p>わたしもそんな一人でした……(^_^;)</p>
+<p><strong>Q. 割り算をシフトと引き算のみで表現しなさい</strong></p>
 
-<p>シャットダウンを選択しても、勝手に再起動するんです…　
-やめてぇ～(つд⊂)ｴｰﾝ</p>
+<p><strong>A. 回答</strong></p>
 
-<p>実はこれ、「<strong>高速スタートアップ</strong>」の設定が効いているときになるPCがあるようです<br />
-※会社のインフラ詳しい方に教えて頂きました！</p>
+<pre><code class="language-cpp">// x / y = ans
+// x: 分子
+// y: 分母
+// ans:答え
 
-<blockquote>
-<p>コントロールパネル<br />
-　&gt; システムとセキュリティ<br />
-　　&gt; 電源オプション<br />
-　　　&gt; 電源ボタンの動作の選択<br />
-　　　　&gt; 現在利用可の出ない設定を変更します<br />
-　　　　　&gt; 高速スタートアップを有効にする</p>
-</blockquote>
+ans = 0;
+ while( x &gt;= y ){
+    dammy = y;
+    syou = 1;
+    while( x &gt;= dammy ){            // 割られる数を超えるまで割る数をシフト
+        dammy = dammy &lt;&lt; 1;
+        syou  = syou  &lt;&lt; 1;
+    }
+    
+    dammy = dammy &gt;&gt; 1;             // 超える手前まで戻す
+    syou = syou &gt;&gt; 1;
+    
+    x = x - dammy;                  // 筆算
+    ans = ans + syou;               // 答え
+ }
+ printf( &quot;%d ・・・%d\n&quot;, ans, x );
+</code></pre>
 
-<p>今すぐ、「高速スタートアップを有効にする」のチェックボックスを外しましょう！</p>
+<p>新人研修などにどうでしょう？</p>
 
-<p>わたしの場合は、これで、無限再起動が無くなりました(●´ω｀●)</p>
-
-<p>よかった。。。いつもバイオス画面になったのを見計らって、ブチギリしてたんですよ…( ；∀；)</p>
-
-<p>シャットダウンが出来ない人の助けになればと思います！</p>
+<p>※ 実は最後に足し算使ってますね…(&gt;_&lt;)</p>
 
             <ul class="share-buttons">
     <li></li>
     <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f06%2f15%2frecommend-uncheck-fast-startup-for-windows10%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2008%2f07%2f29%2fhow-to-divide-without-division%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bWindows10%5d%20%e3%82%b7%e3%83%a3%e3%83%83%e3%83%88%e3%83%80%e3%82%a6%e3%83%b3%e3%81%8c%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84%e5%af%be%e7%ad%96&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f06%2f15%2frecommend-uncheck-fast-startup-for-windows10%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2fC%2b%2b%5d%20%e5%89%b2%e3%82%8a%e7%ae%97%e3%82%92%e4%bd%bf%e3%82%8f%e3%81%aa%e3%81%84%e3%81%a7%e5%89%b2%e3%82%8a%e7%ae%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2008%2f07%2f29%2fhow-to-divide-without-division%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f06%2f15%2frecommend-uncheck-fast-startup-for-windows10%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2008%2f07%2f29%2fhow-to-divide-without-division%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f06%2f15%2frecommend-uncheck-fast-startup-for-windows10%2f&title=%5bWindows10%5d%20%e3%82%b7%e3%83%a3%e3%83%83%e3%83%88%e3%83%80%e3%82%a6%e3%83%b3%e3%81%8c%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84%e5%af%be%e7%ad%96" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2008%2f07%2f29%2fhow-to-divide-without-division%2f&title=%5bC%2fC%2b%2b%5d%20%e5%89%b2%e3%82%8a%e7%ae%97%e3%82%92%e4%bd%bf%e3%82%8f%e3%81%aa%e3%81%84%e3%81%a7%e5%89%b2%e3%82%8a%e7%ae%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 
-        </article>
-        <div class="comments">
-            <h3></h3>
-            <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'harukasao';
-    var disqus_identifier = 'http:\/\/h-sao.com\/blog\/2016\/06\/15\/recommend-uncheck-fast-startup-for-windows10\/';
-    var disqus_title = '[Windows10] シャットダウンができない対策';
-    var disqus_url = 'http:\/\/h-sao.com\/blog\/2016\/06\/15\/recommend-uncheck-fast-startup-for-windows10\/';
+            <hr>
+        
+        <div class="pagination">
+<nav>
 
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-        </div>
+    
+	<a class="btn newer" href="/page/5/" title="">&laquo; </a>
+	
+
+	<p class="counter"> 6  6</p>
+
+
+	
+
+</nav>
+</div>
+
     </main>
+
     <aside class="author">
   <img class="profile-image" src="http://h-sao.com/pic/saoharuka128.png" alt="遥佐保/Sao Haruka" />
   <p class="name"> 
