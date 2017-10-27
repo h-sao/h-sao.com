@@ -45,6 +45,275 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2015/09/09/hugoandtheme/" title="[Hugo]ブログ構築メモ(1)-Hugoとテンプレート">[Hugo]ブログ構築メモ(1)-Hugoとテンプレート</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2015.09.09">2015.09.09</time>
+&middot; 
+    
+    <a href="http://h-sao.com/tags/hugo">hugo</a>
+    
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>Windows10のノートPCに <a href="http://gohugo.io/">Hugo</a> というスタティックジェネレーターをインストールして、このブログを構築しています<br />
+作ったブログは、<a href="https://github.com/h-sao/Blog">GitHub Pages</a> にアップして運用しています</p>
+
+<p>今のところ気に入っているのは</p>
+
+<blockquote>
+<ol>
+<li>ブログの管理が GitHubで行えること</li>
+<li>ブログ用の運用サーバーが不要なこと (ありがとう！GitHub)</li>
+<li>GitHubにPushしたら、werckerの自動ビルドでGitHubPagesにアップすること</li>
+</ol>
+</blockquote>
+
+<p>この3点かなー<br />
+今日は上から2番目までのブログ構築部分（つまりHugoの部分）をメモしておきます</p>
+
+<hr />
+
+<h2 id="インストール-というか単なるexeファイル設置">インストール (というか単なるexeファイル設置)</h2>
+
+<ul>
+<li>最新バージョン取得<br />
+<a href="https://github.com/spf13/hugo/releases">https://github.com/spf13/hugo/releases</a></li>
+</ul>
+
+<p>わたしが 2015/9/9 現在ダウンロードしたバージョンは <strong>v0.14</strong> です<br />
+Hugoはexeだけで動くので、適当なディレクトリに置きます<br />
+わたしは</p>
+
+<pre><code>C:\Library\Hugo\bin\hugo.exe
+</code></pre>
+
+<p>に設置することにしました</p>
+
+<hr />
+
+<h2 id="ブログ新規作成">ブログ新規作成</h2>
+
+<p>Windows標準のコマンドプロンプトで作業します<br />
+このとき既に、ブログを作ろうとするディレクトリが存在していたら、ブログ作成は失敗するので、気を付けてください</p>
+
+<blockquote>
+<p>FATAL: 2015/09/09 C:\Users\haruk\Dropbox\sites\Blog already exists and is not empty</p>
+</blockquote>
+
+<p>リネームなどして、再チャレンジ<br />
+うまくいくと、何の反応もなく終わります</p>
+
+<pre><code>C:\Users\haruk\Dropbox\sites&gt;c:\Library\Hugo\bin\hugo.exe new site Blog
+
+C:\Users\haruk\Dropbox\sites&gt;
+</code></pre>
+
+<p>ディレクトリ構造の確認</p>
+
+<pre><code>C:\Users\haruk\Dropbox\sites&gt;cd Blog
+C:\Users\haruk\Dropbox\sites\Blog&gt;dir
+ ドライブ C のボリューム ラベルは MyWindows です
+ ボリューム シリアル番号は xxxx-xxxx です
+
+ C:\Users\haruk\Dropbox\sites\Blog のディレクトリ
+
+ 2015/09/09  20:29&lt;DIR&gt;  .
+ 2015/09/09  20:29&lt;DIR&gt;  ..
+ 2015/09/09  20:28   270 .gitignore
+ 2015/09/09  20:28&lt;DIR&gt;  archetypes
+ 2015/09/09  20:28   107 config.toml
+ 2015/09/09  20:28&lt;DIR&gt;  content
+ 2015/09/09  20:28&lt;DIR&gt;  data
+ 2015/09/09  20:28&lt;DIR&gt;  layouts
+ 2015/09/09  20:2836 README.md
+ 2015/09/09  20:28&lt;DIR&gt;  static
+   3 個のファイル 413 バイト
+   7 個のディレクトリ  80,351,985,664 バイトの空き領域
+
+C:\Users\haruk\Dropbox\sites\Blog&gt;
+</code></pre>
+
+<p>あっという間に自作ブログのベースは完了です<br />
+次はテンプレートを落としてきます</p>
+
+<hr />
+
+<h2 id="テンプレート適用">テンプレート適用</h2>
+
+<p>GitHubから有志の人たちのテンプレートを拝借してきます</p>
+
+<ul>
+<li>Hugo Themes Repo<br />
+<a href="https://github.com/spf13/hugoThemes">https://github.com/spf13/hugoThemes</a></li>
+</ul>
+
+<p>たくさんテーマがあるけど、<del>まじでうざいテーマしかない</del><br />
+おっと失礼しました<br />
+自己主張が激しいテーマが多いです</p>
+
+<p>とりあえず、GitHubのスター数が多いテンプレートをチェックしてみました<br />
+中でも一番自分が気に入ったものが、<strong>hyde-x</strong></p>
+
+<ul>
+<li>zyro/hyde-x<br />
+<a href="https://github.com/zyro/hyde-x">https://github.com/zyro/hyde-x</a></li>
+</ul>
+
+<p>テンプレートは自分のサイトの顔になるので、色々悩みましたが<br />
+結局はデザインよりも機能が一番多いのがいいんでない？という発想で選びました</p>
+
+<p>コンフィグファイルに</p>
+
+<ul>
+<li>GoogleAnalytics</li>
+<li>GitHub</li>
+<li>Bitbucket</li>
+<li>LinkedIn</li>
+<li>Facebook</li>
+<li>Twitter</li>
+<li>GooglePlus</li>
+<li>Gravatar</li>
+</ul>
+
+<p>が揃っていたので、自分であれこれする手間も省けるかなーという印象</p>
+
+<p>GooglePlusはもう今ではダサいんじゃね？<br />
+というアドバイスを受けたので有効にしていません＼(^o^)／<br />
+同様、Gravatarもいらんやろ…と思いましたが、アイコン代わりに仕方なく使いました</p>
+
+<blockquote>
+<p>Gravaterは自分でハッシュ作成をしないといけなかった<br />
+とゆーか、こんな変換くらいサイトで提供してよ…
+イマドキプログラマに変なところで手間かけさすなよなーいやまじで(&lsquo;ε&rsquo;)<br />
+<a href="https://ja.gravatar.com/site/implement/hash/">https://ja.gravatar.com/site/implement/hash/</a></p>
+</blockquote>
+
+<p>話が多少逸れましたが、この hyde-x をテーマとして、Gitコマンドを使って適用します</p>
+
+<blockquote>
+<p>わたしは、SourceTree内蔵のGitを使ってみました<br />
+%USERPROFILE%\AppData\Local\Atlassian\SourceTree\git_local\bin<br />
+(参考)<a href="https://answers.atlassian.com/questions/245850/how-to-run-a-git-command-as-a-custom-action">https://answers.atlassian.com/questions/245850/how-to-run-a-git-command-as-a-custom-action</a></p>
+
+<p>&ldquo;c:\Program Files (x86)\Git\bin\git.exe　とか持っているなら、それでも可</p>
+</blockquote>
+
+<p>themes ディレクトリの下で作業します</p>
+
+<pre><code>C:\Users\haruk\Dropbox\sites\Blog\themes&gt;C:\Users\haruk\AppData\Local\Atlassian\SourceTree\git_local\bin\git.exe clone https://github.com/zyro/hyde-x
+Cloning into 'hyde-x'...
+remote: Counting objects: 358, done.
+remote: Total 358 (delta 0), reused 0 (delta 0), pack-reused 358
+Receiving objects: 100% (358/358), 253.37 KiB | 175.00 KiB/s, done.
+Resolving deltas: 100% (153/153), done.
+Checking connectivity... done.
+
+C:\Users\haruk\Dropbox\sites\Blog\themes&gt;
+</code></pre>
+
+<p><strong>C:\Users\haruk\Dropbox\sites\Blog\config.toml</strong> をhyde-x用に修正しましょう<br />
+<a href="https://github.com/zyro/hyde-x">hyde-xテーマのサイト</a>に解説が書いてあるので、それをそのままコピペします<br />
+タイトルやTwitterアカウントなど、自分に必要な情報を更新します</p>
+
+<p>他のジェネレータも同様ですが、<br />
+コンフィグは結構、個別テーマに依存した項目になっているので（元のHugoの機能が少ない）別テーマでは使えないかもしれない点は注意です</p>
+
+<hr />
+
+<h2 id="ブログ投稿">ブログ投稿</h2>
+
+<p>contentの 下に postディレクトリを作り、ブログ更新するMDファイルを置きます</p>
+
+<pre><code>C:\Users\haruk\Dropbox\sites\Blog\content\post
+</code></pre>
+
+<p>わたしの場合、hyde-x が post の下、という仕様だったからであって<br />
+他のテンプレでは違うかもしれません<br />
+とにかく、ここの post の下に、以下のマークダウンファイルを用意します</p>
+
+<p><strong><20150909-HugoInstallAndTheme.md></strong></p>
+
+<pre><code>+++
+date = &quot;2015-09-09T01:11:00+09:00&quot;
+draft = false
+title = &quot;[Hugo]Hugoブログ構築メモ-WindowsインストールとHugoテンプレート&quot;
+categories = [&quot;Hugo&quot;]
+
++++
+
+Windows10のノートPCに [Hugo](http://gohugo.io/) というスタティックジェネレーターをインストールして、このブログを構築しています  
+...（以下略）
+
+</code></pre>
+
+<p>ルート C:\Users\haruk\Dropbox\sites\Blog\　に移動し、Hugoコマンドを実行します</p>
+
+<pre><code>C:\Users\haruk\Dropbox\sites\Blog\themes&gt;cd ..
+
+C:\Users\haruk\Dropbox\sites\Blog&gt;c:\Library\Hugo\bin\hugo.exe server -w
+0 draft content
+0 future content
+5 pages created
+1 paginator pages created
+5 categories created
+in 201 ms
+Watching for changes in C:\Users\haruk\Dropbox\sites\Blog/{data,content,layouts,static,themes\hyde-x}
+Serving pages from C:\Users\haruk\Dropbox\sites\Blog\public
+Web Server is available at http://127.0.0.1:1313/
+Press Ctrl+C to stop
+</code></pre>
+
+<p>ブラウザで <a href="http://127.0.0.1:1313/">http://127.0.0.1:1313/</a> にアクセスすると、サイトが出来ています<br />
+実際には、public 以下にHTMLがジェネレートされているので、public以下を自分の GitHub の gh-pages ブランチにアップすると、自前ブログの完成(^^)</p>
+
+<p>これも余談ですが、CNAMEファイルを置くと、独自ドメインが使えますね　　
+（これ、ファイル名が大文字じゃないとダメでした）</p>
+
+<ul>
+<li>わたしのgh-pages の参考です<br />
+<a href="https://github.com/h-sao/Blog/tree/gh-pages">https://github.com/h-sao/Blog/tree/gh-pages</a></li>
+</ul>
+
+<hr />
+
+<h2 id="簡単に構築は出来たが">簡単に構築は出来たが…</h2>
+
+<p>ここまでだと結構簡単にできますが、ここから先は、自分で頑張るしかない部分です…</p>
+
+<p>何がって？<br />
+結局最初に諦めた、デザインのことと<br />
+CMSに当たり前にあって、Hugoには無い機能を、実装していく必要があります</p>
+
+<p>今のこのブログは、先ほどの hyde-x テンプレートを改変しまくっています<br />
+とはいえ、トライ＆エラーの繰り返しだったので、解説まではできないかも…<br />
+テンプレートやHugo本体の解説は、また気が向いたときにするということで許してください</p>
+
+<p>それよりは次回は、CIツールである wercker の設定をメモします<br />
+（次へ続く）</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f09%2f09%2fhugoandtheme%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bHugo%5d%e3%83%96%e3%83%ad%e3%82%b0%e6%a7%8b%e7%af%89%e3%83%a1%e3%83%a2%281%29-Hugo%e3%81%a8%e3%83%86%e3%83%b3%e3%83%97%e3%83%ac%e3%83%bc%e3%83%88&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f09%2f09%2fhugoandtheme%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f09%2f09%2fhugoandtheme%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f09%2f09%2fhugoandtheme%2f&title=%5bHugo%5d%e3%83%96%e3%83%ad%e3%82%b0%e6%a7%8b%e7%af%89%e3%83%a1%e3%83%a2%281%29-Hugo%e3%81%a8%e3%83%86%e3%83%b3%e3%83%97%e3%83%ac%e3%83%bc%e3%83%88" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2015/08/25/moving-blog/" title="[Hugo/wercker]ブログを移行しました">[Hugo/wercker]ブログを移行しました</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2015.08.25">2015.08.25</time>
@@ -625,70 +894,6 @@ VC++でのC++11の機能一覧</p></li>
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2014/07/17/divide-file-using-powershell/" title="[PowerShell] ファイル分割スクリプト">[PowerShell] ファイル分割スクリプト</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2014.07.17">2014.07.17</time>
-&middot; 
-    
-    <a href="http://h-sao.com/tags/powershell">powershell</a>
-    
-    
-
-</span>
-</footer>
- </footer>
-                <p>大きなファイルを分割する必要があって<br />
-めっちゃ困りましたけど、また PowerShell で解決しました<br />
-なかばやけくそ</p>
-
-<p>＜sep.ps1＞</p>
-
-<pre><code class="language-c">$my_path_name = &quot;c:/tmp/&quot;
-$my_file_name = &quot;abc&quot;
-$my_file_kind = &quot;.log&quot;
-$cut_num      = 2000    # 切り取る行数
-
-$my_file = $my_path_name + $my_file_name + $my_file_kind
-
-$count = 0;
-Get-Content $my_file -ReadCount $cut_num -Encoding UTF8 | 
-    ForEach-Object { 
-        $count ++
-        $cfs = &quot;{0:D3}&quot; -f $count;
-        $_ &gt; ($my_path_name+$my_file_name+'_'+$cfs+$my_file_kind)
-    }
-</code></pre>
-
-<p>結果</p>
-
-<p><img src="/pic/Divide-File-Using-PowerShell_00.png" alt="" /></p>
-
-<p>あまり何も考えず、元ネタはこの方のブログですー</p>
-
-<ul>
-<li>参考サイト：powershellが超便利 - fivegangstersのブログ<br />
-<a href="http://blog.livedoor.jp/fivegangsters/tag/powershell">http://blog.livedoor.jp/fivegangsters/tag/powershell</a></li>
-</ul>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f17%2fdivide-file-using-powershell%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bPowerShell%5d%20%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e5%88%86%e5%89%b2%e3%82%b9%e3%82%af%e3%83%aa%e3%83%97%e3%83%88&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f17%2fdivide-file-using-powershell%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f17%2fdivide-file-using-powershell%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f17%2fdivide-file-using-powershell%2f&title=%5bPowerShell%5d%20%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e5%88%86%e5%89%b2%e3%82%b9%e3%82%af%e3%83%aa%e3%83%97%e3%83%88" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -754,6 +959,10 @@ Get-Content $my_file -ReadCount $cut_num -Encoding UTF8 |
             <div class="list-group">
                 
                     
+                        <a href="/blog/2017/10/26/change-playmode-color-on-unity/" class="list-group-item">[Unity] エディタ上でゲーム実行中にエディタの色を変える</a><br>
+                    
+                
+                    
                         <a href="/blog/2017/10/20/zoneid_and_powershell_excutionpolicy/" class="list-group-item">[PowerShell] ZoneIDとPowerShellの実行ポリシー</a><br>
                     
                 
@@ -787,10 +996,6 @@ Get-Content $my_file -ReadCount $cut_num -Encoding UTF8 |
                 
                     
                         <a href="/blog/2017/01/03/hello2017/" class="list-group-item">[Diary] 2017年もよろしくお願いします</a><br>
-                    
-                
-                    
-                        <a href="/blog/2016/12/21/delete-outlook-on-the-web-data/" class="list-group-item">[Outlook] 使わなくなったOutlook on the webの予定表（カレンダー）を削除する方法</a><br>
                     
                 
             </div>
@@ -1095,9 +1300,9 @@ Get-Content $my_file -ReadCount $cut_num -Encoding UTF8 |
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/unity" style="font-size: 20px;">
+                    <a href="http://h-sao.com//tags/unity" style="font-size: 23px;">
                     
-                        <span class="badge">4</span>
+                        <span class="badge">5</span>
                         unity
                     </a>
                     </u> &nbsp; 

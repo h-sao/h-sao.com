@@ -10,6 +10,37 @@
     <atom:link href="http://h-sao.com/tags/unity/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>[Unity] エディタ上でゲーム実行中にエディタの色を変える</title>
+      <link>http://h-sao.com/blog/2017/10/26/change-playmode-color-on-unity/</link>
+      <pubDate>Thu, 26 Oct 2017 23:30:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2017/10/26/change-playmode-color-on-unity/</guid>
+      <description>&lt;p&gt;Unityエディタ上で、ゲームを実行中（再生中）に、色を変える設定です&lt;br /&gt;
+// Unity的には「プレイモード」と呼ぶみたいです&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;プレイモード時にエディターの色を変える - Unity公式チュートリアル動画
+&lt;a href=&#34;https://unity3d.com/jp/learn/tutorials/topics/tips/play-mode-editor-tint&#34;&gt;https://unity3d.com/jp/learn/tutorials/topics/tips/play-mode-editor-tint&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;上記公式動画↑↑↑の 20秒～32秒くらいの間で、設定の操作を教えてくれてます&lt;/p&gt;
+
+&lt;p&gt;いちおここにも書いておくと&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Edit &amp;gt; Preferences &amp;gt; Colors &amp;gt; Playmode tint&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;で実行中のエディタの色を変えることが出来ます&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Playmode-color-on-Unity_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;いつも、Unityをインストールして最初にやってるんだけど、&lt;br /&gt;
+いつも忘れて結局調べてるので…(*ﾉωﾉ)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>[Unity] 常にカメラの前にSpriteを出す</title>
       <link>http://h-sao.com/blog/2017/06/21/unity-sprite-on-front-of-camera/</link>
       <pubDate>Wed, 21 Jun 2017 18:00:00 +0900</pubDate>
