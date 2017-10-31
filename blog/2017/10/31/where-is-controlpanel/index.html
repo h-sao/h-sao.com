@@ -46,122 +46,64 @@
         <article class="post">
             <a class="btn" href="http://h-sao.com/" title="">&laquo; </a>
             
-<h1><a href="http://h-sao.com/blog/2014/07/02/sort-arrays-and-retrieve-one-by-one-for-powershell/" title="[PowerShell] 連想配列をソートしてforeachで一個づつ取り出す">[PowerShell] 連想配列をソートしてforeachで一個づつ取り出す</a></h1>
+<h1><a href="http://h-sao.com/blog/2017/10/31/where-is-controlpanel/" title="[Windows10] コントロールパネルの場所">[Windows10] コントロールパネルの場所</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2014.07.02">2014.07.02</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.10.31">2017.10.31</time>
 &middot; 
     
-    <a href="http://h-sao.com/tags/powershell">powershell</a>
+    <a href="http://h-sao.com/tags/windows10">windows10</a>
     
     
 
 </span>
 </footer>
  </footer>
-            
+            <p>コントロールパネルはいずこへ…(;^ω^)</p>
 
-<p>PowerShell で連想配列を用いた時のソート＆foreach のサンプルがなかなか探せなかったのでメモします</p>
+<p>Windows10を使ってかなり経ちますが、以前の見慣れたコントロールパネルを出したくて、何となく探したことありませんか？</p>
 
-<p>とある連想配列</p>
+<p>コントロールパネルが無くても、Windows10 仕様の「設定」アプリでも、そこまで困ることは無いのですが…</p>
 
-<pre><code>PS C:\&gt; $tbl = @{
-&gt;&gt;       k00 = &quot;orange&quot;;
-&gt;&gt;       k01 = &quot;peach&quot;;
-&gt;&gt;       k02 = &quot;apple&quot;
-&gt;&gt;  }
-</code></pre>
+<p>Windows10 で Windows マーク（スタートメニューを出すマーク）を押した際の一覧に<br />
+「コントロールパネル」は無いんですねー</p>
 
-<p>出力は簡単</p>
+<p>代わりに、「設定」なるものが…</p>
 
-<pre><code>PS C:\&gt; $tbl
+<p><img src="/pic/Where-is-ControlPanel_00.png" alt="" /></p>
 
-Name                           Value
-----                           -----
-k01                            peach
-k02                            apple
-k00                            orange
-</code></pre>
+<p>ちゃうねん、これちゃんねん(/ω＼)</p>
 
-<p>ソートの出力も簡単</p>
+<p>検索すると、マイクロソフトさんの公式サポートサイトでも、ちゃんと書かれてました</p>
 
-<pre><code>PS C:\&gt; $tbl.GetEnumerator() | Sort-Object Value
+<ul>
+<li>Where is Control Panel? - Microsoft Support<br />
+<a href="https://support.microsoft.com/en-us/help/13764/windows-where-is-control-panel">https://support.microsoft.com/en-us/help/13764/windows-where-is-control-panel</a></li>
+</ul>
 
-Name                           Value
-----                           -----
-k02                            apple
-k00                            orange
-k01                            peach
+<p>普通に、スタートメニューを押した後に<br />
+「コントロール」or「Control」で検索すると候補に出てきます</p>
 
-# もしくは
+<blockquote>
+<p>ちなみに「コントロール パネル」で検索する時には、「コントロール」と「パネル」の間には半角空白が必要みたい…</p>
+</blockquote>
 
-PS C:\&gt; $tbl.GetEnumerator() | sort Value
+<p><img src="/pic/Where-is-ControlPanel_01.png" alt="" /></p>
 
-Name                           Value
-----                           -----
-k02                            apple
-k00                            orange
-k01                            peach
-</code></pre>
-
-<p>これを一つづつ取り出して処理したい</p>
-
-<h2 id="単に-foreach-で取り出すとき">単に foreach で取り出すとき</h2>
-
-<pre><code>PS C:\&gt; foreach( $k in $tbl.Keys ){
-&gt;&gt;   Write-Output $k
-&gt;&gt;   Write-Output $tbl[ $k ]
-&gt;&gt;   Write-Output '-----'
-&gt;&gt; }
-
-k01
-peach
------
-k02
-apple
------
-k00
-orange
------
-</code></pre>
-
-<h2 id="さらにソートして-foreach-で取り出すとき">さらにソートして foreach で取り出すとき</h2>
-
-<pre><code>PS C:\&gt; $tbl.GetEnumerator() | sort Value |
-&gt;&gt;   ForEach-Object{
-&gt;&gt;       Write-Output $_.Name
-&gt;&gt;       Write-Output $_.Value
-&gt;&gt;       Write-Output '-----'
-&gt;&gt;   }
-
-k02
-apple
------
-k00
-orange
------
-k01
-peach
------
-</code></pre>
-
-<p><strong>ForEach-Object</strong> を使いました
-ただの foreach() でも出来ると思うんですけど、私的用途が満たせたので、これ以上は調べてないです</p>
-
-<p>検索で、「powershell foreach ソート -perl」 などで検索しても、日本語の情報があまり出てこなかったので、参考になれば幸いです(^^)</p>
+<p>これこれ…( ^ω^ )</p>
 
             <ul class="share-buttons">
     <li></li>
     <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f02%2fsort-arrays-and-retrieve-one-by-one-for-powershell%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f10%2f31%2fwhere-is-controlpanel%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bPowerShell%5d%20%e9%80%a3%e6%83%b3%e9%85%8d%e5%88%97%e3%82%92%e3%82%bd%e3%83%bc%e3%83%88%e3%81%97%e3%81%a6foreach%e3%81%a7%e4%b8%80%e5%80%8b%e3%81%a5%e3%81%a4%e5%8f%96%e3%82%8a%e5%87%ba%e3%81%99&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f02%2fsort-arrays-and-retrieve-one-by-one-for-powershell%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bWindows10%5d%20%e3%82%b3%e3%83%b3%e3%83%88%e3%83%ad%e3%83%bc%e3%83%ab%e3%83%91%e3%83%8d%e3%83%ab%e3%81%ae%e5%a0%b4%e6%89%80&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f10%2f31%2fwhere-is-controlpanel%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f02%2fsort-arrays-and-retrieve-one-by-one-for-powershell%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f10%2f31%2fwhere-is-controlpanel%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f02%2fsort-arrays-and-retrieve-one-by-one-for-powershell%2f&title=%5bPowerShell%5d%20%e9%80%a3%e6%83%b3%e9%85%8d%e5%88%97%e3%82%92%e3%82%bd%e3%83%bc%e3%83%88%e3%81%97%e3%81%a6foreach%e3%81%a7%e4%b8%80%e5%80%8b%e3%81%a5%e3%81%a4%e5%8f%96%e3%82%8a%e5%87%ba%e3%81%99" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f10%2f31%2fwhere-is-controlpanel%2f&title=%5bWindows10%5d%20%e3%82%b3%e3%83%b3%e3%83%88%e3%83%ad%e3%83%bc%e3%83%ab%e3%83%91%e3%83%8d%e3%83%ab%e3%81%ae%e5%a0%b4%e6%89%80" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 
@@ -171,9 +113,9 @@ peach
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'harukasao';
-    var disqus_identifier = 'http:\/\/h-sao.com\/blog\/2014\/07\/02\/sort-arrays-and-retrieve-one-by-one-for-powershell\/';
-    var disqus_title = '[PowerShell] 連想配列をソートしてforeachで一個づつ取り出す';
-    var disqus_url = 'http:\/\/h-sao.com\/blog\/2014\/07\/02\/sort-arrays-and-retrieve-one-by-one-for-powershell\/';
+    var disqus_identifier = 'http:\/\/h-sao.com\/blog\/2017\/10\/31\/where-is-controlpanel\/';
+    var disqus_title = '[Windows10] コントロールパネルの場所';
+    var disqus_url = 'http:\/\/h-sao.com\/blog\/2017\/10\/31\/where-is-controlpanel\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

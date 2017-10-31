@@ -7,8 +7,49 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <lastBuildDate>Thu, 26 Oct 2017 23:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 31 Oct 2017 08:00:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Windows10] コントロールパネルの場所</title>
+      <link>http://h-sao.com/blog/2017/10/31/where-is-controlpanel/</link>
+      <pubDate>Tue, 31 Oct 2017 08:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2017/10/31/where-is-controlpanel/</guid>
+      <description>&lt;p&gt;コントロールパネルはいずこへ…(;^ω^)&lt;/p&gt;
+
+&lt;p&gt;Windows10を使ってかなり経ちますが、以前の見慣れたコントロールパネルを出したくて、何となく探したことありませんか？&lt;/p&gt;
+
+&lt;p&gt;コントロールパネルが無くても、Windows10 仕様の「設定」アプリでも、そこまで困ることは無いのですが…&lt;/p&gt;
+
+&lt;p&gt;Windows10 で Windows マーク（スタートメニューを出すマーク）を押した際の一覧に&lt;br /&gt;
+「コントロールパネル」は無いんですねー&lt;/p&gt;
+
+&lt;p&gt;代わりに、「設定」なるものが…&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Where-is-ControlPanel_00.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ちゃうねん、これちゃんねん(/ω＼)&lt;/p&gt;
+
+&lt;p&gt;検索すると、マイクロソフトさんの公式サポートサイトでも、ちゃんと書かれてました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Where is Control Panel? - Microsoft Support&lt;br /&gt;
+&lt;a href=&#34;https://support.microsoft.com/en-us/help/13764/windows-where-is-control-panel&#34;&gt;https://support.microsoft.com/en-us/help/13764/windows-where-is-control-panel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;普通に、スタートメニューを押した後に&lt;br /&gt;
+「コントロール」or「Control」で検索すると候補に出てきます&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ちなみに「コントロール パネル」で検索する時には、「コントロール」と「パネル」の間には半角空白が必要みたい…&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Where-is-ControlPanel_01.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;これこれ…( ^ω^ )&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[Unity] エディタ上でゲーム実行中にエディタの色を変える</title>
@@ -2009,67 +2050,6 @@ Mayaは奥が深いですね～&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;トップは英語で書かれてますが、実は日本語のドキュメントしか今は無いです&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[Windows10] PCのGPUを確認する</title>
-      <link>http://h-sao.com/blog/2016/07/26/check-gpu-on-pc/</link>
-      <pubDate>Tue, 26 Jul 2016 21:00:00 +0900</pubDate>
-      
-      <guid>http://h-sao.com/blog/2016/07/26/check-gpu-on-pc/</guid>
-      <description>&lt;p&gt;PCのGPU、つまりグラフィックボードってなんだろな？と思った時の操作メモです&lt;/p&gt;
-
-&lt;p&gt;対象は Windows10&lt;/p&gt;
-
-&lt;p&gt;(1) まず Windows10 のディスプレイ画面を表示させます&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;デスクトップ画面を右クリック&lt;br /&gt;
-　＞ディスプレイ設定&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;もしくは&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Windowsのスタートボタン&lt;br /&gt;
-　＞設定&lt;br /&gt;
-　　＞システム&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;(2) 「ディスプレイの詳細設定」を選択！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Check-gpu-on-pc_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;(3) ディスプレイのカスタマイズの項目の中の、「アダプターのプロパティの表示」を選択！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Check-gpu-on-pc_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;(4) グラフィックボードの情報が出てきます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Check-gpu-on-pc_02.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;このPCはインテルボードでした&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;別の調べ方としては、DirectX 診断ツール（dxdiag）を使う方法もあり&lt;/p&gt;
-
-&lt;p&gt;dxdiag で検索すると、一致するコマンドが出てきます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Check-gpu-on-pc_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;実行すると、こんな感じで、表示を出してくれます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Check-gpu-on-pc_04.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;GPU…気になりますよね…&lt;br /&gt;
-CPUは多少型が古くても、それほど差が出ないけど&lt;br /&gt;
-GPUだけは新しい型のものにしとかないと…とかとか&lt;br /&gt;
-私的にはこだわりたいのです！！！&lt;br /&gt;
-（実行出来てるかどうかは…涙）&lt;/p&gt;
 </description>
     </item>
     

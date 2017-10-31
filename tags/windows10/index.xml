@@ -10,6 +10,47 @@
     <atom:link href="http://h-sao.com/tags/windows10/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>[Windows10] コントロールパネルの場所</title>
+      <link>http://h-sao.com/blog/2017/10/31/where-is-controlpanel/</link>
+      <pubDate>Tue, 31 Oct 2017 08:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2017/10/31/where-is-controlpanel/</guid>
+      <description>&lt;p&gt;コントロールパネルはいずこへ…(;^ω^)&lt;/p&gt;
+
+&lt;p&gt;Windows10を使ってかなり経ちますが、以前の見慣れたコントロールパネルを出したくて、何となく探したことありませんか？&lt;/p&gt;
+
+&lt;p&gt;コントロールパネルが無くても、Windows10 仕様の「設定」アプリでも、そこまで困ることは無いのですが…&lt;/p&gt;
+
+&lt;p&gt;Windows10 で Windows マーク（スタートメニューを出すマーク）を押した際の一覧に&lt;br /&gt;
+「コントロールパネル」は無いんですねー&lt;/p&gt;
+
+&lt;p&gt;代わりに、「設定」なるものが…&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Where-is-ControlPanel_00.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ちゃうねん、これちゃんねん(/ω＼)&lt;/p&gt;
+
+&lt;p&gt;検索すると、マイクロソフトさんの公式サポートサイトでも、ちゃんと書かれてました&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Where is Control Panel? - Microsoft Support&lt;br /&gt;
+&lt;a href=&#34;https://support.microsoft.com/en-us/help/13764/windows-where-is-control-panel&#34;&gt;https://support.microsoft.com/en-us/help/13764/windows-where-is-control-panel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;普通に、スタートメニューを押した後に&lt;br /&gt;
+「コントロール」or「Control」で検索すると候補に出てきます&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ちなみに「コントロール パネル」で検索する時には、「コントロール」と「パネル」の間には半角空白が必要みたい…&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Where-is-ControlPanel_01.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;これこれ…( ^ω^ )&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>[Windows10] PCのGPUを確認する</title>
       <link>http://h-sao.com/blog/2016/07/26/check-gpu-on-pc/</link>
       <pubDate>Tue, 26 Jul 2016 21:00:00 +0900</pubDate>
