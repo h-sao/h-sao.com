@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://h-sao.com/blog/2017/11/02/how-to-uninstall-unity-license-information/</loc>
+    <lastmod>2017-11-02T09:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://h-sao.com/blog/2017/10/31/where-is-controlpanel/</loc>
     <lastmod>2017-10-31T08:00:00+09:00</lastmod>
   </url>
@@ -339,7 +344,7 @@
   
   <url>
     <loc>http://h-sao.com/</loc>
-    <lastmod>2017-10-31T08:00:00+09:00</lastmod>
+    <lastmod>2017-11-02T09:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -417,7 +422,7 @@
   
   <url>
     <loc>http://h-sao.com/post/</loc>
-    <lastmod>2017-10-31T08:00:00+09:00</lastmod>
+    <lastmod>2017-11-02T09:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -470,7 +475,7 @@
   
   <url>
     <loc>http://h-sao.com/tags/unity/</loc>
-    <lastmod>2017-10-26T23:30:00+09:00</lastmod>
+    <lastmod>2017-11-02T09:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

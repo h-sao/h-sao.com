@@ -7,8 +7,102 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <lastBuildDate>Tue, 31 Oct 2017 08:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 02 Nov 2017 09:00:00 +0900</lastBuildDate>
     <atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Unity] Unityのライセンス情報をアンインストールしたい</title>
+      <link>http://h-sao.com/blog/2017/11/02/how-to-uninstall-unity-license-information/</link>
+      <pubDate>Thu, 02 Nov 2017 09:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2017/11/02/how-to-uninstall-unity-license-information/</guid>
+      <description>
+
+&lt;p&gt;Unityをアンインストールしたけど、あれ？ライセンス情報が残ってる(?_?)&lt;br /&gt;
+というのが調べたきっかけです&lt;/p&gt;
+
+&lt;p&gt;PCからUnityの情報を完全消去したいときの参考に&lt;/p&gt;
+
+&lt;h2 id=&#34;ライセンス情報-unity5-x系&#34;&gt;ライセンス情報 (Unity5.x系)&lt;/h2&gt;
+
+&lt;p&gt;ライセンスファイルは、Unityをアンインストールしても消えません＞＜&lt;/p&gt;
+
+&lt;p&gt;以下にライセンスファイル(.ulfファイル)が残っています&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;C:/ProgramData/Unity/Unity_v5.x.ulf&lt;/li&gt;
+&lt;li&gt;C:/Users/(username)/AppData/Local/VirtualStore/ProgramData/Unity/&lt;br /&gt;
+（UACで C:/ProgramData/Unity/ へアクセス制限されてる時）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;で…&lt;/p&gt;
+
+&lt;p&gt;確かに上記を消したら、アクティベーション情報は消えるのですが&lt;br /&gt;
+Unityにログインしたユーザ情報は残ってる様です&lt;/p&gt;
+
+&lt;p&gt;キャッシュ的なものも消さないと、完全アンインストールにはならないみたい&lt;/p&gt;
+
+&lt;h2 id=&#34;その他-アンインストールで消えないディレクトリ&#34;&gt;その他、アンインストールで消えないディレクトリ&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;C:/Users/(username)/AppData/Local/Unity&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;C:/Users/(username)/AppData/Roaming/Unity&lt;br /&gt;
+上記２点には、エディタに関する何か？キャッシュ的な何か？が残っています&lt;br /&gt;
+起動した際の、Unityプロジェクトの表示とか…&lt;br /&gt;
+おそらくこの２つのディレクトリ以下に、ユーザ情報も入ってるみたいです&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;C:/Users/(username)/AppData/RoamingLocalLow/Unity&lt;br /&gt;
+この下もちょっとよく判らないですが、&lt;br /&gt;
+このディレクトリ配下の「Asset Store-5.x」の下には&lt;br /&gt;
+アセットストアからダウンロードしてきたパッケージファイルが入っていました&lt;br /&gt;
+（.unitypackage）&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;逆の言い方をすると、&lt;br /&gt;
+上に書いたディレクトリ４つ&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;C:/ProgramData/Unity/&lt;/li&gt;
+&lt;li&gt;C:/Users/(username)/AppData/Local/Unity&lt;/li&gt;
+&lt;li&gt;C:/Users/(username)/AppData/Roaming/Unity&lt;/li&gt;
+&lt;li&gt;C:/Users/(username)/AppData/RoamingLocalLow/Unity&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;を消せば、Unityをアンインストールしなくても&lt;br /&gt;
+ライセンス情報のリセット、ユーザ情報のリセットが可能でした&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;もちろん&lt;br /&gt;
+C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x&lt;br /&gt;
+の下は、ライセンスファイルとは無関係みたいです&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;unity2017系は&#34;&gt;Unity2017系は？&lt;/h2&gt;
+
+&lt;p&gt;Unity2017 では、ライセンスディレクトリは同様で、ライセンスファイル名が&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Unity_lic.ulf&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;になってるみたいです&lt;br /&gt;
+（消さないといけないディレクトリまでは、2017系では調べてないので、ごめんなさい）&lt;/p&gt;
+
+&lt;p&gt;参考：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;アクティベーションに関する FAQ - Unity公式&lt;br /&gt;
+&lt;a href=&#34;https://docs.unity3d.com/ja/current/Manual/ActivationFAQ.html&#34;&gt;https://docs.unity3d.com/ja/current/Manual/ActivationFAQ.html&lt;/a&gt;(日本語)&lt;br /&gt;
+&lt;a href=&#34;https://docs.unity3d.com/Manual/ActivationFAQ.html&#34;&gt;https://docs.unity3d.com/Manual/ActivationFAQ.html&lt;/a&gt;(英語)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Unityの再インストール - FreelyApps&lt;br /&gt;
+&lt;a href=&#34;http://freelyapps.blog.jp/archives/1032543378.html&#34;&gt;http://freelyapps.blog.jp/archives/1032543378.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>[Windows10] コントロールパネルの場所</title>
@@ -1994,62 +2088,6 @@ Mayaの作業画面（ビューポート）の &lt;strong&gt;View&lt;/strong&gt;
 
 &lt;p&gt;自分の必要なメモ書きでした&lt;br /&gt;
 Mayaは奥が深いですね～&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[Unity] Unity用YEBISプラグインのお話してきました</title>
-      <link>http://h-sao.com/blog/2016/08/09/prerelease-yebis-for-unity-beta/</link>
-      <pubDate>Tue, 09 Aug 2016 18:00:00 +0900</pubDate>
-      
-      <guid>http://h-sao.com/blog/2016/08/09/prerelease-yebis-for-unity-beta/</guid>
-      <description>&lt;p&gt;たまには、仕事のお話を…&lt;br /&gt;
-現在、Unityのプラグインを絶賛開発中で、わたしも少し関わらせて頂いてます&lt;/p&gt;
-
-&lt;p&gt;なんのプラグインかというと、ポストエフェクト処理がかけられる「YEBIS」というプロダクトのプラグイン化になります&lt;/p&gt;
-
-&lt;p&gt;今、ベータ版として期間限定のトライアルを出し中。。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;YEBIS for Unity (beta)&lt;/strong&gt; ダウンロードサイト
-&lt;a href=&#34;https://siliconstudio.github.io/YebisForUnityBeta/&#34;&gt;https://siliconstudio.github.io/YebisForUnityBeta/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;あぁ、なんでUnityのアセットストアじゃないのかって…？&lt;/p&gt;
-
-&lt;p&gt;実は、「特濃！ゲーム開発塾５」というイベントでこのプラグインの話をしてきたのですが、ストアの申請が間に合わず…＞＜&lt;br /&gt;
-とりあえず、GitHub Pagesに置いてます&lt;br /&gt;
-（なので、アセットストアに公開するまでの、期間限定サイトです）&lt;/p&gt;
-
-&lt;p&gt;ちなみに、イベントURLはこれ&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;特濃！ゲーム開発塾５&lt;/strong&gt;&lt;br /&gt;
-&lt;a href=&#34;http://eventregist.com/e/tokunou5&#34;&gt;http://eventregist.com/e/tokunou5&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;https://www.facebook.com/IwateGameFactory/&#34;&gt;https://www.facebook.com/IwateGameFactory/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;岩手県盛岡市はIT支援がとても盛んらしく、こんなゲーム開発者向けのお祭りイベントがあるんですね~&lt;/p&gt;
-
-&lt;p&gt;わたしが参加した日程は 8月9日(火)&lt;br /&gt;
-対象となる人はプログラマー、もしくはプログラムを将来仕事にしたい人向け&lt;br /&gt;
-現在、DMM.comラボにてプロデューサをされている松本卓也さんがメイン講師をされました&lt;/p&gt;
-
-&lt;p&gt;わたしは３０分ほどセッション時間を頂き、このUnityプラグインのお話をさせて頂きました&lt;br /&gt;
-発表に利用した資料はこれです&lt;/p&gt;
-
-&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;5106b47adb0c4f2286a4654095b81fc4&#34; data-ratio=&#34;1.77777777777778&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;ベータ版なので動作不安定な点がいくつもあるのですが、人柱的に試しても良いかなーという心優しい方は、トライしてみてくださいm(__)m&lt;/p&gt;
-
-&lt;p&gt;ちなみにドキュメントはこちら&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;SiliconStudio/YEBIS-plugins - GitHub&lt;br /&gt;
-&lt;a href=&#34;https://github.com/SiliconStudio/YEBIS-plugins&#34;&gt;https://github.com/SiliconStudio/YEBIS-plugins&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;トップは英語で書かれてますが、実は日本語のドキュメントしか今は無いです&lt;/p&gt;
 </description>
     </item>
     
