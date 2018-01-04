@@ -193,23 +193,26 @@ VC++でのC++11の機能一覧</p></li>
 なかばやけくそ</p>
 
 <p>＜sep.ps1＞</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#960050;background-color:#1e0010">$</span>my_path_name <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;c:/tmp/&#34;</span>
+<span style="color:#960050;background-color:#1e0010">$</span>my_file_name <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;abc&#34;</span>
+<span style="color:#960050;background-color:#1e0010">$</span>my_file_kind <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;.log&#34;</span>
+<span style="color:#960050;background-color:#1e0010">$</span>cut_num      <span style="color:#f92672">=</span> <span style="color:#ae81ff">2000</span>    <span style="color:#75715e"># 切り取る行数
+</span><span style="color:#75715e"></span>
+<span style="color:#960050;background-color:#1e0010">$</span>my_file <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">$</span>my_path_name <span style="color:#f92672">+</span> <span style="color:#960050;background-color:#1e0010">$</span>my_file_name <span style="color:#f92672">+</span> <span style="color:#960050;background-color:#1e0010">$</span>my_file_kind
 
-<pre><code class="language-c">$my_path_name = &quot;c:/tmp/&quot;
-$my_file_name = &quot;abc&quot;
-$my_file_kind = &quot;.log&quot;
-$cut_num      = 2000    # 切り取る行数
-
-$my_file = $my_path_name + $my_file_name + $my_file_kind
-
-$count = 0;
-Get-Content $my_file -ReadCount $cut_num -Encoding UTF8 | 
-    ForEach-Object { 
-        $count ++
-        $cfs = &quot;{0:D3}&quot; -f $count;
-        $_ &gt; ($my_path_name+$my_file_name+'_'+$cfs+$my_file_kind)
-    }
-</code></pre>
-
+<span style="color:#960050;background-color:#1e0010">$</span>count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+Get<span style="color:#f92672">-</span>Content <span style="color:#960050;background-color:#1e0010">$</span>my_file <span style="color:#f92672">-</span>ReadCount <span style="color:#960050;background-color:#1e0010">$</span>cut_num <span style="color:#f92672">-</span>Encoding UTF8 <span style="color:#f92672">|</span> 
+    ForEach<span style="color:#f92672">-</span>Object { 
+        <span style="color:#960050;background-color:#1e0010">$</span>count <span style="color:#f92672">++</span>
+        <span style="color:#960050;background-color:#1e0010">$</span>cfs <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;{0:D3}&#34;</span> <span style="color:#f92672">-</span>f <span style="color:#960050;background-color:#1e0010">$</span>count;
+        <span style="color:#960050;background-color:#1e0010">$</span>_ <span style="color:#f92672">&gt;</span> (<span style="color:#960050;background-color:#1e0010">$</span>my_path_name<span style="color:#f92672">+</span><span style="color:#960050;background-color:#1e0010">$</span>my_file_name<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;_&#39;</span><span style="color:#f92672">+</span><span style="color:#960050;background-color:#1e0010">$</span>cfs<span style="color:#f92672">+</span><span style="color:#960050;background-color:#1e0010">$</span>my_file_kind)
+    }</code></pre></td></tr></table>
+</div>
+</div>
 <p>結果</p>
 
 <p><img src="/pic/Divide-File-Using-PowerShell_00.png" alt="" /></p>
@@ -514,35 +517,38 @@ $ora_conn.Open()
 どのテーブルの、どのカラムに、何件入っているかが判ります</p>
 
 <p>う、嬉しい～!!!</p>
-
-<pre><code class="language-sql">declare
- sSQL VARCHAR2(128);
- sDATA VARCHAR2(500);
- type cursor_type is ref cursor;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">16</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">17</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">18</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">19</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">20</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">21</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">22</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">23</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">24</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">25</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">26</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">declare</span>
+ sSQL VARCHAR2(<span style="color:#ae81ff">128</span>);
+ sDATA VARCHAR2(<span style="color:#ae81ff">500</span>);
+ <span style="color:#66d9ef">type</span> cursor_type <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">ref</span> <span style="color:#66d9ef">cursor</span>;
  cur_search cursor_type;
  vCount INTEGER;
- ERR_CODE NUMBER := 0;
- ERR_MSG VARCHAR(255);
-begin
- for vRec in (select COLUMN_NAME,TABLE_NAME from USER_TAB_COLS where DATA_TYPE like '%CHAR%')
+ ERR_CODE NUMBER :<span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+ ERR_MSG VARCHAR(<span style="color:#ae81ff">255</span>);
+<span style="color:#66d9ef">begin</span>
+ <span style="color:#66d9ef">for</span> vRec <span style="color:#66d9ef">in</span> (<span style="color:#66d9ef">select</span> <span style="color:#66d9ef">COLUMN_NAME</span>,<span style="color:#66d9ef">TABLE_NAME</span> <span style="color:#66d9ef">from</span> USER_TAB_COLS <span style="color:#66d9ef">where</span> DATA_TYPE <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;%CHAR%&#39;</span>)
  loop
-  begin
-    open cur_search for 'select count(*) as cnt from ' || vRec.TABLE_NAME || ' where ' || vRec.COLUMN_NAME || ' like ''%あ%''';
-        fetch cur_search into vCount;
-        if vCount &gt; 0 then
-          dbms_output.put_line(vRec.TABLE_NAME || '.' || vRec.COLUMN_NAME || ':' || vCount || '件あり');
-        end if;
-        close cur_search;
-  exception
-   WHEN OTHERS THEN
-    ERR_CODE := SQLCODE;
-    ERR_MSG  := SUBSTRB(SQLERRM,1,255);
-    dbms_output.put_line('error:' || ERR_CODE || ' ' || ERR_MSG || ' ' || vRec.TABLE_NAME || '.' || vRec.COLUMN_NAME);
-  end;
- end loop;
-end;
-</code></pre>
-
+  <span style="color:#66d9ef">begin</span>
+    <span style="color:#66d9ef">open</span> cur_search <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#39;select count(*) as cnt from &#39;</span> <span style="color:#f92672">||</span> vRec.<span style="color:#66d9ef">TABLE_NAME</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39; where &#39;</span> <span style="color:#f92672">||</span> vRec.<span style="color:#66d9ef">COLUMN_NAME</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39; like &#39;&#39;%あ%&#39;&#39;&#39;</span>;
+        <span style="color:#66d9ef">fetch</span> cur_search <span style="color:#66d9ef">into</span> vCount;
+        <span style="color:#66d9ef">if</span> vCount <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">then</span>
+          dbms_output.put_line(vRec.<span style="color:#66d9ef">TABLE_NAME</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">||</span> vRec.<span style="color:#66d9ef">COLUMN_NAME</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#f92672">||</span> vCount <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;件あり&#39;</span>);
+        <span style="color:#66d9ef">end</span> <span style="color:#66d9ef">if</span>;
+        <span style="color:#66d9ef">close</span> cur_search;
+  <span style="color:#66d9ef">exception</span>
+   <span style="color:#66d9ef">WHEN</span> OTHERS <span style="color:#66d9ef">THEN</span>
+    ERR_CODE :<span style="color:#f92672">=</span> <span style="color:#66d9ef">SQLCODE</span>;
+    ERR_MSG  :<span style="color:#f92672">=</span> SUBSTRB(SQLERRM,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">255</span>);
+    dbms_output.put_line(<span style="color:#e6db74">&#39;error:&#39;</span> <span style="color:#f92672">||</span> ERR_CODE <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">||</span> ERR_MSG <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">||</span> vRec.<span style="color:#66d9ef">TABLE_NAME</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">||</span> vRec.<span style="color:#66d9ef">COLUMN_NAME</span>);
+  <span style="color:#66d9ef">end</span>;
+ <span style="color:#66d9ef">end</span> loop;
+<span style="color:#66d9ef">end</span>;</code></pre></td></tr></table>
+</div>
+</div>
 <p>DBの構造を解析するツールは結構探せばあるのですが、データの中身となると、調べるのは手間ですよね…<br />
 このSQLには助けられました～</p>
 
@@ -653,23 +659,26 @@ DB系のクライアントツールで、わたしがよく使っているのは
 In such a case, Anonymous structure comes in handy.</p>
 
 <p>It is assigned to the anonymous struct</p>
-
-<pre><code class="language-cpp">struct{
-        char    1st_name[0x80];
-        char    2nd_name[0x80];
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span>{
+        <span style="color:#66d9ef">char</span>    <span style="color:#ae81ff">1</span>st_name[<span style="color:#ae81ff">0x80</span>];
+        <span style="color:#66d9ef">char</span>    <span style="color:#ae81ff">2</span>nd_name[<span style="color:#ae81ff">0x80</span>];
  
-    } name_tbl[] = {
-        { &quot;Isami&quot;,   &quot;Kondou&quot; },
-        { &quot;Toshizo&quot;, &quot;Hijikata&quot; },
-        { &quot;Kogorou&quot;, &quot;Kathura&quot; },
+    } name_tbl[] <span style="color:#f92672">=</span> {
+        { <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Isami&#34;</span>,   <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Kondou&#34;</span> },
+        { <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Toshizo&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Hijikata&#34;</span> },
+        { <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Kogorou&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Kathura&#34;</span> },
     };
  
-    for( i = 0; i &lt; sizeof( name_tbl ); i ++ ){
-        printf( &quot;%s\n&quot;, name_tbl[ i ].1st_name );
-        printf( &quot;%s\n&quot;, name_tbl[ i ].2nd_name );
-    } 
-</code></pre>
-
+    <span style="color:#66d9ef">for</span>( i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">sizeof</span>( name_tbl ); i <span style="color:#f92672">++</span> ){
+        printf( <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, name_tbl[ i ]<span style="color:#ae81ff">.1</span>st_name );
+        printf( <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, name_tbl[ i ]<span style="color:#ae81ff">.2</span>nd_name );
+    } </code></pre></td></tr></table>
+</div>
+</div>
 <p>This code is very straightforward!</p>
 
 <p>This method is effective only when there is no necessity that you use 2 times and this structure.</p>
@@ -710,11 +719,14 @@ In such a case, Anonymous structure comes in handy.</p>
                 <p>ローカルの作業が何やらおかしくなったから<br />
 リモートのファイル内容に戻したい～という時<br />
 以下のコマンドでさくっと戻りました</p>
-
-<pre><code class="language-cpp">git fetch origin
-git reset --hard origin/master
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">git fetch origin
+git reset <span style="color:#f92672">--</span>hard origin<span style="color:#f92672">/</span>master</code></pre></td></tr></table>
+</div>
+</div>
 <p>ツールなどで強制的にsyncさせようとしても</p>
 
 <blockquote>
@@ -771,48 +783,57 @@ git reset --hard origin/master
 <p>Hi,</p>
 
 <h2 id="c-program">C program</h2>
-
-<pre><code class="language-cpp">c00.c
-#include &lt;stdio.h&gt;
-
-int main()
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">8</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">c00.c
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> main()
 {
-    printf(&quot;This is a native C program.\n&quot;);
-    return 0;
-} 
-</code></pre>
-
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;This is a native C program.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+} </code></pre></td></tr></table>
+</div>
+</div>
 <p>compile</p>
 
 <pre><code>&gt; cl.exe c00.c
 </code></pre>
 
 <h2 id="c-program-1">C++ program</h2>
-
-<pre><code class="language-cpp">c01.cpp
-#include &lt;iostream&gt;
-
-int main()
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">8</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">c01.cpp
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> main()
 {
-    std::cout &lt;&lt; &quot;This is a native C++ program.&quot; &lt;&lt; std::endl;
-    return 0;
-}
-</code></pre>
-
+    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;This is a native C++ program.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}</code></pre></td></tr></table>
+</div>
+</div>
 <p>compile</p>
 
 <pre><code>&gt; cl.exe /EHsc c01.cpp
 </code></pre>
 
 <h2 id="c-cli-program">C++/CLI program</h2>
-
-<pre><code class="language-cpp">c02.cpp
-int main()
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">5</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">c02.cpp
+<span style="color:#66d9ef">int</span> main()
 {
-    System::Console::WriteLine(&quot;This is a Visual C++ program.&quot;);
-}
-</code></pre>
-
+    System<span style="color:#f92672">::</span>Console<span style="color:#f92672">::</span>WriteLine(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;This is a Visual C++ program.&#34;</span>);
+}</code></pre></td></tr></table>
+</div>
+</div>
 <p>compile</p>
 
 <pre><code>&gt; cl.exe /clr c02.cpp

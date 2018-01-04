@@ -428,10 +428,13 @@ $
 <h2 id="パターン1-id-rsa-で登録している-ssh-キーを利用する場合">(パターン1) id_rsa で登録している ssh キーを利用する場合</h2>
 
 <p>このコマンドで確認します</p>
-
-<pre><code class="language-xml">$ ssh -T git@github.com
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ ssh -T git@github.com</code></pre></td></tr></table>
+</div>
+</div>
 <p><strong>id_rsa</strong> というファイル名を、ssh 接続では自動的に認識するようです</p>
 
 <p>初回は、known_hosts に GitHub サーバを登録するよ？と聞いてくるので、 yes を入力します</p>
@@ -516,10 +519,13 @@ GitHubユーザ名を入れます</li>
 
 <p>ここまで準備したら、接続テストしましょう<br />
 config に設定した名前で　Host の名称アクセスすることが出来ます！</p>
-
-<pre><code class="language-xml">$ ssh -T my.github.server
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ ssh -T my.github.server</code></pre></td></tr></table>
+</div>
+</div>
 <p>うまくいくと、パターン1と同じように、known hostに登録するかどうかを聞かれて、ファイルが作成されます</p>
 
 <p><img src="/pic/Generate-ssh-key-for-GitHub_10.png" style="border:solid 5px #e6e6e6"/></p>
@@ -614,19 +620,25 @@ branch.master.merge=<span class="hljs-string">refs/heads/master</span>
 <p><strong>git@github.com:[ユーザID]/[リポジトリ].git</strong></p>
 
 <p>を設定します</p>
-
-<pre><code class="language-xml">$ git remote set-url origin git@github.com:h-sao/xxx.git
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ git remote set-url origin git@github.com:h-sao/xxx.git</code></pre></td></tr></table>
+</div>
+</div>
 <p>id_rsa じゃない、別名の ssh キーファイルを利用するときの設定は</p>
 
 <p><strong>[Host名]:[ユーザID]/[リポジトリ].git</strong></p>
 
 <p>になります</p>
-
-<pre><code class="language-xml">$ git remote set-url origin my.github.server:h-sao/xxx.git
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ git remote set-url origin my.github.server:h-sao/xxx.git</code></pre></td></tr></table>
+</div>
+</div>
 <p>GitExtensions で Push してみましょう</p>
 
 <p><img src="/pic/Generate-ssh-key-for-GitHub_12.png" style="border:solid 5px #e6e6e6"/></p>

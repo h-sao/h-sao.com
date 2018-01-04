@@ -127,7 +127,7 @@ PDF版はこちら
 It is very tedious to think about the name of a struct when you use to struct only once.
 In such a case, Anonymous structure comes in handy.
 It is assigned to the anonymous struct
-struct{ char 1st_name[0x80]; char 2nd_name[0x80]; } name_tbl[] = { { &amp;quot;Isami&amp;quot;, &amp;quot;Kondou&amp;quot; }, { &amp;quot;Toshizo&amp;quot;, &amp;quot;Hijikata&amp;quot; }, { &amp;quot;Kogorou&amp;quot;, &amp;quot;Kathura&amp;quot; }, }; for( i = 0; i &amp;lt; sizeof( name_tbl ); i ++ ){ printf( &amp;quot;%s\n&amp;quot;, name_tbl[ i ].</description>
+1234567891011121314 struct{ char 1st_name[0x80]; char 2nd_name[0x80]; } name_tbl[] = { { &amp;#34;Isami&amp;#34;, &amp;#34;Kondou&amp;#34; }, { &amp;#34;Toshizo&amp;#34;, &amp;#34;Hijikata&amp;#34; }, { &amp;#34;Kogorou&amp;#34;, &amp;#34;Kathura&amp;#34; }, }; for( i = 0; i &amp;lt; sizeof( name_tbl ); i ++ ){ printf( &amp;#34;%s\n&amp;#34;, name_tbl[ i ].</description>
     </item>
     
     <item>
@@ -137,10 +137,9 @@ struct{ char 1st_name[0x80]; char 2nd_name[0x80]; } name_tbl[] = { { &amp;quot;I
       
       <guid>http://h-sao.com/blog/2014/01/31/cpp-sample-program/</guid>
       <description>Hi,
-C program c00.c #include &amp;lt;stdio.h&amp;gt; int main() { printf(&amp;quot;This is a native C program.\n&amp;quot;); return 0; }  compile
-&amp;gt; cl.exe c00.c  C++ program c01.cpp #include &amp;lt;iostream&amp;gt; int main() { std::cout &amp;lt;&amp;lt; &amp;quot;This is a native C++ program.&amp;quot; &amp;lt;&amp;lt; std::endl; return 0; }  compile
-&amp;gt; cl.exe /EHsc c01.cpp  C++/CLI program c02.cpp int main() { System::Console::WriteLine(&amp;quot;This is a Visual C++ program.&amp;quot;); }  compile
-&amp;gt; cl.exe /clr c02.</description>
+C program 12345678 c00.c #include &amp;lt;stdio.h&amp;gt; int main() { printf(&amp;#34;This is a native C program.\n&amp;#34;); return 0; }    compile
+&amp;gt; cl.exe c00.c  C++ program 12345678 c01.cpp #include &amp;lt;iostream&amp;gt; int main() { std::cout &amp;lt;&amp;lt; &amp;#34;This is a native C++ program.&amp;#34; &amp;lt;&amp;lt; std::endl; return 0; }   compile
+&amp;gt; cl.exe /EHsc c01.cpp  C++/CLI program 12345 c02.cpp int main() { System::Console::WriteLine(&amp;#34;This is a Visual C++ program.</description>
     </item>
     
     <item>
@@ -166,7 +165,7 @@ Take care!</description>
       <description>ビット・シフトの計算の練習問題＜上級編＞です
 Q. 割り算をシフトと引き算のみで表現しなさい
 A. 回答
-// x / y = ans // x: 分子 // y: 分母 // ans:答え ans = 0; while( x &amp;gt;= y ){ dammy = y; syou = 1; while( x &amp;gt;= dammy ){ // 割られる数を超えるまで割る数をシフト dammy = dammy &amp;lt;&amp;lt; 1; syou = syou &amp;lt;&amp;lt; 1; } dammy = dammy &amp;gt;&amp;gt; 1; // 超える手前まで戻す syou = syou &amp;gt;&amp;gt; 1; x = x - dammy; // 筆算 ans = ans + syou; // 答え } printf( &amp;quot;%d ・・・%d\n&amp;quot;, ans, x );  新人研修などにどうでしょう？</description>
+123456789101112131415161718192021 // x / y = ans // x: 分子 // y: 分母 // ans:答え  ans = 0; while( x &amp;gt;= y ){ dammy = y; syou = 1; while( x &amp;gt;= dammy ){ // 割られる数を超えるまで割る数をシフト  dammy = dammy &amp;lt;&amp;lt; 1; syou = syou &amp;lt;&amp;lt; 1; } dammy = dammy &amp;gt;&amp;gt; 1; // 超える手前まで戻す  syou = syou &amp;gt;&amp;gt; 1; x = x - dammy; // 筆算  ans = ans + syou; // 答え  } printf( &amp;#34;%d ・・・%d\n&amp;#34;, ans, x );   新人研修などにどうでしょう？</description>
     </item>
     
   </channel>

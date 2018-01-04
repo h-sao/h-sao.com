@@ -237,14 +237,17 @@ cudaディレクトリにコピーした人はパスを設定しなくていい�
 <ul>
 <li>activateコマンドで環境を切り替えておく</li>
 </ul>
-
-<pre><code class="language-xml">#Change env
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">5</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">#Change env
 
 (C:\utils\Anaconda3) D:\dev\anaconda&gt;activate tensorflow
 
-(tensorflow) D:\dev\anaconda&gt;
-</code></pre>
-
+(tensorflow) D:\dev\anaconda&gt;</code></pre></td></tr></table>
+</div>
+</div>
 <hr />
 
 <p>(以下、失敗手順も含んでいます)</p>
@@ -253,8 +256,11 @@ cudaディレクトリにコピーした人はパスを設定しなくていい�
 <li>pip コマンドを使ってTensorFlow　GPU をインストールする<br />
 （実はこの動作は 2017/4/10現在、間違っています）</li>
 </ul>
-
-<pre><code class="language-xml"># Installed TensorFlow (1st time, error occurred.)
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"># Installed TensorFlow (1st time, error occurred.)
 
 (tensorflow) D:\dev\anaconda&gt;pip install --upgrade tensorflow-gpu
 Collecting tensorflow-gpu
@@ -266,11 +272,11 @@ Successfully installed appdirs-1.4.3 numpy-1.12.1 packaging-16.8 protobuf-3.2.0 
 
 （中略）
 
-FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\utils\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\setuptools-27.2.0-py3.5.egg'
+FileNotFoundError: [WinError 2] The system cannot find the file specified: &#39;C:\\utils\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\setuptools-27.2.0-py3.5.egg&#39;
 
-(tensorflow) D:\dev\anaconda&gt;
-</code></pre>
-
+(tensorflow) D:\dev\anaconda&gt;</code></pre></td></tr></table>
+</div>
+</div>
 <p>Tensorflowのインストールは出来ましたが、一番最後、なにやらファイルが無いとエラーが出ています<br />
 よくわからない(￣▽￣)</p>
 
@@ -279,15 +285,18 @@ FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\
 </ul>
 
 <p><strong>cudnn64_5.dllが無い</strong> って言われる</p>
-
-<pre><code class="language-xml"># Check import version
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">16</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">17</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"># Check import version
 
 (tensorflow) D:\dev\anaconda&gt;python
 Python 3.5.3 |Continuum Analytics, Inc.| (default, Feb 22 2017, 21:28:42) [MSC v.1900 64 bit (AMD64)] on win32
-Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+Type &#34;help&#34;, &#34;copyright&#34;, &#34;credits&#34; or &#34;license&#34; for more information.
 &gt;&gt;&gt; import tensorflow
 I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cublas64_80.dll locally
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:126] Couldn't open CUDA library cudnn64_5.dll
+I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:126] Couldn&#39;t open CUDA library cudnn64_5.dll
 I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\cuda\cuda_dnn.cc:3517] Unable to load cuDNN DSO
 I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cufft64_80.dll locally
 I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library nvcuda.dll locally
@@ -296,9 +305,9 @@ I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stre
 1.0.1
 &gt;&gt;&gt; exit()
 
-(tensorflow) D:\dev\anaconda&gt;
-</code></pre>
-
+(tensorflow) D:\dev\anaconda&gt;</code></pre></td></tr></table>
+</div>
+</div>
 <p>あれ？<br />
 ちゃんと<strong>CUDA8.0 に対応した cuDNN6.0 を入れたのに</strong>…(´・ω・`)</p>
 
@@ -336,10 +345,13 @@ cuDNN5.1でも問題なく TensorFlow 1.1.0rc1 は動いています！！</p>
 </ul>
 
 <p>TensorFlowのバージョンは 1.0.1、インストールしまして、インポートでのエラーは出なくなりましたが…</p>
-
-<pre><code class="language-xml">(tensorflow) D:\dev\anaconda&gt;python
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">(tensorflow) D:\dev\anaconda&gt;python
 Python 3.5.3 |Continuum Analytics, Inc.| (default, Feb 22 2017, 21:28:42) [MSC v.1900 64 bit (AMD64)] on win32
-Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+Type &#34;help&#34;, &#34;copyright&#34;, &#34;credits&#34; or &#34;license&#34; for more information.
 &gt;&gt;&gt; import tensorflow
 I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cublas64_80.dll locally
 I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cudnn64_5.dll locally
@@ -350,9 +362,9 @@ I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stre
 1.0.1
 &gt;&gt;&gt; exit()
 
-(tensorflow) D:\dev\anaconda&gt;
-</code></pre>
-
+(tensorflow) D:\dev\anaconda&gt;</code></pre></td></tr></table>
+</div>
+</div>
 <p>実はこの後、Hello TensorFlow! を表示しようとして、別の <strong>OpKernel</strong> エラーが大量発生します</p>
 
 <blockquote>
@@ -360,19 +372,22 @@ I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stre
 </blockquote>
 
 <p>なんだよこれは…(。-`ω-)</p>
-
-<pre><code class="language-xml"># Remained the same error too. (OpKernel error)
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">16</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">17</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">18</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">19</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">20</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">21</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">22</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">23</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">24</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">25</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">26</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">27</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">28</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">29</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">30</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">31</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">32</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">33</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">34</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">35</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">36</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"># Remained the same error too. (OpKernel error)
 
 (tensorflow) D:\dev\anaconda&gt;python
 Python 3.5.3 |Continuum Analytics, Inc.| (default, Feb 22 2017, 21:28:42) [MSC v.1900 64 bit (AMD64)] on win32
-Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+Type &#34;help&#34;, &#34;copyright&#34;, &#34;credits&#34; or &#34;license&#34; for more information.
 &gt;&gt;&gt; import tensorflow as tf
 I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cublas64_80.dll locally
 I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cudnn64_5.dll locally
 I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cufft64_80.dll locally
 I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library nvcuda.dll locally
 I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library curand64_80.dll locally
-&gt;&gt;&gt; hello = tf.constant('Hello tensorflow!')
+&gt;&gt;&gt; hello = tf.constant(&#39;Hello tensorflow!&#39;)
 &gt;&gt;&gt; sess = tf.Session()
 I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:885] Found device 0 with properties:
 name: GeForce GTX 960
@@ -384,21 +399,21 @@ I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core
 I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:916] 0:   Y
 I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -&gt; (device: 0, name: GeForce GTX 960, pci bus id: 0000:05:00.0)
 &gt;&gt;&gt; print(sess.run(hello))
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel ('op: &quot;BestSplits&quot; device_type: &quot;CPU&quot;') for unknown op: BestSplits
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel ('op: &quot;CountExtremelyRandomStats&quot; device_type: &quot;CPU&quot;') for unknown op: CountExtremelyRandomStats
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel ('op: &quot;FinishedNodes&quot; device_type: &quot;CPU&quot;') for unknown op: FinishedNodes
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel ('op: &quot;GrowTree&quot; device_type: &quot;CPU&quot;') for unknown op: GrowTree
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel ('op: &quot;ReinterpretStringToFloat&quot; device_type: &quot;CPU&quot;') for unknown op: ReinterpretStringToFloat
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel ('op: &quot;SampleInputs&quot; device_type: &quot;CPU&quot;') for unknown op: SampleInputs
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel ('op: &quot;ScatterAddNdim&quot; device_type: &quot;CPU&quot;') for unknown op: ScatterAddNdim
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel ('op: &quot;TopNInsert&quot; device_type: &quot;CPU&quot;') for unknown op: TopNInsert
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel ('op: &quot;TopNRemove&quot; device_type: &quot;CPU&quot;') for unknown op: TopNRemove
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel ('op: &quot;TreePredictions&quot; device_type: &quot;CPU&quot;') for unknown op: TreePredictions
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel ('op: &quot;UpdateFertileSlots&quot; device_type: &quot;CPU&quot;') for unknown op: UpdateFertileSlots
-b'Hello tensorflow!'
-&gt;&gt;&gt; exit()
-</code></pre>
-
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;BestSplits&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: BestSplits
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;CountExtremelyRandomStats&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: CountExtremelyRandomStats
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;FinishedNodes&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: FinishedNodes
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;GrowTree&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: GrowTree
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;ReinterpretStringToFloat&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: ReinterpretStringToFloat
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;SampleInputs&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: SampleInputs
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;ScatterAddNdim&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: ScatterAddNdim
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;TopNInsert&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: TopNInsert
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;TopNRemove&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: TopNRemove
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;TreePredictions&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: TreePredictions
+E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;UpdateFertileSlots&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: UpdateFertileSlots
+b&#39;Hello tensorflow!&#39;
+&gt;&gt;&gt; exit()</code></pre></td></tr></table>
+</div>
+</div>
 <p>ここでようやく、インストールが上手く行ってないことに気が付きます(+o+)</p>
 
 <hr />
@@ -472,21 +487,24 @@ Successfully installed appdirs-1.4.3 numpy-1.12.1 packaging-16.8 protobuf-3.2.0 
 <ul>
 <li>Hello TensorFlow! の表示で動作確認</li>
 </ul>
-
-<pre><code class="language-xml"># Hello TensorFlow!
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">16</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">17</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">18</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">19</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">20</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">21</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">22</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">23</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">24</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">25</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">26</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"># Hello TensorFlow!
 
 (tensorflow) D:\dev\anaconda&gt;python
 Python 3.5.3 |Continuum Analytics, Inc.| (default, Feb 22 2017, 21:28:42) [MSC v.1900 64 bit (AMD64)] on win32
-Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+Type &#34;help&#34;, &#34;copyright&#34;, &#34;credits&#34; or &#34;license&#34; for more information.
 &gt;&gt;&gt; import tensorflow as tf
-&gt;&gt;&gt; hello = tf.constant('Hello tensorflow')
+&gt;&gt;&gt; hello = tf.constant(&#39;Hello tensorflow&#39;)
 &gt;&gt;&gt; sess = tf.Session()
-2017-04-07 17:55:06.792343: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE instructions, but these are available on your machine and could speed up CPU computations.
-2017-04-07 17:55:06.794854: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE2 instructions, but these are available on your machine and could speed up CPU computations.
-2017-04-07 17:55:06.795650: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE3 instructions, but these are available on your machine and could speed up CPU computations.
-2017-04-07 17:55:06.798303: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
-2017-04-07 17:55:06.798924: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
-2017-04-07 17:55:06.799553: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-04-07 17:55:06.792343: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use SSE instructions, but these are available on your machine and could speed up CPU computations.
+2017-04-07 17:55:06.794854: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use SSE2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-04-07 17:55:06.795650: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use SSE3 instructions, but these are available on your machine and could speed up CPU computations.
+2017-04-07 17:55:06.798303: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-04-07 17:55:06.798924: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-04-07 17:55:06.799553: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
 2017-04-07 17:55:07.171447: I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:887] Found device 0 with properties:
 name: GeForce GTX 960
 major: 5 minor: 2 memoryClockRate (GHz) 1.253
@@ -497,10 +515,10 @@ Free memory: 1.64GiB
 2017-04-07 17:55:07.178823: I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:918] 0:   Y
 2017-04-07 17:55:07.180026: I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:977] Creating TensorFlow device (/gpu:0) -&gt; (device: 0, name: GeForce GTX 960, pci bus id: 0000:05:00.0)
 &gt;&gt;&gt; print(sess.run(hello))
-b'Hello tensorflow'
-&gt;&gt;&gt; exit()
-</code></pre>
-
+b&#39;Hello tensorflow&#39;
+&gt;&gt;&gt; exit()</code></pre></td></tr></table>
+</div>
+</div>
 <p>これでOpKernelエラーは出なくなりましたし、GPU利用のログも出ていますね</p>
 
 <blockquote>
@@ -566,24 +584,30 @@ b'Hello tensorflow'
 <h2 id="その他ポイント1-anacondaではpipを使う">その他ポイント1：Anacondaではpipを使う</h2>
 
 <p>Anacondaでインストールする場合は、pipを使う（pip3 は無いみたい）</p>
-
-<pre><code class="language-xml">(tensorflow) D:\dev\anaconda&gt;pip3
-'pip3' is not recognized as an internal or external command,
-operable program or batch file.
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">(tensorflow) D:\dev\anaconda&gt;pip3
+&#39;pip3&#39; is not recognized as an internal or external command,
+operable program or batch file.</code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="その他ポイント2-pythonのバージョンは3-5">その他ポイント2：Pythonのバージョンは3.5</h2>
 
 <p>Tensorflowは Python3.5系じゃないとだめ<br />
 3.6に入れようとしたら、怒られました
 試しに、CPU版にしても怒られました</p>
-
-<pre><code class="language-xml">(tensorflow) D:\dev\anaconda&gt;pip install tensorflow-gpu
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">4</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">(tensorflow) D:\dev\anaconda&gt;pip install tensorflow-gpu
 Collecting tensorflow-gpu
   Could not find a version that satisfies the requirement tensorflow-gpu (from versions: )
-No matching distribution found for tensorflow-gpu
-</code></pre>
-
+No matching distribution found for tensorflow-gpu</code></pre></td></tr></table>
+</div>
+</div>
 <p>どうやら、pythonのバージョンは Windowsの場合3.5系でないと対応してないみたいです（2017/4/10現在）</p>
 
 <hr />
@@ -733,41 +757,44 @@ root                  *  C:\utils\Anaconda3
 </ul>
 
 <p>公式の言う通り、3.5を指定することにします</p>
-
-<pre><code class="language-c">(C:\utils\Anaconda3) C:\Users\(インストールユーザ名)&gt;conda create --name=tensorflow python=3.5
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">16</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">17</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">18</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">19</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">20</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">21</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">22</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">23</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">24</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">25</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">26</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">27</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">28</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">29</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">30</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">31</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">32</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">(C:<span style="color:#960050;background-color:#1e0010">\</span>utils<span style="color:#960050;background-color:#1e0010">\</span>Anaconda3) C:<span style="color:#960050;background-color:#1e0010">\</span>Users<span style="color:#960050;background-color:#1e0010">\</span>(<span style="color:#960050;background-color:#1e0010">インストールユーザ名</span>)<span style="color:#f92672">&gt;</span>conda create <span style="color:#f92672">--</span>name<span style="color:#f92672">=</span>tensorflow python<span style="color:#f92672">=</span><span style="color:#ae81ff">3.5</span>
 Fetching package metadata ...........
 Solving package specifications: .
 
-Package plan for installation in environment C:\utils\Anaconda3\envs\tensorflow:
+Package plan <span style="color:#66d9ef">for</span> installation in environment C:<span style="color:#960050;background-color:#1e0010">\</span>utils<span style="color:#960050;background-color:#1e0010">\</span>Anaconda3<span style="color:#960050;background-color:#1e0010">\</span>envs<span style="color:#960050;background-color:#1e0010">\</span>tensorflow:
 
 The following NEW packages will be INSTALLED:
 
-    pip:            9.0.1-py35_1
-    python:         3.5.3-0
-    setuptools:     27.2.0-py35_1
-    vs2015_runtime: 14.0.25123-0
-    wheel:          0.29.0-py35_0
+    pip:            <span style="color:#ae81ff">9.0.1</span><span style="color:#f92672">-</span>py35_1
+    python:         <span style="color:#ae81ff">3.5.3</span><span style="color:#f92672">-</span><span style="color:#ae81ff">0</span>
+    setuptools:     <span style="color:#ae81ff">27.2.0</span><span style="color:#f92672">-</span>py35_1
+    vs2015_runtime: <span style="color:#ae81ff">14.0.25123</span><span style="color:#f92672">-</span><span style="color:#ae81ff">0</span>
+    wheel:          <span style="color:#ae81ff">0.29.0</span><span style="color:#f92672">-</span>py35_0
 
-Proceed ([y]/n)? y
+Proceed ([y]<span style="color:#f92672">/</span>n)<span style="color:#f92672">?</span> y
 
-python-3.5.3-0 100% |###############################| Time: 0:00:07   4.27 MB/s
-setuptools-27. 100% |###############################| Time: 0:00:00   4.24 MB/s
-wheel-0.29.0-p 100% |###############################| Time: 0:00:00   4.35 MB/s
-pip-9.0.1-py35 100% |###############################| Time: 0:00:00   4.06 MB/s
-#
-# To activate this environment, use:
-# &gt; activate tensorflow
-#
-# To deactivate this environment, use:
-# &gt; deactivate tensorflow
-#
-# * for power-users using bash, you must source
-#
+python<span style="color:#f92672">-</span><span style="color:#ae81ff">3.5.3</span><span style="color:#f92672">-</span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">100</span><span style="color:#f92672">%</span> <span style="color:#f92672">|</span><span style="color:#75715e">###############################| Time: 0:00:07   4.27 MB/s
+</span><span style="color:#75715e"></span>setuptools<span style="color:#f92672">-</span><span style="color:#ae81ff">27.</span> <span style="color:#ae81ff">100</span><span style="color:#f92672">%</span> <span style="color:#f92672">|</span><span style="color:#75715e">###############################| Time: 0:00:00   4.24 MB/s
+</span><span style="color:#75715e"></span>wheel<span style="color:#f92672">-</span><span style="color:#ae81ff">0.29.0</span><span style="color:#f92672">-</span>p <span style="color:#ae81ff">100</span><span style="color:#f92672">%</span> <span style="color:#f92672">|</span><span style="color:#75715e">###############################| Time: 0:00:00   4.35 MB/s
+</span><span style="color:#75715e"></span>pip<span style="color:#f92672">-</span><span style="color:#ae81ff">9.0.1</span><span style="color:#f92672">-</span>py35 <span style="color:#ae81ff">100</span><span style="color:#f92672">%</span> <span style="color:#f92672">|</span><span style="color:#75715e">###############################| Time: 0:00:00   4.06 MB/s
+</span><span style="color:#75715e">#
+</span><span style="color:#75715e"># To activate this environment, use:
+</span><span style="color:#75715e"># &gt; activate tensorflow
+</span><span style="color:#75715e">#
+</span><span style="color:#75715e"># To deactivate this environment, use:
+</span><span style="color:#75715e"># &gt; deactivate tensorflow
+</span><span style="color:#75715e">#
+</span><span style="color:#75715e"># * for power-users using bash, you must source
+</span><span style="color:#75715e">#
+</span><span style="color:#75715e"></span>
 
-
-(C:\utils\Anaconda3) C:\Users\(インストールユーザ名)&gt;
-</code></pre>
-
+(C:<span style="color:#960050;background-color:#1e0010">\</span>utils<span style="color:#960050;background-color:#1e0010">\</span>Anaconda3) C:<span style="color:#960050;background-color:#1e0010">\</span>Users<span style="color:#960050;background-color:#1e0010">\</span>(<span style="color:#960050;background-color:#1e0010">インストールユーザ名</span>)<span style="color:#f92672">&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="3-tensorflow-という環境が出来ました">(3)<strong>tensorflow</strong> という環境が出来ました</h2>
 
 <p>さっきの condaコマンドで確認します</p>
@@ -783,12 +810,15 @@ root                  *  C:\utils\Anaconda3
 
 <p><strong>activate</strong>コマンドを使います<br />
 ちなみに抜けたい時は、<strong>deactivate</strong>です（が、わたしはあまり使う機会がないかな…）</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">(C:<span style="color:#960050;background-color:#1e0010">\</span>utils<span style="color:#960050;background-color:#1e0010">\</span>Anaconda3) C:<span style="color:#960050;background-color:#1e0010">\</span>Users<span style="color:#960050;background-color:#1e0010">\</span>(<span style="color:#960050;background-color:#1e0010">インストールユーザ名</span>)<span style="color:#f92672">&gt;</span>activate tensorflow
 
-<pre><code class="language-c">(C:\utils\Anaconda3) C:\Users\(インストールユーザ名)&gt;activate tensorflow
-
-(tensorflow) C:\Users\(インストールユーザ名)&gt;
-</code></pre>
-
+(tensorflow) C:<span style="color:#960050;background-color:#1e0010">\</span>Users<span style="color:#960050;background-color:#1e0010">\</span>(<span style="color:#960050;background-color:#1e0010">インストールユーザ名</span>)<span style="color:#f92672">&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>前に、作った環境の名前 <strong>(tensorflow)</strong> が付くので、判りやすいですね！</p>
 
 <h2 id="余談-起動ディレクトリを変更する">(余談)起動ディレクトリを変更する</h2>

@@ -100,14 +100,14 @@ https://support.microsoft.com/en-us/help/13764/windows-where-is-control-panel  �
       <guid>http://h-sao.com/blog/2017/10/20/zoneid_and_powershell_excutionpolicy/</guid>
       <description>PowerShellでちょっとしたツールを動かそうと思って、初歩的なところであれ？となったので、書いておきます
 PowerShellの実行ポリシー（Execution Policy）は、
-&amp;gt; Get-ExecutionPolicy  このコマンドで確認できます
+1 &amp;gt; Get-ExecutionPolicy   このコマンドで確認できます
 Windows10のデフォルトでは Restricted になっていて、ps1 ファイルをコマンドライン上から実行することが出来ません
 なので
-&amp;gt; Set-ExecutionPolicy RemoteSigned  を実行して、 RemoteSigned にセキュリティポリシーを変更します
+1 &amp;gt; Set-ExecutionPolicy RemoteSigned   を実行して、 RemoteSigned にセキュリティポリシーを変更します
 しかし、RemoteSigned になってることを確認したのに、
 しかしなぜか、ps1 ファイルの実行時にセキュリティエラーとなってしまいました
 なんだこれ（↓）は…？
-セキュリティ エラー: PSSecurityException  なんでだろーと思ってたのですが、何てことはない
+1 セキュリティ エラー: PSSecurityException   なんでだろーと思ってたのですが、何てことはない
 実行しようとしてた ps1 ファイルは、インターネット越しに入手したものでした
 （自分のサイトから落としてきたんだけどね）
 こんな感じ↓↓↓
@@ -526,7 +526,7 @@ GiuHub上での操作(移動元)  移動元(XXX)のアカウントで GitHub に
 これで、リポジトリを移動させる準備が出来ました
  移動元リポジトリ(X-REPO)は、移動先アカウント(YYY)の許可待ち状態になります
 この状態であれば、Abort transferを押して、まだ移管を取り消すことが出来ますね！
-  その後、移動先アカウント(YYY)にメールが届く  こんなメールが移動先アカウント(YYY)に届きます  ＜タイトル＞ [GitHub] Repository transfer from @XXX (XXX/X-REPO) ＜内容＞ Hello YYY, @XXX wants to transfer the XXX/X-REPO repository to YYY/X-REPO.</description>
+  その後、移動先アカウント(YYY)にメールが届く  こんなメールが移動先アカウント(YYY)に届きます  12345678910111213141516 ＜タイトル＞ [GitHub] Repository transfer from @XXX (XXX/X-REPO) ＜内容＞ Hello YYY, @XXX wants to transfer the XXX/X-REPO repository to YYY/X-REPO.</description>
     </item>
     
     <item>
@@ -1054,7 +1054,7 @@ Android端末にAPKをインストール AndroidSDKをインストールした�
 単にこの abd.exe を使うだけであれば、環境変数への追加は必要ないです
 UBSでAndroid端末をPCに接続した状態で
 手元の MyApp.apk をインストールするコマンドはこちら
-adb install -r MyApp.apk  さくっとインストールできました
+1 adb install -r MyApp.apk   さくっとインストールできました
 デバイスからAPKリンクをつつくなどでも良いのですが
 開発者っぽい感じかつ、
 ちょっと手元でAPKを試したい時の参考までに(^^)/</description>
@@ -1186,7 +1186,7 @@ http://jyurimaru.info/data/20140830Hokurikunet15/201400830_Introducing_Windows_R
 めっちゃ困りましたけど、また PowerShell で解決しました
 なかばやけくそ
 ＜sep.ps1＞
-$my_path_name = &amp;quot;c:/tmp/&amp;quot; $my_file_name = &amp;quot;abc&amp;quot; $my_file_kind = &amp;quot;.log&amp;quot; $cut_num = 2000 # 切り取る行数 $my_file = $my_path_name + $my_file_name + $my_file_kind $count = 0; Get-Content $my_file -ReadCount $cut_num -Encoding UTF8 | ForEach-Object { $count ++ $cfs = &amp;quot;{0:D3}&amp;quot; -f $count; $_ &amp;gt; ($my_path_name+$my_file_name+&#39;_&#39;+$cfs+$my_file_kind) }  結果
+1234567891011121314 $my_path_name = &amp;#34;c:/tmp/&amp;#34; $my_file_name = &amp;#34;abc&amp;#34; $my_file_kind = &amp;#34;.log&amp;#34; $cut_num = 2000 # 切り取る行数  $my_file = $my_path_name + $my_file_name + $my_file_kind $count = 0; Get-Content $my_file -ReadCount $cut_num -Encoding UTF8 | ForEach-Object { $count ++ $cfs = &amp;#34;{0:D3}&amp;#34; -f $count; $_ &amp;gt; ($my_path_name+$my_file_name+&amp;#39;_&amp;#39;+$cfs+$my_file_kind) }   結果
 あまり何も考えず、元ネタはこの方のブログですー
  参考サイト：powershellが超便利 - fivegangstersのブログ
 http://blog.livedoor.jp/fivegangsters/tag/powershell  </description>
@@ -1256,7 +1256,7 @@ https://community.oracle.com/thread/2334738?tstart=0  方法は2種類
 このサンプルでは、全ての値に 「あ」 が入っているデータを検索します
 どのテーブルの、どのカラムに、何件入っているかが判ります
 う、嬉しい～!!!
-declare sSQL VARCHAR2(128); sDATA VARCHAR2(500); type cursor_type is ref cursor; cur_search cursor_type; vCount INTEGER; ERR_CODE NUMBER := 0; ERR_MSG VARCHAR(255); begin for vRec in (select COLUMN_NAME,TABLE_NAME from USER_TAB_COLS where DATA_TYPE like &#39;%CHAR%&#39;) loop begin open cur_search for &#39;select count(*) as cnt from &#39; || vRec.</description>
+1234567891011121314151617181920212223242526 declare sSQL VARCHAR2(128); sDATA VARCHAR2(500); type cursor_type is ref cursor; cur_search cursor_type; vCount INTEGER; ERR_CODE NUMBER := 0; ERR_MSG VARCHAR(255); begin for vRec in (select COLUMN_NAME,TABLE_NAME from USER_TAB_COLS where DATA_TYPE like &amp;#39;%CHAR%&amp;#39;) loop begin open cur_search for &amp;#39;select count(*) as cnt from &amp;#39; || vRec.</description>
     </item>
     
     <item>
@@ -1289,7 +1289,7 @@ PDF版はこちら
 It is very tedious to think about the name of a struct when you use to struct only once.
 In such a case, Anonymous structure comes in handy.
 It is assigned to the anonymous struct
-struct{ char 1st_name[0x80]; char 2nd_name[0x80]; } name_tbl[] = { { &amp;quot;Isami&amp;quot;, &amp;quot;Kondou&amp;quot; }, { &amp;quot;Toshizo&amp;quot;, &amp;quot;Hijikata&amp;quot; }, { &amp;quot;Kogorou&amp;quot;, &amp;quot;Kathura&amp;quot; }, }; for( i = 0; i &amp;lt; sizeof( name_tbl ); i ++ ){ printf( &amp;quot;%s\n&amp;quot;, name_tbl[ i ].</description>
+1234567891011121314 struct{ char 1st_name[0x80]; char 2nd_name[0x80]; } name_tbl[] = { { &amp;#34;Isami&amp;#34;, &amp;#34;Kondou&amp;#34; }, { &amp;#34;Toshizo&amp;#34;, &amp;#34;Hijikata&amp;#34; }, { &amp;#34;Kogorou&amp;#34;, &amp;#34;Kathura&amp;#34; }, }; for( i = 0; i &amp;lt; sizeof( name_tbl ); i ++ ){ printf( &amp;#34;%s\n&amp;#34;, name_tbl[ i ].</description>
     </item>
     
     <item>
@@ -1301,7 +1301,7 @@ struct{ char 1st_name[0x80]; char 2nd_name[0x80]; } name_tbl[] = { { &amp;quot;I
       <description>ローカルの作業が何やらおかしくなったから
 リモートのファイル内容に戻したい～という時
 以下のコマンドでさくっと戻りました
-git fetch origin git reset --hard origin/master  ツールなどで強制的にsyncさせようとしても
+12 git fetch origin git reset --hard origin/master   ツールなどで強制的にsyncさせようとしても
  failed to sync this branch
  という悲しいお知らせが出て、結局 Git Bash に行くことになりますので……
 （参考リンク）
@@ -1319,10 +1319,9 @@ http://stackoverflow.com/questions/1628088/how-to-reset-my-local-repository-to-b
       
       <guid>http://h-sao.com/blog/2014/01/31/cpp-sample-program/</guid>
       <description>Hi,
-C program c00.c #include &amp;lt;stdio.h&amp;gt; int main() { printf(&amp;quot;This is a native C program.\n&amp;quot;); return 0; }  compile
-&amp;gt; cl.exe c00.c  C++ program c01.cpp #include &amp;lt;iostream&amp;gt; int main() { std::cout &amp;lt;&amp;lt; &amp;quot;This is a native C++ program.&amp;quot; &amp;lt;&amp;lt; std::endl; return 0; }  compile
-&amp;gt; cl.exe /EHsc c01.cpp  C++/CLI program c02.cpp int main() { System::Console::WriteLine(&amp;quot;This is a Visual C++ program.&amp;quot;); }  compile
-&amp;gt; cl.exe /clr c02.</description>
+C program 12345678 c00.c #include &amp;lt;stdio.h&amp;gt; int main() { printf(&amp;#34;This is a native C program.\n&amp;#34;); return 0; }    compile
+&amp;gt; cl.exe c00.c  C++ program 12345678 c01.cpp #include &amp;lt;iostream&amp;gt; int main() { std::cout &amp;lt;&amp;lt; &amp;#34;This is a native C++ program.&amp;#34; &amp;lt;&amp;lt; std::endl; return 0; }   compile
+&amp;gt; cl.exe /EHsc c01.cpp  C++/CLI program 12345 c02.cpp int main() { System::Console::WriteLine(&amp;#34;This is a Visual C++ program.</description>
     </item>
     
     <item>
@@ -1361,11 +1360,11 @@ Thank you.</description>
       <description>OracleのコマンドラインでSQLを実行させるときのメモ
 直前のSQLコマンドを実行は / (スラッシュ)
 この場合、直前のバッファの内容は表示しません
-SQL&amp;gt; /  直前のバッファの内容を表示して実行するのは run コマンド
-SQL &amp;gt; run  直前のバッファの内容を修正するには edit コマンド
+1 SQL&amp;gt; /   直前のバッファの内容を表示して実行するのは run コマンド
+1 SQL &amp;gt; run   直前のバッファの内容を修正するには edit コマンド
 タイプミスなどを修正できます
 ただし、環境変数 &amp;ldquo;_editor&amp;rdquo; にエディタの設定をしておく必要があります
-SQL &amp;gt; define _editor=vi SQL &amp;gt; edit  （参考）
+12 SQL &amp;gt; define _editor=vi SQL &amp;gt; edit   （参考）
  OracleのSQL*Plusで直前に実行したSQLを再実行
 http://margrave.seesaa.net/article/127477048.html
  SQL バッファの編集、エディタで編集する
@@ -1384,7 +1383,7 @@ http://sakusakuit.blog.fc2.com/?m&amp;amp;no=15
       <description>ビット・シフトの計算の練習問題＜上級編＞です
 Q. 割り算をシフトと引き算のみで表現しなさい
 A. 回答
-// x / y = ans // x: 分子 // y: 分母 // ans:答え ans = 0; while( x &amp;gt;= y ){ dammy = y; syou = 1; while( x &amp;gt;= dammy ){ // 割られる数を超えるまで割る数をシフト dammy = dammy &amp;lt;&amp;lt; 1; syou = syou &amp;lt;&amp;lt; 1; } dammy = dammy &amp;gt;&amp;gt; 1; // 超える手前まで戻す syou = syou &amp;gt;&amp;gt; 1; x = x - dammy; // 筆算 ans = ans + syou; // 答え } printf( &amp;quot;%d ・・・%d\n&amp;quot;, ans, x );  新人研修などにどうでしょう？</description>
+123456789101112131415161718192021 // x / y = ans // x: 分子 // y: 分母 // ans:答え  ans = 0; while( x &amp;gt;= y ){ dammy = y; syou = 1; while( x &amp;gt;= dammy ){ // 割られる数を超えるまで割る数をシフト  dammy = dammy &amp;lt;&amp;lt; 1; syou = syou &amp;lt;&amp;lt; 1; } dammy = dammy &amp;gt;&amp;gt; 1; // 超える手前まで戻す  syou = syou &amp;gt;&amp;gt; 1; x = x - dammy; // 筆算  ans = ans + syou; // 答え  } printf( &amp;#34;%d ・・・%d\n&amp;#34;, ans, x );   新人研修などにどうでしょう？</description>
     </item>
     
   </channel>

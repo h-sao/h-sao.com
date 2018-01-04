@@ -162,23 +162,32 @@
 
 <p>直前のSQLコマンドを実行は / (スラッシュ)<br />
 この場合、直前のバッファの内容は表示しません</p>
-
-<pre><code class="language-sql">SQL&gt; /
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">/</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>直前のバッファの内容を表示して実行するのは run コマンド</p>
-
-<pre><code class="language-sql">SQL &gt; run
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SQL</span> <span style="color:#f92672">&gt;</span> run</code></pre></td></tr></table>
+</div>
+</div>
 <p>直前のバッファの内容を修正するには edit コマンド<br />
 タイプミスなどを修正できます<br />
 ただし、環境変数 &ldquo;_editor&rdquo; にエディタの設定をしておく必要があります</p>
-
-<pre><code class="language-sql">SQL &gt; define  _editor=vi
-SQL &gt; edit
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SQL</span> <span style="color:#f92672">&gt;</span> define  _editor<span style="color:#f92672">=</span>vi
+<span style="color:#66d9ef">SQL</span> <span style="color:#f92672">&gt;</span> edit</code></pre></td></tr></table>
+</div>
+</div>
 <hr />
 
 <p>（参考）</p>
@@ -232,30 +241,33 @@ SQL &gt; edit
 <p><strong>Q. 割り算をシフトと引き算のみで表現しなさい</strong></p>
 
 <p><strong>A. 回答</strong></p>
-
-<pre><code class="language-cpp">// x / y = ans
-// x: 分子
-// y: 分母
-// ans:答え
-
-ans = 0;
- while( x &gt;= y ){
-    dammy = y;
-    syou = 1;
-    while( x &gt;= dammy ){            // 割られる数を超えるまで割る数をシフト
-        dammy = dammy &lt;&lt; 1;
-        syou  = syou  &lt;&lt; 1;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">16</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">17</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">18</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">19</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">20</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">21</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// x / y = ans
+</span><span style="color:#75715e">// x: 分子
+</span><span style="color:#75715e">// y: 分母
+</span><span style="color:#75715e">// ans:答え
+</span><span style="color:#75715e"></span>
+ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+ <span style="color:#66d9ef">while</span>( x <span style="color:#f92672">&gt;=</span> y ){
+    dammy <span style="color:#f92672">=</span> y;
+    syou <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">while</span>( x <span style="color:#f92672">&gt;=</span> dammy ){            <span style="color:#75715e">// 割られる数を超えるまで割る数をシフト
+</span><span style="color:#75715e"></span>        dammy <span style="color:#f92672">=</span> dammy <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">1</span>;
+        syou  <span style="color:#f92672">=</span> syou  <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">1</span>;
     }
     
-    dammy = dammy &gt;&gt; 1;             // 超える手前まで戻す
-    syou = syou &gt;&gt; 1;
+    dammy <span style="color:#f92672">=</span> dammy <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span>;             <span style="color:#75715e">// 超える手前まで戻す
+</span><span style="color:#75715e"></span>    syou <span style="color:#f92672">=</span> syou <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span>;
     
-    x = x - dammy;                  // 筆算
-    ans = ans + syou;               // 答え
- }
- printf( &quot;%d ・・・%d\n&quot;, ans, x );
-</code></pre>
-
+    x <span style="color:#f92672">=</span> x <span style="color:#f92672">-</span> dammy;                  <span style="color:#75715e">// 筆算
+</span><span style="color:#75715e"></span>    ans <span style="color:#f92672">=</span> ans <span style="color:#f92672">+</span> syou;               <span style="color:#75715e">// 答え
+</span><span style="color:#75715e"></span> }
+ printf( <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;%d ・・・%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans, x );</code></pre></td></tr></table>
+</div>
+</div>
 <p>新人研修などにどうでしょう？</p>
 
 <p>※ 実は最後に足し算使ってますね…(&gt;_&lt;)</p>

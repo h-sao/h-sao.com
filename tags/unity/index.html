@@ -528,32 +528,35 @@ Development Build にしても、しなくても、結果は一緒でした<br /
 <p>一応サンプルコード<br />
 MonoBehaviour は無くても動くみたいです<br />
 あと、オブジェクトなどにスクリプトをアタッチしなくてもOKです</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">16</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">17</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">18</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">19</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">20</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">21</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">22</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">23</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">using</span> UnityEngine;
 
-<pre><code class="language-c#">using UnityEngine;
-
-public class GameInitial //: MonoBehaviour
-{
-    [RuntimeInitializeOnLoadMethod]
-    static void OnRuntimeMethodLoad()
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GameInitial</span> <span style="color:#75715e">//: MonoBehaviour
+</span><span style="color:#75715e"></span>{<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [RuntimeInitializeOnLoadMethod]</span>
+    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> OnRuntimeMethodLoad()
     {
-        Screen.SetResolution( 640, 960, false, 60);
+        <span style="color:#a6e22e">Screen</span>.SetResolution( <span style="color:#ae81ff">640</span>, <span style="color:#ae81ff">960</span>, <span style="color:#66d9ef">false</span>, <span style="color:#ae81ff">60</span>);
 
     }
 
-    //// Use this for initialization
-    //void Start()
-    //{
-
-    //}
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-    //}
-}
-</code></pre>
-
+    <span style="color:#75715e">//// Use this for initialization
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//void Start()
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//{
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">//}
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">//// Update is called once per frame
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//void Update()
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//{
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">//}
+</span><span style="color:#75715e"></span>}</code></pre></td></tr></table>
+</div>
+</div>
 <p>自分が知らないだけかもしれませんが、 RuntimeInitializeOnLoadMethodAttribute より早い時点で自分の処理を差し込むことは出来ないみたい…</p>
 
 <h1 id="ウィンドウサイズを指定できるコマンドライン引数がある">ウィンドウサイズを指定できるコマンドライン引数がある！</h1>

@@ -106,35 +106,38 @@
 どのテーブルの、どのカラムに、何件入っているかが判ります</p>
 
 <p>う、嬉しい～!!!</p>
-
-<pre><code class="language-sql">declare
- sSQL VARCHAR2(128);
- sDATA VARCHAR2(500);
- type cursor_type is ref cursor;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">16</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">17</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">18</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">19</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">20</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">21</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">22</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">23</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">24</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">25</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">26</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">declare</span>
+ sSQL VARCHAR2(<span style="color:#ae81ff">128</span>);
+ sDATA VARCHAR2(<span style="color:#ae81ff">500</span>);
+ <span style="color:#66d9ef">type</span> cursor_type <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">ref</span> <span style="color:#66d9ef">cursor</span>;
  cur_search cursor_type;
  vCount INTEGER;
- ERR_CODE NUMBER := 0;
- ERR_MSG VARCHAR(255);
-begin
- for vRec in (select COLUMN_NAME,TABLE_NAME from USER_TAB_COLS where DATA_TYPE like '%CHAR%')
+ ERR_CODE NUMBER :<span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+ ERR_MSG VARCHAR(<span style="color:#ae81ff">255</span>);
+<span style="color:#66d9ef">begin</span>
+ <span style="color:#66d9ef">for</span> vRec <span style="color:#66d9ef">in</span> (<span style="color:#66d9ef">select</span> <span style="color:#66d9ef">COLUMN_NAME</span>,<span style="color:#66d9ef">TABLE_NAME</span> <span style="color:#66d9ef">from</span> USER_TAB_COLS <span style="color:#66d9ef">where</span> DATA_TYPE <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;%CHAR%&#39;</span>)
  loop
-  begin
-    open cur_search for 'select count(*) as cnt from ' || vRec.TABLE_NAME || ' where ' || vRec.COLUMN_NAME || ' like ''%あ%''';
-        fetch cur_search into vCount;
-        if vCount &gt; 0 then
-          dbms_output.put_line(vRec.TABLE_NAME || '.' || vRec.COLUMN_NAME || ':' || vCount || '件あり');
-        end if;
-        close cur_search;
-  exception
-   WHEN OTHERS THEN
-    ERR_CODE := SQLCODE;
-    ERR_MSG  := SUBSTRB(SQLERRM,1,255);
-    dbms_output.put_line('error:' || ERR_CODE || ' ' || ERR_MSG || ' ' || vRec.TABLE_NAME || '.' || vRec.COLUMN_NAME);
-  end;
- end loop;
-end;
-</code></pre>
-
+  <span style="color:#66d9ef">begin</span>
+    <span style="color:#66d9ef">open</span> cur_search <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#39;select count(*) as cnt from &#39;</span> <span style="color:#f92672">||</span> vRec.<span style="color:#66d9ef">TABLE_NAME</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39; where &#39;</span> <span style="color:#f92672">||</span> vRec.<span style="color:#66d9ef">COLUMN_NAME</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39; like &#39;&#39;%あ%&#39;&#39;&#39;</span>;
+        <span style="color:#66d9ef">fetch</span> cur_search <span style="color:#66d9ef">into</span> vCount;
+        <span style="color:#66d9ef">if</span> vCount <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">then</span>
+          dbms_output.put_line(vRec.<span style="color:#66d9ef">TABLE_NAME</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">||</span> vRec.<span style="color:#66d9ef">COLUMN_NAME</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#f92672">||</span> vCount <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;件あり&#39;</span>);
+        <span style="color:#66d9ef">end</span> <span style="color:#66d9ef">if</span>;
+        <span style="color:#66d9ef">close</span> cur_search;
+  <span style="color:#66d9ef">exception</span>
+   <span style="color:#66d9ef">WHEN</span> OTHERS <span style="color:#66d9ef">THEN</span>
+    ERR_CODE :<span style="color:#f92672">=</span> <span style="color:#66d9ef">SQLCODE</span>;
+    ERR_MSG  :<span style="color:#f92672">=</span> SUBSTRB(SQLERRM,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">255</span>);
+    dbms_output.put_line(<span style="color:#e6db74">&#39;error:&#39;</span> <span style="color:#f92672">||</span> ERR_CODE <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">||</span> ERR_MSG <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">||</span> vRec.<span style="color:#66d9ef">TABLE_NAME</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">||</span> vRec.<span style="color:#66d9ef">COLUMN_NAME</span>);
+  <span style="color:#66d9ef">end</span>;
+ <span style="color:#66d9ef">end</span> loop;
+<span style="color:#66d9ef">end</span>;</code></pre></td></tr></table>
+</div>
+</div>
 <p>DBの構造を解析するツールは結構探せばあるのですが、データの中身となると、調べるのは手間ですよね…<br />
 このSQLには助けられました～</p>
 
@@ -196,23 +199,32 @@ DB系のクライアントツールで、わたしがよく使っているのは
 
 <p>直前のSQLコマンドを実行は / (スラッシュ)<br />
 この場合、直前のバッファの内容は表示しません</p>
-
-<pre><code class="language-sql">SQL&gt; /
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">/</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>直前のバッファの内容を表示して実行するのは run コマンド</p>
-
-<pre><code class="language-sql">SQL &gt; run
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SQL</span> <span style="color:#f92672">&gt;</span> run</code></pre></td></tr></table>
+</div>
+</div>
 <p>直前のバッファの内容を修正するには edit コマンド<br />
 タイプミスなどを修正できます<br />
 ただし、環境変数 &ldquo;_editor&rdquo; にエディタの設定をしておく必要があります</p>
-
-<pre><code class="language-sql">SQL &gt; define  _editor=vi
-SQL &gt; edit
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SQL</span> <span style="color:#f92672">&gt;</span> define  _editor<span style="color:#f92672">=</span>vi
+<span style="color:#66d9ef">SQL</span> <span style="color:#f92672">&gt;</span> edit</code></pre></td></tr></table>
+</div>
+</div>
 <hr />
 
 <p>（参考）</p>

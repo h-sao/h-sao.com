@@ -20,14 +20,14 @@
       <guid>http://h-sao.com/blog/2017/10/20/zoneid_and_powershell_excutionpolicy/</guid>
       <description>PowerShellでちょっとしたツールを動かそうと思って、初歩的なところであれ？となったので、書いておきます
 PowerShellの実行ポリシー（Execution Policy）は、
-&amp;gt; Get-ExecutionPolicy  このコマンドで確認できます
+1 &amp;gt; Get-ExecutionPolicy   このコマンドで確認できます
 Windows10のデフォルトでは Restricted になっていて、ps1 ファイルをコマンドライン上から実行することが出来ません
 なので
-&amp;gt; Set-ExecutionPolicy RemoteSigned  を実行して、 RemoteSigned にセキュリティポリシーを変更します
+1 &amp;gt; Set-ExecutionPolicy RemoteSigned   を実行して、 RemoteSigned にセキュリティポリシーを変更します
 しかし、RemoteSigned になってることを確認したのに、
 しかしなぜか、ps1 ファイルの実行時にセキュリティエラーとなってしまいました
 なんだこれ（↓）は…？
-セキュリティ エラー: PSSecurityException  なんでだろーと思ってたのですが、何てことはない
+1 セキュリティ エラー: PSSecurityException   なんでだろーと思ってたのですが、何てことはない
 実行しようとしてた ps1 ファイルは、インターネット越しに入手したものでした
 （自分のサイトから落としてきたんだけどね）
 こんな感じ↓↓↓
@@ -51,7 +51,7 @@ http://www.atmarkit.co.jp/ait/articles/0805/16/news139.html</description>
 めっちゃ困りましたけど、また PowerShell で解決しました
 なかばやけくそ
 ＜sep.ps1＞
-$my_path_name = &amp;quot;c:/tmp/&amp;quot; $my_file_name = &amp;quot;abc&amp;quot; $my_file_kind = &amp;quot;.log&amp;quot; $cut_num = 2000 # 切り取る行数 $my_file = $my_path_name + $my_file_name + $my_file_kind $count = 0; Get-Content $my_file -ReadCount $cut_num -Encoding UTF8 | ForEach-Object { $count ++ $cfs = &amp;quot;{0:D3}&amp;quot; -f $count; $_ &amp;gt; ($my_path_name+$my_file_name+&#39;_&#39;+$cfs+$my_file_kind) }  結果
+1234567891011121314 $my_path_name = &amp;#34;c:/tmp/&amp;#34; $my_file_name = &amp;#34;abc&amp;#34; $my_file_kind = &amp;#34;.log&amp;#34; $cut_num = 2000 # 切り取る行数  $my_file = $my_path_name + $my_file_name + $my_file_kind $count = 0; Get-Content $my_file -ReadCount $cut_num -Encoding UTF8 | ForEach-Object { $count ++ $cfs = &amp;#34;{0:D3}&amp;#34; -f $count; $_ &amp;gt; ($my_path_name+$my_file_name+&amp;#39;_&amp;#39;+$cfs+$my_file_kind) }   結果
 あまり何も考えず、元ネタはこの方のブログですー
  参考サイト：powershellが超便利 - fivegangstersのブログ
 http://blog.livedoor.jp/fivegangsters/tag/powershell  </description>

@@ -138,15 +138,21 @@
 <h1 id="clang-exe-の場所">clang.exe の場所</h1>
 
 <h3 id="clang">Clang</h3>
-
-<pre><code class="language-xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Clang 3.7\bin\x86\clang.exe
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Clang 3.7\bin\x86\clang.exe</code></pre></td></tr></table>
+</div>
+</div>
 <h3 id="ちなみにvc">ちなみにVC++</h3>
-
-<pre><code class="language-xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe</code></pre></td></tr></table>
+</div>
+</div>
 <p>どちらでも、コマンドプロンプトでコンパイル可能です</p>
 
 <h1 id="vsでのコンパイラの切り替え設定">VSでのコンパイラの切り替え設定</h1>
@@ -207,24 +213,27 @@ Sift-JIS は無関係かもしれませんが、一応…</p>
 </ul>
 
 <p>VC2015 Update2 では未対応だけど、Clang 3.7 は対応しているというコードです</p>
-
-<pre><code class="language-cpp">#include &quot;stdafx.h&quot;
-#include &lt;iostream&gt;
-
-constexpr int f()
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;stdafx.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">constexpr</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">f</span>()
 {
-	int result = 0;
-	return result;
+	<span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">return</span> result;
 }
 
-int main()
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
 {
-	std::cout &lt;&lt; &quot;Hello: &quot; &lt;&lt; f() &lt;&lt; std::endl;
+	std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Hello: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> f() <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
 
-	return 0;
-}
-</code></pre>
-
+	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}</code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="visual-studio-2015-v140-でコンパイルすると-エラー">Visual Studio 2015 (v140) でコンパイルすると、エラー</h2>
 
 <p><img src="/pic/Use-Clang-on-VisualStudio_02.png" alt="" /></p>
@@ -437,32 +446,35 @@ Development Build にしても、しなくても、結果は一緒でした<br /
 <p>一応サンプルコード<br />
 MonoBehaviour は無くても動くみたいです<br />
 あと、オブジェクトなどにスクリプトをアタッチしなくてもOKです</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">16</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">17</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">18</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">19</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">20</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">21</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">22</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">23</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">using</span> UnityEngine;
 
-<pre><code class="language-c#">using UnityEngine;
-
-public class GameInitial //: MonoBehaviour
-{
-    [RuntimeInitializeOnLoadMethod]
-    static void OnRuntimeMethodLoad()
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GameInitial</span> <span style="color:#75715e">//: MonoBehaviour
+</span><span style="color:#75715e"></span>{<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [RuntimeInitializeOnLoadMethod]</span>
+    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> OnRuntimeMethodLoad()
     {
-        Screen.SetResolution( 640, 960, false, 60);
+        <span style="color:#a6e22e">Screen</span>.SetResolution( <span style="color:#ae81ff">640</span>, <span style="color:#ae81ff">960</span>, <span style="color:#66d9ef">false</span>, <span style="color:#ae81ff">60</span>);
 
     }
 
-    //// Use this for initialization
-    //void Start()
-    //{
-
-    //}
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-    //}
-}
-</code></pre>
-
+    <span style="color:#75715e">//// Use this for initialization
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//void Start()
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//{
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">//}
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">//// Update is called once per frame
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//void Update()
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//{
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">//}
+</span><span style="color:#75715e"></span>}</code></pre></td></tr></table>
+</div>
+</div>
 <p>自分が知らないだけかもしれませんが、 RuntimeInitializeOnLoadMethodAttribute より早い時点で自分の処理を差し込むことは出来ないみたい…</p>
 
 <h1 id="ウィンドウサイズを指定できるコマンドライン引数がある">ウィンドウサイズを指定できるコマンドライン引数がある！</h1>
@@ -692,10 +704,13 @@ $
 <h2 id="パターン1-id-rsa-で登録している-ssh-キーを利用する場合">(パターン1) id_rsa で登録している ssh キーを利用する場合</h2>
 
 <p>このコマンドで確認します</p>
-
-<pre><code class="language-xml">$ ssh -T git@github.com
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ ssh -T git@github.com</code></pre></td></tr></table>
+</div>
+</div>
 <p><strong>id_rsa</strong> というファイル名を、ssh 接続では自動的に認識するようです</p>
 
 <p>初回は、known_hosts に GitHub サーバを登録するよ？と聞いてくるので、 yes を入力します</p>
@@ -780,10 +795,13 @@ GitHubユーザ名を入れます</li>
 
 <p>ここまで準備したら、接続テストしましょう<br />
 config に設定した名前で　Host の名称アクセスすることが出来ます！</p>
-
-<pre><code class="language-xml">$ ssh -T my.github.server
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ ssh -T my.github.server</code></pre></td></tr></table>
+</div>
+</div>
 <p>うまくいくと、パターン1と同じように、known hostに登録するかどうかを聞かれて、ファイルが作成されます</p>
 
 <p><img src="/pic/Generate-ssh-key-for-GitHub_10.png" style="border:solid 5px #e6e6e6"/></p>
@@ -878,19 +896,25 @@ branch.master.merge=<span class="hljs-string">refs/heads/master</span>
 <p><strong>git@github.com:[ユーザID]/[リポジトリ].git</strong></p>
 
 <p>を設定します</p>
-
-<pre><code class="language-xml">$ git remote set-url origin git@github.com:h-sao/xxx.git
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ git remote set-url origin git@github.com:h-sao/xxx.git</code></pre></td></tr></table>
+</div>
+</div>
 <p>id_rsa じゃない、別名の ssh キーファイルを利用するときの設定は</p>
 
 <p><strong>[Host名]:[ユーザID]/[リポジトリ].git</strong></p>
 
 <p>になります</p>
-
-<pre><code class="language-xml">$ git remote set-url origin my.github.server:h-sao/xxx.git
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ git remote set-url origin my.github.server:h-sao/xxx.git</code></pre></td></tr></table>
+</div>
+</div>
 <p>GitExtensions で Push してみましょう</p>
 
 <p><img src="/pic/Generate-ssh-key-for-GitHub_12.png" style="border:solid 5px #e6e6e6"/></p>
@@ -1720,18 +1744,21 @@ C++の勉強会や集まりなど、筋トレは続けたいです…</p>
 </blockquote>
 
 <p>オレオレ topbar-layer classの追加</p>
-
-<pre><code class="language-html">&lt;header class=&quot;site-header&quot;&gt;
-  &lt;div class=&quot;transparent-layer&quot;&gt;
-    &lt;h2&gt;{{ .Site.Params.header_title }}&lt;/h2&gt;
-  &lt;/div&gt;
-&lt;/header&gt;
-  &lt;div class=&quot;topbar-layer&quot;&gt;
-    &lt;a href=&quot;{{ .Site.BaseURL }}about&quot;&gt;About me&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;
-    &lt;a href=&quot;{{ .Site.BaseURL }}tags&quot;&gt;Tags&lt;/a&gt;
- &lt;/div&gt;
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">9</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">header</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;site-header&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;transparent-layer&#34;</span>&gt;
+    &lt;<span style="color:#f92672">h2</span>&gt;{{ .Site.Params.header_title }}&lt;/<span style="color:#f92672">h2</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">header</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;topbar-layer&#34;</span>&gt;
+    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Site.BaseURL }}about&#34;</span>&gt;About me&lt;/<span style="color:#f92672">a</span>&gt;   
+    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Site.BaseURL }}tags&#34;</span>&gt;Tags&lt;/<span style="color:#f92672">a</span>&gt;
+ &lt;/<span style="color:#f92672">div</span>&gt;</code></pre></td></tr></table>
+</div>
+</div>
 <p>出力結果
 <img src="/pic/Change-Theme-To-Minimalist1.png" alt="" /></p>
 
@@ -1750,32 +1777,35 @@ C++の勉強会や集まりなど、筋トレは続けたいです…</p>
 
 <p>幸いなことに、この minimalist のテンプレートはとてもシンプルで、触るファイルは１つのみ！
 <strong>themes &gt; minimalist &gt; static &gt; css &gt; styles.css</strong> に、&rdquo;transparent-layer&rdquo; のパクリ設定を追加します</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">16</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">17</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">18</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">19</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">20</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">21</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">22</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">23</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">topbar-layer</span> {
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+  <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#252a2c</span>;
 
-<pre><code class="language-css">.topbar-layer {
-  width: 100%;
-  height: 100%;
-  background-color: #252a2c;
-
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  color: #e0e0e0;
-  text-align: center;
-  position: relative;
-  line-height: 50px;
-  height: 50px;
-  transition: all 0.3s ease;
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">background-size</span>: <span style="color:#66d9ef">cover</span>;
+  <span style="color:#66d9ef">-moz-</span><span style="color:#66d9ef">background-size</span>: <span style="color:#66d9ef">cover</span>;
+  <span style="color:#66d9ef">-o-</span><span style="color:#66d9ef">background-size</span>: <span style="color:#66d9ef">cover</span>;
+  <span style="color:#66d9ef">background-size</span>: <span style="color:#66d9ef">cover</span>;
+  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#e0e0e0</span>;
+  <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+  <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">transition</span>: <span style="color:#66d9ef">all</span> <span style="color:#ae81ff">0.3</span><span style="color:#66d9ef">s</span> <span style="color:#66d9ef">ease</span>;
 }
 
-.topbar-layer a{
-    color: #a2a2a2;
+.<span style="color:#a6e22e">topbar-layer</span> <span style="color:#f92672">a</span>{
+    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#a2a2a2</span>;
 }
-.topbar-layer a:hover {
-    color: #fff;
-}
-</code></pre>
-
+.<span style="color:#a6e22e">topbar-layer</span> <span style="color:#f92672">a</span>:<span style="color:#a6e22e">hover</span> {
+    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fff</span>;
+}</code></pre></td></tr></table>
+</div>
+</div>
 <p>出力結果
 <img src="/pic/Change-Theme-To-Minimalist2.png" alt="" /></p>
 

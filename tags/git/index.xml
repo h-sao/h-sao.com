@@ -134,7 +134,7 @@ Giet Extensionsを見ると、ファイルが変更されたので、Commit(1) �
       <description>ローカルの作業が何やらおかしくなったから
 リモートのファイル内容に戻したい～という時
 以下のコマンドでさくっと戻りました
-git fetch origin git reset --hard origin/master  ツールなどで強制的にsyncさせようとしても
+12 git fetch origin git reset --hard origin/master   ツールなどで強制的にsyncさせようとしても
  failed to sync this branch
  という悲しいお知らせが出て、結局 Git Bash に行くことになりますので……
 （参考リンク）

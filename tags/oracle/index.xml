@@ -63,7 +63,7 @@ https://community.oracle.com/thread/2334738?tstart=0  方法は2種類
 このサンプルでは、全ての値に 「あ」 が入っているデータを検索します
 どのテーブルの、どのカラムに、何件入っているかが判ります
 う、嬉しい～!!!
-declare sSQL VARCHAR2(128); sDATA VARCHAR2(500); type cursor_type is ref cursor; cur_search cursor_type; vCount INTEGER; ERR_CODE NUMBER := 0; ERR_MSG VARCHAR(255); begin for vRec in (select COLUMN_NAME,TABLE_NAME from USER_TAB_COLS where DATA_TYPE like &#39;%CHAR%&#39;) loop begin open cur_search for &#39;select count(*) as cnt from &#39; || vRec.</description>
+1234567891011121314151617181920212223242526 declare sSQL VARCHAR2(128); sDATA VARCHAR2(500); type cursor_type is ref cursor; cur_search cursor_type; vCount INTEGER; ERR_CODE NUMBER := 0; ERR_MSG VARCHAR(255); begin for vRec in (select COLUMN_NAME,TABLE_NAME from USER_TAB_COLS where DATA_TYPE like &amp;#39;%CHAR%&amp;#39;) loop begin open cur_search for &amp;#39;select count(*) as cnt from &amp;#39; || vRec.</description>
     </item>
     
     <item>
@@ -75,11 +75,11 @@ declare sSQL VARCHAR2(128); sDATA VARCHAR2(500); type cursor_type is ref cursor;
       <description>OracleのコマンドラインでSQLを実行させるときのメモ
 直前のSQLコマンドを実行は / (スラッシュ)
 この場合、直前のバッファの内容は表示しません
-SQL&amp;gt; /  直前のバッファの内容を表示して実行するのは run コマンド
-SQL &amp;gt; run  直前のバッファの内容を修正するには edit コマンド
+1 SQL&amp;gt; /   直前のバッファの内容を表示して実行するのは run コマンド
+1 SQL &amp;gt; run   直前のバッファの内容を修正するには edit コマンド
 タイプミスなどを修正できます
 ただし、環境変数 &amp;ldquo;_editor&amp;rdquo; にエディタの設定をしておく必要があります
-SQL &amp;gt; define _editor=vi SQL &amp;gt; edit  （参考）
+12 SQL &amp;gt; define _editor=vi SQL &amp;gt; edit   （参考）
  OracleのSQL*Plusで直前に実行したSQLを再実行
 http://margrave.seesaa.net/article/127477048.html
  SQL バッファの編集、エディタで編集する

@@ -65,28 +65,37 @@
             <p>PowerShellでちょっとしたツールを動かそうと思って、初歩的なところであれ？となったので、書いておきます</p>
 
 <p>PowerShellの実行ポリシー（Execution Policy）は、</p>
-
-<pre><code class="language-c">&gt; Get-ExecutionPolicy
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#f92672">&gt;</span> Get<span style="color:#f92672">-</span>ExecutionPolicy</code></pre></td></tr></table>
+</div>
+</div>
 <p>このコマンドで確認できます</p>
 
 <p>Windows10のデフォルトでは <strong>Restricted</strong> になっていて、ps1 ファイルをコマンドライン上から実行することが出来ません<br />
 なので</p>
-
-<pre><code class="language-c">&gt; Set-ExecutionPolicy RemoteSigned
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#f92672">&gt;</span> Set<span style="color:#f92672">-</span>ExecutionPolicy RemoteSigned</code></pre></td></tr></table>
+</div>
+</div>
 <p>を実行して、 <strong>RemoteSigned</strong> にセキュリティポリシーを変更します</p>
 
 <p>しかし、<strong>RemoteSigned</strong> になってることを確認したのに、<br />
 しかしなぜか、ps1 ファイルの実行時にセキュリティエラーとなってしまいました</p>
 
 <p>なんだこれ（↓）は…？</p>
-
-<pre><code class="language-c">セキュリティ エラー: PSSecurityException
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#960050;background-color:#1e0010">セキュリティ</span> <span style="color:#960050;background-color:#1e0010">エラー</span><span style="color:#f92672">:</span> PSSecurityException</code></pre></td></tr></table>
+</div>
+</div>
 <p>なんでだろーと思ってたのですが、何てことはない<br />
 実行しようとしてた ps1 ファイルは、インターネット越しに入手したものでした<br />
 （自分のサイトから落としてきたんだけどね）</p>

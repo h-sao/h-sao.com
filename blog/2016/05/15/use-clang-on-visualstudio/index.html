@@ -127,15 +127,21 @@
 <h1 id="clang-exe-の場所">clang.exe の場所</h1>
 
 <h3 id="clang">Clang</h3>
-
-<pre><code class="language-xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Clang 3.7\bin\x86\clang.exe
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Clang 3.7\bin\x86\clang.exe</code></pre></td></tr></table>
+</div>
+</div>
 <h3 id="ちなみにvc">ちなみにVC++</h3>
-
-<pre><code class="language-xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe</code></pre></td></tr></table>
+</div>
+</div>
 <p>どちらでも、コマンドプロンプトでコンパイル可能です</p>
 
 <h1 id="vsでのコンパイラの切り替え設定">VSでのコンパイラの切り替え設定</h1>
@@ -196,24 +202,27 @@ Sift-JIS は無関係かもしれませんが、一応…</p>
 </ul>
 
 <p>VC2015 Update2 では未対応だけど、Clang 3.7 は対応しているというコードです</p>
-
-<pre><code class="language-cpp">#include &quot;stdafx.h&quot;
-#include &lt;iostream&gt;
-
-constexpr int f()
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;stdafx.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">constexpr</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">f</span>()
 {
-	int result = 0;
-	return result;
+	<span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">return</span> result;
 }
 
-int main()
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
 {
-	std::cout &lt;&lt; &quot;Hello: &quot; &lt;&lt; f() &lt;&lt; std::endl;
+	std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Hello: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> f() <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
 
-	return 0;
-}
-</code></pre>
-
+	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}</code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="visual-studio-2015-v140-でコンパイルすると-エラー">Visual Studio 2015 (v140) でコンパイルすると、エラー</h2>
 
 <p><img src="/pic/Use-Clang-on-VisualStudio_02.png" alt="" /></p>

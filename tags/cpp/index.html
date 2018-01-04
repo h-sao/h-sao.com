@@ -261,15 +261,21 @@ Devenv /ClearCache</p>
 <h1 id="clang-exe-の場所">clang.exe の場所</h1>
 
 <h3 id="clang">Clang</h3>
-
-<pre><code class="language-xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Clang 3.7\bin\x86\clang.exe
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Clang 3.7\bin\x86\clang.exe</code></pre></td></tr></table>
+</div>
+</div>
 <h3 id="ちなみにvc">ちなみにVC++</h3>
-
-<pre><code class="language-xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe</code></pre></td></tr></table>
+</div>
+</div>
 <p>どちらでも、コマンドプロンプトでコンパイル可能です</p>
 
 <h1 id="vsでのコンパイラの切り替え設定">VSでのコンパイラの切り替え設定</h1>
@@ -330,24 +336,27 @@ Sift-JIS は無関係かもしれませんが、一応…</p>
 </ul>
 
 <p>VC2015 Update2 では未対応だけど、Clang 3.7 は対応しているというコードです</p>
-
-<pre><code class="language-cpp">#include &quot;stdafx.h&quot;
-#include &lt;iostream&gt;
-
-constexpr int f()
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;stdafx.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">constexpr</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">f</span>()
 {
-	int result = 0;
-	return result;
+	<span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">return</span> result;
 }
 
-int main()
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
 {
-	std::cout &lt;&lt; &quot;Hello: &quot; &lt;&lt; f() &lt;&lt; std::endl;
+	std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Hello: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> f() <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
 
-	return 0;
-}
-</code></pre>
-
+	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}</code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="visual-studio-2015-v140-でコンパイルすると-エラー">Visual Studio 2015 (v140) でコンパイルすると、エラー</h2>
 
 <p><img src="/pic/Use-Clang-on-VisualStudio_02.png" alt="" /></p>
@@ -580,23 +589,26 @@ VC++でのC++11の機能一覧</p></li>
 In such a case, Anonymous structure comes in handy.</p>
 
 <p>It is assigned to the anonymous struct</p>
-
-<pre><code class="language-cpp">struct{
-        char    1st_name[0x80];
-        char    2nd_name[0x80];
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span>{
+        <span style="color:#66d9ef">char</span>    <span style="color:#ae81ff">1</span>st_name[<span style="color:#ae81ff">0x80</span>];
+        <span style="color:#66d9ef">char</span>    <span style="color:#ae81ff">2</span>nd_name[<span style="color:#ae81ff">0x80</span>];
  
-    } name_tbl[] = {
-        { &quot;Isami&quot;,   &quot;Kondou&quot; },
-        { &quot;Toshizo&quot;, &quot;Hijikata&quot; },
-        { &quot;Kogorou&quot;, &quot;Kathura&quot; },
+    } name_tbl[] <span style="color:#f92672">=</span> {
+        { <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Isami&#34;</span>,   <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Kondou&#34;</span> },
+        { <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Toshizo&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Hijikata&#34;</span> },
+        { <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Kogorou&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Kathura&#34;</span> },
     };
  
-    for( i = 0; i &lt; sizeof( name_tbl ); i ++ ){
-        printf( &quot;%s\n&quot;, name_tbl[ i ].1st_name );
-        printf( &quot;%s\n&quot;, name_tbl[ i ].2nd_name );
-    } 
-</code></pre>
-
+    <span style="color:#66d9ef">for</span>( i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">sizeof</span>( name_tbl ); i <span style="color:#f92672">++</span> ){
+        printf( <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, name_tbl[ i ]<span style="color:#ae81ff">.1</span>st_name );
+        printf( <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, name_tbl[ i ]<span style="color:#ae81ff">.2</span>nd_name );
+    } </code></pre></td></tr></table>
+</div>
+</div>
 <p>This code is very straightforward!</p>
 
 <p>This method is effective only when there is no necessity that you use 2 times and this structure.</p>
@@ -639,48 +651,57 @@ In such a case, Anonymous structure comes in handy.</p>
 <p>Hi,</p>
 
 <h2 id="c-program">C program</h2>
-
-<pre><code class="language-cpp">c00.c
-#include &lt;stdio.h&gt;
-
-int main()
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">8</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">c00.c
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> main()
 {
-    printf(&quot;This is a native C program.\n&quot;);
-    return 0;
-} 
-</code></pre>
-
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;This is a native C program.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+} </code></pre></td></tr></table>
+</div>
+</div>
 <p>compile</p>
 
 <pre><code>&gt; cl.exe c00.c
 </code></pre>
 
 <h2 id="c-program-1">C++ program</h2>
-
-<pre><code class="language-cpp">c01.cpp
-#include &lt;iostream&gt;
-
-int main()
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">8</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">c01.cpp
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> main()
 {
-    std::cout &lt;&lt; &quot;This is a native C++ program.&quot; &lt;&lt; std::endl;
-    return 0;
-}
-</code></pre>
-
+    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;This is a native C++ program.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}</code></pre></td></tr></table>
+</div>
+</div>
 <p>compile</p>
 
 <pre><code>&gt; cl.exe /EHsc c01.cpp
 </code></pre>
 
 <h2 id="c-cli-program">C++/CLI program</h2>
-
-<pre><code class="language-cpp">c02.cpp
-int main()
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">5</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">c02.cpp
+<span style="color:#66d9ef">int</span> main()
 {
-    System::Console::WriteLine(&quot;This is a Visual C++ program.&quot;);
-}
-</code></pre>
-
+    System<span style="color:#f92672">::</span>Console<span style="color:#f92672">::</span>WriteLine(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;This is a Visual C++ program.&#34;</span>);
+}</code></pre></td></tr></table>
+</div>
+</div>
 <p>compile</p>
 
 <pre><code>&gt; cl.exe /clr c02.cpp
@@ -777,30 +798,33 @@ int main()
 <p><strong>Q. 割り算をシフトと引き算のみで表現しなさい</strong></p>
 
 <p><strong>A. 回答</strong></p>
-
-<pre><code class="language-cpp">// x / y = ans
-// x: 分子
-// y: 分母
-// ans:答え
-
-ans = 0;
- while( x &gt;= y ){
-    dammy = y;
-    syou = 1;
-    while( x &gt;= dammy ){            // 割られる数を超えるまで割る数をシフト
-        dammy = dammy &lt;&lt; 1;
-        syou  = syou  &lt;&lt; 1;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">16</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">17</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">18</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">19</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">20</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">21</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// x / y = ans
+</span><span style="color:#75715e">// x: 分子
+</span><span style="color:#75715e">// y: 分母
+</span><span style="color:#75715e">// ans:答え
+</span><span style="color:#75715e"></span>
+ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+ <span style="color:#66d9ef">while</span>( x <span style="color:#f92672">&gt;=</span> y ){
+    dammy <span style="color:#f92672">=</span> y;
+    syou <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">while</span>( x <span style="color:#f92672">&gt;=</span> dammy ){            <span style="color:#75715e">// 割られる数を超えるまで割る数をシフト
+</span><span style="color:#75715e"></span>        dammy <span style="color:#f92672">=</span> dammy <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">1</span>;
+        syou  <span style="color:#f92672">=</span> syou  <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">1</span>;
     }
     
-    dammy = dammy &gt;&gt; 1;             // 超える手前まで戻す
-    syou = syou &gt;&gt; 1;
+    dammy <span style="color:#f92672">=</span> dammy <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span>;             <span style="color:#75715e">// 超える手前まで戻す
+</span><span style="color:#75715e"></span>    syou <span style="color:#f92672">=</span> syou <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span>;
     
-    x = x - dammy;                  // 筆算
-    ans = ans + syou;               // 答え
- }
- printf( &quot;%d ・・・%d\n&quot;, ans, x );
-</code></pre>
-
+    x <span style="color:#f92672">=</span> x <span style="color:#f92672">-</span> dammy;                  <span style="color:#75715e">// 筆算
+</span><span style="color:#75715e"></span>    ans <span style="color:#f92672">=</span> ans <span style="color:#f92672">+</span> syou;               <span style="color:#75715e">// 答え
+</span><span style="color:#75715e"></span> }
+ printf( <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;%d ・・・%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans, x );</code></pre></td></tr></table>
+</div>
+</div>
 <p>新人研修などにどうでしょう？</p>
 
 <p>※ 実は最後に足し算使ってますね…(&gt;_&lt;)</p>

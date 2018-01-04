@@ -67,23 +67,26 @@
 なかばやけくそ</p>
 
 <p>＜sep.ps1＞</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#960050;background-color:#1e0010">$</span>my_path_name <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;c:/tmp/&#34;</span>
+<span style="color:#960050;background-color:#1e0010">$</span>my_file_name <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;abc&#34;</span>
+<span style="color:#960050;background-color:#1e0010">$</span>my_file_kind <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;.log&#34;</span>
+<span style="color:#960050;background-color:#1e0010">$</span>cut_num      <span style="color:#f92672">=</span> <span style="color:#ae81ff">2000</span>    <span style="color:#75715e"># 切り取る行数
+</span><span style="color:#75715e"></span>
+<span style="color:#960050;background-color:#1e0010">$</span>my_file <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">$</span>my_path_name <span style="color:#f92672">+</span> <span style="color:#960050;background-color:#1e0010">$</span>my_file_name <span style="color:#f92672">+</span> <span style="color:#960050;background-color:#1e0010">$</span>my_file_kind
 
-<pre><code class="language-c">$my_path_name = &quot;c:/tmp/&quot;
-$my_file_name = &quot;abc&quot;
-$my_file_kind = &quot;.log&quot;
-$cut_num      = 2000    # 切り取る行数
-
-$my_file = $my_path_name + $my_file_name + $my_file_kind
-
-$count = 0;
-Get-Content $my_file -ReadCount $cut_num -Encoding UTF8 | 
-    ForEach-Object { 
-        $count ++
-        $cfs = &quot;{0:D3}&quot; -f $count;
-        $_ &gt; ($my_path_name+$my_file_name+'_'+$cfs+$my_file_kind)
-    }
-</code></pre>
-
+<span style="color:#960050;background-color:#1e0010">$</span>count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+Get<span style="color:#f92672">-</span>Content <span style="color:#960050;background-color:#1e0010">$</span>my_file <span style="color:#f92672">-</span>ReadCount <span style="color:#960050;background-color:#1e0010">$</span>cut_num <span style="color:#f92672">-</span>Encoding UTF8 <span style="color:#f92672">|</span> 
+    ForEach<span style="color:#f92672">-</span>Object { 
+        <span style="color:#960050;background-color:#1e0010">$</span>count <span style="color:#f92672">++</span>
+        <span style="color:#960050;background-color:#1e0010">$</span>cfs <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;{0:D3}&#34;</span> <span style="color:#f92672">-</span>f <span style="color:#960050;background-color:#1e0010">$</span>count;
+        <span style="color:#960050;background-color:#1e0010">$</span>_ <span style="color:#f92672">&gt;</span> (<span style="color:#960050;background-color:#1e0010">$</span>my_path_name<span style="color:#f92672">+</span><span style="color:#960050;background-color:#1e0010">$</span>my_file_name<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;_&#39;</span><span style="color:#f92672">+</span><span style="color:#960050;background-color:#1e0010">$</span>cfs<span style="color:#f92672">+</span><span style="color:#960050;background-color:#1e0010">$</span>my_file_kind)
+    }</code></pre></td></tr></table>
+</div>
+</div>
 <p>結果</p>
 
 <p><img src="/pic/Divide-File-Using-PowerShell_00.png" alt="" /></p>

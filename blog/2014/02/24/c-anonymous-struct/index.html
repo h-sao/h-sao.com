@@ -68,23 +68,26 @@
 In such a case, Anonymous structure comes in handy.</p>
 
 <p>It is assigned to the anonymous struct</p>
-
-<pre><code class="language-cpp">struct{
-        char    1st_name[0x80];
-        char    2nd_name[0x80];
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span>{
+        <span style="color:#66d9ef">char</span>    <span style="color:#ae81ff">1</span>st_name[<span style="color:#ae81ff">0x80</span>];
+        <span style="color:#66d9ef">char</span>    <span style="color:#ae81ff">2</span>nd_name[<span style="color:#ae81ff">0x80</span>];
  
-    } name_tbl[] = {
-        { &quot;Isami&quot;,   &quot;Kondou&quot; },
-        { &quot;Toshizo&quot;, &quot;Hijikata&quot; },
-        { &quot;Kogorou&quot;, &quot;Kathura&quot; },
+    } name_tbl[] <span style="color:#f92672">=</span> {
+        { <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Isami&#34;</span>,   <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Kondou&#34;</span> },
+        { <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Toshizo&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Hijikata&#34;</span> },
+        { <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Kogorou&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Kathura&#34;</span> },
     };
  
-    for( i = 0; i &lt; sizeof( name_tbl ); i ++ ){
-        printf( &quot;%s\n&quot;, name_tbl[ i ].1st_name );
-        printf( &quot;%s\n&quot;, name_tbl[ i ].2nd_name );
-    } 
-</code></pre>
-
+    <span style="color:#66d9ef">for</span>( i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">sizeof</span>( name_tbl ); i <span style="color:#f92672">++</span> ){
+        printf( <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, name_tbl[ i ]<span style="color:#ae81ff">.1</span>st_name );
+        printf( <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, name_tbl[ i ]<span style="color:#ae81ff">.2</span>nd_name );
+    } </code></pre></td></tr></table>
+</div>
+</div>
 <p>This code is very straightforward!</p>
 
 <p>This method is effective only when there is no necessity that you use 2 times and this structure.</p>
