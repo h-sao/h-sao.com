@@ -7,6 +7,9 @@ paginate = 10
 disqusShortname = "harukasao"
 theme = "minimalist"
 
+pygmentsCodefences = true
+PygmentsOptions = "linenos=table"
+
 [author]
     name = "遥佐保/Sao Haruka"
 
