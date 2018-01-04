@@ -2,12 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Powershell on Effectiveさお</title>
-    <link>http://h-sao.com/tags/powershell/index.xml</link>
+    <link>http://h-sao.com/tags/powershell/</link>
     <description>Recent content in Powershell on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <atom:link href="http://h-sao.com/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Oct 2017 19:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="http://h-sao.com/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>[PowerShell] ZoneIDとPowerShellの実行ポリシー</title>
@@ -15,52 +18,27 @@
       <pubDate>Fri, 20 Oct 2017 19:00:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2017/10/20/zoneid_and_powershell_excutionpolicy/</guid>
-      <description>&lt;p&gt;PowerShellでちょっとしたツールを動かそうと思って、初歩的なところであれ？となったので、書いておきます&lt;/p&gt;
-
-&lt;p&gt;PowerShellの実行ポリシー（Execution Policy）は、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;&amp;gt; Get-ExecutionPolicy
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;このコマンドで確認できます&lt;/p&gt;
-
-&lt;p&gt;Windows10のデフォルトでは &lt;strong&gt;Restricted&lt;/strong&gt; になっていて、ps1 ファイルをコマンドライン上から実行することが出来ません&lt;br /&gt;
-なので&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;&amp;gt; Set-ExecutionPolicy RemoteSigned
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;を実行して、 &lt;strong&gt;RemoteSigned&lt;/strong&gt; にセキュリティポリシーを変更します&lt;/p&gt;
-
-&lt;p&gt;しかし、&lt;strong&gt;RemoteSigned&lt;/strong&gt; になってることを確認したのに、&lt;br /&gt;
-しかしなぜか、ps1 ファイルの実行時にセキュリティエラーとなってしまいました&lt;/p&gt;
-
-&lt;p&gt;なんだこれ（↓）は…？&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;セキュリティ エラー: PSSecurityException
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;なんでだろーと思ってたのですが、何てことはない&lt;br /&gt;
-実行しようとしてた ps1 ファイルは、インターネット越しに入手したものでした&lt;br /&gt;
-（自分のサイトから落としてきたんだけどね）&lt;/p&gt;
-
-&lt;p&gt;こんな感じ↓↓↓&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/ZoneID_and_PowerShell_ExcutionPolicy_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;どうやら、インターネット越しに入手したファイルには &lt;strong&gt;ZoneID&lt;/strong&gt; というのが付与されるらしく&lt;br /&gt;
-Windowsはローカルファイルと区別出来るようにしてくれてるんですね～&lt;/p&gt;
-
-&lt;p&gt;ローカルファイルとして扱いたい時には、ポチっと「&lt;strong&gt;ブロックの解除&lt;/strong&gt;」を押せばOKです&lt;/p&gt;
-
-&lt;p&gt;ちゃんと、ps1 ファイルが動作するようになりました(^^♪&lt;/p&gt;
-
-&lt;p&gt;ZoneID…知らなかった…＞＜。&lt;/p&gt;
-
-&lt;p&gt;参考：&lt;br /&gt;
-- WindowsでPowerShellスクリプトの実行セキュリティポリシーを変更する - @IT&lt;br /&gt;
-  &lt;a href=&#34;http://www.atmarkit.co.jp/ait/articles/0805/16/news139.html&#34;&gt;http://www.atmarkit.co.jp/ait/articles/0805/16/news139.html&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>PowerShellでちょっとしたツールを動かそうと思って、初歩的なところであれ？となったので、書いておきます
+PowerShellの実行ポリシー（Execution Policy）は、
+&amp;gt; Get-ExecutionPolicy  このコマンドで確認できます
+Windows10のデフォルトでは Restricted になっていて、ps1 ファイルをコマンドライン上から実行することが出来ません
+なので
+&amp;gt; Set-ExecutionPolicy RemoteSigned  を実行して、 RemoteSigned にセキュリティポリシーを変更します
+しかし、RemoteSigned になってることを確認したのに、
+しかしなぜか、ps1 ファイルの実行時にセキュリティエラーとなってしまいました
+なんだこれ（↓）は…？
+セキュリティ エラー: PSSecurityException  なんでだろーと思ってたのですが、何てことはない
+実行しようとしてた ps1 ファイルは、インターネット越しに入手したものでした
+（自分のサイトから落としてきたんだけどね）
+こんな感じ↓↓↓
+どうやら、インターネット越しに入手したファイルには ZoneID というのが付与されるらしく
+Windowsはローカルファイルと区別出来るようにしてくれてるんですね～
+ローカルファイルとして扱いたい時には、ポチっと「ブロックの解除」を押せばOKです
+ちゃんと、ps1 ファイルが動作するようになりました(^^♪
+ZoneID…知らなかった…＞＜。
+参考：
+- WindowsでPowerShellスクリプトの実行セキュリティポリシーを変更する - @IT
+http://www.atmarkit.co.jp/ait/articles/0805/16/news139.html</description>
     </item>
     
     <item>
@@ -69,39 +47,14 @@ Windowsはローカルファイルと区別出来るようにしてくれてる�
       <pubDate>Thu, 17 Jul 2014 21:57:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2014/07/17/divide-file-using-powershell/</guid>
-      <description>&lt;p&gt;大きなファイルを分割する必要があって&lt;br /&gt;
-めっちゃ困りましたけど、また PowerShell で解決しました&lt;br /&gt;
-なかばやけくそ&lt;/p&gt;
-
-&lt;p&gt;＜sep.ps1＞&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;$my_path_name = &amp;quot;c:/tmp/&amp;quot;
-$my_file_name = &amp;quot;abc&amp;quot;
-$my_file_kind = &amp;quot;.log&amp;quot;
-$cut_num      = 2000    # 切り取る行数
-
-$my_file = $my_path_name + $my_file_name + $my_file_kind
-
-$count = 0;
-Get-Content $my_file -ReadCount $cut_num -Encoding UTF8 | 
-    ForEach-Object { 
-        $count ++
-        $cfs = &amp;quot;{0:D3}&amp;quot; -f $count;
-        $_ &amp;gt; ($my_path_name+$my_file_name+&#39;_&#39;+$cfs+$my_file_kind)
-    }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;結果&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Divide-File-Using-PowerShell_00.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;あまり何も考えず、元ネタはこの方のブログですー&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;参考サイト：powershellが超便利 - fivegangstersのブログ&lt;br /&gt;
-&lt;a href=&#34;http://blog.livedoor.jp/fivegangsters/tag/powershell&#34;&gt;http://blog.livedoor.jp/fivegangsters/tag/powershell&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>大きなファイルを分割する必要があって
+めっちゃ困りましたけど、また PowerShell で解決しました
+なかばやけくそ
+＜sep.ps1＞
+$my_path_name = &amp;quot;c:/tmp/&amp;quot; $my_file_name = &amp;quot;abc&amp;quot; $my_file_kind = &amp;quot;.log&amp;quot; $cut_num = 2000 # 切り取る行数 $my_file = $my_path_name + $my_file_name + $my_file_kind $count = 0; Get-Content $my_file -ReadCount $cut_num -Encoding UTF8 | ForEach-Object { $count ++ $cfs = &amp;quot;{0:D3}&amp;quot; -f $count; $_ &amp;gt; ($my_path_name+$my_file_name+&#39;_&#39;+$cfs+$my_file_kind) }  結果
+あまり何も考えず、元ネタはこの方のブログですー
+ 参考サイト：powershellが超便利 - fivegangstersのブログ
+http://blog.livedoor.jp/fivegangsters/tag/powershell  </description>
     </item>
     
     <item>
@@ -110,97 +63,11 @@ Get-Content $my_file -ReadCount $cut_num -Encoding UTF8 |
       <pubDate>Wed, 02 Jul 2014 17:46:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2014/07/02/sort-arrays-and-retrieve-one-by-one-for-powershell/</guid>
-      <description>
-
-&lt;p&gt;PowerShell で連想配列を用いた時のソート＆foreach のサンプルがなかなか探せなかったのでメモします&lt;/p&gt;
-
-&lt;p&gt;とある連想配列&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;PS C:\&amp;gt; $tbl = @{
-&amp;gt;&amp;gt;       k00 = &amp;quot;orange&amp;quot;;
-&amp;gt;&amp;gt;       k01 = &amp;quot;peach&amp;quot;;
-&amp;gt;&amp;gt;       k02 = &amp;quot;apple&amp;quot;
-&amp;gt;&amp;gt;  }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;出力は簡単&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;PS C:\&amp;gt; $tbl
-
-Name                           Value
-----                           -----
-k01                            peach
-k02                            apple
-k00                            orange
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ソートの出力も簡単&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;PS C:\&amp;gt; $tbl.GetEnumerator() | Sort-Object Value
-
-Name                           Value
-----                           -----
-k02                            apple
-k00                            orange
-k01                            peach
-
-# もしくは
-
-PS C:\&amp;gt; $tbl.GetEnumerator() | sort Value
-
-Name                           Value
-----                           -----
-k02                            apple
-k00                            orange
-k01                            peach
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これを一つづつ取り出して処理したい&lt;/p&gt;
-
-&lt;h2 id=&#34;単に-foreach-で取り出すとき&#34;&gt;単に foreach で取り出すとき&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;PS C:\&amp;gt; foreach( $k in $tbl.Keys ){
-&amp;gt;&amp;gt;   Write-Output $k
-&amp;gt;&amp;gt;   Write-Output $tbl[ $k ]
-&amp;gt;&amp;gt;   Write-Output &#39;-----&#39;
-&amp;gt;&amp;gt; }
-
-k01
-peach
------
-k02
-apple
------
-k00
-orange
------
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;さらにソートして-foreach-で取り出すとき&#34;&gt;さらにソートして foreach で取り出すとき&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;PS C:\&amp;gt; $tbl.GetEnumerator() | sort Value |
-&amp;gt;&amp;gt;   ForEach-Object{
-&amp;gt;&amp;gt;       Write-Output $_.Name
-&amp;gt;&amp;gt;       Write-Output $_.Value
-&amp;gt;&amp;gt;       Write-Output &#39;-----&#39;
-&amp;gt;&amp;gt;   }
-
-k02
-apple
------
-k00
-orange
------
-k01
-peach
------
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;ForEach-Object&lt;/strong&gt; を使いました
-ただの foreach() でも出来ると思うんですけど、私的用途が満たせたので、これ以上は調べてないです&lt;/p&gt;
-
-&lt;p&gt;検索で、「powershell foreach ソート -perl」 などで検索しても、日本語の情報があまり出てこなかったので、参考になれば幸いです(^^)&lt;/p&gt;
-</description>
+      <description>PowerShell で連想配列を用いた時のソート＆foreach のサンプルがなかなか探せなかったのでメモします
+とある連想配列
+PS C:\&amp;gt; $tbl = @{ &amp;gt;&amp;gt; k00 = &amp;quot;orange&amp;quot;; &amp;gt;&amp;gt; k01 = &amp;quot;peach&amp;quot;; &amp;gt;&amp;gt; k02 = &amp;quot;apple&amp;quot; &amp;gt;&amp;gt; }  出力は簡単
+PS C:\&amp;gt; $tbl Name Value ---- ----- k01 peach k02 apple k00 orange  ソートの出力も簡単
+PS C:\&amp;gt; $tbl.GetEnumerator() | Sort-Object Value Name Value ---- ----- k02 apple k00 orange k01 peach # もしくは PS C:\&amp;gt; $tbl.GetEnumerator() | sort Value Name Value ---- ----- k02 apple k00 orange k01 peach  これを一つづつ取り出して処理したい</description>
     </item>
     
     <item>
@@ -209,73 +76,26 @@ peach
       <pubDate>Sat, 19 Apr 2014 21:46:45 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2014/04/19/about-powershell-x32-and-x64/</guid>
-      <description>&lt;p&gt;PowerShellにはちゃんと 32bit版と 64bit版が備わっています&lt;/p&gt;
-
-&lt;p&gt;Windows2008 R2&lt;br /&gt;
-Windows2012 R2&lt;br /&gt;
-共に同じ場所にあります(~o~)&lt;/p&gt;
-
-&lt;p&gt;64bit版&lt;br /&gt;
-&lt;strong&gt;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;32bit版&lt;br /&gt;
-&lt;strong&gt;C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;デフォルトの64bitマシンであれば、コンソールで&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; powershell
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;とすると、64bitモードが立ち上がります&lt;/p&gt;
-
-&lt;p&gt;これはどういうことかというと、64bitのアプリから使うライブラリなどは、64bitでないとダメってことです&lt;/p&gt;
-
-&lt;p&gt;何にはまったかというと、PowerShell から System.Data.OracleClient に接続するとき&lt;/p&gt;
-
-&lt;p&gt;たとえDBサーバが 64bit Oracle だったとしても&lt;br /&gt;
-Oracle Client はデフォルトでは 32bit になっているようです&lt;/p&gt;
-
-&lt;p&gt;powershell から oracle に接続しようとしたときこんな感じになります&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# アセンブリのロード
-[void][System.Reflection.Assembly]::LoadWithPartialName(&amp;quot;System.Data.OracleClient&amp;quot;)
-
-# 接続
-$conn_str = &amp;quot;Data Source=saoDB;User ID=sao;Password=password;Integrated Security=false;&amp;quot;
-$ora_conn = New-Object System.Data.OracleClient.OracleConnection($conn_str)
-
-# インスタンス
-$ora_cmd = New-Object System.Data.OracleClient.OracleCommand
-$ora_cmd.Connection = $ora_conn
-
-# データベースに接続
-$ora_conn.Open()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;（参考）powerShellからOracleを使う（接続・切断）&lt;br /&gt;
-&lt;a href=&#34;http://harikofu.blog.fc2.com/blog-entry-114.html&#34;&gt;http://harikofu.blog.fc2.com/blog-entry-114.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;このDB接続直後に、64bit のPowerShell だと&lt;br /&gt;
-こんなエラーが出ます&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;quot;0&amp;quot; 個の引数を指定して &amp;quot;Open&amp;quot; を呼び出し中に例外が発生しました: &amp;quot;Oracle クライアント ライブラリを読み込もうとしましたが、BadImageFormatException が発行されました。この問題は、32 ビットの Oracle クライアント コンポーネントが
-インストールされている環境で 64 ビット モードを実行すると発生します。&amp;quot;
-発生場所 行:1 文字:22
-+ $ora_conn.Open &amp;lt;&amp;lt;&amp;lt;&amp;lt; ()
-    + CategoryInfo          : NotSpecified: (:) []、MethodInvocationException
-    + FullyQualifiedErrorId : DotNetMethodException
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;問題解決方法は2つ&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Oracle Client を 64bit版をインストールする（たとえDBサーバ上であっても…&lt;/li&gt;
-&lt;li&gt;呼び出す側のPowerShellを 32bit版にする&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;既存の稼働環境に影響を与えない様にするという意味では&lt;br /&gt;
-不毛ですが後者を選択すると波風立てずにコトを済ませられます&lt;/p&gt;
-</description>
+      <description>PowerShellにはちゃんと 32bit版と 64bit版が備わっています
+Windows2008 R2
+Windows2012 R2
+共に同じ場所にあります(~o~)
+64bit版
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+32bit版
+C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe
+デフォルトの64bitマシンであれば、コンソールで
+&amp;gt; powershell  とすると、64bitモードが立ち上がります
+これはどういうことかというと、64bitのアプリから使うライブラリなどは、64bitでないとダメってことです
+何にはまったかというと、PowerShell から System.Data.OracleClient に接続するとき
+たとえDBサーバが 64bit Oracle だったとしても
+Oracle Client はデフォルトでは 32bit になっているようです
+powershell から oracle に接続しようとしたときこんな感じになります
+# アセンブリのロード [void][System.Reflection.Assembly]::LoadWithPartialName(&amp;quot;System.Data.OracleClient&amp;quot;) # 接続 $conn_str = &amp;quot;Data Source=saoDB;User ID=sao;Password=password;Integrated Security=false;&amp;quot; $ora_conn = New-Object System.Data.OracleClient.OracleConnection($conn_str) # インスタンス $ora_cmd = New-Object System.Data.OracleClient.OracleCommand $ora_cmd.Connection = $ora_conn # データベースに接続 $ora_conn.Open()  （参考）powerShellからOracleを使う（接続・切断）
+http://harikofu.blog.fc2.com/blog-entry-114.html
+このDB接続直後に、64bit のPowerShell だと
+こんなエラーが出ます
+&amp;quot;0&amp;quot; 個の引数を指定して &amp;quot;Open&amp;quot; を呼び出し中に例外が発生しました: &amp;quot;Oracle クライアント ライブラリを読み込もうとしましたが、BadImageFormatException が発行されました。この問題は、32 ビットの Oracle クライアント コンポーネントが インストールされている環境で 64 ビット モードを実行すると発生します。&amp;quot; 発生場所 行:1 文字:22 + $ora_conn.</description>
     </item>
     
   </channel>

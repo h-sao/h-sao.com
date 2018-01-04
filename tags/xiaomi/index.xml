@@ -2,12 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xiaomi on Effectiveさお</title>
-    <link>http://h-sao.com/tags/xiaomi/index.xml</link>
+    <link>http://h-sao.com/tags/xiaomi/</link>
     <description>Recent content in Xiaomi on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <atom:link href="http://h-sao.com/tags/xiaomi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Oct 2015 04:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="http://h-sao.com/tags/xiaomi/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>[Android]Xiaomi Redmi Note2にGooglePlayをインストールする</title>
@@ -15,151 +18,22 @@
       <pubDate>Tue, 06 Oct 2015 04:00:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/</guid>
-      <description>
-
-&lt;p&gt;クロスプラットフォームで開発していると、やはり最新の端末が欲しくなりますよね～&lt;/p&gt;
-
-&lt;p&gt;１年以内発売の iPhone と Windows Phone は持っているのですが&lt;br /&gt;
-そろそろ新しい Android が欲しい～と思っていたので、買ってしまいました&lt;/p&gt;
-
-&lt;p&gt;シンガポール旅行に行った際に、ブギスの電気屋街、&lt;a href=&#34;http://www.simlimsquare.com.sg/&#34;&gt;Sim Lim Square（シムリム スクウェア）&lt;/a&gt;で、今をトキメク Xiaomi（しゃおみ）デバイスを購入しました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Xiaomi&lt;/strong&gt;&lt;br /&gt;
-&lt;a href=&#34;http://www.mi.com/&#34;&gt;http://www.mi.com/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_00.JPG&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;全部で6Fまでありましたが、結局1Fのお店の品ぞろえが一番まとまってる印象でした&lt;br /&gt;
-Xiaomi正規店も1Fに入っていました&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;xiaomi-redmi-note-2&#34;&gt;Xiaomi Redmi Note 2&lt;/h2&gt;
-
-&lt;p&gt;購入したのは、&lt;strong&gt;Xiaomi Redmi Note 2&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table style=&#34;border-style: none;&#34;&gt;
- &lt;tr&gt;
-   &lt;td style=&#34;border-style: none;&#34;&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_01.JPG&#34;&gt;&lt;/td&gt;
-   &lt;td style=&#34;border-style: none;&#34;&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_02.JPG&#34;&gt;&lt;/td&gt;
- &lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;p&gt;画像のように、デフォルトでは中国語のアプリがたくさん入っています&lt;br /&gt;
-そして、Google Play Store は入っていません！&lt;/p&gt;
-
-&lt;p&gt;デフォルトのIMEが Buidu なので、まぁこのままでは、日本語が打てません(&amp;gt;&amp;lt;;)&lt;/p&gt;
-
-&lt;p&gt;なので Google Play Store をインストールする方法をメモしておきます&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;googleplay-installer-apkが最適解&#34;&gt;GooglePlay installer APKが最適解&lt;/h2&gt;
-
-&lt;p&gt;検索すると色々な方法が出てくるのですが、おそらく、&lt;strong&gt;Google installer のAPKを直接インストールする&lt;/strong&gt;のが、手っ取り早いです&lt;br /&gt;
-（チャイナストアやMIストアからGooglePlayらしきものをインストールしても、わたしの場合は、動作しませんでした）&lt;/p&gt;
-
-&lt;p&gt;情報元はこちらの Xiaomi公式コミュニティ掲示板です&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;[System Tools] Find all the Google Apps in Google installer!&lt;/strong&gt;　　
-&lt;a href=&#34;http://en.miui.com/thread-3998-1-1.html&#34;&gt;http://en.miui.com/thread-3998-1-1.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Xiaomiはすごくコミュニティも発達してるんですよね～ちゃんと英語の掲示板なので、読めました(^_^)&lt;/p&gt;
-
-&lt;p&gt;上記サイトにある、GooglePlayを入れるための Google installer をAPKからインストールします&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Google installer谷歌应用下载器.apk&lt;br /&gt;
-(1009.36 KB, Downloads: 237400)
-&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_03.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;PCから落とすなどするよりも、直接 Xiaomi デバイスからダウンロードした方が、早いと思います&lt;br /&gt;
-もしかしたら、MIアカウントを作らないとダウンロード出来ないかもしれません（わたしは作りました）&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;androidがセキュア過ぎて-思った順番にインストール出来ない&#34;&gt;Androidがセキュア過ぎて、思った順番にインストール出来ない&lt;/h2&gt;
-
-&lt;p&gt;installer を入れると、以下の４つがインストール可能になります&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Google Services Framework&lt;/li&gt;
-&lt;li&gt;Google Account Manager&lt;/li&gt;
-&lt;li&gt;Google Play services&lt;/li&gt;
-&lt;li&gt;Google Play Store&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;そのままインストールしたら良いので、おそらく、この順番でインストールが走ると思います&lt;br /&gt;
-（ここ、画面キャプチャを取り忘れたので申し訳ない）&lt;/p&gt;
-
-&lt;p&gt;ところが、1番目をインストールしようとすると、本当にインストールしていいかどうかの許可画面が出ますよね、こんな感じに…&lt;br /&gt;
-（イメージ画像です↓↓↓）&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_04.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;この画面で 「1番のアプリに対して」ユーザが許可を押そうとするときに、すでに「2番目のインストール」が動いてしまうのです&lt;/p&gt;
-
-&lt;p&gt;結果的に、 「1番のアプリの許可画面」は裏にまわってしまい&lt;br /&gt;
-「2番目のアプリの許可画面」が一番手前に来ることになります&lt;br /&gt;
-つまり最終的には、「4番目のアプリの許可画面」が最前面になります&lt;/p&gt;
-
-&lt;p&gt;入れたいアプリは Google Play Store なので、それでも良いかなと思って&lt;br /&gt;
-４→３→２→１の順にインストールするんですけど、&lt;br /&gt;
-お察しの通り、Google Play Store は起動しません&lt;br /&gt;
-おそらく、Google Services Framework とかが、Google Play Store のインストールに必要なんじゃないかなーと思います&lt;/p&gt;
-
-&lt;p&gt;なので、いったん、Google Play services、Google Play Store をアンインストールし、再度、Google Play services、Google Play Store をインストールします&lt;/p&gt;
-
-&lt;p&gt;いやー(~0~)　これで、わたしの端末で、Google Play が動くようになりました！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_05.JPG&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;その他-xiaomi-デバイスで気づいたところ&#34;&gt;その他、Xiaomi デバイスで気づいたところ&lt;/h2&gt;
-
-&lt;h4 id=&#34;日本語モードはない&#34;&gt;日本語モードはない&lt;/h4&gt;
-
-&lt;p&gt;日本語モードは入っていません&lt;br /&gt;
-ROMとか焼き直すと良いらしいですけど、まだやってないです&lt;/p&gt;
-
-&lt;h4 id=&#34;permissions-アプリがうれしい&#34;&gt;Permissions アプリがうれしい&lt;/h4&gt;
-
-&lt;p&gt;デフォルトで入っている Permittions アプリが最高に便利&lt;/p&gt;
-
-&lt;table style=&#34;border-style: none;&#34;&gt;
- &lt;tr&gt;
-   &lt;td style=&#34;border-style: none;&#34;&gt;各アプリ毎の許可&lt;/td&gt;
-   &lt;td style=&#34;border-style: none;&#34;&gt;どのアプリが使ってるか&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
-   &lt;td style=&#34;border-style: none;&#34;&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_07.png&#34;&gt;&lt;/td&gt;
-   &lt;td style=&#34;border-style: none;&#34;&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_06.png&#34;&gt;&lt;/td&gt;
- &lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&#34;simは２枚ささる&#34;&gt;SIMは２枚ささる&lt;/h4&gt;
-
-&lt;p&gt;両方LTEをつかめます&lt;br /&gt;
-ただし、片方がLTEをつかんでいるときは、もう一方はつかめない仕様です&lt;/p&gt;
-
-&lt;p&gt;なので、日本で、１番目にDocomoを刺して、２番目にauを刺す、とかして&lt;br /&gt;
-１番目はLTEでデータ通信、２番目はauで電話とメールのみ&lt;br /&gt;
-とかにしたくても、ちょっと難しいかも&lt;br /&gt;
-日本は今現在、ほぼLTEになってしまってるので、そういう活用は出来なさそうかも…？&lt;/p&gt;
-
-&lt;p&gt;どちらにしても、技適通ってない端末なので、日本では使っちゃダメ&lt;/p&gt;
-
-&lt;h4 id=&#34;まとめ&#34;&gt;まとめ&lt;/h4&gt;
-
-&lt;p&gt;もろもろ満足しています&lt;br /&gt;
-同じようにシンガポールや中国で購入した方の参考になれば～&lt;/p&gt;
-</description>
+      <description>クロスプラットフォームで開発していると、やはり最新の端末が欲しくなりますよね～
+１年以内発売の iPhone と Windows Phone は持っているのですが
+そろそろ新しい Android が欲しい～と思っていたので、買ってしまいました
+シンガポール旅行に行った際に、ブギスの電気屋街、Sim Lim Square（シムリム スクウェア）で、今をトキメク Xiaomi（しゃおみ）デバイスを購入しました
+ Xiaomi
+http://www.mi.com/  全部で6Fまでありましたが、結局1Fのお店の品ぞろえが一番まとまってる印象でした
+Xiaomi正規店も1Fに入っていました
+Xiaomi Redmi Note 2 購入したのは、Xiaomi Redmi Note 2
+     画像のように、デフォルトでは中国語のアプリがたくさん入っています
+そして、Google Play Store は入っていません！
+デフォルトのIMEが Buidu なので、まぁこのままでは、日本語が打てません(&amp;gt;&amp;lt;;)
+なので Google Play Store をインストールする方法をメモしておきます
+GooglePlay installer APKが最適解 検索すると色々な方法が出てくるのですが、おそらく、Google installer のAPKを直接インストールするのが、手っ取り早いです
+（チャイナストアやMIストアからGooglePlayらしきものをインストールしても、わたしの場合は、動作しませんでした）
+情報元はこちらの Xiaomi公式コミュニティ掲示板です
+ [System Tools] Find all the Google Apps in Google installer!　http://en.miui.com/thread-3998-1-1.html  Xiaomiはすごくコミュニティも発達してるんですよね～ちゃんと英語の掲示板なので、読めました(^_^)</description>
     </item>
     
   </channel>

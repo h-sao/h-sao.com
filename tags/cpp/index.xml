@@ -2,12 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cpp on Effectiveさお</title>
-    <link>http://h-sao.com/tags/cpp/index.xml</link>
+    <link>http://h-sao.com/tags/cpp/</link>
     <description>Recent content in Cpp on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <atom:link href="http://h-sao.com/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Aug 2017 18:40:00 +0900</lastBuildDate>
+    
+	<atom:link href="http://h-sao.com/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>[Android] 謎のエラー「Unable to start debugging.」が出たときの対応</title>
@@ -15,90 +18,19 @@
       <pubDate>Fri, 18 Aug 2017 18:40:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/</guid>
-      <description>
-
-&lt;h2 id=&#34;androidデバッグで実行時エラー&#34;&gt;Androidデバッグで実行時エラー&lt;/h2&gt;
-
-&lt;p&gt;環境&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Windows10 x64&lt;/li&gt;
-&lt;li&gt;Visual Studio 2017&lt;/li&gt;
-&lt;li&gt;Project type: Native-Activity Application (Android)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ある時…Visual Studio で作っている Android プロジェクトが、実行時エラーになりました&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/How-to-fixed-error-Unable-to-start-debugging_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Unable to start debugging. Check your debugger settings by opening project properties and navigating to &amp;lsquo;Configuration Properties&amp;ndash;&amp;gt; Debugging&amp;rsquo;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;デバック出来ないからね！プロジェクトの設定見てね！的な意味みたいですが&lt;br /&gt;
-デバッグモードで動かしてるし…&lt;br /&gt;
-一体どこの何の事を言ってるのか判らない…＞＜。&lt;/p&gt;
-
-&lt;p&gt;リリースモードならOKなのかしら？と思っても、同様のエラー&amp;rdquo;(-&amp;ldquo;&amp;rdquo;-)&amp;rdquo;&lt;/p&gt;
-
-&lt;h2 id=&#34;解決案-わたしはこれでは解決しませんでしたが&#34;&gt;解決案（わたしはこれでは解決しませんでしたが）&lt;/h2&gt;
-
-&lt;p&gt;検索しても、実のある回答は特に出てこず…&lt;br /&gt;
-唯一、解決っぽいのが、NVIDIAさんのフォーラムに載ってました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;CodeWorks for Android 1R4: Unable to start debugging - NVIDIA DEVELOPER&lt;/strong&gt;&lt;br /&gt;
-&lt;a href=&#34;https://devtalk.nvidia.com/default/topic/957019/codeworks-for-android-1r4-unable-to-start-debugging/&#34;&gt;https://devtalk.nvidia.com/default/topic/957019/codeworks-for-android-1r4-unable-to-start-debugging/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;元ネタリンクはMicrosoftさんのGitHub情報みたいです&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;MEF - GitHub Microsoft/VSProjectSystem&lt;/strong&gt;&lt;br /&gt;
-&lt;a href=&#34;https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/mef.md#mef-inside-visual-studio&#34;&gt;https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/mef.md#mef-inside-visual-studio&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;簡単に言うと、VSの &lt;strong&gt;Developer Command Prompt&lt;/strong&gt; を使って、キャッシュクリアしてみたら？というもの&lt;br /&gt;
-やってみました&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Developer Command Prompt を検索して立ち上げる&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/How-to-fixed-error-Unable-to-start-debugging_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;以下のコマンドを打つ&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Devenv /UpdateConfiguration&lt;br /&gt;
-Devenv /ClearCache&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/How-to-fixed-error-Unable-to-start-debugging_02.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;もっともらしい対策なんですけど、わたしの実行時エラーは解決しませんでした&lt;br /&gt;
-何がダメなのだろ…((+_+))&lt;/p&gt;
-
-&lt;h2 id=&#34;わたしが解決した方法&#34;&gt;わたしが解決した方法&lt;/h2&gt;
-
-&lt;p&gt;で、実際の解決策ですが…&lt;br /&gt;
-すみません、散々あーだこーだ書いてますが&lt;br /&gt;
-&lt;strong&gt;スタートアッププロジェクトの設定もれ&lt;/strong&gt; でした…( ;∀;)&lt;br /&gt;
-いやはや、お恥ずかしい…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/How-to-fixed-error-Unable-to-start-debugging_03.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Androidプロジェクトが参照する、別のプロジェクト達が&lt;br /&gt;
-同じソリューションファイルの中に複数存在しています&lt;/p&gt;
-
-&lt;p&gt;なのに、Androidプロジェクトを起動プロジェクトに設定しておらず…&lt;/p&gt;
-
-&lt;p&gt;ポカミスとはまさにこの事！( ;∀;)&lt;/p&gt;
-
-&lt;p&gt;なぜこれに気が付かなかったのか…相当焦ってて、周りが見えてなかったみたいです&lt;/p&gt;
-
-&lt;p&gt;二度と同じ過ちを繰り返さないように…＞＜。&lt;br /&gt;
-あと、同様のエラーで困ってる人の何かしらの参考になればと思います＞＜。&lt;/p&gt;
-</description>
+      <description>Androidデバッグで実行時エラー 環境
+ Windows10 x64 Visual Studio 2017 Project type: Native-Activity Application (Android)  ある時…Visual Studio で作っている Android プロジェクトが、実行時エラーになりました
+ Unable to start debugging. Check your debugger settings by opening project properties and navigating to &amp;lsquo;Configuration Properties&amp;ndash;&amp;gt; Debugging&amp;rsquo;
+ デバック出来ないからね！プロジェクトの設定見てね！的な意味みたいですが
+デバッグモードで動かしてるし…
+一体どこの何の事を言ってるのか判らない…＞＜。
+リリースモードならOKなのかしら？と思っても、同様のエラー&amp;rdquo;(-&amp;ldquo;&amp;rdquo;-)&amp;rdquo;
+解決案（わたしはこれでは解決しませんでしたが） 検索しても、実のある回答は特に出てこず…
+唯一、解決っぽいのが、NVIDIAさんのフォーラムに載ってました
+ CodeWorks for Android 1R4: Unable to start debugging - NVIDIA DEVELOPER
+https://devtalk.nvidia.com/default/topic/957019/codeworks-for-android-1r4-unable-to-start-debugging/  元ネタリンクはMicrosoftさんのGitHub情報みたいです
+ MEF - GitHub Microsoft/VSProjectSystem
+https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/mef.md#mef-inside-visual-studio  簡単に言うと、VSの Developer Command Prompt を使って、キャッシュクリアしてみたら？というもの</description>
     </item>
     
     <item>
@@ -107,175 +39,20 @@ Devenv /ClearCache&lt;/p&gt;
       <pubDate>Sun, 15 May 2016 23:30:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/</guid>
-      <description>
-
-&lt;p&gt;今日は Clang with Microsoft CodeGen の設定などについて、メモしておきます&lt;/p&gt;
-
-&lt;p&gt;先人たちが既に色々と試している内容と対して変わりませんが、そもそも日本語の情報も少ないので、何かの足しになればと思います&lt;/p&gt;
-
-&lt;h1 id=&#34;clang-with-microsoft-codegen-is-here&#34;&gt;&amp;ldquo;Clang with Microsoft CodeGen&amp;rdquo; is here!&lt;/h1&gt;
-
-&lt;p&gt;最近はすっかり、クロスプラットフォームやオープンソースに力を入れているマイクロソフト社のツールセットの中に、Clang対応ってのがあります&lt;/p&gt;
-
-&lt;p&gt;2015年の年末にですが、Clang が正式に Visual Studio 2015 Update1 で利用できるよ～&lt;br /&gt;
-とVC++チームブログで発表されていました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Clang with Microsoft CodeGen in VS 2015 Update 1 - Visual C++ Team Blog&lt;br /&gt;
-&lt;a href=&#34;https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/&#34;&gt;https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Clang with Microsoft CodeGen (March 2016) released- Visual C++ Team Blog&lt;br /&gt;
-&lt;a href=&#34;https://blogs.msdn.microsoft.com/vcblog/2016/03/31/clang-with-microsoft-codegen-march-2016-released/&#34;&gt;https://blogs.msdn.microsoft.com/vcblog/2016/03/31/clang-with-microsoft-codegen-march-2016-released/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;良いですねー(^^)&lt;br /&gt;
-現在のVS2015には &lt;strong&gt;Clang with Microsoft CodeGen&lt;/strong&gt; というツールセットが提供されており、目玉はなんといっても、Clang のデバックを Visual Studioのエディターで確認できるところでしょうか！&lt;/p&gt;
-
-&lt;p&gt;他にも、Clang でコンパイルしたobjと VC でコンパイルしたobjがリンクできるところもすごいです&lt;br /&gt;
-既存資産をフル活用出来そうですね&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;（2016/5/15現在、Visual Studio 2015 Update2 が最新です）&lt;br /&gt;
-&lt;a href=&#34;https://www.visualstudio.com/ja-jp/news/vs2015-update2-vs.aspx&#34;&gt;https://www.visualstudio.com/ja-jp/news/vs2015-update2-vs.aspx&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;LLVM側にも記事が上がっています&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Getting Started with the LLVM System using Microsoft Visual Studio - LLVM本家&lt;br /&gt;
-&lt;a href=&#34;http://llvm.org/docs/GettingStartedVS.html&#34;&gt;http://llvm.org/docs/GettingStartedVS.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;日本でも既に先人が試されているので、読んでみると良いと思います&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Clang/C2をコマンドプロンプトで使ってみる - イグトランスの頭の中（のかけら）&lt;br /&gt;
-&lt;a href=&#34;http://dev.activebasic.com/egtra/2015/12/09/850/&#34;&gt;http://dev.activebasic.com/egtra/2015/12/09/850/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Clang with Microsoft CodeGenがでたので試す - C++初心者Advent Calendar 2015 9日目&lt;br /&gt;
-&lt;a href=&#34;http://qiita.com/yumetodo/items/bd41f31f39dd590e8c80&#34;&gt;http://qiita.com/yumetodo/items/bd41f31f39dd590e8c80&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;ちなみに、この Clang with Microsoft CodeGen は VC++チームブログにも &amp;ldquo;a.k.a. Clang/C2&amp;rdquo; と記載されており、別名を &lt;strong&gt;Clang/C2&lt;/strong&gt; というようです&lt;/p&gt;
-
-&lt;p&gt;また、今回対応している &lt;strong&gt;Clang 側のバージョンは 3.7&lt;/strong&gt; です&lt;/p&gt;
-
-&lt;h1 id=&#34;clang-exe-の場所&#34;&gt;clang.exe の場所&lt;/h1&gt;
-
-&lt;h3 id=&#34;clang&#34;&gt;Clang&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Clang 3.7\bin\x86\clang.exe
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;ちなみにvc&#34;&gt;ちなみにVC++&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;どちらでも、コマンドプロンプトでコンパイル可能です&lt;/p&gt;
-
-&lt;h1 id=&#34;vsでのコンパイラの切り替え設定&#34;&gt;VSでのコンパイラの切り替え設定&lt;/h1&gt;
-
-&lt;p&gt;Visual Stidon 2015 上で &amp;ldquo;Alt + F7&amp;rdquo; を押すか&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;プロジェクト &amp;gt; [プロジェクト名]のプロパティ&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;で設定UIを表示させます&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;構成プロパティ &amp;gt; 全般 &amp;gt; プラットフォームツールセット&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;この項目を &amp;ldquo;Clang 3.7 with Microsoft CodeGen (v140_clang_3_7)&amp;rdquo; に変更するだけです&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Use-Clang-on-VisualStudio_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;結構簡単＼(^o^)／&lt;/p&gt;
-
-&lt;h1 id=&#34;ソリューション作成は何でもok&#34;&gt;ソリューション作成は何でもOK&lt;/h1&gt;
-
-&lt;p&gt;上記の様に、コンパイラが簡単に切り替えられるので、空のプロジェクトでも、Win32コンソールアプリケーションでもOKです&lt;/p&gt;
-
-&lt;p&gt;一応、Clangっぽいプロジェクトはあるんですけど、いきなり dll というのもなんだか敷居が高いので、&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Use-Clang-on-VisualStudio_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;exe を作りたいだけなら、Win32コンソールアプリケーションで良いと思います&lt;/p&gt;
-
-&lt;h1 id=&#34;余談-文字コードはutf8の方が良い-様な気がする&#34;&gt;[余談]文字コードはUTF8の方が良い(様な気がする)&lt;/h1&gt;
-
-&lt;p&gt;最初に書いておくと、Sift-JIS でも Clang/C2 でコンパイルは通ります&lt;/p&gt;
-
-&lt;p&gt;…なのですが、一応、なんとなく&lt;/p&gt;
-
-&lt;p&gt;個々の環境によって異なるのかもしれませんが&lt;br /&gt;
-わたしがVS2015で作成した cpp ファイルは、デフォルトで Sift-JIS になります&lt;/p&gt;
-
-&lt;p&gt;既に、&lt;a href=&#34;https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/&#34;&gt;VC++チームブログ&lt;/a&gt; にはこんな感じで↓↓↓&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;If source files in the project you are trying to convert are UTF-16 encoded, you will need to resave them as UTF-8 when Clang gives you an error about UTF-16 encoded source with BOM.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;UTF-16はだめらしいです&lt;br /&gt;
-Sift-JIS は無関係かもしれませんが、一応…&lt;/p&gt;
-
-&lt;h1 id=&#34;サンプルコード&#34;&gt;サンプルコード&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://cpprefjp.github.io/&#34;&gt;cpprefjp&lt;/a&gt; を参照して、サンプルコードを書いてみました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;constexprの制限緩和
-&lt;a href=&#34;http://cpprefjp.github.io/lang/cpp14/relaxing_constraints_on_constexpr.html&#34;&gt;http://cpprefjp.github.io/lang/cpp14/relaxing_constraints_on_constexpr.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;VC2015 Update2 では未対応だけど、Clang 3.7 は対応しているというコードです&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;stdafx.h&amp;quot;
-#include &amp;lt;iostream&amp;gt;
-
-constexpr int f()
-{
-	int result = 0;
-	return result;
-}
-
-int main()
-{
-	std::cout &amp;lt;&amp;lt; &amp;quot;Hello: &amp;quot; &amp;lt;&amp;lt; f() &amp;lt;&amp;lt; std::endl;
-
-	return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;visual-studio-2015-v140-でコンパイルすると-エラー&#34;&gt;Visual Studio 2015 (v140) でコンパイルすると、エラー&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Use-Clang-on-VisualStudio_02.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;VS2015 ではまだ、constexpr関数内の変数宣言がエラーになる様です&lt;/p&gt;
-
-&lt;h2 id=&#34;clang-3-7-with-microsoft-codegen-v140-clang-3-7-でのコンパイル&#34;&gt;Clang 3.7 with Microsoft CodeGen (v140_clang_3_7) でのコンパイル&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Use-Clang-on-VisualStudio_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;Clang はOKです&lt;br /&gt;
-いい感じに動作しました！&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;VC++も Clang も、VS上でデバック出来るのは良いですね&lt;br /&gt;
-噂には聞いていましたが、自分で動作させてみると、感激するもんがあります&lt;/p&gt;
-
-&lt;p&gt;今はまだプレビューらしいので、早く安定化して欲しいですね～&lt;/p&gt;
-</description>
+      <description>今日は Clang with Microsoft CodeGen の設定などについて、メモしておきます
+先人たちが既に色々と試している内容と対して変わりませんが、そもそも日本語の情報も少ないので、何かの足しになればと思います
+&amp;ldquo;Clang with Microsoft CodeGen&amp;rdquo; is here! 最近はすっかり、クロスプラットフォームやオープンソースに力を入れているマイクロソフト社のツールセットの中に、Clang対応ってのがあります
+2015年の年末にですが、Clang が正式に Visual Studio 2015 Update1 で利用できるよ～
+とVC++チームブログで発表されていました
+ Clang with Microsoft CodeGen in VS 2015 Update 1 - Visual C++ Team Blog
+https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/
+ Clang with Microsoft CodeGen (March 2016) released- Visual C++ Team Blog
+https://blogs.msdn.microsoft.com/vcblog/2016/03/31/clang-with-microsoft-codegen-march-2016-released/
+  良いですねー(^^)
+現在のVS2015には Clang with Microsoft CodeGen というツールセットが提供されており、目玉はなんといっても、Clang のデバックを Visual Studioのエディターで確認できるところでしょうか！
+他にも、Clang でコンパイルしたobjと VC でコンパイルしたobjがリンクできるところもすごいです
+既存資産をフル活用出来そうですね
+ （2016/5/15現在、Visual Studio 2015 Update2 が最新です）</description>
     </item>
     
     <item>
@@ -284,37 +61,21 @@ int main()
       <pubDate>Sun, 27 Mar 2016 20:30:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</guid>
-      <description>
-
-&lt;h2 id=&#34;ebisu-effective-modern-cppって&#34;&gt;ebisu_effective_modern.cppって？&lt;/h2&gt;
-
-&lt;p&gt;&lt;center&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Information-ebisu-cpp-vol3_00.png&#34; alt=&#34;&#34; /&gt;
-&lt;/center&gt;&lt;/p&gt;
-
-&lt;p&gt;東京の恵比寿でC++について、みんなの意見を聞きながら本を読み進める勉強会を開いています&lt;/p&gt;
-
-&lt;p&gt;昔、大阪でC++の読書会を開催していたのですが、それが結構役に立って面白かったので、東京でも開催してみよう！と思い、始めてみました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;ebisu_effective_modern.cpp vol.3&lt;br /&gt;
-2016/3/31 (木) 20:00-21:30 東京恵比寿&lt;br /&gt;
-&lt;a href=&#34;http://ebisu-effective-modern-cpp.connpass.com/event/29324/&#34;&gt;http://ebisu-effective-modern-cpp.connpass.com/event/29324/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;ちなみに大阪はこちらで絶賛開催中ですよ～！&lt;br /&gt;
-大阪C++読書会&lt;br /&gt;
-&lt;a href=&#34;http://cpp-osaka.connpass.com/&#34;&gt;http://cpp-osaka.connpass.com/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ネタが無いと勉強や会話もしずらいので、&lt;br /&gt;
-&lt;strong&gt;「Effective Modern C ーC11/14プログラムを進化させる42項目」&lt;/strong&gt; を元に進めています&lt;/p&gt;
-
-&lt;p&gt;今回は、&lt;strong&gt;５章 右辺値参照、ムーブセマンティックス、完全転送&lt;/strong&gt; について…&lt;br /&gt;
-前回の vol.2 では、基本的なムーブの動きを簡単に抑えた程度になったので、あまり深いところまでは進めませんでした&lt;br /&gt;
-書籍の内容にぐいぐい追いつけるように頑張りますよ～&lt;/p&gt;
-
-&lt;p&gt;興味ある方はどうぞ、お気軽にお越しください(^^)/&lt;/p&gt;
-</description>
+      <description>ebisu_effective_modern.cppって？  
+東京の恵比寿でC++について、みんなの意見を聞きながら本を読み進める勉強会を開いています
+昔、大阪でC++の読書会を開催していたのですが、それが結構役に立って面白かったので、東京でも開催してみよう！と思い、始めてみました
+ ebisu_effective_modern.cpp vol.3
+2016/3/31 (木) 20:00-21:30 東京恵比寿
+http://ebisu-effective-modern-cpp.connpass.com/event/29324/
+ ちなみに大阪はこちらで絶賛開催中ですよ～！
+大阪C++読書会
+http://cpp-osaka.connpass.com/
+  ネタが無いと勉強や会話もしずらいので、
+「Effective Modern C ーC11/14プログラムを進化させる42項目」 を元に進めています
+今回は、５章 右辺値参照、ムーブセマンティックス、完全転送 について…
+前回の vol.2 では、基本的なムーブの動きを簡単に抑えた程度になったので、あまり深いところまでは進めませんでした
+書籍の内容にぐいぐい追いつけるように頑張りますよ～
+興味ある方はどうぞ、お気軽にお越しください(^^)/</description>
     </item>
     
     <item>
@@ -323,26 +84,17 @@ int main()
       <pubDate>Fri, 19 Dec 2014 12:30:41 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2014/12/19/cpp11-link-note/</guid>
-      <description>&lt;p&gt;C++11について調べているときに参考になった情報源のメモ&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;C++11/14/17 Features In VS 2015 Preview - Visual C++ Team Blog&lt;br /&gt;
-&lt;a href=&#34;http://blogs.msdn.com/b/vcblog/archive/2014/11/17/c-11-14-17-features-in-vs-2015-preview.aspx&#34;&gt;http://blogs.msdn.com/b/vcblog/archive/2014/11/17/c-11-14-17-features-in-vs-2015-preview.aspx&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;VS2013とVS2015 previewで利用できる機能一覧が乗っている&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;C++11 - the new ISO C++ standard　（和訳版）&lt;br /&gt;
-&lt;del&gt;http://　www32.ocn.ne.jp/~ons/text/CPP0xFAQ.html.ja&lt;/del&gt; (現在リンク切れ)&lt;br /&gt;
-ビャーネさんのC++11に対するコメント&lt;br /&gt;
-原文はこちら→&lt;a href=&#34;http://www.stroustrup.com/C++11FAQ.html&#34;&gt;http://www.stroustrup.com/C++11FAQ.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;C++11 の機能 (Modern C++) のサポート&lt;br /&gt;
-&lt;a href=&#34;http://msdn.microsoft.com/ja-jp/library/hh567368.aspx&#34;&gt;http://msdn.microsoft.com/ja-jp/library/hh567368.aspx&lt;/a&gt;&lt;br /&gt;
-VC++でのC++11の機能一覧&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>C++11について調べているときに参考になった情報源のメモ
+ C++11/14/17 Features In VS 2015 Preview - Visual C++ Team Blog
+http://blogs.msdn.com/b/vcblog/archive/2014/11/17/c-11-14-17-features-in-vs-2015-preview.aspx  VS2013とVS2015 previewで利用できる機能一覧が乗っている
+ C++11 - the new ISO C++ standard　（和訳版）
+http://　www32.ocn.ne.jp/~ons/text/CPP0xFAQ.html.ja (現在リンク切れ)
+ビャーネさんのC++11に対するコメント
+原文はこちら→http://www.stroustrup.com/C++11FAQ.html
+ C++11 の機能 (Modern C++) のサポート
+http://msdn.microsoft.com/ja-jp/library/hh567368.aspx
+VC++でのC++11の機能一覧
+  </description>
     </item>
     
     <item>
@@ -351,17 +103,18 @@ VC++でのC++11の機能一覧&lt;/p&gt;&lt;/li&gt;
       <pubDate>Sun, 23 Mar 2014 00:25:28 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/</guid>
-      <description>&lt;p&gt;MVP Community Camp 2014大阪にて、VC++系のセッションをさせて頂きました&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;MVP Community Camp 2014大阪会場&lt;/b&gt;&lt;br /&gt;
-&lt;code&gt;http://atnd.org/event/E0024087&lt;/code&gt; (リンク先は削除されている模様です)&lt;/p&gt;
-
-&lt;p&gt;当日利用した資料はこちら！&lt;/p&gt;
-
-&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;e0404a3c131a4376b01390157d5532f3&#34; data-ratio=&#34;1.77777777777778&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;br /&gt;　&lt;a  target=&#34;_blank&#34; href=&#34;http://jyurimaru.info/data/20140322CommunityOpenDay2014/20140322VC++async.pptx&#34;&gt;pptx版はこちら&lt;/a&gt;&amp;nbsp; ←セッション時の私的メモが欄外に載っています&lt;br /&gt;　&lt;a  target=&#34;_blank&#34; href=&#34;http://jyurimaru.info/data/20140322CommunityOpenDay2014/20140322VC++async.pdf&#34;&gt;PDF版はこちら&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;序盤はわたしの追体験発表みたいになってしまいました&lt;br /&gt;同じような疑問を持っている人や、その人なりの解釈の手助けになる様であればと思って記載しています&lt;br /&gt;&lt;br /&gt;後半部分は、VC++での非同期処理の触りだけになっていますが&lt;br /&gt;非同期での例外や中断など、C++/CXのWIndowsストアアプリでは興味深い仕組みが色々あるので&lt;br /&gt;この続きになる情報も、もっと自分なりに勉強して発信していきたいなー&lt;br /&gt;&lt;/p&gt;
-</description>
+      <description>MVP Community Camp 2014大阪にて、VC++系のセッションをさせて頂きました
+MVP Community Camp 2014大阪会場
+http://atnd.org/event/E0024087 (リンク先は削除されている模様です)
+当日利用した資料はこちら！
+ 
+pptx版はこちら&amp;nbsp; ←セッション時の私的メモが欄外に載っています
+PDF版はこちら
+序盤はわたしの追体験発表みたいになってしまいました
+同じような疑問を持っている人や、その人なりの解釈の手助けになる様であればと思って記載しています
+後半部分は、VC++での非同期処理の触りだけになっていますが
+非同期での例外や中断など、C++/CXのWIndowsストアアプリでは興味深い仕組みが色々あるので
+この続きになる情報も、もっと自分なりに勉強して発信していきたいなー</description>
     </item>
     
     <item>
@@ -370,33 +123,11 @@ VC++でのC++11の機能一覧&lt;/p&gt;&lt;/li&gt;
       <pubDate>Mon, 24 Feb 2014 00:00:00 +0000</pubDate>
       
       <guid>http://h-sao.com/blog/2014/02/24/c-anonymous-struct/</guid>
-      <description>&lt;p&gt;Hi,&lt;/p&gt;
-
-&lt;p&gt;It is very tedious to think about the name of a struct when you use to struct only once.&lt;br /&gt;
-In such a case, Anonymous structure comes in handy.&lt;/p&gt;
-
-&lt;p&gt;It is assigned to the anonymous struct&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;struct{
-        char    1st_name[0x80];
-        char    2nd_name[0x80];
- 
-    } name_tbl[] = {
-        { &amp;quot;Isami&amp;quot;,   &amp;quot;Kondou&amp;quot; },
-        { &amp;quot;Toshizo&amp;quot;, &amp;quot;Hijikata&amp;quot; },
-        { &amp;quot;Kogorou&amp;quot;, &amp;quot;Kathura&amp;quot; },
-    };
- 
-    for( i = 0; i &amp;lt; sizeof( name_tbl ); i ++ ){
-        printf( &amp;quot;%s\n&amp;quot;, name_tbl[ i ].1st_name );
-        printf( &amp;quot;%s\n&amp;quot;, name_tbl[ i ].2nd_name );
-    } 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This code is very straightforward!&lt;/p&gt;
-
-&lt;p&gt;This method is effective only when there is no necessity that you use 2 times and this structure.&lt;/p&gt;
-</description>
+      <description>Hi,
+It is very tedious to think about the name of a struct when you use to struct only once.
+In such a case, Anonymous structure comes in handy.
+It is assigned to the anonymous struct
+struct{ char 1st_name[0x80]; char 2nd_name[0x80]; } name_tbl[] = { { &amp;quot;Isami&amp;quot;, &amp;quot;Kondou&amp;quot; }, { &amp;quot;Toshizo&amp;quot;, &amp;quot;Hijikata&amp;quot; }, { &amp;quot;Kogorou&amp;quot;, &amp;quot;Kathura&amp;quot; }, }; for( i = 0; i &amp;lt; sizeof( name_tbl ); i ++ ){ printf( &amp;quot;%s\n&amp;quot;, name_tbl[ i ].</description>
     </item>
     
     <item>
@@ -405,60 +136,11 @@ In such a case, Anonymous structure comes in handy.&lt;/p&gt;
       <pubDate>Fri, 31 Jan 2014 00:00:00 +0000</pubDate>
       
       <guid>http://h-sao.com/blog/2014/01/31/cpp-sample-program/</guid>
-      <description>
-
-&lt;p&gt;Hi,&lt;/p&gt;
-
-&lt;h2 id=&#34;c-program&#34;&gt;C program&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;c00.c
-#include &amp;lt;stdio.h&amp;gt;
-
-int main()
-{
-    printf(&amp;quot;This is a native C program.\n&amp;quot;);
-    return 0;
-} 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;compile&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; cl.exe c00.c
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;c-program-1&#34;&gt;C++ program&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;c01.cpp
-#include &amp;lt;iostream&amp;gt;
-
-int main()
-{
-    std::cout &amp;lt;&amp;lt; &amp;quot;This is a native C++ program.&amp;quot; &amp;lt;&amp;lt; std::endl;
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;compile&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; cl.exe /EHsc c01.cpp
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;c-cli-program&#34;&gt;C++/CLI program&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;c02.cpp
-int main()
-{
-    System::Console::WriteLine(&amp;quot;This is a Visual C++ program.&amp;quot;);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;compile&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; cl.exe /clr c02.cpp
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;That is very interesting!&lt;/p&gt;
-</description>
+      <description>Hi,
+C program c00.c #include &amp;lt;stdio.h&amp;gt; int main() { printf(&amp;quot;This is a native C program.\n&amp;quot;); return 0; }  compile
+&amp;gt; cl.exe c00.c  C++ program c01.cpp #include &amp;lt;iostream&amp;gt; int main() { std::cout &amp;lt;&amp;lt; &amp;quot;This is a native C++ program.&amp;quot; &amp;lt;&amp;lt; std::endl; return 0; }  compile
+&amp;gt; cl.exe /EHsc c01.cpp  C++/CLI program c02.cpp int main() { System::Console::WriteLine(&amp;quot;This is a Visual C++ program.&amp;quot;); }  compile
+&amp;gt; cl.exe /clr c02.</description>
     </item>
     
     <item>
@@ -467,18 +149,12 @@ int main()
       <pubDate>Wed, 29 Jan 2014 00:00:00 +0000</pubDate>
       
       <guid>http://h-sao.com/blog/2014/01/29/how-to-program-cppcx/</guid>
-      <description>&lt;p&gt;Hi,&lt;/p&gt;
-
-&lt;p&gt;The other day, I spoke about C++/CX in Lightning Talk.&lt;/p&gt;
-
-&lt;p&gt;Click here for article&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://jyurimaru.info/data/20140118MetroTokyo03/20140118_cppcx_LT_en.pptx&#34;&gt;PPTX-How to program c++/CX&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://jyurimaru.info/data/20140118MetroTokyo03/20140118_cppcx_LT_en.pdf&#34;&gt;PDF -How to program c++/CX&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Take care!&lt;/p&gt;
-</description>
+      <description>Hi,
+The other day, I spoke about C++/CX in Lightning Talk.
+Click here for article
+PPTX-How to program c++/CX
+PDF -How to program c++/CX
+Take care!</description>
     </item>
     
     <item>
@@ -487,39 +163,10 @@ int main()
       <pubDate>Tue, 29 Jul 2008 01:17:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2008/07/29/how-to-divide-without-division/</guid>
-      <description>&lt;p&gt;ビット・シフトの計算の練習問題＜上級編＞です&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Q. 割り算をシフトと引き算のみで表現しなさい&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;A. 回答&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;// x / y = ans
-// x: 分子
-// y: 分母
-// ans:答え
-
-ans = 0;
- while( x &amp;gt;= y ){
-    dammy = y;
-    syou = 1;
-    while( x &amp;gt;= dammy ){            // 割られる数を超えるまで割る数をシフト
-        dammy = dammy &amp;lt;&amp;lt; 1;
-        syou  = syou  &amp;lt;&amp;lt; 1;
-    }
-    
-    dammy = dammy &amp;gt;&amp;gt; 1;             // 超える手前まで戻す
-    syou = syou &amp;gt;&amp;gt; 1;
-    
-    x = x - dammy;                  // 筆算
-    ans = ans + syou;               // 答え
- }
- printf( &amp;quot;%d ・・・%d\n&amp;quot;, ans, x );
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;新人研修などにどうでしょう？&lt;/p&gt;
-
-&lt;p&gt;※ 実は最後に足し算使ってますね…(&amp;gt;_&amp;lt;)&lt;/p&gt;
-</description>
+      <description>ビット・シフトの計算の練習問題＜上級編＞です
+Q. 割り算をシフトと引き算のみで表現しなさい
+A. 回答
+// x / y = ans // x: 分子 // y: 分母 // ans:答え ans = 0; while( x &amp;gt;= y ){ dammy = y; syou = 1; while( x &amp;gt;= dammy ){ // 割られる数を超えるまで割る数をシフト dammy = dammy &amp;lt;&amp;lt; 1; syou = syou &amp;lt;&amp;lt; 1; } dammy = dammy &amp;gt;&amp;gt; 1; // 超える手前まで戻す syou = syou &amp;gt;&amp;gt; 1; x = x - dammy; // 筆算 ans = ans + syou; // 答え } printf( &amp;quot;%d ・・・%d\n&amp;quot;, ans, x );  新人研修などにどうでしょう？</description>
     </item>
     
   </channel>

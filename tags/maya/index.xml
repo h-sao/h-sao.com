@@ -2,12 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Maya on Effectiveさお</title>
-    <link>http://h-sao.com/tags/maya/index.xml</link>
+    <link>http://h-sao.com/tags/maya/</link>
     <description>Recent content in Maya on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <atom:link href="http://h-sao.com/tags/maya/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Nov 2016 19:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="http://h-sao.com/tags/maya/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>[Maya] Maya2015設定ウィンドウの開き方</title>
@@ -15,100 +18,29 @@
       <pubDate>Tue, 15 Nov 2016 19:00:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2016/11/15/settings-maya2015-part1/</guid>
-      <description>
-
-&lt;p&gt;Mayaはいろんな機能がありますね…&lt;br /&gt;
-設定の開き方すら判らないという恥ずかしい思いをよくしているので、いざというときの自分のメモです&lt;/p&gt;
-
-&lt;p&gt;記載環境は、Maya2015 on Windows10 です&lt;/p&gt;
-
-&lt;h2 id=&#34;レンダリングエンジンの変更&#34;&gt;レンダリングエンジンの変更&lt;/h2&gt;
-
-&lt;p&gt;Mayaのデフォルトレンダリングは &lt;strong&gt;OpenGL&lt;/strong&gt; になっています&lt;br /&gt;
-&lt;strong&gt;DirectX11&lt;/strong&gt; に変更する方法&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;プリファレンスウィンドウを開きます&lt;br /&gt;
-&lt;strong&gt;Windows&lt;/strong&gt;&lt;br /&gt;
-　&amp;gt; &lt;strong&gt;Settings/Prederences&lt;/strong&gt;&lt;br /&gt;
-　　&amp;gt; &lt;strong&gt;Preferences&lt;/strong&gt;&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Display&lt;/strong&gt; カテゴリの &lt;strong&gt;Viewport 2.0&lt;/strong&gt; に&lt;br /&gt;
-Rendering engine を変更できるドロップダウンリストがあるので、そこで変更できる&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;レンダー設定&#34;&gt;レンダー設定&lt;/h2&gt;
-
-&lt;p&gt;上記はレンダリングエンジンについてでしたが、レンダリングの設定を触るところはまた別の箇所になっています&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;レンダー設定のウィンドウを開きます&lt;br /&gt;
-&lt;strong&gt;Windows&lt;/strong&gt;&lt;br /&gt;
-　&amp;gt; &lt;strong&gt;Rendering Editors&lt;/strong&gt;&lt;br /&gt;
-　　&amp;gt; &lt;strong&gt;Render Settings&lt;/strong&gt;&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_04.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;レンダー設定ウィンドウ&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_05.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;使うレンダリングの設定を、ここで選ぶことが出来ます&lt;br /&gt;
-わたしの場合は Maya Hardware 2.0 を選択したりしてます&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_06.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;ハードウェアレンダラ2-0設定&#34;&gt;ハードウェアレンダラ2.0設定&lt;/h2&gt;
-
-&lt;p&gt;浮動小数レンダーターゲットを有効化したいとき&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;この画面は、Maya2015固有みたいです&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Mayaの作業画面（ビューポート）の &lt;strong&gt;Renderer&lt;/strong&gt; の &lt;strong&gt;Viewport2.0&lt;/strong&gt; の横にある、四角いチェックを押してみます&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_02.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Hardware Renderer 2.0 Settings&lt;/strong&gt; のウィンドウが表示されます&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;精度を上げた浮動小数レンダリングをするには&lt;br /&gt;
-&lt;strong&gt;Floating Point Render Target&lt;/strong&gt; の Enable にチェックを入れます&lt;br /&gt;
-フォーマットは、16bit と 32bit が選択できました&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;カメラの設定&#34;&gt;カメラの設定&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;カメラアトリビュートを出すには&lt;br /&gt;
-Mayaの作業画面（ビューポート）の &lt;strong&gt;View&lt;/strong&gt; の &lt;strong&gt;Select Camera&lt;/strong&gt; を選択します&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_07.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Attribute Editor&lt;/strong&gt; がぽこっと現れます&lt;br /&gt;
-違うものが現れたときには、&lt;br /&gt;
-横のタブに &lt;strong&gt;persp&lt;/strong&gt;, &lt;strong&gt;perspShape&lt;/strong&gt;&lt;br /&gt;
-縦のタブに &lt;strong&gt;Channel Box/Layer Editor&lt;/strong&gt;, &lt;strong&gt;Attribute Editor&lt;/strong&gt; があるので&lt;br /&gt;
-開きたいものを選択します&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_08.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;インストールされているプラグイン&#34;&gt;インストールされているプラグイン&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;プラグインマネージャを開きます&lt;br /&gt;
-&lt;strong&gt;Windows&lt;/strong&gt;&lt;br /&gt;
-　&amp;gt; &lt;strong&gt;Settings/Prederences&lt;/strong&gt;&lt;br /&gt;
-　　&amp;gt; &lt;strong&gt;Plug-in Manager&lt;/strong&gt;&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_09.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;プラグイン一覧がここで見れます&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Settings-Maya2015-part1_10.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;自分の必要なメモ書きでした&lt;br /&gt;
-Mayaは奥が深いですね～&lt;/p&gt;
-</description>
+      <description>Mayaはいろんな機能がありますね…
+設定の開き方すら判らないという恥ずかしい思いをよくしているので、いざというときの自分のメモです
+記載環境は、Maya2015 on Windows10 です
+レンダリングエンジンの変更 Mayaのデフォルトレンダリングは OpenGL になっています
+DirectX11 に変更する方法
+ プリファレンスウィンドウを開きます
+Windows
+&amp;gt; Settings/Prederences
+&amp;gt; Preferences
+ Display カテゴリの Viewport 2.0 に
+Rendering engine を変更できるドロップダウンリストがあるので、そこで変更できる
+  レンダー設定 上記はレンダリングエンジンについてでしたが、レンダリングの設定を触るところはまた別の箇所になっています
+ レンダー設定のウィンドウを開きます
+Windows
+&amp;gt; Rendering Editors
+&amp;gt; Render Settings
+ レンダー設定ウィンドウ
+ 使うレンダリングの設定を、ここで選ぶことが出来ます
+わたしの場合は Maya Hardware 2.0 を選択したりしてます
+  ハードウェアレンダラ2.0設定 浮動小数レンダーターゲットを有効化したいとき
+ この画面は、Maya2015固有みたいです
+  Mayaの作業画面（ビューポート）の Renderer の Viewport2.0 の横にある、四角いチェックを押してみます
+ Hardware Renderer 2.0 Settings のウィンドウが表示されます</description>
     </item>
     
   </channel>

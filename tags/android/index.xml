@@ -2,12 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Android on Effectiveさお</title>
-    <link>http://h-sao.com/tags/android/index.xml</link>
+    <link>http://h-sao.com/tags/android/</link>
     <description>Recent content in Android on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <atom:link href="http://h-sao.com/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Aug 2017 18:40:00 +0900</lastBuildDate>
+    
+	<atom:link href="http://h-sao.com/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>[Android] 謎のエラー「Unable to start debugging.」が出たときの対応</title>
@@ -15,90 +18,19 @@
       <pubDate>Fri, 18 Aug 2017 18:40:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/</guid>
-      <description>
-
-&lt;h2 id=&#34;androidデバッグで実行時エラー&#34;&gt;Androidデバッグで実行時エラー&lt;/h2&gt;
-
-&lt;p&gt;環境&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Windows10 x64&lt;/li&gt;
-&lt;li&gt;Visual Studio 2017&lt;/li&gt;
-&lt;li&gt;Project type: Native-Activity Application (Android)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ある時…Visual Studio で作っている Android プロジェクトが、実行時エラーになりました&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/How-to-fixed-error-Unable-to-start-debugging_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Unable to start debugging. Check your debugger settings by opening project properties and navigating to &amp;lsquo;Configuration Properties&amp;ndash;&amp;gt; Debugging&amp;rsquo;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;デバック出来ないからね！プロジェクトの設定見てね！的な意味みたいですが&lt;br /&gt;
-デバッグモードで動かしてるし…&lt;br /&gt;
-一体どこの何の事を言ってるのか判らない…＞＜。&lt;/p&gt;
-
-&lt;p&gt;リリースモードならOKなのかしら？と思っても、同様のエラー&amp;rdquo;(-&amp;ldquo;&amp;rdquo;-)&amp;rdquo;&lt;/p&gt;
-
-&lt;h2 id=&#34;解決案-わたしはこれでは解決しませんでしたが&#34;&gt;解決案（わたしはこれでは解決しませんでしたが）&lt;/h2&gt;
-
-&lt;p&gt;検索しても、実のある回答は特に出てこず…&lt;br /&gt;
-唯一、解決っぽいのが、NVIDIAさんのフォーラムに載ってました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;CodeWorks for Android 1R4: Unable to start debugging - NVIDIA DEVELOPER&lt;/strong&gt;&lt;br /&gt;
-&lt;a href=&#34;https://devtalk.nvidia.com/default/topic/957019/codeworks-for-android-1r4-unable-to-start-debugging/&#34;&gt;https://devtalk.nvidia.com/default/topic/957019/codeworks-for-android-1r4-unable-to-start-debugging/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;元ネタリンクはMicrosoftさんのGitHub情報みたいです&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;MEF - GitHub Microsoft/VSProjectSystem&lt;/strong&gt;&lt;br /&gt;
-&lt;a href=&#34;https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/mef.md#mef-inside-visual-studio&#34;&gt;https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/mef.md#mef-inside-visual-studio&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;簡単に言うと、VSの &lt;strong&gt;Developer Command Prompt&lt;/strong&gt; を使って、キャッシュクリアしてみたら？というもの&lt;br /&gt;
-やってみました&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Developer Command Prompt を検索して立ち上げる&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/How-to-fixed-error-Unable-to-start-debugging_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;以下のコマンドを打つ&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Devenv /UpdateConfiguration&lt;br /&gt;
-Devenv /ClearCache&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/How-to-fixed-error-Unable-to-start-debugging_02.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;もっともらしい対策なんですけど、わたしの実行時エラーは解決しませんでした&lt;br /&gt;
-何がダメなのだろ…((+_+))&lt;/p&gt;
-
-&lt;h2 id=&#34;わたしが解決した方法&#34;&gt;わたしが解決した方法&lt;/h2&gt;
-
-&lt;p&gt;で、実際の解決策ですが…&lt;br /&gt;
-すみません、散々あーだこーだ書いてますが&lt;br /&gt;
-&lt;strong&gt;スタートアッププロジェクトの設定もれ&lt;/strong&gt; でした…( ;∀;)&lt;br /&gt;
-いやはや、お恥ずかしい…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/How-to-fixed-error-Unable-to-start-debugging_03.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Androidプロジェクトが参照する、別のプロジェクト達が&lt;br /&gt;
-同じソリューションファイルの中に複数存在しています&lt;/p&gt;
-
-&lt;p&gt;なのに、Androidプロジェクトを起動プロジェクトに設定しておらず…&lt;/p&gt;
-
-&lt;p&gt;ポカミスとはまさにこの事！( ;∀;)&lt;/p&gt;
-
-&lt;p&gt;なぜこれに気が付かなかったのか…相当焦ってて、周りが見えてなかったみたいです&lt;/p&gt;
-
-&lt;p&gt;二度と同じ過ちを繰り返さないように…＞＜。&lt;br /&gt;
-あと、同様のエラーで困ってる人の何かしらの参考になればと思います＞＜。&lt;/p&gt;
-</description>
+      <description>Androidデバッグで実行時エラー 環境
+ Windows10 x64 Visual Studio 2017 Project type: Native-Activity Application (Android)  ある時…Visual Studio で作っている Android プロジェクトが、実行時エラーになりました
+ Unable to start debugging. Check your debugger settings by opening project properties and navigating to &amp;lsquo;Configuration Properties&amp;ndash;&amp;gt; Debugging&amp;rsquo;
+ デバック出来ないからね！プロジェクトの設定見てね！的な意味みたいですが
+デバッグモードで動かしてるし…
+一体どこの何の事を言ってるのか判らない…＞＜。
+リリースモードならOKなのかしら？と思っても、同様のエラー&amp;rdquo;(-&amp;ldquo;&amp;rdquo;-)&amp;rdquo;
+解決案（わたしはこれでは解決しませんでしたが） 検索しても、実のある回答は特に出てこず…
+唯一、解決っぽいのが、NVIDIAさんのフォーラムに載ってました
+ CodeWorks for Android 1R4: Unable to start debugging - NVIDIA DEVELOPER
+https://devtalk.nvidia.com/default/topic/957019/codeworks-for-android-1r4-unable-to-start-debugging/  元ネタリンクはMicrosoftさんのGitHub情報みたいです
+ MEF - GitHub Microsoft/VSProjectSystem
+https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/mef.md#mef-inside-visual-studio  簡単に言うと、VSの Developer Command Prompt を使って、キャッシュクリアしてみたら？というもの</description>
     </item>
     
     <item>
@@ -107,141 +39,15 @@ Devenv /ClearCache&lt;/p&gt;
       <pubDate>Thu, 27 Jul 2017 18:00:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</guid>
-      <description>
-
-&lt;h2 id=&#34;どうもうまくandroidエミュレータが動かない&#34;&gt;どうもうまくAndroidエミュレータが動かない…&lt;/h2&gt;
-
-&lt;p&gt;いわゆる ADV Manager をつかって、Androidをエミューレートしたいのですが&lt;br /&gt;
-なぜかうまく起動しない…&lt;/p&gt;
-
-&lt;p&gt;環境&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Windows10 x64&lt;/li&gt;
-&lt;li&gt;Visual Studio 2017&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Android SDK Managerをよく見てみると、HAXM installer が &amp;ldquo;Not compatible with Windows&amp;rdquo; となっています&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;ふむ…&lt;br /&gt;
-無理矢理 HAXM のインストーラーをダウンロードしてきても、こんな感じでエラー&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;This computer does not support Intel Virtualization Technology (VT-x) or it is being exclusively used by Hyper-V, HAXM cannot be installed.&lt;br /&gt;
-Please ensure Hyper-V is disabled in Windows Features, or refer to the Intel HAXM documentation for more information.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;なんですと…Hyper-Vが入ってたら使えないよだと…(｀・ω・´)&lt;/p&gt;
-
-&lt;p&gt;ワタクシ、&lt;strong&gt;Android 開発のために手元の Hyper-V を辞める事は出来ないデスヨ！&lt;/strong&gt;&lt;br /&gt;
-調べてみると「&lt;strong&gt;Visual Studio Emulator for Android&lt;/strong&gt;」というHyper-Vベースで動くエミュレーターが用意されているらしいので設定してみました&lt;/p&gt;
-
-&lt;h2 id=&#34;visual-studio-emulator-for-android&#34;&gt;Visual Studio Emulator for Android&lt;/h2&gt;
-
-&lt;p&gt;すでに色んな方が同じ様な記事を書かれていますが、わたくしも今一度、再確認でございます…&lt;/p&gt;
-
-&lt;h3 id=&#34;1-まず-hyper-v-が有効なこと&#34;&gt;1. まず、Hyper-V が有効なこと&lt;/h3&gt;
-
-&lt;p&gt;（Control Panle &amp;gt; Programs and Features &amp;gt; Turn Windows features on or off）&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_02.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;2-visual-studio-2017のインストーラーで-visual-studio-emulator-for-android-を選択すること&#34;&gt;2. Visual Studio 2017のインストーラーで「Visual Studio Emulator for Android」を選択すること&lt;/h3&gt;
-
-&lt;p&gt;下の図では「Google Android Emulator」「HAXM」も選択してますが、はっきり言って&lt;br /&gt;
-この２つと、「Visual Studio Emulator for Android」は、排他の関係にあるので&lt;br /&gt;
-「Visual Studio Emulator for Android」だけ選択でOK&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;3-visual-studio-emulator-for-android-を立ち上げる&#34;&gt;3. 「Visual Studio Emulator for Android」を立ち上げる&lt;/h3&gt;
-
-&lt;p&gt;検索すると、インストールされてます&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_04.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;立ち上げたらこんな画面&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_05.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;これでまずは準備完了&lt;/p&gt;
-
-&lt;h2 id=&#34;エミュレーターの起動&#34;&gt;エミュレーターの起動&lt;/h2&gt;
-
-&lt;h3 id=&#34;1-空のプロジェクトを作る&#34;&gt;1. 空のプロジェクトを作る&lt;/h3&gt;
-
-&lt;p&gt;わたしはC++で開発したかったので、Androidプロジェクトの「Native-Activity Application (Android)」で新規作成しました&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_06.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;デバックメニューに「Visual Studio Emulator for Android」の欄が増えてますね&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_07.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;（注意！）&lt;strong&gt;「x86」を選択しないと、このエミュレーターは出てきません！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;2-visual-studio-emulator-for-android-でandroidを起動させる&#34;&gt;2. 「Visual Studio Emulator for Android」でAndroidを起動させる&lt;/h3&gt;
-
-&lt;p&gt;先ほど立ち上げた「Visual Studio Emulator for Android」のメニューより、緑の三角印を押して、エミュレーターを起動させます&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_08.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_09.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;起動できた(｀・ω・´)&lt;/p&gt;
-
-&lt;h2 id=&#34;エミュレーターが起動しない時&#34;&gt;エミュレーターが起動しない時&lt;/h2&gt;
-
-&lt;p&gt;最初、わたしはエミュレーターが起動途中でストップしてしまいました(-_-)zzz&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_10.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;The emulator is unable to connect to the device operating system:&lt;br /&gt;
-Could&amp;rsquo;t auto-detect the guest system IP address.&lt;br /&gt;
-Some functionality might be disabled.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;なんじゃこりゃ…(´・ω・`)&lt;br /&gt;
-IPうんぬんと書かれてるので、NWプロパティを見てみます&lt;/p&gt;
-
-&lt;p&gt;Conrtol Panel&lt;br /&gt;
-　＞ Network and Internet&lt;br /&gt;
-　　＞ Network Connections&lt;/p&gt;
-
-&lt;p&gt;Hyper-Vが「Visual Studio Emulator for Android」のために作ったと思われるアダプターがありました&lt;/p&gt;
-
-&lt;p&gt;わたしの場合&lt;br /&gt;
-&lt;strong&gt;vEthernet (Internal Ethernet Port Windows Phone Emulator Internal Switch)&lt;/strong&gt;&lt;br /&gt;
-という名前です&lt;/p&gt;
-
-&lt;p&gt;IPv4プロパティを見てみると、変なIPアドレスが割り当てられてる…？&lt;br /&gt;
-慌てて削除し、動的に変更する設定に変えます↓↓↓&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_11.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;いちお、NWアダプタは「識別されてないネットワーク」状態ですが&lt;br /&gt;
-エラー表示にはなっていません&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_14.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;この状態で、エミュレーターを起動させると、無事立ち上がりました(&lt;em&gt;^^&lt;/em&gt;)良かった！&lt;/p&gt;
-
-&lt;h2 id=&#34;エミュレーターでデバックする&#34;&gt;エミュレーターでデバックする&lt;/h2&gt;
-
-&lt;p&gt;VSに戻ってみると、こんな感じでエミュレーターがデバックで使えるようになってます！&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_12.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;VSからデバック実行させると&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_13.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;サンプルが動作しました&lt;/p&gt;
-
-&lt;p&gt;この状態でブレークポイントも効くので、まずは最初の設定完了って感じでしょうか&lt;br /&gt;
-パチパチ(&lt;em&gt;^^&lt;/em&gt;)&lt;/p&gt;
-
-&lt;p&gt;※ちなみに実機でデバックする時には、「x86」じゃなくて「ARM」など、その実機に合ったCPUを選択したらOKです&lt;/p&gt;
-</description>
+      <description>どうもうまくAndroidエミュレータが動かない… いわゆる ADV Manager をつかって、Androidをエミューレートしたいのですが
+なぜかうまく起動しない…
+環境
+ Windows10 x64 Visual Studio 2017  Android SDK Managerをよく見てみると、HAXM installer が &amp;ldquo;Not compatible with Windows&amp;rdquo; となっています
+ふむ…
+無理矢理 HAXM のインストーラーをダウンロードしてきても、こんな感じでエラー
+ This computer does not support Intel Virtualization Technology (VT-x) or it is being exclusively used by Hyper-V, HAXM cannot be installed.
+Please ensure Hyper-V is disabled in Windows Features, or refer to the Intel HAXM documentation for more information.
+ なんですと…Hyper-Vが入ってたら使えないよだと…(｀・ω・´)</description>
     </item>
     
     <item>
@@ -250,151 +56,22 @@ IPうんぬんと書かれてるので、NWプロパティを見てみます&lt;
       <pubDate>Tue, 06 Oct 2015 04:00:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/</guid>
-      <description>
-
-&lt;p&gt;クロスプラットフォームで開発していると、やはり最新の端末が欲しくなりますよね～&lt;/p&gt;
-
-&lt;p&gt;１年以内発売の iPhone と Windows Phone は持っているのですが&lt;br /&gt;
-そろそろ新しい Android が欲しい～と思っていたので、買ってしまいました&lt;/p&gt;
-
-&lt;p&gt;シンガポール旅行に行った際に、ブギスの電気屋街、&lt;a href=&#34;http://www.simlimsquare.com.sg/&#34;&gt;Sim Lim Square（シムリム スクウェア）&lt;/a&gt;で、今をトキメク Xiaomi（しゃおみ）デバイスを購入しました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Xiaomi&lt;/strong&gt;&lt;br /&gt;
-&lt;a href=&#34;http://www.mi.com/&#34;&gt;http://www.mi.com/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_00.JPG&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;全部で6Fまでありましたが、結局1Fのお店の品ぞろえが一番まとまってる印象でした&lt;br /&gt;
-Xiaomi正規店も1Fに入っていました&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;xiaomi-redmi-note-2&#34;&gt;Xiaomi Redmi Note 2&lt;/h2&gt;
-
-&lt;p&gt;購入したのは、&lt;strong&gt;Xiaomi Redmi Note 2&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table style=&#34;border-style: none;&#34;&gt;
- &lt;tr&gt;
-   &lt;td style=&#34;border-style: none;&#34;&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_01.JPG&#34;&gt;&lt;/td&gt;
-   &lt;td style=&#34;border-style: none;&#34;&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_02.JPG&#34;&gt;&lt;/td&gt;
- &lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;p&gt;画像のように、デフォルトでは中国語のアプリがたくさん入っています&lt;br /&gt;
-そして、Google Play Store は入っていません！&lt;/p&gt;
-
-&lt;p&gt;デフォルトのIMEが Buidu なので、まぁこのままでは、日本語が打てません(&amp;gt;&amp;lt;;)&lt;/p&gt;
-
-&lt;p&gt;なので Google Play Store をインストールする方法をメモしておきます&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;googleplay-installer-apkが最適解&#34;&gt;GooglePlay installer APKが最適解&lt;/h2&gt;
-
-&lt;p&gt;検索すると色々な方法が出てくるのですが、おそらく、&lt;strong&gt;Google installer のAPKを直接インストールする&lt;/strong&gt;のが、手っ取り早いです&lt;br /&gt;
-（チャイナストアやMIストアからGooglePlayらしきものをインストールしても、わたしの場合は、動作しませんでした）&lt;/p&gt;
-
-&lt;p&gt;情報元はこちらの Xiaomi公式コミュニティ掲示板です&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;[System Tools] Find all the Google Apps in Google installer!&lt;/strong&gt;　　
-&lt;a href=&#34;http://en.miui.com/thread-3998-1-1.html&#34;&gt;http://en.miui.com/thread-3998-1-1.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Xiaomiはすごくコミュニティも発達してるんですよね～ちゃんと英語の掲示板なので、読めました(^_^)&lt;/p&gt;
-
-&lt;p&gt;上記サイトにある、GooglePlayを入れるための Google installer をAPKからインストールします&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Google installer谷歌应用下载器.apk&lt;br /&gt;
-(1009.36 KB, Downloads: 237400)
-&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_03.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;PCから落とすなどするよりも、直接 Xiaomi デバイスからダウンロードした方が、早いと思います&lt;br /&gt;
-もしかしたら、MIアカウントを作らないとダウンロード出来ないかもしれません（わたしは作りました）&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;androidがセキュア過ぎて-思った順番にインストール出来ない&#34;&gt;Androidがセキュア過ぎて、思った順番にインストール出来ない&lt;/h2&gt;
-
-&lt;p&gt;installer を入れると、以下の４つがインストール可能になります&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Google Services Framework&lt;/li&gt;
-&lt;li&gt;Google Account Manager&lt;/li&gt;
-&lt;li&gt;Google Play services&lt;/li&gt;
-&lt;li&gt;Google Play Store&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;そのままインストールしたら良いので、おそらく、この順番でインストールが走ると思います&lt;br /&gt;
-（ここ、画面キャプチャを取り忘れたので申し訳ない）&lt;/p&gt;
-
-&lt;p&gt;ところが、1番目をインストールしようとすると、本当にインストールしていいかどうかの許可画面が出ますよね、こんな感じに…&lt;br /&gt;
-（イメージ画像です↓↓↓）&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_04.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;この画面で 「1番のアプリに対して」ユーザが許可を押そうとするときに、すでに「2番目のインストール」が動いてしまうのです&lt;/p&gt;
-
-&lt;p&gt;結果的に、 「1番のアプリの許可画面」は裏にまわってしまい&lt;br /&gt;
-「2番目のアプリの許可画面」が一番手前に来ることになります&lt;br /&gt;
-つまり最終的には、「4番目のアプリの許可画面」が最前面になります&lt;/p&gt;
-
-&lt;p&gt;入れたいアプリは Google Play Store なので、それでも良いかなと思って&lt;br /&gt;
-４→３→２→１の順にインストールするんですけど、&lt;br /&gt;
-お察しの通り、Google Play Store は起動しません&lt;br /&gt;
-おそらく、Google Services Framework とかが、Google Play Store のインストールに必要なんじゃないかなーと思います&lt;/p&gt;
-
-&lt;p&gt;なので、いったん、Google Play services、Google Play Store をアンインストールし、再度、Google Play services、Google Play Store をインストールします&lt;/p&gt;
-
-&lt;p&gt;いやー(~0~)　これで、わたしの端末で、Google Play が動くようになりました！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_05.JPG&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;その他-xiaomi-デバイスで気づいたところ&#34;&gt;その他、Xiaomi デバイスで気づいたところ&lt;/h2&gt;
-
-&lt;h4 id=&#34;日本語モードはない&#34;&gt;日本語モードはない&lt;/h4&gt;
-
-&lt;p&gt;日本語モードは入っていません&lt;br /&gt;
-ROMとか焼き直すと良いらしいですけど、まだやってないです&lt;/p&gt;
-
-&lt;h4 id=&#34;permissions-アプリがうれしい&#34;&gt;Permissions アプリがうれしい&lt;/h4&gt;
-
-&lt;p&gt;デフォルトで入っている Permittions アプリが最高に便利&lt;/p&gt;
-
-&lt;table style=&#34;border-style: none;&#34;&gt;
- &lt;tr&gt;
-   &lt;td style=&#34;border-style: none;&#34;&gt;各アプリ毎の許可&lt;/td&gt;
-   &lt;td style=&#34;border-style: none;&#34;&gt;どのアプリが使ってるか&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
-   &lt;td style=&#34;border-style: none;&#34;&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_07.png&#34;&gt;&lt;/td&gt;
-   &lt;td style=&#34;border-style: none;&#34;&gt;&lt;img src=&#34;http://h-sao.com/pic/InstallGooglePlayOnXiaomiRedmiNote2_06.png&#34;&gt;&lt;/td&gt;
- &lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&#34;simは２枚ささる&#34;&gt;SIMは２枚ささる&lt;/h4&gt;
-
-&lt;p&gt;両方LTEをつかめます&lt;br /&gt;
-ただし、片方がLTEをつかんでいるときは、もう一方はつかめない仕様です&lt;/p&gt;
-
-&lt;p&gt;なので、日本で、１番目にDocomoを刺して、２番目にauを刺す、とかして&lt;br /&gt;
-１番目はLTEでデータ通信、２番目はauで電話とメールのみ&lt;br /&gt;
-とかにしたくても、ちょっと難しいかも&lt;br /&gt;
-日本は今現在、ほぼLTEになってしまってるので、そういう活用は出来なさそうかも…？&lt;/p&gt;
-
-&lt;p&gt;どちらにしても、技適通ってない端末なので、日本では使っちゃダメ&lt;/p&gt;
-
-&lt;h4 id=&#34;まとめ&#34;&gt;まとめ&lt;/h4&gt;
-
-&lt;p&gt;もろもろ満足しています&lt;br /&gt;
-同じようにシンガポールや中国で購入した方の参考になれば～&lt;/p&gt;
-</description>
+      <description>クロスプラットフォームで開発していると、やはり最新の端末が欲しくなりますよね～
+１年以内発売の iPhone と Windows Phone は持っているのですが
+そろそろ新しい Android が欲しい～と思っていたので、買ってしまいました
+シンガポール旅行に行った際に、ブギスの電気屋街、Sim Lim Square（シムリム スクウェア）で、今をトキメク Xiaomi（しゃおみ）デバイスを購入しました
+ Xiaomi
+http://www.mi.com/  全部で6Fまでありましたが、結局1Fのお店の品ぞろえが一番まとまってる印象でした
+Xiaomi正規店も1Fに入っていました
+Xiaomi Redmi Note 2 購入したのは、Xiaomi Redmi Note 2
+     画像のように、デフォルトでは中国語のアプリがたくさん入っています
+そして、Google Play Store は入っていません！
+デフォルトのIMEが Buidu なので、まぁこのままでは、日本語が打てません(&amp;gt;&amp;lt;;)
+なので Google Play Store をインストールする方法をメモしておきます
+GooglePlay installer APKが最適解 検索すると色々な方法が出てくるのですが、おそらく、Google installer のAPKを直接インストールするのが、手っ取り早いです
+（チャイナストアやMIストアからGooglePlayらしきものをインストールしても、わたしの場合は、動作しませんでした）
+情報元はこちらの Xiaomi公式コミュニティ掲示板です
+ [System Tools] Find all the Google Apps in Google installer!　http://en.miui.com/thread-3998-1-1.html  Xiaomiはすごくコミュニティも発達してるんですよね～ちゃんと英語の掲示板なので、読めました(^_^)</description>
     </item>
     
     <item>
@@ -403,29 +80,27 @@ ROMとか焼き直すと良いらしいですけど、まだやってないで�
       <pubDate>Fri, 13 Mar 2015 22:00:51 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2015/03/13/install-android-apk/</guid>
-      <description>
-
-&lt;p&gt;ずいぶん昔から出ている情報ですが、メモっときます&lt;br /&gt;&lt;br /&gt;Android端末に自作アプリを入れるシンプルな方法です&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;android端末での準備&#34;&gt;Android端末での準備&lt;/h1&gt;
-
-&lt;p&gt;Android4.2以降の端末だと「開発者向けオプション」が非表示になってるので&lt;br /&gt;&lt;br /&gt;USBデバッグを有効にしたい場合は&lt;br /&gt;&lt;blockquote&gt;端末情報&amp;nbsp;＞ ビルド番号&lt;/blockquote&gt;&lt;br /&gt;このビルド番号を7回クリックしたら、「開発者向けオプション」が表示されます&lt;br /&gt;&lt;br /&gt;やっておくことは&lt;br /&gt;&lt;ul&gt;&lt;li&gt;設定 ＞ セキュリティ ＞ 提供元不明のアプリ　ON&lt;/li&gt;&lt;li&gt;設定 ＞ 開発者向けオプション ＞ USBデバッグ　ON&lt;/li&gt;&lt;li&gt;デバイスを提供している会社のサイトから、Android用SDKドライバをインストールする&lt;/li&gt;&lt;/ul&gt;こんなところでOK&lt;br /&gt;&lt;br /&gt;（参考）&lt;br /&gt;&lt;div&gt;&lt;a  href=&#34;http://www.yahoo-help.jp/app/answers/detail/p/601/a_id/54447/~/usb%E3%83%87%E3%83%90%E3%83%83%E3%82%B0%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%99%E3%82%8B%E3%80%81%E6%8F%90%E4%BE%9B%E5%85%83%E4%B8%8D%E6%98%8E%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%82%92%E8%A8%B1%E5%8F%AF%E3%81%99%E3%82%8B&#34; target=&#34;_blank&#34;&gt;USBデバッグを有効にする、提供元不明アプリのインストールを許可する - Yahoo!スマホマネージャーヘルプ&amp;nbsp;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;android端末にapkをインストール&#34;&gt;Android端末にAPKをインストール&lt;/h1&gt;
-
-&lt;p&gt;AndroidSDKをインストールした場所に adb tool が入っています&lt;br /&gt;&lt;br /&gt;わたしの場合は&amp;nbsp;C:\Library\android-sdk にインストールしたので、adb.exe は&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;C:\Library\android-sdk\platform-tools\adb.exe&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;よく他のサイトで、PCの環境変数パスに、C:\Library\android-sdk\platform-tools を追加設定する、というのを見かけますが&lt;br /&gt;単にこの abd.exe を使うだけであれば、環境変数への追加は必要ないです&lt;br /&gt;&lt;br /&gt;UBSでAndroid端末をPCに接続した状態で&lt;br /&gt;手元の MyApp.apk をインストールするコマンドはこちら&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt; adb install -r MyApp.apk
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;さくっとインストールできました&lt;br /&gt;&lt;br /&gt;デバイスからAPKリンクをつつくなどでも良いのですが&lt;br /&gt;開発者っぽい感じかつ、&lt;br /&gt;ちょっと手元でAPKを試したい時の参考までに(^^)/&lt;/p&gt;
-</description>
+      <description>ずいぶん昔から出ている情報ですが、メモっときます
+Android端末に自作アプリを入れるシンプルな方法です
+Android端末での準備 Android4.2以降の端末だと「開発者向けオプション」が非表示になってるので
+USBデバッグを有効にしたい場合は
+端末情報&amp;nbsp;＞ ビルド番号
+このビルド番号を7回クリックしたら、「開発者向けオプション」が表示されます
+やっておくことは
+設定 ＞ セキュリティ ＞ 提供元不明のアプリ　ON設定 ＞ 開発者向けオプション ＞ USBデバッグ　ONデバイスを提供している会社のサイトから、Android用SDKドライバをインストールするこんなところでOK
+（参考）
+USBデバッグを有効にする、提供元不明アプリのインストールを許可する - Yahoo!スマホマネージャーヘルプ&amp;nbsp;
+Android端末にAPKをインストール AndroidSDKをインストールした場所に adb tool が入っています
+わたしの場合は&amp;nbsp;C:\Library\android-sdk にインストールしたので、adb.exe は
+ C:\Library\android-sdk\platform-tools\adb.exe
+ よく他のサイトで、PCの環境変数パスに、C:\Library\android-sdk\platform-tools を追加設定する、というのを見かけますが
+単にこの abd.exe を使うだけであれば、環境変数への追加は必要ないです
+UBSでAndroid端末をPCに接続した状態で
+手元の MyApp.apk をインストールするコマンドはこちら
+adb install -r MyApp.apk  さくっとインストールできました
+デバイスからAPKリンクをつつくなどでも良いのですが
+開発者っぽい感じかつ、
+ちょっと手元でAPKを試したい時の参考までに(^^)/</description>
     </item>
     
   </channel>

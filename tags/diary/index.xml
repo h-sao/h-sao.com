@@ -2,12 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Diary on Effectiveさお</title>
-    <link>http://h-sao.com/tags/diary/index.xml</link>
+    <link>http://h-sao.com/tags/diary/</link>
     <description>Recent content in Diary on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <atom:link href="http://h-sao.com/tags/diary/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Jan 2017 16:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="http://h-sao.com/tags/diary/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>[Diary] 2017年もよろしくお願いします</title>
@@ -15,219 +18,43 @@
       <pubDate>Tue, 03 Jan 2017 16:00:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2017/01/03/hello2017/</guid>
-      <description>
-
-&lt;p&gt;遥佐保（はるか・さお）です&lt;/p&gt;
-
-&lt;p&gt;2017年最初のブログになります！&lt;br /&gt;
-今年もよろしくお願いします(^_^)&lt;/p&gt;
-
-&lt;h2 id=&#34;msmvp-2017年1月度受賞&#34;&gt;MSMVP 2017年1月度受賞&lt;/h2&gt;
-
-&lt;p&gt;なんと、&lt;strong&gt;Microsoft Most Valuable Professional&lt;/strong&gt; の再受賞を &lt;strong&gt;Windows Development&lt;/strong&gt; のカテゴリで頂きました&lt;br /&gt;
-信じられないことに、8回目の受賞となります&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/MVPLogo.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;去年はいろんなジャンルの技術を取り扱った勉強会を開催し&lt;br /&gt;
-何のかんのと楽しく過ごさせていただきました&lt;/p&gt;
-
-&lt;p&gt;それもこれも、関わってくださる全ての方とのつながり、出会いあってこそだと、いつも思っております&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;講演を快諾してくださる講師さま&lt;/strong&gt;、&lt;br /&gt;
-&lt;strong&gt;オンラインという場所と時間が限られてしまう勉強会に参加してくださるみなさま&lt;/strong&gt;、&lt;br /&gt;
-&lt;strong&gt;コミュニティ活動を支援してくださる上司&lt;/strong&gt;、&lt;/p&gt;
-
-&lt;p&gt;そして何より、&lt;strong&gt;一緒に勉強会を盛り上げてくれるスタッフのみなさま&lt;/strong&gt;、&lt;/p&gt;
-
-&lt;p&gt;本当に本当に、いつもわたくしの思い付きの様な企画に&lt;br /&gt;
-お付き合いくださいまして、ありがとうございます&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;年末にやった meetup app tokyo@2 の様子&lt;br /&gt;
-めっちゃ勉強になったし、緊張した&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/portrait-meetupapptokyo2.JPG&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;また、有志のコミュニティを支援するプログラムを&lt;br /&gt;
-企業として変わらず提供し続けて下さるマイクロソフト社にも&lt;br /&gt;
-変わらず感謝しております&lt;/p&gt;
-
-&lt;p&gt;自ブログに記載するには大変恐縮ではありますが、僭越ながらお礼申し上げます&lt;br /&gt;
-本当にありがとうございます&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Microsoft Global Summit 2017に招待された時のレジストレーション会場になった Hotel Hyatt(^^)
-居心地最高でした&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Hello2017_00.JPG&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;昨年度の活動&#34;&gt;昨年度の活動&lt;/h2&gt;
-
-&lt;p&gt;去年は、ひそかに1月のマイクロソフト社主催のインターナルイベントにて、ちょっとだけセッション持たせていただいたのを皮切りに、小規模な講演をちょこちょこと、&lt;br /&gt;
-大きなところでは、&lt;strong&gt;C++、UI、Unity、Deep Learning&lt;/strong&gt; を特集した勉強会を開催するなど、&lt;br /&gt;
-思うままに知的好奇心を満たせた感じになりました&lt;/p&gt;
-
-&lt;p&gt;仕事では良いことも悪いことも、思い返せないくらい、いろんな出来事がありまして…&lt;br /&gt;
-いやー１年、ほんとに、色々イベントがありすぎました((+_+))&lt;br /&gt;
-こんなに環境がころころ変わる体験も、なかなか珍しいと思いますが、何とか順応して（？）社会人生活を満喫しています&lt;/p&gt;
-
-&lt;p&gt;仕事の番外編ですが&lt;/p&gt;
-
-&lt;p&gt;盛岡の専門学校で講演させて頂いた晩に、&lt;br /&gt;
-現地の方々に連れて行ってもらった「&lt;strong&gt;サブカルバーAE&lt;/strong&gt;」ってところ&lt;br /&gt;
-ここ、最高です(´艸｀*)&lt;br /&gt;
-また、盛岡に出張行きたいな…&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;サブカルバーAE&lt;/strong&gt;&lt;br /&gt;
-&lt;a href=&#34;http://zenmetu.sakura.ne.jp/bar/barae.html&#34;&gt;http://zenmetu.sakura.ne.jp/bar/barae.html&lt;/a&gt;&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Hello2017_01.JPG&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;ソーシャルゲーム三昧&#34;&gt;ソーシャルゲーム三昧&lt;/h2&gt;
-
-&lt;p&gt;今年は…もうこれしかやってません&lt;br /&gt;
-毎日欠かすことなく、1日最低2時間やってます( ;∀;)&lt;br /&gt;
-最長時間は。。ここに書けないくらい長時間やってます、もう計測不能(^▽^;)&lt;br /&gt;
-いやほんとに…&lt;br /&gt;
-この時間を勉強に当てたら、すごい成果になるんだろうな…&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;神獄のヴァルハラゲート&lt;/strong&gt;&lt;br /&gt;
-&lt;a href=&#34;http://grani.jp/product/valhalla-gate/&#34;&gt;http://grani.jp/product/valhalla-gate/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;これ何って、いわゆるソーシャルゲーム全盛期の後半あたりに出た&lt;br /&gt;
-フィーチャーフォン対応のカードゲームです&lt;/p&gt;
-
-&lt;p&gt;リンク張りましたが、まぁ昔のゲームなので…わたしは好きなのでやってますが(^^♪&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;「神獄のヴァルハラゲート」&lt;br /&gt;
-無料でも遊べるけど、強くなるにはある程度のカードガチャによる課金が必要&lt;br /&gt;
-年始はお正月用のガチャ券を大盤振る舞いしてくれたり、&lt;br /&gt;
-ミッションクリア型のイベント、ランキングイベントなど&lt;br /&gt;
-毎週何かのイベントをまめにやってくれる&lt;br /&gt;
-この間の年末には、ギルド同士の連合機能が入ったりしました&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Hello2017_02.jpg&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;わたしがやり始めてもうすぐ2年経ちます、特に去年1年間は、&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;課金もしまくり&lt;br /&gt;
-隙間時間はすべてレベル上げに費やし&lt;br /&gt;
-毎日開催する1日2回の聖戦は皆勤賞&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;という素晴らしい廃人ぶりを披露してしまいました&lt;/p&gt;
-
-&lt;p&gt;おかげさまで、夜の9時には必ず帰宅し、聖戦の合間に晩御飯の準備をするという&lt;br /&gt;
-徹底したルーティンが成り立ちました(^▽^;)&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;ちなみにそれまでは、この時間帯には&lt;br /&gt;
-カフェなどで、ノマドしながら技術調査したりブログ書いてたんですけどね&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;MMO的なゲームは、これまでやったことが無かったんです…&lt;br /&gt;
-なので、勉強のつもりでやってみたのがきっかけですが、&lt;br /&gt;
-まさか自分の生活がゲーム中心になるとは(^▽^;)&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;※ギルド内の掲示板で使えるスタンプもある&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Hello2017_03.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;ただ、やり始めで分かったのは、&lt;br /&gt;
-半年やそこらでは、MMO的なやつは理解できんな、ということでした&lt;/p&gt;
-
-&lt;p&gt;こう、なんといいますか、、、人と人との関わり、薄いつながり、&lt;br /&gt;
-こういったものを如何に維持するか？ゲーム内のモチベーションを保つか？みたいな&lt;br /&gt;
-（ゲーム運営ではない）&lt;strong&gt;ギルド運営の世界&lt;/strong&gt;があるのが、よくわかりました&lt;/p&gt;
-
-&lt;p&gt;1年ちょっと前から、ギルドオーナーやってるんですけど、これは大変です( ;∀;)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;現実世界の会社のチーム運営と、変わんない&lt;/strong&gt;んですよ…&lt;br /&gt;
-手法や出来ることが異なっているだけで、根本は一緒なんだなーと思いました&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;※ギルド内の過去の戦歴は誰でも閲覧できる&lt;br /&gt;
-しょぼい戦歴しか残ってない＝オーナーや執行役の責任（統率が取れていない）&lt;br /&gt;
-ということもあり、ゲーム内における役職者の責任は重大&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Hello2017_04.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;実は昨年、ある案件でゲームプランナーさんの面接に関わらせて頂いたのですが&lt;br /&gt;
-企画経験あります、自分もMMOやってます、ソーシャルゲームやってます、と&lt;br /&gt;
-面接でいう人のバックボーンが判断出来るようになったと言いますか&lt;/p&gt;
-
-&lt;p&gt;「その人がどれくらい知ってて、経験してるか」&lt;/p&gt;
-
-&lt;p&gt;が自分なりに判断出来るようになりました&lt;/p&gt;
-
-&lt;p&gt;みんな面接では良いこと言いますもんね…&lt;br /&gt;
-すっごいコアユーザにとったら、わたしはまだまだゲーマーとしてはイージーな方かもしれませんが&lt;br /&gt;
-ほんとにゲームを色々やってて、やりこんでる人の気持ちについて&lt;br /&gt;
-（わたしが）会話して理解できるレベルにちょっとなれた気がします&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;※ま、これはあくまで副産物なんですけど…&lt;br /&gt;
-　実際は、ゲーム沼に絶賛ハマり中(´ー｀)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;ゲームの卒業は、ギルドの卒業を意味し、&lt;br /&gt;
-今まで毎日、雨の日も風の日も、盆も正月も、会ったこともないけど苦楽を共にしてきた（！？）仲間と別れる訳なので&lt;/p&gt;
-
-&lt;p&gt;自分の仲間もログインしなくなって、システム的にも終了するまでは、わたしは続けてそうです&lt;br /&gt;
-この調子だと…(^▽^;)&lt;/p&gt;
-
-&lt;h2 id=&#34;今年は&#34;&gt;今年は？&lt;/h2&gt;
-
-&lt;p&gt;こんな感じで、去年はソーシャルゲーム三昧でしたが&lt;br /&gt;
-今年は今、流行ってるらしい「&lt;strong&gt;MOBA&lt;/strong&gt;」ジャンルのゲームをやってみたいなーと思っています&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;※ MOBA：マルチプレイヤーオンラインバトル&lt;br /&gt;
-  　RPG、戦略ゲーム、アクションが混じったようなオンラインバトルゲーム&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;ちょうど、Epic Games から 「&lt;a href=&#34;https://www.epicgames.com/paragon/en-US/home&#34;&gt;PARAGON&lt;/a&gt;」も出てるし（今はまだ日本はベータ版）&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;PARAGON (&lt;a href=&#34;https://www.epicgames.com/paragon/en-US/news/v35-release-notes&#34;&gt;公式Blog&lt;/a&gt;から画像拝借…)&lt;br /&gt;
-あ、これやるために、PCのグラボ、良いやつにしないと(*ﾉωﾉ)&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Hello2017_05.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ギルドの多対多カードバトルは、日本で大人気なんですけど、&lt;br /&gt;
-海外では 相変わらずモバイルではシングル同志のP2Pゲーム が流行ってるみたい&lt;br /&gt;
-PCやPS4などでは MOBA のギルド戦が流行ってるらしいです&lt;br /&gt;
-というわけで次のターゲットは海外向け！&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;おっと、大事な技術系についてですが…&lt;br /&gt;
-会社の自分の環境がちょっと落ち着いてないので、仕事の方向はそれに左右されちゃうかな～&lt;/p&gt;
-
-&lt;p&gt;個人的には、引き続き、&lt;br /&gt;
-自分の得意なゲームグラフィック（パーティクルやエフェクト関係）の充実&lt;br /&gt;
-新規では&lt;br /&gt;
-Deep Learning へのチャレンジですかね&lt;/p&gt;
-
-&lt;p&gt;画像の Deep Learning って結構もうおなか一杯で、先人たちがやりつくした感あるんですけど&lt;br /&gt;
-ログとの組み合わせなどは、まだ成功してなさそうなんですよね&lt;/p&gt;
-
-&lt;p&gt;わたしはまだまだDeep Learningの素人なんで、どこまで食い込めるか分かりませんけど、幸い、身の回りの環境という意味で、社内には知見とデータリソースがあるので、チャレンジしがいもあるかなーって感じです&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;最後に2016年の年越しそば、おいしかった～(^ω^)&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Hello2017_06.JPG&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;ではでは、2017年も、どうぞ、よろしくお願いします！&lt;/p&gt;
-</description>
+      <description>遥佐保（はるか・さお）です
+2017年最初のブログになります！
+今年もよろしくお願いします(^_^)
+MSMVP 2017年1月度受賞 なんと、Microsoft Most Valuable Professional の再受賞を Windows Development のカテゴリで頂きました
+信じられないことに、8回目の受賞となります
+去年はいろんなジャンルの技術を取り扱った勉強会を開催し
+何のかんのと楽しく過ごさせていただきました
+それもこれも、関わってくださる全ての方とのつながり、出会いあってこそだと、いつも思っております
+講演を快諾してくださる講師さま、
+オンラインという場所と時間が限られてしまう勉強会に参加してくださるみなさま、
+コミュニティ活動を支援してくださる上司、
+そして何より、一緒に勉強会を盛り上げてくれるスタッフのみなさま、
+本当に本当に、いつもわたくしの思い付きの様な企画に
+お付き合いくださいまして、ありがとうございます
+ 年末にやった meetup app tokyo@2 の様子
+めっちゃ勉強になったし、緊張した
+  また、有志のコミュニティを支援するプログラムを
+企業として変わらず提供し続けて下さるマイクロソフト社にも
+変わらず感謝しております
+自ブログに記載するには大変恐縮ではありますが、僭越ながらお礼申し上げます
+本当にありがとうございます
+ Microsoft Global Summit 2017に招待された時のレジストレーション会場になった Hotel Hyatt(^^) 居心地最高でした
+  昨年度の活動 去年は、ひそかに1月のマイクロソフト社主催のインターナルイベントにて、ちょっとだけセッション持たせていただいたのを皮切りに、小規模な講演をちょこちょこと、
+大きなところでは、C++、UI、Unity、Deep Learning を特集した勉強会を開催するなど、
+思うままに知的好奇心を満たせた感じになりました
+仕事では良いことも悪いことも、思い返せないくらい、いろんな出来事がありまして…
+いやー１年、ほんとに、色々イベントがありすぎました((+_+))
+こんなに環境がころころ変わる体験も、なかなか珍しいと思いますが、何とか順応して（？）社会人生活を満喫しています
+仕事の番外編ですが
+盛岡の専門学校で講演させて頂いた晩に、
+現地の方々に連れて行ってもらった「サブカルバーAE」ってところ
+ここ、最高です(´艸｀*)
+また、盛岡に出張行きたいな…
+ サブカルバーAE
+http://zenmetu.sakura.ne.jp/bar/barae.html
+  ソーシャルゲーム三昧 今年は…もうこれしかやってません
+毎日欠かすことなく、1日最低2時間やってます( ;∀;)</description>
     </item>
     
     <item>
@@ -236,157 +63,43 @@ Deep Learning へのチャレンジですかね&lt;/p&gt;
       <pubDate>Mon, 04 Jan 2016 16:30:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2016/01/04/hello2016/</guid>
-      <description>
-
-&lt;p&gt;遥佐保（はるか・さお）です&lt;br /&gt;
-今年もよろしくお願いしますと共に、去年から気になっていることも踏まえて、記載しています&lt;/p&gt;
-
-&lt;h2 id=&#34;msmvp-2016年1月度受賞&#34;&gt;MSMVP 2016年1月度受賞&lt;/h2&gt;
-
-&lt;p&gt;今年もマイクロソフトさまより MVP を再受賞させて頂きました&lt;/p&gt;
-
-&lt;p&gt;カテゴリー名称は Windows Development となります
-昨年と変わらず、クライアントサイドの技術カテゴリーでの受賞となります&lt;/p&gt;
-
-&lt;p&gt;自分ひとりだけでは、とても活動は続けられませんでした&lt;br /&gt;
-気さくに相談できる相手が、周りにたくさん居てくださるおかげです&lt;/p&gt;
-
-&lt;p&gt;プラス思考でこれからも色々な情報発信を行っていきたいと思います&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/MVPLogo.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;コミュニティ活動&#34;&gt;コミュニティ活動&lt;/h2&gt;
-
-&lt;p&gt;ブログ移転を機会に、自分の歴史ページを作りました&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://h-sao.com/about/&#34;&gt;http://h-sao.com/about/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;いやーよくわかりますね、自分の活動履歴が…ヽ(｀▽´)/&lt;br /&gt;
-リンクなどまだ未記載のものがほどんどですけど、頃を見て更新していきます&lt;/p&gt;
-
-&lt;p&gt;去年はセッション6回、勉強会主催8回/スタッフ3回でした&lt;br /&gt;
-環境が変わったこともあり、例年よりはちょっと少なかったかも&lt;/p&gt;
-
-&lt;h2 id=&#34;東京生活&#34;&gt;東京生活&lt;/h2&gt;
-
-&lt;p&gt;あまり自身のことはこれまで書いてこなかったのですが、今年は活動場所を大阪から東京に移しました&lt;br /&gt;
-慣れたような慣れないような？まぁそれでも元気にやっています&lt;/p&gt;
-
-&lt;p&gt;完全に私見ですが、文化の違いを一番痛感したのは食事でしょうか…&lt;br /&gt;
-東京はどのお店も蕎麦と寿司が美味しい気がします&lt;br /&gt;
-逆に他の和食系は、関西とちょっと料理法が違うようで、最初はかなり衝撃的でした(^^;)&lt;br /&gt;
-あぁ、お好み焼き定食が懐かしい限りです(^^) 東京にはありません&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;年越しそば、美味しかった(^ω^)
-&lt;img src=&#34;http://h-sao.com/pic/Hello2016_01.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;仕事が変わったので、出社時間が遅い環境になりました、朝弱いので、本当にアリガタイ…&lt;/p&gt;
-
-&lt;h2 id=&#34;グラフィック技術&#34;&gt;グラフィック技術&lt;/h2&gt;
-
-&lt;p&gt;元々コンシューマーゲームでエフェクトシステム全般（パーティクル、スプライト、フィルター系など）を担当していたので、そこでの知識が多少生かせるような形になりました&lt;/p&gt;
-
-&lt;p&gt;一番の衝撃は、Vulkanの低レイヤAPIを見て、まじ時代錯誤？いややわーこれ管理するのんーと(笑)&lt;/p&gt;
-
-&lt;p&gt;今まだ正式に情報は出ていませんが、このNVIDIAが出しているムービーはすごく判りやすくて、いい内容です&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;NVIDIA SIGGRAPH 2015 Conference（英語、１時間あるよ）&lt;br /&gt;
-&lt;a href=&#34;https://www.youtube.com/watch?v=8xBuAdnIrJQ&#34;&gt;https://www.youtube.com/watch?v=8xBuAdnIrJQ&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Metalにしろ、これにしろ&lt;br /&gt;
-ひとつのゲームチームで対応できる範囲を超えてる感じはあります(^^;)&lt;/p&gt;
-
-&lt;h2 id=&#34;インディゲーム開発者&#34;&gt;インディゲーム開発者&lt;/h2&gt;
-
-&lt;p&gt;去年はインディゲーマーの方々と知り合えたのは本当に自分にとってラッキーでした&lt;/p&gt;
-
-&lt;p&gt;彼らと話をしていたら、やりたいことは何なのか？→ゲーム作りに専念したい&lt;br /&gt;
-といった、物事の真の部分（みたいなもの）を、純粋に考えられるようになりました&lt;/p&gt;
-
-&lt;p&gt;そこには、製品も開発言語もただの道具で、本当にやりたいことがあるなら能力は後から付いてくる&lt;br /&gt;
-という、ごく自然で純粋な情熱が溢れていました&lt;/p&gt;
-
-&lt;p&gt;中でも、「&lt;strong&gt;Game a Week&lt;/strong&gt;」という開発手法は衝撃的です&lt;br /&gt;
-知ってましたか？1週間に1本、ゲームを作るのです&lt;br /&gt;
-どんなにクソゲーでも、作る期間は1週間&lt;br /&gt;
-そしてそれを公開すべしと&lt;/p&gt;
-
-&lt;p&gt;言い出したのは &lt;a href=&#34;https://twitter.com/tha_rami&#34;&gt;Rami Ismail&lt;/a&gt;さんらしいです、カッコいいよ…&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Game A Week: Getting Experienced At Failure&lt;br /&gt;
-&lt;a href=&#34;http://www.gamasutra.com/blogs/RamiIsmail/20140226/211807/Game_A_Week_Getting_Experienced_At_Failure.php&#34;&gt;http://www.gamasutra.com/blogs/RamiIsmail/20140226/211807/Game_A_Week_Getting_Experienced_At_Failure.php&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;彼に触発されて作り始めたという、&lt;a href=&#34;https://twitter.com/moppppin&#34;&gt;もっぴん&lt;/a&gt;さんの Downwell は本当に尊敬すべき実践ですね&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Downwell&lt;br /&gt;
-&lt;a href=&#34;https://itunes.apple.com/jp/app/downwell/id1032708262&#34;&gt;https://itunes.apple.com/jp/app/downwell/id1032708262&lt;/a&gt;&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Hello2016_00.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;社内インディ&#34;&gt;社内インディ&lt;/h2&gt;
-
-&lt;p&gt;言葉の通り、社内インディゲームを作っていました&lt;br /&gt;
-2つチャレンジし、1つはまぁ遊べる程度になり、もう1つはモックで終了してしまいました&lt;/p&gt;
-
-&lt;p&gt;プログラマ（自分）と、デザイナーの人と二人でやったのは、実は初めての体験です&lt;br /&gt;
-わたしは大人数で作った経験しかなかったのでかなり不安でしたが、意外とやれるもんやなー、と思いました&lt;/p&gt;
-
-&lt;p&gt;一番大事なのは、「操作デモ」と「デモゲーム」は違うということ&lt;/p&gt;
-
-&lt;p&gt;デモゲームは、あくまでゲームなんで、未完成でもいいからとにかく面白い要素がないとダメなんですよね…&lt;br /&gt;
-それに比べて、単に操作できるだけのアプリは、ただのデモです&lt;br /&gt;
-その違いを理解できる人、できない人がこの世の中にいることを痛感し、喧嘩もした年でした&lt;/p&gt;
-
-&lt;p&gt;この活動は、今年はもう少しピッチ上げて、一番下に書いた個人活動と共に、これからも続けていきたいです&lt;/p&gt;
-
-&lt;h2 id=&#34;英語&#34;&gt;英語&lt;/h2&gt;
-
-&lt;p&gt;去年から職場で英会話が必要になりました&lt;br /&gt;
-はじめは戸惑いましたが、&lt;br /&gt;
-最近はそんなに困らなくなりました&lt;/p&gt;
-
-&lt;p&gt;というのは、わたしの英語力が上がったのではなく&lt;br /&gt;
-技術的なベースをお互い持っているから、話し方のコツが判った、というオチなんですけど…&lt;/p&gt;
-
-&lt;p&gt;つまりカジュアルな日常会話はダメです、これ、とても難しいですね～&lt;br /&gt;
-あと、交渉前提のディスカッションも難しい&lt;br /&gt;
-とはいえ物おじせずにしゃべれるようになれたのは、良かったかなと思っています&lt;/p&gt;
-
-&lt;p&gt;引き続き、英会話の勉強しないとなーを実感しているところです&lt;br /&gt;
-もうちょっと長い文章がしゃべれるようにならないと、これ以上は一生上達しない気がします&lt;/p&gt;
-
-&lt;h2 id=&#34;エレキギター&#34;&gt;エレキギター&lt;/h2&gt;
-
-&lt;p&gt;大阪で教えていただいていた先生に、帰省の際にレッスンしてもらっています&lt;br /&gt;
-さすがに触る機会はちょっと減っちゃったけど、期間が開いてもできる練習法を教えてもらって、楽しくやってます&lt;/p&gt;
-
-&lt;p&gt;これもこれで続けていくぞー(^o^)&lt;/p&gt;
-
-&lt;h2 id=&#34;もろもろ踏まえた今年の私的キーワード&#34;&gt;もろもろ踏まえた今年の私的キーワード&lt;/h2&gt;
-
-&lt;p&gt;仕事では大きな案件が決まったので、今年は佳境な年になりそうです&lt;/p&gt;
-
-&lt;p&gt;去年は仕事で、C#ばかり触っていたので、C++のプロジェクトを作成する機会が激減しました&lt;br /&gt;
-少し離れて思うのは、C++脳はC#では使わない能力が必要とされるので、筋トレみたいに続けとかないと辛いなぁというところでしょうか&lt;br /&gt;
-C++の勉強会や集まりなど、筋トレは続けたいです…&lt;/p&gt;
-
-&lt;p&gt;あと、これは相当難しいのですが、Game a Week はチャレンジしたい…せめて4回くらいは回したいですね（低い目標のくせに、宣言してすみません&lt;br /&gt;
-月曜0:00～日曜23:59ということなので、今日は一つ、プロジェクトを作りました&lt;br /&gt;
-口だけの結果が伴わない最低な奴にならないように（独自ルールに変えるかもしれませんが！）チャレンジしていきます&lt;/p&gt;
-
-&lt;p&gt;最後に、コミュニティ活動は、メインはもちろん「オープンソース」関係&lt;br /&gt;
-ただ、自分はサーバーサイドの人ではないので、フロントエンド系の技術がメインになると思います&lt;br /&gt;
-今年は自分のかかわる範囲を広げて、世の中の技術を幅広く知って発信する活動を行っていきます //ビシッ&lt;/p&gt;
-
-&lt;p&gt;ではでは、2016年も、どうぞ、よろしくお願いします！&lt;/p&gt;
-</description>
+      <description>遥佐保（はるか・さお）です
+今年もよろしくお願いしますと共に、去年から気になっていることも踏まえて、記載しています
+MSMVP 2016年1月度受賞 今年もマイクロソフトさまより MVP を再受賞させて頂きました
+カテゴリー名称は Windows Development となります 昨年と変わらず、クライアントサイドの技術カテゴリーでの受賞となります
+自分ひとりだけでは、とても活動は続けられませんでした
+気さくに相談できる相手が、周りにたくさん居てくださるおかげです
+プラス思考でこれからも色々な情報発信を行っていきたいと思います
+コミュニティ活動 ブログ移転を機会に、自分の歴史ページを作りました
+http://h-sao.com/about/
+いやーよくわかりますね、自分の活動履歴が…ヽ(｀▽´)/
+リンクなどまだ未記載のものがほどんどですけど、頃を見て更新していきます
+去年はセッション6回、勉強会主催8回/スタッフ3回でした
+環境が変わったこともあり、例年よりはちょっと少なかったかも
+東京生活 あまり自身のことはこれまで書いてこなかったのですが、今年は活動場所を大阪から東京に移しました
+慣れたような慣れないような？まぁそれでも元気にやっています
+完全に私見ですが、文化の違いを一番痛感したのは食事でしょうか…
+東京はどのお店も蕎麦と寿司が美味しい気がします
+逆に他の和食系は、関西とちょっと料理法が違うようで、最初はかなり衝撃的でした(^^;)
+あぁ、お好み焼き定食が懐かしい限りです(^^) 東京にはありません
+ 年越しそば、美味しかった(^ω^)  仕事が変わったので、出社時間が遅い環境になりました、朝弱いので、本当にアリガタイ…
+グラフィック技術 元々コンシューマーゲームでエフェクトシステム全般（パーティクル、スプライト、フィルター系など）を担当していたので、そこでの知識が多少生かせるような形になりました
+一番の衝撃は、Vulkanの低レイヤAPIを見て、まじ時代錯誤？いややわーこれ管理するのんーと(笑)
+今まだ正式に情報は出ていませんが、このNVIDIAが出しているムービーはすごく判りやすくて、いい内容です
+ NVIDIA SIGGRAPH 2015 Conference（英語、１時間あるよ）
+https://www.youtube.com/watch?v=8xBuAdnIrJQ  Metalにしろ、これにしろ
+ひとつのゲームチームで対応できる範囲を超えてる感じはあります(^^;)
+インディゲーム開発者 去年はインディゲーマーの方々と知り合えたのは本当に自分にとってラッキーでした
+彼らと話をしていたら、やりたいことは何なのか？→ゲーム作りに専念したい
+といった、物事の真の部分（みたいなもの）を、純粋に考えられるようになりました
+そこには、製品も開発言語もただの道具で、本当にやりたいことがあるなら能力は後から付いてくる
+という、ごく自然で純粋な情熱が溢れていました
+中でも、「Game a Week」という開発手法は衝撃的です
+知ってましたか？1週間に1本、ゲームを作るのです
+どんなにクソゲーでも、作る期間は1週間
+そしてそれを公開すべしと
+言い出したのは Rami Ismailさんらしいです、カッコいいよ…
+ Game A Week: Getting Experienced At Failure</description>
     </item>
     
     <item>
@@ -395,10 +108,31 @@ C++の勉強会や集まりなど、筋トレは続けたいです…&lt;/p&gt;
       <pubDate>Fri, 02 Jan 2015 01:01:26 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2015/01/02/hello2015/</guid>
-      <description>&lt;p&gt;遥佐保（はるか・さお）です&lt;br /&gt;&lt;br /&gt;今年もマイクロソフトさまより MVP を受賞させて頂きました&lt;br /&gt;&lt;br /&gt;カテゴリー名称は &lt;b&gt;Windows Platform Development&lt;/b&gt; となります&lt;br /&gt;昨年と変わらず、クライアントサイドの技術カテゴリーでの受賞となります&lt;br /&gt;&lt;br /&gt;クライアントサイドというのは、わたしの解釈では、PCやモバイル端末に関する技術のことを指します&lt;br /&gt;わたしは特に、Windows Runtime について、知的好奇心を満たすための試みを去年はたくさん行いました&lt;br /&gt;これはサーバ、クラウドとはちょっとジャンルが違いますね&lt;br /&gt;また、開発言語やアプリケーションのジャンルとも少し違いますね&lt;br /&gt;&lt;br /&gt;そしてこの、マイクロソフトMVPとは、何かしらの形で技術コミュニティに貢献した結果、マイクロソフト社がアワードとして個人を表彰する制度のようです&lt;br /&gt;&lt;br /&gt;マイクロソフトの技術に中立的もしくは否定的な方にとったら&lt;br /&gt;お前だから何なんだよって思う方も多くいらっしゃると思います&lt;br /&gt;&lt;br /&gt;去年は非常にそれを多く感じた１年でもありました&lt;br /&gt;たぶんピュアなC++について、例年よりも、たくさん勉強したからですね(*´ω｀)&lt;br /&gt;&lt;br /&gt;OSS的な発想の方との関わりも例年に比べて多かったです&lt;br /&gt;マイクロソフトの好意的なコミュニティの輪から外れた体感も多く出来ました&lt;br /&gt;&lt;br /&gt;そこでは、勉強しようという姿勢が自分の中にあったら&lt;br /&gt;自分自身のメインが何であれ、全否定はされないということがよく判りました&lt;br /&gt;&lt;br /&gt;助けてくれる人も多くて、本当に本当に、沢山の人に助けられました&lt;br /&gt;お礼を自分のブログに書くなんて、とてもおこがましい行為なのですが、本当にありがとうございました&lt;br /&gt;&lt;br /&gt;MSマンセーのわたくしが記載するのも全くもってナンセンスではありますが&lt;br /&gt;今年も何かを維持し続けることが出来たというのは、自分でもまーよくやったんじゃないかと思います…&lt;br /&gt;&lt;br /&gt;自信をもって、謙虚を忘れず、これからも日々精進してゆきたいと思います&lt;br /&gt;&lt;br /&gt;これも、周りの方々のおかげです&lt;br /&gt;重ねてですが、本当にありがとうございました&lt;br /&gt;&lt;br /&gt;2015年もよろしくお願いします！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/MVPLogo.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
+      <description>遥佐保（はるか・さお）です
+今年もマイクロソフトさまより MVP を受賞させて頂きました
+カテゴリー名称は Windows Platform Development となります
+昨年と変わらず、クライアントサイドの技術カテゴリーでの受賞となります
+クライアントサイドというのは、わたしの解釈では、PCやモバイル端末に関する技術のことを指します
+わたしは特に、Windows Runtime について、知的好奇心を満たすための試みを去年はたくさん行いました
+これはサーバ、クラウドとはちょっとジャンルが違いますね
+また、開発言語やアプリケーションのジャンルとも少し違いますね
+そしてこの、マイクロソフトMVPとは、何かしらの形で技術コミュニティに貢献した結果、マイクロソフト社がアワードとして個人を表彰する制度のようです
+マイクロソフトの技術に中立的もしくは否定的な方にとったら
+お前だから何なんだよって思う方も多くいらっしゃると思います
+去年は非常にそれを多く感じた１年でもありました
+たぶんピュアなC++について、例年よりも、たくさん勉強したからですね(*´ω｀)
+OSS的な発想の方との関わりも例年に比べて多かったです
+マイクロソフトの好意的なコミュニティの輪から外れた体感も多く出来ました
+そこでは、勉強しようという姿勢が自分の中にあったら
+自分自身のメインが何であれ、全否定はされないということがよく判りました
+助けてくれる人も多くて、本当に本当に、沢山の人に助けられました
+お礼を自分のブログに書くなんて、とてもおこがましい行為なのですが、本当にありがとうございました
+MSマンセーのわたくしが記載するのも全くもってナンセンスではありますが
+今年も何かを維持し続けることが出来たというのは、自分でもまーよくやったんじゃないかと思います…
+自信をもって、謙虚を忘れず、これからも日々精進してゆきたいと思います
+これも、周りの方々のおかげです
+重ねてですが、本当にありがとうございました
+2015年もよろしくお願いします！</description>
     </item>
     
     <item>
@@ -407,16 +141,11 @@ C++の勉強会や集まりなど、筋トレは続けたいです…&lt;/p&gt;
       <pubDate>Tue, 28 Jan 2014 00:00:00 +0000</pubDate>
       
       <guid>http://h-sao.com/blog/2014/01/28/hello-world/</guid>
-      <description>&lt;p&gt;Hi,&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;m Sao Haruka :)&lt;/p&gt;
-
-&lt;p&gt;Japanese programmer&lt;/p&gt;
-
-&lt;p&gt;I have started this English blog since Jan 28, 2014.&lt;/p&gt;
-
-&lt;p&gt;Thank you.&lt;/p&gt;
-</description>
+      <description>Hi,
+I&amp;rsquo;m Sao Haruka :)
+Japanese programmer
+I have started this English blog since Jan 28, 2014.
+Thank you.</description>
     </item>
     
   </channel>

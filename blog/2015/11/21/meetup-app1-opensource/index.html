@@ -7,15 +7,16 @@
         <meta name="author">
         <meta name="description" content="The awesome blog of Sao Haruka.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.18.1" />
-          <link href="http://h-sao.com/post/index.xml" rel="alternate" type="application/rss+xml" title="Effectiveさお" />
-          <link href="http://h-sao.com/post/index.xml" rel="feed" type="application/rss+xml" title="Effectiveさお" />
+        <meta name="generator" content="Hugo 0.32.2" />
+        <link href="http://h-sao.com/post/index.xml" rel="alternate" type="application/rss+xml" title="Effectiveさお" />
+        <link href="http://h-sao.com/post/index.xml" rel="feed" type="application/rss+xml" title="Effectiveさお" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="http://h-sao.com/css/styles.css">
-        <link rel="icon" href="http://h-sao.com/favicon.png">
+        <link rel="icon" href="http://h-sao.com/favicon.ico">
         <link rel="apple-touch-icon" href="http://h-sao.com/apple-touch-icon.png" />
         <link rel="stylesheet" href="http://h-sao.com/css/highlightjs/monokai.css">
         <script src="http://h-sao.com/js/vendor/modernizr-2.8.0.min.js"></script>
+        
         <style>
         .site-header h2 .logo {
         background: url(http://h-sao.com/pic/SiteTop.jpg) no-repeat 0 0;
@@ -26,6 +27,7 @@
         }}
        .site-header {
          background: #2a373d url(http://h-sao.com/pic/SiteTop.jpg) no-repeat center center;
+         
         }
         </style>
     </head>
@@ -33,29 +35,31 @@
         
         <header class="site-header">
           <div class="transparent-layer">
-              <h2><a href="http://h-sao.com">Effectiveさお</a></h2>
+            <h2><a href="http://h-sao.com">Effectiveさお</a></h2>
           </div>
         </header>
-          <div class="pankuzu-layer">
-              <a href="http://h-sao.com/about">About me</a>
-          </div>
+        <div class="pankuzu-layer">
+            <a href="http://h-sao.com/about">About me</a>
+        </div>
 
 
 <div class="container clearfix">
     <main role="main" class="content">
         <article class="post">
-            <a class="btn" href="http://h-sao.com/" title="">&laquo; </a>
+            <a class="btn home" href="http://h-sao.com/" title="">&laquo; </a>
             
 <h1><a href="http://h-sao.com/blog/2015/11/21/meetup-app1-opensource/" title="[勉強会] meetup app@1 でオープンソースについて発表しました">[勉強会] meetup app@1 でオープンソースについて発表しました</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2015.11.21">2015.11.21</time>
-&middot; 
     
-    <a href="http://h-sao.com/tags/community">community</a>
-    , 
-    
-    <a href="http://h-sao.com/tags/opensource">opensource</a>
-    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/community">community</a>
+        , 
+        
+        <a href="http://h-sao.com/tags/opensource">opensource</a>
+        
+        
     
 
 </span>
@@ -94,24 +98,31 @@
 </ul>
 
         </article>
+        
         <div class="comments">
             <h3></h3>
             <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'harukasao';
-    var disqus_identifier = 'http:\/\/h-sao.com\/blog\/2015\/11\/21\/meetup-app1-opensource\/';
-    var disqus_title = '[勉強会] meetup app@1 でオープンソースについて発表しました';
-    var disqus_url = 'http:\/\/h-sao.com\/blog\/2015\/11\/21\/meetup-app1-opensource\/';
-
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "harukasao" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         </div>
+        
     </main>
     <aside class="author">
   <img class="profile-image" src="http://h-sao.com/pic/saoharuka128.png" alt="遥佐保/Sao Haruka" />
@@ -120,7 +131,10 @@
   <p class="address">Japan</p>
   <p class="link"></p>
   <ul class="social">
-    <li><a href="//twitter.com/hr_sao" class="icon-twitter" target="_blank" title="Twitter"></a></li>
+    
+<li><a href="//twitter.com/hr_sao" class="icon-twitter" target="_blank" title="Twitter"></a></li>
+
+
 
 
 
@@ -133,6 +147,7 @@
 
 
 <li><a href="//github.com/h-sao" class="icon-github" target="_blank" title="Github"></a></li>
+
 
 
 
@@ -586,15 +601,17 @@
 
 <footer class="main-footer">
   <div class="container clearfix">
-        <a class="icon-rss" href="http://h-sao.com/post/index.xml" title="RSS"></a>
-        <p>&copy; 2017 &middot; Copyright © Sao Haruka<br> Powered by <a href="http://gohugo.io">Hugo</a>.</p>
+      <a class="icon-rss" href="http://h-sao.com/post/index.xml" title="RSS"></a>
+      <p>&copy; 2018 &middot; Copyright © Sao Haruka<br> Powered by <a href="http://gohugo.io">Hugo</a>.</p>
   </div>
 </footer>
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<script>window.jQuery || document.write('<script src="http:\/\/h-sao.com\/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="http:\/\/h-sao.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
 <script src="http://h-sao.com/js/plugins.js"></script>
+
 
 <!-- Google Analytics -->
 <script>

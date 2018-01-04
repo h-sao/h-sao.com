@@ -2,12 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unity on Effectiveさお</title>
-    <link>http://h-sao.com/tags/unity/index.xml</link>
+    <link>http://h-sao.com/tags/unity/</link>
     <description>Recent content in Unity on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <atom:link href="http://h-sao.com/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Nov 2017 09:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="http://h-sao.com/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>[Unity] Unityのライセンス情報をアンインストールしたい</title>
@@ -15,92 +18,40 @@
       <pubDate>Thu, 02 Nov 2017 09:00:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2017/11/02/how-to-uninstall-unity-license-information/</guid>
-      <description>
-
-&lt;p&gt;Unityをアンインストールしたけど、あれ？ライセンス情報が残ってる(?_?)&lt;br /&gt;
-というのが調べたきっかけです&lt;/p&gt;
-
-&lt;p&gt;PCからUnityの情報を完全消去したいときの参考に&lt;/p&gt;
-
-&lt;h2 id=&#34;ライセンス情報-unity5-x系&#34;&gt;ライセンス情報 (Unity5.x系)&lt;/h2&gt;
-
-&lt;p&gt;ライセンスファイルは、Unityをアンインストールしても消えません＞＜&lt;/p&gt;
-
-&lt;p&gt;以下にライセンスファイル(.ulfファイル)が残っています&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;C:/ProgramData/Unity/Unity_v5.x.ulf&lt;/li&gt;
-&lt;li&gt;C:/Users/(username)/AppData/Local/VirtualStore/ProgramData/Unity/&lt;br /&gt;
-（UACで C:/ProgramData/Unity/ へアクセス制限されてる時）&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;で…&lt;/p&gt;
-
-&lt;p&gt;確かに上記を消したら、アクティベーション情報は消えるのですが&lt;br /&gt;
-Unityにログインしたユーザ情報は残ってる様です&lt;/p&gt;
-
-&lt;p&gt;キャッシュ的なものも消さないと、完全アンインストールにはならないみたい&lt;/p&gt;
-
-&lt;h2 id=&#34;その他-アンインストールで消えないディレクトリ&#34;&gt;その他、アンインストールで消えないディレクトリ&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;C:/Users/(username)/AppData/Local/Unity&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;C:/Users/(username)/AppData/Roaming/Unity&lt;br /&gt;
-上記２点には、エディタに関する何か？キャッシュ的な何か？が残っています&lt;br /&gt;
-起動した際の、Unityプロジェクトの表示とか…&lt;br /&gt;
-おそらくこの２つのディレクトリ以下に、ユーザ情報も入ってるみたいです&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;C:/Users/(username)/AppData/RoamingLocalLow/Unity&lt;br /&gt;
-この下もちょっとよく判らないですが、&lt;br /&gt;
-このディレクトリ配下の「Asset Store-5.x」の下には&lt;br /&gt;
-アセットストアからダウンロードしてきたパッケージファイルが入っていました&lt;br /&gt;
-（.unitypackage）&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
-
-&lt;p&gt;逆の言い方をすると、&lt;br /&gt;
-上に書いたディレクトリ４つ&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;C:/ProgramData/Unity/&lt;/li&gt;
-&lt;li&gt;C:/Users/(username)/AppData/Local/Unity&lt;/li&gt;
-&lt;li&gt;C:/Users/(username)/AppData/Roaming/Unity&lt;/li&gt;
-&lt;li&gt;C:/Users/(username)/AppData/RoamingLocalLow/Unity&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;を消せば、Unityをアンインストールしなくても&lt;br /&gt;
-ライセンス情報のリセット、ユーザ情報のリセットが可能でした&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;もちろん&lt;br /&gt;
-C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x&lt;br /&gt;
-の下は、ライセンスファイルとは無関係みたいです&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;unity2017系は&#34;&gt;Unity2017系は？&lt;/h2&gt;
-
-&lt;p&gt;Unity2017 では、ライセンスディレクトリは同様で、ライセンスファイル名が&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Unity_lic.ulf&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;になってるみたいです&lt;br /&gt;
-（消さないといけないディレクトリまでは、2017系では調べてないので、ごめんなさい）&lt;/p&gt;
-
-&lt;p&gt;参考：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;アクティベーションに関する FAQ - Unity公式&lt;br /&gt;
-&lt;a href=&#34;https://docs.unity3d.com/ja/current/Manual/ActivationFAQ.html&#34;&gt;https://docs.unity3d.com/ja/current/Manual/ActivationFAQ.html&lt;/a&gt;(日本語)&lt;br /&gt;
-&lt;a href=&#34;https://docs.unity3d.com/Manual/ActivationFAQ.html&#34;&gt;https://docs.unity3d.com/Manual/ActivationFAQ.html&lt;/a&gt;(英語)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Unityの再インストール - FreelyApps&lt;br /&gt;
-&lt;a href=&#34;http://freelyapps.blog.jp/archives/1032543378.html&#34;&gt;http://freelyapps.blog.jp/archives/1032543378.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>Unityをアンインストールしたけど、あれ？ライセンス情報が残ってる(?_?)
+というのが調べたきっかけです
+PCからUnityの情報を完全消去したいときの参考に
+ライセンス情報 (Unity5.x系) ライセンスファイルは、Unityをアンインストールしても消えません＞＜
+以下にライセンスファイル(.ulfファイル)が残っています
+ C:/ProgramData/Unity/Unity_v5.x.ulf C:/Users/(username)/AppData/Local/VirtualStore/ProgramData/Unity/
+（UACで C:/ProgramData/Unity/ へアクセス制限されてる時）  で…
+確かに上記を消したら、アクティベーション情報は消えるのですが
+Unityにログインしたユーザ情報は残ってる様です
+キャッシュ的なものも消さないと、完全アンインストールにはならないみたい
+その他、アンインストールで消えないディレクトリ  C:/Users/(username)/AppData/Local/Unity C:/Users/(username)/AppData/Roaming/Unity
+上記２点には、エディタに関する何か？キャッシュ的な何か？が残っています
+起動した際の、Unityプロジェクトの表示とか…
+おそらくこの２つのディレクトリ以下に、ユーザ情報も入ってるみたいです
+ C:/Users/(username)/AppData/RoamingLocalLow/Unity
+この下もちょっとよく判らないですが、
+このディレクトリ配下の「Asset Store-5.x」の下には
+アセットストアからダウンロードしてきたパッケージファイルが入っていました
+（.unitypackage）
+  まとめ 逆の言い方をすると、
+上に書いたディレクトリ４つ
+ C:/ProgramData/Unity/ C:/Users/(username)/AppData/Local/Unity C:/Users/(username)/AppData/Roaming/Unity C:/Users/(username)/AppData/RoamingLocalLow/Unity  を消せば、Unityをアンインストールしなくても
+ライセンス情報のリセット、ユーザ情報のリセットが可能でした
+ もちろん
+C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x
+の下は、ライセンスファイルとは無関係みたいです
+ Unity2017系は？ Unity2017 では、ライセンスディレクトリは同様で、ライセンスファイル名が
+ Unity_lic.ulf  になってるみたいです
+（消さないといけないディレクトリまでは、2017系では調べてないので、ごめんなさい）
+参考：
+ アクティベーションに関する FAQ - Unity公式
+https://docs.unity3d.com/ja/current/Manual/ActivationFAQ.html(日本語)
+https://docs.unity3d.com/Manual/ActivationFAQ.html(英語)
+ Unityの再インストール - FreelyApps</description>
     </item>
     
     <item>
@@ -109,29 +60,15 @@ C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x&lt;br /&gt;
       <pubDate>Thu, 26 Oct 2017 23:30:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2017/10/26/change-playmode-color-on-unity/</guid>
-      <description>&lt;p&gt;Unityエディタ上で、ゲームを実行中（再生中）に、色を変える設定です&lt;br /&gt;
-// Unity的には「プレイモード」と呼ぶみたいです&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;プレイモード時にエディターの色を変える - Unity公式チュートリアル動画
-&lt;a href=&#34;https://unity3d.com/jp/learn/tutorials/topics/tips/play-mode-editor-tint&#34;&gt;https://unity3d.com/jp/learn/tutorials/topics/tips/play-mode-editor-tint&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;上記公式動画↑↑↑の 20秒～32秒くらいの間で、設定の操作を教えてくれてます&lt;/p&gt;
-
-&lt;p&gt;いちおここにも書いておくと&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Edit &amp;gt; Preferences &amp;gt; Colors &amp;gt; Playmode tint&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;で実行中のエディタの色を変えることが出来ます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Playmode-color-on-Unity_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;いつも、Unityをインストールして最初にやってるんだけど、&lt;br /&gt;
-いつも忘れて結局調べてるので…(*ﾉωﾉ)&lt;/p&gt;
-</description>
+      <description>Unityエディタ上で、ゲームを実行中（再生中）に、色を変える設定です
+// Unity的には「プレイモード」と呼ぶみたいです
+ プレイモード時にエディターの色を変える - Unity公式チュートリアル動画 https://unity3d.com/jp/learn/tutorials/topics/tips/play-mode-editor-tint
+  上記公式動画↑↑↑の 20秒～32秒くらいの間で、設定の操作を教えてくれてます
+いちおここにも書いておくと
+ Edit &amp;gt; Preferences &amp;gt; Colors &amp;gt; Playmode tint
+ で実行中のエディタの色を変えることが出来ます
+いつも、Unityをインストールして最初にやってるんだけど、
+いつも忘れて結局調べてるので…(*ﾉωﾉ)</description>
     </item>
     
     <item>
@@ -140,82 +77,15 @@ C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x&lt;br /&gt;
       <pubDate>Wed, 21 Jun 2017 18:00:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2017/06/21/unity-sprite-on-front-of-camera/</guid>
-      <description>
-
-&lt;h2 id=&#34;unityでカメラに追従して-前面にspriteを出す方法&#34;&gt;Unityでカメラに追従して、前面にSpriteを出す方法&lt;/h2&gt;
-
-&lt;p&gt;これ、本当は、カメラの子供として指定すればもっと簡単なんですけど…&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;testScript.transform.parent = Camera.main.transform
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;この場合、&lt;br /&gt;
-カメラにアニメーションが付いてる時（メインカメラは固定ポジションのままの時）に&lt;br /&gt;
-うまく乗せられなかったりして、&lt;br /&gt;
-面倒だなーと思い、Update毎に自分で位置を更新することにしました&lt;br /&gt;
-（変に親子関係があるのも、後で何か制限されたらやだなーとかとかもあり…）&lt;/p&gt;
-
-&lt;p&gt;以下を参考にしたら、簡単にカメラの前に表示するスプライトを簡単に表現できました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;カメラからの距離で求める錐台のサイズ&lt;br /&gt;
-&lt;a href=&#34;https://docs.unity3d.com/jp/540/Manual/FrustumSizeAtDistance.html&#34;&gt;https://docs.unity3d.com/jp/540/Manual/FrustumSizeAtDistance.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;public class TestExecutor : MonoBehaviour
-{
-    private Texture2D blackTexture;
-    private SpriteRenderer testSprite;
-
-    void Start()
-    {
-        // Create black texture
-        blackTexture = new Texture2D(32, 32, TextureFormat.RGB24, false);
-        blackTexture.SetPixel(0, 0, Color.white);
-        blackTexture.Apply();
-
-        // Create Sprite
-        var sprite = Sprite.Create(
-          texture: blackTexture,
-          rect: new Rect(0, 0, blackTexture.width, blackTexture.height),
-          pivot: new Vector2(0.5f, 0.5f)
-        );
-
-        // スクリプトからSprite生成
-        testSprite = new GameObject(&amp;quot;TestSprite&amp;quot;).AddComponent&amp;lt;SpriteRenderer&amp;gt;();
-        testSprite.sprite = sprite;
-    }
-
-    void Update()
-    {
-        var distance = 10f;
-
-        // カメラの前に置く距離に応じて、ワールド座標でのスクリーンサイズを求める
-        // (distance +1f) の意味は、スクリーンサイズよりちょい大きめで画面を覆いたいから
-        var worldScreenH = 2.0f * (distance + 1f) * Mathf.Tan(Camera.main.fieldOfView * 0.5f * Mathf.Deg2Rad);
-        var worldScreenW = worldScreenH * Camera.main.aspect;
-
-        // Spriteのサイズを調整
-        testSprite.transform.localScale = new Vector3(worldScreenW / testSprite.sprite.bounds.size.x, worldScreenH / testSprite.sprite.bounds.size.y);
-
-        // カメラの角度と位置をコピー、前に置くだけならforwardベクトルが便利
-        testSprite.transform.position = Camera.main.transform.position + testSprite.transform.forward.normalized * distance;
-        testSprite.transform.rotation = Camera.main.transform.rotation;
-        
-        // フェードとかさせたいなら、ここでαを調整
-        testSprite.color = new Color(0, 0, 0, fadingAlpha);
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://gist.github.com/h-sao/1871a05001c611436dd24b3b11fd9554&#34;&gt;Gist - Unity Sprite on front of camera&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;こんな感じで、Spriteがカメラにくっついてきてくれます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Sprite-on-front-of-camera_00.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;忘れそうな自分へのメモ&lt;/p&gt;
-</description>
+      <description>Unityでカメラに追従して、前面にSpriteを出す方法 これ、本当は、カメラの子供として指定すればもっと簡単なんですけど…
+testScript.transform.parent = Camera.main.transform  この場合、
+カメラにアニメーションが付いてる時（メインカメラは固定ポジションのままの時）に
+うまく乗せられなかったりして、
+面倒だなーと思い、Update毎に自分で位置を更新することにしました
+（変に親子関係があるのも、後で何か制限されたらやだなーとかとかもあり…）
+以下を参考にしたら、簡単にカメラの前に表示するスプライトを簡単に表現できました
+ カメラからの距離で求める錐台のサイズ
+https://docs.unity3d.com/jp/540/Manual/FrustumSizeAtDistance.html  public class TestExecutor : MonoBehaviour { private Texture2D blackTexture; private SpriteRenderer testSprite; void Start() { // Create black texture blackTexture = new Texture2D(32, 32, TextureFormat.RGB24, false); blackTexture.SetPixel(0, 0, Color.white); blackTexture.Apply(); // Create Sprite var sprite = Sprite.Create( texture: blackTexture, rect: new Rect(0, 0, blackTexture.width, blackTexture.height), pivot: new Vector2(0.5f, 0.5f) ); // スクリプトからSprite生成 testSprite = new GameObject(&amp;quot;TestSprite&amp;quot;).</description>
     </item>
     
     <item>
@@ -224,54 +94,27 @@ C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x&lt;br /&gt;
       <pubDate>Tue, 09 Aug 2016 18:00:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2016/08/09/prerelease-yebis-for-unity-beta/</guid>
-      <description>&lt;p&gt;たまには、仕事のお話を…&lt;br /&gt;
-現在、Unityのプラグインを絶賛開発中で、わたしも少し関わらせて頂いてます&lt;/p&gt;
-
-&lt;p&gt;なんのプラグインかというと、ポストエフェクト処理がかけられる「YEBIS」というプロダクトのプラグイン化になります&lt;/p&gt;
-
-&lt;p&gt;今、ベータ版として期間限定のトライアルを出し中。。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;YEBIS for Unity (beta)&lt;/strong&gt; ダウンロードサイト
-&lt;a href=&#34;https://siliconstudio.github.io/YebisForUnityBeta/&#34;&gt;https://siliconstudio.github.io/YebisForUnityBeta/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;あぁ、なんでUnityのアセットストアじゃないのかって…？&lt;/p&gt;
-
-&lt;p&gt;実は、「特濃！ゲーム開発塾５」というイベントでこのプラグインの話をしてきたのですが、ストアの申請が間に合わず…＞＜&lt;br /&gt;
-とりあえず、GitHub Pagesに置いてます&lt;br /&gt;
-（なので、アセットストアに公開するまでの、期間限定サイトです）&lt;/p&gt;
-
-&lt;p&gt;ちなみに、イベントURLはこれ&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;特濃！ゲーム開発塾５&lt;/strong&gt;&lt;br /&gt;
-&lt;a href=&#34;http://eventregist.com/e/tokunou5&#34;&gt;http://eventregist.com/e/tokunou5&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;https://www.facebook.com/IwateGameFactory/&#34;&gt;https://www.facebook.com/IwateGameFactory/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;岩手県盛岡市はIT支援がとても盛んらしく、こんなゲーム開発者向けのお祭りイベントがあるんですね~&lt;/p&gt;
-
-&lt;p&gt;わたしが参加した日程は 8月9日(火)&lt;br /&gt;
-対象となる人はプログラマー、もしくはプログラムを将来仕事にしたい人向け&lt;br /&gt;
-現在、DMM.comラボにてプロデューサをされている松本卓也さんがメイン講師をされました&lt;/p&gt;
-
-&lt;p&gt;わたしは３０分ほどセッション時間を頂き、このUnityプラグインのお話をさせて頂きました&lt;br /&gt;
-発表に利用した資料はこれです&lt;/p&gt;
-
-&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;5106b47adb0c4f2286a4654095b81fc4&#34; data-ratio=&#34;1.77777777777778&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;ベータ版なので動作不安定な点がいくつもあるのですが、人柱的に試しても良いかなーという心優しい方は、トライしてみてくださいm(__)m&lt;/p&gt;
-
-&lt;p&gt;ちなみにドキュメントはこちら&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;SiliconStudio/YEBIS-plugins - GitHub&lt;br /&gt;
-&lt;a href=&#34;https://github.com/SiliconStudio/YEBIS-plugins&#34;&gt;https://github.com/SiliconStudio/YEBIS-plugins&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;トップは英語で書かれてますが、実は日本語のドキュメントしか今は無いです&lt;/p&gt;
-</description>
+      <description>たまには、仕事のお話を…
+現在、Unityのプラグインを絶賛開発中で、わたしも少し関わらせて頂いてます
+なんのプラグインかというと、ポストエフェクト処理がかけられる「YEBIS」というプロダクトのプラグイン化になります
+今、ベータ版として期間限定のトライアルを出し中。。
+ YEBIS for Unity (beta) ダウンロードサイト https://siliconstudio.github.io/YebisForUnityBeta/  あぁ、なんでUnityのアセットストアじゃないのかって…？
+実は、「特濃！ゲーム開発塾５」というイベントでこのプラグインの話をしてきたのですが、ストアの申請が間に合わず…＞＜
+とりあえず、GitHub Pagesに置いてます
+（なので、アセットストアに公開するまでの、期間限定サイトです）
+ちなみに、イベントURLはこれ
+ 特濃！ゲーム開発塾５
+http://eventregist.com/e/tokunou5
+https://www.facebook.com/IwateGameFactory/  岩手県盛岡市はIT支援がとても盛んらしく、こんなゲーム開発者向けのお祭りイベントがあるんですね~
+わたしが参加した日程は 8月9日(火)
+対象となる人はプログラマー、もしくはプログラムを将来仕事にしたい人向け
+現在、DMM.comラボにてプロデューサをされている松本卓也さんがメイン講師をされました
+わたしは３０分ほどセッション時間を頂き、このUnityプラグインのお話をさせて頂きました
+発表に利用した資料はこれです
+ ベータ版なので動作不安定な点がいくつもあるのですが、人柱的に試しても良いかなーという心優しい方は、トライしてみてくださいm(__)m
+ちなみにドキュメントはこちら
+ SiliconStudio/YEBIS-plugins - GitHub
+https://github.com/SiliconStudio/YEBIS-plugins  トップは英語で書かれてますが、実は日本語のドキュメントしか今は無いです</description>
     </item>
     
     <item>
@@ -280,166 +123,24 @@ C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x&lt;br /&gt;
       <pubDate>Sun, 08 May 2016 14:00:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2016/05/08/change-unity-window-size/</guid>
-      <description>
-
-&lt;p&gt;Unityのバグなのか、わたしの使い方が悪いのか？&lt;br /&gt;
-PC実行時のウィンドウサイズの設定が、思うようにできなかったので&lt;br /&gt;
-その解決メモです&lt;/p&gt;
-
-&lt;h1 id=&#34;pcで実行したら全画面&#34;&gt;PCで実行したら全画面…&lt;/h1&gt;
-
-&lt;p&gt;Unityのプロジェクトファイルを新規作成して&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;File&amp;rdquo; → &amp;ldquo;Build &amp;amp; Run&amp;rdquo;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;を選択すると、ビルドが走り、実際に exe が実行されます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Unity-window-size_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;へぇ、画面解像度( Screen resolution )とか、ここで変えることが出来るんだ～&lt;br /&gt;
-と思って解像度設定を変更し、&amp;rdquo;Play!&amp;rdquo; で起動させると、いちおう思ったサイズで起動することが出来ます&lt;/p&gt;
-
-&lt;h1 id=&#34;unityプロジェクトに-plyaer-settings-がある&#34;&gt;Unityプロジェクトに Plyaer Settings がある&lt;/h1&gt;
-
-&lt;p&gt;ユーザに毎回ウィンドウサイズを選択させるのも、なんだかねぇ…ということで、ちゃんと設定したいと思います&lt;/p&gt;
-
-&lt;p&gt;Unityのメニューの&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;File&amp;rdquo; → &amp;ldquo;Build Settings&amp;rdquo;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Build Settings を選択すると、ビルドに関する設定が変更できるようです&lt;br /&gt;
-下にある、&amp;rdquo;Player Settings&amp;rdquo; を選択すると、
-インスペクタウィンドウが出ます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Unity-window-size_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;ここで、起動時の Player Settings が出来るようですが…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Unity-window-size_02.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;「Resolution」 の 「&lt;strong&gt;Default Is Full Screen&lt;/strong&gt;」 のチェックボックスを外しましょう&lt;br /&gt;
-ついでに、「Standalone Player Options」 の &lt;strong&gt;「Display Resolution Dialog」 を　「Disable」&lt;/strong&gt;　にしておきます&lt;/p&gt;
-
-&lt;p&gt;これで exe を実行するたびに 「FixSizeWindows Configuration」 は開かなくなります&lt;/p&gt;
-
-&lt;p&gt;「Resolution」 には、「Default Screen Width/Height」 がありますが、、、&lt;br /&gt;
-ここで設定を変えても、ウィンドウサイズは変わりません&lt;br /&gt;
-（なんでやねん…＞＜）&lt;/p&gt;
-
-&lt;p&gt;どうやら、「前回起動したときのウィンドウサイズ」で起動するみたいです…&lt;br /&gt;
-Development Build にしても、しなくても、結果は一緒でした&lt;br /&gt;
-初期起動のサイズは、ここじゃないのかな…(´・ω・｀)&lt;/p&gt;
-
-&lt;p&gt;余談ですが、ここで変えた設定は、&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;.\ProjectSettings\ProjectSettings.asset&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;の中に、テキストファイルで保存されます&lt;/p&gt;
-
-&lt;h1 id=&#34;ウィンドウサイズはプログラムで変更&#34;&gt;ウィンドウサイズはプログラムで変更&lt;/h1&gt;
-
-&lt;p&gt;仕方がないので、スクリプトで記載します&lt;/p&gt;
-
-&lt;p&gt;Unityのメニュー &lt;strong&gt;Assets &amp;gt; Create &amp;gt; C# Script&lt;/strong&gt; で新規スクリプトを作ります&lt;/p&gt;
-
-&lt;p&gt;わたしは適当に GameInitial と名付けました（Unity の Project 内に、GameInitial の C#ファイルが追加されます）&lt;/p&gt;
-
-&lt;h2 id=&#34;いーっちばん最初のゲーム起動時をフックしたい&#34;&gt;いーっちばん最初のゲーム起動時をフックしたい？&lt;/h2&gt;
-
-&lt;p&gt;もちろん、ウィンドウサイズを変更したいためです&lt;br /&gt;
-解像度が小さい/大きいなど&lt;br /&gt;
-起動したときに、クライアント端末によってウィンドウサイズを変えたいとかあると思います&lt;/p&gt;
-
-&lt;p&gt;たぶん、現状の Unity 5.3系の最速フック方法は、&lt;strong&gt;RuntimeInitializeOnLoadMethod&lt;/strong&gt; ではないかと…&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;RuntimeInitializeOnLoadMethodAttribute&lt;br /&gt;
-&lt;a href=&#34;http://docs.unity3d.com/ScriptReference/RuntimeInitializeOnLoadMethodAttribute.html&#34;&gt;http://docs.unity3d.com/ScriptReference/RuntimeInitializeOnLoadMethodAttribute.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ユーザがアクションを起こす前に動くらしいですが&lt;br /&gt;
-実際やってみると、ロゴ起動画面の方が先に動くので&lt;br /&gt;
-ほんとの意味の一番最初のウィンドウサイズは、ここでは遅いみたいです&lt;/p&gt;
-
-&lt;p&gt;一応サンプルコード&lt;br /&gt;
-MonoBehaviour は無くても動くみたいです&lt;br /&gt;
-あと、オブジェクトなどにスクリプトをアタッチしなくてもOKです&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c#&#34;&gt;using UnityEngine;
-
-public class GameInitial //: MonoBehaviour
-{
-    [RuntimeInitializeOnLoadMethod]
-    static void OnRuntimeMethodLoad()
-    {
-        Screen.SetResolution( 640, 960, false, 60);
-
-    }
-
-    //// Use this for initialization
-    //void Start()
-    //{
-
-    //}
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-    //}
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;自分が知らないだけかもしれませんが、 RuntimeInitializeOnLoadMethodAttribute より早い時点で自分の処理を差し込むことは出来ないみたい…&lt;/p&gt;
-
-&lt;h1 id=&#34;ウィンドウサイズを指定できるコマンドライン引数がある&#34;&gt;ウィンドウサイズを指定できるコマンドライン引数がある！&lt;/h1&gt;
-
-&lt;p&gt;結局、起動時のウィンドウサイズは結局どこで更新するんでしょうか…？&lt;/p&gt;
-
-&lt;p&gt;実は、飛び道具的ですが、exe の引数に渡せるみたいです…！（そこか…＞＜&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;「Unity スタンドアロンプレイヤーのコマンドライン引数」の項
-&lt;a href=&#34;http://docs.unity3d.com/ja/current/Manual/CommandLineArguments.html&#34;&gt;http://docs.unity3d.com/ja/current/Manual/CommandLineArguments.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;自分で作った exe の引数に&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;-screen-width ：幅&lt;/li&gt;
-&lt;li&gt;-screen-height ：高さ&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;を渡してあげればOKでした&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; xxx.exe -screen-width 300 -screen-height 300
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;小さいスクリーンサイズで起動したのちに…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Unity-window-size_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;自分の指定した Screen.SetResolution サイズで起動&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Change-Unity-window-size_04.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;つまり、引数に自分で好きな数値を渡せるようになってるので&lt;br /&gt;
-それと、Screen.SetResolution の指定を同じ大きさにしておけば&lt;br /&gt;
-最初から自分自身でサイズを調整できますね&lt;/p&gt;
-
-&lt;p&gt;なんだろなー&lt;br /&gt;
-なんで起動時のサイズくらい、すんなり設定できないんでしょうか…謎や～&lt;/p&gt;
-
-&lt;p&gt;もしかしたら、無料版では起動時のロゴを外せないようにするために、プログラマは触れないようになってるのかなー？&lt;/p&gt;
-
-&lt;p&gt;ともあれ、意図したことは出来るようになっているので、まぁ良しとします！&lt;/p&gt;
-</description>
+      <description>Unityのバグなのか、わたしの使い方が悪いのか？
+PC実行時のウィンドウサイズの設定が、思うようにできなかったので
+その解決メモです
+PCで実行したら全画面… Unityのプロジェクトファイルを新規作成して
+ &amp;ldquo;File&amp;rdquo; → &amp;ldquo;Build &amp;amp; Run&amp;rdquo;
+ を選択すると、ビルドが走り、実際に exe が実行されます
+へぇ、画面解像度( Screen resolution )とか、ここで変えることが出来るんだ～
+と思って解像度設定を変更し、&amp;rdquo;Play!&amp;rdquo; で起動させると、いちおう思ったサイズで起動することが出来ます
+Unityプロジェクトに Plyaer Settings がある ユーザに毎回ウィンドウサイズを選択させるのも、なんだかねぇ…ということで、ちゃんと設定したいと思います
+Unityのメニューの
+ &amp;ldquo;File&amp;rdquo; → &amp;ldquo;Build Settings&amp;rdquo;
+ Build Settings を選択すると、ビルドに関する設定が変更できるようです
+下にある、&amp;rdquo;Player Settings&amp;rdquo; を選択すると、 インスペクタウィンドウが出ます
+ここで、起動時の Player Settings が出来るようですが…
+「Resolution」 の 「Default Is Full Screen」 のチェックボックスを外しましょう
+ついでに、「Standalone Player Options」 の 「Display Resolution Dialog」 を　「Disable」　にしておきます
+これで exe を実行するたびに 「FixSizeWindows Configuration」 は開かなくなります
+「Resolution」 には、「Default Screen Width/Height」 がありますが、、、</description>
     </item>
     
     <item>
@@ -448,214 +149,23 @@ public class GameInitial //: MonoBehaviour
       <pubDate>Mon, 11 Jan 2016 18:00:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2016/01/11/unity-shader-2dsprite/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://h-sao.com/blog/2016/01/04/hello2016/&#34;&gt;今年の初めに&lt;/a&gt;、「Game a Week」という開発手法がすごい！っと書きました&lt;br /&gt;
-とりあえず、週に一度は成果物を公開する、の部分を真似してみようかなと&lt;br /&gt;
-（やってみて気が付きましたが、実は1週間って、結構長いです）&lt;/p&gt;
-
-&lt;p&gt;今をトキメクGame Engine: &lt;strong&gt;Unity&lt;/strong&gt; について、去年から触る機会があり、ポチポチとやっております&lt;/p&gt;
-
-&lt;p&gt;そしてこれは既知の情報ですが、先週は2Dスプライトにシンプルなグラデーションのシェーダーを適用してみました&lt;/p&gt;
-
-&lt;p&gt;やってみると判るのですが、Unity ではスプライトにシンプルシェーダーだけを適用しようと思っても出来なくて、&lt;br /&gt;
-先に結論を書いておくと、スプライトとして扱う場合は必ず何かしらのテクスチャアセットが必要でした&lt;br /&gt;
-そのメモと感想文になります&lt;/p&gt;
-
-&lt;p&gt;2016年1月11日現在、Unityのバージョンは 5.3.1 です&lt;/p&gt;
-
-&lt;h1 id=&#34;unity-のシェーダー言語-shaderlab&#34;&gt;Unity のシェーダー言語：ShaderLab&lt;/h1&gt;
-
-&lt;p&gt;Unity のシェーダーは 「ShaderLab」 という Unity オリジナルのシェーダー言語で記載することになります&lt;br /&gt;
-といっても HLSL のラッパーのような言語なので、Unity で使うときのお作法であり、Unity と シェーダーの仲介役の言語、と思って良いみたい&lt;/p&gt;
-
-&lt;h2 id=&#34;最小限の-shaderlab&#34;&gt;最小限の ShaderLab&lt;/h2&gt;
-
-&lt;p&gt;最小限の ShaderLab の枠組みはこんな感じ&lt;br /&gt;
-（これより削ると、エラーが出た）&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// BG_shader.shader
-// 最小限の ShaderLab
-Shader &amp;quot;Custom/BG_shader&amp;quot; {
-    SubShader
-    {
-        Pass {}
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;実際に、このカスタムシェーダーをマテリアルに適用するとこんな感じ&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_00.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;何もしないマテリアルを作ることが出来ました&lt;/p&gt;
-
-&lt;h2 id=&#34;シンプルなグラデーション&#34;&gt;シンプルなグラデーション&lt;/h2&gt;
-
-&lt;p&gt;今回、ゲーム背景を単純なカラーグラデーションにしようと思ったので、そういうシンプルシェーダーを書いていきます&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// BG_shader.shader
-// 黄色くグラデーションする
-Shader &amp;quot;Custom/BG_shader&amp;quot; {
-    SubShader
-    {
-        Pass{
-            CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
-
-            // VS2015のグラフィックデバックON
-            #pragma enable_d3d11_debug_symbols
-
-            struct VertexInput {
-                float4 pos:  POSITION;    // 3D空間座標
-                float2 uv:   TEXCOORD0;   // テクスチャ座標
-            };
-
-            struct VertexOutput {
-                float4 v:    SV_POSITION; // 2D座標
-                float2 uv:   TEXCOORD0;   // テクスチャ座標
-            };
-
-            // 頂点 shader
-            VertexOutput vert(VertexInput input)
-            {
-                VertexOutput output;
-                output.v = mul(UNITY_MATRIX_MVP, input.pos);
-                output.uv = input.uv;
-
-                return output;
-            }
-
-            // ピクセル shader
-            fixed4 frag( VertexOutput output) : SV_Target
-            {
-                float2 tex = output.uv;
-                // 黄色→白色のグラデーション
-                return fixed4( 1.0, 1.0, 1.0 - tex.y, 1.0);
-            }
-
-            ENDCG
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ちょっとマテリアルではわかりにくいですけど、一応、線形にグラデーションされています&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_01.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;2d-sprite-に適用する方法&#34;&gt;2D Sprite に適用する方法&lt;/h1&gt;
-
-&lt;p&gt;シンプルなシェーダーとマテリアルが出来たので、実際に、Sprite に登録します&lt;/p&gt;
-
-&lt;h2 id=&#34;sprite-と-material-だけでは足りない&#34;&gt;Sprite と Material だけでは足りない&lt;/h2&gt;
-
-&lt;p&gt;ただし、ちょっとここでクセがあって、このマテリアルを Sprite にアタッチしても、何も起こりません&lt;br /&gt;
-それどころか、ワーニングメッセージが…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_02.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Material does not have a _MainTex texture property. It is required for SpriteRenderer.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;あら…&lt;br /&gt;
-Sprite Renderer に登録するマテリアルには、テクスチャが必要ということみたいです&lt;br /&gt;
-シェーダーに戻って、言われているとおり、 _MainTex にテクスチャを登録します&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// BG_shader.shader の Properties を追加
-    Properties
-    {
-        _MainTex( &amp;quot;2D Texture&amp;quot;, 2D ) = &amp;quot;white&amp;quot; {}
-    }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;テクスチャを登録できるし、デフォルトでは white テクスチャを使いますよ。という意味になります&lt;br /&gt;
-ちなみに、_MainTex() の内蔵テクスチャには&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;white&lt;/li&gt;
-&lt;li&gt;black&lt;/li&gt;
-&lt;li&gt;gray&lt;/li&gt;
-&lt;li&gt;bump&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;の4種類が用意されています&lt;br /&gt;
-* ShaderLab: Properties - Unity Documentation&lt;br /&gt;
- &lt;a href=&#34;http://docs.unity3d.com/Manual/SL-Properties.html&#34;&gt;http://docs.unity3d.com/Manual/SL-Properties.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_03.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;マテリアルにテクスチャを持つ設定にしました&lt;/p&gt;
-
-&lt;h2 id=&#34;sprite-には-ベースとしてリアルな-texture-が必要&#34;&gt;Sprite には、ベースとしてリアルな Texture が必要&lt;/h2&gt;
-
-&lt;p&gt;Sprite のワーニングも消えたのですが、やはりシーンに Sprite object が表示されません&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_04.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;どうやら、Sprite はあくまで、テクスチャ画像を表示させるための機能に特化しており、マテリアルだけでは動作しない様です&lt;/p&gt;
-
-&lt;p&gt;仕方がないので、Sprite 用のテクスチャを用意します&lt;br /&gt;
-サイズ感がよくわからなかったのですが、 white.jpg という 8*8 のテクスチャを Assets の下に入れました&lt;/p&gt;
-
-&lt;p&gt;Sprite の Inspector にて、Sprite Rendere &amp;gt; Sprite にて white テクスチャを選択します&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;あぁ…これ、デフォルトで白いテクスチャくらい、システムで用意してほしいなかと思いましたが、まぁしょーがないです&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_05.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;でたー&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Unity-Shader-2DSprite_06.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;まとめ&#34;&gt;まとめ&lt;/h1&gt;
-
-&lt;p&gt;シンプルな 3D model では&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Mesh Renderer&lt;/strong&gt;&lt;br /&gt;
-→ &lt;strong&gt;Material&lt;/strong&gt; (たとえば Standard Shader)&lt;br /&gt;
-　→ &lt;strong&gt;Texture&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;という構造なので、&lt;/p&gt;
-
-&lt;p&gt;2D Sprite では&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Sprite Renderer&lt;/strong&gt;&lt;br /&gt;
-→ &lt;strong&gt;Material&lt;/strong&gt; or &lt;strong&gt;Texture&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;なのかなーと思っていたのですが、実際には&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Sprite Renderer&lt;/strong&gt;&lt;br /&gt;
-→ &lt;strong&gt;Material&lt;/strong&gt;&lt;br /&gt;
-　→ &lt;strong&gt;Texture&lt;/strong&gt; (Shader の _MainTex() )&lt;br /&gt;
-→ &lt;strong&gt;Sprite&lt;/strong&gt;&lt;br /&gt;
-　→ &lt;strong&gt;Texture&lt;/strong&gt; (リアル画像)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;という構造が必要でした&lt;/p&gt;
-
-&lt;p&gt;これを受けて、&lt;/p&gt;
-
-&lt;p&gt;「え、シンプルなシェーダーのみを適用したいなら、&lt;br /&gt;
-Sprite でなくて 3D Plane Model にしたらいいんでない？」&lt;/p&gt;
-
-&lt;p&gt;という疑問が出てきましたが、&lt;br /&gt;
-実際のゲーム制作においては、シチュエーション依存ですかね…&lt;br /&gt;
-今回のわたしの場合は、Sprite を採用しました&lt;/p&gt;
-
-&lt;p&gt;この記事の Unity プロジェクト（ソース、アセット）を Github に置いておきます&lt;br /&gt;
-&lt;a href=&#34;https://github.com/h-sao/UnitySampleCode/tree/master/SpriteGradationalShader&#34;&gt;https://github.com/h-sao/UnitySampleCode/tree/master/SpriteGradationalShader&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;何かの参考になれば幸いです&lt;/p&gt;
-</description>
+      <description>今年の初めに、「Game a Week」という開発手法がすごい！っと書きました
+とりあえず、週に一度は成果物を公開する、の部分を真似してみようかなと
+（やってみて気が付きましたが、実は1週間って、結構長いです）
+今をトキメクGame Engine: Unity について、去年から触る機会があり、ポチポチとやっております
+そしてこれは既知の情報ですが、先週は2Dスプライトにシンプルなグラデーションのシェーダーを適用してみました
+やってみると判るのですが、Unity ではスプライトにシンプルシェーダーだけを適用しようと思っても出来なくて、
+先に結論を書いておくと、スプライトとして扱う場合は必ず何かしらのテクスチャアセットが必要でした
+そのメモと感想文になります
+2016年1月11日現在、Unityのバージョンは 5.3.1 です
+Unity のシェーダー言語：ShaderLab Unity のシェーダーは 「ShaderLab」 という Unity オリジナルのシェーダー言語で記載することになります
+といっても HLSL のラッパーのような言語なので、Unity で使うときのお作法であり、Unity と シェーダーの仲介役の言語、と思って良いみたい
+最小限の ShaderLab 最小限の ShaderLab の枠組みはこんな感じ
+（これより削ると、エラーが出た）
+// BG_shader.shader // 最小限の ShaderLab Shader &amp;quot;Custom/BG_shader&amp;quot; { SubShader { Pass {} } }  実際に、このカスタムシェーダーをマテリアルに適用するとこんな感じ
+何もしないマテリアルを作ることが出来ました
+シンプルなグラデーション 今回、ゲーム背景を単純なカラーグラデーションにしようと思ったので、そういうシンプルシェーダーを書いていきます
+// BG_shader.shader // 黄色くグラデーションする Shader &amp;quot;Custom/BG_shader&amp;quot; { SubShader { Pass{ CGPROGRAM #pragma vertex vert #pragma fragment frag // VS2015のグラフィックデバックON #pragma enable_d3d11_debug_symbols struct VertexInput { float4 pos: POSITION; // 3D空間座標 float2 uv: TEXCOORD0; // テクスチャ座標 }; struct VertexOutput { float4 v: SV_POSITION; // 2D座標 float2 uv: TEXCOORD0; // テクスチャ座標 }; // 頂点 shader VertexOutput vert(VertexInput input) { VertexOutput output; output.</description>
     </item>
     
   </channel>

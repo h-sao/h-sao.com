@@ -2,12 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windowsruntime on Effectiveさお</title>
-    <link>http://h-sao.com/tags/windowsruntime/index.xml</link>
+    <link>http://h-sao.com/tags/windowsruntime/</link>
     <description>Recent content in Windowsruntime on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <atom:link href="http://h-sao.com/tags/windowsruntime/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Aug 2014 12:35:04 +0900</lastBuildDate>
+    
+	<atom:link href="http://h-sao.com/tags/windowsruntime/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>[勉強会] Introducing Windows Runtime：Hokuriku.NETvol.15の資料公開しました</title>
@@ -15,32 +18,17 @@
       <pubDate>Sun, 31 Aug 2014 12:35:04 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2014/08/31/hokuriku-net-vol-15-introducing-windows-runtime/</guid>
-      <description>&lt;p&gt;北陸にお邪魔しました！&lt;/p&gt;
-
-&lt;p&gt;Hokuriku.NET vol.15&lt;br /&gt;
-&lt;a href=&#34;http://hokurikunet.doorkeeper.jp/events/13746&#34;&gt;http://hokurikunet.doorkeeper.jp/events/13746&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;その際にお話させて頂いた資料を公開します&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Introducing Windows Runtime&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;8e94c968a4d442a2b54b54e4e7a48f3f&#34; data-ratio=&#34;1.77777777777778&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;発表資料 pptx版 (こちらは欄外に私的メモが残っています)&lt;br /&gt;
-&lt;a href=&#34;http://jyurimaru.info/data/20140830Hokurikunet15/201400830_Introducing_Windows_Runtime_pub.pptx&#34;&gt;http://jyurimaru.info/data/20140830Hokurikunet15/201400830_Introducing_Windows_Runtime_pub.pptx&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;自分が調べてきたWindows Runtimeについての導入セッションとしては&lt;br /&gt;
-これが最後になるかなー&lt;/p&gt;
-
-&lt;p&gt;さてさて、福井に行ったわけですが、お蕎麦がとても美味しかったです(~o~)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Hokuriku-net-vol-15-Introducing-Windows-Runtime_00.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;去年もお邪魔させて頂きましたが、今年もみなさま暖かく迎えて下さって&lt;br /&gt;
-とても楽しかったです(^^)/&lt;/p&gt;
-</description>
+      <description>北陸にお邪魔しました！
+Hokuriku.NET vol.15
+http://hokurikunet.doorkeeper.jp/events/13746
+その際にお話させて頂いた資料を公開します
+ Introducing Windows Runtime   発表資料 pptx版 (こちらは欄外に私的メモが残っています)
+http://jyurimaru.info/data/20140830Hokurikunet15/201400830_Introducing_Windows_Runtime_pub.pptx
+自分が調べてきたWindows Runtimeについての導入セッションとしては
+これが最後になるかなー
+さてさて、福井に行ったわけですが、お蕎麦がとても美味しかったです(~o~)
+去年もお邪魔させて頂きましたが、今年もみなさま暖かく迎えて下さって
+とても楽しかったです(^^)/</description>
     </item>
     
     <item>
@@ -49,18 +37,12 @@
       <pubDate>Wed, 29 Jan 2014 00:00:00 +0000</pubDate>
       
       <guid>http://h-sao.com/blog/2014/01/29/how-to-program-cppcx/</guid>
-      <description>&lt;p&gt;Hi,&lt;/p&gt;
-
-&lt;p&gt;The other day, I spoke about C++/CX in Lightning Talk.&lt;/p&gt;
-
-&lt;p&gt;Click here for article&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://jyurimaru.info/data/20140118MetroTokyo03/20140118_cppcx_LT_en.pptx&#34;&gt;PPTX-How to program c++/CX&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://jyurimaru.info/data/20140118MetroTokyo03/20140118_cppcx_LT_en.pdf&#34;&gt;PDF -How to program c++/CX&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Take care!&lt;/p&gt;
-</description>
+      <description>Hi,
+The other day, I spoke about C++/CX in Lightning Talk.
+Click here for article
+PPTX-How to program c++/CX
+PDF -How to program c++/CX
+Take care!</description>
     </item>
     
   </channel>

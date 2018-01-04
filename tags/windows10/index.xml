@@ -2,12 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows10 on Effectiveさお</title>
-    <link>http://h-sao.com/tags/windows10/index.xml</link>
+    <link>http://h-sao.com/tags/windows10/</link>
     <description>Recent content in Windows10 on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <atom:link href="http://h-sao.com/tags/windows10/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Oct 2017 08:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="http://h-sao.com/tags/windows10/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>[Windows10] コントロールパネルの場所</title>
@@ -15,39 +18,19 @@
       <pubDate>Tue, 31 Oct 2017 08:00:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2017/10/31/where-is-controlpanel/</guid>
-      <description>&lt;p&gt;コントロールパネルはいずこへ…(;^ω^)&lt;/p&gt;
-
-&lt;p&gt;Windows10を使ってかなり経ちますが、以前の見慣れたコントロールパネルを出したくて、何となく探したことありませんか？&lt;/p&gt;
-
-&lt;p&gt;コントロールパネルが無くても、Windows10 仕様の「設定」アプリでも、そこまで困ることは無いのですが…&lt;/p&gt;
-
-&lt;p&gt;Windows10 で Windows マーク（スタートメニューを出すマーク）を押した際の一覧に&lt;br /&gt;
-「コントロールパネル」は無いんですねー&lt;/p&gt;
-
-&lt;p&gt;代わりに、「設定」なるものが…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Where-is-ControlPanel_00.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ちゃうねん、これちゃんねん(/ω＼)&lt;/p&gt;
-
-&lt;p&gt;検索すると、マイクロソフトさんの公式サポートサイトでも、ちゃんと書かれてました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Where is Control Panel? - Microsoft Support&lt;br /&gt;
-&lt;a href=&#34;https://support.microsoft.com/en-us/help/13764/windows-where-is-control-panel&#34;&gt;https://support.microsoft.com/en-us/help/13764/windows-where-is-control-panel&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;普通に、スタートメニューを押した後に&lt;br /&gt;
-「コントロール」or「Control」で検索すると候補に出てきます&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;ちなみに「コントロール パネル」で検索する時には、「コントロール」と「パネル」の間には半角空白が必要みたい…&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Where-is-ControlPanel_01.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;これこれ…( ^ω^ )&lt;/p&gt;
-</description>
+      <description>コントロールパネルはいずこへ…(;^ω^)
+Windows10を使ってかなり経ちますが、以前の見慣れたコントロールパネルを出したくて、何となく探したことありませんか？
+コントロールパネルが無くても、Windows10 仕様の「設定」アプリでも、そこまで困ることは無いのですが…
+Windows10 で Windows マーク（スタートメニューを出すマーク）を押した際の一覧に
+「コントロールパネル」は無いんですねー
+代わりに、「設定」なるものが…
+ちゃうねん、これちゃんねん(/ω＼)
+検索すると、マイクロソフトさんの公式サポートサイトでも、ちゃんと書かれてました
+ Where is Control Panel? - Microsoft Support
+https://support.microsoft.com/en-us/help/13764/windows-where-is-control-panel  普通に、スタートメニューを押した後に
+「コントロール」or「Control」で検索すると候補に出てきます
+ ちなみに「コントロール パネル」で検索する時には、「コントロール」と「パネル」の間には半角空白が必要みたい…
+ これこれ…( ^ω^ )</description>
     </item>
     
     <item>
@@ -56,59 +39,27 @@
       <pubDate>Tue, 26 Jul 2016 21:00:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2016/07/26/check-gpu-on-pc/</guid>
-      <description>&lt;p&gt;PCのGPU、つまりグラフィックボードってなんだろな？と思った時の操作メモです&lt;/p&gt;
-
-&lt;p&gt;対象は Windows10&lt;/p&gt;
-
-&lt;p&gt;(1) まず Windows10 のディスプレイ画面を表示させます&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;デスクトップ画面を右クリック&lt;br /&gt;
-　＞ディスプレイ設定&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;もしくは&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Windowsのスタートボタン&lt;br /&gt;
-　＞設定&lt;br /&gt;
-　　＞システム&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;(2) 「ディスプレイの詳細設定」を選択！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Check-gpu-on-pc_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;(3) ディスプレイのカスタマイズの項目の中の、「アダプターのプロパティの表示」を選択！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Check-gpu-on-pc_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;(4) グラフィックボードの情報が出てきます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Check-gpu-on-pc_02.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;このPCはインテルボードでした&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;別の調べ方としては、DirectX 診断ツール（dxdiag）を使う方法もあり&lt;/p&gt;
-
-&lt;p&gt;dxdiag で検索すると、一致するコマンドが出てきます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Check-gpu-on-pc_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;実行すると、こんな感じで、表示を出してくれます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Check-gpu-on-pc_04.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;GPU…気になりますよね…&lt;br /&gt;
-CPUは多少型が古くても、それほど差が出ないけど&lt;br /&gt;
-GPUだけは新しい型のものにしとかないと…とかとか&lt;br /&gt;
-私的にはこだわりたいのです！！！&lt;br /&gt;
-（実行出来てるかどうかは…涙）&lt;/p&gt;
-</description>
+      <description>PCのGPU、つまりグラフィックボードってなんだろな？と思った時の操作メモです
+対象は Windows10
+(1) まず Windows10 のディスプレイ画面を表示させます
+ デスクトップ画面を右クリック
+＞ディスプレイ設定
+ もしくは
+ Windowsのスタートボタン
+＞設定
+＞システム
+ (2) 「ディスプレイの詳細設定」を選択！
+(3) ディスプレイのカスタマイズの項目の中の、「アダプターのプロパティの表示」を選択！
+(4) グラフィックボードの情報が出てきます
+このPCはインテルボードでした
+別の調べ方としては、DirectX 診断ツール（dxdiag）を使う方法もあり
+dxdiag で検索すると、一致するコマンドが出てきます
+実行すると、こんな感じで、表示を出してくれます
+GPU…気になりますよね…
+CPUは多少型が古くても、それほど差が出ないけど
+GPUだけは新しい型のものにしとかないと…とかとか
+私的にはこだわりたいのです！！！
+（実行出来てるかどうかは…涙）</description>
     </item>
     
     <item>
@@ -117,33 +68,21 @@ GPUだけは新しい型のものにしとかないと…とかとか&lt;br /&gt
       <pubDate>Wed, 15 Jun 2016 12:30:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/</guid>
-      <description>&lt;p&gt;Windows10 でシャットダウンが出来ない現象にあった方はいらっしゃいますか～？&lt;/p&gt;
-
-&lt;p&gt;わたしもそんな一人でした……(^_^;)&lt;/p&gt;
-
-&lt;p&gt;シャットダウンを選択しても、勝手に再起動するんです…　
-やめてぇ～(つд⊂)ｴｰﾝ&lt;/p&gt;
-
-&lt;p&gt;実はこれ、「&lt;strong&gt;高速スタートアップ&lt;/strong&gt;」の設定が効いているときになるPCがあるようです&lt;br /&gt;
-※会社のインフラ詳しい方に教えて頂きました！&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;コントロールパネル&lt;br /&gt;
-　&amp;gt; システムとセキュリティ&lt;br /&gt;
-　　&amp;gt; 電源オプション&lt;br /&gt;
-　　　&amp;gt; 電源ボタンの動作の選択&lt;br /&gt;
-　　　　&amp;gt; 現在利用可の出ない設定を変更します&lt;br /&gt;
-　　　　　&amp;gt; 高速スタートアップを有効にする&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;今すぐ、「高速スタートアップを有効にする」のチェックボックスを外しましょう！&lt;/p&gt;
-
-&lt;p&gt;わたしの場合は、これで、無限再起動が無くなりました(●´ω｀●)&lt;/p&gt;
-
-&lt;p&gt;よかった。。。いつもバイオス画面になったのを見計らって、ブチギリしてたんですよ…( ；∀；)&lt;/p&gt;
-
-&lt;p&gt;シャットダウンが出来ない人の助けになればと思います！&lt;/p&gt;
-</description>
+      <description>Windows10 でシャットダウンが出来ない現象にあった方はいらっしゃいますか～？
+わたしもそんな一人でした……(^_^;)
+シャットダウンを選択しても、勝手に再起動するんです…　やめてぇ～(つд⊂)ｴｰﾝ
+実はこれ、「高速スタートアップ」の設定が効いているときになるPCがあるようです
+※会社のインフラ詳しい方に教えて頂きました！
+ コントロールパネル
+&amp;gt; システムとセキュリティ
+&amp;gt; 電源オプション
+&amp;gt; 電源ボタンの動作の選択
+&amp;gt; 現在利用可の出ない設定を変更します
+&amp;gt; 高速スタートアップを有効にする
+ 今すぐ、「高速スタートアップを有効にする」のチェックボックスを外しましょう！
+わたしの場合は、これで、無限再起動が無くなりました(●´ω｀●)
+よかった。。。いつもバイオス画面になったのを見計らって、ブチギリしてたんですよ…( ；∀；)
+シャットダウンが出来ない人の助けになればと思います！</description>
     </item>
     
   </channel>

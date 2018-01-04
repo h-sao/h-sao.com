@@ -2,12 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sql on Effectiveさお</title>
-    <link>http://h-sao.com/tags/sql/index.xml</link>
+    <link>http://h-sao.com/tags/sql/</link>
     <description>Recent content in Sql on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <atom:link href="http://h-sao.com/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Apr 2014 18:00:15 +0900</lastBuildDate>
+    
+	<atom:link href="http://h-sao.com/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>[Oracle]テーブル・カラム名が不明でもDBに入っている値を検索したい</title>
@@ -15,86 +18,24 @@
       <pubDate>Thu, 10 Apr 2014 18:00:15 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2014/04/10/mining-for-value-from-db/</guid>
-      <description>&lt;p&gt;見知らぬデータベースを渡され、中を解析したい時…&lt;/p&gt;
-
-&lt;p&gt;ありますよね？ありますよね！？&lt;/p&gt;
-
-&lt;p&gt;全テーブルの全列に入っている値を横断検索したいという要求、あるんじゃないでしょうか？&lt;/p&gt;
-
-&lt;p&gt;探したら同じことを考えている人が居ました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;全テーブルの全列の値の検索方法について - Oracle Community&lt;br /&gt;
-&lt;a href=&#34;https://community.oracle.com/thread/2334738?tstart=0&#34;&gt;https://community.oracle.com/thread/2334738?tstart=0&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;方法は2種類&lt;br /&gt;
-一つは &lt;strong&gt;dmp 出力して、テキスト検索&lt;/strong&gt; をするというもの&lt;br /&gt;
-だいぶ力技ですけど、確かに、確実に検索できますね…&lt;/p&gt;
-
-&lt;p&gt;もう一つの方法は、&lt;strong&gt;PL/SQL で全データを総検索&lt;/strong&gt; するというもの&lt;/p&gt;
-
-&lt;p&gt;この方法、&lt;br /&gt;
-やってみると、良い感じに動きます&lt;br /&gt;
-お勧めです&lt;br /&gt;
-テーブル名やカラム名が判らなくても、動きますしね！&lt;/p&gt;
-
-&lt;p&gt;めっちゃ感激したので、この記事にも SQL を載せておきます&lt;/p&gt;
-
-&lt;p&gt;このサンプルでは、全ての値に 「あ」 が入っているデータを検索します&lt;br /&gt;
-どのテーブルの、どのカラムに、何件入っているかが判ります&lt;/p&gt;
-
-&lt;p&gt;う、嬉しい～!!!&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;declare
- sSQL VARCHAR2(128);
- sDATA VARCHAR2(500);
- type cursor_type is ref cursor;
- cur_search cursor_type;
- vCount INTEGER;
- ERR_CODE NUMBER := 0;
- ERR_MSG VARCHAR(255);
-begin
- for vRec in (select COLUMN_NAME,TABLE_NAME from USER_TAB_COLS where DATA_TYPE like &#39;%CHAR%&#39;)
- loop
-  begin
-    open cur_search for &#39;select count(*) as cnt from &#39; || vRec.TABLE_NAME || &#39; where &#39; || vRec.COLUMN_NAME || &#39; like &#39;&#39;%あ%&#39;&#39;&#39;;
-        fetch cur_search into vCount;
-        if vCount &amp;gt; 0 then
-          dbms_output.put_line(vRec.TABLE_NAME || &#39;.&#39; || vRec.COLUMN_NAME || &#39;:&#39; || vCount || &#39;件あり&#39;);
-        end if;
-        close cur_search;
-  exception
-   WHEN OTHERS THEN
-    ERR_CODE := SQLCODE;
-    ERR_MSG  := SUBSTRB(SQLERRM,1,255);
-    dbms_output.put_line(&#39;error:&#39; || ERR_CODE || &#39; &#39; || ERR_MSG || &#39; &#39; || vRec.TABLE_NAME || &#39;.&#39; || vRec.COLUMN_NAME);
-  end;
- end loop;
-end;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;DBの構造を解析するツールは結構探せばあるのですが、データの中身となると、調べるのは手間ですよね…&lt;br /&gt;
-このSQLには助けられました～&lt;/p&gt;
-
-&lt;p&gt;話は変わりますが、&lt;br /&gt;
-DB系のクライアントツールで、わたしがよく使っているのは  &lt;strong&gt;A5:SQL Mk-2&lt;/strong&gt; （フリーソフト）です&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;A5:SQL Mk-2 : SQL Development Studio&lt;br /&gt;
-&lt;a href=&#34;http://a5m2.mmatsubara.com/&#34;&gt;http://a5m2.mmatsubara.com/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Oracle, SQLServer, MySQL など多くのDBに対応しています&lt;br /&gt;
-一番うれしいのは、Oracle への接続に、Oracle Client が無くても接続できる所ですね&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;OCI経由か、直接 IPアドレスなどを指定して接続するかを選択できる！！&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;ER図も自動生成してくれるし、&lt;br /&gt;
-めっちゃ、現場で役立ってます&lt;/p&gt;
-</description>
+      <description>見知らぬデータベースを渡され、中を解析したい時…
+ありますよね？ありますよね！？
+全テーブルの全列に入っている値を横断検索したいという要求、あるんじゃないでしょうか？
+探したら同じことを考えている人が居ました
+ 全テーブルの全列の値の検索方法について - Oracle Community
+https://community.oracle.com/thread/2334738?tstart=0  方法は2種類
+一つは dmp 出力して、テキスト検索 をするというもの
+だいぶ力技ですけど、確かに、確実に検索できますね…
+もう一つの方法は、PL/SQL で全データを総検索 するというもの
+この方法、
+やってみると、良い感じに動きます
+お勧めです
+テーブル名やカラム名が判らなくても、動きますしね！
+めっちゃ感激したので、この記事にも SQL を載せておきます
+このサンプルでは、全ての値に 「あ」 が入っているデータを検索します
+どのテーブルの、どのカラムに、何件入っているかが判ります
+う、嬉しい～!!!
+declare sSQL VARCHAR2(128); sDATA VARCHAR2(500); type cursor_type is ref cursor; cur_search cursor_type; vCount INTEGER; ERR_CODE NUMBER := 0; ERR_MSG VARCHAR(255); begin for vRec in (select COLUMN_NAME,TABLE_NAME from USER_TAB_COLS where DATA_TYPE like &#39;%CHAR%&#39;) loop begin open cur_search for &#39;select count(*) as cnt from &#39; || vRec.</description>
     </item>
     
     <item>
@@ -103,42 +44,21 @@ DB系のクライアントツールで、わたしがよく使っているのは
       <pubDate>Sat, 18 Jan 2014 00:53:07 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2014/01/18/rerun-last-sql/</guid>
-      <description>&lt;p&gt;OracleのコマンドラインでSQLを実行させるときのメモ&lt;/p&gt;
-
-&lt;p&gt;直前のSQLコマンドを実行は / (スラッシュ)&lt;br /&gt;
-この場合、直前のバッファの内容は表示しません&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SQL&amp;gt; /
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;直前のバッファの内容を表示して実行するのは run コマンド&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SQL &amp;gt; run
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;直前のバッファの内容を修正するには edit コマンド&lt;br /&gt;
-タイプミスなどを修正できます&lt;br /&gt;
-ただし、環境変数 &amp;ldquo;_editor&amp;rdquo; にエディタの設定をしておく必要があります&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SQL &amp;gt; define  _editor=vi
-SQL &amp;gt; edit
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;（参考）&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;OracleのSQL*Plusで直前に実行したSQLを再実行&lt;br /&gt;
-&lt;a href=&#34;http://margrave.seesaa.net/article/127477048.html&#34;&gt;http://margrave.seesaa.net/article/127477048.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;SQL バッファの編集、エディタで編集する&lt;br /&gt;
-&lt;a href=&#34;http://www.shift-the-oracle.com/sqlplus/command/edit.html&#34;&gt;http://www.shift-the-oracle.com/sqlplus/command/edit.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;直前に実行したSQLをエディタで編集する&lt;br /&gt;
-&lt;a href=&#34;http://sakusakuit.blog.fc2.com/?m&amp;amp;no=15&#34;&gt;http://sakusakuit.blog.fc2.com/?m&amp;amp;no=15&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>OracleのコマンドラインでSQLを実行させるときのメモ
+直前のSQLコマンドを実行は / (スラッシュ)
+この場合、直前のバッファの内容は表示しません
+SQL&amp;gt; /  直前のバッファの内容を表示して実行するのは run コマンド
+SQL &amp;gt; run  直前のバッファの内容を修正するには edit コマンド
+タイプミスなどを修正できます
+ただし、環境変数 &amp;ldquo;_editor&amp;rdquo; にエディタの設定をしておく必要があります
+SQL &amp;gt; define _editor=vi SQL &amp;gt; edit  （参考）
+ OracleのSQL*Plusで直前に実行したSQLを再実行
+http://margrave.seesaa.net/article/127477048.html
+ SQL バッファの編集、エディタで編集する
+http://www.shift-the-oracle.com/sqlplus/command/edit.html
+ 直前に実行したSQLをエディタで編集する
+http://sakusakuit.blog.fc2.com/?m&amp;amp;no=15
+  </description>
     </item>
     
   </channel>

@@ -2,12 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gitextensions on Effectiveさお</title>
-    <link>http://h-sao.com/tags/gitextensions/index.xml</link>
+    <link>http://h-sao.com/tags/gitextensions/</link>
     <description>Recent content in Gitextensions on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <atom:link href="http://h-sao.com/tags/gitextensions/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Jun 2017 18:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="http://h-sao.com/tags/gitextensions/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>[SSH] ポート指定GitサーバにSSHでアクセスできない時(Windows/GitExtensions)</title>
@@ -15,101 +18,29 @@
       <pubDate>Thu, 01 Jun 2017 18:00:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</guid>
-      <description>
-
-&lt;h4 id=&#34;最近&#34;&gt;最近…&lt;/h4&gt;
-
-&lt;p&gt;機械学習関係をやってたんですけど、Unityをまた触ることになっています&lt;br /&gt;
-てんやわんやして、前回更新から2カ月も経ってしまった…(+o+)&lt;/p&gt;
-
-&lt;p&gt;今回また、タイトル名のGit/SSH関係でオロオロしたので、同現象で困ってる人の助けになれば幸いです&lt;/p&gt;
-
-&lt;h2 id=&#34;現象-初回ssh接続に失敗する&#34;&gt;(現象)初回SSH接続に失敗する&lt;/h2&gt;
-
-&lt;h4 id=&#34;環境&#34;&gt;環境&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Windows7/64bit&lt;/li&gt;
-&lt;li&gt;GitExtensions&lt;/li&gt;
-&lt;li&gt;キーペアを用いた認証でのSSH接続&lt;/li&gt;
-&lt;li&gt;GitサーバへのSSHアクセスは、オリジナルのポート番号を割り当てている&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;こんな環境で作業していました（古いPCからアクセスしたかったので、Win7なのです…）&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;初回クローンするために、Gitサーバにアクセスしようと、秘密鍵を .ssh ディレクトリ以下にコピーしておきます&lt;br /&gt;
-デフォルトのSSH秘密鍵置き場は&lt;br /&gt;
-&lt;strong&gt;c:\Users[ユーザ名].ssh/id_rsa&lt;/strong&gt;&lt;br /&gt;
-です&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;GitExtensionsを利用してGitリポジトリからクローンしようとすると、以下のエラーが…&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;fatal: Could not read from remote repository.&lt;/strong&gt;&lt;br /&gt;
-Please make sure you have the correct access rights and repository exists.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;え、なんで…？&lt;/p&gt;
-
-&lt;h2 id=&#34;解決-ポート番号ありでknown-hostsに登録する&#34;&gt;(解決)ポート番号ありでknown_hostsに登録する&lt;/h2&gt;
-
-&lt;p&gt;アドレスも合ってる！&lt;br /&gt;
-リポジトリもある！&lt;br /&gt;
-サーバには公開鍵、クライアントには秘密鍵を置いてる！&lt;/p&gt;
-
-&lt;p&gt;これでなぜアクセス出来ないのか、解明に半日かかってしまいました…トホホ&lt;br /&gt;
-自分のインフラ力の無さに涙が出そうです&lt;/p&gt;
-
-&lt;p&gt;答えを書きますと、&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;先に&lt;strong&gt;コマンドプロンプトからSSHアクセス&lt;/strong&gt;を行っておく&lt;/li&gt;
-&lt;li&gt;ポート番号の指定がある場合は、&lt;strong&gt;ポート番号指定でアクセス&lt;/strong&gt;しておく&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;これで解決しました…(^_^;)&lt;/p&gt;
-
-&lt;p&gt;わたしの場合のポイントは、ポート指定でした&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;コマンドプロンプトを立ち上げます&lt;br /&gt;
-わたしの場合、GitExtensionsを使ってたので  &lt;strong&gt;Tools &amp;gt; Git bash&lt;/strong&gt; から立ち上げました&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;SSH のテスト接続を行います&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;$ssh git@[サーバアドレス] -p [SSHアクセスのポート番号]&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;そしたら、&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Are you sure you want to continue connecting (yes/no)?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;と聞かれるので、すかさず &lt;strong&gt;yes&lt;/strong&gt; を！&lt;br /&gt;
-c:\Users[ユーザ名].ssh\known_hosts にアクセス情報が登録されます&lt;/p&gt;
-
-&lt;p&gt;これで GitExtensions に戻って新規クローン開始したら、拒否されることなくソースを取得できました！&lt;/p&gt;
-
-&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
-
-&lt;p&gt;最初に、&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;$ssh git@[サーバアドレス]&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;この状態で接続テストしてたんですけど、足りてないみたいでした&lt;/p&gt;
-
-&lt;p&gt;たったこれだけなんですけど、あまり情報が乗ってなかったように思いますので&lt;br /&gt;
-未来の自分へのメモ…&lt;/p&gt;
-</description>
+      <description>最近… 機械学習関係をやってたんですけど、Unityをまた触ることになっています
+てんやわんやして、前回更新から2カ月も経ってしまった…(+o+)
+今回また、タイトル名のGit/SSH関係でオロオロしたので、同現象で困ってる人の助けになれば幸いです
+(現象)初回SSH接続に失敗する 環境  Windows7/64bit GitExtensions キーペアを用いた認証でのSSH接続 GitサーバへのSSHアクセスは、オリジナルのポート番号を割り当てている  こんな環境で作業していました（古いPCからアクセスしたかったので、Win7なのです…）
+ 初回クローンするために、Gitサーバにアクセスしようと、秘密鍵を .ssh ディレクトリ以下にコピーしておきます
+デフォルトのSSH秘密鍵置き場は
+c:\Users[ユーザ名].ssh/id_rsa
+です
+ GitExtensionsを利用してGitリポジトリからクローンしようとすると、以下のエラーが…
+   fatal: Could not read from remote repository.
+Please make sure you have the correct access rights and repository exists.
+ え、なんで…？
+(解決)ポート番号ありでknown_hostsに登録する アドレスも合ってる！
+リポジトリもある！
+サーバには公開鍵、クライアントには秘密鍵を置いてる！
+これでなぜアクセス出来ないのか、解明に半日かかってしまいました…トホホ
+自分のインフラ力の無さに涙が出そうです
+答えを書きますと、
+ 先にコマンドプロンプトからSSHアクセスを行っておく ポート番号の指定がある場合は、ポート番号指定でアクセスしておく  これで解決しました…(^_^;)
+わたしの場合のポイントは、ポート指定でした
+ コマンドプロンプトを立ち上げます
+わたしの場合、GitExtensionsを使ってたので Tools &amp;gt; Git bash から立ち上げました
+ SSH のテスト接続を行います</description>
     </item>
     
     <item>
@@ -118,410 +49,29 @@ c:\Users[ユーザ名].ssh\known_hosts にアクセス情報が登録されま�
       <pubDate>Sat, 07 May 2016 15:23:30 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</guid>
-      <description>
-
-&lt;p&gt;しょっちゅう作っては、作り方を忘れ、また検索で調べる…ということをしているので、sshキーの生成&amp;amp;接続について、忘れないようにメモしておきます&lt;/p&gt;
-
-&lt;h1 id=&#34;gitサーバへsshキーを使って接続したい&#34;&gt;GitサーバへSSHキーを使って接続したい&lt;/h1&gt;
-
-&lt;p&gt;Gitサーバに接続するには、&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;http&lt;/li&gt;
-&lt;li&gt;ssh&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;この2種類の接続方法があるみたいです&lt;/p&gt;
-
-&lt;p&gt;Git接続用のクライアントアプリは、どっちで接続するか選択できるものもあるので&lt;br /&gt;
-Sourcetreeなどを使っていると、あまり認識してない人もいるかもしれません&lt;/p&gt;
-
-&lt;p&gt;今回、こんなクライアント環境で試しました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;自端末：Windows10 x64&lt;/li&gt;
-&lt;li&gt;Gitサーバ：GitHub&lt;/li&gt;
-&lt;li&gt;Gitクライアントアプリ：GitExtensions&lt;/li&gt;
-&lt;li&gt;Gitアクセスには、複数アカウントを利用している&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;これを試そうと思ったモチベーションは、push のたびに IDとパスワードを毎回聞かれるのがやだ、だからキーペアを利用して ssh アクセスにするんだー&lt;br /&gt;
-というところから始まってます&lt;/p&gt;
-
-&lt;p&gt;GitHub のIDとパスワードをスキップして、セキュアアクセスするのだ！という方の参考になればと思います！&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;あと、番外編として、 非推奨ですが https アクセスでIDとパスワードを毎回聞かれないようにする方法も最後にメモしておきます&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&#34;キーの生成方法-ssh-keygen&#34;&gt;キーの生成方法 ssh-keygen&lt;/h1&gt;
-
-&lt;p&gt;ここは普通に&lt;br /&gt;
-公開鍵と秘密鍵を作ればいいだけなので、知ってる人に取ったら何をいまさら…になりますが、一応メモ&lt;/p&gt;
-
-&lt;p&gt;Gitがインストールされているなら &lt;strong&gt;ssh-keygen&lt;/strong&gt; が使えますので、コマンドを打つだけ&lt;br /&gt;
-(コマンドを打たなくても、Gitのクライアントアプリが勝手にやってくれる場合もあります)&lt;/p&gt;
-
-&lt;p&gt;GitBash などを起動します&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;コマンドはこちら&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ ssh-keygen -t rsa
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;基本的には、何か聞かれてもエンターで進めばOKです&lt;/p&gt;
-
-&lt;p&gt;デフォルトでは &lt;strong&gt;c:\Users\[ユーザ名]\.ssh\** 以下に&lt;/strong&gt;秘密鍵（id_rsa）&lt;strong&gt;と&lt;/strong&gt;公開鍵（id_rsa.pub）**のキーペアが作成されます&lt;/p&gt;
-
-&lt;p&gt;Windowsだとキーの保存位置は c:\Users\[ユーザ名]\.ssh\ にしないといけません&lt;/p&gt;
-
-&lt;p&gt;わたしは、Github用のキーだと判るように、名前を github_rsa として作成しました&lt;br /&gt;
-（既に別の用途で id_rsa を使っているからです、つまり複数アカウントを利用しています）&lt;/p&gt;
-
-&lt;p&gt;実行結果はこれ↓↓↓&lt;/p&gt;
-
-&lt;pre&gt;&lt;div class=&#34;hljs&#34;&gt;(SHA256以下の箇所は、適当に x で書き換えています)
-
-haruka.sao@MyPC MINGW64 ~
-&lt;span class=&#34;hljs-keyword&#34;&gt;$ ssh-keygen -t rsa&lt;/span&gt;
-Generating public/private rsa key pair.
-&lt;span class=&#34;hljs-string&#34;&gt;Enter file in which to save the key (/c/Users/haruka.sao/.ssh/id_rsa):&lt;/span&gt; /c/Users/haruka.sao/.ssh/github_rsa
-&lt;span class=&#34;hljs-string&#34;&gt;Enter passphrase (empty for no passphrase):
-Enter same passphrase again:&lt;/span&gt;
-Your identification has been saved in /c/Users/haruka.sao/.ssh/github_rsa.
-Your public key has been saved in /c/Users/haruka.sao/.ssh/github_rsa.pub.
-The key fingerprint is:
-SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx haruka.sao@MyPC
-The key&#39;s randomart image is:
-+---[RSA 2048]----+
-|      x          |
-|      x          |
-|      x          |
-|      x          |
-|      x          |
-|      x          |
-|      x          |
-|      x          |
-|      x          |
-+----[SHA256]-----+
-
-haruka.sao@MyPC MINGW64 ~
-$
-&lt;/div&gt;&lt;/pre&gt;
-
-&lt;p&gt;キーペアができたできた&lt;/p&gt;
-
-&lt;h1 id=&#34;sshキーをgithubに登録&#34;&gt;SSHキーをGitHubに登録&lt;/h1&gt;
-
-&lt;p&gt;c:\Users\[ユーザ名]\.ssh\ に保存された id_rsa.pub （わたしの場合はgithub_rsa.pub）を GitHubに登録します&lt;/p&gt;
-
-&lt;p&gt;自分のアカウントの &lt;strong&gt;Settings &amp;gt; SSH and GPG keys &amp;gt; New SSH key&lt;/strong&gt; をクリックすると、先ほど作った公開鍵を登録することができます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;先ほど作った id_rsa.pub 公開鍵を登録しましょう！&lt;br /&gt;
-くれぐれも id_rsa の秘密鍵の方ではないので、お間違え無く！&lt;/p&gt;
-
-&lt;p&gt;id_rsa.pub の中身を見ればわかりますが、「&lt;strong&gt;ssh-rsa ……&lt;/strong&gt;」 から始まっているファイルになります&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_02.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;登録すると、こんな感じの記載になります&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;最後に、自分の秘密鍵が c:\Users\[ユーザ名]\.ssh\ に設置されていることを再確認！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_04.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;openssh-モード&#34;&gt;OpenSSH モード&lt;/h1&gt;
-
-&lt;p&gt;GitExtensions で ssh 接続したい場合、&lt;br /&gt;
-私的にはお勧めなのは、OpenSSHモードにすることです&lt;/p&gt;
-
-&lt;p&gt;※ PuTTYアクセスは、PuTTYの独自フォーマットのキーを登録するなどが必要ですので、わたしは利用をやめました&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_05.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;これで下準備はOK！&lt;/p&gt;
-
-&lt;h1 id=&#34;pcから-ssh-で接続テスト&#34;&gt;PCから ssh で接続テスト&lt;/h1&gt;
-
-&lt;p&gt;Git bash で接続テストしてみましょう&lt;/p&gt;
-
-&lt;p&gt;さっきの Git bash で、リポジトリの下まで移動します&lt;br /&gt;
-もしくは、GitExtensions から起動すると、初期ディレクトリはそのリポジトリの下になります&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_08.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;確認パターンは２パターンあります&lt;/p&gt;
-
-&lt;h2 id=&#34;パターン1-id-rsa-で登録している-ssh-キーを利用する場合&#34;&gt;(パターン1) id_rsa で登録している ssh キーを利用する場合&lt;/h2&gt;
-
-&lt;p&gt;このコマンドで確認します&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;$ ssh -T git@github.com
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;id_rsa&lt;/strong&gt; というファイル名を、ssh 接続では自動的に認識するようです&lt;/p&gt;
-
-&lt;p&gt;初回は、known_hosts に GitHub サーバを登録するよ？と聞いてくるので、 yes を入力します&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Hi [GitHubユーザ名]! You&amp;rsquo;ve successfully authenticated, but GitHub does not provide shell access.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;が表示されればOKです&lt;/p&gt;
-
-&lt;p&gt;わたしの実行結果はこちら↓↓↓&lt;/p&gt;
-
-&lt;pre&gt;&lt;div class=&#34;hljs&#34;&gt;
-&lt;span class=&#34;hljs-keyword&#34;&gt;$ ssh -T git@github.com&lt;/span&gt;
-The authenticity of host &#39;github.com (192.30.252.122)&#39; can&#39;t be established.
-RSA key fingerprint is xx:xx:xx:xx:xx:xx:
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added &#39;github.com,192.30.252.122&#39; (RSA) to the list of known hosts.
-&lt;span class=&#34;hljs-string&#34;&gt;Hi h-sao! You&#39;ve successfully authenticated,&lt;/span&gt; but GitHub does not provide shell access.
-
-&lt;/div&gt;&lt;/pre&gt;
-
-&lt;p&gt;known_hosts ファイルがこんな感じで作られました&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_09.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;パターン2-独自の名前で作った-ssh-キーを利用する場合&#34;&gt;(パターン2) 独自の名前で作った ssh キーを利用する場合&lt;/h2&gt;
-
-&lt;p&gt;わたしの場合は、先ほど github_rsa という名前でキーを生成したので、こちらのパターンになりました&lt;/p&gt;
-
-&lt;p&gt;まず、 github_rsa という独自名称を ssh アクセス時に認識させる必要があります&lt;/p&gt;
-
-&lt;p&gt;c:\Users\[ユーザ名]\.ssh\ 直下に config という名前のファイルを作成します&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;※この部分は、Gitうんぬんは関係のない、ssh 接続の話です&lt;br /&gt;
-　Windows の ssh 接続では c:\Users\[ユーザ名]\.ssh\config はすべてのSSH接続で共有されます&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;c:\Users\[ユーザ名]\.ssh\config の内容はこんな感じです&lt;/p&gt;
-
-&lt;pre&gt;&lt;div class=&#34;hljs&#34;&gt;
-Host &lt;span class=&#34;hljs-string&#34;&gt;my.github.server&lt;/span&gt;
-  HostName  &lt;span class=&#34;hljs-string&#34;&gt;github.com&lt;/span&gt;
-  Port      &lt;span class=&#34;hljs-string&#34;&gt;22&lt;/span&gt;
-  User      &lt;span class=&#34;hljs-string&#34;&gt;h-sao&lt;/span&gt;
-  IdentityFile  &lt;span class=&#34;hljs-string&#34;&gt;~/.ssh/github_rsa&lt;/span&gt;
-  TCPKeepAlive &lt;span class=&#34;hljs-string&#34;&gt;yes&lt;/span&gt;
-  IdentitiesOnly &lt;span class=&#34;hljs-string&#34;&gt;yes&lt;/span&gt;
-
-&lt;/div&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Host&lt;/strong&gt;&lt;br /&gt;
-アクセス識別子なので、どんな名前でもOK&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;HostName&lt;/strong&gt;&lt;br /&gt;
-実際にアクセスするアドレス&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Port&lt;/strong&gt;&lt;br /&gt;
-アクセスするポート番号、ssh(Secure Shell)の番号&lt;br /&gt;
-OpenSSHのデフォは22番なので、わざわざ書かなくてもいいのですが一応記載&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;User&lt;/strong&gt;&lt;br /&gt;
-GitHubユーザ名を入れます&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;IdentityFile&lt;/strong&gt;&lt;br /&gt;
-利用する ssh 秘密鍵ファイルのパス&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;TCPKeepAlive&lt;/strong&gt;：yes&lt;br /&gt;
-これもデフォは yes なのですが、念のため&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;IdentitiesOnly&lt;/strong&gt;：yes&lt;br /&gt;
-.ssh/config の設定を増やしていくと「Too many authentication failures」が出ることがあるらしいです、変なエラーはやなので、あらかじめ設定しておきます&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;＜参考リンク＞&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;SSHに公開鍵認証で接続する際に Too many authentication failures が出る - 6vox&lt;br /&gt;
-&lt;a href=&#34;http://blog.6vox.com/2014/11/ssh-too-many-authentication-failures.html&#34;&gt;http://blog.6vox.com/2014/11/ssh-too-many-authentication-failures.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;OpenSSH ssf_configの設定項目 - Life with IT&lt;br /&gt;
-&lt;a href=&#34;http://l-w-i.net/t/openssh/conf_001.txt&#34;&gt;http://l-w-i.net/t/openssh/conf_001.txt&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;ここまで準備したら、接続テストしましょう&lt;br /&gt;
-config に設定した名前で　Host の名称アクセスすることが出来ます！&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;$ ssh -T my.github.server
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;うまくいくと、パターン1と同じように、known hostに登録するかどうかを聞かれて、ファイルが作成されます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_10.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;また、&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Hi [GitHubユーザ名]! You&amp;rsquo;ve successfully authenticated, but GitHub does not provide shell access.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;こんな感じで、自分のGitHub名でアクセス出来たことが判ります&lt;br /&gt;
-いちおキャプチャ置いときます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_11.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;これで、クライアントPCから GitHub に IDとパスワードを利用せずに接続することが出来ました！&lt;/p&gt;
-
-&lt;h1 id=&#34;まだgitextensions-から-ssh-アクセスは出来ない&#34;&gt;まだGitExtensions から ssh アクセスは出来ない&lt;/h1&gt;
-
-&lt;p&gt;さて、この状態で、GitExtensions のプッシュボタンを押して Pushしようとしても、IDとパスワードを聞かれます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_06.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;Pushボタンを押すと…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_07.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;GitHub のアカウントとパスワードを聞かれます…&lt;br /&gt;
-どうやら &lt;strong&gt;https アクセスがデフォルト&lt;/strong&gt;みたいです&lt;/p&gt;
-
-&lt;p&gt;ちゃんと自身の Git リポジトリに ssh 接続するんだよー&lt;/p&gt;
-
-&lt;p&gt;を認識させてあげないといけません&lt;/p&gt;
-
-&lt;h1 id=&#34;git-リポジトリに-ssh-接続設定を教える&#34;&gt;Git リポジトリに ssh 接続設定を教える&lt;/h1&gt;
-
-&lt;p&gt;Git リポジトリの設定を Git bash のコマンドで見ることが出来ます&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ git config -l
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これらの設定は、Git リポジトリ直下にある .\.git\ 以下にあります&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;この下の config ファイルなどを直接編集しても反映されますが、コマンドを使った方が良いでしょう&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;わたしの場合の実行結果はこちら&lt;/p&gt;
-
-&lt;pre&gt;&lt;div class=&#34;hljs&#34;&gt;
-haruk@MACBOOKPROAKIKO ~/xxx (master)
-&lt;span class=&#34;hljs-keyword&#34;&gt;$ git config -l&lt;/span&gt;
-core.symlinks=&lt;span class=&#34;hljs-string&#34;&gt;false&lt;/span&gt;
-core.autocrlf=&lt;span class=&#34;hljs-string&#34;&gt;true&lt;/span&gt;
-color.diff=&lt;span class=&#34;hljs-string&#34;&gt;auto&lt;/span&gt;
-color.status=&lt;span class=&#34;hljs-string&#34;&gt;auto&lt;/span&gt;
-color.branch=&lt;span class=&#34;hljs-string&#34;&gt;auto&lt;/span&gt;
-color.interactive=&lt;span class=&#34;hljs-string&#34;&gt;true&lt;/span&gt;
-pack.packsizelimit=&lt;span class=&#34;hljs-string&#34;&gt;2g&lt;/span&gt;
-help.format=&lt;span class=&#34;hljs-string&#34;&gt;html&lt;/span&gt;
-http.sslcainfo=&lt;span class=&#34;hljs-string&#34;&gt;/bin/curl-ca-bundle.crt&lt;/span&gt;
-sendemail.smtpserver=&lt;span class=&#34;hljs-string&#34;&gt;/bin/msmtp.exe&lt;/span&gt;
-diff.astextplain.textconv=&lt;span class=&#34;hljs-string&#34;&gt;astextplain&lt;/span&gt;
-rebase.autosquash=&lt;span class=&#34;hljs-string&#34;&gt;true&lt;/span&gt;
-user.name=&lt;span class=&#34;hljs-string&#34;&gt;Sao Haruka&lt;/span&gt;
-user.email=&lt;span class=&#34;hljs-string&#34;&gt;xxx@yyy.tmp.com&lt;/span&gt;
-core.autocrlf=&lt;span class=&#34;hljs-string&#34;&gt;True&lt;/span&gt;
-core.excludesfile=&lt;span class=&#34;hljs-string&#34;&gt;C:\Users\haruk\Documents\gitignore_global.txt&lt;/span&gt;
-core.editor=&lt;span class=&#34;hljs-string&#34;&gt;&#34;C:/utils/GitExtensions/GitExtensions.exe&#34; fileeditor&lt;/span&gt;
-merge.tool=&lt;span class=&#34;hljs-string&#34;&gt;kdiff3&lt;/span&gt;
-diff.guitool=&lt;span class=&#34;hljs-string&#34;&gt;kdiff3&lt;/span&gt;
-difftool.kdiff3.path=&lt;span class=&#34;hljs-string&#34;&gt;C:/utils/KDiff3/kdiff3.exe&lt;/span&gt;
-mergetool.kdiff3.path=&lt;span class=&#34;hljs-string&#34;&gt;C:/utils/KDiff3/kdiff3.exe&lt;/span&gt;
-core.repositoryformatversion=&lt;span class=&#34;hljs-string&#34;&gt;0&lt;/span&gt;
-core.filemode=&lt;span class=&#34;hljs-string&#34;&gt;false&lt;/span&gt;
-core.bare=&lt;span class=&#34;hljs-string&#34;&gt;false&lt;/span&gt;
-core.logallrefupdates=&lt;span class=&#34;hljs-string&#34;&gt;true&lt;/span&gt;
-core.symlinks=&lt;span class=&#34;hljs-string&#34;&gt;false&lt;/span&gt;
-core.ignorecase=&lt;span class=&#34;hljs-string&#34;&gt;true&lt;/span&gt;
-core.hidedotfiles=&lt;span class=&#34;hljs-string&#34;&gt;dotGitOnly&lt;/span&gt;
-remote.origin.url=&lt;span class=&#34;hljs-keyword&#34;&gt;https://github.com/h-sao/xxx.git&lt;/span&gt;
-remote.origin.fetch=&lt;span class=&#34;hljs-string&#34;&gt;+refs/heads/*:refs/remotes/origin/*&lt;/span&gt;
-branch.master.remote=&lt;span class=&#34;hljs-string&#34;&gt;origin&lt;/span&gt;
-branch.master.merge=&lt;span class=&#34;hljs-string&#34;&gt;refs/heads/master&lt;/span&gt;
-
-&lt;/div&gt;&lt;/pre&gt;
-
-&lt;p&gt;上記の「&lt;strong&gt;remote.origin.url&lt;/strong&gt;」が Git サーバにアクセスするときの URL になるので、これを ssh でアクセスするように変更します&lt;/p&gt;
-
-&lt;p&gt;デフォルトの id_rsa を利用するときは&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;git@github.com:[ユーザID]/[リポジトリ].git&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;を設定します&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;$ git remote set-url origin git@github.com:h-sao/xxx.git
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;id_rsa じゃない、別名の ssh キーファイルを利用するときの設定は&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[Host名]:[ユーザID]/[リポジトリ].git&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;になります&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;$ git remote set-url origin my.github.server:h-sao/xxx.git
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;GitExtensions で Push してみましょう&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_12.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;URL の表記がちょっと変わりましたね&lt;br /&gt;
-無事、IDとパスワードを聞かれることなく、プッシュが成功しているはずです＼(^o^)／&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_13.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;やったー&lt;/p&gt;
-
-&lt;p&gt;＜参考リンク＞&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;gitHubでssh接続する手順~公開鍵・秘密鍵の生成から~ - Qiita&lt;br /&gt;
-&lt;a href=&#34;http://qiita.com/shizuma/items/2b2f873a0034839e47ce&#34;&gt;http://qiita.com/shizuma/items/2b2f873a0034839e47ce&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;番外編-httpsアクセスでidとパスワードを聞かれないようにする&#34;&gt;(番外編) httpsアクセスでIDとパスワードを聞かれないようにする&lt;/h1&gt;
-
-&lt;p&gt;ええ、今回、本当に色々と試しましたとも…&lt;/p&gt;
-
-&lt;p&gt;ssh ではなく https アクセスで、毎回アカウント情報を入力しない方法も調べました&lt;/p&gt;
-
-&lt;p&gt;あまりセキュアじゃないので、お勧めできませんが&lt;br /&gt;
-一応記載しておきます&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ git config -l 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;で調べた 「&lt;strong&gt;remote.origin.url&lt;/strong&gt;」 の初期の記載はこれでした&lt;/p&gt;
-
-&lt;pre&gt;&lt;div class=&#34;hljs&#34;&gt;
-remote.origin.url=&lt;span class=&#34;hljs-keyword&#34;&gt;https://github.com/h-sao/xxx.git&lt;/span&gt;
-
-&lt;/div&gt;&lt;/pre&gt;
-
-&lt;p&gt;この https アクセスの URL 中に、IDとパスワードを埋め込めばOKです&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;https://[ユーザID]:[パスワード]github.com/h-sao/xxx.git&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;やってみたけど、パスワードが丸々画面に表示されるので、よくないです…&lt;br /&gt;
-確かに、ssh キーファイルなど用意しなくてもいいので、便利ではありますが…＞＜；&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Generate-ssh-key-for-GitHub_14.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;利用は自己責任でお願いします&lt;/p&gt;
-
-&lt;p&gt;＜参考リンク＞&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Windowsにgitをインストールしてgithubにpushするまで - karakaram-blog&lt;br /&gt;
-&lt;a href=&#34;http://www.karakaram.com/git-install&#34;&gt;http://www.karakaram.com/git-install&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;追記記事書きました-2016-5-9&#34;&gt;追記記事書きました(2016/5/9)&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;[SSH] 複数キー接続のconfig記載について&lt;br /&gt;
-&lt;a href=&#34;http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/&#34;&gt;http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>しょっちゅう作っては、作り方を忘れ、また検索で調べる…ということをしているので、sshキーの生成&amp;amp;接続について、忘れないようにメモしておきます
+GitサーバへSSHキーを使って接続したい Gitサーバに接続するには、
+ http ssh  この2種類の接続方法があるみたいです
+Git接続用のクライアントアプリは、どっちで接続するか選択できるものもあるので
+Sourcetreeなどを使っていると、あまり認識してない人もいるかもしれません
+今回、こんなクライアント環境で試しました
+ 自端末：Windows10 x64 Gitサーバ：GitHub Gitクライアントアプリ：GitExtensions Gitアクセスには、複数アカウントを利用している  これを試そうと思ったモチベーションは、push のたびに IDとパスワードを毎回聞かれるのがやだ、だからキーペアを利用して ssh アクセスにするんだー
+というところから始まってます
+GitHub のIDとパスワードをスキップして、セキュアアクセスするのだ！という方の参考になればと思います！
+ あと、番外編として、 非推奨ですが https アクセスでIDとパスワードを毎回聞かれないようにする方法も最後にメモしておきます
+ キーの生成方法 ssh-keygen ここは普通に
+公開鍵と秘密鍵を作ればいいだけなので、知ってる人に取ったら何をいまさら…になりますが、一応メモ
+Gitがインストールされているなら ssh-keygen が使えますので、コマンドを打つだけ
+(コマンドを打たなくても、Gitのクライアントアプリが勝手にやってくれる場合もあります)
+GitBash などを起動します
+コマンドはこちら
+$ ssh-keygen -t rsa  基本的には、何か聞かれてもエンターで進めばOKです
+デフォルトでは c:\Users\[ユーザ名]\.ssh\** 以下に秘密鍵（id_rsa）と公開鍵（id_rsa.pub）**のキーペアが作成されます
+Windowsだとキーの保存位置は c:\Users\[ユーザ名]\.ssh\ にしないといけません
+わたしは、Github用のキーだと判るように、名前を github_rsa として作成しました
+（既に別の用途で id_rsa を使っているからです、つまり複数アカウントを利用しています）
+実行結果はこれ↓↓↓
+(SHA256以下の箇所は、適当に x で書き換えています) haruka.sao@MyPC MINGW64 ~ $ ssh-keygen -t rsa Generating public/private rsa key pair.</description>
     </item>
     
     <item>
@@ -530,64 +80,26 @@ remote.origin.url=&lt;span class=&#34;hljs-keyword&#34;&gt;https://github.com/h-
       <pubDate>Tue, 03 Mar 2015 22:00:28 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2015/03/03/reset-line-to-gitextensions/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;GitExtensions&lt;/strong&gt; を使ってみました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://gitextensions.github.io/&#34;&gt;http://gitextensions.github.io/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;GitExtensions では、commit 時に、行を選択して&lt;br /&gt;
-その選択部分だけをリセットする（コミット前に合わせる）という機能があります&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Commit - Git Extensions 2.48 documentation&lt;br /&gt;
-&lt;a href=&#34;http://git-extensions-documentation.readthedocs.org/en/latest/commit.html&#34;&gt;http://git-extensions-documentation.readthedocs.org/en/latest/commit.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;以下↓↓↓のような適当なファイルがコミットされていたとします&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;ファイルの下に、変更を追加してみました&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;Giet Extensionsを見ると、ファイルが変更されたので、Commit(1) になっています&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_02.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;差分は、以下のような感じ&lt;br /&gt;
-追加した 「20」、 「100&amp;hellip;」 の数字が、緑色の変更分として表れていますね&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;実は、これは作成中のプログラムなどで、&lt;br /&gt;
-「100&amp;hellip;」 の部分は、Commit には不要だったとします&lt;/p&gt;
-
-&lt;p&gt;そこで、以下のように、Commit には不要だなと思った部分を選択して [R] キーを押してみます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_04.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;以下↓↓↓のような感じで、ここの行消してもいいの？と聞いてくれます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_05.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;「はい」にすると、元のファイルから、選択した行を削除してくれます&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_06.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;この動作は、Commitした/しないに関わらず、元ファイルに反映されます&lt;/p&gt;
-
-&lt;p&gt;「はい」を押したあとのファイルの状態↓↓↓&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Reset-line-to-GitExtensions_07.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;あぁーあそこ、削除しとかなきゃ。。。&lt;br /&gt;
-というときに、元ファイルに戻ってから、再度コミットする、&lt;br /&gt;
-という手間が省けます&lt;/p&gt;
-
-&lt;p&gt;便利やね(^^)/&lt;/p&gt;
-</description>
+      <description>GitExtensions を使ってみました
+ http://gitextensions.github.io/  GitExtensions では、commit 時に、行を選択して
+その選択部分だけをリセットする（コミット前に合わせる）という機能があります
+ Commit - Git Extensions 2.48 documentation
+http://git-extensions-documentation.readthedocs.org/en/latest/commit.html  以下↓↓↓のような適当なファイルがコミットされていたとします
+ファイルの下に、変更を追加してみました
+Giet Extensionsを見ると、ファイルが変更されたので、Commit(1) になっています
+差分は、以下のような感じ
+追加した 「20」、 「100&amp;hellip;」 の数字が、緑色の変更分として表れていますね
+実は、これは作成中のプログラムなどで、
+「100&amp;hellip;」 の部分は、Commit には不要だったとします
+そこで、以下のように、Commit には不要だなと思った部分を選択して [R] キーを押してみます
+以下↓↓↓のような感じで、ここの行消してもいいの？と聞いてくれます
+「はい」にすると、元のファイルから、選択した行を削除してくれます
+この動作は、Commitした/しないに関わらず、元ファイルに反映されます
+「はい」を押したあとのファイルの状態↓↓↓
+あぁーあそこ、削除しとかなきゃ。。。
+というときに、元ファイルに戻ってから、再度コミットする、
+という手間が省けます
+便利やね(^^)/</description>
     </item>
     
   </channel>

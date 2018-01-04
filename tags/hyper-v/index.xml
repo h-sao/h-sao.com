@@ -2,12 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hyper V on Effectiveさお</title>
-    <link>http://h-sao.com/tags/hyper-v/index.xml</link>
+    <link>http://h-sao.com/tags/hyper-v/</link>
     <description>Recent content in Hyper V on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <atom:link href="http://h-sao.com/tags/hyper-v/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Jul 2017 18:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="http://h-sao.com/tags/hyper-v/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>[Android] Hyper-Vで使うVisual Studio Emulator for Androidの最初の一歩</title>
@@ -15,141 +18,15 @@
       <pubDate>Thu, 27 Jul 2017 18:00:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</guid>
-      <description>
-
-&lt;h2 id=&#34;どうもうまくandroidエミュレータが動かない&#34;&gt;どうもうまくAndroidエミュレータが動かない…&lt;/h2&gt;
-
-&lt;p&gt;いわゆる ADV Manager をつかって、Androidをエミューレートしたいのですが&lt;br /&gt;
-なぜかうまく起動しない…&lt;/p&gt;
-
-&lt;p&gt;環境&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Windows10 x64&lt;/li&gt;
-&lt;li&gt;Visual Studio 2017&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Android SDK Managerをよく見てみると、HAXM installer が &amp;ldquo;Not compatible with Windows&amp;rdquo; となっています&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_00.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;ふむ…&lt;br /&gt;
-無理矢理 HAXM のインストーラーをダウンロードしてきても、こんな感じでエラー&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_01.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;This computer does not support Intel Virtualization Technology (VT-x) or it is being exclusively used by Hyper-V, HAXM cannot be installed.&lt;br /&gt;
-Please ensure Hyper-V is disabled in Windows Features, or refer to the Intel HAXM documentation for more information.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;なんですと…Hyper-Vが入ってたら使えないよだと…(｀・ω・´)&lt;/p&gt;
-
-&lt;p&gt;ワタクシ、&lt;strong&gt;Android 開発のために手元の Hyper-V を辞める事は出来ないデスヨ！&lt;/strong&gt;&lt;br /&gt;
-調べてみると「&lt;strong&gt;Visual Studio Emulator for Android&lt;/strong&gt;」というHyper-Vベースで動くエミュレーターが用意されているらしいので設定してみました&lt;/p&gt;
-
-&lt;h2 id=&#34;visual-studio-emulator-for-android&#34;&gt;Visual Studio Emulator for Android&lt;/h2&gt;
-
-&lt;p&gt;すでに色んな方が同じ様な記事を書かれていますが、わたくしも今一度、再確認でございます…&lt;/p&gt;
-
-&lt;h3 id=&#34;1-まず-hyper-v-が有効なこと&#34;&gt;1. まず、Hyper-V が有効なこと&lt;/h3&gt;
-
-&lt;p&gt;（Control Panle &amp;gt; Programs and Features &amp;gt; Turn Windows features on or off）&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_02.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;2-visual-studio-2017のインストーラーで-visual-studio-emulator-for-android-を選択すること&#34;&gt;2. Visual Studio 2017のインストーラーで「Visual Studio Emulator for Android」を選択すること&lt;/h3&gt;
-
-&lt;p&gt;下の図では「Google Android Emulator」「HAXM」も選択してますが、はっきり言って&lt;br /&gt;
-この２つと、「Visual Studio Emulator for Android」は、排他の関係にあるので&lt;br /&gt;
-「Visual Studio Emulator for Android」だけ選択でOK&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_03.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;3-visual-studio-emulator-for-android-を立ち上げる&#34;&gt;3. 「Visual Studio Emulator for Android」を立ち上げる&lt;/h3&gt;
-
-&lt;p&gt;検索すると、インストールされてます&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_04.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;立ち上げたらこんな画面&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_05.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;これでまずは準備完了&lt;/p&gt;
-
-&lt;h2 id=&#34;エミュレーターの起動&#34;&gt;エミュレーターの起動&lt;/h2&gt;
-
-&lt;h3 id=&#34;1-空のプロジェクトを作る&#34;&gt;1. 空のプロジェクトを作る&lt;/h3&gt;
-
-&lt;p&gt;わたしはC++で開発したかったので、Androidプロジェクトの「Native-Activity Application (Android)」で新規作成しました&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_06.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;デバックメニューに「Visual Studio Emulator for Android」の欄が増えてますね&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_07.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;（注意！）&lt;strong&gt;「x86」を選択しないと、このエミュレーターは出てきません！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;2-visual-studio-emulator-for-android-でandroidを起動させる&#34;&gt;2. 「Visual Studio Emulator for Android」でAndroidを起動させる&lt;/h3&gt;
-
-&lt;p&gt;先ほど立ち上げた「Visual Studio Emulator for Android」のメニューより、緑の三角印を押して、エミュレーターを起動させます&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_08.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_09.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;起動できた(｀・ω・´)&lt;/p&gt;
-
-&lt;h2 id=&#34;エミュレーターが起動しない時&#34;&gt;エミュレーターが起動しない時&lt;/h2&gt;
-
-&lt;p&gt;最初、わたしはエミュレーターが起動途中でストップしてしまいました(-_-)zzz&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_10.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;The emulator is unable to connect to the device operating system:&lt;br /&gt;
-Could&amp;rsquo;t auto-detect the guest system IP address.&lt;br /&gt;
-Some functionality might be disabled.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;なんじゃこりゃ…(´・ω・`)&lt;br /&gt;
-IPうんぬんと書かれてるので、NWプロパティを見てみます&lt;/p&gt;
-
-&lt;p&gt;Conrtol Panel&lt;br /&gt;
-　＞ Network and Internet&lt;br /&gt;
-　　＞ Network Connections&lt;/p&gt;
-
-&lt;p&gt;Hyper-Vが「Visual Studio Emulator for Android」のために作ったと思われるアダプターがありました&lt;/p&gt;
-
-&lt;p&gt;わたしの場合&lt;br /&gt;
-&lt;strong&gt;vEthernet (Internal Ethernet Port Windows Phone Emulator Internal Switch)&lt;/strong&gt;&lt;br /&gt;
-という名前です&lt;/p&gt;
-
-&lt;p&gt;IPv4プロパティを見てみると、変なIPアドレスが割り当てられてる…？&lt;br /&gt;
-慌てて削除し、動的に変更する設定に変えます↓↓↓&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_11.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;いちお、NWアダプタは「識別されてないネットワーク」状態ですが&lt;br /&gt;
-エラー表示にはなっていません&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_14.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;この状態で、エミュレーターを起動させると、無事立ち上がりました(&lt;em&gt;^^&lt;/em&gt;)良かった！&lt;/p&gt;
-
-&lt;h2 id=&#34;エミュレーターでデバックする&#34;&gt;エミュレーターでデバックする&lt;/h2&gt;
-
-&lt;p&gt;VSに戻ってみると、こんな感じでエミュレーターがデバックで使えるようになってます！&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_12.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;VSからデバック実行させると&lt;br /&gt;
-&lt;img src=&#34;http://h-sao.com/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_13.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;サンプルが動作しました&lt;/p&gt;
-
-&lt;p&gt;この状態でブレークポイントも効くので、まずは最初の設定完了って感じでしょうか&lt;br /&gt;
-パチパチ(&lt;em&gt;^^&lt;/em&gt;)&lt;/p&gt;
-
-&lt;p&gt;※ちなみに実機でデバックする時には、「x86」じゃなくて「ARM」など、その実機に合ったCPUを選択したらOKです&lt;/p&gt;
-</description>
+      <description>どうもうまくAndroidエミュレータが動かない… いわゆる ADV Manager をつかって、Androidをエミューレートしたいのですが
+なぜかうまく起動しない…
+環境
+ Windows10 x64 Visual Studio 2017  Android SDK Managerをよく見てみると、HAXM installer が &amp;ldquo;Not compatible with Windows&amp;rdquo; となっています
+ふむ…
+無理矢理 HAXM のインストーラーをダウンロードしてきても、こんな感じでエラー
+ This computer does not support Intel Virtualization Technology (VT-x) or it is being exclusively used by Hyper-V, HAXM cannot be installed.
+Please ensure Hyper-V is disabled in Windows Features, or refer to the Intel HAXM documentation for more information.
+ なんですと…Hyper-Vが入ってたら使えないよだと…(｀・ω・´)</description>
     </item>
     
   </channel>

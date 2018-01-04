@@ -2,12 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ue4 on Effectiveさお</title>
-    <link>http://h-sao.com/tags/ue4/index.xml</link>
+    <link>http://h-sao.com/tags/ue4/</link>
     <description>Recent content in Ue4 on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <atom:link href="http://h-sao.com/tags/ue4/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Nov 2016 20:45:00 +0900</lastBuildDate>
+    
+	<atom:link href="http://h-sao.com/tags/ue4/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>[UE4] Unreal Engine4のインストール要件</title>
@@ -15,67 +18,26 @@
       <pubDate>Wed, 16 Nov 2016 20:45:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2016/11/16/ue4-install-requirements/</guid>
-      <description>&lt;p&gt;仕事上、色んな Game Engine を試しておりまして&lt;br /&gt;
-先日、クリーンで、比較的低スペックな Windows10 PC に&lt;br /&gt;
-Epic さんの Unreal Engine 4 をインストールしたときに、はふん？と思った件のメモです&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Enreal Engine 4 のダウンロード&lt;/strong&gt; はダッシュボードから出来ます (ログインが必要)&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Enreal Engine 4 ダウンロード&lt;/strong&gt;&lt;br /&gt;
-&lt;a href=&#34;https://www.unrealengine.com/dashboard&#34;&gt;https://www.unrealengine.com/dashboard&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/UE4-install-requirements1.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;迷わず、Windows のプラットフォームを選択！&lt;/p&gt;
-
-&lt;p&gt;落としてきた EpicGamesLauncherInstaller-2.12.14-3176191.msi (2016/11/16現在) を実行します&lt;/p&gt;
-
-&lt;p&gt;あれ？&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://h-sao.com/pic/UE4-install-requirements0.png&#34; style=&#34;border:solid 5px #e6e6e6&#34;/&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;コンピューターにXINPUT1_3.dll がないため、プログラムを開始できません。この問題を解決するには、プログラムを再インストールしてみてください。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;はて。。。何やら懐かしい香りのDLL名がエラーに上がっています(￣▽￣)&lt;/p&gt;
-
-&lt;p&gt;UE4 のインストール要件って、なんだったっけ？と思ったのですが、ダウンロードの画面には、何も書かれてないんですよね～&lt;/p&gt;
-
-&lt;p&gt;よく判らないから、ドキュメントを見てみよう！ということで&lt;br /&gt;
-「ハードウェア＆ソフトウェア仕様」のドキュメントサイトを見ていくと&lt;br /&gt;
-ソフトウェアのインストール要件が書かれていました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;ハードウェア＆ソフトウェア仕様&lt;br /&gt;
-&lt;a href=&#34;https://docs.unrealengine.com/latest/JPN/GettingStarted/RecommendedSpecifications/index.html&#34;&gt;https://docs.unrealengine.com/latest/JPN/GettingStarted/RecommendedSpecifications/index.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;エンジンの実行環境&lt;br /&gt;
-OS : Windows 7 / 8 64-bit&lt;br /&gt;
-&lt;strong&gt;DirectX Runtime : &lt;a href=&#34;https://www.microsoft.com/en-us/download/details.aspx?id=8109&#34;&gt;DirectX End-User Runtimes (June 2010)&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;おぉぉ、&lt;strong&gt;DXのランタイム&lt;/strong&gt;！お前さんだったのかぁ～&lt;/p&gt;
-
-&lt;p&gt;というわけで、&lt;strong&gt;DirectX End-User Runtimes (June 2010)&lt;/strong&gt; を入れたら、すんなり UE4 のインストールは出来ました(^o^)&lt;/p&gt;
-
-&lt;p&gt;ランチャーのランタイムエラーが判りにくいよ…と思ったけど&lt;br /&gt;
-これくらいのことはゲーム開発する人にとったら、許容範囲ですかね(^^;)&lt;/p&gt;
-
-&lt;p&gt;あと実は、UE4 は Win10 を&lt;br /&gt;
-今日現在で、オフィシャルにはサポートしてないのかぁと思いました&lt;/p&gt;
-
-&lt;p&gt;単にドキュメントの更新の問題かしら？？？&lt;/p&gt;
-
-&lt;p&gt;まぁ今のところ、わたしの Windows10 の環境では&lt;br /&gt;
-問題なく UE4 の開発環境は動いてるので、特に問題ないです(^^)&lt;/p&gt;
-</description>
+      <description>仕事上、色んな Game Engine を試しておりまして
+先日、クリーンで、比較的低スペックな Windows10 PC に
+Epic さんの Unreal Engine 4 をインストールしたときに、はふん？と思った件のメモです
+Enreal Engine 4 のダウンロード はダッシュボードから出来ます (ログインが必要)
+ Enreal Engine 4 ダウンロード
+https://www.unrealengine.com/dashboard  迷わず、Windows のプラットフォームを選択！
+落としてきた EpicGamesLauncherInstaller-2.12.14-3176191.msi (2016/11/16現在) を実行します
+あれ？
+ コンピューターにXINPUT1_3.dll がないため、プログラムを開始できません。この問題を解決するには、プログラムを再インストールしてみてください。
+ はて。。。何やら懐かしい香りのDLL名がエラーに上がっています(￣▽￣)
+UE4 のインストール要件って、なんだったっけ？と思ったのですが、ダウンロードの画面には、何も書かれてないんですよね～
+よく判らないから、ドキュメントを見てみよう！ということで
+「ハードウェア＆ソフトウェア仕様」のドキュメントサイトを見ていくと
+ソフトウェアのインストール要件が書かれていました
+ ハードウェア＆ソフトウェア仕様
+https://docs.unrealengine.com/latest/JPN/GettingStarted/RecommendedSpecifications/index.html
+ エンジンの実行環境
+OS : Windows 7 / 8 64-bit
+DirectX Runtime : DirectX End-User Runtimes (June 2010)   おぉぉ、DXのランタイム！お前さんだったのかぁ～
+というわけで、DirectX End-User Runtimes (June 2010) を入れたら、すんなり UE4 のインストールは出来ました(^o^)</description>
     </item>
     
   </channel>

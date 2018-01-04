@@ -2,12 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mac on Effectiveさお</title>
-    <link>http://h-sao.com/tags/mac/index.xml</link>
+    <link>http://h-sao.com/tags/mac/</link>
     <description>Recent content in Mac on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright © Sao Haruka&lt;br&gt; Powered by [Hugo](http://gohugo.io).</copyright>
-    <atom:link href="http://h-sao.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Jan 2016 02:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="http://h-sao.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>[Mac] Windows Bootcamp 時の PrintScreen</title>
@@ -15,47 +18,9 @@
       <pubDate>Tue, 12 Jan 2016 02:00:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2016/01/12/windows-printscreen-key-on-mac/</guid>
-      <description>
-
-&lt;h2 id=&#34;windows-on-mac-の時の-printscreen-キーは&#34;&gt;Windows on Mac の時の PrintScreen キーは？&lt;/h2&gt;
-
-&lt;p&gt;Macの上で、BootCamp で Windows を動作させているときにはにゃんと！「Print Screen」キーがありません（そらそうだ）&lt;br /&gt;
-当然なんですけど、いつもいつも検索しては忘れて…を繰り返すので、いい加減、覚える&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;画面全体コピー&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;アクティブウィンドウコピー&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Windows&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Print Screen&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Alt + Print Screen&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Windows on Mac&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Fn + Shift + F11&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Fn + Shift + Option + F11&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Mac&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Shft + Command + 3&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Shft + Command + 4&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;（Mac の Shft + Command + 4　は、画面の範囲選択です）&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <description>Windows on Mac の時の PrintScreen キーは？ Macの上で、BootCamp で Windows を動作させているときにはにゃんと！「Print Screen」キーがありません（そらそうだ）
+当然なんですけど、いつもいつも検索しては忘れて…を繰り返すので、いい加減、覚える
+    画面全体コピー アクティブウィンドウコピー     Windows Print Screen Alt + Print Screen   Windows on Mac Fn + Shift + F11 Fn + Shift + Option + F11   Mac Shft + Command + 3 Shft + Command + 4     （Mac の Shft + Command + 4　は、画面の範囲選択です）</description>
     </item>
     
     <item>
@@ -64,100 +29,14 @@
       <pubDate>Mon, 11 May 2015 03:05:44 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2015/05/11/install-log-for-homebrew/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Homebrew&lt;/strong&gt; とは、Mac上のアプリケーションパッケージを管理するソフトです&lt;/p&gt;
-
-&lt;p&gt;詳しくはこちら↓↓↓に書かれているのですが、自分のメモとログを残します&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;MacにHomebrewをインストールする - Qiita&lt;br /&gt;
-&lt;a href=&#34;http://qiita.com/is0me/items/475fdbc4d770534f9ef1&#34;&gt;http://qiita.com/is0me/items/475fdbc4d770534f9ef1&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Homebrewの本家&lt;br /&gt;
-&lt;a href=&#34;http://brew.sh/&#34;&gt;http://brew.sh/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Macでのインストールログ&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;## Homebrew入ってない状態
-MacProSao:~ Sao$ brew
--bash: brew: command not found
- 
-## VIMでバッシュプロファイル作成
-MacProSao:~ Sao$ vim .bash_profile
-
-MacProSao:~ Sao$ more .bash_profile 
-export PATH=/usr/local:$PATH
-
-MacProSao:~ Sao$ pwd
-/Users/Sao
-
-## /usr/local の作成 
-MacProSao:usr Sao$ sudo mkdir /usr/local/
-
-WARNING: Improper use of the sudo command could lead to data loss
-or the deletion of important system files. Please double-check your
-typing when using sudo. Type &amp;quot;man sudo&amp;quot; for more information.
-
-To proceed, enter your password, or type Ctrl-C to abort.
-
-Password:
-MacProSao:usr Sao$ ls -al
-total 8
-drwxr-xr-x@   12 root  wheel    408  5 11 02:24 .
-drwxr-xr-x    30 root  wheel   1088  5 11 02:17 ..
-drwxr-xr-x     5 root  wheel    170  9 10  2014 X11
-lrwxr-xr-x     1 root  wheel      3  2 22 18:01 X11R6 -&amp;gt; X11
-drwxr-xr-x  1053 root  wheel  35802  5  2 23:30 bin
-drwxr-xr-x   257 root  wheel   8738  5 11 01:25 include
-drwxr-xr-x   271 root  wheel   9214  5 11 01:25 lib
-drwxr-xr-x   170 root  wheel   5780  4 26 13:43 libexec
-drwxr-xr-x     2 root  wheel     68  5 11 02:24 local
-drwxr-xr-x   244 root  wheel   8296  4 26 13:40 sbin
-drwxr-xr-x    44 root  wheel   1496  5 11 01:25 share
-drwxr-xr-x     4 root  wheel    136  2 22 17:56 standalone
-
-## Homebrewのインストール
-MacProSao:usr Sao$ ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
-==&amp;gt; This script will install:
-/usr/local/bin/brew
-/usr/local/Library/...
-/usr/local/share/man/man1/brew.1
-==&amp;gt; The following directories will be made group writable:
-/usr/local/.
-==&amp;gt; The following directories will have their group set to admin:
-/usr/local/.
-
-Press RETURN to continue or any other key to abort
-==&amp;gt; /usr/bin/sudo /bin/chmod g+rwx /usr/local/.
-==&amp;gt; /usr/bin/sudo /usr/bin/chgrp admin /usr/local/.
-==&amp;gt; /usr/bin/sudo /bin/mkdir /Library/Caches/Homebrew
-==&amp;gt; /usr/bin/sudo /bin/chmod g+rwx /Library/Caches/Homebrew
-==&amp;gt; Downloading and installing Homebrew...
-remote: Counting objects: 3572, done.
-remote: Compressing objects: 100% (3421/3421), done.
-remote: Total 3572 (delta 35), reused 1459 (delta 18), pack-reused 0
-Receiving objects: 100% (3572/3572), 2.72 MiB | 2.47 MiB/s, done.
-Resolving deltas: 100% (35/35), done.
-From https://github.com/Homebrew/homebrew
- * [new branch]      master     -&amp;gt; origin/master
-HEAD is now at c007efc Riak 2.1.1
-==&amp;gt; Installation successful!
-==&amp;gt; Next steps
-Run `brew help` to get started
-
-## プロファイル読み込み 
-MacProSao:~ Sao$ source .bash_profile 
-
-## バージョン確認
-MacProSao:~ Sao$ brew -v
-Homebrew 0.9.5
- 
-MacProSao:~ Sao$ 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Hugoを入れるためにインストールしてみました&lt;br /&gt;
-ついにわたしもGoを使う日が来るなんて…(ﾟ∇ﾟ ;)&lt;/p&gt;
-</description>
+      <description>Homebrew とは、Mac上のアプリケーションパッケージを管理するソフトです
+詳しくはこちら↓↓↓に書かれているのですが、自分のメモとログを残します
+ MacにHomebrewをインストールする - Qiita
+http://qiita.com/is0me/items/475fdbc4d770534f9ef1
+ Homebrewの本家
+http://brew.sh/
+  Macでのインストールログ
+## Homebrew入ってない状態 MacProSao:~ Sao$ brew -bash: brew: command not found ## VIMでバッシュプロファイル作成 MacProSao:~ Sao$ vim .bash_profile MacProSao:~ Sao$ more .bash_profile export PATH=/usr/local:$PATH MacProSao:~ Sao$ pwd /Users/Sao ## /usr/local の作成 MacProSao:usr Sao$ sudo mkdir /usr/local/ WARNING: Improper use of the sudo command could lead to data loss or the deletion of important system files. Please double-check your typing when using sudo.</description>
     </item>
     
   </channel>
