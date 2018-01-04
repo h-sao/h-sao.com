@@ -1,7 +1,7 @@
 {{ partial "header" . }}
 <div class="container clearfix">
     <main role="main" class="content">
-        <a class="btn" href="{{ .Site.BaseURL }}" title="{{ .Site.Data.l10n.article.back_to_home }}">&laquo; {{ .Site.Data.l10n.article.back_to_home }}</a>
+        <a class="btn home" href="{{ .Site.BaseURL }}" title="{{ .Site.Data.l10n.article.back_to_home }}">&laquo; {{ .Site.Data.l10n.article.back_to_home }}</a>
         <div align="center">
             <h1>
                 &quot;<script language="JavaScript"><!--
@@ -13,7 +13,7 @@
         </div>
         <br>
 
-        {{ $paginator := .Paginate .Data.Pages.ByPublishDate }}
+        {{ $paginator := .Paginate .Data.Pages.ByPublishDate.Reverse }}
         {{ range $paginator.Pages }}
             {{ partial "article-header" . }} </footer>
                 {{ .Content}}

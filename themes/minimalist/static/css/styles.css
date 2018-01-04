@@ -697,6 +697,9 @@ hr {
     border-color: #2a373d;
     color: #FFF; }
 
+.home {
+  width: 140px; }
+        
 .newer {
   position: absolute;
   left: 0;
