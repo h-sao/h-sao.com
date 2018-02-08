@@ -2,7 +2,7 @@ box: publysher/hugo
 build:
   steps:
     - arjen/hugo-build:
-        version: "0.32.2"
+        version: "0.36"
         theme: minimalist
         config: config.toml
 

@@ -11,7 +11,7 @@ Github: [h-sao](https://github.com/h-sao)
 mail: haruka.sao@gmail.com  
 
 
-[Microsoft MVP for Windows Development [Jan,2016-Dec,2017]](https://mvp.microsoft.com/ja-jp/PublicProfile/4027291)  
+[Microsoft MVP for Windows Development [Jan,2016-Jul,2018]](https://mvp.microsoft.com/ja-jp/PublicProfile/4027291)  
 Microsoft MVP for Windows Platform Development [Jan,2015-Dec,2015]  
 Microsoft MVP for Client Development [Jan,2014-Dec,2014]  
 Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]  
@@ -40,6 +40,24 @@ Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]
 # Slides, Publications
 
 ## 2016
+
+Oct 29, 2016 [Unity Style Developer#1](https://unitystyle.connpass.com/event/41382/)  
+プラグイン作ってみたよ
+
+Oct 21, 2016 3D party 13th 2016（インターナル）  
+Unity Native Plugin from C# script
+
+Sep 17, 2016 [dotnetConf関西 2016](https://connpass.com/event/38870/)  
+Unityでポストエフェクトかけたい！ (内容は Aug 9「YEBIS for Unity (beta) のご紹介」とほぼ同様)
+
+Aug 9, 2016 [登壇：特濃！ゲーム開発塾５](http://eventregist.com/e/tokunou5)  
+YEBIS for Unity (beta) のご紹介 [\[SpeakerDeck\]](https://speakerdeck.com/harukasao/iwate-game-factory-2016-summer-event)
+
+Jun 24, 2016 [meetup app tokyo@1](http://meetupapp.io/)  
+今日は扱わないUI達の斜め読み
+
+May 19, 2016 Microsoft 開発者向けイベント（インターナル）  
+Supported UWP on Xenko
 
 Jan 26, 2016 Microsoft Xbox イベント（インターナル）  
 Open Source Software - Full C# Game Engine "Xenko"
@@ -305,8 +323,11 @@ Work in progress...
 
 # 主催勉強会
 
-- meetup app (Nov 21, 2015 - currently)  
-seminar total number 2
+- meetup app tokyo/osaka (Nov 21, 2015 - currently)  
+seminar total number 4
+
+- Unity Style Developer (Oct 29, 2016 - currently)
+seminar total number 1
 
 - Metro.cs (Sep 16, 2015 - currently)  
 seminar total number 2
