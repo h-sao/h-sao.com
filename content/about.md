@@ -18,11 +18,26 @@ Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]
 
 # Portrait
 
+## Japan MVP Community Connection 2017 Autumn - Nov 12, 2017
+
+- 「Optimized C++!最適化の手法集めました」にて
+
+![](/pic/portrait-mcc2017.jpg)
+
+
+## meetup app tokyo@2 - Dec 16, 2016
+
+- Deep Learning 初心者向けセッション
+
+![](/pic/portrait-meetupapptokyo2.JPG)
+
+
 ## ebisu_effective_modern.cpp vol.3 - Mar 31, 2016
 
 - ebisu C++ 読書会進行の様子
 
 ![](/pic/Portrait-ebisucpp03.png)
+
 
 ## CEDEC2015 - Aug 26, 2015
 
@@ -37,6 +52,7 @@ Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]
 ![](/pic/Portrait-Metrocs01.png)
 
 
+
 # Slides, Publications
 
 ## 2016
@@ -48,7 +64,7 @@ Oct 21, 2016 3D party 13th 2016（インターナル）
 Unity Native Plugin from C# script
 
 Sep 17, 2016 [dotnetConf関西 2016](https://connpass.com/event/38870/)  
-Unityでポストエフェクトかけたい！ (内容は Aug 9「YEBIS for Unity (beta) のご紹介」とほぼ同様)
+Unityでポストエフェクトかけたい！ (内容は Aug 9「YEBIS for Unity (beta) のご紹介」と同様)
 
 Aug 9, 2016 [登壇：特濃！ゲーム開発塾５](http://eventregist.com/e/tokunou5)  
 YEBIS for Unity (beta) のご紹介 [\[SpeakerDeck\]](https://speakerdeck.com/harukasao/iwate-game-factory-2016-summer-event)
@@ -323,17 +339,23 @@ Work in progress...
 
 # 主催勉強会
 
+- ebisu_feature.cpp (Nov 29, 2017 - currently)  
+seminar total number 5
+
 - meetup app tokyo/osaka (Nov 21, 2015 - currently)  
 seminar total number 4
 
-- Unity Style Developer (Oct 29, 2016 - currently)
+- Unity Style Developer (Oct 29, 2016 - currently)  
 seminar total number 1
 
-- Metro.cs (Sep 16, 2015 - currently)  
-seminar total number 2
+- ebisu_optimized.cpp (Mar 30, 2017 - Nov 9, 2017)  
+seminar total number 15
 
 - ebisu_effective_modern.cpp (Mar 3, 2016 - Jul 21, 2016)  
 seminar total number 10
+
+- Metro.cs (Sep 16, 2015 - Jul 15, 2016)  
+seminar total number 2
 
 - [Room metro 大阪](http://metrostyledev.net/) (Jan 28, 2013 - Jul 25, 2015)  
 seminar total number 12
