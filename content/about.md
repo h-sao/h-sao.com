@@ -11,7 +11,8 @@ Github: [h-sao](https://github.com/h-sao)
 mail: haruka.sao@gmail.com  
 
 
-[Microsoft MVP for Windows Development [Jan,2016-Jul,2018]](https://mvp.microsoft.com/ja-jp/PublicProfile/4027291)  
+[Microsoft MVP for Developer Technologies [Jul,2018-Jun,2019]](https://mvp.microsoft.com/ja-jp/PublicProfile/4027291)  
+Microsoft MVP for Windows Development [Jan,2016-Jun,2018]  
 Microsoft MVP for Windows Platform Development [Jan,2015-Dec,2015]  
 Microsoft MVP for Client Development [Jan,2014-Dec,2014]  
 Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]  
@@ -38,6 +39,10 @@ Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]
 
 ![](/pic/Portrait-ebisucpp03.png)
 
+## Before
+
+<details>
+<summary>Before 2015</summary>
 
 ## CEDEC2015 - Aug 26, 2015
 
@@ -52,8 +57,23 @@ Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]
 ![](/pic/Portrait-Metrocs01.png)
 
 
+</details>
 
 # Slides, Publications
+
+## 2018
+
+Jan 11, 2018 初心者向け教育（インターナル）  
+C++、Unity
+
+## 2017
+
+Dec 23, 2017 [meepup app osaka@2](http://meetupapp.io/)  
+いまさらですがUniRx - MessageBrokerの使いどころ
+
+
+Nov 12, 2017 Japan MVP Community Camp（インターナル）  
+Optimized C++!最適化の手法集めました [\[SpeakerDeck\]](https://speakerdeck.com/harukasao/12-optimized-c-plus-plus)
 
 ## 2016
 
@@ -77,6 +97,12 @@ Supported UWP on Xenko
 
 Jan 26, 2016 Microsoft Xbox イベント（インターナル）  
 Open Source Software - Full C# Game Engine "Xenko"
+
+## Before
+
+<details>
+<summary>Before 2015</summary>
+
 
 ## 2015
 
@@ -331,6 +357,7 @@ WPFの基礎
 Sep 25, 2008 [VSUG コラム](http://vsug.jp/tabid/178/articleid/35/Default.aspx)  
 ソースコードとの付き合い方
 
+</details>
 
 
 # Sampel code/tools
@@ -339,7 +366,10 @@ Work in progress...
 
 # 主催勉強会
 
-- ebisu_feature.cpp (Nov 29, 2017 - currently)  
+- nakame_feature.cpp (Jul 9, 2018 - currently)  
+seminar total number 2
+
+- ebisu_feature.cpp (Nov 29, 2017 - Feb 14, 2018)  
 seminar total number 5
 
 - meetup app tokyo/osaka (Nov 21, 2015 - currently)  
@@ -353,6 +383,9 @@ seminar total number 15
 
 - ebisu_effective_modern.cpp (Mar 3, 2016 - Jul 21, 2016)  
 seminar total number 10
+
+<details>
+<summary>Before 2015</summary>
 
 - Metro.cs (Sep 16, 2015 - Jul 15, 2016)  
 seminar total number 2
@@ -380,3 +413,5 @@ seminar total number 12
 
 - [Silverlightを囲む会](http://silverlightsquare.com/) (Mar 14, 2008 - Aug 25, 2012)  
 seminar total number 29
+
+</details>
