@@ -47,6 +47,61 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2018/08/19/unity-cameras-operation-not-using-mouse/" title="[Unity] Macのトラックパッドのみでシーンビューを動かす">[Unity] Macのトラックパッドのみでシーンビューを動かす</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.08.19">2018.08.19</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/unity">unity</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p>動作環境</p>
+
+<ul>
+<li>Mac 上で Bootcamp してる Windows10</li>
+<li>Unity2018</li>
+</ul>
+
+<p>Unityのシーンビューを操作しようとして、トラックパッドだけで動かすやり方が判らなかったので、そのメモです</p>
+
+<blockquote>
+<p>// マウスが引っ越ししで、どこにあるか判らなくなった</p>
+</blockquote>
+
+<ul>
+<li>見たい Game object に <code>F key</code> で、オブジェクトに<strong>フォーカス</strong></li>
+<li><code>option key</code> とトラックパッド1本指で、<strong>回転</strong></li>
+<li>トラックパッド2本指で<strong>平行移動</strong><br />
+（注視点の位置は一緒に移動します）</li>
+</ul>
+
+<p>ちょっとやりにくいけど、出来ないよりマシかな( ..)φメモメモ</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2018%2f08%2f19%2funity-cameras-operation-not-using-mouse%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bUnity%5d%20Mac%e3%81%ae%e3%83%88%e3%83%a9%e3%83%83%e3%82%af%e3%83%91%e3%83%83%e3%83%89%e3%81%ae%e3%81%bf%e3%81%a7%e3%82%b7%e3%83%bc%e3%83%b3%e3%83%93%e3%83%a5%e3%83%bc%e3%82%92%e5%8b%95%e3%81%8b%e3%81%99&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2018%2f08%2f19%2funity-cameras-operation-not-using-mouse%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2018%2f08%2f19%2funity-cameras-operation-not-using-mouse%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2018%2f08%2f19%2funity-cameras-operation-not-using-mouse%2f&title=%5bUnity%5d%20Mac%e3%81%ae%e3%83%88%e3%83%a9%e3%83%83%e3%82%af%e3%83%91%e3%83%83%e3%83%89%e3%81%ae%e3%81%bf%e3%81%a7%e3%82%b7%e3%83%bc%e3%83%b3%e3%83%93%e3%83%a5%e3%83%bc%e3%82%92%e5%8b%95%e3%81%8b%e3%81%99" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2018/02/08/hello2018/" title="[Diary] 2018年もよろしくお願いします">[Diary] 2018年もよろしくお願いします</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.02.08">2018.02.08</time>
@@ -1239,586 +1294,6 @@ c:\Users[ユーザ名].ssh\known_hosts にアクセス情報が登録されま�
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2017/04/10/how-to-install-tensorflow-gpu-on-windows/" title="[TensorFlow] TensorFlow on Windows GPU版インストール方法">[TensorFlow] TensorFlow on Windows GPU版インストール方法</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.04.10">2017.04.10</time>
-    
-    &middot; 
-        
-        <a href="http://h-sao.com/tags/anaconda">anaconda</a>
-        , 
-        
-        <a href="http://h-sao.com/tags/python">python</a>
-        , 
-        
-        <a href="http://h-sao.com/tags/tensorflow">tensorflow</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>前回、TensorFlowの環境を作るために、Anacondaをインストールしました</p>
-
-<ul>
-<li>[Anaconda] Anaconda for Windowsインストール方法<br />
-<a href="http://h-sao.com/blog/2017/03/29/how-to-install-anaconda-for-windows/">http://h-sao.com/blog/2017/03/29/how-to-install-anaconda-for-windows/</a></li>
-</ul>
-
-<p>その続きで、TensorFlow GPUバージョンを入れたいと思います</p>
-
-<p>わたしの環境は以下です</p>
-
-<ul>
-<li>Windows10 x64</li>
-<li>NVIDIA GeForce GTX 960</li>
-<li>Anaconda 4.3.1 For Windows</li>
-</ul>
-
-<h1 id="はじめに">はじめに…</h1>
-
-<p>TensorFlow公式サイトのインストール方法では、残念ながらうまく動作させることは出来ませんでした…(´・ω・`)</p>
-
-<ul>
-<li><del>Installing TensorFlow on Windows</del><br />
-（公式サイトだけど、2017/4/10時点、わたしの環境ではダメだった）<br />
-<del><a href="https://www.tensorflow.org/install/install_windows">https://www.tensorflow.org/install/install_windows</a></del></li>
-</ul>
-
-<p>どこを見たら良いかというと、<strong>TensorFlowのGitHubの方</strong> です…！！！<br />
-<strong>ここ見るべし(。-`ω-)ｸﾜﾜｯ</strong></p>
-
-<ul>
-<li><strong>TensorFlow-Github-Install_Windows</strong> tensorflow/tensorflow/docs_src/install/install_windows.md<br />
-<a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/docs_src/install/install_windows.md">https://github.com/tensorflow/tensorflow/blob/master/tensorflow/docs_src/install/install_windows.md</a></li>
-</ul>
-
-<p>今回の全インストールログは、わたしのGistにアップしておきました<br />
-→ <a href="https://gist.github.com/h-sao/b7ab04b3ba3fe8a9e41ec8af76da7559">Install_log_on_Windows_for_TensorFlow_GPU.log</a></p>
-
-<p>では、やった手順を記載します！</p>
-
-<h1 id="1-nvidia-cuda-toolkit-をインストールする">1) NVIDIA CUDA Toolkit をインストールする</h1>
-
-<p>TensorFlowにはCPU版とGPU版が提供されています</p>
-
-<p>CPUのみでも動くのですけど<br />
-開発環境の構築というのはなんともめんどくさいので<br />
-最初に出来る事をやっとくことにします</p>
-
-<p>まずは、<strong>CUDA</strong> のインストール<br />
-※CUDAとは、GPUを活用するための開発環境です<br />
-　GPUを使うには、NVIDIAのCUDAを入れる必要があります</p>
-
-<ul>
-<li><strong>CUDA Installation Guide for Microsoft Windows</strong><br />
-<a href="http://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/">http://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/</a><br />
-2017/4/10時点の NVIDIA CUDA Toolkit のバージョンは 8.0.61 です (Windows10)<br />
-1.3GBありました！</li>
-</ul>
-
-<p><img src="/pic/How-to-install-TensorFlow-GPU-on-Windows_00.jpg" style="border:solid 5px #e6e6e6"/></p>
-
-<p>わたしは <strong>Visual Studio 2017 を入れているのですが、まだサポートされてないよ</strong> って出ました</p>
-
-<blockquote>
-<p>NVIDIA の公式によると、2017/4/10時点では<br />
-Visual Studio 2015 の VC++14.0 まで対応しているみたいです<br />
-<img src="/pic/How-to-install-TensorFlow-GPU-on-Windows_02.jpg" style="border:solid 5px #e6e6e6"/></p>
-</blockquote>
-
-<p>NVIDIAのドライバも更新されるため、何度かチラチラと画面が黒くなりますが<br />
-それ以外は特に問題もなく、Toolkitのインストールは完了します</p>
-
-<h1 id="2-nvidia-developer-membership-に登録する">2) NVIDIA Developer Membership に登録する</h1>
-
-<p>さて、続いて <strong>cuDNN</strong> をインストールする必要があります</p>
-
-<p><strong>cuDNN</strong> は The NVIDIA CUDA Deep Neural Network library の略<br />
-つまりCUDAのライブラリ群です</p>
-
-<ul>
-<li><strong>NVIDIA cuDNN - GPU Accelerated Deep Learning</strong><br />
-<a href="https://developer.nvidia.com/cudnn">https://developer.nvidia.com/cudnn</a></li>
-</ul>
-
-<p>cuDNNをダウンロードするには、<strong>NVIDIA Developer Membership に登録する必要があります</strong>（登録だけなら、お金は要らなかった）<br />
-登録時に簡単な Survey がありますので、良しなに記載しておきます</p>
-
-<p>登録完了すると、速攻で</p>
-
-<p>「Please confirm your email to join the Accelerated Computing Developer Program」</p>
-
-<p>という件名のメールが飛んできました<br />
-中のリンクをクリックしたら、登録完了です</p>
-
-<p>こんな感じで NVIDIA Developer Membership への登録は瞬殺で終わりました<br />
-<img src="/pic/How-to-install-TensorFlow-GPU-on-Windows_01.png" style="border:solid 5px #e6e6e6"/></p>
-
-<h1 id="3-nvidia-cudnn-をインストールする-正確にはパスを通す">3) NVIDIA cuDNN をインストールする（正確にはパスを通す）</h1>
-
-<p>登録が済んだら、cuDNN をダウンロード出来ます<br />
-※ここでもまた、Survey があります(^^；</p>
-
-<p>先ほどインストールした CUDA Toolkit は 8.0 なので、それに対応した <del>cuDNN v6.0</del> を選択！</p>
-
-<blockquote>
-<p>2017/4/17追記：<br />
-cuDNN6.0には 後程記述する cudnn64_5.dll が入っておらず<br />
-現時点ではTensorFlowのインポートでエラーが出ます<br />
-cuDNN v5.1 をダウンロードして、回避しました<br />
-scimprさん、教えて下さってありがとうございました</p>
-</blockquote>
-
-<p><img src="/pic/How-to-install-TensorFlow-GPU-on-Windows_03.jpg" style="border:solid 5px #e6e6e6"/></p>
-
-<p>落としてきたのはただのZIPファイルなので、展開し、好きなディレクトリに設置します<br />
-わたしの場合は、 <strong>D:\Library\cuda</strong> というディレクトリを作って置きました</p>
-
-<blockquote>
-<p>もしくは、cuda と cuDNN のバージョンは必ず一致しないと行けないようなので<br />
-cudaのインストールパス<br />
-（C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin）<br />
-に手コピーするのも、一つの手らしいです<br />
-cudaディレクトリにコピーした人はパスを設定しなくていいので、以下は飛ばしてください</p>
-</blockquote>
-
-<p>このパス（わたしの場合、D:\Library\cuda\bin）が Anaconda 環境から見えるように、Windowsのパスを設定しておきます<br />
-パスを通すのくらいは…と思いましたが、ついでにキャプチャは取ったので、それだけ載せておきますね</p>
-
-<blockquote>
-<p>コントロールパネルのシステムを開く<br />
-<img src="/pic/How-to-install-TensorFlow-GPU-on-Windows_04.jpg" style="border:solid 5px #e6e6e6"/></p>
-
-<p>システムプロパティの環境設定を開く<br />
-<img src="/pic/How-to-install-TensorFlow-GPU-on-Windows_05.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>自分の環境設定のパスを編集する<br />
-<img src="/pic/How-to-install-TensorFlow-GPU-on-Windows_06.jpg" style="border:solid 5px #e6e6e6"/></p>
-
-<p>パスを新規追加<br />
-<img src="/pic/How-to-install-TensorFlow-GPU-on-Windows_07.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>一応、パスが通ってることを path コマンドでチェックしとく<br />
-<img src="/pic/How-to-install-TensorFlow-GPU-on-Windows_08.png" style="border:solid 5px #e6e6e6"/></p>
-</blockquote>
-
-<p>ま、こんな感じです</p>
-
-<h1 id="4-tensorflow-on-windows-gpu-のインストール">4) TensorFlow on Windows (GPU) のインストール</h1>
-
-<p>いよいよ TensorFlow のインストールを行います</p>
-
-<p>最初に、Anaconda Promptを開いて、環境をTensorFlow用のやつに変えておきます（<a href="http://h-sao.com/blog/2017/03/29/how-to-install-anaconda-for-windows/">前回の記事</a>で書いたやつです）</p>
-
-<ul>
-<li>activateコマンドで環境を切り替えておく</li>
-</ul>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">5</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">#Change env
-
-(C:\utils\Anaconda3) D:\dev\anaconda&gt;activate tensorflow
-
-(tensorflow) D:\dev\anaconda&gt;</code></pre></td></tr></table>
-</div>
-</div>
-<hr />
-
-<p>(以下、失敗手順も含んでいます)</p>
-
-<ul>
-<li>pip コマンドを使ってTensorFlow　GPU をインストールする<br />
-（実はこの動作は 2017/4/10現在、間違っています）</li>
-</ul>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 1</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 2</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 5</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 9</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">10</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">11</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">12</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">13</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">14</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">15</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"># Installed TensorFlow (1st time, error occurred.)
-
-(tensorflow) D:\dev\anaconda&gt;pip install --upgrade tensorflow-gpu
-Collecting tensorflow-gpu
-  Downloading tensorflow_gpu-1.0.1-cp35-cp35m-win_amd64.whl (43.1MB)
-
-（中略）
-
-Successfully installed appdirs-1.4.3 numpy-1.12.1 packaging-16.8 protobuf-3.2.0 pyparsing-2.2.0 setuptools-34.3.3 six-1.10.0 tensorflow-gpu-1.0.1
-
-（中略）
-
-FileNotFoundError: [WinError 2] The system cannot find the file specified: &#39;C:\\utils\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\setuptools-27.2.0-py3.5.egg&#39;
-
-(tensorflow) D:\dev\anaconda&gt;</code></pre></td></tr></table>
-</div>
-</div>
-<p>Tensorflowのインストールは出来ましたが、一番最後、なにやらファイルが無いとエラーが出ています<br />
-よくわからない(￣▽￣)</p>
-
-<ul>
-<li>インポートの動作確認してみますが、うまくいってないよう…<br /></li>
-</ul>
-
-<p><strong>cudnn64_5.dllが無い</strong> って言われる</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 1</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 2</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 5</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 9</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">10</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">11</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">12</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">13</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">14</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">15</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">16</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">17</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"># Check import version
-
-(tensorflow) D:\dev\anaconda&gt;python
-Python 3.5.3 |Continuum Analytics, Inc.| (default, Feb 22 2017, 21:28:42) [MSC v.1900 64 bit (AMD64)] on win32
-Type &#34;help&#34;, &#34;copyright&#34;, &#34;credits&#34; or &#34;license&#34; for more information.
-&gt;&gt;&gt; import tensorflow
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cublas64_80.dll locally
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:126] Couldn&#39;t open CUDA library cudnn64_5.dll
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\cuda\cuda_dnn.cc:3517] Unable to load cuDNN DSO
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cufft64_80.dll locally
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library nvcuda.dll locally
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library curand64_80.dll locally
-&gt;&gt;&gt; print( tensorflow.__version__)
-1.0.1
-&gt;&gt;&gt; exit()
-
-(tensorflow) D:\dev\anaconda&gt;</code></pre></td></tr></table>
-</div>
-</div>
-<p>あれ？<br />
-ちゃんと<strong>CUDA8.0 に対応した cuDNN6.0 を入れたのに</strong>…(´・ω・`)</p>
-
-<p>良く見てみると、わたしの落としてきた cuDNN の DLL は <strong>cudnn64_6.dll</strong><br />
-エラーが出てるDLLは <strong>cudnn64_5.dll</strong></p>
-
-<p>…もうGetできなくね？？？(;^_^A<br />
-。<br />
-。</p>
-
-<hr />
-
-<ul>
-<li>暫定対応</li>
-</ul>
-
-<p><del>調べてもよく判らなかったので</del><br />
-<del>持ってるDLLのファイル名を変更して使うことにしました(*ﾉωﾉ)</del><br />
-<del>なんか今後問題でそうですが、致し方なし…</del><br />
-誰か、解決策あるなら教えて下さい（T▽T）</p>
-
-<p><img src="/pic/How-to-install-TensorFlow-GPU-on-Windows_09.png" style="border:solid 5px #e6e6e6"/></p>
-
-<blockquote>
-<p>2017/4/17追記：<br />
-scimprさんに教えて頂きました<br />
-cuDNN5.1を選ぶと、cudnn64_5.dll が入っていますので、ここに書いたコピー暫定対応はしてはいけません！<br />
-cuDNN5.1でも問題なく TensorFlow 1.1.0rc1 は動いています！！</p>
-</blockquote>
-
-<hr />
-
-<ul>
-<li>再度、インポート動作確認</li>
-</ul>
-
-<p>TensorFlowのバージョンは 1.0.1、インストールしまして、インポートでのエラーは出なくなりましたが…</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 1</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 2</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 5</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 9</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">10</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">11</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">12</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">13</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">14</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">(tensorflow) D:\dev\anaconda&gt;python
-Python 3.5.3 |Continuum Analytics, Inc.| (default, Feb 22 2017, 21:28:42) [MSC v.1900 64 bit (AMD64)] on win32
-Type &#34;help&#34;, &#34;copyright&#34;, &#34;credits&#34; or &#34;license&#34; for more information.
-&gt;&gt;&gt; import tensorflow
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cublas64_80.dll locally
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cudnn64_5.dll locally
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cufft64_80.dll locally
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library nvcuda.dll locally
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library curand64_80.dll locally
-&gt;&gt;&gt; print( tensorflow.__version__)
-1.0.1
-&gt;&gt;&gt; exit()
-
-(tensorflow) D:\dev\anaconda&gt;</code></pre></td></tr></table>
-</div>
-</div>
-<p>実はこの後、Hello TensorFlow! を表示しようとして、別の <strong>OpKernel</strong> エラーが大量発生します</p>
-
-<blockquote>
-<p>E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&lsquo;op: &ldquo;BestSplits&rdquo; device_type: &ldquo;CPU&rdquo;&lsquo;) for unknown op: BestSplits</p>
-</blockquote>
-
-<p>なんだよこれは…(。-`ω-)</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 1</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 2</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 5</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 9</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">10</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">11</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">12</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">13</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">14</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">15</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">16</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">17</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">18</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">19</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">20</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">21</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">22</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">23</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">24</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">25</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">26</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">27</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">28</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">29</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">30</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">31</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">32</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">33</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">34</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">35</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">36</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"># Remained the same error too. (OpKernel error)
-
-(tensorflow) D:\dev\anaconda&gt;python
-Python 3.5.3 |Continuum Analytics, Inc.| (default, Feb 22 2017, 21:28:42) [MSC v.1900 64 bit (AMD64)] on win32
-Type &#34;help&#34;, &#34;copyright&#34;, &#34;credits&#34; or &#34;license&#34; for more information.
-&gt;&gt;&gt; import tensorflow as tf
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cublas64_80.dll locally
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cudnn64_5.dll locally
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library cufft64_80.dll locally
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library nvcuda.dll locally
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\stream_executor\dso_loader.cc:135] successfully opened CUDA library curand64_80.dll locally
-&gt;&gt;&gt; hello = tf.constant(&#39;Hello tensorflow!&#39;)
-&gt;&gt;&gt; sess = tf.Session()
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:885] Found device 0 with properties:
-name: GeForce GTX 960
-major: 5 minor: 2 memoryClockRate (GHz) 1.253
-pciBusID 0000:05:00.0
-Total memory: 2.00GiB
-Free memory: 1.64GiB
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:906] DMA: 0
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:916] 0:   Y
-I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -&gt; (device: 0, name: GeForce GTX 960, pci bus id: 0000:05:00.0)
-&gt;&gt;&gt; print(sess.run(hello))
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;BestSplits&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: BestSplits
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;CountExtremelyRandomStats&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: CountExtremelyRandomStats
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;FinishedNodes&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: FinishedNodes
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;GrowTree&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: GrowTree
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;ReinterpretStringToFloat&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: ReinterpretStringToFloat
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;SampleInputs&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: SampleInputs
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;ScatterAddNdim&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: ScatterAddNdim
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;TopNInsert&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: TopNInsert
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;TopNRemove&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: TopNRemove
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;TreePredictions&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: TreePredictions
-E c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\framework\op_kernel.cc:943] OpKernel (&#39;op: &#34;UpdateFertileSlots&#34; device_type: &#34;CPU&#34;&#39;) for unknown op: UpdateFertileSlots
-b&#39;Hello tensorflow!&#39;
-&gt;&gt;&gt; exit()</code></pre></td></tr></table>
-</div>
-</div>
-<p>ここでようやく、インストールが上手く行ってないことに気が付きます(+o+)</p>
-
-<hr />
-
-<p>よし、気を取り直して<br />
-<strong>公式サイトではなく、GitHubの方に書かれている、インストール方法</strong> を参考にしてみます</p>
-
-<ul>
-<li>さっき入れた TensorFlow1.0.1 をアンインストール</li>
-</ul>
-
-<pre><code># Uninstalled TensorFlow
-
-(tensorflow) D:\dev\anaconda&gt;pip uninstall tensorflow-gpu
-Uninstalling tensorflow-gpu-1.0.1:
-  c:\utils\anaconda3\envs\tensorflow\lib\site-packages\external\d3\d3.js
-  c:\utils\anaconda3\envs\tensorflow\lib\site-packages\external\d3\d3.min.js
-  
-（中略）
-
-  c:\utils\anaconda3\envs\tensorflow\scripts\tensorboard.exe
-Proceed (y/n)? y
-  Successfully uninstalled tensorflow-gpu-1.0.1
-</code></pre>
-
-<hr />
-
-<ul>
-<li>再度、<strong>公式のGitHubの方に書かれているWindowsインストール方法を実施</strong><br />
-<a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/docs_src/install/install_windows.md">https://github.com/tensorflow/tensorflow/blob/master/tensorflow/docs_src/install/install_windows.md</a></li>
-</ul>
-
-<blockquote>
-<p>※2017/4/10現在の情報です、<strong>正確には公式GitHubサイトを確認してください</strong><br />
-&gt; pip install &ndash;ignore-installed &ndash;upgrade <a href="https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-1.1.0rc1-cp35-cp35m-win_amd64.whl">https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-1.1.0rc1-cp35-cp35m-win_amd64.whl</a></p>
-</blockquote>
-
-<pre><code># Re-install TensorFlow for Anaconda, it's best way for Anaconda/Windows user!
-
-(tensorflow) D:\dev\anaconda&gt;pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-1.1.0rc1-cp35-cp35m-win_amd64.whl
-Collecting tensorflow-gpu==1.1.0rc1 from https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-1.1.0rc1-cp35-cp35m-win_amd64.whl
-  Downloading https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-1.1.0rc1-cp35-cp35m-win_amd64.whl (48.6MB)
-    100% |################################| 48.6MB 26kB/s
-Collecting werkzeug&gt;=0.11.10 (from tensorflow-gpu==1.1.0rc1)
-  Downloading Werkzeug-0.12.1-py2.py3-none-any.whl (312kB)
-    100% |################################| 317kB 3.0MB/s
-Collecting numpy&gt;=1.11.0 (from tensorflow-gpu==1.1.0rc1)
-  Using cached numpy-1.12.1-cp35-none-win_amd64.whl
-Collecting protobuf&gt;=3.2.0 (from tensorflow-gpu==1.1.0rc1)
-  Using cached protobuf-3.2.0-py2.py3-none-any.whl
-Collecting six&gt;=1.10.0 (from tensorflow-gpu==1.1.0rc1)
-  Using cached six-1.10.0-py2.py3-none-any.whl
-Collecting wheel&gt;=0.26 (from tensorflow-gpu==1.1.0rc1)
-  Downloading wheel-0.29.0-py2.py3-none-any.whl (66kB)
-    100% |################################| 71kB 4.0MB/s
-Collecting setuptools (from protobuf&gt;=3.2.0-&gt;tensorflow-gpu==1.1.0rc1)
-  Using cached setuptools-34.3.3-py2.py3-none-any.whl
-Collecting packaging&gt;=16.8 (from setuptools-&gt;protobuf&gt;=3.2.0-&gt;tensorflow-gpu==1.1.0rc1)
-  Using cached packaging-16.8-py2.py3-none-any.whl
-Collecting appdirs&gt;=1.4.0 (from setuptools-&gt;protobuf&gt;=3.2.0-&gt;tensorflow-gpu==1.1.0rc1)
-  Using cached appdirs-1.4.3-py2.py3-none-any.whl
-Collecting pyparsing (from packaging&gt;=16.8-&gt;setuptools-&gt;protobuf&gt;=3.2.0-&gt;tensorflow-gpu==1.1.0rc1)
-  Using cached pyparsing-2.2.0-py2.py3-none-any.whl
-Installing collected packages: werkzeug, numpy, six, pyparsing, packaging, appdirs, setuptools, protobuf, wheel, tensorflow-gpu
-Successfully installed appdirs-1.4.3 numpy-1.12.1 packaging-16.8 protobuf-3.2.0 pyparsing-2.2.0 setuptools-34.3.3 six-1.10.0 tensorflow-gpu-1.1.0rc1 werkzeug-0.12.1 wheel-0.29.0
-</code></pre>
-
-<p>TensorFlowのバージョンは 1.1.0rc1 になりました<br />
-（2017/4/10現在）</p>
-
-<ul>
-<li>Hello TensorFlow! の表示で動作確認</li>
-</ul>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 1</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 2</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 5</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 9</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">10</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">11</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">12</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">13</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">14</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">15</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">16</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">17</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">18</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">19</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">20</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">21</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">22</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">23</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">24</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">25</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">26</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"># Hello TensorFlow!
-
-(tensorflow) D:\dev\anaconda&gt;python
-Python 3.5.3 |Continuum Analytics, Inc.| (default, Feb 22 2017, 21:28:42) [MSC v.1900 64 bit (AMD64)] on win32
-Type &#34;help&#34;, &#34;copyright&#34;, &#34;credits&#34; or &#34;license&#34; for more information.
-&gt;&gt;&gt; import tensorflow as tf
-&gt;&gt;&gt; hello = tf.constant(&#39;Hello tensorflow&#39;)
-&gt;&gt;&gt; sess = tf.Session()
-2017-04-07 17:55:06.792343: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use SSE instructions, but these are available on your machine and could speed up CPU computations.
-2017-04-07 17:55:06.794854: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use SSE2 instructions, but these are available on your machine and could speed up CPU computations.
-2017-04-07 17:55:06.795650: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use SSE3 instructions, but these are available on your machine and could speed up CPU computations.
-2017-04-07 17:55:06.798303: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
-2017-04-07 17:55:06.798924: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
-2017-04-07 17:55:06.799553: W c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
-2017-04-07 17:55:07.171447: I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:887] Found device 0 with properties:
-name: GeForce GTX 960
-major: 5 minor: 2 memoryClockRate (GHz) 1.253
-pciBusID 0000:05:00.0
-Total memory: 2.00GiB
-Free memory: 1.64GiB
-2017-04-07 17:55:07.171652: I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:908] DMA: 0
-2017-04-07 17:55:07.178823: I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:918] 0:   Y
-2017-04-07 17:55:07.180026: I c:\tf_jenkins\home\workspace\release-win\device\gpu\os\windows\tensorflow\core\common_runtime\gpu\gpu_device.cc:977] Creating TensorFlow device (/gpu:0) -&gt; (device: 0, name: GeForce GTX 960, pci bus id: 0000:05:00.0)
-&gt;&gt;&gt; print(sess.run(hello))
-b&#39;Hello tensorflow&#39;
-&gt;&gt;&gt; exit()</code></pre></td></tr></table>
-</div>
-</div>
-<p>これでOpKernelエラーは出なくなりましたし、GPU利用のログも出ていますね</p>
-
-<blockquote>
-<p>name: GeForce GTX 960<br />
-major: 5 minor: 2 memoryClockRate (GHz) 1.253<br />
-&hellip;</p>
-</blockquote>
-
-<p>ほっ…(≧▽≦)</p>
-
-<h1 id="おまけ-sseのワーニングを消すには">（おまけ）SSEのワーニングを消すには？</h1>
-
-<p>しかし良く見て！？<br />
-エラーは消えたけど、ワーニングは出てるよっ！？！？</p>
-
-<p>どうやらこれについては、本家GitHub issue でも取りざたされています</p>
-
-<ul>
-<li><strong>&ldquo;The TensorFlow library wasn&rsquo;t compiled to use SSE instructions, but these are available on your machine and could speed up CPU computations&rdquo; in &ldquo;Hello, TensorFlow!&rdquo; program</strong> #7778<br />
-<a href="https://github.com/tensorflow/tensorflow/issues/7778">https://github.com/tensorflow/tensorflow/issues/7778</a></li>
-</ul>
-
-<p>意味は、ソースからコンパイルし直したら、CPUが早くなるんじゃね？というお知らせの様です</p>
-
-<p>うーん…GPUで動かしてるのにCPUを早くする？？よくわからんです</p>
-
-<p>これは放置でも動作に問題ないらしいのですが、見たくない場合は、ログレベルを変更したら見えなくなると、issueに記載がありました</p>
-
-<blockquote>
-<p>import os<br />
-os.environ[&lsquo;TF_CPP_MIN_LOG_LEVEL&rsquo;]=&lsquo;2&rsquo;</p>
-</blockquote>
-
-<p>こんな感じですっきりしました<br />
-GPUの確認ログも消えちゃいますけど…</p>
-
-<pre><code># Changed worning level
-
-(tensorflow) D:\dev\anaconda&gt;python
-Python 3.5.3 |Continuum Analytics, Inc.| (default, Feb 22 2017, 21:28:42) [MSC v.1900 64 bit (AMD64)] on win32
-Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
-&gt;&gt;&gt; import os
-&gt;&gt;&gt; os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
-&gt;&gt;&gt; import tensorflow as tf
-&gt;&gt;&gt; hello = tf.constant('Hello tensorflow')
-&gt;&gt;&gt; sess = tf.Session()
-&gt;&gt;&gt; print(sess.run(hello))
-b'Hello tensorflow'
-&gt;&gt;&gt; exit()
-</code></pre>
-
-<p>とりあえず、TensorFlow on Windows (GPU) のインストールと、最初の動作確認は完了しました</p>
-
-<p>作業の全ログはこちらに置いています…</p>
-
-<ul>
-<li><strong>Install_log_on_Windows_for_TensorFlow_GPU.log - Gist/h-sao</strong><br />
-<a href="https://gist.github.com/h-sao/b7ab04b3ba3fe8a9e41ec8af76da7559">https://gist.github.com/h-sao/b7ab04b3ba3fe8a9e41ec8af76da7559</a></li>
-</ul>
-
-<p>おつかれさまでした～</p>
-
-<h2 id="その他ポイント1-anacondaではpipを使う">その他ポイント1：Anacondaではpipを使う</h2>
-
-<p>Anacondaでインストールする場合は、pipを使う（pip3 は無いみたい）</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">(tensorflow) D:\dev\anaconda&gt;pip3
-&#39;pip3&#39; is not recognized as an internal or external command,
-operable program or batch file.</code></pre></td></tr></table>
-</div>
-</div>
-<h2 id="その他ポイント2-pythonのバージョンは3-5">その他ポイント2：Pythonのバージョンは3.5</h2>
-
-<p>Tensorflowは Python3.5系じゃないとだめ<br />
-3.6に入れようとしたら、怒られました
-試しに、CPU版にしても怒られました</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">(tensorflow) D:\dev\anaconda&gt;pip install tensorflow-gpu
-Collecting tensorflow-gpu
-  Could not find a version that satisfies the requirement tensorflow-gpu (from versions: )
-No matching distribution found for tensorflow-gpu</code></pre></td></tr></table>
-</div>
-</div>
-<p>どうやら、pythonのバージョンは Windowsの場合3.5系でないと対応してないみたいです（2017/4/10現在）</p>
-
-<hr />
-
-<p>（その他参考）</p>
-
-<blockquote>
-<p>同じOpKernelエラー現象が出てる海外のも居た…<br />
-Installation log of Tensorflow 1.0 on Windows using pip<br />
-<a href="https://gist.github.com/apacha/a595c244f90a27aced56f67f7598d90d">https://gist.github.com/apacha/a595c244f90a27aced56f67f7598d90d</a></p>
-</blockquote>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f04%2f10%2fhow-to-install-tensorflow-gpu-on-windows%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bTensorFlow%5d%20TensorFlow%20on%20Windows%20GPU%e7%89%88%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%96%b9%e6%b3%95&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f04%2f10%2fhow-to-install-tensorflow-gpu-on-windows%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f04%2f10%2fhow-to-install-tensorflow-gpu-on-windows%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f04%2f10%2fhow-to-install-tensorflow-gpu-on-windows%2f&title=%5bTensorFlow%5d%20TensorFlow%20on%20Windows%20GPU%e7%89%88%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%96%b9%e6%b3%95" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -1887,6 +1362,10 @@ Installation log of Tensorflow 1.0 on Windows using pip<br />
             <div class="list-group">
                 
                     
+                        <a href="/blog/2018/08/19/unity-cameras-operation-not-using-mouse/" class="list-group-item">[Unity] Macのトラックパッドのみでシーンビューを動かす</a><br>
+                    
+                
+                    
                         <a href="/blog/2018/02/08/hello2018/" class="list-group-item">[Diary] 2018年もよろしくお願いします</a><br>
                     
                 
@@ -1920,10 +1399,6 @@ Installation log of Tensorflow 1.0 on Windows using pip<br />
                 
                     
                         <a href="/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/" class="list-group-item">[SSH] ポート指定GitサーバにSSHでアクセスできない時(Windows/GitExtensions)</a><br>
-                    
-                
-                    
-                        <a href="/blog/2017/04/10/how-to-install-tensorflow-gpu-on-windows/" class="list-group-item">[TensorFlow] TensorFlow on Windows GPU版インストール方法</a><br>
                     
                 
             </div>
@@ -2228,9 +1703,9 @@ Installation log of Tensorflow 1.0 on Windows using pip<br />
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/unity" style="font-size: 26px;">
+                    <a href="http://h-sao.com//tags/unity" style="font-size: 29px;">
                     
-                        <span class="badge">6</span>
+                        <span class="badge">7</span>
                         unity
                     </a>
                     </u> &nbsp; 

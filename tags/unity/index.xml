@@ -6,10 +6,23 @@
     <description>Recent content in Unity on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 02 Nov 2017 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 19 Aug 2018 10:30:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/tags/unity/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Unity] Macのトラックパッドのみでシーンビューを動かす</title>
+      <link>http://h-sao.com/blog/2018/08/19/unity-cameras-operation-not-using-mouse/</link>
+      <pubDate>Sun, 19 Aug 2018 10:30:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2018/08/19/unity-cameras-operation-not-using-mouse/</guid>
+      <description>動作環境
+ Mac 上で Bootcamp してる Windows10 Unity2018  Unityのシーンビューを操作しようとして、トラックパッドだけで動かすやり方が判らなかったので、そのメモです
+ // マウスが引っ越ししで、どこにあるか判らなくなった
+  見たい Game object に F key で、オブジェクトにフォーカス option key とトラックパッド1本指で、回転 トラックパッド2本指で平行移動
+（注視点の位置は一緒に移動します）  ちょっとやりにくいけど、出来ないよりマシかな( ..)φメモメモ</description>
+    </item>
     
     <item>
       <title>[Unity] Unityのライセンス情報をアンインストールしたい</title>

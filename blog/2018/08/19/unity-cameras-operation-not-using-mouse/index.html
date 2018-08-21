@@ -48,19 +48,13 @@
         <article class="post">
             <a class="btn home" href="http://h-sao.com/" title="">&laquo; </a>
             
-<h1><a href="http://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/" title="[SSH] ポート指定GitサーバにSSHでアクセスできない時(Windows/GitExtensions)">[SSH] ポート指定GitサーバにSSHでアクセスできない時(Windows/GitExtensions)</a></h1>
+<h1><a href="http://h-sao.com/blog/2018/08/19/unity-cameras-operation-not-using-mouse/" title="[Unity] Macのトラックパッドのみでシーンビューを動かす">[Unity] Macのトラックパッドのみでシーンビューを動かす</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.06.01">2017.06.01</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.08.19">2018.08.19</time>
     
     &middot; 
         
-        <a href="http://h-sao.com/tags/git">git</a>
-        , 
-        
-        <a href="http://h-sao.com/tags/ssh">ssh</a>
-        , 
-        
-        <a href="http://h-sao.com/tags/gitextensions">gitextensions</a>
+        <a href="http://h-sao.com/tags/unity">unity</a>
         
         
     
@@ -68,114 +62,41 @@
 </span>
 </footer>
  </footer>
-            
-
-<h4 id="最近">最近…</h4>
-
-<p>機械学習関係をやってたんですけど、Unityをまた触ることになっています<br />
-てんやわんやして、前回更新から2カ月も経ってしまった…(+o+)</p>
-
-<p>今回また、タイトル名のGit/SSH関係でオロオロしたので、同現象で困ってる人の助けになれば幸いです</p>
-
-<h2 id="現象-初回ssh接続に失敗する">(現象)初回SSH接続に失敗する</h2>
-
-<h4 id="環境">環境</h4>
+            <p>動作環境</p>
 
 <ul>
-<li>Windows7/64bit</li>
-<li>GitExtensions</li>
-<li>キーペアを用いた認証でのSSH接続</li>
-<li>GitサーバへのSSHアクセスは、オリジナルのポート番号を割り当てている</li>
+<li>Mac 上で Bootcamp してる Windows10</li>
+<li>Unity2018</li>
 </ul>
 
-<p>こんな環境で作業していました（古いPCからアクセスしたかったので、Win7なのです…）</p>
-
-<ol>
-<li><p>初回クローンするために、Gitサーバにアクセスしようと、秘密鍵を .ssh ディレクトリ以下にコピーしておきます<br />
-デフォルトのSSH秘密鍵置き場は<br />
-<strong>c:\Users[ユーザ名].ssh/id_rsa</strong><br />
-です</p></li>
-
-<li><p>GitExtensionsを利用してGitリポジトリからクローンしようとすると、以下のエラーが…</p></li>
-</ol>
+<p>Unityのシーンビューを操作しようとして、トラックパッドだけで動かすやり方が判らなかったので、そのメモです</p>
 
 <blockquote>
-<p><strong>fatal: Could not read from remote repository.</strong><br />
-Please make sure you have the correct access rights and repository exists.</p>
+<p>// マウスが引っ越ししで、どこにあるか判らなくなった</p>
 </blockquote>
-
-<p>え、なんで…？</p>
-
-<h2 id="解決-ポート番号ありでknown-hostsに登録する">(解決)ポート番号ありでknown_hostsに登録する</h2>
-
-<p>アドレスも合ってる！<br />
-リポジトリもある！<br />
-サーバには公開鍵、クライアントには秘密鍵を置いてる！</p>
-
-<p>これでなぜアクセス出来ないのか、解明に半日かかってしまいました…トホホ<br />
-自分のインフラ力の無さに涙が出そうです</p>
-
-<p>答えを書きますと、</p>
 
 <ul>
-<li>先に<strong>コマンドプロンプトからSSHアクセス</strong>を行っておく</li>
-<li>ポート番号の指定がある場合は、<strong>ポート番号指定でアクセス</strong>しておく</li>
+<li>見たい Game object に <code>F key</code> で、オブジェクトに<strong>フォーカス</strong></li>
+<li><code>option key</code> とトラックパッド1本指で、<strong>回転</strong></li>
+<li>トラックパッド2本指で<strong>平行移動</strong><br />
+（注視点の位置は一緒に移動します）</li>
 </ul>
 
-<p>これで解決しました…(^_^;)</p>
-
-<p>わたしの場合のポイントは、ポート指定でした</p>
-
-<hr />
-
-<ol>
-<li><p>コマンドプロンプトを立ち上げます<br />
-わたしの場合、GitExtensionsを使ってたので  <strong>Tools &gt; Git bash</strong> から立ち上げました</p></li>
-
-<li><p>SSH のテスト接続を行います</p></li>
-</ol>
-
-<blockquote>
-<p><strong>$ssh git@[サーバアドレス] -p [SSHアクセスのポート番号]</strong></p>
-</blockquote>
-
-<p>そしたら、</p>
-
-<blockquote>
-<p>Are you sure you want to continue connecting (yes/no)?</p>
-</blockquote>
-
-<p>と聞かれるので、すかさず <strong>yes</strong> を！<br />
-c:\Users[ユーザ名].ssh\known_hosts にアクセス情報が登録されます</p>
-
-<p>これで GitExtensions に戻って新規クローン開始したら、拒否されることなくソースを取得できました！</p>
-
-<h2 id="まとめ">まとめ</h2>
-
-<p>最初に、</p>
-
-<blockquote>
-<p>$ssh git@[サーバアドレス]</p>
-</blockquote>
-
-<p>この状態で接続テストしてたんですけど、足りてないみたいでした</p>
-
-<p>たったこれだけなんですけど、あまり情報が乗ってなかったように思いますので<br />
-未来の自分へのメモ…</p>
+<p>ちょっとやりにくいけど、出来ないよりマシかな( ..)φメモメモ</p>
 
             <ul class="share-buttons">
     <li></li>
     <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f06%2f01%2fwhen-cant-connect-to-git-server-for-ssh-on-windows-gitextensions%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2018%2f08%2f19%2funity-cameras-operation-not-using-mouse%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bSSH%5d%20%e3%83%9d%e3%83%bc%e3%83%88%e6%8c%87%e5%ae%9aGit%e3%82%b5%e3%83%bc%e3%83%90%e3%81%abSSH%e3%81%a7%e3%82%a2%e3%82%af%e3%82%bb%e3%82%b9%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84%e6%99%82%28Windows%2fGitExtensions%29&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f06%2f01%2fwhen-cant-connect-to-git-server-for-ssh-on-windows-gitextensions%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bUnity%5d%20Mac%e3%81%ae%e3%83%88%e3%83%a9%e3%83%83%e3%82%af%e3%83%91%e3%83%83%e3%83%89%e3%81%ae%e3%81%bf%e3%81%a7%e3%82%b7%e3%83%bc%e3%83%b3%e3%83%93%e3%83%a5%e3%83%bc%e3%82%92%e5%8b%95%e3%81%8b%e3%81%99&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2018%2f08%2f19%2funity-cameras-operation-not-using-mouse%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f06%2f01%2fwhen-cant-connect-to-git-server-for-ssh-on-windows-gitextensions%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2018%2f08%2f19%2funity-cameras-operation-not-using-mouse%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f06%2f01%2fwhen-cant-connect-to-git-server-for-ssh-on-windows-gitextensions%2f&title=%5bSSH%5d%20%e3%83%9d%e3%83%bc%e3%83%88%e6%8c%87%e5%ae%9aGit%e3%82%b5%e3%83%bc%e3%83%90%e3%81%abSSH%e3%81%a7%e3%82%a2%e3%82%af%e3%82%bb%e3%82%b9%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84%e6%99%82%28Windows%2fGitExtensions%29" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2018%2f08%2f19%2funity-cameras-operation-not-using-mouse%2f&title=%5bUnity%5d%20Mac%e3%81%ae%e3%83%88%e3%83%a9%e3%83%83%e3%82%af%e3%83%91%e3%83%83%e3%83%89%e3%81%ae%e3%81%bf%e3%81%a7%e3%82%b7%e3%83%bc%e3%83%b3%e3%83%93%e3%83%a5%e3%83%bc%e3%82%92%e5%8b%95%e3%81%8b%e3%81%99" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 
