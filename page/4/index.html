@@ -47,6 +47,250 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2016/01/11/unity-shader-2dsprite/" title="[Unity] 2D Spriteにシェーダーをかける">[Unity] 2D Spriteにシェーダーをかける</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.01.11">2016.01.11</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/unity">unity</a>
+        , 
+        
+        <a href="http://h-sao.com/tags/shader">shader</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p><a href="/blog/2016/01/04/hello2016/">今年の初めに</a>、「Game a Week」という開発手法がすごい！っと書きました<br />
+とりあえず、週に一度は成果物を公開する、の部分を真似してみようかなと<br />
+（やってみて気が付きましたが、実は1週間って、結構長いです）</p>
+
+<p>今をトキメクGame Engine: <strong>Unity</strong> について、去年から触る機会があり、ポチポチとやっております</p>
+
+<p>そしてこれは既知の情報ですが、先週は2Dスプライトにシンプルなグラデーションのシェーダーを適用してみました</p>
+
+<p>やってみると判るのですが、Unity ではスプライトにシンプルシェーダーだけを適用しようと思っても出来なくて、<br />
+先に結論を書いておくと、スプライトとして扱う場合は必ず何かしらのテクスチャアセットが必要でした<br />
+そのメモと感想文になります</p>
+
+<p>2016年1月11日現在、Unityのバージョンは 5.3.1 です</p>
+
+<h1 id="unity-のシェーダー言語-shaderlab">Unity のシェーダー言語：ShaderLab</h1>
+
+<p>Unity のシェーダーは 「ShaderLab」 という Unity オリジナルのシェーダー言語で記載することになります<br />
+といっても HLSL のラッパーのような言語なので、Unity で使うときのお作法であり、Unity と シェーダーの仲介役の言語、と思って良いみたい</p>
+
+<h2 id="最小限の-shaderlab">最小限の ShaderLab</h2>
+
+<p>最小限の ShaderLab の枠組みはこんな感じ<br />
+（これより削ると、エラーが出た）</p>
+
+<pre><code>// BG_shader.shader
+// 最小限の ShaderLab
+Shader &quot;Custom/BG_shader&quot; {
+    SubShader
+    {
+        Pass {}
+    }
+}
+</code></pre>
+
+<p>実際に、このカスタムシェーダーをマテリアルに適用するとこんな感じ</p>
+
+<p><img src="/pic/Unity-Shader-2DSprite_00.png" alt="" /></p>
+
+<p>何もしないマテリアルを作ることが出来ました</p>
+
+<h2 id="シンプルなグラデーション">シンプルなグラデーション</h2>
+
+<p>今回、ゲーム背景を単純なカラーグラデーションにしようと思ったので、そういうシンプルシェーダーを書いていきます</p>
+
+<pre><code>// BG_shader.shader
+// 黄色くグラデーションする
+Shader &quot;Custom/BG_shader&quot; {
+    SubShader
+    {
+        Pass{
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+
+            // VS2015のグラフィックデバックON
+            #pragma enable_d3d11_debug_symbols
+
+            struct VertexInput {
+                float4 pos:  POSITION;    // 3D空間座標
+                float2 uv:   TEXCOORD0;   // テクスチャ座標
+            };
+
+            struct VertexOutput {
+                float4 v:    SV_POSITION; // 2D座標
+                float2 uv:   TEXCOORD0;   // テクスチャ座標
+            };
+
+            // 頂点 shader
+            VertexOutput vert(VertexInput input)
+            {
+                VertexOutput output;
+                output.v = mul(UNITY_MATRIX_MVP, input.pos);
+                output.uv = input.uv;
+
+                return output;
+            }
+
+            // ピクセル shader
+            fixed4 frag( VertexOutput output) : SV_Target
+            {
+                float2 tex = output.uv;
+                // 黄色→白色のグラデーション
+                return fixed4( 1.0, 1.0, 1.0 - tex.y, 1.0);
+            }
+
+            ENDCG
+        }
+    }
+}
+</code></pre>
+
+<p>ちょっとマテリアルではわかりにくいですけど、一応、線形にグラデーションされています</p>
+
+<p><img src="/pic/Unity-Shader-2DSprite_01.png" alt="" /></p>
+
+<h1 id="2d-sprite-に適用する方法">2D Sprite に適用する方法</h1>
+
+<p>シンプルなシェーダーとマテリアルが出来たので、実際に、Sprite に登録します</p>
+
+<h2 id="sprite-と-material-だけでは足りない">Sprite と Material だけでは足りない</h2>
+
+<p>ただし、ちょっとここでクセがあって、このマテリアルを Sprite にアタッチしても、何も起こりません<br />
+それどころか、ワーニングメッセージが…</p>
+
+<p><img src="/pic/Unity-Shader-2DSprite_02.png" alt="" /></p>
+
+<blockquote>
+<p>Material does not have a _MainTex texture property. It is required for SpriteRenderer.</p>
+</blockquote>
+
+<p>あら…<br />
+Sprite Renderer に登録するマテリアルには、テクスチャが必要ということみたいです<br />
+シェーダーに戻って、言われているとおり、 _MainTex にテクスチャを登録します</p>
+
+<pre><code>// BG_shader.shader の Properties を追加
+    Properties
+    {
+        _MainTex( &quot;2D Texture&quot;, 2D ) = &quot;white&quot; {}
+    }
+</code></pre>
+
+<p>テクスチャを登録できるし、デフォルトでは white テクスチャを使いますよ。という意味になります<br />
+ちなみに、_MainTex() の内蔵テクスチャには</p>
+
+<ul>
+<li>white</li>
+<li>black</li>
+<li>gray</li>
+<li>bump</li>
+</ul>
+
+<p>の4種類が用意されています<br />
+* ShaderLab: Properties - Unity Documentation<br />
+ <a href="http://docs.unity3d.com/Manual/SL-Properties.html">http://docs.unity3d.com/Manual/SL-Properties.html</a></p>
+
+<p><img src="/pic/Unity-Shader-2DSprite_03.png" alt="" /></p>
+
+<p>マテリアルにテクスチャを持つ設定にしました</p>
+
+<h2 id="sprite-には-ベースとしてリアルな-texture-が必要">Sprite には、ベースとしてリアルな Texture が必要</h2>
+
+<p>Sprite のワーニングも消えたのですが、やはりシーンに Sprite object が表示されません</p>
+
+<p><img src="/pic/Unity-Shader-2DSprite_04.png" alt="" /></p>
+
+<p>どうやら、Sprite はあくまで、テクスチャ画像を表示させるための機能に特化しており、マテリアルだけでは動作しない様です</p>
+
+<p>仕方がないので、Sprite 用のテクスチャを用意します<br />
+サイズ感がよくわからなかったのですが、 white.jpg という 8*8 のテクスチャを Assets の下に入れました</p>
+
+<p>Sprite の Inspector にて、Sprite Rendere &gt; Sprite にて white テクスチャを選択します</p>
+
+<blockquote>
+<p>あぁ…これ、デフォルトで白いテクスチャくらい、システムで用意してほしいなかと思いましたが、まぁしょーがないです<br />
+<img src="/pic/Unity-Shader-2DSprite_05.png" alt="" /></p>
+</blockquote>
+
+<p>でたー</p>
+
+<p><img src="/pic/Unity-Shader-2DSprite_06.png" alt="" /></p>
+
+<h1 id="まとめ">まとめ</h1>
+
+<p>シンプルな 3D model では</p>
+
+<ul>
+<li><strong>Mesh Renderer</strong><br />
+→ <strong>Material</strong> (たとえば Standard Shader)<br />
+　→ <strong>Texture</strong><br /></li>
+</ul>
+
+<p>という構造なので、</p>
+
+<p>2D Sprite では</p>
+
+<ul>
+<li><strong>Sprite Renderer</strong><br />
+→ <strong>Material</strong> or <strong>Texture</strong></li>
+</ul>
+
+<p>なのかなーと思っていたのですが、実際には</p>
+
+<ul>
+<li><strong>Sprite Renderer</strong><br />
+→ <strong>Material</strong><br />
+　→ <strong>Texture</strong> (Shader の _MainTex() )<br />
+→ <strong>Sprite</strong><br />
+　→ <strong>Texture</strong> (リアル画像)</li>
+</ul>
+
+<p>という構造が必要でした</p>
+
+<p>これを受けて、</p>
+
+<p>「え、シンプルなシェーダーのみを適用したいなら、<br />
+Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
+
+<p>という疑問が出てきましたが、<br />
+実際のゲーム制作においては、シチュエーション依存ですかね…<br />
+今回のわたしの場合は、Sprite を採用しました</p>
+
+<p>この記事の Unity プロジェクト（ソース、アセット）を Github に置いておきます<br />
+<a href="https://github.com/h-sao/UnitySampleCode/tree/master/SpriteGradationalShader">https://github.com/h-sao/UnitySampleCode/tree/master/SpriteGradationalShader</a></p>
+
+<p>何かの参考になれば幸いです</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f01%2f11%2funity-shader-2dsprite%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bUnity%5d%202D%20Sprite%e3%81%ab%e3%82%b7%e3%82%a7%e3%83%bc%e3%83%80%e3%83%bc%e3%82%92%e3%81%8b%e3%81%91%e3%82%8b&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f01%2f11%2funity-shader-2dsprite%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f01%2f11%2funity-shader-2dsprite%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f01%2f11%2funity-shader-2dsprite%2f&title=%5bUnity%5d%202D%20Sprite%e3%81%ab%e3%82%b7%e3%82%a7%e3%83%bc%e3%83%80%e3%83%bc%e3%82%92%e3%81%8b%e3%81%91%e3%82%8b" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2016/01/06/usb-boot-app-rufus/" title="[Utility] ISOファイルからBoot用USBを作成するアプリRufus">[Utility] ISOファイルからBoot用USBを作成するアプリRufus</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.01.06">2016.01.06</time>
@@ -1275,65 +1519,6 @@ MacProSao:~ Sao$
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2015/03/13/install-android-apk/" title="[Android] 開発者向けオプション表示とAPKインストールコマンド">[Android] 開発者向けオプション表示とAPKインストールコマンド</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2015.03.13">2015.03.13</time>
-    
-    &middot; 
-        
-        <a href="http://h-sao.com/tags/android">android</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>ずいぶん昔から出ている情報ですが、メモっときます<br /><br />Android端末に自作アプリを入れるシンプルな方法です<br /></p>
-
-<h1 id="android端末での準備">Android端末での準備</h1>
-
-<p>Android4.2以降の端末だと「開発者向けオプション」が非表示になってるので<br /><br />USBデバッグを有効にしたい場合は<br /><blockquote>端末情報&nbsp;＞ ビルド番号</blockquote><br />このビルド番号を7回クリックしたら、「開発者向けオプション」が表示されます<br /><br />やっておくことは<br /><ul><li>設定 ＞ セキュリティ ＞ 提供元不明のアプリ　ON</li><li>設定 ＞ 開発者向けオプション ＞ USBデバッグ　ON</li><li>デバイスを提供している会社のサイトから、Android用SDKドライバをインストールする</li></ul>こんなところでOK<br /><br />（参考）<br /><div><a  href="http://www.yahoo-help.jp/app/answers/detail/p/601/a_id/54447/~/usb%E3%83%87%E3%83%90%E3%83%83%E3%82%B0%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%99%E3%82%8B%E3%80%81%E6%8F%90%E4%BE%9B%E5%85%83%E4%B8%8D%E6%98%8E%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%82%92%E8%A8%B1%E5%8F%AF%E3%81%99%E3%82%8B" target="_blank">USBデバッグを有効にする、提供元不明アプリのインストールを許可する - Yahoo!スマホマネージャーヘルプ&nbsp;</a></div><br /></p>
-
-<h1 id="android端末にapkをインストール">Android端末にAPKをインストール</h1>
-
-<p>AndroidSDKをインストールした場所に adb tool が入っています<br /><br />わたしの場合は&nbsp;C:\Library\android-sdk にインストールしたので、adb.exe は</p>
-
-<blockquote>
-<p>C:\Library\android-sdk\platform-tools\adb.exe</p>
-</blockquote>
-
-<p>よく他のサイトで、PCの環境変数パスに、C:\Library\android-sdk\platform-tools を追加設定する、というのを見かけますが<br />単にこの abd.exe を使うだけであれば、環境変数への追加は必要ないです<br /><br />UBSでAndroid端末をPCに接続した状態で<br />手元の MyApp.apk をインストールするコマンドはこちら</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"> adb install -r MyApp.apk</code></pre></td></tr></table>
-</div>
-</div>
-<p>さくっとインストールできました<br /><br />デバイスからAPKリンクをつつくなどでも良いのですが<br />開発者っぽい感じかつ、<br />ちょっと手元でAPKを試したい時の参考までに(^^)/</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f03%2f13%2finstall-android-apk%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bAndroid%5d%20%e9%96%8b%e7%99%ba%e8%80%85%e5%90%91%e3%81%91%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3%e8%a1%a8%e7%a4%ba%e3%81%a8APK%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f03%2f13%2finstall-android-apk%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f03%2f13%2finstall-android-apk%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f03%2f13%2finstall-android-apk%2f&title=%5bAndroid%5d%20%e9%96%8b%e7%99%ba%e8%80%85%e5%90%91%e3%81%91%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3%e8%a1%a8%e7%a4%ba%e3%81%a8APK%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -1404,6 +1589,10 @@ MacProSao:~ Sao$
             <div class="list-group">
                 
                     
+                        <a href="/blog/2019/01/11/updated-macos-to-mojave/" class="list-group-item">[macOS] Mojaveへのアップデート</a><br>
+                    
+                
+                    
                         <a href="/blog/2018/09/12/collection-of-useful-links-for-3d-models/" class="list-group-item">[Asset] 素材のリンク集ー3Dモデル系</a><br>
                     
                 
@@ -1437,10 +1626,6 @@ MacProSao:~ Sao$
                 
                     
                         <a href="/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/" class="list-group-item">[Android] Hyper-Vで使うVisual Studio Emulator for Androidの最初の一歩</a><br>
-                    
-                
-                    
-                        <a href="/blog/2017/06/21/unity-sprite-on-front-of-camera/" class="list-group-item">[Unity] 常にカメラの前にSpriteを出す</a><br>
                     
                 
             </div>
@@ -1625,9 +1810,9 @@ MacProSao:~ Sao$
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/mac" style="font-size: 14px;">
+                    <a href="http://h-sao.com//tags/mac" style="font-size: 17px;">
                     
-                        <span class="badge">2</span>
+                        <span class="badge">3</span>
                         mac
                     </a>
                     </u> &nbsp; 
@@ -1854,7 +2039,7 @@ MacProSao:~ Sao$
 <footer class="main-footer">
   <div class="container clearfix">
       <a class="icon-rss" href="http://h-sao.com/post/index.xml" title="RSS"></a>
-      <p>&copy; 2018 &middot; Copyright © Sao Haruka<br> Powered by <a href="http://gohugo.io">Hugo</a>.</p>
+      <p>&copy; 2019 &middot; Copyright © Sao Haruka<br> Powered by <a href="http://gohugo.io">Hugo</a>.</p>
   </div>
 </footer>
 

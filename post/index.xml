@@ -6,10 +6,35 @@
     <description>Recent content in Posts on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 12 Sep 2018 08:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 11 Jan 2019 16:30:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[macOS] Mojaveへのアップデート</title>
+      <link>http://h-sao.com/blog/2019/01/11/updated-macos-to-mojave/</link>
+      <pubDate>Fri, 11 Jan 2019 16:30:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2019/01/11/updated-macos-to-mojave/</guid>
+      <description> macOS Mojaveへのアップデート せっかくmacOSを持っているので、Dockerでもサクッと使うか〜と思って、Dockerをインストールしようとしたところ
+ Fatal Error
+Incompatible macOS Version: 10.11.6.
+Docker requires macOS vrsion 10.12.0 or higher.
+ あらら、、、あまりにもmacOSをアップデートしてないので、怒られてしまいました
+アップデートしようとして、App Store を見てみるも、あれ？どこからアップデートするんだろ？
+「アップデート」の中には出てこない…
+これ、「アップデート」じゃなくて、「おすすめ」（トップページ？）にありました↓
+あぁこれこれ！
+「macOS Mojave」をダウンロードして、「開く」を押したら、インストールウィンドウが出てきました！
+あれ、、、容量不足zzz
+ディスク内を整理…っと
+さくっとMojaveへのアップデートは完了しました(^^)
+これまで放置してていごめんね、macさん＞＜。
+ しかし、アップデート後、なんだか brew コマンドや xcode が変になりました
+次回に解決法をまた記載します＞＜。
+ </description>
+    </item>
     
     <item>
       <title>[Asset] 素材のリンク集ー3Dモデル系</title>
