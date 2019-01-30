@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Hyper V &middot; Effectiveさお</title>
+        <title>Effectiveさお</title>
         <meta name="author">
         <meta name="description" content="The awesome blog of Sao Haruka.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,36 +42,19 @@
             <a href="http://h-sao.com/about">About me</a>
         </div>
 
+
 <div class="container clearfix">
     <main role="main" class="content">
-        <a class="btn home" href="http://h-sao.com/" title="">&laquo; </a>
-        <div align="center">
-            <h1>
-                &quot;<script language="JavaScript"><!--
-                var $dir = location.href.split("/");
-                var $dir2 = $dir[$dir.length -2];
-                document.write($dir2);
-                </script>&quot;
-            </h1>
-        </div>
-        <br>
-
-        
-        
+        <article class="post">
+            <a class="btn home" href="http://h-sao.com/" title="">&laquo; </a>
             
-<h1><a href="http://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/" title="[Android] Hyper-Vで使うVisual Studio Emulator for Androidの最初の一歩">[Android] Hyper-Vで使うVisual Studio Emulator for Androidの最初の一歩</a></h1>
+<h1><a href="http://h-sao.com/blog/2019/01/30/hello2019/" title="[Diary] 2019年もよろしくお願いします">[Diary] 2019年もよろしくお願いします</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.27">2017.07.27</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2019.01.30">2019.01.30</time>
     
     &middot; 
         
-        <a href="http://h-sao.com/tags/android">android</a>
-        , 
-        
-        <a href="http://h-sao.com/tags/visualstudio">visualstudio</a>
-        , 
-        
-        <a href="http://h-sao.com/tags/hyper-v">hyper-v</a>
+        <a href="http://h-sao.com/tags/diary">diary</a>
         
         
     
@@ -79,171 +62,200 @@
 </span>
 </footer>
  </footer>
-                
+            
 
-<h2 id="どうもうまくandroidエミュレータが動かない">どうもうまくAndroidエミュレータが動かない…</h2>
+<p>去年の振り返りをしてなかったので、ここでまとめとこうかなと…ブログは自分のメモだからね</p>
 
-<p>いわゆる ADV Manager をつかって、Androidをエミューレートしたいのですが<br />
-なぜかうまく起動しない…</p>
+<h2 id="技術活動">技術活動</h2>
 
-<p>環境</p>
+<p>去年は <strong>ebisu/nakameguro_feature.cpp</strong> という、C++14/17の機能について、知ってる人、調べてきた人がゆるく紹介するという会を続けました<br />
+だいたい月に2回のペースだったかな<br />
+2018/1/1～12/13 まで、全部で11回分開催してます<br />
+出産により(&lsquo;ω&rsquo;) 途中の3月から7月まで、開催をお休みさせてもらいましたが、それでもよく続きましたね☆彡</p>
 
 <ul>
-<li>Windows10 x64</li>
-<li>Visual Studio 2017</li>
+<li><strong>feature.cpp</strong><br />
+<a href="https://ebisu-effective-modern-cpp.connpass.com/event/">https://ebisu-effective-modern-cpp.connpass.com/event/</a><br />
+<center><img src="/pic/Hello2018_03.png" alt="" /></center></li>
 </ul>
 
-<p>Android SDK Managerをよく見てみると、HAXM installer が &ldquo;Not compatible with Windows&rdquo; となっています</p>
+<p>C++17の機能について、みんなのおかげでかなり詳しくなりましたよ(*^▽^*)</p>
 
-<p><img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_00.png" style="border:solid 5px #e6e6e6"/></p>
+<p>ちょうど次回は、1/31(木) 開催～</p>
 
-<p>ふむ…<br />
-無理矢理 HAXM のインストーラーをダウンロードしてきても、こんな感じでエラー</p>
+<ul>
+<li><strong>nakameguro_feature.cpp vol.15</strong><br />
+<a href="https://ebisu-effective-modern-cpp.connpass.com/event/118243/">https://ebisu-effective-modern-cpp.connpass.com/event/118243/</a><br /></li>
+</ul>
 
-<p><img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_01.png" style="border:solid 5px #e6e6e6"/></p>
+<p>あとは、大阪でも主催しました <strong>meetup app osaka @3</strong></p>
 
-<blockquote>
-<p>This computer does not support Intel Virtualization Technology (VT-x) or it is being exclusively used by Hyper-V, HAXM cannot be installed.<br />
-Please ensure Hyper-V is disabled in Windows Features, or refer to the Intel HAXM documentation for more information.</p>
-</blockquote>
+<ul>
+<li><strong>meetup app osaka@3</strong><br />
+<a href="https://meetupapp.connpass.com/event/112659/">https://meetupapp.connpass.com/event/112659/</a></li>
+</ul>
 
-<p>なんですと…Hyper-Vが入ってたら使えないよだと…(｀・ω・´)</p>
+<p>元々関西出身なので、帰省がてらに開催させて頂きました<br />
+こちらもコミュニティ仲間が、たくさんたくさん居いるので、開催できました☆彡<br />
+しゃべってくれた人、参加してくれた人、みんなみんなありがとう(*^▽^*)</p>
 
-<p>ワタクシ、<strong>Android 開発のために手元の Hyper-V を辞める事は出来ないデスヨ！</strong><br />
-調べてみると「<strong>Visual Studio Emulator for Android</strong>」というHyper-Vベースで動くエミュレーターが用意されているらしいので設定してみました</p>
+<p>ネタとしては、AI関係のライブラリの <strong>NimTorch</strong> を紹介しました</p>
 
-<h2 id="visual-studio-emulator-for-android">Visual Studio Emulator for Android</h2>
+<ul>
+<li><strong>NimTorch</strong><br />
+<a href="https://github.com/fragcolor-xyz/nimtorch">https://github.com/fragcolor-xyz/nimtorch</a></li>
+</ul>
 
-<p>すでに色んな方が同じ様な記事を書かれていますが、わたくしも今一度、再確認でございます…</p>
+<p>（おまけ）<br />
+発表じゃないけど、とても印象深かったものがあります！<br />
+出産後、初の勉強会参加は、C++創始者の <strong>Bjarne Stroustrup</strong> 先生の東京大学での講演会でした</p>
 
-<h3 id="1-まず-hyper-v-が有効なこと">1. まず、Hyper-V が有効なこと</h3>
+<ul>
+<li><strong>The continuing evolution of C++</strong><br />
+<a href="https://u-tokyo-ist.connpass.com/event/92085/">https://u-tokyo-ist.connpass.com/event/92085/</a></li>
+</ul>
 
-<p>（Control Panle &gt; Programs and Features &gt; Turn Windows features on or off）</p>
+<p>動画も年末に公開されてます(*^▽^*)<br />
+<a href="http://todai.tv/contents-list/2018FY/bjarne_stroustrup/01">http://todai.tv/contents-list/2018FY/bjarne_stroustrup/01</a></p>
 
-<p><img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_02.png" style="border:solid 5px #e6e6e6"/></p>
+<p>これは参加出来て、すごく嬉しかったです</p>
 
-<h3 id="2-visual-studio-2017のインストーラーで-visual-studio-emulator-for-android-を選択すること">2. Visual Studio 2017のインストーラーで「Visual Studio Emulator for Android」を選択すること</h3>
+<p>産後、赤ちゃんはかわいいけど、色んな事が辛くて辛くて…<br />
+でも、これを機会にまた、自分の情報発信力を信じて、勉強会やっていこうって思えるようになりました</p>
 
-<p>下の図では「Google Android Emulator」「HAXM」も選択してますが、はっきり言って<br />
-この２つと、「Visual Studio Emulator for Android」は、排他の関係にあるので<br />
-「Visual Studio Emulator for Android」だけ選択でOK</p>
+<h2 id="産休-育休中にしてたこと">産休/育休中にしてたこと</h2>
 
-<p><img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_03.png" style="border:solid 5px #e6e6e6"/></p>
+<p>現在も、保育園がまっっっっっっっっっったく決まらないので、育休中なんですけど<br />
+はっきしいって、大したことは何も出来なかった…</p>
 
-<h3 id="3-visual-studio-emulator-for-android-を立ち上げる">3. 「Visual Studio Emulator for Android」を立ち上げる</h3>
+<p>体力も落ちて全身ガタガタだし、授乳で寝れないし、情報発信どころか、あんだけやってたゲームも止まってしまいました</p>
 
-<p>検索すると、インストールされてます<br />
-<img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_04.png" style="border:solid 5px #e6e6e6"/></p>
+<p>だけど、自分の中でマイナスばかりじゃなくて、良い変化もありました</p>
 
-<p>立ち上げたらこんな画面<br />
-<img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_05.png" alt="" /></p>
+<ul>
+<li><strong>明らかに、タスクの優先管理ができるようになった</strong><br /></li>
+<li><strong>数分でも、即時に集中できるようになった</strong><br /></li>
+</ul>
 
-<p>これでまずは準備完了</p>
+<p>いやー実にすばらしい。。。</p>
 
-<h2 id="エミュレーターの起動">エミュレーターの起動</h2>
+<p>なぜこれが、働いていた時に出来なかったのか、、、(&lsquo;ω&rsquo;)</p>
 
-<h3 id="1-空のプロジェクトを作る">1. 空のプロジェクトを作る</h3>
+<p>それは、自分を拘束するものが無かったから、自分で自由に時間を使えてたんですね～<br />
+まぁ夜更かしすれば挽回できるか～とか、まとめて休日に追い込みだーとかとか…(&lsquo;ω&rsquo;)</p>
 
-<p>わたしはC++で開発したかったので、Androidプロジェクトの「Native-Activity Application (Android)」で新規作成しました</p>
+<p>前は、時間が足りない～やりたいことをする時間がない！とか思ってたけど、<br />
+これまではやりたいこともいっぱい出来てた、自分で好きに行動できていました！（遠い目）</p>
 
-<p><img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_06.png" style="border:solid 5px #e6e6e6"/></p>
+<p>環境も変わり、プライオリティ付けと集中力が身に付いた…と</p>
 
-<p>デバックメニューに「Visual Studio Emulator for Android」の欄が増えてますね<br />
-<img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_07.png" alt="" /></p>
+<p>どうりで、ワーキングママがテキパキしてるわけですね(*&lsquo;ω&rsquo;*)</p>
 
-<p>（注意！）<strong>「x86」を選択しないと、このエミュレーターは出てきません！</strong></p>
+<h2 id="そのほか">そのほか</h2>
 
-<h3 id="2-visual-studio-emulator-for-android-でandroidを起動させる">2. 「Visual Studio Emulator for Android」でAndroidを起動させる</h3>
+<p>＜Microsoft MVP＞</p>
 
-<p>先ほど立ち上げた「Visual Studio Emulator for Android」のメニューより、緑の三角印を押して、エミュレーターを起動させます<br />
-<img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_08.png" alt="" /></p>
+<p>去年の7月に、無事、MS MVPのアワード再受賞をさせていただきました<br />
+これまでカテゴリは Windows Development系だったのですが、<br />
+ <strong>Microsoft MVP for Developer Technologies</strong> というカテゴリに変わりました</p>
 
-<p><img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_09.png" alt="" /></p>
+<p>＜タスク管理＞</p>
 
-<p>起動できた(｀・ω・´)</p>
+<p>去年も書きましたタスク管理について、今年も工夫しました</p>
 
-<h2 id="エミュレーターが起動しない時">エミュレーターが起動しない時</h2>
+<ul>
+<li><strong>Todoist</strong>(日本語版)<br />
+<a href="https://ja.todoist.com/">https://ja.todoist.com/</a></li>
+</ul>
 
-<p>最初、わたしはエミュレーターが起動途中でストップしてしまいました(-_-)zzz</p>
+<p><strong>繰り返し予定</strong> は、これが便利ですね</p>
 
-<p><img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_10.png" alt="" /></p>
+<p>あと、<strong>思いついたバックログ的な意味合い</strong> にも使っていて<br />
+ばばっと書いておいて、後で整理する感じ<br />
+Todistは良くも悪くもベースが「タスクを１つ登録する」スタイルなので、シンプルでそこが良い感じですね</p>
 
-<blockquote>
-<p>The emulator is unable to connect to the device operating system:<br />
-Could&rsquo;t auto-detect the guest system IP address.<br />
-Some functionality might be disabled.</p>
-</blockquote>
+<ul>
+<li><strong>Trello</strong><br />
+<a href="https://trello.com/ja">https://trello.com/ja</a></li>
+</ul>
 
-<p>なんじゃこりゃ…(´・ω・`)<br />
-IPうんぬんと書かれてるので、NWプロパティを見てみます</p>
+<p>Todistは良かったんだけど、プロジェクト的なものは、だんぜん <strong>Trello</strong> が向いてることに気が付きました</p>
 
-<p>Conrtol Panel<br />
-　＞ Network and Internet<br />
-　　＞ Network Connections</p>
+<p>タスクにコメント付けをたらたらと書けるのが、好みです</p>
 
-<p>Hyper-Vが「Visual Studio Emulator for Android」のために作ったと思われるアダプターがありました</p>
+<ul>
+<li><strong>フランクリン・プランナー オーガナイザー</strong><br /></li>
+</ul>
 
-<p>わたしの場合<br />
-<strong>vEthernet (Internal Ethernet Port Windows Phone Emulator Internal Switch)</strong><br />
-という名前です</p>
+<p>そして、、、ついに戻ってきてしまいました…手帳という紙媒体が復活(&lsquo;ω&rsquo;)<br />
+有名すぎるのですが、<strong>フランクリン・プランナー</strong> という自己啓発で有名な手帳を年末に買いました</p>
 
-<p>IPv4プロパティを見てみると、変なIPアドレスが割り当てられてる…？<br />
-慌てて削除し、動的に変更する設定に変えます↓↓↓</p>
+<p>これ、、、リーフレット版(?)はめちゃ高額で 5,000円～10,000円くらい<br />
+オーガナイザーというシリーズは、いわゆるノート型の手帳で、アマゾンで 1日1ページ書けるものを 3,400円くらいで買いました</p>
 
-<p><img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_11.png" style="border:solid 5px #e6e6e6"/></p>
+<p>Todist も Trello も、ただのツールなので、<br />
+ツールはわたしが主体的に使わないと、何もしてくれません（当然のことですけど）</p>
 
-<p>いちお、NWアダプタは「識別されてないネットワーク」状態ですが<br />
-エラー表示にはなっていません</p>
+<p>なので、自分のモチベーションキープのために、自分の文字で書く手帳ってやつを買ってみました</p>
 
-<p><img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_14.png" style="border:solid 5px #e6e6e6"/></p>
+<p>まぁ手帳も結局はツールなんでね…<br />
+アプリと紙で、適度な感じで、わたしのやる気を補い合ってくれれば良いかなーと思ってます</p>
 
-<p>この状態で、エミュレーターを起動させると、無事立ち上がりました(<em>^^</em>)良かった！</p>
+<hr />
 
-<h2 id="エミュレーターでデバックする">エミュレーターでデバックする</h2>
+<p>鐘は打てば響く…逆に何もしないと、何も鳴らない<br />
+というのをひしひしと感じた2018年でした</p>
 
-<p>VSに戻ってみると、こんな感じでエミュレーターがデバックで使えるようになってます！<br />
-<img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_12.png" alt="" /></p>
+<p>全ては主体的であれ…</p>
 
-<p>VSからデバック実行させると<br />
-<img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_13.png" alt="" /></p>
+<p>そして元気な赤ちゃんが産まれてきてくれました<br />
+本当にありがとう</p>
 
-<p>サンプルが動作しました</p>
-
-<p>この状態でブレークポイントも効くので、まずは最初の設定完了って感じでしょうか<br />
-パチパチ(<em>^^</em>)</p>
-
-<p>※ちなみに実機でデバックする時には、「x86」じゃなくて「ARM」など、その実機に合ったCPUを選択したらOKです</p>
+<p>もう少しで2019年の1月も終わってしまいますが、今年もどうぞ、よろしくお願いします♪</p>
 
             <ul class="share-buttons">
     <li></li>
     <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f07%2f27%2fsetting-visual-studio-android-emulator-on-hyper-v%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f01%2f30%2fhello2019%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bAndroid%5d%20Hyper-V%e3%81%a7%e4%bd%bf%e3%81%86Visual%20Studio%20Emulator%20for%20Android%e3%81%ae%e6%9c%80%e5%88%9d%e3%81%ae%e4%b8%80%e6%ad%a9&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f07%2f27%2fsetting-visual-studio-android-emulator-on-hyper-v%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bDiary%5d%202019%e5%b9%b4%e3%82%82%e3%82%88%e3%82%8d%e3%81%97%e3%81%8f%e3%81%8a%e9%a1%98%e3%81%84%e3%81%97%e3%81%be%e3%81%99&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f01%2f30%2fhello2019%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f07%2f27%2fsetting-visual-studio-android-emulator-on-hyper-v%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f01%2f30%2fhello2019%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f07%2f27%2fsetting-visual-studio-android-emulator-on-hyper-v%2f&title=%5bAndroid%5d%20Hyper-V%e3%81%a7%e4%bd%bf%e3%81%86Visual%20Studio%20Emulator%20for%20Android%e3%81%ae%e6%9c%80%e5%88%9d%e3%81%ae%e4%b8%80%e6%ad%a9" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f01%2f30%2fhello2019%2f&title=%5bDiary%5d%202019%e5%b9%b4%e3%82%82%e3%82%88%e3%82%8d%e3%81%97%e3%81%8f%e3%81%8a%e9%a1%98%e3%81%84%e3%81%97%e3%81%be%e3%81%99" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 
-            <hr>
+        </article>
         
-
-        <div class="pagination">
-<nav>
-
-	<p class="counter"> 1  1</p>
-
-
-</nav>
-</div>
-
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "harukasao" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
     </main>
-
     <aside class="author">
   <img class="profile-image" src="http://h-sao.com/pic/saoharuka128.png" alt="遥佐保/Sao Haruka" />
   <p class="name"> 
@@ -741,6 +753,7 @@ IPうんぬんと書かれてるので、NWプロパティを見てみます</p>
 
 
 </div>
+
 <footer class="main-footer">
   <div class="container clearfix">
       <a class="icon-rss" href="http://h-sao.com/post/index.xml" title="RSS"></a>

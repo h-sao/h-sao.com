@@ -6,10 +6,49 @@
     <description>Recent content in Diary on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 08 Feb 2018 19:50:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 30 Jan 2019 12:00:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/tags/diary/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Diary] 2019年もよろしくお願いします</title>
+      <link>http://h-sao.com/blog/2019/01/30/hello2019/</link>
+      <pubDate>Wed, 30 Jan 2019 12:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2019/01/30/hello2019/</guid>
+      <description>去年の振り返りをしてなかったので、ここでまとめとこうかなと…ブログは自分のメモだからね
+技術活動 去年は ebisu/nakameguro_feature.cpp という、C++14/17の機能について、知ってる人、調べてきた人がゆるく紹介するという会を続けました
+だいたい月に2回のペースだったかな
+2018/1/1～12/13 まで、全部で11回分開催してます
+出産により(&amp;lsquo;ω&amp;rsquo;) 途中の3月から7月まで、開催をお休みさせてもらいましたが、それでもよく続きましたね☆彡
+ feature.cpp
+https://ebisu-effective-modern-cpp.connpass.com/event/
+  C++17の機能について、みんなのおかげでかなり詳しくなりましたよ(*^▽^*)
+ちょうど次回は、1/31(木) 開催～
+ nakameguro_feature.cpp vol.15
+https://ebisu-effective-modern-cpp.connpass.com/event/118243/
+  あとは、大阪でも主催しました meetup app osaka @3
+ meetup app osaka@3
+https://meetupapp.connpass.com/event/112659/  元々関西出身なので、帰省がてらに開催させて頂きました
+こちらもコミュニティ仲間が、たくさんたくさん居いるので、開催できました☆彡
+しゃべってくれた人、参加してくれた人、みんなみんなありがとう(*^▽^*)
+ネタとしては、AI関係のライブラリの NimTorch を紹介しました
+ NimTorch
+https://github.com/fragcolor-xyz/nimtorch  （おまけ）
+発表じゃないけど、とても印象深かったものがあります！
+出産後、初の勉強会参加は、C++創始者の Bjarne Stroustrup 先生の東京大学での講演会でした
+ The continuing evolution of C++
+https://u-tokyo-ist.connpass.com/event/92085/  動画も年末に公開されてます(*^▽^*)
+http://todai.tv/contents-list/2018FY/bjarne_stroustrup/01
+これは参加出来て、すごく嬉しかったです
+産後、赤ちゃんはかわいいけど、色んな事が辛くて辛くて…
+でも、これを機会にまた、自分の情報発信力を信じて、勉強会やっていこうって思えるようになりました
+産休/育休中にしてたこと 現在も、保育園がまっっっっっっっっっったく決まらないので、育休中なんですけど
+はっきしいって、大したことは何も出来なかった…
+体力も落ちて全身ガタガタだし、授乳で寝れないし、情報発信どころか、あんだけやってたゲームも止まってしまいました
+だけど、自分の中でマイナスばかりじゃなくて、良い変化もありました</description>
+    </item>
     
     <item>
       <title>[Diary] 2018年もよろしくお願いします</title>
