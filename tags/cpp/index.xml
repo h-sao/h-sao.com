@@ -6,10 +6,32 @@
     <description>Recent content in Cpp on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 18 Aug 2017 18:40:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 27 Mar 2019 23:00:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[C&#43;&#43;] std::optionalの使い方を紹介しました</title>
+      <link>http://h-sao.com/blog/2019/03/27/how-to-use-optional-nakamecpp-vol13/</link>
+      <pubDate>Wed, 27 Mar 2019 23:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2019/03/27/how-to-use-optional-nakamecpp-vol13/</guid>
+      <description>少し前ですが、std::optional について nakameguro_feature.cpp vol.13 で発表したので、その資料を置いときます
+ nakameguro_feature.cpp vol.13
+https://ebisu-effective-modern-cpp.connpass.com/event/111469/
+   私的感想としては、optional を使うと
+値取得に失敗しても、例外を書くことなく if で処理出来る のが、なんだか良いなぁと思った次第でした
+あと、optional の無効状態をどう表すか？
+reset() / std::nullopt / {} のどれよ？
+という話は、参加者の人たちの意見も GitHub の検索結果と同じで
+reset() に軍配があがっていました(&amp;lsquo;ω&amp;rsquo;)
+こういう意見交換の場は、本当に恵まれてるなぁ～しみじみ
+次回は 3 / 28 (木)開催で、vol.18 です！
+ nakameguro_feature.cpp vol.18
+https://ebisu-effective-modern-cpp.connpass.com/event/125272/
+  お時間ある方は、ぜひお立ち寄りください～！</description>
+    </item>
     
     <item>
       <title>[Android] 謎のエラー「Unable to start debugging.」が出たときの対応</title>
