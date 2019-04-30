@@ -6,10 +6,36 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 27 Mar 2019 23:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 30 Apr 2019 11:30:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Chrome] Google Chromeでモバイル画面を見る User-Agent Swither for Chrome</title>
+      <link>http://h-sao.com/blog/2019/04/30/recommended-extensions-user-agent-swither-in-chrome/</link>
+      <pubDate>Tue, 30 Apr 2019 11:30:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2019/04/30/recommended-extensions-user-agent-swither-in-chrome/</guid>
+      <description>タイトルそのまんま(&amp;lsquo;ω&amp;rsquo;)
+自分メモ
+モバイル画面を PCのChromeで見るエクステンションはたくさんありますが、 わたしはずっと「User-Agent Swither for Chrome」を使っています
+ただ、そろそろ新しいエージェントにしたいなーと思う今日この頃…
+User-Agent Swither for Chrome の更新は、2017年8月3日で止まってるから、新しいモバイル端末の種類が増えてないのよね…(+_+)
+まぁそれでも今は不自由してないので、一応紹介(&amp;lsquo;ω&amp;rsquo;)
+ User-Agent Swither for Chrome
+https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg  Chromeのバナーにこんな感じで表示されます
+超便利(*^▽^*)
+2年くらい前は、Glenn Willsonさんという方が、個人で提供して下さっていたみたいですが
+2019年4月30日現在は、提供元が google.com になっています！
+良い感じに買ってもらえたのかな～？
+こういうのを見ると、ちょっと嬉しくなりますね(&amp;lsquo;ω&amp;rsquo;)
+ なんで2年前の画像を持ってるのかというと、
+2年前にこの記事を書こうと思って、そのままアップしてなかったからでした…
+たはー
+ でも、これを書きながら、新しいエージェントさがそーっと思いました
+どなたか、おススメのユーザエージェントを書き換えるCheromeエクステンション教えて下さい~</description>
+    </item>
     
     <item>
       <title>[C&#43;&#43;] std::optionalの使い方を紹介しました</title>
