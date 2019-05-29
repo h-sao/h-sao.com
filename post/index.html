@@ -69,6 +69,334 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2019/05/29/how-to-install-docker-for-mac/" title="[Docker] Docker for Macをインストールして Ubuntu の起動や停止まで">[Docker] Docker for Macをインストールして Ubuntu の起動や停止まで</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2019.05.29">2019.05.29</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/mac">mac</a>
+        , 
+        
+        <a href="http://h-sao.com/tags/docker">docker</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>Macbook Pro に Docker をインストール＆テスト稼動させた時のメモ</p>
+
+<blockquote>
+<p>数年前までわたしはmacのこと本当によく知らなかったので、初めて mac を使ったときには、こういったインストール方法もわからなかった…<br />
+誰かの役に立つかも知れないので、初歩的なところも書いておきます<br />
+勉強のためのメモなので、用語の使い方が間違っている可能性があります<br />
+間違いあれば、遠慮なく @hr_sao まで教えてもらえると嬉しい＞＜</p>
+</blockquote>
+
+<h1 id="docker-for-mac-のインストール開始">Docker for Mac のインストール開始</h1>
+
+<p>(1) このURLからインストールします</p>
+
+<ul>
+<li>Install Docker Desktop for Mac<br />
+<a href="https://docs.docker.com/docker-for-mac/install/">https://docs.docker.com/docker-for-mac/install/</a></li>
+</ul>
+
+<p>(2)  Docker.dmg をダウンロードします</p>
+
+<p>dmg ファイルは Windows で言う所の iso ファイルです<br />
+ダブルクリックしたら、マウント状態になります</p>
+
+<p>(3) インストールします</p>
+
+<p>マウントした直後はディレクトリが自動で開くので、<br />
+その中の Docker のクジラアイコンを、Applications フォルダにドラッグ＆ドロップすれば、インストールは完了</p>
+
+<p><img src="/pic/How-to-install-docker-for-mac_00.png" alt="" /></p>
+
+<p>(4) マウント解除します</p>
+
+<p>その後は Docker.dmg のマウントを解除し（デスクトップにできたアイコンから解除できる）<br />
+ダウンロードした dmg ファイルはゴミ箱にポイしてOK</p>
+
+<blockquote>
+<p>これだけの事なんだけど、最初は全く判らなかった…<br />
+何年もWindowsやLinux系OSで仕事してるのに、
+<strong><em>Docker のクジラアイコンを、Applications フォルダにドラッグ＆ドロップ</em></strong><br />
+この作業の意味が、ほんと、よく判らなかった＞＜。<br />
+イラストの矢印の通り、クジラアイコンを、イラストの上にドロップしようとして何もおこらないのに腹を立ててました<br />
+ユニバーサルデザインなんだろうけど、作業者にある程度の前提知識は必要なデザインなんだと思う<br />
+もちろん、「<strong>Applications フォルダに</strong> ドラッグ＆ドロップ」に気がつかない私が悪いんですけど</p>
+</blockquote>
+
+<p>(5) Dockerを初回起動させます</p>
+
+<p>Applicationフォルダの中の Docker をダブルクリック！</p>
+
+<p><img src="/pic/How-to-install-docker-for-mac_08.png" alt="" /></p>
+
+<p>(6) インストールの様子</p>
+
+<p><img src="/pic/How-to-install-docker-for-mac_01.png" alt="" /></p>
+
+<p><img src="/pic/How-to-install-docker-for-mac_02.png" alt="" /></p>
+
+<p><img src="/pic/How-to-install-docker-for-mac_03.png" alt="" /></p>
+
+<p>↓メニューバーにクジラのアイコンが現れ、running になってるのを教えてくれます</p>
+
+<p><img src="/pic/How-to-install-docker-for-mac_04.png" alt="" /></p>
+
+<p>↓バージョンを確認してみました（2019/5/29現在は Version 2.0.0.3）</p>
+
+<p><img src="/pic/How-to-install-docker-for-mac_05.png" alt="" /></p>
+
+<p>↓ Preferences から利用するリソースの設定ができます</p>
+
+<p><img src="/pic/How-to-install-docker-for-mac_07.png" alt="" /></p>
+
+<p>さて、これで準備完了( * ´ω`* )</p>
+
+<h1 id="ubuntu-を起動させてみる">Ubuntu を起動させてみる</h1>
+
+<p>macOSのターミナルを起動します</p>
+
+<p>以下、作業の流れをそのまま記載しています</p>
+
+<ul>
+<li>ubuntuのイメージを検索</li>
+</ul>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 5</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 6</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 9</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">10</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">11</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">12</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">13</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">14</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">15</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">16</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">17</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">18</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">19</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">20</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">21</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">22</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">23</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">24</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">25</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">26</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">27</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">28</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">29</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">30</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">31</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">32</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ubuntuのイメージはまだ持っていない
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:~ sao.haruka$ docker images
+</span>REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+
+<span style="color:#75715e"># ubuntuをsearch
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:~ sao.haruka$ docker search ubuntu
+</span>NAME                                                      DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
+ubuntu                                                    Ubuntu is a Debian-based Linux operating sys…   <span style="color:#ae81ff">9572</span>                <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>                
+dorowu/ubuntu-desktop-lxde-vnc                            Docker image to provide HTML5 VNC interface …   <span style="color:#ae81ff">303</span>                                     <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+rastasheep/ubuntu-sshd                                    Dockerized SSH service, built on top of offi…   <span style="color:#ae81ff">217</span>                                     <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+consol/ubuntu-xfce-vnc                                    Ubuntu container with <span style="color:#e6db74">&#34;headless&#34;</span> VNC session…   <span style="color:#ae81ff">179</span>                                     <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+ubuntu-upstart                                            Upstart is an event-based replacement <span style="color:#66d9ef">for</span> th…   <span style="color:#ae81ff">98</span>                  <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>                
+ansible/ubuntu14.04-ansible                               Ubuntu <span style="color:#ae81ff">14</span>.04 LTS with ansible                   <span style="color:#ae81ff">97</span>                                      <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+neurodebian                                               NeuroDebian provides neuroscience research s…   <span style="color:#ae81ff">57</span>                  <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>                
+1and1internet/ubuntu-16-nginx-php-phpmyadmin-mysql-5      ubuntu-16-nginx-php-phpmyadmin-mysql-5          <span style="color:#ae81ff">50</span>                                      <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+ubuntu-debootstrap                                        debootstrap --variant<span style="color:#f92672">=</span>minbase --components<span style="color:#f92672">=</span>m…   <span style="color:#ae81ff">40</span>                  <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>                
+i386/ubuntu                                               Ubuntu is a Debian-based Linux operating sys…   <span style="color:#ae81ff">18</span>                                      
+1and1internet/ubuntu-16-apache-php-5.6                    ubuntu-16-apache-php-5.6                        <span style="color:#ae81ff">14</span>                                      <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+ppc64le/ubuntu                                            Ubuntu is a Debian-based Linux operating sys…   <span style="color:#ae81ff">13</span>                                      
+1and1internet/ubuntu-16-apache-php-7.0                    ubuntu-16-apache-php-7.0                        <span style="color:#ae81ff">13</span>                                      <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+1and1internet/ubuntu-16-nginx-php-phpmyadmin-mariadb-10   ubuntu-16-nginx-php-phpmyadmin-mariadb-10       <span style="color:#ae81ff">11</span>                                      <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+1and1internet/ubuntu-16-nginx-php-5.6                     ubuntu-16-nginx-php-5.6                         <span style="color:#ae81ff">8</span>                                       <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+1and1internet/ubuntu-16-nginx-php-5.6-wordpress-4         ubuntu-16-nginx-php-5.6-wordpress-4             <span style="color:#ae81ff">7</span>                                       <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+1and1internet/ubuntu-16-apache-php-7.1                    ubuntu-16-apache-php-7.1                        <span style="color:#ae81ff">6</span>                                       <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+darksheer/ubuntu                                          Base Ubuntu Image -- Updated hourly             <span style="color:#ae81ff">5</span>                                       <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+1and1internet/ubuntu-16-nginx-php-7.0                     ubuntu-16-nginx-php-7.0                         <span style="color:#ae81ff">4</span>                                       <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+1and1internet/ubuntu-16-apache-php-5.6-zend-2             ubuntu-16-apache-php-5.6-zend-2                 <span style="color:#ae81ff">2</span>                                       <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+pivotaldata/ubuntu                                        A quick freshening-up of the base Ubuntu doc…   <span style="color:#ae81ff">2</span>                                       
+1and1internet/ubuntu-16-php-7.1                           ubuntu-16-php-7.1                               <span style="color:#ae81ff">1</span>                                       <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+smartentry/ubuntu                                         ubuntu with smartentry                          <span style="color:#ae81ff">1</span>                                       <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+1and1internet/ubuntu-16-sshd                              ubuntu-16-sshd                                  <span style="color:#ae81ff">1</span>                                       <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+pivotaldata/ubuntu-gpdb-dev                               Ubuntu images <span style="color:#66d9ef">for</span> GPDB development              <span style="color:#ae81ff">0</span>                                       </code></pre></td></tr></table>
+</div>
+</div>
+
+<ul>
+<li>公式のubuntuのイメージを手元にダウンロードする</li>
+</ul>
+
+<p><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 5</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 9</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">10</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">11</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">12</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">13</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">14</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">15</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">16</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ubuntuをpull
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:~ sao.haruka$ docker pull ubuntu
+</span>Using default tag: latest
+latest: Pulling from library/ubuntu
+6abc03819f3e: Pull complete 
+05731e63f211: Pull complete 
+0bd67c50d6be: Pull complete 
+Digest: sha256:f08638ec7ddc90065187e7eabdfac3c96e5ff0f6b2f1762cf31a4f49b53000a5
+Status: Downloaded newer image <span style="color:#66d9ef">for</span> ubuntu:latest
+SAO-MAC:~ sao.haruka$ 
+
+<span style="color:#75715e"># imagesの中にubuntuが入ってる
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:~ sao.haruka$ docker images
+</span>REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+ubuntu              latest              7698f282e524        <span style="color:#ae81ff">12</span> days ago         <span style="color:#ae81ff">69</span>.9MB
+SAO-MAC:~ sao.haruka$ </code></pre></td></tr></table>
+</div>
+</div></p>
+
+<ul>
+<li>ubuntuの起動と起動確認</li>
+</ul>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">5</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">7</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># dockerでubuntuサーバを何も考えずに起動
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker run -it ubuntu
+</span>
+<span style="color:#75715e"># docker経由でubuntuにアクセスできた！
+</span><span style="color:#75715e"></span>root@387ef5142f09:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@387ef5142f09:/# </code></pre></td></tr></table>
+</div>
+</div>
+
+<p>このままexitするとubuntuが止まってしまうので、<code>control + P、Q</code> で抜ける</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">5</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># dockerでubuntuが起動してることを確認
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker ps
+</span>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+387ef5142f09        ubuntu              <span style="color:#e6db74">&#34;/bin/bash&#34;</span>         <span style="color:#ae81ff">4</span> minutes ago       Up <span style="color:#ae81ff">4</span> minutes                            dazzling_leakey
+SAO-MAC:my_docker sao.haruka$ </code></pre></td></tr></table>
+</div>
+</div>
+
+<ul>
+<li>起動中のubuntuに再接続</li>
+</ul>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">5</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">6</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">7</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># さっきのubuntunに再ログイン(コンテナIDを使ってログインしてみる)
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker attach 387ef5142f09
+</span>root@387ef5142f09:/# 
+
+<span style="color:#75715e"># exitで抜ける
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>root@387ef5142f09:/# exit
+</span>exit</code></pre></td></tr></table>
+</div>
+</div>
+
+<ul>
+<li>先ほどexitしたのでubuntuが停止していることの確認</li>
+</ul>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">5</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">6</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">9</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 起動中のコンテナの確認（何も動いてない）
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker ps
+</span>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+
+<span style="color:#75715e"># 停止しているコンテナも表示させてみる (Exited状態)
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker ps -a
+</span>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
+387ef5142f09        ubuntu              <span style="color:#e6db74">&#34;/bin/bash&#34;</span>         <span style="color:#ae81ff">8</span> minutes ago       Exited <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span> <span style="color:#ae81ff">10</span> seconds ago                       dazzling_leakey
+SAO-MAC:my_docker sao.haruka$ </code></pre></td></tr></table>
+</div>
+</div>
+
+<ul>
+<li>停止させたコンテナを再起動させる</li>
+</ul>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">5</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">6</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">9</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 停止したものを再起動させるときは start コマンドで(今度はコンテナ名でログインしてみる)
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker start dazzling_leakey
+</span>dazzling_leakey
+
+<span style="color:#75715e"># コンテナが起動してる
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker ps
+</span>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+387ef5142f09        ubuntu              <span style="color:#e6db74">&#34;/bin/bash&#34;</span>         <span style="color:#ae81ff">10</span> minutes ago      Up <span style="color:#ae81ff">3</span> seconds                            dazzling_leakey
+SAO-MAC:my_docker sao.haruka$ </code></pre></td></tr></table>
+</div>
+</div>
+
+<ul>
+<li>ubuntu内のexitではなく、docker側からコンテナを停止させる</li>
+</ul>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ubuntu停止
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker stop dazzling_leakey
+</span>dazzling_leakey
+SAO-MAC:my_docker sao.haruka$ </code></pre></td></tr></table>
+</div>
+</div>
+
+<ul>
+<li>テスト操作を終えたので、作ったコンテナを削除する<br />
+（もし作業内容を保存したければ、commitでイメージを作れるけどそれはまた次回以降）</li>
+</ul>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 5</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 9</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">10</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">11</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">12</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">13</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># コンテナはExited状態で停止している
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker ps -a
+</span>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMES
+387ef5142f09        ubuntu              <span style="color:#e6db74">&#34;/bin/bash&#34;</span>         <span style="color:#ae81ff">2</span> hours ago         Exited <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span> <span style="color:#ae81ff">6</span> minutes ago                       dazzling_leakey
+
+<span style="color:#75715e"># コンテナを削除
+</span><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker rm dazzling_leakey
+dazzling_leakey
+
+<span style="color:#75715e"># ubuntuコンテナが無くなった
+</span><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+SAO-MAC:my_docker sao.haruka$</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>ふぅ、、、これで Docker 初学者になれたかしら</p>
+
+<p>＜参考＞</p>
+
+<p>色々なサイトがありましたが、わたしの理解が一番進んだのは、以下のサイトでした</p>
+
+<ul>
+<li>初心者による初心者のためのDocker入門 その１ dockerコマンド編 - Qiita<br />
+<a href="https://qiita.com/k5n/items/2212b87feac5ebc33ecb">https://qiita.com/k5n/items/2212b87feac5ebc33ecb</a></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f05%2f29%2fhow-to-install-docker-for-mac%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bDocker%5d%20Docker%20for%20Mac%e3%82%92%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%97%e3%81%a6%20Ubuntu%20%e3%81%ae%e8%b5%b7%e5%8b%95%e3%82%84%e5%81%9c%e6%ad%a2%e3%81%be%e3%81%a7&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f05%2f29%2fhow-to-install-docker-for-mac%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f05%2f29%2fhow-to-install-docker-for-mac%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f05%2f29%2fhow-to-install-docker-for-mac%2f&title=%5bDocker%5d%20Docker%20for%20Mac%e3%82%92%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%97%e3%81%a6%20Ubuntu%20%e3%81%ae%e8%b5%b7%e5%8b%95%e3%82%84%e5%81%9c%e6%ad%a2%e3%81%be%e3%81%a7" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2019/04/30/recommended-extensions-user-agent-swither-in-chrome/" title="[Chrome] Google Chromeでモバイル画面を見る User-Agent Swither for Chrome">[Chrome] Google Chromeでモバイル画面を見る User-Agent Swither for Chrome</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2019.04.30">2019.04.30</time>
@@ -1292,62 +1620,6 @@ C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x<br />
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2017/10/26/change-playmode-color-on-unity/" title="[Unity] エディタ上でゲーム実行中にエディタの色を変える">[Unity] エディタ上でゲーム実行中にエディタの色を変える</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.10.26">2017.10.26</time>
-    
-    &middot; 
-        
-        <a href="http://h-sao.com/tags/unity">unity</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>Unityエディタ上で、ゲームを実行中（再生中）に、色を変える設定です<br />
-// Unity的には「プレイモード」と呼ぶみたいです</p>
-
-<ul>
-<li>プレイモード時にエディターの色を変える - Unity公式チュートリアル動画
-<a href="https://unity3d.com/jp/learn/tutorials/topics/tips/play-mode-editor-tint">https://unity3d.com/jp/learn/tutorials/topics/tips/play-mode-editor-tint</a><br /></li>
-</ul>
-
-<p>上記公式動画↑↑↑の 20秒～32秒くらいの間で、設定の操作を教えてくれてます</p>
-
-<p>いちおここにも書いておくと</p>
-
-<blockquote>
-<p>Edit &gt; Preferences &gt; Colors &gt; Playmode tint</p>
-</blockquote>
-
-<p>で実行中のエディタの色を変えることが出来ます</p>
-
-<p><img src="/pic/Change-Playmode-color-on-Unity_00.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>いつも、Unityをインストールして最初にやってるんだけど、<br />
-いつも忘れて結局調べてるので…(*ﾉωﾉ)</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f10%2f26%2fchange-playmode-color-on-unity%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bUnity%5d%20%e3%82%a8%e3%83%87%e3%82%a3%e3%82%bf%e4%b8%8a%e3%81%a7%e3%82%b2%e3%83%bc%e3%83%a0%e5%ae%9f%e8%a1%8c%e4%b8%ad%e3%81%ab%e3%82%a8%e3%83%87%e3%82%a3%e3%82%bf%e3%81%ae%e8%89%b2%e3%82%92%e5%a4%89%e3%81%88%e3%82%8b&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f10%2f26%2fchange-playmode-color-on-unity%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f10%2f26%2fchange-playmode-color-on-unity%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f10%2f26%2fchange-playmode-color-on-unity%2f&title=%5bUnity%5d%20%e3%82%a8%e3%83%87%e3%82%a3%e3%82%bf%e4%b8%8a%e3%81%a7%e3%82%b2%e3%83%bc%e3%83%a0%e5%ae%9f%e8%a1%8c%e4%b8%ad%e3%81%ab%e3%82%a8%e3%83%87%e3%82%a3%e3%82%bf%e3%81%ae%e8%89%b2%e3%82%92%e5%a4%89%e3%81%88%e3%82%8b" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
@@ -1417,6 +1689,10 @@ C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x<br />
             <div class="list-group">
                 
                     
+                        <a href="/blog/2019/05/29/how-to-install-docker-for-mac/" class="list-group-item">[Docker] Docker for Macをインストールして Ubuntu の起動や停止まで</a><br>
+                    
+                
+                    
                         <a href="/blog/2019/04/30/recommended-extensions-user-agent-swither-in-chrome/" class="list-group-item">[Chrome] Google Chromeでモバイル画面を見る User-Agent Swither for Chrome</a><br>
                     
                 
@@ -1450,10 +1726,6 @@ C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x<br />
                 
                     
                         <a href="/blog/2017/10/31/where-is-controlpanel/" class="list-group-item">[Windows10] コントロールパネルの場所</a><br>
-                    
-                
-                    
-                        <a href="/blog/2017/10/26/change-playmode-color-on-unity/" class="list-group-item">[Unity] エディタ上でゲーム実行中にエディタの色を変える</a><br>
                     
                 
             </div>
@@ -1568,6 +1840,16 @@ C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x<br />
                     
                     
                     <u>
+                    <a href="http://h-sao.com//tags/docker" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        docker
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
                     <a href="http://h-sao.com//tags/ebisucpp" style="font-size: 11px;">
                     
                         <span class="badge">1</span>
@@ -1638,9 +1920,9 @@ C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x<br />
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/mac" style="font-size: 17px;">
+                    <a href="http://h-sao.com//tags/mac" style="font-size: 20px;">
                     
-                        <span class="badge">3</span>
+                        <span class="badge">4</span>
                         mac
                     </a>
                     </u> &nbsp; 
