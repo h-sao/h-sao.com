@@ -6,10 +6,41 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 30 Apr 2019 11:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 29 May 2019 12:00:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Docker] Docker for Macをインストールして Ubuntu の起動や停止まで</title>
+      <link>http://h-sao.com/blog/2019/05/29/how-to-install-docker-for-mac/</link>
+      <pubDate>Wed, 29 May 2019 12:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2019/05/29/how-to-install-docker-for-mac/</guid>
+      <description>Macbook Pro に Docker をインストール＆テスト稼動させた時のメモ
+ 数年前までわたしはmacのこと本当によく知らなかったので、初めて mac を使ったときには、こういったインストール方法もわからなかった…
+誰かの役に立つかも知れないので、初歩的なところも書いておきます
+勉強のためのメモなので、用語の使い方が間違っている可能性があります
+間違いあれば、遠慮なく @hr_sao まで教えてもらえると嬉しい＞＜
+ Docker for Mac のインストール開始 (1) このURLからインストールします
+ Install Docker Desktop for Mac
+https://docs.docker.com/docker-for-mac/install/  (2) Docker.dmg をダウンロードします
+dmg ファイルは Windows で言う所の iso ファイルです
+ダブルクリックしたら、マウント状態になります
+(3) インストールします
+マウントした直後はディレクトリが自動で開くので、
+その中の Docker のクジラアイコンを、Applications フォルダにドラッグ＆ドロップすれば、インストールは完了
+(4) マウント解除します
+その後は Docker.dmg のマウントを解除し（デスクトップにできたアイコンから解除できる）
+ダウンロードした dmg ファイルはゴミ箱にポイしてOK
+ これだけの事なんだけど、最初は全く判らなかった…
+何年もWindowsやLinux系OSで仕事してるのに、 Docker のクジラアイコンを、Applications フォルダにドラッグ＆ドロップ
+この作業の意味が、ほんと、よく判らなかった＞＜。
+イラストの矢印の通り、クジラアイコンを、イラストの上にドロップしようとして何もおこらないのに腹を立ててました
+ユニバーサルデザインなんだろうけど、作業者にある程度の前提知識は必要なデザインなんだと思う
+もちろん、「Applications フォルダに ドラッグ＆ドロップ」に気がつかない私が悪いんですけど
+ (5) Dockerを初回起動させます</description>
+    </item>
     
     <item>
       <title>[Chrome] Google Chromeでモバイル画面を見る User-Agent Swither for Chrome</title>
