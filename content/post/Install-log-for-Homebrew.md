@@ -5,6 +5,14 @@ title = "[Mac] Homebrewインストールログ"
 tags = ["Mac"]
 +++
 
+---
+以下の方法は 2019年現在では古くなってますので、新しいインストールログはこっちの記事を参考にしてください！
+
+- [macOS] Homebrewインストールログ2019版 - Effectiveさお  
+[http://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/](http://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/)
+
+---
+
 **Homebrew** とは、Mac上のアプリケーションパッケージを管理するソフトです
 
 詳しくはこちら↓↓↓に書かれているのですが、自分のメモとログを残します
