@@ -6,10 +6,26 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 29 May 2019 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 30 May 2019 12:00:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[macOS] Homebrewインストールログ2019版</title>
+      <link>http://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/</link>
+      <pubDate>Thu, 30 May 2019 12:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/</guid>
+      <description>以前、2015年にも Homebrew をインストールしたログをこのブログに残していました
+その時よりは、ずいぶん手順が楽になってたので、もう一度載せておきます
+ （以前に載せていたインストールログの様子）[Mac] Homebrewインストールログ - Effectiveさお
+http://h-sao.com/blog/2015/05/11/install-log-for-homebrew/  今回は、これの2019年度版です
+2019/5/30現在、Homebrew のバージョンは 2.1.4 でした
+ Homebrewの本家
+http://brew.sh/  macOSでのインストールログ（長いので省略版）
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869 # Homebrew入ってない状態 SAO-MAC:~ sao.haruka$ brew -V -bash: brew: command not found # Homebrew本家に載っているインストールコマンドを入力！ SAO-MAC:~ sao.haruka$ /usr/bin/ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34; ==&amp;gt; This script will install: /usr/local/bin/brew /usr/local/share/doc/homebrew /usr/local/share/man/man1/brew.1 ...(省略) /usr/local/Caskroom /usr/local/Homebrew /usr/local/Frameworks Press RETURN to continue or any other key to abort ==&amp;gt; /usr/bin/sudo /bin/chmod u+rwx /usr/local/bin /usr/local/lib Password: ==&amp;gt; /usr/bin/sudo /bin/chmod g+rwx /usr/local/bin /usr/local/lib ==&amp;gt; /usr/bin/sudo /usr/sbin/chown sao.</description>
+    </item>
     
     <item>
       <title>[Docker] Docker for Macをインストールして Ubuntu の起動や停止まで</title>
@@ -1248,14 +1264,16 @@ Hugoは、機能あれもない、これもないの、(ヾﾉ･∀･`)ﾅｲ�
       <pubDate>Mon, 11 May 2015 03:05:44 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2015/05/11/install-log-for-homebrew/</guid>
-      <description>Homebrew とは、Mac上のアプリケーションパッケージを管理するソフトです
+      <description>以下の方法は 2019年現在では古くなってますので、新しいインストールログはこっちの記事を参考にしてください！
+ [macOS] Homebrewインストールログ2019版 - Effectiveさお
+http://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/  Homebrew とは、Mac上のアプリケーションパッケージを管理するソフトです
 詳しくはこちら↓↓↓に書かれているのですが、自分のメモとログを残します
  MacにHomebrewをインストールする - Qiita
 http://qiita.com/is0me/items/475fdbc4d770534f9ef1
  Homebrewの本家
 http://brew.sh/
   Macでのインストールログ
-## Homebrew入ってない状態 MacProSao:~ Sao$ brew -bash: brew: command not found ## VIMでバッシュプロファイル作成 MacProSao:~ Sao$ vim .bash_profile MacProSao:~ Sao$ more .bash_profile export PATH=/usr/local:$PATH MacProSao:~ Sao$ pwd /Users/Sao ## /usr/local の作成 MacProSao:usr Sao$ sudo mkdir /usr/local/ WARNING: Improper use of the sudo command could lead to data loss or the deletion of important system files. Please double-check your typing when using sudo.</description>
+## Homebrew入ってない状態 MacProSao:~ Sao$ brew -bash: brew: command not found ## VIMでバッシュプロファイル作成 MacProSao:~ Sao$ vim .bash_profile MacProSao:~ Sao$ more .bash_profile export PATH=/usr/local:$PATH MacProSao:~ Sao$ pwd /Users/Sao ## /usr/local の作成 MacProSao:usr Sao$ sudo mkdir /usr/local/ WARNING: Improper use of the sudo command could lead to data loss or the deletion of important system files.</description>
     </item>
     
     <item>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/</loc>
+    <lastmod>2019-05-30T12:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://h-sao.com/blog/2019/05/29/how-to-install-docker-for-mac/</loc>
     <lastmod>2019-05-29T12:00:00+09:00</lastmod>
   </url>
@@ -402,7 +407,7 @@
   
   <url>
     <loc>http://h-sao.com/</loc>
-    <lastmod>2019-05-29T12:00:00+09:00</lastmod>
+    <lastmod>2019-05-30T12:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -444,7 +449,7 @@
   
   <url>
     <loc>http://h-sao.com/tags/mac/</loc>
-    <lastmod>2019-05-29T12:00:00+09:00</lastmod>
+    <lastmod>2019-05-30T12:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -480,7 +485,7 @@
   
   <url>
     <loc>http://h-sao.com/post/</loc>
-    <lastmod>2019-05-29T12:00:00+09:00</lastmod>
+    <lastmod>2019-05-30T12:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

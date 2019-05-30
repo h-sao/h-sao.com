@@ -57,6 +57,143 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/" title="[macOS] Homebrewインストールログ2019版">[macOS] Homebrewインストールログ2019版</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2019.05.30">2019.05.30</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/mac">mac</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p>以前、2015年にも <strong>Homebrew</strong> をインストールしたログをこのブログに残していました<br />
+その時よりは、ずいぶん手順が楽になってたので、もう一度載せておきます</p>
+
+<ul>
+<li>（以前に載せていたインストールログの様子）[Mac] Homebrewインストールログ - Effectiveさお<br />
+<a href="http://h-sao.com/blog/2015/05/11/install-log-for-homebrew/">http://h-sao.com/blog/2015/05/11/install-log-for-homebrew/</a></li>
+</ul>
+
+<p>今回は、これの2019年度版です<br />
+2019/5/30現在、Homebrew のバージョンは 2.1.4 でした</p>
+
+<ul>
+<li>Homebrewの本家<br />
+<a href="http://brew.sh/">http://brew.sh/</a></li>
+</ul>
+
+<p>macOSでのインストールログ（長いので省略版）</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 5</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 6</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 9</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">10</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">11</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">12</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">13</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">14</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">15</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">16</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">17</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">18</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">19</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">20</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">21</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">22</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">23</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">24</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">25</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">26</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">27</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">28</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">29</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">30</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">31</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">32</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">33</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">34</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">35</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">36</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">37</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">38</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">39</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">40</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">41</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">42</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">43</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">44</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">45</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">46</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">47</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">48</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">49</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">50</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">51</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">52</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">53</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">54</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">55</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">56</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">57</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">58</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">59</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">60</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">61</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">62</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">63</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">64</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">65</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">66</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">67</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">68</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">69</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Homebrew入ってない状態
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:~ sao.haruka$ brew -V
+</span>-bash: brew: command not found
+
+<span style="color:#75715e"># Homebrew本家に載っているインストールコマンドを入力！
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:~ sao.haruka$ /usr/bin/ruby -e <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span><span style="color:#f92672">==</span>&gt; This script will install:
+/usr/local/bin/brew
+/usr/local/share/doc/homebrew
+/usr/local/share/man/man1/brew.1
+   ...<span style="color:#f92672">(</span>省略<span style="color:#f92672">)</span>
+/usr/local/Caskroom
+/usr/local/Homebrew
+/usr/local/Frameworks
+
+<span style="display:block;width:100%;background-color:#3c3d38">Press RETURN to <span style="color:#66d9ef">continue</span> or any other key to abort
+</span><span style="color:#f92672">==</span>&gt; /usr/bin/sudo /bin/chmod u+rwx /usr/local/bin /usr/local/lib
+<span style="display:block;width:100%;background-color:#3c3d38">Password:
+</span><span style="color:#f92672">==</span>&gt; /usr/bin/sudo /bin/chmod g+rwx /usr/local/bin /usr/local/lib
+<span style="color:#f92672">==</span>&gt; /usr/bin/sudo /usr/sbin/chown sao.haruka /usr/local/bin /usr/local/lib
+   ...<span style="color:#f92672">(</span>省略<span style="color:#f92672">)</span>
+<span style="color:#f92672">==</span>&gt; /usr/bin/sudo /usr/bin/chgrp admin /Users/sao.haruka/Library/Caches/Homebrew
+<span style="color:#f92672">==</span>&gt; Downloading and installing Homebrew...
+remote: Enumerating objects: <span style="color:#ae81ff">20</span>, <span style="color:#66d9ef">done</span>.
+remote: Counting objects: <span style="color:#ae81ff">100</span>% <span style="color:#f92672">(</span><span style="color:#ae81ff">20</span>/20<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
+remote: Compressing objects: <span style="color:#ae81ff">100</span>% <span style="color:#f92672">(</span><span style="color:#ae81ff">17</span>/17<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
+remote: Total <span style="color:#ae81ff">123873</span> <span style="color:#f92672">(</span>delta <span style="color:#ae81ff">5</span><span style="color:#f92672">)</span>, reused <span style="color:#ae81ff">13</span> <span style="color:#f92672">(</span>delta <span style="color:#ae81ff">3</span><span style="color:#f92672">)</span>, pack-reused <span style="color:#ae81ff">123853</span>
+Receiving objects: <span style="color:#ae81ff">100</span>% <span style="color:#f92672">(</span><span style="color:#ae81ff">123873</span>/123873<span style="color:#f92672">)</span>, <span style="color:#ae81ff">29</span>.26 MiB | <span style="color:#ae81ff">6</span>.32 MiB/s, <span style="color:#66d9ef">done</span>.
+Resolving deltas: <span style="color:#ae81ff">100</span>% <span style="color:#f92672">(</span><span style="color:#ae81ff">90744</span>/90744<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
+From https://github.com/Homebrew/brew
+ * <span style="color:#f92672">[</span>new branch<span style="color:#f92672">]</span>      master     -&gt; origin/master
+ * <span style="color:#f92672">[</span>new tag<span style="color:#f92672">]</span>         <span style="color:#ae81ff">0</span>.1        -&gt; <span style="color:#ae81ff">0</span>.1
+ * <span style="color:#f92672">[</span>new tag<span style="color:#f92672">]</span>         <span style="color:#ae81ff">0</span>.2        -&gt; <span style="color:#ae81ff">0</span>.2
+ * <span style="color:#f92672">[</span>new tag<span style="color:#f92672">]</span>         <span style="color:#ae81ff">0</span>.3        -&gt; <span style="color:#ae81ff">0</span>.3
+   ...<span style="color:#f92672">(</span>省略<span style="color:#f92672">)</span> 
+ * <span style="color:#f92672">[</span>new tag<span style="color:#f92672">]</span>         <span style="color:#ae81ff">2</span>.1.3      -&gt; <span style="color:#ae81ff">2</span>.1.3
+ * <span style="color:#f92672">[</span>new tag<span style="color:#f92672">]</span>         <span style="color:#ae81ff">2</span>.1.4      -&gt; <span style="color:#ae81ff">2</span>.1.4
+HEAD is now at 7c3bb36ca Merge pull request <span style="color:#75715e">#6181 from Homebrew/dependabot/bundler/Library/Homebrew/ruby-progressbar-1.10.1
+</span><span style="color:#75715e"></span><span style="color:#f92672">==</span>&gt; Homebrew is run entirely by unpaid volunteers. Please consider donating:
+  https://github.com/Homebrew/brew#donations
+<span style="color:#f92672">==</span>&gt; Tapping homebrew/core
+Cloning into <span style="color:#e6db74">&#39;/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core&#39;</span>...
+remote: Enumerating objects: <span style="color:#ae81ff">4996</span>, <span style="color:#66d9ef">done</span>.
+remote: Counting objects: <span style="color:#ae81ff">100</span>% <span style="color:#f92672">(</span><span style="color:#ae81ff">4996</span>/4996<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
+remote: Compressing objects: <span style="color:#ae81ff">100</span>% <span style="color:#f92672">(</span><span style="color:#ae81ff">4787</span>/4787<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
+remote: Total <span style="color:#ae81ff">4996</span> <span style="color:#f92672">(</span>delta <span style="color:#ae81ff">51</span><span style="color:#f92672">)</span>, reused <span style="color:#ae81ff">809</span> <span style="color:#f92672">(</span>delta <span style="color:#ae81ff">16</span><span style="color:#f92672">)</span>, pack-reused <span style="color:#ae81ff">0</span>
+Receiving objects: <span style="color:#ae81ff">100</span>% <span style="color:#f92672">(</span><span style="color:#ae81ff">4996</span>/4996<span style="color:#f92672">)</span>, <span style="color:#ae81ff">4</span>.01 MiB | <span style="color:#ae81ff">4</span>.19 MiB/s, <span style="color:#66d9ef">done</span>.
+Resolving deltas: <span style="color:#ae81ff">100</span>% <span style="color:#f92672">(</span><span style="color:#ae81ff">51</span>/51<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
+Tapped <span style="color:#ae81ff">2</span> commands and <span style="color:#ae81ff">4782</span> formulae <span style="color:#f92672">(</span><span style="color:#ae81ff">5</span>,038 files, <span style="color:#ae81ff">12</span>.5MB<span style="color:#f92672">)</span>.
+Already up-to-date.
+<span style="color:#f92672">==</span>&gt; Installation successful!
+
+<span style="color:#f92672">==</span>&gt; Homebrew has enabled anonymous aggregate formulae and cask analytics.
+Read the analytics documentation <span style="color:#f92672">(</span>and how to opt-out<span style="color:#f92672">)</span> here:
+  https://docs.brew.sh/Analytics
+
+<span style="color:#f92672">==</span>&gt; Homebrew is run entirely by unpaid volunteers. Please consider donating:
+  https://github.com/Homebrew/brew#donations
+<span style="color:#f92672">==</span>&gt; Next steps:
+- Run <span style="color:#e6db74">`</span>brew help<span style="color:#e6db74">`</span> to get started
+- Further documentation: 
+    https://docs.brew.sh
+SAO-MAC:~ sao.haruka$ 
+
+<span style="color:#75715e"># インストールしたバージョンの確認
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:~ sao.haruka$ brew --version
+</span>Homebrew <span style="color:#ae81ff">2</span>.1.4
+Homebrew/homebrew-core <span style="color:#f92672">(</span>git revision 8bdd; last commit <span style="color:#ae81ff">2019</span>-05-30<span style="color:#f92672">)</span>
+SAO-MAC:~ sao.haruka$ </code></pre></td></tr></table>
+</div>
+</div>
+
+<p>インストールログの完全版はgistに載せています</p>
+
+<ul>
+<li>Install_log_Homebrew_on_macOS<br />
+<a href="https://gist.github.com/h-sao/c6ad49171ba1ff6b11cffab67730a9fe">https://gist.github.com/h-sao/c6ad49171ba1ff6b11cffab67730a9fe</a></li>
+</ul>
+
+<p>途中はキーの入力を1回、パーミッション変更のためのパスワード入力を1回、聞かれるだけでした<br />
+コマンド一つで berw が使えるようになったので、とても楽でした</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f05%2f30%2fhow-to-install-homebrew-on-macos-2019%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bmacOS%5d%20Homebrew%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%83%ad%e3%82%b02019%e7%89%88&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f05%2f30%2fhow-to-install-homebrew-on-macos-2019%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f05%2f30%2fhow-to-install-homebrew-on-macos-2019%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f05%2f30%2fhow-to-install-homebrew-on-macos-2019%2f&title=%5bmacOS%5d%20Homebrew%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%83%ad%e3%82%b02019%e7%89%88" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2019/05/29/how-to-install-docker-for-mac/" title="[Docker] Docker for Macをインストールして Ubuntu の起動や停止まで">[Docker] Docker for Macをインストールして Ubuntu の起動や停止まで</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2019.05.29">2019.05.29</time>
@@ -1542,72 +1679,6 @@ C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x<br />
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2017/10/31/where-is-controlpanel/" title="[Windows10] コントロールパネルの場所">[Windows10] コントロールパネルの場所</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.10.31">2017.10.31</time>
-    
-    &middot; 
-        
-        <a href="http://h-sao.com/tags/windows10">windows10</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>コントロールパネルはいずこへ…(;^ω^)</p>
-
-<p>Windows10を使ってかなり経ちますが、以前の見慣れたコントロールパネルを出したくて、何となく探したことありませんか？</p>
-
-<p>コントロールパネルが無くても、Windows10 仕様の「設定」アプリでも、そこまで困ることは無いのですが…</p>
-
-<p>Windows10 で Windows マーク（スタートメニューを出すマーク）を押した際の一覧に<br />
-「コントロールパネル」は無いんですねー</p>
-
-<p>代わりに、「設定」なるものが…</p>
-
-<p><img src="/pic/Where-is-ControlPanel_00.png" alt="" /></p>
-
-<p>ちゃうねん、これちゃんねん(/ω＼)</p>
-
-<p>検索すると、マイクロソフトさんの公式サポートサイトでも、ちゃんと書かれてました</p>
-
-<ul>
-<li>Where is Control Panel? - Microsoft Support<br />
-<a href="https://support.microsoft.com/en-us/help/13764/windows-where-is-control-panel">https://support.microsoft.com/en-us/help/13764/windows-where-is-control-panel</a></li>
-</ul>
-
-<p>普通に、スタートメニューを押した後に<br />
-「コントロール」or「Control」で検索すると候補に出てきます</p>
-
-<blockquote>
-<p>ちなみに「コントロール パネル」で検索する時には、「コントロール」と「パネル」の間には半角空白が必要みたい…</p>
-</blockquote>
-
-<p><img src="/pic/Where-is-ControlPanel_01.png" alt="" /></p>
-
-<p>これこれ…( ^ω^ )</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f10%2f31%2fwhere-is-controlpanel%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bWindows10%5d%20%e3%82%b3%e3%83%b3%e3%83%88%e3%83%ad%e3%83%bc%e3%83%ab%e3%83%91%e3%83%8d%e3%83%ab%e3%81%ae%e5%a0%b4%e6%89%80&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f10%2f31%2fwhere-is-controlpanel%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f10%2f31%2fwhere-is-controlpanel%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f10%2f31%2fwhere-is-controlpanel%2f&title=%5bWindows10%5d%20%e3%82%b3%e3%83%b3%e3%83%88%e3%83%ad%e3%83%bc%e3%83%ab%e3%83%91%e3%83%8d%e3%83%ab%e3%81%ae%e5%a0%b4%e6%89%80" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -1676,6 +1747,10 @@ C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x<br />
             <div class="list-group">
                 
                     
+                        <a href="/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/" class="list-group-item">[macOS] Homebrewインストールログ2019版</a><br>
+                    
+                
+                    
                         <a href="/blog/2019/05/29/how-to-install-docker-for-mac/" class="list-group-item">[Docker] Docker for Macをインストールして Ubuntu の起動や停止まで</a><br>
                     
                 
@@ -1709,10 +1784,6 @@ C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x<br />
                 
                     
                         <a href="/blog/2017/11/02/how-to-uninstall-unity-license-information/" class="list-group-item">[Unity] Unityのライセンス情報をアンインストールしたい</a><br>
-                    
-                
-                    
-                        <a href="/blog/2017/10/31/where-is-controlpanel/" class="list-group-item">[Windows10] コントロールパネルの場所</a><br>
                     
                 
             </div>
@@ -1907,9 +1978,9 @@ C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x<br />
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/mac" style="font-size: 20px;">
+                    <a href="http://h-sao.com//tags/mac" style="font-size: 23px;">
                     
-                        <span class="badge">4</span>
+                        <span class="badge">5</span>
                         mac
                     </a>
                     </u> &nbsp; 
