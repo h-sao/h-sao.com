@@ -17,9 +17,10 @@
       <pubDate>Wed, 19 Jun 2019 16:00:00 +0900</pubDate>
       
       <guid>http://h-sao.com/blog/2019/06/19/how-to-check-unity-version-without-open-project/</guid>
-      <description>既存のUnityのプロジェクトを開くとき、バージョンを合わせて開きたいですよね、開く前に！
+      <description>既存のUnityのプロジェクトを開くとき、バージョンを合わせて開きたいですよね、
+開く前に！
 そしたら事前にそのバージョンのUnityをダウンロードできますし！
-そんなときはここを見ると良いです！
+そんなときはここのディレクトリを見ると良いです！
 ProjectSettings &amp;gt; ProjectVersion.txt  バージョンがそのまんま書いています( ^^) _旦~~</description>
     </item>
     
