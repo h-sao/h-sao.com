@@ -6,10 +6,22 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 30 May 2019 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 19 Jun 2019 16:00:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Unity] エディタを開く前にUnityのバージョンを調べる方法</title>
+      <link>http://h-sao.com/blog/2019/06/19/how-to-check-unity-version-without-open-project/</link>
+      <pubDate>Wed, 19 Jun 2019 16:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2019/06/19/how-to-check-unity-version-without-open-project/</guid>
+      <description>既存のUnityのプロジェクトを開くとき、バージョンを合わせて開きたいですよね、開く前に！
+そしたら事前にそのバージョンのUnityをダウンロードできますし！
+そんなときはここを見ると良いです！
+ProjectSettings &amp;gt; ProjectVersion.txt  バージョンがそのまんま書いています( ^^) _旦~~</description>
+    </item>
     
     <item>
       <title>[macOS] Homebrewインストールログ2019版</title>

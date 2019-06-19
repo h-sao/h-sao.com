@@ -69,6 +69,190 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/" title="[Chrome] Google Chromeのマルチプロファイル設定">[Chrome] Google Chromeのマルチプロファイル設定</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.01.04">2017.01.04</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/chrome">chrome</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p><strong>Google Chrome</strong> を使って、Webサイトの開発をしている人向けの情報です</p>
+
+<p>自分のChromeのユーザプロファイラを使わずに、開発は別のプロファイラを使いたいってこと、ありますよね…？</p>
+
+<h2 id="プランa-ユーザプロファイラを切り替える">[プランA] ユーザプロファイラを切り替える</h2>
+
+<p>Google Chrome のユーザデータを、開発用と自分個人用とに分けたい<br />
+開発用のモバイルモードで見てるときに、普通にPCブラウジングがしたい</p>
+
+<p>とかいうときのために（か、どうか分かりませんが…）</p>
+
+<p>Google chrome は複数ユーザに対応しています</p>
+
+<ol>
+<li><p>chrome://settings/ にアクセス<br />
+もしくは、メニューの「設定」を押す</p></li>
+
+<li><p>「ユーザ」の設定項目があるので、追加します<br />
+<img src="/pic/How-to-use-multiple-browser-profiles-in-chrome_02.png" style="border:solid 5px #e6e6e6"/></p></li>
+
+<li><p>アイコンと名前を選択して「追加」します<br />
+（わたしの場合は適当に Development と付けました）<br />
+<img src="/pic/How-to-use-multiple-browser-profiles-in-chrome_03.png" style="border:solid 5px #e6e6e6"/></p></li>
+
+<li><p>ユーザ名が右上に表示されるようになり、新しい「Development」ユーザでブラウザが立ち上がります<br />
+<img src="/pic/How-to-use-multiple-browser-profiles-in-chrome_04.png" style="border:solid 5px #e6e6e6"/></p></li>
+</ol>
+
+<p>Extension や閲覧履歴は、完全に今まで使っていたものとは別になっているので<br />
+新規プロファイルが使い放題です(*ﾉωﾉ)</p>
+
+<p>これまで使っていたユーザは「ユーザ－１」<br />
+開発用のユーザは「Development」<br />
+で、使い分けることが可能になりました</p>
+
+<h2 id="おまけ-起動時に-development-ユーザを指定して起動する方法">[おまけ] 起動時に Development ユーザを指定して起動する方法</h2>
+
+<p>ちなみに、デフォルト起動はもちろん、これまで使っていた「ユーザー１」で立ち上がります</p>
+
+<p>ショートカットなどで、さっき作ったDevelopmentユーザがいきなり立ち上がって欲しいときは<br />
+以下のように「<strong>profile-directory</strong>」起動オプションを設定してあげると<br />
+任意のユーザプロファイルで立ち上がります</p>
+
+<pre><code>&quot;C:\Program Files (x86)\Google\Chrome\Application\chrome.exe&quot; --profile-directory=&quot;Profile 2&quot;
+</code></pre>
+
+<blockquote>
+<p>※Chromeのショートカット設定にしておくと便利です<br />
+<img src="/pic/How-to-use-multiple-browser-profiles-in-chrome_05.png" style="border:solid 5px #e6e6e6"/></p>
+</blockquote>
+
+<p>わたしの環境では、&rdquo;Peofile 2&rdquo;という名前でしたが、これは作った環境によって異なっているはずです</p>
+
+<p>Chromeユーザプロファイルのデフォルトの位置はこちら↓↓↓</p>
+
+<blockquote>
+<p><strong>&ldquo;C:\Users[Winユーザ名]\AppData\Local\Google\Chrome\User Data\Profile x&rdquo;</strong></p>
+</blockquote>
+
+<p>ちなみに、これまで使っていた自分の環境である「ユーザー１」は「<strong>Default</strong>」というディレクトリ名です</p>
+
+<blockquote>
+<p>&ldquo;C:\Users[Winユーザ名]\AppData\Local\Google\Chrome\User Data\Default&rdquo;</p>
+</blockquote>
+
+<hr />
+
+<p>さて、プランAのプロファイル切り替えでも、まぁ用途は足りるんですけど<br />
+1点だけ、気に入らないところがありました…</p>
+
+<p>確かに、完全にプロファイルは別になるのですが<br />
+<strong>起動時の画面サイズは、プロファイル間で共有されてしまう</strong>のです</p>
+
+<p>これを解消したい…！<br />
+それが次に示すプランBのパターンです</p>
+
+<h2 id="プランb-稼働環境を別物にする">[プランB] 稼働環境を別物にする</h2>
+
+<p>つまりプランAのままだと、</p>
+
+<blockquote>
+<p>自分でブラウジングしてる「ユーザー１」の画面サイズと<br />
+「Development」ユーザの画面サイズを、<br />
+個別に保存することは出来ない</p>
+</blockquote>
+
+<p>のです…<br />
+あぁ残念 xxx</p>
+
+<p>でも大丈夫(*ﾉωﾉ)</p>
+
+<p>方法がありました</p>
+
+<p>プロファイルの保存場所そのものを、別のディレクトリにすればOKでした</p>
+
+<p>指定するオプションは「<strong>user-data-dir</strong>」です</p>
+
+<pre><code>&quot;C:\Program Files (x86)\Google\Chrome\Application\chrome.exe&quot; --user-data-dir=&quot;C:\utils\chrome_dev_profile&quot;
+</code></pre>
+
+<blockquote>
+<p>※同じく、Chromeのショートカット設定の図、先ほどのプランAの profile-directory オプションは不要<br />
+<img src="/pic/How-to-use-multiple-browser-profiles-in-chrome_06.png" style="border:solid 5px #e6e6e6"/></p>
+</blockquote>
+
+<p>このオプションで指定するディレクトリは、どこでもいいみたいですが<br />
+出来ればデフォルトで利用している</p>
+
+<blockquote>
+<p>C:\Users[Winユーザ名]\AppData\Local\Google\Chrome\User Data</p>
+</blockquote>
+
+<p>の配下は、避けた方がいいかもしれません<br />
+（わたしの環境では、スタートページがちょっと変になりました。深追いして調べてないです…）</p>
+
+<hr />
+
+<p>プランA/Bのどちらでも、マルチプロファイラでブラウジングできるのですが<br />
+より独立した設定をしたい！という人には、プランBが私的にはお勧めです</p>
+
+<p>Chrome は起動オプションがいっぱいあって、他にも<br />
+Userエージェントを指定出来たり（<strong>user-agent</strong>）、<br />
+ブラウザの言語を指定したり（<strong>lang=en-US</strong>で英語になる）と<br />
+いろんな機能が用意されてるので<br />
+開発用途としてはなかなかいい感じだなと、今更ながら思いました(*´∇`)ﾉ</p>
+
+<hr />
+
+<p>＜参考＞</p>
+
+<p>ちなみに、Google Chrome の起動オプションは<br />
+公式ではちょっと探しにくかったんですけど（わたしの探し方が悪いかも…）<br />
+こちらの人のサイトが、簡潔で一覧性が高く、参考になりました(^▽^)/</p>
+
+<ul>
+<li>List of Chromium Command Line Switches - Peter Beverloo（英語）<br />
+<a href="http://peter.sh/experiments/chromium-command-line-switches/">http://peter.sh/experiments/chromium-command-line-switches/</a></li>
+</ul>
+
+<p>以下、日本語の参考サイト</p>
+
+<ul>
+<li><p>完全Google Chrome マルチユーザマニュアル　永久保存版 - This is Shinobu&rsquo;s Memorandum<br />
+<a href="http://saske18jp.blogspot.jp/2012/05/google-chrome.html">http://saske18jp.blogspot.jp/2012/05/google-chrome.html</a></p></li>
+
+<li><p>Google Chrome を別設定で複数起動させる方法 - digitalbox<br />
+<a href="http://digitalbox.jp/google-chrome-multiple-invoking/">http://digitalbox.jp/google-chrome-multiple-invoking/</a></p></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f01%2f04%2fhow-to-use-multiple-browser-profiles-in-chrome%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bChrome%5d%20Google%20Chrome%e3%81%ae%e3%83%9e%e3%83%ab%e3%83%81%e3%83%97%e3%83%ad%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e8%a8%ad%e5%ae%9a&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f01%2f04%2fhow-to-use-multiple-browser-profiles-in-chrome%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f01%2f04%2fhow-to-use-multiple-browser-profiles-in-chrome%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f01%2f04%2fhow-to-use-multiple-browser-profiles-in-chrome%2f&title=%5bChrome%5d%20Google%20Chrome%e3%81%ae%e3%83%9e%e3%83%ab%e3%83%81%e3%83%97%e3%83%ad%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e8%a8%ad%e5%ae%9a" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2017/01/03/hello2017/" title="[Diary] 2017年もよろしくお願いします">[Diary] 2017年もよろしくお願いします</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.01.03">2017.01.03</time>
@@ -1497,220 +1681,6 @@ Googleは素直に単語のみを変換してくれます<br />
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/" title="[C&#43;&#43;] VisualStusio2015でClangを使う設定">[C&#43;&#43;] VisualStusio2015でClangを使う設定</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.05.15">2016.05.15</time>
-    
-    &middot; 
-        
-        <a href="http://h-sao.com/tags/cpp">cpp</a>
-        , 
-        
-        <a href="http://h-sao.com/tags/clang">clang</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>今日は Clang with Microsoft CodeGen の設定などについて、メモしておきます</p>
-
-<p>先人たちが既に色々と試している内容と対して変わりませんが、そもそも日本語の情報も少ないので、何かの足しになればと思います</p>
-
-<h1 id="clang-with-microsoft-codegen-is-here">&ldquo;Clang with Microsoft CodeGen&rdquo; is here!</h1>
-
-<p>最近はすっかり、クロスプラットフォームやオープンソースに力を入れているマイクロソフト社のツールセットの中に、Clang対応ってのがあります</p>
-
-<p>2015年の年末にですが、Clang が正式に Visual Studio 2015 Update1 で利用できるよ～<br />
-とVC++チームブログで発表されていました</p>
-
-<ul>
-<li><p>Clang with Microsoft CodeGen in VS 2015 Update 1 - Visual C++ Team Blog<br />
-<a href="https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/">https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/</a></p></li>
-
-<li><p>Clang with Microsoft CodeGen (March 2016) released- Visual C++ Team Blog<br />
-<a href="https://blogs.msdn.microsoft.com/vcblog/2016/03/31/clang-with-microsoft-codegen-march-2016-released/">https://blogs.msdn.microsoft.com/vcblog/2016/03/31/clang-with-microsoft-codegen-march-2016-released/</a></p></li>
-</ul>
-
-<p>良いですねー(^^)<br />
-現在のVS2015には <strong>Clang with Microsoft CodeGen</strong> というツールセットが提供されており、目玉はなんといっても、Clang のデバックを Visual Studioのエディターで確認できるところでしょうか！</p>
-
-<p>他にも、Clang でコンパイルしたobjと VC でコンパイルしたobjがリンクできるところもすごいです<br />
-既存資産をフル活用出来そうですね</p>
-
-<blockquote>
-<p>（2016/5/15現在、Visual Studio 2015 Update2 が最新です）<br />
-<a href="https://www.visualstudio.com/ja-jp/news/vs2015-update2-vs.aspx">https://www.visualstudio.com/ja-jp/news/vs2015-update2-vs.aspx</a></p>
-</blockquote>
-
-<hr />
-
-<p>LLVM側にも記事が上がっています</p>
-
-<ul>
-<li>Getting Started with the LLVM System using Microsoft Visual Studio - LLVM本家<br />
-<a href="http://llvm.org/docs/GettingStartedVS.html">http://llvm.org/docs/GettingStartedVS.html</a></li>
-</ul>
-
-<hr />
-
-<p>日本でも既に先人が試されているので、読んでみると良いと思います</p>
-
-<ul>
-<li><p>Clang/C2をコマンドプロンプトで使ってみる - イグトランスの頭の中（のかけら）<br />
-<a href="http://dev.activebasic.com/egtra/2015/12/09/850/">http://dev.activebasic.com/egtra/2015/12/09/850/</a></p></li>
-
-<li><p>Clang with Microsoft CodeGenがでたので試す - C++初心者Advent Calendar 2015 9日目<br />
-<a href="http://qiita.com/yumetodo/items/bd41f31f39dd590e8c80">http://qiita.com/yumetodo/items/bd41f31f39dd590e8c80</a></p></li>
-</ul>
-
-<hr />
-
-<p>ちなみに、この Clang with Microsoft CodeGen は VC++チームブログにも &ldquo;a.k.a. Clang/C2&rdquo; と記載されており、別名を <strong>Clang/C2</strong> というようです</p>
-
-<p>また、今回対応している <strong>Clang 側のバージョンは 3.7</strong> です</p>
-
-<h1 id="clang-exe-の場所">clang.exe の場所</h1>
-
-<h3 id="clang">Clang</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Clang 3.7\bin\x86\clang.exe</code></pre></td></tr></table>
-</div>
-</div>
-<h3 id="ちなみにvc">ちなみにVC++</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe</code></pre></td></tr></table>
-</div>
-</div>
-<p>どちらでも、コマンドプロンプトでコンパイル可能です</p>
-
-<h1 id="vsでのコンパイラの切り替え設定">VSでのコンパイラの切り替え設定</h1>
-
-<p>Visual Stidon 2015 上で &ldquo;Alt + F7&rdquo; を押すか</p>
-
-<blockquote>
-<p>プロジェクト &gt; [プロジェクト名]のプロパティ</p>
-</blockquote>
-
-<p>で設定UIを表示させます</p>
-
-<blockquote>
-<p>構成プロパティ &gt; 全般 &gt; プラットフォームツールセット</p>
-</blockquote>
-
-<p>この項目を &ldquo;Clang 3.7 with Microsoft CodeGen (v140_clang_3_7)&rdquo; に変更するだけです</p>
-
-<p><img src="/pic/Use-Clang-on-VisualStudio_00.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>結構簡単＼(^o^)／</p>
-
-<h1 id="ソリューション作成は何でもok">ソリューション作成は何でもOK</h1>
-
-<p>上記の様に、コンパイラが簡単に切り替えられるので、空のプロジェクトでも、Win32コンソールアプリケーションでもOKです</p>
-
-<p>一応、Clangっぽいプロジェクトはあるんですけど、いきなり dll というのもなんだか敷居が高いので、</p>
-
-<p><img src="/pic/Use-Clang-on-VisualStudio_01.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>exe を作りたいだけなら、Win32コンソールアプリケーションで良いと思います</p>
-
-<h1 id="余談-文字コードはutf8の方が良い-様な気がする">[余談]文字コードはUTF8の方が良い(様な気がする)</h1>
-
-<p>最初に書いておくと、Sift-JIS でも Clang/C2 でコンパイルは通ります</p>
-
-<p>…なのですが、一応、なんとなく</p>
-
-<p>個々の環境によって異なるのかもしれませんが<br />
-わたしがVS2015で作成した cpp ファイルは、デフォルトで Sift-JIS になります</p>
-
-<p>既に、<a href="https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/">VC++チームブログ</a> にはこんな感じで↓↓↓</p>
-
-<blockquote>
-<p>If source files in the project you are trying to convert are UTF-16 encoded, you will need to resave them as UTF-8 when Clang gives you an error about UTF-16 encoded source with BOM.</p>
-</blockquote>
-
-<p>UTF-16はだめらしいです<br />
-Sift-JIS は無関係かもしれませんが、一応…</p>
-
-<h1 id="サンプルコード">サンプルコード</h1>
-
-<p><a href="http://cpprefjp.github.io/">cpprefjp</a> を参照して、サンプルコードを書いてみました</p>
-
-<ul>
-<li>constexprの制限緩和
-<a href="http://cpprefjp.github.io/lang/cpp14/relaxing_constraints_on_constexpr.html">http://cpprefjp.github.io/lang/cpp14/relaxing_constraints_on_constexpr.html</a></li>
-</ul>
-
-<p>VC2015 Update2 では未対応だけど、Clang 3.7 は対応しているというコードです</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 1</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 2</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 5</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 9</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">10</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">11</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">12</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">13</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">14</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">15</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;stdafx.h&#34;</span><span style="color:#75715e">
-</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">constexpr</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">f</span>()
-{
-	<span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-	<span style="color:#66d9ef">return</span> result;
-}
-
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
-{
-	std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Hello: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> f() <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
-
-	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-}</code></pre></td></tr></table>
-</div>
-</div>
-<h2 id="visual-studio-2015-v140-でコンパイルすると-エラー">Visual Studio 2015 (v140) でコンパイルすると、エラー</h2>
-
-<p><img src="/pic/Use-Clang-on-VisualStudio_02.png" alt="" /></p>
-
-<p>VS2015 ではまだ、constexpr関数内の変数宣言がエラーになる様です</p>
-
-<h2 id="clang-3-7-with-microsoft-codegen-v140-clang-3-7-でのコンパイル">Clang 3.7 with Microsoft CodeGen (v140_clang_3_7) でのコンパイル</h2>
-
-<p><img src="/pic/Use-Clang-on-VisualStudio_03.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>Clang はOKです<br />
-いい感じに動作しました！</p>
-
-<hr />
-
-<p>VC++も Clang も、VS上でデバック出来るのは良いですね<br />
-噂には聞いていましたが、自分で動作させてみると、感激するもんがあります</p>
-
-<p>今はまだプレビューらしいので、早く安定化して欲しいですね～</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f15%2fuse-clang-on-visualstudio%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5d%20VisualStusio2015%e3%81%a7Clang%e3%82%92%e4%bd%bf%e3%81%86%e8%a8%ad%e5%ae%9a&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f15%2fuse-clang-on-visualstudio%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f15%2fuse-clang-on-visualstudio%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f15%2fuse-clang-on-visualstudio%2f&title=%5bC%2b%2b%5d%20VisualStusio2015%e3%81%a7Clang%e3%82%92%e4%bd%bf%e3%81%86%e8%a8%ad%e5%ae%9a" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
@@ -1782,6 +1752,10 @@ Sift-JIS は無関係かもしれませんが、一応…</p>
             <div class="list-group">
                 
                     
+                        <a href="/blog/2019/06/19/how-to-check-unity-version-without-open-project/" class="list-group-item">[Unity] エディタを開く前にUnityのバージョンを調べる方法</a><br>
+                    
+                
+                    
                         <a href="/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/" class="list-group-item">[macOS] Homebrewインストールログ2019版</a><br>
                     
                 
@@ -1815,10 +1789,6 @@ Sift-JIS は無関係かもしれませんが、一応…</p>
                 
                     
                         <a href="/blog/2018/02/08/hello2018/" class="list-group-item">[Diary] 2018年もよろしくお願いします</a><br>
-                    
-                
-                    
-                        <a href="/blog/2017/11/02/how-to-uninstall-unity-license-information/" class="list-group-item">[Unity] Unityのライセンス情報をアンインストールしたい</a><br>
                     
                 
             </div>
@@ -2143,9 +2113,9 @@ Sift-JIS は無関係かもしれませんが、一応…</p>
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/unity" style="font-size: 29px;">
+                    <a href="http://h-sao.com//tags/unity" style="font-size: 32px;">
                     
-                        <span class="badge">7</span>
+                        <span class="badge">8</span>
                         unity
                     </a>
                     </u> &nbsp; 
