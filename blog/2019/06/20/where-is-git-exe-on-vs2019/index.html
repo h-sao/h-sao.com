@@ -58,13 +58,13 @@
         <article class="post">
             <a class="btn home" href="http://h-sao.com/" title="">&laquo; </a>
             
-<h1><a href="http://h-sao.com/blog/2015/05/11/install-log-for-homebrew/" title="[Mac] Homebrewインストールログ">[Mac] Homebrewインストールログ</a></h1>
+<h1><a href="http://h-sao.com/blog/2019/06/20/where-is-git-exe-on-vs2019/" title="[Git] Visual Studio 2019の中のGitコマンドを探せ！">[Git] Visual Studio 2019の中のGitコマンドを探せ！</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2015.05.11">2015.05.11</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2019.06.20">2019.06.20</time>
     
     &middot; 
         
-        <a href="http://h-sao.com/tags/mac">mac</a>
+        <a href="http://h-sao.com/tags/git">git</a>
         
         
     
@@ -72,124 +72,53 @@
 </span>
 </footer>
  </footer>
-            <hr />
+            <p>Gitクライアント…</p>
 
-<p>以下の方法は 2019年現在では古くなってますので、新しいインストールログはこっちの記事を参考にしてください！</p>
+<p>自然に入ってますよね、わざわざ入れなくても。。。( *´艸｀)</p>
 
-<ul>
-<li>[macOS] Homebrewインストールログ2019版 - Effectiveさお<br />
-<a href="http://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/">http://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/</a></li>
-</ul>
+<p>Visual Studio 2019 が入ってる環境だったので、Gitクライアントくらいあるじゃろーと思って、検索してみたらありました！</p>
 
-<hr />
+<p>わたしの場合の環境は、ここ↓↓↓</p>
 
-<p><strong>Homebrew</strong> とは、Mac上のアプリケーションパッケージを管理するソフトです</p>
+<blockquote>
+<p>C:\Program Files (x86)<br />
+　\Microsoft Visual Studio<br />
+　　\2019<br />
+　　　\Enterprise<br />
+　　　　\Common7<br />
+　　　　　\IDE<br />
+　　　　　　\CommonExtensions<br />
+　　　　　　　\Microsoft<br />
+　　　　　　　　\TeamFoundation<br />
+　　　　　　　　　\Team Explorer<br />
+　　　　　　　　　　\Git<br />
+　　　　　　　　　　　\cmd<br />
+　　　　　　　　　　　　\git.exe</p>
+</blockquote>
 
-<p>詳しくはこちら↓↓↓に書かれているのですが、自分のメモとログを残します</p>
+<pre><code>C:\dev&gt;&quot;C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\Git\cmd\git.exe&quot; --version
+git version 2.21.0.windows.1
 
-<ul>
-<li><p>MacにHomebrewをインストールする - Qiita<br />
-<a href="http://qiita.com/is0me/items/475fdbc4d770534f9ef1">http://qiita.com/is0me/items/475fdbc4d770534f9ef1</a></p></li>
-
-<li><p>Homebrewの本家<br />
-<a href="http://brew.sh/">http://brew.sh/</a></p></li>
-</ul>
-
-<p>Macでのインストールログ</p>
-
-<pre><code>## Homebrew入ってない状態
-MacProSao:~ Sao$ brew
--bash: brew: command not found
- 
-## VIMでバッシュプロファイル作成
-MacProSao:~ Sao$ vim .bash_profile
-
-MacProSao:~ Sao$ more .bash_profile 
-export PATH=/usr/local:$PATH
-
-MacProSao:~ Sao$ pwd
-/Users/Sao
-
-## /usr/local の作成 
-MacProSao:usr Sao$ sudo mkdir /usr/local/
-
-WARNING: Improper use of the sudo command could lead to data loss
-or the deletion of important system files. Please double-check your
-typing when using sudo. Type &quot;man sudo&quot; for more information.
-
-To proceed, enter your password, or type Ctrl-C to abort.
-
-Password:
-MacProSao:usr Sao$ ls -al
-total 8
-drwxr-xr-x@   12 root  wheel    408  5 11 02:24 .
-drwxr-xr-x    30 root  wheel   1088  5 11 02:17 ..
-drwxr-xr-x     5 root  wheel    170  9 10  2014 X11
-lrwxr-xr-x     1 root  wheel      3  2 22 18:01 X11R6 -&gt; X11
-drwxr-xr-x  1053 root  wheel  35802  5  2 23:30 bin
-drwxr-xr-x   257 root  wheel   8738  5 11 01:25 include
-drwxr-xr-x   271 root  wheel   9214  5 11 01:25 lib
-drwxr-xr-x   170 root  wheel   5780  4 26 13:43 libexec
-drwxr-xr-x     2 root  wheel     68  5 11 02:24 local
-drwxr-xr-x   244 root  wheel   8296  4 26 13:40 sbin
-drwxr-xr-x    44 root  wheel   1496  5 11 01:25 share
-drwxr-xr-x     4 root  wheel    136  2 22 17:56 standalone
-
-## Homebrewのインストール
-MacProSao:usr Sao$ ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
-==&gt; This script will install:
-/usr/local/bin/brew
-/usr/local/Library/...
-/usr/local/share/man/man1/brew.1
-==&gt; The following directories will be made group writable:
-/usr/local/.
-==&gt; The following directories will have their group set to admin:
-/usr/local/.
-
-Press RETURN to continue or any other key to abort
-==&gt; /usr/bin/sudo /bin/chmod g+rwx /usr/local/.
-==&gt; /usr/bin/sudo /usr/bin/chgrp admin /usr/local/.
-==&gt; /usr/bin/sudo /bin/mkdir /Library/Caches/Homebrew
-==&gt; /usr/bin/sudo /bin/chmod g+rwx /Library/Caches/Homebrew
-==&gt; Downloading and installing Homebrew...
-remote: Counting objects: 3572, done.
-remote: Compressing objects: 100% (3421/3421), done.
-remote: Total 3572 (delta 35), reused 1459 (delta 18), pack-reused 0
-Receiving objects: 100% (3572/3572), 2.72 MiB | 2.47 MiB/s, done.
-Resolving deltas: 100% (35/35), done.
-From https://github.com/Homebrew/homebrew
- * [new branch]      master     -&gt; origin/master
-HEAD is now at c007efc Riak 2.1.1
-==&gt; Installation successful!
-==&gt; Next steps
-Run `brew help` to get started
-
-## プロファイル読み込み 
-MacProSao:~ Sao$ source .bash_profile 
-
-## バージョン確認
-MacProSao:~ Sao$ brew -v
-Homebrew 0.9.5
- 
-MacProSao:~ Sao$ 
+C:\dev&gt;
 </code></pre>
 
-<p>Hugoを入れるためにインストールしてみました<br />
-ついにわたしもGoを使う日が来るなんて…(ﾟ∇ﾟ ;)</p>
+<p>バージョンもそこそこ新しいです！</p>
+
+<p>パス長いけど、これ使うか～( ^^) _旦~~</p>
 
             <ul class="share-buttons">
     <li></li>
     <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f05%2f11%2finstall-log-for-homebrew%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f06%2f20%2fwhere-is-git-exe-on-vs2019%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bMac%5d%20Homebrew%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%83%ad%e3%82%b0&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f05%2f11%2finstall-log-for-homebrew%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGit%5d%20Visual%20Studio%202019%e3%81%ae%e4%b8%ad%e3%81%aeGit%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%82%92%e6%8e%a2%e3%81%9b%ef%bc%81&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f06%2f20%2fwhere-is-git-exe-on-vs2019%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f05%2f11%2finstall-log-for-homebrew%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f06%2f20%2fwhere-is-git-exe-on-vs2019%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f05%2f11%2finstall-log-for-homebrew%2f&title=%5bMac%5d%20Homebrew%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%83%ad%e3%82%b0" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f06%2f20%2fwhere-is-git-exe-on-vs2019%2f&title=%5bGit%5d%20Visual%20Studio%202019%e3%81%ae%e4%b8%ad%e3%81%aeGit%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%82%92%e6%8e%a2%e3%81%9b%ef%bc%81" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 

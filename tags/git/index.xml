@@ -6,10 +6,37 @@
     <description>Recent content in Git on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 01 Jun 2017 18:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 20 Jun 2019 16:00:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Git] Visual Studio 2019の中のGitコマンドを探せ！</title>
+      <link>http://h-sao.com/blog/2019/06/20/where-is-git-exe-on-vs2019/</link>
+      <pubDate>Thu, 20 Jun 2019 16:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2019/06/20/where-is-git-exe-on-vs2019/</guid>
+      <description>Gitクライアント…
+自然に入ってますよね、わざわざ入れなくても。。。( *´艸｀)
+Visual Studio 2019 が入ってる環境だったので、Gitクライアントくらいあるじゃろーと思って、検索してみたらありました！
+わたしの場合の環境は、ここ↓↓↓
+ C:\Program Files (x86)
+\Microsoft Visual Studio
+\2019
+\Enterprise
+\Common7
+\IDE
+\CommonExtensions
+\Microsoft
+\TeamFoundation
+\Team Explorer
+\Git
+\cmd
+\git.exe
+ C:\dev&amp;gt;&amp;quot;C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\Git\cmd\git.exe&amp;quot; --version git version 2.21.0.windows.1 C:\dev&amp;gt;  バージョンもそこそこ新しいです！
+パス長いけど、これ使うか～( ^^) _旦~~</description>
+    </item>
     
     <item>
       <title>[SSH] ポート指定GitサーバにSSHでアクセスできない時(Windows/GitExtensions)</title>
