@@ -6,10 +6,45 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 20 Jun 2019 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 26 Jun 2019 13:00:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[macOS] 自分メモ！Mac手に入れたら最初にすること(多少Windows風)</title>
+      <link>http://h-sao.com/blog/2019/06/26/how-to-set-up-my-new-macos/</link>
+      <pubDate>Wed, 26 Jun 2019 13:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2019/06/26/how-to-set-up-my-new-macos/</guid>
+      <description>新しくMacを入手したときの、自分なりの設定とかインストールするものを列挙してます
+Windowsに慣れた人ならきっとやりたくなるキーボード設定なども書いてます
+完全な自分メモですが、Windows開発者の方の参考になればー！
+最初の最初に入れたいソフト  Google Chrome インストール
+Safariが気に入らないというわけではないけど…
+https://www.google.com/chrome/
+   
+ VScode インストール
+メモ帳代わりのものがないとつらい
+https://code.visualstudio.com/   
+AppleStore系  Apple Storeにログイン
+ 夜フクロウ インストール
+Twitterクライアント、最初の方に入れたい(_・ω・)_ﾊﾞｧﾝ…
+   
+ DisplayMenu インストール
+画面の解像度を変更できるアプリ、本来の解像度でみれる！！！   
+キー入力系の設定 日本語入力設定をカスタマイズ する Caps Lockキー使ってないから日本語変換に使って、カタカナ変換不要にする
+ システム＞キーボード＞
+- 入力モードのカタカナをOFF
+- Caps Lockの動作「オフの時「英字」を入力」
+ キーボードの設定変更 コピペとか日本語変換をWindows風にする
+（わたしの場合は外付けキーボードのみ変更しました）
+以下、外付けキーボードを接続後に… （今回は英字キーボード）
+ システム＞キーボード＞キーボードタブ＞
+修飾キー＞ Microsoft2.4GHz Transeiver を選択
+Controlキーを　＊Commandに変更
+Commandキーを　＾Controlに変更</description>
+    </item>
     
     <item>
       <title>[Git] Visual Studio 2019の中のGitコマンドを探せ！</title>
