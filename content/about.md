@@ -1,5 +1,5 @@
 +++
-date = "2015-12-13T12:00:00+09:00"
+date = "2019-07-06T11:00:00+09:00"
 draft = false
 title = "About me"
 tags = [""]
@@ -11,7 +11,7 @@ Github: [h-sao](https://github.com/h-sao)
 mail: haruka.sao@gmail.com  
 
 
-[Microsoft MVP for Developer Technologies [Jul,2018-Jun,2019]](https://mvp.microsoft.com/ja-jp/PublicProfile/4027291)  
+[Microsoft MVP for Developer Technologies [Jul,2018-Jun,2020]](https://mvp.microsoft.com/ja-jp/PublicProfile/4027291)  
 Microsoft MVP for Windows Development [Jan,2016-Jun,2018]  
 Microsoft MVP for Windows Platform Development [Jan,2015-Dec,2015]  
 Microsoft MVP for Client Development [Jan,2014-Dec,2014]  
