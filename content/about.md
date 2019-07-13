@@ -64,12 +64,18 @@ Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]
 
 ## 2018
 
+Dec 22, 2018 [meetup app osaka@3](http://meetupapp.io/post/meetup-app-osaka-3/)  
+NimTorchの紹介 [\[SpeakerDeck\]](https://speakerdeck.com/harukasao/introduce-nimtorch-meetup-app-osaka-at-3)
+
+Dec 13 [nakameguro_feature.cpp vol.13](http://feature-cpp.github.io/feature.cpp/c++17/summary/#nakameguro-feature-cpp-vol-13)  
+std::optionalの使い方 [\[SpeakerDeck\]](https://speakerdeck.com/harukasao/how-to-use-optional-nakamecpp-13)
+
 Jan 11, 2018 初心者向け教育（インターナル）  
 C++、Unity
 
 ## 2017
 
-Dec 23, 2017 [meepup app osaka@2](http://meetupapp.io/)  
+Dec 23, 2017 [meepup app osaka@2](http://meetupapp.io/post/meetup-app-osaka-2/)  
 いまさらですがUniRx - MessageBrokerの使いどころ
 
 
@@ -90,7 +96,7 @@ Unityでポストエフェクトかけたい！ (内容は Aug 9「YEBIS for Uni
 Aug 9, 2016 [登壇：特濃！ゲーム開発塾５](http://eventregist.com/e/tokunou5)  
 YEBIS for Unity (beta) のご紹介 [\[SpeakerDeck\]](https://speakerdeck.com/harukasao/iwate-game-factory-2016-summer-event)
 
-Jun 24, 2016 [meetup app tokyo@1](http://meetupapp.io/)  
+Jun 24, 2016 [meetup app tokyo@1](http://meetupapp.io/post/meetup-app-tokyo-1/)  
 今日は扱わないUI達の斜め読み
 
 May 19, 2016 Microsoft 開発者向けイベント（インターナル）  
