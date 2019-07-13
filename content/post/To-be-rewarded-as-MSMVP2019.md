@@ -7,7 +7,7 @@ tags = ["diary"]
 
 遥佐保（はるか・さお）です
 
-今年もマイクロソフトさまより MVP を受賞させて頂きました  
+今年も7/1付けでマイクロソフトさまより MVP を受賞させて頂きました  
 カテゴリー名称は **Developer Technologies** となります
 
 ![](/pic/MVPLogo.png)
