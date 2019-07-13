@@ -9,6 +9,7 @@ Akiko Kawai (a.k.a. Sao Haruka)
 Twitter: [@hr_sao](https://twitter.com/hr_sao)  
 Github: [h-sao](https://github.com/h-sao)  
 mail: haruka.sao@gmail.com  
+Presentation: [Speaker Deck](https://speakerdeck.com/harukasao)
 
 
 [Microsoft MVP for Developer Technologies [Jul,2018-Jun,2020]](https://mvp.microsoft.com/ja-jp/PublicProfile/4027291)  
