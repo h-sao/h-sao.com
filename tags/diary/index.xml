@@ -6,10 +6,29 @@
     <description>Recent content in Diary on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 30 Jan 2019 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jul 2019 13:00:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/tags/diary/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[MSMVP] 2019年7月 Microsoft MVP for Developer Technologies を再受賞しました</title>
+      <link>http://h-sao.com/blog/2019/07/13/to-be-rewarded-as-msmvp2019/</link>
+      <pubDate>Sat, 13 Jul 2019 13:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2019/07/13/to-be-rewarded-as-msmvp2019/</guid>
+      <description>遥佐保（はるか・さお）です
+今年もマイクロソフトさまより MVP を受賞させて頂きました
+カテゴリー名称は Developer Technologies となります
+去年はC++17の機能を勉強していく会を平日の晩にやっていました
+（あの勉強会、ほんと楽しい…！）
+なんと！10回めの受賞です！！
+立派な古株＞＜。
+こうやってコミュニティ活動を行っていける環境に感謝しつつ
+今期もまた楽しく、役立つ何かを発信し続けていければなと、改めて決意したのでした
+今後ともどうぞ、
+よろしくお願いします</description>
+    </item>
     
     <item>
       <title>[Diary] 2019年もよろしくお願いします</title>

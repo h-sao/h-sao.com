@@ -6,10 +6,48 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 26 Jun 2019 13:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jul 2019 13:00:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[MSMVP] 2019年7月 Microsoft MVP for Developer Technologies を再受賞しました</title>
+      <link>http://h-sao.com/blog/2019/07/13/to-be-rewarded-as-msmvp2019/</link>
+      <pubDate>Sat, 13 Jul 2019 13:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2019/07/13/to-be-rewarded-as-msmvp2019/</guid>
+      <description>遥佐保（はるか・さお）です
+今年もマイクロソフトさまより MVP を受賞させて頂きました
+カテゴリー名称は Developer Technologies となります
+去年はC++17の機能を勉強していく会を平日の晩にやっていました
+（あの勉強会、ほんと楽しい…！）
+なんと！10回めの受賞です！！
+立派な古株＞＜。
+こうやってコミュニティ活動を行っていける環境に感謝しつつ
+今期もまた楽しく、役立つ何かを発信し続けていければなと、改めて決意したのでした
+今後ともどうぞ、
+よろしくお願いします</description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>http://h-sao.com/about/</link>
+      <pubDate>Sat, 06 Jul 2019 11:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/about/</guid>
+      <description>Akiko Kawai (a.k.a. Sao Haruka)
+Twitter: @hr_sao
+Github: h-sao
+mail: haruka.sao@gmail.com
+Presentation: Speaker Deck
+Microsoft MVP for Developer Technologies [Jul,2018-Jun,2020]
+Microsoft MVP for Windows Development [Jan,2016-Jun,2018]
+Microsoft MVP for Windows Platform Development [Jan,2015-Dec,2015]
+Microsoft MVP for Client Development [Jan,2014-Dec,2014]
+Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]
+Portrait Japan MVP Community Connection 2017 Autumn - Nov 12, 2017  「Optimized C++!最適化の手法集めました」にて  meetup app tokyo@2 - Dec 16, 2016  Deep Learning 初心者向けセッション  ebisu_effective_modern.</description>
+    </item>
     
     <item>
       <title>[macOS] 自分メモ！Mac手に入れたら最初にすること(多少Windows風)</title>
@@ -1211,24 +1249,6 @@ https://github.com/digitalcraftsman/hugo-minimalist-theme/  これは相談し�
 わたしの場合、以下の機能（テンプレートとなるブロックと名付けます）が不足していました
  ヘッダーに &amp;ldquo;About me&amp;rdquo; などのリンクをつけたい 最新ポストの表示 タグ表示  こんな感じです
 ヘッダーに直接何か書いてみる themes &amp;gt; minimalist &amp;gt; layouts &amp;gt; partials &amp;gt; header.</description>
-    </item>
-    
-    <item>
-      <title>About me</title>
-      <link>http://h-sao.com/about/</link>
-      <pubDate>Sun, 13 Dec 2015 12:00:00 +0900</pubDate>
-      
-      <guid>http://h-sao.com/about/</guid>
-      <description>Akiko Kawai (a.k.a. Sao Haruka)
-Twitter: @hr_sao
-Github: h-sao
-mail: haruka.sao@gmail.com
-Microsoft MVP for Developer Technologies [Jul,2018-Jun,2019]
-Microsoft MVP for Windows Development [Jan,2016-Jun,2018]
-Microsoft MVP for Windows Platform Development [Jan,2015-Dec,2015]
-Microsoft MVP for Client Development [Jan,2014-Dec,2014]
-Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]
-Portrait Japan MVP Community Connection 2017 Autumn - Nov 12, 2017  「Optimized C++!最適化の手法集めました」にて  meetup app tokyo@2 - Dec 16, 2016  Deep Learning 初心者向けセッション  ebisu_effective_modern.</description>
     </item>
     
     <item>
