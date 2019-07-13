@@ -1,5 +1,5 @@
 +++
-date = "2019-07-06:11:00+09:00"
+date = "2019-07-13:T12:00+09:00"
 draft = false
 title = "[MSMVP] 2019年7月 Microsoft MVP for Developer Technologies を再受賞しました"
 tags = ["diary"]
