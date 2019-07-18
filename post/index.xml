@@ -6,10 +6,37 @@
     <description>Recent content in Posts on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 13 Jul 2019 13:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jul 2019 12:00:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Windows10] 範囲選択スクリーンショットを撮る機能の紹介</title>
+      <link>http://h-sao.com/blog/2019/07/18/how-to-take-a-windows10-region-screenshot-by-built-in-tool/</link>
+      <pubDate>Thu, 18 Jul 2019 12:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2019/07/18/how-to-take-a-windows10-region-screenshot-by-built-in-tool/</guid>
+      <description>macには、範囲選択してスクリーンショットを撮る機能がずいぶん前からあるんですけど
+Windowsはしばらくありませんでした…
+でも（いつから出来るようになったのかよく知らないけど）
+Windows10でも標準機能で、範囲選択スクリーンショットが出来るようになってたので
+それを紹介しておきます
+1) ウィンドウズマーク + Shift + s
+を押すと、こんな↓↓↓範囲選択をする機能が現れます
+2) 選択が終わると、クリップボードにコピーされます↓↓↓
+3) さらに上記の
+「画像をマークアップして共有するには、ここを選択してください」
+をクリックすると
+切り取り＆スケッチ ツールが立ち上がります！
+これで簡単なお絵描きやトリミングが出来るようになりました
+5) 良い感じに調整できたら、右下のファイル保存マークをポチッ！
+ファイルが保存！やったーv(o￣∇￣o)
+ もちろん、切り取り＆スケッチツールを使わずに
+好みのペイントツールを立ち上げて
+Ctrl + v で貼り付けてもOK(・ω・)ノ
+ こういうシンプルな機能が欲しかった～</description>
+    </item>
     
     <item>
       <title>[MSMVP] 2019年7月 Microsoft MVP for Developer Technologies を再受賞しました</title>
