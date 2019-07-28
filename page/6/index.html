@@ -57,6 +57,144 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2015/05/11/install-log-for-homebrew/" title="[Mac] Homebrewインストールログ">[Mac] Homebrewインストールログ</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2015.05.11">2015.05.11</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/mac">mac</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <hr />
+
+<p>以下の方法は 2019年現在では古くなってますので、新しいインストールログはこっちの記事を参考にしてください！</p>
+
+<ul>
+<li>[macOS] Homebrewインストールログ2019版 - Effectiveさお<br />
+<a href="http://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/">http://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/</a></li>
+</ul>
+
+<hr />
+
+<p><strong>Homebrew</strong> とは、Mac上のアプリケーションパッケージを管理するソフトです</p>
+
+<p>詳しくはこちら↓↓↓に書かれているのですが、自分のメモとログを残します</p>
+
+<ul>
+<li><p>MacにHomebrewをインストールする - Qiita<br />
+<a href="http://qiita.com/is0me/items/475fdbc4d770534f9ef1">http://qiita.com/is0me/items/475fdbc4d770534f9ef1</a></p></li>
+
+<li><p>Homebrewの本家<br />
+<a href="http://brew.sh/">http://brew.sh/</a></p></li>
+</ul>
+
+<p>Macでのインストールログ</p>
+
+<pre><code>## Homebrew入ってない状態
+MacProSao:~ Sao$ brew
+-bash: brew: command not found
+ 
+## VIMでバッシュプロファイル作成
+MacProSao:~ Sao$ vim .bash_profile
+
+MacProSao:~ Sao$ more .bash_profile 
+export PATH=/usr/local:$PATH
+
+MacProSao:~ Sao$ pwd
+/Users/Sao
+
+## /usr/local の作成 
+MacProSao:usr Sao$ sudo mkdir /usr/local/
+
+WARNING: Improper use of the sudo command could lead to data loss
+or the deletion of important system files. Please double-check your
+typing when using sudo. Type &quot;man sudo&quot; for more information.
+
+To proceed, enter your password, or type Ctrl-C to abort.
+
+Password:
+MacProSao:usr Sao$ ls -al
+total 8
+drwxr-xr-x@   12 root  wheel    408  5 11 02:24 .
+drwxr-xr-x    30 root  wheel   1088  5 11 02:17 ..
+drwxr-xr-x     5 root  wheel    170  9 10  2014 X11
+lrwxr-xr-x     1 root  wheel      3  2 22 18:01 X11R6 -&gt; X11
+drwxr-xr-x  1053 root  wheel  35802  5  2 23:30 bin
+drwxr-xr-x   257 root  wheel   8738  5 11 01:25 include
+drwxr-xr-x   271 root  wheel   9214  5 11 01:25 lib
+drwxr-xr-x   170 root  wheel   5780  4 26 13:43 libexec
+drwxr-xr-x     2 root  wheel     68  5 11 02:24 local
+drwxr-xr-x   244 root  wheel   8296  4 26 13:40 sbin
+drwxr-xr-x    44 root  wheel   1496  5 11 01:25 share
+drwxr-xr-x     4 root  wheel    136  2 22 17:56 standalone
+
+## Homebrewのインストール
+MacProSao:usr Sao$ ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+==&gt; This script will install:
+/usr/local/bin/brew
+/usr/local/Library/...
+/usr/local/share/man/man1/brew.1
+==&gt; The following directories will be made group writable:
+/usr/local/.
+==&gt; The following directories will have their group set to admin:
+/usr/local/.
+
+Press RETURN to continue or any other key to abort
+==&gt; /usr/bin/sudo /bin/chmod g+rwx /usr/local/.
+==&gt; /usr/bin/sudo /usr/bin/chgrp admin /usr/local/.
+==&gt; /usr/bin/sudo /bin/mkdir /Library/Caches/Homebrew
+==&gt; /usr/bin/sudo /bin/chmod g+rwx /Library/Caches/Homebrew
+==&gt; Downloading and installing Homebrew...
+remote: Counting objects: 3572, done.
+remote: Compressing objects: 100% (3421/3421), done.
+remote: Total 3572 (delta 35), reused 1459 (delta 18), pack-reused 0
+Receiving objects: 100% (3572/3572), 2.72 MiB | 2.47 MiB/s, done.
+Resolving deltas: 100% (35/35), done.
+From https://github.com/Homebrew/homebrew
+ * [new branch]      master     -&gt; origin/master
+HEAD is now at c007efc Riak 2.1.1
+==&gt; Installation successful!
+==&gt; Next steps
+Run `brew help` to get started
+
+## プロファイル読み込み 
+MacProSao:~ Sao$ source .bash_profile 
+
+## バージョン確認
+MacProSao:~ Sao$ brew -v
+Homebrew 0.9.5
+ 
+MacProSao:~ Sao$ 
+</code></pre>
+
+<p>Hugoを入れるためにインストールしてみました<br />
+ついにわたしもGoを使う日が来るなんて…(ﾟ∇ﾟ ;)</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f05%2f11%2finstall-log-for-homebrew%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bMac%5d%20Homebrew%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%83%ad%e3%82%b0&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f05%2f11%2finstall-log-for-homebrew%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f05%2f11%2finstall-log-for-homebrew%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f05%2f11%2finstall-log-for-homebrew%2f&title=%5bMac%5d%20Homebrew%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%83%ad%e3%82%b0" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2015/04/13/download-pmp-logo/" title="[PMP] PMPロゴのダウンロード場所">[PMP] PMPロゴのダウンロード場所</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2015.04.13">2015.04.13</time>
@@ -635,109 +773,6 @@ peach
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2014/04/19/about-powershell-x32-and-x64/" title="[PowerShell] 32bitと64bitの使い分け">[PowerShell] 32bitと64bitの使い分け</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2014.04.19">2014.04.19</time>
-    
-    &middot; 
-        
-        <a href="http://h-sao.com/tags/powershell">powershell</a>
-        , 
-        
-        <a href="http://h-sao.com/tags/oracle">oracle</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>PowerShellにはちゃんと 32bit版と 64bit版が備わっています</p>
-
-<p>Windows2008 R2<br />
-Windows2012 R2<br />
-共に同じ場所にあります(~o~)</p>
-
-<p>64bit版<br />
-<strong>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</strong></p>
-
-<p>32bit版<br />
-<strong>C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe</strong></p>
-
-<p>デフォルトの64bitマシンであれば、コンソールで</p>
-
-<pre><code>&gt; powershell
-</code></pre>
-
-<p>とすると、64bitモードが立ち上がります</p>
-
-<p>これはどういうことかというと、64bitのアプリから使うライブラリなどは、64bitでないとダメってことです</p>
-
-<p>何にはまったかというと、PowerShell から System.Data.OracleClient に接続するとき</p>
-
-<p>たとえDBサーバが 64bit Oracle だったとしても<br />
-Oracle Client はデフォルトでは 32bit になっているようです</p>
-
-<p>powershell から oracle に接続しようとしたときこんな感じになります</p>
-
-<pre><code># アセンブリのロード
-[void][System.Reflection.Assembly]::LoadWithPartialName(&quot;System.Data.OracleClient&quot;)
-
-# 接続
-$conn_str = &quot;Data Source=saoDB;User ID=sao;Password=password;Integrated Security=false;&quot;
-$ora_conn = New-Object System.Data.OracleClient.OracleConnection($conn_str)
-
-# インスタンス
-$ora_cmd = New-Object System.Data.OracleClient.OracleCommand
-$ora_cmd.Connection = $ora_conn
-
-# データベースに接続
-$ora_conn.Open()
-</code></pre>
-
-<p>（参考）powerShellからOracleを使う（接続・切断）<br />
-<a href="http://harikofu.blog.fc2.com/blog-entry-114.html">http://harikofu.blog.fc2.com/blog-entry-114.html</a></p>
-
-<p>このDB接続直後に、64bit のPowerShell だと<br />
-こんなエラーが出ます</p>
-
-<pre><code>&quot;0&quot; 個の引数を指定して &quot;Open&quot; を呼び出し中に例外が発生しました: &quot;Oracle クライアント ライブラリを読み込もうとしましたが、BadImageFormatException が発行されました。この問題は、32 ビットの Oracle クライアント コンポーネントが
-インストールされている環境で 64 ビット モードを実行すると発生します。&quot;
-発生場所 行:1 文字:22
-+ $ora_conn.Open &lt;&lt;&lt;&lt; ()
-    + CategoryInfo          : NotSpecified: (:) []、MethodInvocationException
-    + FullyQualifiedErrorId : DotNetMethodException
-</code></pre>
-
-<p>問題解決方法は2つ</p>
-
-<ul>
-<li>Oracle Client を 64bit版をインストールする（たとえDBサーバ上であっても…</li>
-<li>呼び出す側のPowerShellを 32bit版にする</li>
-</ul>
-
-<p>既存の稼働環境に影響を与えない様にするという意味では<br />
-不毛ですが後者を選択すると波風立てずにコトを済ませられます</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f19%2fabout-powershell-x32-and-x64%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bPowerShell%5d%2032bit%e3%81%a864bit%e3%81%ae%e4%bd%bf%e3%81%84%e5%88%86%e3%81%91&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f19%2fabout-powershell-x32-and-x64%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f19%2fabout-powershell-x32-and-x64%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f19%2fabout-powershell-x32-and-x64%2f&title=%5bPowerShell%5d%2032bit%e3%81%a864bit%e3%81%ae%e4%bd%bf%e3%81%84%e5%88%86%e3%81%91" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -745,7 +780,7 @@ $ora_conn.Open()
 	<a class="btn newer" href="/page/5/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 6  7</p>
+	<p class="counter"> 6  8</p>
 
 
 	
@@ -808,6 +843,10 @@ $ora_conn.Open()
             <div class="list-group">
                 
                     
+                        <a href="/blog/2019/07/28/how-to-use-hugo-on-docker/" class="list-group-item">[Hugo] Hugoの環境をDocker上で動かす</a><br>
+                    
+                
+                    
                         <a href="/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/" class="list-group-item">[VisualStudio] Visual Studioで使う改行コードを指定する方法</a><br>
                     
                 
@@ -839,10 +878,6 @@ $ora_conn.Open()
                 
                     
                         <a href="/blog/2019/05/29/how-to-install-docker-for-mac/" class="list-group-item">[Docker] Docker for Macをインストールして Ubuntu の起動や停止まで</a><br>
-                    
-                
-                    
-                        <a href="/blog/2019/04/30/recommended-extensions-user-agent-swither-in-chrome/" class="list-group-item">[Chrome] Google Chromeでモバイル画面を見る User-Agent Swither for Chrome</a><br>
                     
                 
             </div>
@@ -957,9 +992,9 @@ $ora_conn.Open()
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/docker" style="font-size: 11px;">
+                    <a href="http://h-sao.com//tags/docker" style="font-size: 14px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">2</span>
                         docker
                     </a>
                     </u> &nbsp; 
@@ -1017,9 +1052,9 @@ $ora_conn.Open()
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/hugo" style="font-size: 17px;">
+                    <a href="http://h-sao.com//tags/hugo" style="font-size: 20px;">
                     
-                        <span class="badge">3</span>
+                        <span class="badge">4</span>
                         hugo
                     </a>
                     </u> &nbsp; 
@@ -1047,9 +1082,9 @@ $ora_conn.Open()
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/macos" style="font-size: 11px;">
+                    <a href="http://h-sao.com//tags/macos" style="font-size: 14px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">2</span>
                         macos
                     </a>
                     </u> &nbsp; 

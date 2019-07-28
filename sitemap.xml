@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://h-sao.com/blog/2019/07/28/how-to-use-hugo-on-docker/</loc>
+    <lastmod>2019-07-28T18:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://h-sao.com/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/</loc>
     <lastmod>2019-07-26T17:00:00+09:00</lastmod>
   </url>
@@ -425,7 +430,7 @@
   
   <url>
     <loc>http://h-sao.com/tags/docker/</loc>
-    <lastmod>2019-05-29T12:00:00+09:00</lastmod>
+    <lastmod>2019-07-28T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -437,7 +442,7 @@
   
   <url>
     <loc>http://h-sao.com/</loc>
-    <lastmod>2019-07-26T17:00:00+09:00</lastmod>
+    <lastmod>2019-07-28T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -467,7 +472,7 @@
   
   <url>
     <loc>http://h-sao.com/tags/hugo/</loc>
-    <lastmod>2015-12-13T23:30:00+09:00</lastmod>
+    <lastmod>2019-07-28T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -485,7 +490,7 @@
   
   <url>
     <loc>http://h-sao.com/tags/macos/</loc>
-    <lastmod>2019-06-26T13:00:00+09:00</lastmod>
+    <lastmod>2019-07-28T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -521,7 +526,7 @@
   
   <url>
     <loc>http://h-sao.com/post/</loc>
-    <lastmod>2019-07-26T17:00:00+09:00</lastmod>
+    <lastmod>2019-07-28T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

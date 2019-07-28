@@ -57,6 +57,126 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2019/07/28/how-to-use-hugo-on-docker/" title="[Hugo] Hugoの環境をDocker上で動かす">[Hugo] Hugoの環境をDocker上で動かす</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2019.07.28">2019.07.28</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/hugo">hugo</a>
+        , 
+        
+        <a href="http://h-sao.com/tags/docker">docker</a>
+        , 
+        
+        <a href="http://h-sao.com/tags/macos">macos</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>今回の環境</p>
+
+<ul>
+<li>macOS Mojave</li>
+<li>Docker Desktop</li>
+<li>Hugo</li>
+</ul>
+
+<p>このブログは <a href="https://gohugo.io/">Hugo</a> というスタティックジェネレーターで作っています</p>
+
+<p>Hugoは golang で動いているので、ローカルに Go の環境が必要なわけですが<br />
+以前、MacBookの中にダイレクトに Hugo をインストールしていたら、別で入っているGoのバージョンと、うまくかみ合わなくなったことがありました</p>
+
+<p>解決に結構時間が取られちゃったので、もう macOSを使うときには、なんでもかんでも docker で分離しようと心に決めたのでした…</p>
+
+<p>その方法です</p>
+
+<p>やってみたら、超簡単でした</p>
+
+<hr />
+
+<h3 id="hugo-に対応した-docker-image-をダウンロード">Hugo に対応した docker image をダウンロード</h3>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 5</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 9</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">10</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Hugo で docker を検索
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>sao$ docker search hugo
+</span>NAME                  DESCRIPTION                            STARS    OFFICIAL  AUTOMATED
+jojomi/hugo     hugo, see https://gohugo.io                     <span style="color:#ae81ff">44</span>               <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+publysher/hugo  Docker base image <span style="color:#66d9ef">for</span> static sites generated…   <span style="color:#ae81ff">37</span>               <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+monachus/hugo   Docker image <span style="color:#66d9ef">for</span> building and running Hugo <span style="color:#f92672">(</span>…   <span style="color:#ae81ff">28</span>               <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+klakegg/hugo    Minimal image and variants with batteries in…   <span style="color:#ae81ff">22</span>               <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+cibuilds/hugo   Docker image <span style="color:#66d9ef">for</span> Hugo, the static-site gener…   <span style="color:#ae81ff">10</span>  
+…
+…（いっぱいあった）</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>今回わたしは、<strong><em>klakegg/hugo</em></strong> のバージョンを使うことにしました</p>
+
+<ul>
+<li><p><strong><em>klakegg/hugo</em></strong> - docker hub<br />
+<a href="https://hub.docker.com/r/klakegg/hugo">https://hub.docker.com/r/klakegg/hugo</a></p></li>
+
+<li><p><strong><em>klakegg/hugo</em></strong> - GitHub<br />
+<a href="https://github.com/klakegg/docker-hugo">https://github.com/klakegg/docker-hugo</a></p></li>
+</ul>
+
+<p><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ダウンロード
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>sao$ docker pull klakegg/hugo</span></code></pre></td></tr></table>
+</div>
+</div></p>
+
+<h3 id="起動">起動</h3>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">5</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">7</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ローカルのマークダウンファイルの場所に移動
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>sao$ cd h-sao.com/
+</span>
+<span style="color:#75715e"># まんまこのコマンドでOK
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>h-sao.com sao$ docker run --rm -it -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/src -p <span style="color:#ae81ff">1313</span>:1313 klakegg/hugo:0.55.0 server
+</span>
+# ブラウザで http://localhost:1313 にアクセスするとOK</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>超超超簡単でした。。。</p>
+
+<p>これからも mac環境では docker さまに当分お世話になりますm(_ _)m</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f07%2f28%2fhow-to-use-hugo-on-docker%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bHugo%5d%20Hugo%e3%81%ae%e7%92%b0%e5%a2%83%e3%82%92Docker%e4%b8%8a%e3%81%a7%e5%8b%95%e3%81%8b%e3%81%99&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f07%2f28%2fhow-to-use-hugo-on-docker%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f07%2f28%2fhow-to-use-hugo-on-docker%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f07%2f28%2fhow-to-use-hugo-on-docker%2f&title=%5bHugo%5d%20Hugo%e3%81%ae%e7%92%b0%e5%a2%83%e3%82%92Docker%e4%b8%8a%e3%81%a7%e5%8b%95%e3%81%8b%e3%81%99" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/" title="[VisualStudio] Visual Studioで使う改行コードを指定する方法">[VisualStudio] Visual Studioで使う改行コードを指定する方法</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2019.07.26">2019.07.26</time>
@@ -79,7 +199,7 @@
 <p>環境</p>
 
 <ul>
-<li>WIndows10</li>
+<li>Windows10</li>
 <li>Visual Studio 2019</li>
 <li>Unity 2018</li>
 </ul>
@@ -1137,73 +1257,12 @@ User-Agent Swither for Chrome の更新は、2017年8月3日で止まってる�
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2019/03/27/how-to-use-optional-nakamecpp-vol13/" title="[C&#43;&#43;] std::optionalの使い方を紹介しました">[C&#43;&#43;] std::optionalの使い方を紹介しました</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2019.03.27">2019.03.27</time>
-    
-    &middot; 
-        
-        <a href="http://h-sao.com/tags/cpp">cpp</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>少し前ですが、<code>std::optional</code> について nakameguro_feature.cpp vol.13 で発表したので、その資料を置いときます</p>
-
-<ul>
-<li><strong>nakameguro_feature.cpp vol.13</strong><br />
-<a href="https://ebisu-effective-modern-cpp.connpass.com/event/111469/">https://ebisu-effective-modern-cpp.connpass.com/event/111469/</a><br /></li>
-</ul>
-
-<script async class="speakerdeck-embed" data-id="35d4887f4e6344428ae9e24b268ae643" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
-
-<p>私的感想としては、<code>optional</code> を使うと<br />
-<strong>値取得に失敗しても、例外を書くことなく <code>if</code> で処理出来る</strong> のが、なんだか良いなぁと思った次第でした</p>
-
-<p>あと、<code>optional</code> の無効状態をどう表すか？<br />
-<code>reset() / std::nullopt / {}</code> のどれよ？<br />
-という話は、参加者の人たちの意見も GitHub の検索結果と同じで<br />
-<code>reset()</code> に軍配があがっていました(&lsquo;ω&rsquo;)</p>
-
-<p>こういう意見交換の場は、本当に恵まれてるなぁ～しみじみ</p>
-
-<p>次回は 3 / 28 (木)開催で、vol.18 です！</p>
-
-<ul>
-<li><strong>nakameguro_feature.cpp vol.18</strong><br />
-<a href="https://ebisu-effective-modern-cpp.connpass.com/event/125272/">https://ebisu-effective-modern-cpp.connpass.com/event/125272/</a><br /></li>
-</ul>
-
-<p>お時間ある方は、ぜひお立ち寄りください～！</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f03%2f27%2fhow-to-use-optional-nakamecpp-vol13%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5d%20std%3a%3aoptional%e3%81%ae%e4%bd%bf%e3%81%84%e6%96%b9%e3%82%92%e7%b4%b9%e4%bb%8b%e3%81%97%e3%81%be%e3%81%97%e3%81%9f&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f03%2f27%2fhow-to-use-optional-nakamecpp-vol13%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f03%2f27%2fhow-to-use-optional-nakamecpp-vol13%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f03%2f27%2fhow-to-use-optional-nakamecpp-vol13%2f&title=%5bC%2b%2b%5d%20std%3a%3aoptional%e3%81%ae%e4%bd%bf%e3%81%84%e6%96%b9%e3%82%92%e7%b4%b9%e4%bb%8b%e3%81%97%e3%81%be%e3%81%97%e3%81%9f" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
     
 
-	<p class="counter"> 1  7</p>
+	<p class="counter"> 1  8</p>
 
 
 	
@@ -1266,6 +1325,10 @@ User-Agent Swither for Chrome の更新は、2017年8月3日で止まってる�
             <div class="list-group">
                 
                     
+                        <a href="/blog/2019/07/28/how-to-use-hugo-on-docker/" class="list-group-item">[Hugo] Hugoの環境をDocker上で動かす</a><br>
+                    
+                
+                    
                         <a href="/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/" class="list-group-item">[VisualStudio] Visual Studioで使う改行コードを指定する方法</a><br>
                     
                 
@@ -1297,10 +1360,6 @@ User-Agent Swither for Chrome の更新は、2017年8月3日で止まってる�
                 
                     
                         <a href="/blog/2019/05/29/how-to-install-docker-for-mac/" class="list-group-item">[Docker] Docker for Macをインストールして Ubuntu の起動や停止まで</a><br>
-                    
-                
-                    
-                        <a href="/blog/2019/04/30/recommended-extensions-user-agent-swither-in-chrome/" class="list-group-item">[Chrome] Google Chromeでモバイル画面を見る User-Agent Swither for Chrome</a><br>
                     
                 
             </div>
@@ -1415,9 +1474,9 @@ User-Agent Swither for Chrome の更新は、2017年8月3日で止まってる�
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/docker" style="font-size: 11px;">
+                    <a href="http://h-sao.com//tags/docker" style="font-size: 14px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">2</span>
                         docker
                     </a>
                     </u> &nbsp; 
@@ -1475,9 +1534,9 @@ User-Agent Swither for Chrome の更新は、2017年8月3日で止まってる�
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/hugo" style="font-size: 17px;">
+                    <a href="http://h-sao.com//tags/hugo" style="font-size: 20px;">
                     
-                        <span class="badge">3</span>
+                        <span class="badge">4</span>
                         hugo
                     </a>
                     </u> &nbsp; 
@@ -1505,9 +1564,9 @@ User-Agent Swither for Chrome の更新は、2017年8月3日で止まってる�
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/macos" style="font-size: 11px;">
+                    <a href="http://h-sao.com//tags/macos" style="font-size: 14px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">2</span>
                         macos
                     </a>
                     </u> &nbsp; 

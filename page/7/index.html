@@ -57,6 +57,109 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2014/04/19/about-powershell-x32-and-x64/" title="[PowerShell] 32bitと64bitの使い分け">[PowerShell] 32bitと64bitの使い分け</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2014.04.19">2014.04.19</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/powershell">powershell</a>
+        , 
+        
+        <a href="http://h-sao.com/tags/oracle">oracle</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p>PowerShellにはちゃんと 32bit版と 64bit版が備わっています</p>
+
+<p>Windows2008 R2<br />
+Windows2012 R2<br />
+共に同じ場所にあります(~o~)</p>
+
+<p>64bit版<br />
+<strong>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</strong></p>
+
+<p>32bit版<br />
+<strong>C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe</strong></p>
+
+<p>デフォルトの64bitマシンであれば、コンソールで</p>
+
+<pre><code>&gt; powershell
+</code></pre>
+
+<p>とすると、64bitモードが立ち上がります</p>
+
+<p>これはどういうことかというと、64bitのアプリから使うライブラリなどは、64bitでないとダメってことです</p>
+
+<p>何にはまったかというと、PowerShell から System.Data.OracleClient に接続するとき</p>
+
+<p>たとえDBサーバが 64bit Oracle だったとしても<br />
+Oracle Client はデフォルトでは 32bit になっているようです</p>
+
+<p>powershell から oracle に接続しようとしたときこんな感じになります</p>
+
+<pre><code># アセンブリのロード
+[void][System.Reflection.Assembly]::LoadWithPartialName(&quot;System.Data.OracleClient&quot;)
+
+# 接続
+$conn_str = &quot;Data Source=saoDB;User ID=sao;Password=password;Integrated Security=false;&quot;
+$ora_conn = New-Object System.Data.OracleClient.OracleConnection($conn_str)
+
+# インスタンス
+$ora_cmd = New-Object System.Data.OracleClient.OracleCommand
+$ora_cmd.Connection = $ora_conn
+
+# データベースに接続
+$ora_conn.Open()
+</code></pre>
+
+<p>（参考）powerShellからOracleを使う（接続・切断）<br />
+<a href="http://harikofu.blog.fc2.com/blog-entry-114.html">http://harikofu.blog.fc2.com/blog-entry-114.html</a></p>
+
+<p>このDB接続直後に、64bit のPowerShell だと<br />
+こんなエラーが出ます</p>
+
+<pre><code>&quot;0&quot; 個の引数を指定して &quot;Open&quot; を呼び出し中に例外が発生しました: &quot;Oracle クライアント ライブラリを読み込もうとしましたが、BadImageFormatException が発行されました。この問題は、32 ビットの Oracle クライアント コンポーネントが
+インストールされている環境で 64 ビット モードを実行すると発生します。&quot;
+発生場所 行:1 文字:22
++ $ora_conn.Open &lt;&lt;&lt;&lt; ()
+    + CategoryInfo          : NotSpecified: (:) []、MethodInvocationException
+    + FullyQualifiedErrorId : DotNetMethodException
+</code></pre>
+
+<p>問題解決方法は2つ</p>
+
+<ul>
+<li>Oracle Client を 64bit版をインストールする（たとえDBサーバ上であっても…</li>
+<li>呼び出す側のPowerShellを 32bit版にする</li>
+</ul>
+
+<p>既存の稼働環境に影響を与えない様にするという意味では<br />
+不毛ですが後者を選択すると波風立てずにコトを済ませられます</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f19%2fabout-powershell-x32-and-x64%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bPowerShell%5d%2032bit%e3%81%a864bit%e3%81%ae%e4%bd%bf%e3%81%84%e5%88%86%e3%81%91&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f19%2fabout-powershell-x32-and-x64%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f19%2fabout-powershell-x32-and-x64%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f19%2fabout-powershell-x32-and-x64%2f&title=%5bPowerShell%5d%2032bit%e3%81%a864bit%e3%81%ae%e4%bd%bf%e3%81%84%e5%88%86%e3%81%91" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2014/04/10/mining-for-value-from-db/" title="[Oracle]テーブル・カラム名が不明でもDBに入っている値を検索したい">[Oracle]テーブル・カラム名が不明でもDBに入っている値を検索したい</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2014.04.10">2014.04.10</time>
@@ -690,33 +793,6 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 
             <hr>
         
-            
-<h2><a href="http://h-sao.com/post/" title="Posts">Posts</a></h2>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2019.07.26">2019.07.26</time>
-    
-</span>
-</footer>
- </footer>
-                
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fpost%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=Posts&amp;url=http%3a%2f%2fh-sao.com%2fpost%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fpost%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fpost%2f&title=Posts" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -724,9 +800,11 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 	<a class="btn newer" href="/page/6/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 7  7</p>
+	<p class="counter"> 7  8</p>
 
 
+	
+	<a class="btn older" href="/page/8/" title=""> &raquo;</a>
 	
 
 </nav>
@@ -785,6 +863,10 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
             <div class="list-group">
                 
                     
+                        <a href="/blog/2019/07/28/how-to-use-hugo-on-docker/" class="list-group-item">[Hugo] Hugoの環境をDocker上で動かす</a><br>
+                    
+                
+                    
                         <a href="/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/" class="list-group-item">[VisualStudio] Visual Studioで使う改行コードを指定する方法</a><br>
                     
                 
@@ -816,10 +898,6 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
                 
                     
                         <a href="/blog/2019/05/29/how-to-install-docker-for-mac/" class="list-group-item">[Docker] Docker for Macをインストールして Ubuntu の起動や停止まで</a><br>
-                    
-                
-                    
-                        <a href="/blog/2019/04/30/recommended-extensions-user-agent-swither-in-chrome/" class="list-group-item">[Chrome] Google Chromeでモバイル画面を見る User-Agent Swither for Chrome</a><br>
                     
                 
             </div>
@@ -934,9 +1012,9 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/docker" style="font-size: 11px;">
+                    <a href="http://h-sao.com//tags/docker" style="font-size: 14px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">2</span>
                         docker
                     </a>
                     </u> &nbsp; 
@@ -994,9 +1072,9 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/hugo" style="font-size: 17px;">
+                    <a href="http://h-sao.com//tags/hugo" style="font-size: 20px;">
                     
-                        <span class="badge">3</span>
+                        <span class="badge">4</span>
                         hugo
                     </a>
                     </u> &nbsp; 
@@ -1024,9 +1102,9 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/macos" style="font-size: 11px;">
+                    <a href="http://h-sao.com//tags/macos" style="font-size: 14px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">2</span>
                         macos
                     </a>
                     </u> &nbsp; 

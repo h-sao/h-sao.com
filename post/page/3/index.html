@@ -69,6 +69,129 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/" title="[Android] 謎のエラー「Unable to start debugging.」が出たときの対応">[Android] 謎のエラー「Unable to start debugging.」が出たときの対応</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.18">2017.08.18</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/cpp">cpp</a>
+        , 
+        
+        <a href="http://h-sao.com/tags/visualstudio">visualstudio</a>
+        , 
+        
+        <a href="http://h-sao.com/tags/android">android</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<h2 id="androidデバッグで実行時エラー">Androidデバッグで実行時エラー</h2>
+
+<p>環境</p>
+
+<ul>
+<li>Windows10 x64</li>
+<li>Visual Studio 2017</li>
+<li>Project type: Native-Activity Application (Android)</li>
+</ul>
+
+<p>ある時…Visual Studio で作っている Android プロジェクトが、実行時エラーになりました</p>
+
+<p><img src="/pic/How-to-fixed-error-Unable-to-start-debugging_00.png" style="border:solid 5px #e6e6e6"/></p>
+
+<blockquote>
+<p>Unable to start debugging. Check your debugger settings by opening project properties and navigating to &lsquo;Configuration Properties&ndash;&gt; Debugging&rsquo;</p>
+</blockquote>
+
+<p>デバック出来ないからね！プロジェクトの設定見てね！的な意味みたいですが<br />
+デバッグモードで動かしてるし…<br />
+一体どこの何の事を言ってるのか判らない…＞＜。</p>
+
+<p>リリースモードならOKなのかしら？と思っても、同様のエラー&rdquo;(-&ldquo;&rdquo;-)&rdquo;</p>
+
+<h2 id="解決案-わたしはこれでは解決しませんでしたが">解決案（わたしはこれでは解決しませんでしたが）</h2>
+
+<p>検索しても、実のある回答は特に出てこず…<br />
+唯一、解決っぽいのが、NVIDIAさんのフォーラムに載ってました</p>
+
+<ul>
+<li><strong>CodeWorks for Android 1R4: Unable to start debugging - NVIDIA DEVELOPER</strong><br />
+<a href="https://devtalk.nvidia.com/default/topic/957019/codeworks-for-android-1r4-unable-to-start-debugging/">https://devtalk.nvidia.com/default/topic/957019/codeworks-for-android-1r4-unable-to-start-debugging/</a></li>
+</ul>
+
+<p>元ネタリンクはMicrosoftさんのGitHub情報みたいです</p>
+
+<ul>
+<li><strong>MEF - GitHub Microsoft/VSProjectSystem</strong><br />
+<a href="https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/mef.md#mef-inside-visual-studio">https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/mef.md#mef-inside-visual-studio</a></li>
+</ul>
+
+<p>簡単に言うと、VSの <strong>Developer Command Prompt</strong> を使って、キャッシュクリアしてみたら？というもの<br />
+やってみました</p>
+
+<ol>
+<li><p>Developer Command Prompt を検索して立ち上げる<br />
+<img src="/pic/How-to-fixed-error-Unable-to-start-debugging_01.png" style="border:solid 5px #e6e6e6"/></p></li>
+
+<li><p>以下のコマンドを打つ</p></li>
+</ol>
+
+<blockquote>
+<p>Devenv /UpdateConfiguration<br />
+Devenv /ClearCache</p>
+</blockquote>
+
+<p><img src="/pic/How-to-fixed-error-Unable-to-start-debugging_02.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>もっともらしい対策なんですけど、わたしの実行時エラーは解決しませんでした<br />
+何がダメなのだろ…((+_+))</p>
+
+<h2 id="わたしが解決した方法">わたしが解決した方法</h2>
+
+<p>で、実際の解決策ですが…<br />
+すみません、散々あーだこーだ書いてますが<br />
+<strong>スタートアッププロジェクトの設定もれ</strong> でした…( ;∀;)<br />
+いやはや、お恥ずかしい…</p>
+
+<p><img src="/pic/How-to-fixed-error-Unable-to-start-debugging_03.png" alt="" /></p>
+
+<p>Androidプロジェクトが参照する、別のプロジェクト達が<br />
+同じソリューションファイルの中に複数存在しています</p>
+
+<p>なのに、Androidプロジェクトを起動プロジェクトに設定しておらず…</p>
+
+<p>ポカミスとはまさにこの事！( ;∀;)</p>
+
+<p>なぜこれに気が付かなかったのか…相当焦ってて、周りが見えてなかったみたいです</p>
+
+<p>二度と同じ過ちを繰り返さないように…＞＜。<br />
+あと、同様のエラーで困ってる人の何かしらの参考になればと思います＞＜。</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f08%2f18%2fhow-to-fixed-error-unable-to-start-debugging%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bAndroid%5d%20%e8%ac%8e%e3%81%ae%e3%82%a8%e3%83%a9%e3%83%bc%e3%80%8cUnable%20to%20start%20debugging.%e3%80%8d%e3%81%8c%e5%87%ba%e3%81%9f%e3%81%a8%e3%81%8d%e3%81%ae%e5%af%be%e5%bf%9c&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f08%2f18%2fhow-to-fixed-error-unable-to-start-debugging%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f08%2f18%2fhow-to-fixed-error-unable-to-start-debugging%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f08%2f18%2fhow-to-fixed-error-unable-to-start-debugging%2f&title=%5bAndroid%5d%20%e8%ac%8e%e3%81%ae%e3%82%a8%e3%83%a9%e3%83%bc%e3%80%8cUnable%20to%20start%20debugging.%e3%80%8d%e3%81%8c%e5%87%ba%e3%81%9f%e3%81%a8%e3%81%8d%e3%81%ae%e5%af%be%e5%bf%9c" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/" title="[Android] Hyper-Vで使うVisual Studio Emulator for Androidの最初の一歩">[Android] Hyper-Vで使うVisual Studio Emulator for Androidの最初の一歩</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.07.27">2017.07.27</time>
@@ -2011,133 +2134,6 @@ OS : Windows 7 / 8 64-bit<br />
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2016/11/15/settings-maya2015-part1/" title="[Maya] Maya2015設定ウィンドウの開き方">[Maya] Maya2015設定ウィンドウの開き方</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.11.15">2016.11.15</time>
-    
-    &middot; 
-        
-        <a href="http://h-sao.com/tags/maya">maya</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>Mayaはいろんな機能がありますね…<br />
-設定の開き方すら判らないという恥ずかしい思いをよくしているので、いざというときの自分のメモです</p>
-
-<p>記載環境は、Maya2015 on Windows10 です</p>
-
-<h2 id="レンダリングエンジンの変更">レンダリングエンジンの変更</h2>
-
-<p>Mayaのデフォルトレンダリングは <strong>OpenGL</strong> になっています<br />
-<strong>DirectX11</strong> に変更する方法</p>
-
-<ol>
-<li><p>プリファレンスウィンドウを開きます<br />
-<strong>Windows</strong><br />
-　&gt; <strong>Settings/Prederences</strong><br />
-　　&gt; <strong>Preferences</strong><br />
-<img src="/pic/Settings-Maya2015-part1_00.png" style="border:solid 5px #e6e6e6"/></p></li>
-
-<li><p><strong>Display</strong> カテゴリの <strong>Viewport 2.0</strong> に<br />
-Rendering engine を変更できるドロップダウンリストがあるので、そこで変更できる<br />
-<img src="/pic/Settings-Maya2015-part1_01.png" style="border:solid 5px #e6e6e6"/></p></li>
-</ol>
-
-<h2 id="レンダー設定">レンダー設定</h2>
-
-<p>上記はレンダリングエンジンについてでしたが、レンダリングの設定を触るところはまた別の箇所になっています</p>
-
-<ol>
-<li><p>レンダー設定のウィンドウを開きます<br />
-<strong>Windows</strong><br />
-　&gt; <strong>Rendering Editors</strong><br />
-　　&gt; <strong>Render Settings</strong><br />
-<img src="/pic/Settings-Maya2015-part1_04.png" style="border:solid 5px #e6e6e6"/></p></li>
-
-<li><p>レンダー設定ウィンドウ<br />
-<img src="/pic/Settings-Maya2015-part1_05.png" style="border:solid 5px #e6e6e6"/></p></li>
-
-<li><p>使うレンダリングの設定を、ここで選ぶことが出来ます<br />
-わたしの場合は Maya Hardware 2.0 を選択したりしてます<br />
-<img src="/pic/Settings-Maya2015-part1_06.png" alt="" /></p></li>
-</ol>
-
-<h2 id="ハードウェアレンダラ2-0設定">ハードウェアレンダラ2.0設定</h2>
-
-<p>浮動小数レンダーターゲットを有効化したいとき</p>
-
-<blockquote>
-<p>この画面は、Maya2015固有みたいです</p>
-</blockquote>
-
-<ol>
-<li><p>Mayaの作業画面（ビューポート）の <strong>Renderer</strong> の <strong>Viewport2.0</strong> の横にある、四角いチェックを押してみます<br />
-<img src="/pic/Settings-Maya2015-part1_02.png" alt="" /></p></li>
-
-<li><p><strong>Hardware Renderer 2.0 Settings</strong> のウィンドウが表示されます<br />
-<img src="/pic/Settings-Maya2015-part1_03.png" style="border:solid 5px #e6e6e6"/></p></li>
-
-<li><p>精度を上げた浮動小数レンダリングをするには<br />
-<strong>Floating Point Render Target</strong> の Enable にチェックを入れます<br />
-フォーマットは、16bit と 32bit が選択できました</p></li>
-</ol>
-
-<h2 id="カメラの設定">カメラの設定</h2>
-
-<ol>
-<li><p>カメラアトリビュートを出すには<br />
-Mayaの作業画面（ビューポート）の <strong>View</strong> の <strong>Select Camera</strong> を選択します<br />
-<img src="/pic/Settings-Maya2015-part1_07.png" alt="" /></p></li>
-
-<li><p><strong>Attribute Editor</strong> がぽこっと現れます<br />
-違うものが現れたときには、<br />
-横のタブに <strong>persp</strong>, <strong>perspShape</strong><br />
-縦のタブに <strong>Channel Box/Layer Editor</strong>, <strong>Attribute Editor</strong> があるので<br />
-開きたいものを選択します<br />
-<img src="/pic/Settings-Maya2015-part1_08.png" alt="" /></p></li>
-</ol>
-
-<h2 id="インストールされているプラグイン">インストールされているプラグイン</h2>
-
-<ol>
-<li><p>プラグインマネージャを開きます<br />
-<strong>Windows</strong><br />
-　&gt; <strong>Settings/Prederences</strong><br />
-　　&gt; <strong>Plug-in Manager</strong><br />
-<img src="/pic/Settings-Maya2015-part1_09.png" style="border:solid 5px #e6e6e6"/></p></li>
-
-<li><p>プラグイン一覧がここで見れます<br />
-<img src="/pic/Settings-Maya2015-part1_10.png" style="border:solid 5px #e6e6e6"/></p></li>
-</ol>
-
-<p>自分の必要なメモ書きでした<br />
-Mayaは奥が深いですね～</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f11%2f15%2fsettings-maya2015-part1%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bMaya%5d%20Maya2015%e8%a8%ad%e5%ae%9a%e3%82%a6%e3%82%a3%e3%83%b3%e3%83%89%e3%82%a6%e3%81%ae%e9%96%8b%e3%81%8d%e6%96%b9&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f11%2f15%2fsettings-maya2015-part1%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f11%2f15%2fsettings-maya2015-part1%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f11%2f15%2fsettings-maya2015-part1%2f&title=%5bMaya%5d%20Maya2015%e8%a8%ad%e5%ae%9a%e3%82%a6%e3%82%a3%e3%83%b3%e3%83%89%e3%82%a6%e3%81%ae%e9%96%8b%e3%81%8d%e6%96%b9" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
@@ -2209,6 +2205,10 @@ Mayaは奥が深いですね～</p>
             <div class="list-group">
                 
                     
+                        <a href="/blog/2019/07/28/how-to-use-hugo-on-docker/" class="list-group-item">[Hugo] Hugoの環境をDocker上で動かす</a><br>
+                    
+                
+                    
                         <a href="/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/" class="list-group-item">[VisualStudio] Visual Studioで使う改行コードを指定する方法</a><br>
                     
                 
@@ -2240,10 +2240,6 @@ Mayaは奥が深いですね～</p>
                 
                     
                         <a href="/blog/2019/05/29/how-to-install-docker-for-mac/" class="list-group-item">[Docker] Docker for Macをインストールして Ubuntu の起動や停止まで</a><br>
-                    
-                
-                    
-                        <a href="/blog/2019/04/30/recommended-extensions-user-agent-swither-in-chrome/" class="list-group-item">[Chrome] Google Chromeでモバイル画面を見る User-Agent Swither for Chrome</a><br>
                     
                 
             </div>
@@ -2358,9 +2354,9 @@ Mayaは奥が深いですね～</p>
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/docker" style="font-size: 11px;">
+                    <a href="http://h-sao.com//tags/docker" style="font-size: 14px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">2</span>
                         docker
                     </a>
                     </u> &nbsp; 
@@ -2418,9 +2414,9 @@ Mayaは奥が深いですね～</p>
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/hugo" style="font-size: 17px;">
+                    <a href="http://h-sao.com//tags/hugo" style="font-size: 20px;">
                     
-                        <span class="badge">3</span>
+                        <span class="badge">4</span>
                         hugo
                     </a>
                     </u> &nbsp; 
@@ -2448,9 +2444,9 @@ Mayaは奥が深いですね～</p>
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/macos" style="font-size: 11px;">
+                    <a href="http://h-sao.com//tags/macos" style="font-size: 14px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">2</span>
                         macos
                     </a>
                     </u> &nbsp; 

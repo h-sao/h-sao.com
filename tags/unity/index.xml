@@ -18,7 +18,7 @@
       
       <guid>http://h-sao.com/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/</guid>
       <description>環境
- WIndows10 Visual Studio 2019 Unity 2018  元々これを調べたきっかけは、Unityで作ったプロジェクトファイルを開いたときに
+ Windows10 Visual Studio 2019 Unity 2018  元々これを調べたきっかけは、Unityで作ったプロジェクトファイルを開いたときに
 改行コード に関する警告が必ず出ていたからです
  There are inconsistent line endings in the &amp;lsquo;Assets/Script/xxxxx.cs&amp;rsquo; script. Some are Mac OS X (UNIX) and some are Windows.
  Windowsで作業してたとしても、Unityのプロジェクトはで作られたソースコードは
