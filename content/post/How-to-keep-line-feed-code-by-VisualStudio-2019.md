@@ -7,7 +7,7 @@ tags = ["Unity", "VisualStudio"]
 
 環境
 
-- WIndows10
+- Windows10
 - Visual Studio 2019
 - Unity 2018
 
