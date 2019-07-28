@@ -6,10 +6,33 @@
     <description>Recent content in Unity on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 19 Jun 2019 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jul 2019 17:00:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/tags/unity/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[VisualStudio] Visual Studioで使う改行コードを指定する方法</title>
+      <link>http://h-sao.com/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/</link>
+      <pubDate>Fri, 26 Jul 2019 17:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/</guid>
+      <description>環境
+ WIndows10 Visual Studio 2019 Unity 2018  元々これを調べたきっかけは、Unityで作ったプロジェクトファイルを開いたときに
+改行コード に関する警告が必ず出ていたからです
+ There are inconsistent line endings in the &amp;lsquo;Assets/Script/xxxxx.cs&amp;rsquo; script. Some are Mac OS X (UNIX) and some are Windows.
+ Windowsで作業してたとしても、Unityのプロジェクトはで作られたソースコードは
+改行コードが LF なんですよね
+Visual Studio のデフォルトは CR+LF
+それで改行コードが混じってますよ～とVSが警告出してくれてたんですね。。。
+プロジェクト内では、Windows と macOC が入り乱れている状態なので
+CR+LF に統一も出来ず
+LFに統一するしかない…
+そんなときは、.editorcongfig ファイルを作成するのがおススメです！
+.editorcongfig ファイル [*] end_of_line = lf charset = utf-8-bom   end_of_line で改行コードを LF 指定にしています
+あとUnityで日本語を扱うなら、Bom付きのUTF-8 が良いらしい（？）
+ この.</description>
+    </item>
     
     <item>
       <title>[Unity] エディタを開く前にUnityのバージョンを調べる方法</title>

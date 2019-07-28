@@ -69,6 +69,94 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/" title="[VisualStudio] Visual Studioで使う改行コードを指定する方法">[VisualStudio] Visual Studioで使う改行コードを指定する方法</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2019.07.26">2019.07.26</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/unity">unity</a>
+        , 
+        
+        <a href="http://h-sao.com/tags/visualstudio">visualstudio</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>環境</p>
+
+<ul>
+<li>WIndows10</li>
+<li>Visual Studio 2019</li>
+<li>Unity 2018</li>
+</ul>
+
+<p>元々これを調べたきっかけは、Unityで作ったプロジェクトファイルを開いたときに<br />
+<strong>改行コード</strong> に関する警告が必ず出ていたからです</p>
+
+<blockquote>
+<p>There are inconsistent line endings in the &lsquo;Assets/Script/xxxxx.cs&rsquo; script. Some are Mac OS X (UNIX) and some are Windows.</p>
+</blockquote>
+
+<p>Windowsで作業してたとしても、Unityのプロジェクトはで作られたソースコードは<br />
+改行コードが <strong>LF</strong> なんですよね<br />
+Visual Studio のデフォルトは <strong>CR+LF</strong></p>
+
+<p>それで改行コードが混じってますよ～とVSが警告出してくれてたんですね。。。</p>
+
+<p>プロジェクト内では、Windows と macOC が入り乱れている状態なので<br />
+<strong>CR+LF</strong> に統一も出来ず<br />
+<strong>LF</strong>に統一するしかない…</p>
+
+<p>そんなときは、<code>.editorcongfig</code> ファイルを作成するのがおススメです！</p>
+
+<h3 id="editorcongfig-ファイル">.editorcongfig ファイル</h3>
+
+<pre><code>[*]
+end_of_line = lf
+charset = utf-8-bom
+</code></pre>
+
+<blockquote>
+<p><code>end_of_line</code> で改行コードを LF 指定にしています<br />
+あとUnityで日本語を扱うなら、Bom付きのUTF-8 が良いらしい（？）</p>
+</blockquote>
+
+<p>この<code>.editorcongfig</code> ファイルをUnityプロジェクト直下に置けばOK</p>
+
+<p>Visual Stusio で編集したコードでも、LFの改行コードとなりました</p>
+
+<p>警告無く作業が出来るようになって、小さなストレスから解放♪</p>
+
+<ul>
+<li>（参考）Unityと改行コード - エフアンダーバー 個人開発の記録<br />
+<a href="https://www.f-sp.com/entry/2017/04/06/023709">https://www.f-sp.com/entry/2017/04/06/023709</a></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f07%2f26%2fhow-to-keep-line-feed-code-by-visualstudio-2019%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bVisualStudio%5d%20Visual%20Studio%e3%81%a7%e4%bd%bf%e3%81%86%e6%94%b9%e8%a1%8c%e3%82%b3%e3%83%bc%e3%83%89%e3%82%92%e6%8c%87%e5%ae%9a%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f07%2f26%2fhow-to-keep-line-feed-code-by-visualstudio-2019%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f07%2f26%2fhow-to-keep-line-feed-code-by-visualstudio-2019%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f07%2f26%2fhow-to-keep-line-feed-code-by-visualstudio-2019%2f&title=%5bVisualStudio%5d%20Visual%20Studio%e3%81%a7%e4%bd%bf%e3%81%86%e6%94%b9%e8%a1%8c%e3%82%b3%e3%83%bc%e3%83%89%e3%82%92%e6%8c%87%e5%ae%9a%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2019/06/19/how-to-check-unity-version-without-open-project/" title="[Unity] エディタを開く前にUnityのバージョンを調べる方法">[Unity] エディタを開く前にUnityのバージョンを調べる方法</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2019.06.19">2019.06.19</time>
@@ -1017,7 +1105,7 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
   <p  class="address">
     <a href="http://mvp.microsoft.com/ja-jp/mvp/Akiko%20Kawai-4027291" target="_blank">
     <img src="http://h-sao.com/pic/MVPLogo.png"  width="120" border="0" alt="mvp_logo" hspace="5" /></a><br>
-	  Microsoft MVP for Developer Technologies [Jul,2018-Jun,2019]<br>
+	  Microsoft MVP for Developer Technologies [Jul,2018-Jun,2020]<br>
 	  Microsoft MVP for Windows Development<br> [Jan,2016-Jun,2018]<br>
       Microsoft MVP for Windows Platform Development<br> [Jan,2015-Dec,2015]<br>
       Microsoft MVP for Client Development<br> [Jan,2014-Dec,2014]<br>
@@ -1033,6 +1121,10 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
                 <h2 class="panel-title">Recent Posts</h2>
             </div>
             <div class="list-group">
+                
+                    
+                        <a href="/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/" class="list-group-item">[VisualStudio] Visual Studioで使う改行コードを指定する方法</a><br>
+                    
                 
                     
                         <a href="/blog/2019/07/18/how-to-take-a-windows10-region-screenshot-by-built-in-tool/" class="list-group-item">[Windows10] 範囲選択スクリーンショットを撮る機能の紹介</a><br>
@@ -1066,10 +1158,6 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
                 
                     
                         <a href="/blog/2019/04/30/recommended-extensions-user-agent-swither-in-chrome/" class="list-group-item">[Chrome] Google Chromeでモバイル画面を見る User-Agent Swither for Chrome</a><br>
-                    
-                
-                    
-                        <a href="/blog/2019/03/27/how-to-use-optional-nakamecpp-vol13/" class="list-group-item">[C&#43;&#43;] std::optionalの使い方を紹介しました</a><br>
                     
                 
             </div>
@@ -1404,9 +1492,9 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/unity" style="font-size: 32px;">
+                    <a href="http://h-sao.com//tags/unity" style="font-size: 35px;">
                     
-                        <span class="badge">8</span>
+                        <span class="badge">9</span>
                         unity
                     </a>
                     </u> &nbsp; 
@@ -1424,9 +1512,9 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/visualstudio" style="font-size: 14px;">
+                    <a href="http://h-sao.com//tags/visualstudio" style="font-size: 17px;">
                     
-                        <span class="badge">2</span>
+                        <span class="badge">3</span>
                         visualstudio
                     </a>
                     </u> &nbsp; 
