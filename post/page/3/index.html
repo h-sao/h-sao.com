@@ -69,94 +69,6 @@
         
         
             
-<h1><a href="http://h-sao.com/blog/2017/10/20/zoneid_and_powershell_excutionpolicy/" title="[PowerShell] ZoneIDとPowerShellの実行ポリシー">[PowerShell] ZoneIDとPowerShellの実行ポリシー</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.10.20">2017.10.20</time>
-    
-    &middot; 
-        
-        <a href="http://h-sao.com/tags/powershell">powershell</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>PowerShellでちょっとしたツールを動かそうと思って、初歩的なところであれ？となったので、書いておきます</p>
-
-<p>PowerShellの実行ポリシー（Execution Policy）は、</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#f92672">&gt;</span> Get<span style="color:#f92672">-</span>ExecutionPolicy</code></pre></td></tr></table>
-</div>
-</div>
-<p>このコマンドで確認できます</p>
-
-<p>Windows10のデフォルトでは <strong>Restricted</strong> になっていて、ps1 ファイルをコマンドライン上から実行することが出来ません<br />
-なので</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#f92672">&gt;</span> Set<span style="color:#f92672">-</span>ExecutionPolicy RemoteSigned</code></pre></td></tr></table>
-</div>
-</div>
-<p>を実行して、 <strong>RemoteSigned</strong> にセキュリティポリシーを変更します</p>
-
-<p>しかし、<strong>RemoteSigned</strong> になってることを確認したのに、<br />
-しかしなぜか、ps1 ファイルの実行時にセキュリティエラーとなってしまいました</p>
-
-<p>なんだこれ（↓）は…？</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#960050;background-color:#1e0010">セキュリティ</span> <span style="color:#960050;background-color:#1e0010">エラー</span><span style="color:#f92672">:</span> PSSecurityException</code></pre></td></tr></table>
-</div>
-</div>
-<p>なんでだろーと思ってたのですが、何てことはない<br />
-実行しようとしてた ps1 ファイルは、インターネット越しに入手したものでした<br />
-（自分のサイトから落としてきたんだけどね）</p>
-
-<p>こんな感じ↓↓↓</p>
-
-<p><img src="/pic/ZoneID_and_PowerShell_ExcutionPolicy_00.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>どうやら、インターネット越しに入手したファイルには <strong>ZoneID</strong> というのが付与されるらしく<br />
-Windowsはローカルファイルと区別出来るようにしてくれてるんですね～</p>
-
-<p>ローカルファイルとして扱いたい時には、ポチっと「<strong>ブロックの解除</strong>」を押せばOKです</p>
-
-<p>ちゃんと、ps1 ファイルが動作するようになりました(^^♪</p>
-
-<p>ZoneID…知らなかった…＞＜。</p>
-
-<p>参考：<br />
-- WindowsでPowerShellスクリプトの実行セキュリティポリシーを変更する - @IT<br />
-  <a href="http://www.atmarkit.co.jp/ait/articles/0805/16/news139.html">http://www.atmarkit.co.jp/ait/articles/0805/16/news139.html</a></p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f10%2f20%2fzoneid_and_powershell_excutionpolicy%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bPowerShell%5d%20ZoneID%e3%81%a8PowerShell%e3%81%ae%e5%ae%9f%e8%a1%8c%e3%83%9d%e3%83%aa%e3%82%b7%e3%83%bc&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f10%2f20%2fzoneid_and_powershell_excutionpolicy%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f10%2f20%2fzoneid_and_powershell_excutionpolicy%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f10%2f20%2fzoneid_and_powershell_excutionpolicy%2f&title=%5bPowerShell%5d%20ZoneID%e3%81%a8PowerShell%e3%81%ae%e5%ae%9f%e8%a1%8c%e3%83%9d%e3%83%aa%e3%82%b7%e3%83%bc" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
-            
 <h1><a href="http://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/" title="[Android] 謎のエラー「Unable to start debugging.」が出たときの対応">[Android] 謎のエラー「Unable to start debugging.」が出たときの対応</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.08.18">2017.08.18</time>
@@ -2128,6 +2040,100 @@ Outlookクライアントにアカウントを登録したので、これを削�
 
             <hr>
         
+            
+<h1><a href="http://h-sao.com/blog/2016/11/16/ue4-install-requirements/" title="[UE4] Unreal Engine4のインストール要件">[UE4] Unreal Engine4のインストール要件</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.11.16">2016.11.16</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/ue4">ue4</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p>仕事上、色んな Game Engine を試しておりまして<br />
+先日、クリーンで、比較的低スペックな Windows10 PC に<br />
+Epic さんの Unreal Engine 4 をインストールしたときに、はふん？と思った件のメモです</p>
+
+<hr />
+
+<p><strong>Enreal Engine 4 のダウンロード</strong> はダッシュボードから出来ます (ログインが必要)</p>
+
+<ul>
+<li><strong>Enreal Engine 4 ダウンロード</strong><br />
+<a href="https://www.unrealengine.com/dashboard">https://www.unrealengine.com/dashboard</a></li>
+</ul>
+
+<p><img src="/pic/UE4-install-requirements1.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>迷わず、Windows のプラットフォームを選択！</p>
+
+<p>落としてきた EpicGamesLauncherInstaller-2.12.14-3176191.msi (2016/11/16現在) を実行します</p>
+
+<p>あれ？</p>
+
+<p><img src="/pic/UE4-install-requirements0.png" style="border:solid 5px #e6e6e6"/></p>
+
+<blockquote>
+<p>コンピューターにXINPUT1_3.dll がないため、プログラムを開始できません。この問題を解決するには、プログラムを再インストールしてみてください。</p>
+</blockquote>
+
+<p>はて。。。何やら懐かしい香りのDLL名がエラーに上がっています(￣▽￣)</p>
+
+<p>UE4 のインストール要件って、なんだったっけ？と思ったのですが、ダウンロードの画面には、何も書かれてないんですよね～</p>
+
+<p>よく判らないから、ドキュメントを見てみよう！ということで<br />
+「ハードウェア＆ソフトウェア仕様」のドキュメントサイトを見ていくと<br />
+ソフトウェアのインストール要件が書かれていました</p>
+
+<ul>
+<li><p>ハードウェア＆ソフトウェア仕様<br />
+<a href="https://docs.unrealengine.com/latest/JPN/GettingStarted/RecommendedSpecifications/index.html">https://docs.unrealengine.com/latest/JPN/GettingStarted/RecommendedSpecifications/index.html</a></p>
+
+<ul>
+<li>エンジンの実行環境<br />
+OS : Windows 7 / 8 64-bit<br />
+<strong>DirectX Runtime : <a href="https://www.microsoft.com/en-us/download/details.aspx?id=8109">DirectX End-User Runtimes (June 2010)</a></strong></li>
+</ul></li>
+</ul>
+
+<p>おぉぉ、<strong>DXのランタイム</strong>！お前さんだったのかぁ～</p>
+
+<p>というわけで、<strong>DirectX End-User Runtimes (June 2010)</strong> を入れたら、すんなり UE4 のインストールは出来ました(^o^)</p>
+
+<p>ランチャーのランタイムエラーが判りにくいよ…と思ったけど<br />
+これくらいのことはゲーム開発する人にとったら、許容範囲ですかね(^^;)</p>
+
+<p>あと実は、UE4 は Win10 を<br />
+今日現在で、オフィシャルにはサポートしてないのかぁと思いました</p>
+
+<p>単にドキュメントの更新の問題かしら？？？</p>
+
+<p>まぁ今のところ、わたしの Windows10 の環境では<br />
+問題なく UE4 の開発環境は動いてるので、特に問題ないです(^^)</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f11%2f16%2fue4-install-requirements%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bUE4%5d%20Unreal%20Engine4%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e8%a6%81%e4%bb%b6&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f11%2f16%2fue4-install-requirements%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f11%2f16%2fue4-install-requirements%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f11%2f16%2fue4-install-requirements%2f&title=%5bUE4%5d%20Unreal%20Engine4%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e8%a6%81%e4%bb%b6" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
 
         <div class="pagination">
 <nav>
@@ -2136,7 +2142,7 @@ Outlookクライアントにアカウントを登録したので、これを削�
 	<a class="btn newer" href="/post/page/2/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 3  8</p>
+	<p class="counter"> 3  7</p>
 
 
 	
@@ -2217,10 +2223,6 @@ Outlookクライアントにアカウントを登録したので、これを削�
                     
                 
                     
-                        <a href="/blog/2019/06/26/_a_technique-in-handling-of-/" class="list-group-item">[macOS] ドラッグアンドドロップが出来なくなった時の対応策</a><br>
-                    
-                
-                    
                         <a href="/blog/2019/06/26/how-to-set-up-my-new-macos/" class="list-group-item">[macOS] 自分メモ！Mac手に入れたら最初にすること(多少Windows風)</a><br>
                     
                 
@@ -2234,6 +2236,10 @@ Outlookクライアントにアカウントを登録したので、これを削�
                 
                     
                         <a href="/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/" class="list-group-item">[macOS] Homebrewインストールログ2019版</a><br>
+                    
+                
+                    
+                        <a href="/blog/2019/05/29/how-to-install-docker-for-mac/" class="list-group-item">[Docker] Docker for Macをインストールして Ubuntu の起動や停止まで</a><br>
                     
                 
             </div>
@@ -2438,9 +2444,9 @@ Outlookクライアントにアカウントを登録したので、これを削�
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/macos" style="font-size: 17px;">
+                    <a href="http://h-sao.com//tags/macos" style="font-size: 14px;">
                     
-                        <span class="badge">3</span>
+                        <span class="badge">2</span>
                         macos
                     </a>
                     </u> &nbsp; 

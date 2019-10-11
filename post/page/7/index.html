@@ -69,130 +69,6 @@
         
         
             
-<h1><a href="http://h-sao.com/blog/2014/07/02/sort-arrays-and-retrieve-one-by-one-for-powershell/" title="[PowerShell] 連想配列をソートしてforeachで一個づつ取り出す">[PowerShell] 連想配列をソートしてforeachで一個づつ取り出す</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2014.07.02">2014.07.02</time>
-    
-    &middot; 
-        
-        <a href="http://h-sao.com/tags/powershell">powershell</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>PowerShell で連想配列を用いた時のソート＆foreach のサンプルがなかなか探せなかったのでメモします</p>
-
-<p>とある連想配列</p>
-
-<pre><code>PS C:\&gt; $tbl = @{
-&gt;&gt;       k00 = &quot;orange&quot;;
-&gt;&gt;       k01 = &quot;peach&quot;;
-&gt;&gt;       k02 = &quot;apple&quot;
-&gt;&gt;  }
-</code></pre>
-
-<p>出力は簡単</p>
-
-<pre><code>PS C:\&gt; $tbl
-
-Name                           Value
-----                           -----
-k01                            peach
-k02                            apple
-k00                            orange
-</code></pre>
-
-<p>ソートの出力も簡単</p>
-
-<pre><code>PS C:\&gt; $tbl.GetEnumerator() | Sort-Object Value
-
-Name                           Value
-----                           -----
-k02                            apple
-k00                            orange
-k01                            peach
-
-# もしくは
-
-PS C:\&gt; $tbl.GetEnumerator() | sort Value
-
-Name                           Value
-----                           -----
-k02                            apple
-k00                            orange
-k01                            peach
-</code></pre>
-
-<p>これを一つづつ取り出して処理したい</p>
-
-<h2 id="単に-foreach-で取り出すとき">単に foreach で取り出すとき</h2>
-
-<pre><code>PS C:\&gt; foreach( $k in $tbl.Keys ){
-&gt;&gt;   Write-Output $k
-&gt;&gt;   Write-Output $tbl[ $k ]
-&gt;&gt;   Write-Output '-----'
-&gt;&gt; }
-
-k01
-peach
------
-k02
-apple
------
-k00
-orange
------
-</code></pre>
-
-<h2 id="さらにソートして-foreach-で取り出すとき">さらにソートして foreach で取り出すとき</h2>
-
-<pre><code>PS C:\&gt; $tbl.GetEnumerator() | sort Value |
-&gt;&gt;   ForEach-Object{
-&gt;&gt;       Write-Output $_.Name
-&gt;&gt;       Write-Output $_.Value
-&gt;&gt;       Write-Output '-----'
-&gt;&gt;   }
-
-k02
-apple
------
-k00
-orange
------
-k01
-peach
------
-</code></pre>
-
-<p><strong>ForEach-Object</strong> を使いました
-ただの foreach() でも出来ると思うんですけど、私的用途が満たせたので、これ以上は調べてないです</p>
-
-<p>検索で、「powershell foreach ソート -perl」 などで検索しても、日本語の情報があまり出てこなかったので、参考になれば幸いです(^^)</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f02%2fsort-arrays-and-retrieve-one-by-one-for-powershell%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bPowerShell%5d%20%e9%80%a3%e6%83%b3%e9%85%8d%e5%88%97%e3%82%92%e3%82%bd%e3%83%bc%e3%83%88%e3%81%97%e3%81%a6foreach%e3%81%a7%e4%b8%80%e5%80%8b%e3%81%a5%e3%81%a4%e5%8f%96%e3%82%8a%e5%87%ba%e3%81%99&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f02%2fsort-arrays-and-retrieve-one-by-one-for-powershell%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f02%2fsort-arrays-and-retrieve-one-by-one-for-powershell%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f02%2fsort-arrays-and-retrieve-one-by-one-for-powershell%2f&title=%5bPowerShell%5d%20%e9%80%a3%e6%83%b3%e9%85%8d%e5%88%97%e3%82%92%e3%82%bd%e3%83%bc%e3%83%88%e3%81%97%e3%81%a6foreach%e3%81%a7%e4%b8%80%e5%80%8b%e3%81%a5%e3%81%a4%e5%8f%96%e3%82%8a%e5%87%ba%e3%81%99" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
-            
 <h1><a href="http://h-sao.com/blog/2014/04/19/about-powershell-x32-and-x64/" title="[PowerShell] 32bitと64bitの使い分け">[PowerShell] 32bitと64bitの使い分け</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2014.04.19">2014.04.19</time>
@@ -860,6 +736,75 @@ git reset <span style="color:#f92672">--</span>hard origin<span style="color:#f9
 
             <hr>
         
+            
+<h1><a href="http://h-sao.com/blog/2008/07/29/how-to-divide-without-division/" title="[C/C&#43;&#43;] 割り算を使わないで割り算する方法">[C/C&#43;&#43;] 割り算を使わないで割り算する方法</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2008.07.29">2008.07.29</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/cpp">cpp</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p>ビット・シフトの計算の練習問題＜上級編＞です</p>
+
+<p><strong>Q. 割り算をシフトと引き算のみで表現しなさい</strong></p>
+
+<p><strong>A. 回答</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 1</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 2</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 5</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 9</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">10</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">11</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">12</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">13</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">14</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">15</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">16</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">17</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">18</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">19</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">20</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">21</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// x / y = ans
+</span><span style="color:#75715e">// x: 分子
+</span><span style="color:#75715e">// y: 分母
+</span><span style="color:#75715e">// ans:答え
+</span><span style="color:#75715e"></span>
+ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+ <span style="color:#66d9ef">while</span>( x <span style="color:#f92672">&gt;=</span> y ){
+    dammy <span style="color:#f92672">=</span> y;
+    syou <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">while</span>( x <span style="color:#f92672">&gt;=</span> dammy ){            <span style="color:#75715e">// 割られる数を超えるまで割る数をシフト
+</span><span style="color:#75715e"></span>        dammy <span style="color:#f92672">=</span> dammy <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">1</span>;
+        syou  <span style="color:#f92672">=</span> syou  <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">1</span>;
+    }
+    
+    dammy <span style="color:#f92672">=</span> dammy <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span>;             <span style="color:#75715e">// 超える手前まで戻す
+</span><span style="color:#75715e"></span>    syou <span style="color:#f92672">=</span> syou <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span>;
+    
+    x <span style="color:#f92672">=</span> x <span style="color:#f92672">-</span> dammy;                  <span style="color:#75715e">// 筆算
+</span><span style="color:#75715e"></span>    ans <span style="color:#f92672">=</span> ans <span style="color:#f92672">+</span> syou;               <span style="color:#75715e">// 答え
+</span><span style="color:#75715e"></span> }
+ printf( <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;%d ・・・%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans, x );</code></pre></td></tr></table>
+</div>
+</div>
+<p>新人研修などにどうでしょう？</p>
+
+<p>※ 実は最後に足し算使ってますね…(&gt;_&lt;)</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2008%2f07%2f29%2fhow-to-divide-without-division%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2fC%2b%2b%5d%20%e5%89%b2%e3%82%8a%e7%ae%97%e3%82%92%e4%bd%bf%e3%82%8f%e3%81%aa%e3%81%84%e3%81%a7%e5%89%b2%e3%82%8a%e7%ae%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2008%2f07%2f29%2fhow-to-divide-without-division%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2008%2f07%2f29%2fhow-to-divide-without-division%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2008%2f07%2f29%2fhow-to-divide-without-division%2f&title=%5bC%2fC%2b%2b%5d%20%e5%89%b2%e3%82%8a%e7%ae%97%e3%82%92%e4%bd%bf%e3%82%8f%e3%81%aa%e3%81%84%e3%81%a7%e5%89%b2%e3%82%8a%e7%ae%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
 
         <div class="pagination">
 <nav>
@@ -868,11 +813,9 @@ git reset <span style="color:#f92672">--</span>hard origin<span style="color:#f9
 	<a class="btn newer" href="/post/page/6/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 7  8</p>
+	<p class="counter"> 7  7</p>
 
 
-	
-	<a class="btn older" href="/post/page/8/" title=""> &raquo;</a>
 	
 
 </nav>
@@ -949,10 +892,6 @@ git reset <span style="color:#f92672">--</span>hard origin<span style="color:#f9
                     
                 
                     
-                        <a href="/blog/2019/06/26/_a_technique-in-handling-of-/" class="list-group-item">[macOS] ドラッグアンドドロップが出来なくなった時の対応策</a><br>
-                    
-                
-                    
                         <a href="/blog/2019/06/26/how-to-set-up-my-new-macos/" class="list-group-item">[macOS] 自分メモ！Mac手に入れたら最初にすること(多少Windows風)</a><br>
                     
                 
@@ -966,6 +905,10 @@ git reset <span style="color:#f92672">--</span>hard origin<span style="color:#f9
                 
                     
                         <a href="/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/" class="list-group-item">[macOS] Homebrewインストールログ2019版</a><br>
+                    
+                
+                    
+                        <a href="/blog/2019/05/29/how-to-install-docker-for-mac/" class="list-group-item">[Docker] Docker for Macをインストールして Ubuntu の起動や停止まで</a><br>
                     
                 
             </div>
@@ -1170,9 +1113,9 @@ git reset <span style="color:#f92672">--</span>hard origin<span style="color:#f9
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/macos" style="font-size: 17px;">
+                    <a href="http://h-sao.com//tags/macos" style="font-size: 14px;">
                     
-                        <span class="badge">3</span>
+                        <span class="badge">2</span>
                         macos
                     </a>
                     </u> &nbsp; 
