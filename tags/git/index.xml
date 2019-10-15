@@ -6,10 +6,34 @@
     <description>Recent content in Git on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 20 Jun 2019 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 15 Oct 2019 12:00:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Git] Commit&amp;PushしてしまったAuthor情報を変更したい</title>
+      <link>http://h-sao.com/blog/2019/10/15/how-to-fix-git-author/</link>
+      <pubDate>Tue, 15 Oct 2019 12:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2019/10/15/how-to-fix-git-author/</guid>
+      <description>最近、GitKraken を使って更新をしています
+Pro バージョンだとアカウント情報の切り替えが簡単に出来るので
+会社用や個人用に切り替えて作業するのがとても便利です
+しかしたまに切り替え忘れて、本来のアカウントじゃないやつでコミットしてしまって
+意図しないメアドやユーザ名が入ったりして…(-&amp;ldquo;-;A &amp;hellip;アセアセ
+そんなときの変更の方法です
+Author 変更方法 直前のコミットを変更したい場合です
+$ git commit --amend  を使うと、コミット履歴が書き換えられるんですけど
+これで書き換えると、コミットの作者（Author）は変わらず、コミッター（Commiter）が変わるだけです
+Authorを書き換えるには
+$ git commit --amend --author=&amp;quot;Sao Haruka &amp;lt;sao@tmp.com&amp;gt;&amp;quot;  こうすると書き換わります
+こんな感じね↓↓↓
+1234 $ git commit --amend --author=&amp;#34;Sao Haruka &amp;lt;sao@tmp.com&amp;gt;&amp;#34; [feature/xxxxx 9999999999] [WIP] Added hogehoge Date: Thu Oct 10 22:30:00 2019 +0900 1 files changed, 1 insertions(+), 1 deletions(-)   書き換わったー！
+サーバーに push しちゃってるとき もし自分だけの作業ブランチでやってるのであれば、サーバーの履歴を強制的に書き換えることが出来ます
+（共通ブランチでは、強制書き換えはやめよう）
+$ git push -f [repository] [branch]  恐る恐るやってみる</description>
+    </item>
     
     <item>
       <title>[Git] Visual Studio 2019の中のGitコマンドを探せ！</title>
