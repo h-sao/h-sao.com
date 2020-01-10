@@ -6,10 +6,42 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 15 Oct 2019 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jan 2020 12:00:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About me</title>
+      <link>http://h-sao.com/about/</link>
+      <pubDate>Fri, 10 Jan 2020 12:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/about/</guid>
+      <description>Akiko Kawai (a.k.a. Sao Haruka)
+Twitter: @hr_sao
+Github: h-sao
+mail: haruka.sao@gmail.com
+Presentation: Speaker Deck
+Reading list
+Microsoft MVP for Developer Technologies [Jul,2018-Jun,2020]
+Microsoft MVP for Windows Development [Jan,2016-Jun,2018]
+Microsoft MVP for Windows Platform Development [Jan,2015-Dec,2015]
+Microsoft MVP for Client Development [Jan,2014-Dec,2014]
+Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]
+Portrait Japan MVP Community Connection 2017 Autumn - Nov 12, 2017  「Optimized C++!最適化の手法集めました」にて  Before  Before 2015-2016
+meetup app tokyo@2 - Dec 16, 2016  Deep Learning 初心者向けセッション  ebisu_effective_modern.</description>
+    </item>
+    
+    <item>
+      <title>Reading list</title>
+      <link>http://h-sao.com/reading-list/</link>
+      <pubDate>Fri, 10 Jan 2020 12:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/reading-list/</guid>
+      <description>A little note :)
+Now reading  Modren C++チャレンジ technical 1&amp;frasl;9- イシューからはじめよ business 1&amp;frasl;9- 「自分の木」の下で literature 子どもが育つ魔法の言葉 - Children Learn What They Live chid-rasing  Read through 2020 1&amp;frasl;8 勝間式超コントロール思考 bussiness
+1&amp;frasl;3 私たちは子どもに何ができるのか - Helping Children Succeed chid-rasing</description>
+    </item>
     
     <item>
       <title>[Git] Commit&amp;PushしてしまったAuthor情報を変更したい</title>
@@ -118,25 +150,6 @@ Ctrl + v で貼り付けてもOK(・ω・)ノ
 今期もまた楽しく、役立つ何かを発信し続けていければなと、改めて決意したのでした
 今後ともどうぞ、
 よろしくお願いします</description>
-    </item>
-    
-    <item>
-      <title>About me</title>
-      <link>http://h-sao.com/about/</link>
-      <pubDate>Sat, 06 Jul 2019 11:00:00 +0900</pubDate>
-      
-      <guid>http://h-sao.com/about/</guid>
-      <description>Akiko Kawai (a.k.a. Sao Haruka)
-Twitter: @hr_sao
-Github: h-sao
-mail: haruka.sao@gmail.com
-Presentation: Speaker Deck
-Microsoft MVP for Developer Technologies [Jul,2018-Jun,2020]
-Microsoft MVP for Windows Development [Jan,2016-Jun,2018]
-Microsoft MVP for Windows Platform Development [Jan,2015-Dec,2015]
-Microsoft MVP for Client Development [Jan,2014-Dec,2014]
-Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]
-Portrait Japan MVP Community Connection 2017 Autumn - Nov 12, 2017  「Optimized C++!最適化の手法集めました」にて  meetup app tokyo@2 - Dec 16, 2016  Deep Learning 初心者向けセッション  ebisu_effective_modern.</description>
     </item>
     
     <item>
