@@ -1,5 +1,5 @@
 +++
-date = "2019-07-06T11:00:00+09:00"
+date = "2020-01-10T12:00:00+09:00"
 draft = false
 title = "About me"
 tags = [""]
@@ -9,7 +9,8 @@ Akiko Kawai (a.k.a. Sao Haruka)
 Twitter: [@hr_sao](https://twitter.com/hr_sao)  
 Github: [h-sao](https://github.com/h-sao)  
 mail: haruka.sao@gmail.com  
-Presentation: [Speaker Deck](https://speakerdeck.com/harukasao)
+Presentation: [Speaker Deck](https://speakerdeck.com/harukasao)  
+[Reading list](../reading-list/)
 
 
 [Microsoft MVP for Developer Technologies [Jul,2018-Jun,2020]](https://mvp.microsoft.com/ja-jp/PublicProfile/4027291)  
@@ -27,6 +28,11 @@ Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]
 ![](/pic/portrait-mcc2017.jpg)
 
 
+## Before
+
+<details>
+<summary>Before 2015-2016</summary>
+
 ## meetup app tokyo@2 - Dec 16, 2016
 
 - Deep Learning 初心者向けセッション
@@ -40,10 +46,6 @@ Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]
 
 ![](/pic/Portrait-ebisucpp03.png)
 
-## Before
-
-<details>
-<summary>Before 2015</summary>
 
 ## CEDEC2015 - Aug 26, 2015
 
@@ -57,10 +59,14 @@ Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]
 
 ![](/pic/Portrait-Metrocs01.png)
 
-
 </details>
 
 # Slides, Publications
+
+## 2019
+
+Dec 28, 2019 [meetup app osaka@4](http://meetupapp.io/post/meetup-app-osaka-4/)  
+C++20 conceptsの何か
 
 ## 2018
 
@@ -81,6 +87,10 @@ Dec 23, 2017 [meepup app osaka@2](http://meetupapp.io/post/meetup-app-osaka-2/)
 
 Nov 12, 2017 Japan MVP Community Camp（インターナル）  
 Optimized C++!最適化の手法集めました [\[SpeakerDeck\]](https://speakerdeck.com/harukasao/12-optimized-c-plus-plus)
+## Before
+
+<details>
+<summary>Before 2008-2016</summary>
 
 ## 2016
 
@@ -104,12 +114,6 @@ Supported UWP on Xenko
 
 Jan 26, 2016 Microsoft Xbox イベント（インターナル）  
 Open Source Software - Full C# Game Engine "Xenko"
-
-## Before
-
-<details>
-<summary>Before 2015</summary>
-
 
 ## 2015
 
@@ -373,14 +377,14 @@ Work in progress...
 
 # 主催勉強会
 
+- [meetup app tokyo/osaka](http://meetupapp.io) (Nov 21, 2015 - currently)  
+seminar total number 5
+
 - nakame_feature.cpp (Jul 9, 2018 - currently)  
-seminar total number 2
+seminar total number 18
 
 - ebisu_feature.cpp (Nov 29, 2017 - Feb 14, 2018)  
 seminar total number 5
-
-- meetup app tokyo/osaka (Nov 21, 2015 - currently)  
-seminar total number 4
 
 - Unity Style Developer (Oct 29, 2016 - currently)  
 seminar total number 1
@@ -388,11 +392,11 @@ seminar total number 1
 - ebisu_optimized.cpp (Mar 30, 2017 - Nov 9, 2017)  
 seminar total number 15
 
+<details>
+<summary>Before 2008-2016</summary>
+
 - ebisu_effective_modern.cpp (Mar 3, 2016 - Jul 21, 2016)  
 seminar total number 10
-
-<details>
-<summary>Before 2015</summary>
 
 - Metro.cs (Sep 16, 2015 - Jul 15, 2016)  
 seminar total number 2
