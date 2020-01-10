@@ -6,7 +6,9 @@
             <div class="list-group">
                 {{range first 10 .Site.Pages}}
                     {{ if ne ("About me") (.Title) }}
-                        <a href="{{.RelPermalink}}" class="list-group-item">{{ .Title }}</a><br>
+                        {{ if ne ("Reading list") (.Title) }}
+                            <a href="{{.RelPermalink}}" class="list-group-item">{{ .Title }}</a><br>
+                        {{ end }}
                     {{ end }}
                 {{ end }}
             </div>
