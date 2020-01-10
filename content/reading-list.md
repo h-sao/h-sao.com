@@ -1,9 +1,11 @@
 +++
-date = "2020-01-10T012:00:00+09:00"
+date = "2020-01-10T12:00:00+09:00"
 draft = false
 title = "Reading list"
 tags = [""]
 +++
+
+A little note :)
 
 # Now reading
 
