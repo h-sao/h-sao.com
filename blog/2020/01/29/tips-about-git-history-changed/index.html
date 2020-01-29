@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Opensource &middot; Effectiveさお</title>
+        <title>Effectiveさお</title>
         <meta name="author">
         <meta name="description" content="The awesome blog of Sao Haruka.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,33 +52,19 @@
             <a href="http://h-sao.com/about">About me</a>
         </div>
 
+
 <div class="container clearfix">
     <main role="main" class="content">
-        <a class="btn home" href="http://h-sao.com/" title="">&laquo; </a>
-        <div align="center">
-            <h1>
-                &quot;<script language="JavaScript"><!--
-                var $dir = location.href.split("/");
-                var $dir2 = $dir[$dir.length -2];
-                document.write($dir2);
-                </script>&quot;
-            </h1>
-        </div>
-        <br>
-
-        
-        
+        <article class="post">
+            <a class="btn home" href="http://h-sao.com/" title="">&laquo; </a>
             
-<h1><a href="http://h-sao.com/blog/2015/11/21/meetup-app1-opensource/" title="[勉強会] meetup app@1 でオープンソースについて発表しました">[勉強会] meetup app@1 でオープンソースについて発表しました</a></h1>
+<h1><a href="http://h-sao.com/blog/2020/01/29/tips-about-git-history-changed/" title="[Git] Gitの歴史を書き換える関連">[Git] Gitの歴史を書き換える関連</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2015.11.21">2015.11.21</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2020.01.29">2020.01.29</time>
     
     &middot; 
         
-        <a href="http://h-sao.com/tags/community">community</a>
-        , 
-        
-        <a href="http://h-sao.com/tags/opensource">opensource</a>
+        <a href="http://h-sao.com/tags/git">git</a>
         
         
     
@@ -86,52 +72,108 @@
 </span>
 </footer>
  </footer>
-                <p>2015/11/21 Sat meetup app@1 という勉強会を開催しました</p>
+            
 
-<p><a href="https://meetupapp.doorkeeper.jp/events/33820">https://meetupapp.doorkeeper.jp/events/33820</a></p>
+<p>よくやらかすので自分メモ</p>
+
+<h2 id="事前準備">事前準備</h2>
+
+<pre><code># 今いるブランチの確認
+$ git branch
+
+# ブランチに移動
+$ git checkout feature/xxxxx
+</code></pre>
+
+<p>PR出す前、きれいな環境にしたいなどで整えておきたいこと</p>
+
+<pre><code># 手動ブランチの取得/追従
+$ git checkout feature/yyyyy
+$ git pull
+</code></pre>
+
+<h2 id="ローカル作業全てを無かったことにする">ローカル作業全てを無かったことにする</h2>
+
+<pre><code>git fetch origin
+git reset --hard origin/master
+</code></pre>
+
+<h2 id="pushしてしまった歴史を書き換える">pushしてしまった歴史を書き換える</h2>
+
+<pre><code># 自分の名前のコミットを検索
+$ git log --committer=&quot;Sao Haruka&quot;
+
+# ↑の gitlog より戻りたいハッシュ値を探す
+
+$ git reset [戻りたいコミットのハッシュ値] --hard
+
+# 強制push
+$ git push -f origin feature/xxxxx
+</code></pre>
+
+<p>既に <code>feature/xxxxx</code> で誰かが作業していたら強制プッシュはあきらめる</p>
+
+<h2 id="不要になったブランチを削除する">不要になったブランチを削除する</h2>
+
+<p>要らないブランチは削除しとく</p>
+
+<pre><code>$ git push --delete origin feature/xxxxx
+</code></pre>
+
+<h2 id="prに不要なコミットが混じる">PRに不要なコミットが混じる</h2>
+
+<p>原因：</p>
 
 <ul>
-<li>ビジネスにおけるオープンソースの利用価値<br />
-<a href="https://speakerdeck.com/harukasao/21-opensource-value">https://speakerdeck.com/harukasao/21-opensource-value</a></li>
+<li>ブランチが追従されてないのが問題</li>
+<li>マージ先が間違ってる</li>
 </ul>
 
-<script async class="speakerdeck-embed" data-id="59c8b5f6dfa649309199bcd9ac3103fe" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
-
-<p>仰々しいタイトルが付いていますが、完全に私見まとめを発表させて頂きました</p>
-
-<p>オープンソースだけというよりは、最後の方は、普通に製品やサービスのロードマップ、ビジネスモデル的な観点になりました<br />
-もちろんこれが全てではないと思うし、わたしはマーケティングのプロでもないので間違っているかもしれないですけど</p>
+<p>マージ先の最新を取っとくと大丈夫</p>
 
             <ul class="share-buttons">
     <li></li>
     <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f11%2f21%2fmeetup-app1-opensource%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2020%2f01%2f29%2ftips-about-git-history-changed%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5b%e5%8b%89%e5%bc%b7%e4%bc%9a%5d%20meetup%20app%401%20%e3%81%a7%e3%82%aa%e3%83%bc%e3%83%97%e3%83%b3%e3%82%bd%e3%83%bc%e3%82%b9%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e7%99%ba%e8%a1%a8%e3%81%97%e3%81%be%e3%81%97%e3%81%9f&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f11%2f21%2fmeetup-app1-opensource%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGit%5d%20Git%e3%81%ae%e6%ad%b4%e5%8f%b2%e3%82%92%e6%9b%b8%e3%81%8d%e6%8f%9b%e3%81%88%e3%82%8b%e9%96%a2%e9%80%a3&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2020%2f01%2f29%2ftips-about-git-history-changed%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f11%2f21%2fmeetup-app1-opensource%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2020%2f01%2f29%2ftips-about-git-history-changed%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2015%2f11%2f21%2fmeetup-app1-opensource%2f&title=%5b%e5%8b%89%e5%bc%b7%e4%bc%9a%5d%20meetup%20app%401%20%e3%81%a7%e3%82%aa%e3%83%bc%e3%83%97%e3%83%b3%e3%82%bd%e3%83%bc%e3%82%b9%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e7%99%ba%e8%a1%a8%e3%81%97%e3%81%be%e3%81%97%e3%81%9f" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2020%2f01%2f29%2ftips-about-git-history-changed%2f&title=%5bGit%5d%20Git%e3%81%ae%e6%ad%b4%e5%8f%b2%e3%82%92%e6%9b%b8%e3%81%8d%e6%8f%9b%e3%81%88%e3%82%8b%e9%96%a2%e9%80%a3" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 
-            <hr>
+        </article>
         
-
-        <div class="pagination">
-<nav>
-
-	<p class="counter"> 1  1</p>
-
-
-</nav>
-</div>
-
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "harukasao" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
     </main>
-
     <aside class="author">
   <img class="profile-image" src="http://h-sao.com/pic/saoharuka128.png" alt="遥佐保/Sao Haruka" />
   <p class="name"> 
@@ -678,6 +720,7 @@
 
 
 </div>
+
 <footer class="main-footer">
   <div class="container clearfix">
       <a class="icon-rss" href="http://h-sao.com/post/index.xml" title="RSS"></a>

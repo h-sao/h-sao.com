@@ -6,10 +6,23 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 10 Jan 2020 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jan 2020 16:00:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Git] Gitの歴史を書き換える関連</title>
+      <link>http://h-sao.com/blog/2020/01/29/tips-about-git-history-changed/</link>
+      <pubDate>Wed, 29 Jan 2020 16:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2020/01/29/tips-about-git-history-changed/</guid>
+      <description>よくやらかすので自分メモ
+事前準備 # 今いるブランチの確認 $ git branch # ブランチに移動 $ git checkout feature/xxxxx  PR出す前、きれいな環境にしたいなどで整えておきたいこと
+# 手動ブランチの取得/追従 $ git checkout feature/yyyyy $ git pull  ローカル作業全てを無かったことにする git fetch origin git reset --hard origin/master  pushしてしまった歴史を書き換える # 自分の名前のコミットを検索 $ git log --committer=&amp;quot;Sao Haruka&amp;quot; # ↑の gitlog より戻りたいハッシュ値を探す $ git reset [戻りたいコミットのハッシュ値] --hard # 強制push $ git push -f origin feature/xxxxx  既に feature/xxxxx で誰かが作業していたら強制プッシュはあきらめる
+不要になったブランチを削除する 要らないブランチは削除しとく
+$ git push --delete origin feature/xxxxx  PRに不要なコミットが混じる 原因：</description>
+    </item>
     
     <item>
       <title>About me</title>
