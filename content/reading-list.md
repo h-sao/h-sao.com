@@ -1,5 +1,5 @@
 +++
-date = "2020-01-10T12:00:00+09:00"
+date = "2020-02-11T02:30:00+09:00"
 draft = false
 title = "Reading list"
 tags = [""]
@@ -17,6 +17,10 @@ A little note :)
 # Read through
 
 ## 2020
+
+2/9 VOGUE JAPAN 2020年2月号 `fasion`
+
+2/9 SPUR 2020年2月号 `fasion`
 
 1/8 勝間式超コントロール思考 `bussiness`
 
