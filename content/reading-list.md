@@ -5,7 +5,6 @@ title = "Reading list"
 tags = [""]
 +++
 
-<style> blockquote { font-size: 80% } </style> 
 
 A little note :)
 
