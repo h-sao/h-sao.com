@@ -42,10 +42,9 @@ $ git commit --amend  を使うと、コミット履歴が書き換えられる�
 Authorを書き換えるには
 $ git commit --amend --author=&amp;quot;Sao Haruka &amp;lt;sao@tmp.com&amp;gt;&amp;quot;  こうすると書き換わります
 こんな感じね↓↓↓
-1234 $ git commit --amend --author=&amp;#34;Sao Haruka &amp;lt;sao@tmp.com&amp;gt;&amp;#34; [feature/xxxxx 9999999999] [WIP] Added hogehoge Date: Thu Oct 10 22:30:00 2019 +0900 1 files changed, 1 insertions(+), 1 deletions(-)   書き換わったー！
+1 2 3 4  $ git commit --amend --author=&amp;#34;Sao Haruka &amp;lt;sao@tmp.com&amp;gt;&amp;#34; [feature/xxxxx 9999999999] [WIP] Added hogehoge Date: Thu Oct 10 22:30:00 2019 +0900 1 files changed, 1 insertions(+), 1 deletions(-)   書き換わったー！
 サーバーに push しちゃってるとき もし自分だけの作業ブランチでやってるのであれば、サーバーの履歴を強制的に書き換えることが出来ます
-（共通ブランチでは、強制書き換えはやめよう）
-$ git push -f [repository] [branch]  恐る恐るやってみる</description>
+（共通ブランチでは、強制書き換えはやめよう）</description>
     </item>
     
     <item>
@@ -197,7 +196,7 @@ Giet Extensionsを見ると、ファイルが変更されたので、Commit(1) �
       <description>ローカルの作業が何やらおかしくなったから
 リモートのファイル内容に戻したい～という時
 以下のコマンドでさくっと戻りました
-12 git fetch origin git reset --hard origin/master   ツールなどで強制的にsyncさせようとしても
+1 2  git fetch origin git reset --hard origin/master    ツールなどで強制的にsyncさせようとしても
  failed to sync this branch
  という悲しいお知らせが出て、結局 Git Bash に行くことになりますので……
 （参考リンク）

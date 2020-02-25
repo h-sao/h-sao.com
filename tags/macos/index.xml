@@ -24,7 +24,7 @@ Hugoは golang で動いているので、ローカルに Go の環境が必要�
 解決に結構時間が取られちゃったので、もう macOSを使うときには、なんでもかんでも docker で分離しようと心に決めたのでした…
 その方法です
 やってみたら、超簡単でした
-Hugo に対応した docker image をダウンロード 12345678910 # Hugo で docker を検索 sao$ docker search hugo NAME DESCRIPTION STARS OFFICIAL AUTOMATED jojomi/hugo hugo, see https://gohugo.io 44 [OK] publysher/hugo Docker base image for static sites generated… 37 [OK] monachus/hugo Docker image for building and running Hugo (… 28 [OK] klakegg/hugo Minimal image and variants with batteries in… 22 [OK] cibuilds/hugo Docker image for Hugo, the static-site gener… 10 … …（いっぱいあった）   今回わたしは、klakegg/hugo のバージョンを使うことにしました</description>
+Hugo に対応した docker image をダウンロード 1 2 3 4 5 6 7 8 9 10  # Hugo で docker を検索 sao$ docker search hugo NAME DESCRIPTION STARS OFFICIAL AUTOMATED jojomi/hugo hugo, see https://gohugo.io 44 [OK] publysher/hugo Docker base image for static sites generated… 37 [OK] monachus/hugo Docker image for building and running Hugo (… 28 [OK] klakegg/hugo Minimal image and variants with batteries in… 22 [OK] cibuilds/hugo Docker image for Hugo, the static-site gener… 10 … …（いっぱいあった）   今回わたしは、klakegg/hugo のバージョンを使うことにしました</description>
     </item>
     
     <item>

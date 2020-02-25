@@ -7,7 +7,7 @@
         <meta name="author">
         <meta name="description" content="The awesome blog of Sao Haruka.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.36" />
+        <meta name="generator" content="Hugo 0.54.0" />
         <link href="http://h-sao.com/post/index.xml" rel="alternate" type="application/rss+xml" title="Effectiveさお" />
         <link href="http://h-sao.com/post/index.xml" rel="feed" type="application/rss+xml" title="Effectiveさお" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -115,11 +115,21 @@
 <h3 id="hugo-に対応した-docker-image-をダウンロード">Hugo に対応した docker image をダウンロード</h3>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 5</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 9</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">10</span></code></pre></td>
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Hugo で docker を検索
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>sao$ docker search hugo
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Hugo で docker を検索</span>
+<span style="display:block;width:100%;background-color:#3c3d38">sao$ docker search hugo
 </span>NAME                  DESCRIPTION                            STARS    OFFICIAL  AUTOMATED
 jojomi/hugo     hugo, see https://gohugo.io                     <span style="color:#ae81ff">44</span>               <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
 publysher/hugo  Docker base image <span style="color:#66d9ef">for</span> static sites generated…   <span style="color:#ae81ff">37</span>               <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
@@ -141,28 +151,37 @@ cibuilds/hugo   Docker image <span style="color:#66d9ef">for</span> Hugo, the st
 <a href="https://github.com/klakegg/docker-hugo">https://github.com/klakegg/docker-hugo</a></p></li>
 </ul>
 
-<p><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span></span></code></pre></td>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ダウンロード
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>sao$ docker pull klakegg/hugo</span></code></pre></td></tr></table>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ダウンロード</span>
+<span style="display:block;width:100%;background-color:#3c3d38">sao$ docker pull klakegg/hugo</span></code></pre></td></tr></table>
 </div>
-</div></p>
+</div>
 
 <h3 id="起動">起動</h3>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">5</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">7</span></code></pre></td>
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7
+</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ローカルのマークダウンファイルの場所に移動
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>sao$ cd h-sao.com/
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ローカルのマークダウンファイルの場所に移動</span>
+<span style="display:block;width:100%;background-color:#3c3d38">sao$ cd h-sao.com/
 </span>
-<span style="color:#75715e"># まんまこのコマンドでOK
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>h-sao.com sao$ docker run --rm -it -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/src -p <span style="color:#ae81ff">1313</span>:1313 klakegg/hugo:0.55.0 server
+<span style="color:#75715e"># まんまこのコマンドでOK</span>
+<span style="display:block;width:100%;background-color:#3c3d38">h-sao.com sao$ docker run --rm -it -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/src -p <span style="color:#ae81ff">1313</span>:1313 klakegg/hugo:0.55.0 server
 </span>
-# ブラウザで http://localhost:1313 にアクセスするとOK</code></pre></td></tr></table>
+<span style="color:#75715e"># ブラウザで http://localhost:1313 にアクセスするとOK</span></code></pre></td></tr></table>
 </div>
 </div>
 
@@ -292,15 +311,47 @@ cibuilds/hugo   Docker image <span style="color:#66d9ef">for</span> Hugo, the st
 </ul>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 5</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 6</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 9</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">10</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">11</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">12</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">13</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">14</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">15</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">16</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">17</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">18</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">19</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">20</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">21</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">22</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">23</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">24</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">25</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">26</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">27</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">28</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">29</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">30</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">31</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">32</span></code></pre></td>
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">32
+</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ubuntuのイメージはまだ持っていない
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:~ sao.haruka$ docker images
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ubuntuのイメージはまだ持っていない</span>
+<span style="display:block;width:100%;background-color:#3c3d38">SAO-MAC:~ sao.haruka$ docker images
 </span>REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 
-<span style="color:#75715e"># ubuntuをsearch
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:~ sao.haruka$ docker search ubuntu
+<span style="color:#75715e"># ubuntuをsearch</span>
+<span style="display:block;width:100%;background-color:#3c3d38">SAO-MAC:~ sao.haruka$ docker search ubuntu
 </span>NAME                                                      DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
 ubuntu                                                    Ubuntu is a Debian-based Linux operating sys…   <span style="color:#ae81ff">9572</span>                <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>                
 dorowu/ubuntu-desktop-lxde-vnc                            Docker image to provide HTML5 VNC interface …   <span style="color:#ae81ff">303</span>                                     <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
@@ -334,12 +385,28 @@ pivotaldata/ubuntu-gpdb-dev                               Ubuntu images <span st
 <li>公式のubuntuのイメージを手元にダウンロードする</li>
 </ul>
 
-<p><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 5</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 9</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">10</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">11</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">12</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">13</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">14</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">15</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">16</span></code></pre></td>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
+</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ubuntuをpull
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:~ sao.haruka$ docker pull ubuntu
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ubuntuをpull</span>
+<span style="display:block;width:100%;background-color:#3c3d38">SAO-MAC:~ sao.haruka$ docker pull ubuntu
 </span>Using default tag: latest
 latest: Pulling from library/ubuntu
 6abc03819f3e: Pull complete 
@@ -349,27 +416,34 @@ Digest: sha256:f08638ec7ddc90065187e7eabdfac3c96e5ff0f6b2f1762cf31a4f49b53000a5
 Status: Downloaded newer image <span style="color:#66d9ef">for</span> ubuntu:latest
 SAO-MAC:~ sao.haruka$ 
 
-<span style="color:#75715e"># imagesの中にubuntuが入ってる
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:~ sao.haruka$ docker images
+<span style="color:#75715e"># imagesの中にubuntuが入ってる</span>
+<span style="display:block;width:100%;background-color:#3c3d38">SAO-MAC:~ sao.haruka$ docker images
 </span>REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 ubuntu              latest              7698f282e524        <span style="color:#ae81ff">12</span> days ago         <span style="color:#ae81ff">69</span>.9MB
 SAO-MAC:~ sao.haruka$ </code></pre></td></tr></table>
 </div>
-</div></p>
+</div>
 
 <ul>
 <li>ubuntuの起動と起動確認</li>
 </ul>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">5</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">7</span></code></pre></td>
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7
+</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># dockerでubuntuサーバを何も考えずに起動
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker run -it ubuntu
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># dockerでubuntuサーバを何も考えずに起動</span>
+<span style="display:block;width:100%;background-color:#3c3d38">SAO-MAC:my_docker sao.haruka$ docker run -it ubuntu
 </span>
-<span style="color:#75715e"># docker経由でubuntuにアクセスできた！
-</span><span style="color:#75715e"></span>root@387ef5142f09:/# ls
+<span style="color:#75715e"># docker経由でubuntuにアクセスできた！</span>
+root@387ef5142f09:/# ls
 bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 root@387ef5142f09:/# </code></pre></td></tr></table>
 </div>
@@ -378,11 +452,16 @@ root@387ef5142f09:/# </code></pre></td></tr></table>
 <p>このままexitするとubuntuが止まってしまうので、<code>control + P、Q</code> で抜ける</p>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">5</span></code></pre></td>
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># dockerでubuntuが起動してることを確認
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker ps
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># dockerでubuntuが起動してることを確認</span>
+<span style="display:block;width:100%;background-color:#3c3d38">SAO-MAC:my_docker sao.haruka$ docker ps
 </span>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 387ef5142f09        ubuntu              <span style="color:#e6db74">&#34;/bin/bash&#34;</span>         <span style="color:#ae81ff">4</span> minutes ago       Up <span style="color:#ae81ff">4</span> minutes                            dazzling_leakey
 SAO-MAC:my_docker sao.haruka$ </code></pre></td></tr></table>
@@ -394,15 +473,22 @@ SAO-MAC:my_docker sao.haruka$ </code></pre></td></tr></table>
 </ul>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">5</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">6</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">7</span></code></pre></td>
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7
+</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># さっきのubuntunに再ログイン(コンテナIDを使ってログインしてみる)
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker attach 387ef5142f09
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># さっきのubuntunに再ログイン(コンテナIDを使ってログインしてみる)</span>
+<span style="display:block;width:100%;background-color:#3c3d38">SAO-MAC:my_docker sao.haruka$ docker attach 387ef5142f09
 </span>root@387ef5142f09:/# 
 
-<span style="color:#75715e"># exitで抜ける
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>root@387ef5142f09:/# exit
+<span style="color:#75715e"># exitで抜ける</span>
+<span style="display:block;width:100%;background-color:#3c3d38">root@387ef5142f09:/# exit
 </span>exit</code></pre></td></tr></table>
 </div>
 </div>
@@ -412,15 +498,24 @@ SAO-MAC:my_docker sao.haruka$ </code></pre></td></tr></table>
 </ul>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">5</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">6</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">9</span></code></pre></td>
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">9
+</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 起動中のコンテナの確認（何も動いてない）
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker ps
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 起動中のコンテナの確認（何も動いてない）</span>
+<span style="display:block;width:100%;background-color:#3c3d38">SAO-MAC:my_docker sao.haruka$ docker ps
 </span>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 
-<span style="color:#75715e"># 停止しているコンテナも表示させてみる (Exited状態)
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker ps -a
+<span style="color:#75715e"># 停止しているコンテナも表示させてみる (Exited状態)</span>
+<span style="display:block;width:100%;background-color:#3c3d38">SAO-MAC:my_docker sao.haruka$ docker ps -a
 </span>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
 387ef5142f09        ubuntu              <span style="color:#e6db74">&#34;/bin/bash&#34;</span>         <span style="color:#ae81ff">8</span> minutes ago       Exited <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span> <span style="color:#ae81ff">10</span> seconds ago                       dazzling_leakey
 SAO-MAC:my_docker sao.haruka$ </code></pre></td></tr></table>
@@ -432,15 +527,24 @@ SAO-MAC:my_docker sao.haruka$ </code></pre></td></tr></table>
 </ul>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">5</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">6</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">9</span></code></pre></td>
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">9
+</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 停止したものを再起動させるときは start コマンドで(今度はコンテナ名でログインしてみる)
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker start dazzling_leakey
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 停止したものを再起動させるときは start コマンドで(今度はコンテナ名でログインしてみる)</span>
+<span style="display:block;width:100%;background-color:#3c3d38">SAO-MAC:my_docker sao.haruka$ docker start dazzling_leakey
 </span>dazzling_leakey
 
-<span style="color:#75715e"># コンテナが起動してる
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker ps
+<span style="color:#75715e"># コンテナが起動してる</span>
+<span style="display:block;width:100%;background-color:#3c3d38">SAO-MAC:my_docker sao.haruka$ docker ps
 </span>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 387ef5142f09        ubuntu              <span style="color:#e6db74">&#34;/bin/bash&#34;</span>         <span style="color:#ae81ff">10</span> minutes ago      Up <span style="color:#ae81ff">3</span> seconds                            dazzling_leakey
 SAO-MAC:my_docker sao.haruka$ </code></pre></td></tr></table>
@@ -452,11 +556,15 @@ SAO-MAC:my_docker sao.haruka$ </code></pre></td></tr></table>
 </ul>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span></code></pre></td>
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ubuntu停止
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker stop dazzling_leakey
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ubuntu停止</span>
+<span style="display:block;width:100%;background-color:#3c3d38">SAO-MAC:my_docker sao.haruka$ docker stop dazzling_leakey
 </span>dazzling_leakey
 SAO-MAC:my_docker sao.haruka$ </code></pre></td></tr></table>
 </div>
@@ -468,20 +576,33 @@ SAO-MAC:my_docker sao.haruka$ </code></pre></td></tr></table>
 </ul>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 5</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 9</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">10</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">11</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">12</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">13</span></code></pre></td>
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># コンテナはExited状態で停止している
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker ps -a
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># コンテナはExited状態で停止している</span>
+<span style="display:block;width:100%;background-color:#3c3d38">SAO-MAC:my_docker sao.haruka$ docker ps -a
 </span>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMES
 387ef5142f09        ubuntu              <span style="color:#e6db74">&#34;/bin/bash&#34;</span>         <span style="color:#ae81ff">2</span> hours ago         Exited <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span> <span style="color:#ae81ff">6</span> minutes ago                       dazzling_leakey
 
-<span style="color:#75715e"># コンテナを削除
-</span><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker rm dazzling_leakey
+<span style="color:#75715e"># コンテナを削除</span>
+SAO-MAC:my_docker sao.haruka$ docker rm dazzling_leakey
 dazzling_leakey
 
-<span style="color:#75715e"># ubuntuコンテナが無くなった
-</span><span style="color:#75715e"></span>SAO-MAC:my_docker sao.haruka$ docker ps -a
+<span style="color:#75715e"># ubuntuコンテナが無くなった</span>
+SAO-MAC:my_docker sao.haruka$ docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 SAO-MAC:my_docker sao.haruka$</code></pre></td></tr></table>
 </div>
@@ -579,6 +700,8 @@ SAO-MAC:my_docker sao.haruka$</code></pre></td></tr></table>
             <div class="list-group">
                 
                     
+                        
+                            <a href="/blog/2020/02/25/how-to-change-dnsinfo-for-github-custom-domain/" class="list-group-item">[GitHub Pages] カスタムドメインのDNS情報を更新する</a><br>
                         
                     
                 
@@ -794,9 +917,9 @@ SAO-MAC:my_docker sao.haruka$</code></pre></td></tr></table>
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/github" style="font-size: 14px;">
+                    <a href="http://h-sao.com//tags/github" style="font-size: 17px;">
                     
-                        <span class="badge">2</span>
+                        <span class="badge">3</span>
                         github
                     </a>
                     </u> &nbsp; 

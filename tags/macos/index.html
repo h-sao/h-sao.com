@@ -7,7 +7,7 @@
         <meta name="author">
         <meta name="description" content="The awesome blog of Sao Haruka.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.36" />
+        <meta name="generator" content="Hugo 0.54.0" />
         <link href="http://h-sao.com/post/index.xml" rel="alternate" type="application/rss+xml" title="Effectiveさお" />
         <link href="http://h-sao.com/post/index.xml" rel="feed" type="application/rss+xml" title="Effectiveさお" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -115,11 +115,21 @@
 <h3 id="hugo-に対応した-docker-image-をダウンロード">Hugo に対応した docker image をダウンロード</h3>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 5</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79"> 9</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">10</span></code></pre></td>
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Hugo で docker を検索
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>sao$ docker search hugo
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Hugo で docker を検索</span>
+<span style="display:block;width:100%;background-color:#3c3d38">sao$ docker search hugo
 </span>NAME                  DESCRIPTION                            STARS    OFFICIAL  AUTOMATED
 jojomi/hugo     hugo, see https://gohugo.io                     <span style="color:#ae81ff">44</span>               <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
 publysher/hugo  Docker base image <span style="color:#66d9ef">for</span> static sites generated…   <span style="color:#ae81ff">37</span>               <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
@@ -141,28 +151,37 @@ cibuilds/hugo   Docker image <span style="color:#66d9ef">for</span> Hugo, the st
 <a href="https://github.com/klakegg/docker-hugo">https://github.com/klakegg/docker-hugo</a></p></li>
 </ul>
 
-<p><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span></span></code></pre></td>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ダウンロード
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>sao$ docker pull klakegg/hugo</span></code></pre></td></tr></table>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ダウンロード</span>
+<span style="display:block;width:100%;background-color:#3c3d38">sao$ docker pull klakegg/hugo</span></code></pre></td></tr></table>
 </div>
-</div></p>
+</div>
 
 <h3 id="起動">起動</h3>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">5</span></span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">7</span></code></pre></td>
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7
+</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ローカルのマークダウンファイルの場所に移動
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>sao$ cd h-sao.com/
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ローカルのマークダウンファイルの場所に移動</span>
+<span style="display:block;width:100%;background-color:#3c3d38">sao$ cd h-sao.com/
 </span>
-<span style="color:#75715e"># まんまこのコマンドでOK
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>h-sao.com sao$ docker run --rm -it -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/src -p <span style="color:#ae81ff">1313</span>:1313 klakegg/hugo:0.55.0 server
+<span style="color:#75715e"># まんまこのコマンドでOK</span>
+<span style="display:block;width:100%;background-color:#3c3d38">h-sao.com sao$ docker run --rm -it -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/src -p <span style="color:#ae81ff">1313</span>:1313 klakegg/hugo:0.55.0 server
 </span>
-# ブラウザで http://localhost:1313 にアクセスするとOK</code></pre></td></tr></table>
+<span style="color:#75715e"># ブラウザで http://localhost:1313 にアクセスするとOK</span></code></pre></td></tr></table>
 </div>
 </div>
 
@@ -462,6 +481,8 @@ Windowsで慣れまくった外部キーボードを利用するのは至難の�
                 
                     
                         
+                            <a href="/blog/2020/02/25/how-to-change-dnsinfo-for-github-custom-domain/" class="list-group-item">[GitHub Pages] カスタムドメインのDNS情報を更新する</a><br>
+                        
                     
                 
                     
@@ -676,9 +697,9 @@ Windowsで慣れまくった外部キーボードを利用するのは至難の�
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/github" style="font-size: 14px;">
+                    <a href="http://h-sao.com//tags/github" style="font-size: 17px;">
                     
-                        <span class="badge">2</span>
+                        <span class="badge">3</span>
                         github
                     </a>
                     </u> &nbsp; 

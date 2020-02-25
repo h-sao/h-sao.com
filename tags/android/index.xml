@@ -96,7 +96,7 @@ Android端末にAPKをインストール AndroidSDKをインストールした�
 単にこの abd.exe を使うだけであれば、環境変数への追加は必要ないです
 UBSでAndroid端末をPCに接続した状態で
 手元の MyApp.apk をインストールするコマンドはこちら
-1 adb install -r MyApp.apk   さくっとインストールできました
+1  adb install -r MyApp.apk   さくっとインストールできました
 デバイスからAPKリンクをつつくなどでも良いのですが
 開発者っぽい感じかつ、
 ちょっと手元でAPKを試したい時の参考までに(^^)/</description>

@@ -7,7 +7,7 @@
         <meta name="author">
         <meta name="description" content="The awesome blog of Sao Haruka.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.36" />
+        <meta name="generator" content="Hugo 0.54.0" />
         <link href="http://h-sao.com/post/index.xml" rel="alternate" type="application/rss+xml" title="Effectiveさお" />
         <link href="http://h-sao.com/post/index.xml" rel="feed" type="application/rss+xml" title="Effectiveさお" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -76,8 +76,9 @@
 
 <p>PowerShellの実行ポリシー（Execution Policy）は、</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></code></pre></td>
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#f92672">&gt;</span> Get<span style="color:#f92672">-</span>ExecutionPolicy</code></pre></td></tr></table>
 </div>
@@ -87,8 +88,9 @@
 <p>Windows10のデフォルトでは <strong>Restricted</strong> になっていて、ps1 ファイルをコマンドライン上から実行することが出来ません<br />
 なので</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></code></pre></td>
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#f92672">&gt;</span> Set<span style="color:#f92672">-</span>ExecutionPolicy RemoteSigned</code></pre></td></tr></table>
 </div>
@@ -100,8 +102,9 @@
 
 <p>なんだこれ（↓）は…？</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></code></pre></td>
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#960050;background-color:#1e0010">セキュリティ</span> <span style="color:#960050;background-color:#1e0010">エラー</span><span style="color:#f92672">:</span> PSSecurityException</code></pre></td></tr></table>
 </div>
@@ -148,7 +151,7 @@ Windowsはローカルファイルと区別出来るようにしてくれてる�
         <div class="comments">
             <h3></h3>
             <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -221,6 +224,8 @@ Windowsはローカルファイルと区別出来るようにしてくれてる�
             <div class="list-group">
                 
                     
+                        
+                            <a href="/blog/2020/02/25/how-to-change-dnsinfo-for-github-custom-domain/" class="list-group-item">[GitHub Pages] カスタムドメインのDNS情報を更新する</a><br>
                         
                     
                 
@@ -436,9 +441,9 @@ Windowsはローカルファイルと区別出来るようにしてくれてる�
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/github" style="font-size: 14px;">
+                    <a href="http://h-sao.com//tags/github" style="font-size: 17px;">
                     
-                        <span class="badge">2</span>
+                        <span class="badge">3</span>
                         github
                     </a>
                     </u> &nbsp; 
