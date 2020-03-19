@@ -6,10 +6,31 @@
     <description>Recent content in Posts on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 25 Feb 2020 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2020 23:00:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[WindowsTerminal] Preview版のインストール＆Git Bashを追加したい</title>
+      <link>http://h-sao.com/blog/2020/03/19/how-to-install-windowsterminalpreview/</link>
+      <pubDate>Thu, 19 Mar 2020 23:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2020/03/19/how-to-install-windowsterminalpreview/</guid>
+      <description>Windows Terminal …どんなもんだろなと思って、使ってみました
+もともとは、Gitのブランチ名をコマンドプロンプトに表示できたらいいのにー と思って調べたのでした
+Windows Terminal に Git Bash (正確には Git for Windows ) が登録できるようなので、それをやってみました
+Windows Terminal (Preview)のインストール 普通に 「Windows Terminal download」で検索すると、わたしの場合「マイクロソフトストア」のリンクがトップに来ましたけど
+ストアとかよくわからんし…
+よく見ると Windows Terminal は GitHub に公開されてます
+ https://github.com/microsoft/terminal  ここから Preview版をGet★
+ https://github.com/microsoft/terminal/releases  3/19時点では、Windows Terminal Preview v0.10.761.0 のバージョンでした
+以下、やったこと
+1) msixbundle を実行するとこんな画面↓↓↓ 2) インストールを押すと、わたしの環境ではエラーになりました エラーメッセージ内容：
+ Microsoft.WindowsTerminal_0.10.761.0_x64__8wekyb3d8bbwe をインストールできません。このパッケージはデバイスと互換性がありません。このパッケージをインストールするには、OS バージョン 10.0.18362.0 またはそれ以降の Windows.Mobile デバイス ファミリが必要です。現在、デバイスでは OS バージョン 10.0.17763.1098 が実行されています。 (0x80073cfd)
+ おぉ。。。めっちゃ判りやすいメッセージが！
+3) よくわからんけど、Windows Updateしてみます 4) もう一度ダウンロードした msixbundle を実行 5) 正常にインストールできたみたい！ 6) 開くウィンドウのタイプを選べます よしよし</description>
+    </item>
     
     <item>
       <title>[GitHub Pages] カスタムドメインのDNS情報を更新する</title>

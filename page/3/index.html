@@ -57,6 +57,125 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2017/11/02/how-to-uninstall-unity-license-information/" title="[Unity] Unityのライセンス情報をアンインストールしたい">[Unity] Unityのライセンス情報をアンインストールしたい</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.02">2017.11.02</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/unity">unity</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>Unityをアンインストールしたけど、あれ？ライセンス情報が残ってる(?_?)<br />
+というのが調べたきっかけです</p>
+
+<p>PCからUnityの情報を完全消去したいときの参考に</p>
+
+<h2 id="ライセンス情報-unity5-x系">ライセンス情報 (Unity5.x系)</h2>
+
+<p>ライセンスファイルは、Unityをアンインストールしても消えません＞＜</p>
+
+<p>以下にライセンスファイル(.ulfファイル)が残っています</p>
+
+<ul>
+<li>C:/ProgramData/Unity/Unity_v5.x.ulf</li>
+<li>C:/Users/(username)/AppData/Local/VirtualStore/ProgramData/Unity/<br />
+（UACで C:/ProgramData/Unity/ へアクセス制限されてる時）</li>
+</ul>
+
+<p>で…</p>
+
+<p>確かに上記を消したら、アクティベーション情報は消えるのですが<br />
+Unityにログインしたユーザ情報は残ってる様です</p>
+
+<p>キャッシュ的なものも消さないと、完全アンインストールにはならないみたい</p>
+
+<h2 id="その他-アンインストールで消えないディレクトリ">その他、アンインストールで消えないディレクトリ</h2>
+
+<ul>
+<li>C:/Users/(username)/AppData/Local/Unity</li>
+
+<li><p>C:/Users/(username)/AppData/Roaming/Unity<br />
+上記２点には、エディタに関する何か？キャッシュ的な何か？が残っています<br />
+起動した際の、Unityプロジェクトの表示とか…<br />
+おそらくこの２つのディレクトリ以下に、ユーザ情報も入ってるみたいです</p></li>
+
+<li><p>C:/Users/(username)/AppData/RoamingLocalLow/Unity<br />
+この下もちょっとよく判らないですが、<br />
+このディレクトリ配下の「Asset Store-5.x」の下には<br />
+アセットストアからダウンロードしてきたパッケージファイルが入っていました<br />
+（.unitypackage）</p></li>
+</ul>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>逆の言い方をすると、<br />
+上に書いたディレクトリ４つ</p>
+
+<ul>
+<li>C:/ProgramData/Unity/</li>
+<li>C:/Users/(username)/AppData/Local/Unity</li>
+<li>C:/Users/(username)/AppData/Roaming/Unity</li>
+<li>C:/Users/(username)/AppData/RoamingLocalLow/Unity</li>
+</ul>
+
+<p>を消せば、Unityをアンインストールしなくても<br />
+ライセンス情報のリセット、ユーザ情報のリセットが可能でした</p>
+
+<blockquote>
+<p>もちろん<br />
+C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x<br />
+の下は、ライセンスファイルとは無関係みたいです</p>
+</blockquote>
+
+<h2 id="unity2017系は">Unity2017系は？</h2>
+
+<p>Unity2017 では、ライセンスディレクトリは同様で、ライセンスファイル名が</p>
+
+<ul>
+<li>Unity_lic.ulf</li>
+</ul>
+
+<p>になってるみたいです<br />
+（消さないといけないディレクトリまでは、2017系では調べてないので、ごめんなさい）</p>
+
+<p>参考：</p>
+
+<ul>
+<li><p>アクティベーションに関する FAQ - Unity公式<br />
+<a href="https://docs.unity3d.com/ja/current/Manual/ActivationFAQ.html">https://docs.unity3d.com/ja/current/Manual/ActivationFAQ.html</a>(日本語)<br />
+<a href="https://docs.unity3d.com/Manual/ActivationFAQ.html">https://docs.unity3d.com/Manual/ActivationFAQ.html</a>(英語)</p></li>
+
+<li><p>Unityの再インストール - FreelyApps<br />
+<a href="http://freelyapps.blog.jp/archives/1032543378.html">http://freelyapps.blog.jp/archives/1032543378.html</a></p></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f11%2f02%2fhow-to-uninstall-unity-license-information%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bUnity%5d%20Unity%e3%81%ae%e3%83%a9%e3%82%a4%e3%82%bb%e3%83%b3%e3%82%b9%e6%83%85%e5%a0%b1%e3%82%92%e3%82%a2%e3%83%b3%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%97%e3%81%9f%e3%81%84&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f11%2f02%2fhow-to-uninstall-unity-license-information%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f11%2f02%2fhow-to-uninstall-unity-license-information%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f11%2f02%2fhow-to-uninstall-unity-license-information%2f&title=%5bUnity%5d%20Unity%e3%81%ae%e3%83%a9%e3%82%a4%e3%82%bb%e3%83%b3%e3%82%b9%e6%83%85%e5%a0%b1%e3%82%92%e3%82%a2%e3%83%b3%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%97%e3%81%9f%e3%81%84" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2017/10/31/where-is-controlpanel/" title="[Windows10] コントロールパネルの場所">[Windows10] コントロールパネルの場所</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.10.31">2017.10.31</time>
@@ -1777,190 +1896,6 @@ root                  *  C:\utils\Anaconda3
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/" title="[Chrome] Google Chromeのマルチプロファイル設定">[Chrome] Google Chromeのマルチプロファイル設定</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.01.04">2017.01.04</time>
-    
-    &middot; 
-        
-        <a href="http://h-sao.com/tags/chrome">chrome</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p><strong>Google Chrome</strong> を使って、Webサイトの開発をしている人向けの情報です</p>
-
-<p>自分のChromeのユーザプロファイラを使わずに、開発は別のプロファイラを使いたいってこと、ありますよね…？</p>
-
-<h2 id="プランa-ユーザプロファイラを切り替える">[プランA] ユーザプロファイラを切り替える</h2>
-
-<p>Google Chrome のユーザデータを、開発用と自分個人用とに分けたい<br />
-開発用のモバイルモードで見てるときに、普通にPCブラウジングがしたい</p>
-
-<p>とかいうときのために（か、どうか分かりませんが…）</p>
-
-<p>Google chrome は複数ユーザに対応しています</p>
-
-<ol>
-<li><p>chrome://settings/ にアクセス<br />
-もしくは、メニューの「設定」を押す</p></li>
-
-<li><p>「ユーザ」の設定項目があるので、追加します<br />
-<img src="/pic/How-to-use-multiple-browser-profiles-in-chrome_02.png" style="border:solid 5px #e6e6e6"/></p></li>
-
-<li><p>アイコンと名前を選択して「追加」します<br />
-（わたしの場合は適当に Development と付けました）<br />
-<img src="/pic/How-to-use-multiple-browser-profiles-in-chrome_03.png" style="border:solid 5px #e6e6e6"/></p></li>
-
-<li><p>ユーザ名が右上に表示されるようになり、新しい「Development」ユーザでブラウザが立ち上がります<br />
-<img src="/pic/How-to-use-multiple-browser-profiles-in-chrome_04.png" style="border:solid 5px #e6e6e6"/></p></li>
-</ol>
-
-<p>Extension や閲覧履歴は、完全に今まで使っていたものとは別になっているので<br />
-新規プロファイルが使い放題です(*ﾉωﾉ)</p>
-
-<p>これまで使っていたユーザは「ユーザ－１」<br />
-開発用のユーザは「Development」<br />
-で、使い分けることが可能になりました</p>
-
-<h2 id="おまけ-起動時に-development-ユーザを指定して起動する方法">[おまけ] 起動時に Development ユーザを指定して起動する方法</h2>
-
-<p>ちなみに、デフォルト起動はもちろん、これまで使っていた「ユーザー１」で立ち上がります</p>
-
-<p>ショートカットなどで、さっき作ったDevelopmentユーザがいきなり立ち上がって欲しいときは<br />
-以下のように「<strong>profile-directory</strong>」起動オプションを設定してあげると<br />
-任意のユーザプロファイルで立ち上がります</p>
-
-<pre><code>&quot;C:\Program Files (x86)\Google\Chrome\Application\chrome.exe&quot; --profile-directory=&quot;Profile 2&quot;
-</code></pre>
-
-<blockquote>
-<p>※Chromeのショートカット設定にしておくと便利です<br />
-<img src="/pic/How-to-use-multiple-browser-profiles-in-chrome_05.png" style="border:solid 5px #e6e6e6"/></p>
-</blockquote>
-
-<p>わたしの環境では、&rdquo;Peofile 2&rdquo;という名前でしたが、これは作った環境によって異なっているはずです</p>
-
-<p>Chromeユーザプロファイルのデフォルトの位置はこちら↓↓↓</p>
-
-<blockquote>
-<p><strong>&ldquo;C:\Users[Winユーザ名]\AppData\Local\Google\Chrome\User Data\Profile x&rdquo;</strong></p>
-</blockquote>
-
-<p>ちなみに、これまで使っていた自分の環境である「ユーザー１」は「<strong>Default</strong>」というディレクトリ名です</p>
-
-<blockquote>
-<p>&ldquo;C:\Users[Winユーザ名]\AppData\Local\Google\Chrome\User Data\Default&rdquo;</p>
-</blockquote>
-
-<hr />
-
-<p>さて、プランAのプロファイル切り替えでも、まぁ用途は足りるんですけど<br />
-1点だけ、気に入らないところがありました…</p>
-
-<p>確かに、完全にプロファイルは別になるのですが<br />
-<strong>起動時の画面サイズは、プロファイル間で共有されてしまう</strong>のです</p>
-
-<p>これを解消したい…！<br />
-それが次に示すプランBのパターンです</p>
-
-<h2 id="プランb-稼働環境を別物にする">[プランB] 稼働環境を別物にする</h2>
-
-<p>つまりプランAのままだと、</p>
-
-<blockquote>
-<p>自分でブラウジングしてる「ユーザー１」の画面サイズと<br />
-「Development」ユーザの画面サイズを、<br />
-個別に保存することは出来ない</p>
-</blockquote>
-
-<p>のです…<br />
-あぁ残念 xxx</p>
-
-<p>でも大丈夫(*ﾉωﾉ)</p>
-
-<p>方法がありました</p>
-
-<p>プロファイルの保存場所そのものを、別のディレクトリにすればOKでした</p>
-
-<p>指定するオプションは「<strong>user-data-dir</strong>」です</p>
-
-<pre><code>&quot;C:\Program Files (x86)\Google\Chrome\Application\chrome.exe&quot; --user-data-dir=&quot;C:\utils\chrome_dev_profile&quot;
-</code></pre>
-
-<blockquote>
-<p>※同じく、Chromeのショートカット設定の図、先ほどのプランAの profile-directory オプションは不要<br />
-<img src="/pic/How-to-use-multiple-browser-profiles-in-chrome_06.png" style="border:solid 5px #e6e6e6"/></p>
-</blockquote>
-
-<p>このオプションで指定するディレクトリは、どこでもいいみたいですが<br />
-出来ればデフォルトで利用している</p>
-
-<blockquote>
-<p>C:\Users[Winユーザ名]\AppData\Local\Google\Chrome\User Data</p>
-</blockquote>
-
-<p>の配下は、避けた方がいいかもしれません<br />
-（わたしの環境では、スタートページがちょっと変になりました。深追いして調べてないです…）</p>
-
-<hr />
-
-<p>プランA/Bのどちらでも、マルチプロファイラでブラウジングできるのですが<br />
-より独立した設定をしたい！という人には、プランBが私的にはお勧めです</p>
-
-<p>Chrome は起動オプションがいっぱいあって、他にも<br />
-Userエージェントを指定出来たり（<strong>user-agent</strong>）、<br />
-ブラウザの言語を指定したり（<strong>lang=en-US</strong>で英語になる）と<br />
-いろんな機能が用意されてるので<br />
-開発用途としてはなかなかいい感じだなと、今更ながら思いました(*´∇`)ﾉ</p>
-
-<hr />
-
-<p>＜参考＞</p>
-
-<p>ちなみに、Google Chrome の起動オプションは<br />
-公式ではちょっと探しにくかったんですけど（わたしの探し方が悪いかも…）<br />
-こちらの人のサイトが、簡潔で一覧性が高く、参考になりました(^▽^)/</p>
-
-<ul>
-<li>List of Chromium Command Line Switches - Peter Beverloo（英語）<br />
-<a href="http://peter.sh/experiments/chromium-command-line-switches/">http://peter.sh/experiments/chromium-command-line-switches/</a></li>
-</ul>
-
-<p>以下、日本語の参考サイト</p>
-
-<ul>
-<li><p>完全Google Chrome マルチユーザマニュアル　永久保存版 - This is Shinobu&rsquo;s Memorandum<br />
-<a href="http://saske18jp.blogspot.jp/2012/05/google-chrome.html">http://saske18jp.blogspot.jp/2012/05/google-chrome.html</a></p></li>
-
-<li><p>Google Chrome を別設定で複数起動させる方法 - digitalbox<br />
-<a href="http://digitalbox.jp/google-chrome-multiple-invoking/">http://digitalbox.jp/google-chrome-multiple-invoking/</a></p></li>
-</ul>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f01%2f04%2fhow-to-use-multiple-browser-profiles-in-chrome%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bChrome%5d%20Google%20Chrome%e3%81%ae%e3%83%9e%e3%83%ab%e3%83%81%e3%83%97%e3%83%ad%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e8%a8%ad%e5%ae%9a&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f01%2f04%2fhow-to-use-multiple-browser-profiles-in-chrome%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f01%2f04%2fhow-to-use-multiple-browser-profiles-in-chrome%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f01%2f04%2fhow-to-use-multiple-browser-profiles-in-chrome%2f&title=%5bChrome%5d%20Google%20Chrome%e3%81%ae%e3%83%9e%e3%83%ab%e3%83%81%e3%83%97%e3%83%ad%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e8%a8%ad%e5%ae%9a" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -2032,6 +1967,12 @@ Userエージェントを指定出来たり（<strong>user-agent</strong>）、<
                 
                     
                         
+                            <a href="/blog/2020/03/19/how-to-install-windowsterminalpreview/" class="list-group-item">[WindowsTerminal] Preview版のインストール＆Git Bashを追加したい</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2020/02/25/how-to-change-dnsinfo-for-github-custom-domain/" class="list-group-item">[GitHub Pages] カスタムドメインのDNS情報を更新する</a><br>
                         
                     
@@ -2077,12 +2018,6 @@ Userエージェントを指定出来たり（<strong>user-agent</strong>）、<
                     
                         
                             <a href="/blog/2019/06/26/how-to-set-up-my-new-macos/" class="list-group-item">[macOS] 自分メモ！Mac手に入れたら最初にすること(多少Windows風)</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2019/06/20/where-is-git-exe-on-vs2019/" class="list-group-item">[Git] Visual Studio 2019の中のGitコマンドを探せ！</a><br>
                         
                     
                 
@@ -2472,6 +2407,16 @@ Userエージェントを指定出来たり（<strong>user-agent</strong>）、<
                     
                         <span class="badge">2</span>
                         windowsruntime
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/windowsterminal" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        windowsterminal
                     </a>
                     </u> &nbsp; 
                     

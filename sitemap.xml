@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://h-sao.com/blog/2020/03/19/how-to-install-windowsterminalpreview/</loc>
+    <lastmod>2020-03-19T23:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://h-sao.com/blog/2020/02/25/how-to-change-dnsinfo-for-github-custom-domain/</loc>
     <lastmod>2020-02-25T12:00:00+09:00</lastmod>
   </url>
@@ -457,7 +462,7 @@
   
   <url>
     <loc>http://h-sao.com/</loc>
-    <lastmod>2020-02-25T12:00:00+09:00</lastmod>
+    <lastmod>2020-03-19T23:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -541,7 +546,7 @@
   
   <url>
     <loc>http://h-sao.com/post/</loc>
-    <lastmod>2020-02-25T12:00:00+09:00</lastmod>
+    <lastmod>2020-03-19T23:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -630,6 +635,12 @@
   <url>
     <loc>http://h-sao.com/tags/windowsruntime/</loc>
     <lastmod>2014-08-31T12:35:04+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://h-sao.com/tags/windowsterminal/</loc>
+    <lastmod>2020-03-19T23:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
