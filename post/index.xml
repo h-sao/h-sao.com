@@ -6,10 +6,25 @@
     <description>Recent content in Posts on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 19 Mar 2020 23:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2020 15:00:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[c&#43;&#43;] 2次元配列的な書き方</title>
+      <link>http://h-sao.com/blog/2020/05/08/cpp-2-dimensional-array/</link>
+      <pubDate>Fri, 08 May 2020 15:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2020/05/08/cpp-2-dimensional-array/</guid>
+      <description>自分メモ
+2次元配列 C++11 以前では、2次元配列はこんな感じで書いていました
+1 2 3 4 5 6  // 2-dimensional array (raw type) constexpr static float xy_raw[][2] = { { 0.f, 10.f} // 0  , { 20.f, 30.f} // 1  , { 40.f, 50.f} // 2 };    これでも悪くは無いのですが、生配列を扱うと範囲外アクセスに気が付かない可能性が出てきます そこで C++11 から境界チェックが出来る配列の std::array が登場しました
+これを使えば、C-styleの配列のノリで扱うことが可能です
+ std::array - cpprefjp
+https://cpprefjp.github.io/reference/array/array.html  さらに2次元配列にしたければ std::array を std::vector に入れることで実現可能です
+1 2 3 4 5 6  // 2-dimensional array (using stl) const std::vector&amp;lt;std::array&amp;lt;float, 2&amp;gt;&amp;gt; xy_array = { { 0.</description>
+    </item>
     
     <item>
       <title>[WindowsTerminal] Preview版のインストール＆Git Bashを追加したい</title>
