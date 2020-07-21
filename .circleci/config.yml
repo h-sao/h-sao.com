@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: cibuilds/hugo:0.36
+    working_directory: ~/hugo
+    environment:
+      HUGO_BUILD_DIR: ~/hugo/public
+    steps:
+     - run:
+          # install git
+          name: Update enviroment
+          command: apk update && apk add git
+     - checkout
+     - run:
+          name: Building blog pages
+          command: |
+            HUGO_ENV=production hugo -v
+            cp public/index.xml public/feed.xml
+
