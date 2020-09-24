@@ -29,12 +29,12 @@ jobs:
           # extended: true 
 
       # Runs a single command using the runners shell
-      - name: Build Hugo
-        run: hugo -v
+     # - name: Build Hugo
+     #   run: hugo -v
 
       # Runs a set of commands using the runners shell
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+      # - name: Deploy
+      #  uses: peaceiris/actions-gh-pages@v3
+      #  with:
+      #    github_token: ${{ secrets.GITHUB_TOKEN }}
+      #    publish_dir: ./public
