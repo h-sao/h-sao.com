@@ -29,8 +29,8 @@ jobs:
           # extended: true 
 
       # Runs a single command using the runners shell
-     # - name: Build Hugo
-     #   run: hugo -v
+      - name: Build Hugo
+        run: hugo -v
 
       # Runs a set of commands using the runners shell
       # - name: Deploy
