@@ -69,6 +69,199 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2020/09/28/using-githubactions-for-blog/" title="[Github] Github Actionsでブログを更新するようにしました">[Github] Github Actionsでブログを更新するようにしました</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2020.09.28">2020.09.28</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/github">github</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>元々、このブログは <code>hugo</code> で作った静的HTMLを <code>wercker</code> でオートデプロイして作っていました<br />
+だけど <code>wercker</code> は設定の変更が多くてすぐにデプロイ出来なくなっていたんですよね~で、辞めました<br />
+これを作った当時は <code>wercker</code> がイケイケドンドンだったので<br />
+<code>CircleCI</code> から乗り換える人も多かったのですが<br />
+今となってはカジュアルデプロイは <code>CircleCI</code> …いやいや <code>Github Actions</code> があるやないか！<br />
+ということで、 <code>Github Actions</code> でデプロイするようにしてみました</p>
+
+<h2 id="github-actions-の設定on">Github Actions の設定ON</h2>
+
+<p>ここをポチっと押すと、Actionsの設定画面へ</p>
+
+<p><img src="/pic/Using-GithubActions-for-blog_00.png" style="border:solid 5px #e6e6e6"/></p>
+
+<h2 id="github-actions-の設定ファイルを書いてみる">Github Actions の設定ファイルを書いてみる</h2>
+
+<p>知識なしで初めてみましたが、すんなり簡単にビルド＆デプロイすることが出来ました</p>
+
+<p>というのも、<code>GitHub Actions for GitHub Pages</code> というデプロイするためのオールインワンアクションを公開してくれている方がいらっしゃいました<br />
+設定ファイルをまんま真似するだけで使えます</p>
+
+<ul>
+<li><a href="https://github.com/peaceiris/actions-gh-pages">https://github.com/peaceiris/actions-gh-pages</a></li>
+</ul>
+
+<p>そしてこの方、<code>hugo</code> 対応のアクションも公開して下さっています！</p>
+
+<ul>
+<li><a href="https://github.com/peaceiris/actions-hugo">https://github.com/peaceiris/actions-hugo</a></li>
+</ul>
+
+<p>なんと全てはここ↑↑↑に書いていて、例に書いてる <code>yaml</code> ファイルのまんまで良い感じにデプロイ出来ました</p>
+
+<p>こんなな感じ↓↓↓</p>
+
+<ul>
+<li><a href="https://github.com/h-sao/h-sao.com/blob/master/.github/workflows/actions.yml">https://github.com/h-sao/h-sao.com/blob/master/.github/workflows/actions.yml</a></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">40
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># This is a basic workflow to help you get started with Actions</span>
+
+name: Deploy Github Pages to Hugo
+
+<span style="color:#75715e"># Controls when the action will run. Triggers the workflow on push or pull request</span>
+<span style="color:#75715e"># events but only for the master branch</span>
+on:
+  push:
+    branches: <span style="color:#f92672">[</span> master <span style="color:#f92672">]</span>
+
+<span style="color:#75715e"># A workflow run is made up of one or more jobs that can run sequentially or in parallel</span>
+jobs:
+  <span style="color:#75715e"># This workflow contains a single job called &#34;build&#34;</span>
+  build:
+    <span style="color:#75715e"># The type of runner that the job will run on</span>
+    runs-on: ubuntu-latest
+
+    <span style="color:#75715e"># Steps represent a sequence of tasks that will be executed as part of the job</span>
+    steps:
+      <span style="color:#75715e"># Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it</span>
+      - uses: actions/checkout@v2
+      
+      - name: Hugo setup
+        uses: peaceiris/actions-hugo@v2
+        with:
+          <span style="color:#75715e"># The Hugo version to download (if necessary) and use. Example: 0.58.2</span>
+          hugo-version: <span style="color:#ae81ff">0</span>.54.0 
+          <span style="color:#75715e"># Download (if necessary) and use Hugo extended version. Example: true</span>
+          <span style="color:#75715e"># extended: true</span> 
+
+      <span style="color:#75715e"># Runs a single command using the runners shell</span>
+      - name: Build Hugo
+        run: hugo -v
+
+      <span style="color:#75715e"># Runs a set of commands using the runners shell</span>
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: <span style="color:#e6db74">${</span>{ secrets.GITHUB_TOKEN <span style="color:#e6db74">}</span><span style="color:#f92672">}</span>
+          publish_dir: ./public</code></pre></td></tr></table>
+</div>
+</div>
+<p>超カンタンでした(。・_・。)ノ</p>
+
+<h2 id="cname-対応">CNAME 対応</h2>
+
+<p>Github Pages でカスタムドメインを使う際には<br />
+Github Pages の公開ブランチ（わたしは <code>gh-pages</code> ）のルートにドメイン名を記載した <code>CNAME</code> ファイルを設置する必要があるのですが<br />
+これが <code>peaceiris/actions-gh-pages</code> を使ってデプロイした際に、消えてしまってました</p>
+
+<p>アクションの方の設定で対応することも出来たようなのですが<br />
+わたしはHugoそのものの設定を変えて、対応しました</p>
+
+<p>Hugo の変換元のディレクトリに <code>static/CNAME</code> を設置するだけです<br />
+これも超カンタン</p>
+
+<ul>
+<li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#use-a-custom-domain">https://gohugo.io/hosting-and-deployment/hosting-on-github/#use-a-custom-domain</a></li>
+</ul>
+
+<h2 id="感想">感想</h2>
+
+<p>SSHキーの外部登録などもしなくて良いし、Github の中で閉じてビルド＆デプロイ出来るのが良いですね！</p>
+
+<p>コネコネしたいときは <code>CircleCI</code> とか使うかもなぁと思いつつ、Github へのアクションメインの自動化であれば、これで充分ですね<br />
+今後も使っていくと思います~</p>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><p>ポートフォリオサイトを Hugo で Github Pages + Github Actions で構築する話<br />
+<a href="https://mather.github.io/posts/2019/12/08/hugo_with_github_pages/">https://mather.github.io/posts/2019/12/08/hugo_with_github_pages/</a></p></li>
+
+<li><p>Hugoで生成したコードをgithub pagesへデプロイするたびにカスタムドメインが初期化される<br />
+<a href="https://blog.app.melvins-nest.com/posts/lost-cname/">https://blog.app.melvins-nest.com/posts/lost-cname/</a></p></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2020%2f09%2f28%2fusing-githubactions-for-blog%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGithub%5d%20Github%20Actions%e3%81%a7%e3%83%96%e3%83%ad%e3%82%b0%e3%82%92%e6%9b%b4%e6%96%b0%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%97%e3%81%be%e3%81%97%e3%81%9f&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2020%2f09%2f28%2fusing-githubactions-for-blog%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2020%2f09%2f28%2fusing-githubactions-for-blog%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2020%2f09%2f28%2fusing-githubactions-for-blog%2f&title=%5bGithub%5d%20Github%20Actions%e3%81%a7%e3%83%96%e3%83%ad%e3%82%b0%e3%82%92%e6%9b%b4%e6%96%b0%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%97%e3%81%be%e3%81%97%e3%81%9f" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2020/05/08/cpp-2-dimensional-array/" title="[c&#43;&#43;] 2次元配列的な書き方">[c&#43;&#43;] 2次元配列的な書き方</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2020.05.08">2020.05.08</time>
@@ -1525,216 +1718,6 @@ Windows10でも標準機能で、範囲選択スクリーンショットが出�
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2019/06/26/how-to-set-up-my-new-macos/" title="[macOS] 自分メモ！Mac手に入れたら最初にすること(多少Windows風)">[macOS] 自分メモ！Mac手に入れたら最初にすること(多少Windows風)</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2019.06.26">2019.06.26</time>
-    
-    &middot; 
-        
-        <a href="http://h-sao.com/tags/macos">macos</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>新しくMacを入手したときの、自分なりの設定とかインストールするものを列挙してます<br />
-Windowsに慣れた人ならきっとやりたくなるキーボード設定なども書いてます</p>
-
-<p>完全な自分メモですが、Windows開発者の方の参考になればー！</p>
-
-<hr />
-
-<h1 id="最初の最初に入れたいソフト">最初の最初に入れたいソフト</h1>
-
-<ul>
-<li><strong>Google Chrome</strong> インストール<br />
-Safariが気に入らないというわけではないけど…<br />
-<a href="https://www.google.com/chrome/">https://www.google.com/chrome/</a><br /></li>
-</ul>
-
-<p><center>
-<img src="/pic/How-to-set-up-my-new-macOS_04.png" alt="" /><br />
-</center></p>
-
-<ul>
-<li><strong>VScode</strong> インストール<br />
-メモ帳代わりのものがないとつらい<br />
-<a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></li>
-</ul>
-
-<p><center>
-<img src="/pic/How-to-set-up-my-new-macOS_05.png" alt="" />
-</center></p>
-
-<h1 id="applestore系">AppleStore系</h1>
-
-<ul>
-<li><p><strong>Apple Storeにログイン</strong></p></li>
-
-<li><p><strong>夜フクロウ</strong> インストール<br />
-Twitterクライアント、最初の方に入れたい(_・ω・)_ﾊﾞｧﾝ…</p></li>
-</ul>
-
-<p><center>
-<img src="/pic/How-to-set-up-my-new-macOS_00.png" alt="" />
-</center></p>
-
-<ul>
-<li><strong>DisplayMenu</strong> インストール<br />
-画面の解像度を変更できるアプリ、本来の解像度でみれる！！！</li>
-</ul>
-
-<p><center>
-<img src="/pic/How-to-set-up-my-new-macOS_01.png" alt="" />
-</center></p>
-
-<h1 id="キー入力系の設定">キー入力系の設定</h1>
-
-<h2 id="日本語入力設定をカスタマイズ-する"><strong>日本語入力設定をカスタマイズ</strong> する</h2>
-
-<p>Caps Lockキー使ってないから日本語変換に使って、カタカナ変換不要にする</p>
-
-<blockquote>
-<p>システム＞キーボード＞<br />
-　- <strong>入力モードのカタカナをOFF</strong><br />
-　- <strong>Caps Lockの動作「オフの時「英字」を入力」</strong><br />
-<img src="/pic/How-to-set-up-my-new-macOS_02.png" alt="" /></p>
-</blockquote>
-
-<h2 id="キーボードの設定変更"><strong>キーボードの設定変更</strong></h2>
-
-<p>コピペとか日本語変換をWindows風にする<br />
-（わたしの場合は外付けキーボードのみ変更しました）</p>
-
-<p>以下、外付けキーボードを接続後に… （今回は英字キーボード）</p>
-
-<blockquote>
-<p>システム＞キーボード＞キーボードタブ＞<br />
-　修飾キー＞ <strong>Microsoft2.4GHz Transeiver</strong> を選択<br />
-　　<strong>Controlキーを　＊Commandに変更</strong><br />
-　　<strong>Commandキーを　＾Controlに変更</strong><br />
-<img src="/pic/How-to-set-up-my-new-macOS_03.png" alt="" /></p>
-
-<p>本当はMacに慣れようと思ってデフォルト設定で頑張っていましたが<br />
-Windowsで慣れまくった外部キーボードを利用するのは至難の業でしたので<br />
-設定ごと変更してしまいました(&lsquo;ω&rsquo;)</p>
-
-<p>＜参考＞ 変更前の内臓キーボードの設定<br />
-<img src="/pic/How-to-set-up-my-new-macOS_06.png" alt="" /></p>
-</blockquote>
-
-<h2 id="日本語切り替えをwindows風に変更する">日本語切り替えをWindows風に変更する</h2>
-
-<p>日本語切り替えが一番手に馴染んでしまってたので、設定を変更しようと思ったきっかけです</p>
-
-<blockquote>
-<p>システム＞キーボード＞ショートカットタブ＞入力ソース<br />
-　<strong>前の入力ソースを選択</strong>　を <strong>Alt+`</strong> に変更<br />
-<img src="/pic/How-to-set-up-my-new-macOS_07.png" alt="" /><br />
-（外部の英字キーボードで主に使う目的です）</p>
-</blockquote>
-
-<h2 id="touch-bar-のカスタマイズ">Touch Bar のカスタマイズ</h2>
-
-<p><strong>ファンクションキーを常時表示</strong> にしたかったのと、<strong>画面ロック</strong> を入れたかった</p>
-
-<blockquote>
-<p>システム＞キーボード＞キーボードタブ＞<br />
-　<strong>Touch Barに表示する項目＞F1,F2などのキー</strong><br />
-<img src="/pic/How-to-set-up-my-new-macOS_08.png" alt="" /></p>
-
-<p>システム＞キーボード＞キーボードタブ＞<br />
-　<strong>Touch Barをカスタマイズ＞画面ロックをTouch Barに入れる</strong><br />
-<img src="/pic/How-to-set-up-my-new-macOS_09.png" alt="" /><br />
-<img src="/pic/How-to-set-up-my-new-macOS_10.png" alt="" /><br />
-この画面の下にタッチバーがあるので</p>
-</blockquote>
-
-<h1 id="システム系の設定">システム系の設定</h1>
-
-<h2 id="finder-をフルパス表示にする">Finder をフルパス表示にする</h2>
-
-<p>Finder＞表示＞<br />
-　<strong>ステータスバーを表示</strong><br />
-　<strong>パスバーを表示</strong></p>
-
-<h2 id="時刻表示のカスタマイズ">時刻表示のカスタマイズ</h2>
-
-<p>Finder＞日付と時刻＞時計<br />
-　<strong>秒を表示をON</strong><br />
-　<strong>日付を表示をON</strong></p>
-
-<h2 id="パスワードの変更">パスワードの変更</h2>
-
-<p>もし変更する必要があるなら</p>
-
-<p>Finder＞ユーザとグループ＞<br />
-　<strong>パスワード変更</strong></p>
-
-<h2 id="指紋登録">指紋登録</h2>
-
-<p>思った以上に、指紋でのロック解除は良いです</p>
-
-<p>Finder＞<br />
-　<strong>Touch ID に指紋登録</strong></p>
-
-<h2 id="ターミナルの設定">ターミナルの設定</h2>
-
-<p>環境＞プロファイル＞<br />
-　<strong>Homebrew</strong> にする</p>
-
-<p>このあたりまで来たら、平常運転可能v(o￣∇￣o)♪</p>
-
-<p>以下はおまけ！</p>
-
-<h2 id="chrome-extensions-とか">Chrome Extensions とか</h2>
-
-<ul>
-<li>テーマカラーを変える</li>
-<li>必要ならユーザを作る</li>
-<li>cTouch5(filesystem)入れる</li>
-<li>Google Art Project入れる</li>
-<li>Ublock origin入れる</li>
-</ul>
-
-<h2 id="アプリのインストール">アプリのインストール</h2>
-
-<p>あとは思いつくままに。。。</p>
-
-<ul>
-<li>GitKraken入れる</li>
-<li>Docker入れる</li>
-<li>Homebrew入れる</li>
-<li>neovim入れる</li>
-<li>Discord入れる</li>
-<li>。。。</li>
-</ul>
-
-<p>こんな感じかな</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f06%2f26%2fhow-to-set-up-my-new-macos%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bmacOS%5d%20%e8%87%aa%e5%88%86%e3%83%a1%e3%83%a2%ef%bc%81Mac%e6%89%8b%e3%81%ab%e5%85%a5%e3%82%8c%e3%81%9f%e3%82%89%e6%9c%80%e5%88%9d%e3%81%ab%e3%81%99%e3%82%8b%e3%81%93%e3%81%a8%28%e5%a4%9a%e5%b0%91Windows%e9%a2%a8%29&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f06%2f26%2fhow-to-set-up-my-new-macos%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f06%2f26%2fhow-to-set-up-my-new-macos%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f06%2f26%2fhow-to-set-up-my-new-macos%2f&title=%5bmacOS%5d%20%e8%87%aa%e5%88%86%e3%83%a1%e3%83%a2%ef%bc%81Mac%e6%89%8b%e3%81%ab%e5%85%a5%e3%82%8c%e3%81%9f%e3%82%89%e6%9c%80%e5%88%9d%e3%81%ab%e3%81%99%e3%82%8b%e3%81%93%e3%81%a8%28%e5%a4%9a%e5%b0%91Windows%e9%a2%a8%29" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
@@ -1805,6 +1788,12 @@ Windowsで慣れまくった外部キーボードを利用するのは至難の�
                 
                     
                         
+                            <a href="/blog/2020/09/28/using-githubactions-for-blog/" class="list-group-item">[Github] Github Actionsでブログを更新するようにしました</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2020/05/08/cpp-2-dimensional-array/" class="list-group-item">[c&#43;&#43;] 2次元配列的な書き方</a><br>
                         
                     
@@ -1850,12 +1839,6 @@ Windowsで慣れまくった外部キーボードを利用するのは至難の�
                     
                         
                             <a href="/blog/2019/07/18/how-to-take-a-windows10-region-screenshot-by-built-in-tool/" class="list-group-item">[Windows10] 範囲選択スクリーンショットを撮る機能の紹介</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2019/07/13/to-be-rewarded-as-msmvp2019/" class="list-group-item">[MSMVP] 2019年7月 Microsoft MVP for Developer Technologies を再受賞しました</a><br>
                         
                     
                 
@@ -2021,9 +2004,9 @@ Windowsで慣れまくった外部キーボードを利用するのは至難の�
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/github" style="font-size: 17px;">
+                    <a href="http://h-sao.com//tags/github" style="font-size: 20px;">
                     
-                        <span class="badge">3</span>
+                        <span class="badge">4</span>
                         github
                     </a>
                     </u> &nbsp; 
