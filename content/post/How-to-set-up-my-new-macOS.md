@@ -2,7 +2,7 @@
 date = "2019-06-26T13:00:00+09:00"
 draft = false
 title = "[macOS] 自分メモ！Mac手に入れたら最初にすること(多少Windows風)"
-tags = ["macOS"]
+tags = ["mac"]
 +++
 
 新しくMacを入手したときの、自分なりの設定とかインストールするものを列挙してます  

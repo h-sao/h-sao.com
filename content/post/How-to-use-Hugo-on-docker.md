@@ -2,7 +2,7 @@
 date = "2019-07-28T18:00:00+09:00"
 draft = false
 title = "[Hugo] Hugoの環境をDocker上で動かす"
-tags = ["Hugo", "Docker", "macOS"]
+tags = ["Hugo", "Docker", "mac"]
 +++
 
 今回の環境
