@@ -28,8 +28,8 @@ Github Actions の設定ファイルを書いてみる 知識なしで初めて�
 というのも、GitHub Actions for GitHub Pages というデプロイするためのオールインワンアクションを公開してくれている方がいらっしゃいました
 設定ファイルをまんま真似するだけで使えます
  https://github.com/peaceiris/actions-gh-pages  そしてこの方、hugo 対応のアクションも公開して下さっています！
- https://github.com/peaceiris/actions-hugo  なんと全てはここ↑↑↑に書いていて、例に書いてる yaml ファイルのまんまで良い感じにデプロイ出来ました
-こんなな感じ↓↓↓
+ https://github.com/peaceiris/actions-hugo  ここの例に書いてる yaml ファイルのまんまで良い感じにデプロイ出来ました
+こんな感じ↓↓↓
  https://github.com/h-sao/h-sao.com/blob/master/.github/workflows/actions.yml  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40  # This is a basic workflow to help you get started with Actions name: Deploy Github Pages to Hugo # Controls when the action will run.</description>
     </item>
     
