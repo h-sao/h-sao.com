@@ -57,6 +57,140 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/" title="[SSH] ポート指定GitサーバにSSHでアクセスできない時(Windows/GitExtensions)">[SSH] ポート指定GitサーバにSSHでアクセスできない時(Windows/GitExtensions)</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.06.01">2017.06.01</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/git">git</a>
+        , 
+        
+        <a href="http://h-sao.com/tags/ssh">ssh</a>
+        , 
+        
+        <a href="http://h-sao.com/tags/gitextensions">gitextensions</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<h4 id="最近">最近…</h4>
+
+<p>機械学習関係をやってたんですけど、Unityをまた触ることになっています<br />
+てんやわんやして、前回更新から2カ月も経ってしまった…(+o+)</p>
+
+<p>今回また、タイトル名のGit/SSH関係でオロオロしたので、同現象で困ってる人の助けになれば幸いです</p>
+
+<h2 id="現象-初回ssh接続に失敗する">(現象)初回SSH接続に失敗する</h2>
+
+<h4 id="環境">環境</h4>
+
+<ul>
+<li>Windows7/64bit</li>
+<li>GitExtensions</li>
+<li>キーペアを用いた認証でのSSH接続</li>
+<li>GitサーバへのSSHアクセスは、オリジナルのポート番号を割り当てている</li>
+</ul>
+
+<p>こんな環境で作業していました（古いPCからアクセスしたかったので、Win7なのです…）</p>
+
+<ol>
+<li><p>初回クローンするために、Gitサーバにアクセスしようと、秘密鍵を .ssh ディレクトリ以下にコピーしておきます<br />
+デフォルトのSSH秘密鍵置き場は<br />
+<strong>c:\Users[ユーザ名].ssh/id_rsa</strong><br />
+です</p></li>
+
+<li><p>GitExtensionsを利用してGitリポジトリからクローンしようとすると、以下のエラーが…</p></li>
+</ol>
+
+<blockquote>
+<p><strong>fatal: Could not read from remote repository.</strong><br />
+Please make sure you have the correct access rights and repository exists.</p>
+</blockquote>
+
+<p>え、なんで…？</p>
+
+<h2 id="解決-ポート番号ありでknown-hostsに登録する">(解決)ポート番号ありでknown_hostsに登録する</h2>
+
+<p>アドレスも合ってる！<br />
+リポジトリもある！<br />
+サーバには公開鍵、クライアントには秘密鍵を置いてる！</p>
+
+<p>これでなぜアクセス出来ないのか、解明に半日かかってしまいました…トホホ<br />
+自分のインフラ力の無さに涙が出そうです</p>
+
+<p>答えを書きますと、</p>
+
+<ul>
+<li>先に<strong>コマンドプロンプトからSSHアクセス</strong>を行っておく</li>
+<li>ポート番号の指定がある場合は、<strong>ポート番号指定でアクセス</strong>しておく</li>
+</ul>
+
+<p>これで解決しました…(^_^;)</p>
+
+<p>わたしの場合のポイントは、ポート指定でした</p>
+
+<hr />
+
+<ol>
+<li><p>コマンドプロンプトを立ち上げます<br />
+わたしの場合、GitExtensionsを使ってたので  <strong>Tools &gt; Git bash</strong> から立ち上げました</p></li>
+
+<li><p>SSH のテスト接続を行います</p></li>
+</ol>
+
+<blockquote>
+<p><strong>$ssh git@[サーバアドレス] -p [SSHアクセスのポート番号]</strong></p>
+</blockquote>
+
+<p>そしたら、</p>
+
+<blockquote>
+<p>Are you sure you want to continue connecting (yes/no)?</p>
+</blockquote>
+
+<p>と聞かれるので、すかさず <strong>yes</strong> を！<br />
+c:\Users[ユーザ名].ssh\known_hosts にアクセス情報が登録されます</p>
+
+<p>これで GitExtensions に戻って新規クローン開始したら、拒否されることなくソースを取得できました！</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>最初に、</p>
+
+<blockquote>
+<p>$ssh git@[サーバアドレス]</p>
+</blockquote>
+
+<p>この状態で接続テストしてたんですけど、足りてないみたいでした</p>
+
+<p>たったこれだけなんですけど、あまり情報が乗ってなかったように思いますので<br />
+未来の自分へのメモ…</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f06%2f01%2fwhen-cant-connect-to-git-server-for-ssh-on-windows-gitextensions%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bSSH%5d%20%e3%83%9d%e3%83%bc%e3%83%88%e6%8c%87%e5%ae%9aGit%e3%82%b5%e3%83%bc%e3%83%90%e3%81%abSSH%e3%81%a7%e3%82%a2%e3%82%af%e3%82%bb%e3%82%b9%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84%e6%99%82%28Windows%2fGitExtensions%29&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f06%2f01%2fwhen-cant-connect-to-git-server-for-ssh-on-windows-gitextensions%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f06%2f01%2fwhen-cant-connect-to-git-server-for-ssh-on-windows-gitextensions%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2017%2f06%2f01%2fwhen-cant-connect-to-git-server-for-ssh-on-windows-gitextensions%2f&title=%5bSSH%5d%20%e3%83%9d%e3%83%bc%e3%83%88%e6%8c%87%e5%ae%9aGit%e3%82%b5%e3%83%bc%e3%83%90%e3%81%abSSH%e3%81%a7%e3%82%a2%e3%82%af%e3%82%bb%e3%82%b9%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84%e6%99%82%28Windows%2fGitExtensions%29" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2017/04/10/how-to-install-tensorflow-gpu-on-windows/" title="[TensorFlow] TensorFlow on Windows GPU版インストール方法">[TensorFlow] TensorFlow on Windows GPU版インストール方法</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.04.10">2017.04.10</time>
@@ -2031,169 +2165,6 @@ GPUだけは新しい型のものにしとかないと…とかとか<br />
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2016/07/20/transfer-github-repository/" title="[GitHub] GitHubリポジトリを別アカウントに移動させる">[GitHub] GitHubリポジトリを別アカウントに移動させる</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.07.20">2016.07.20</time>
-    
-    &middot; 
-        
-        <a href="http://h-sao.com/tags/github">github</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>旧 Github Micro Plan では、プライベートリポジトリは5つまでしか持てませんでしたが<br />
-最近は Presonal Plan に変更されて、リポジトリ制限数が無制限になりましたね</p>
-
-<ul>
-<li>GitHub価格ページ<br />
-<a href="https://github.com/pricing">https://github.com/pricing</a></li>
-</ul>
-
-<p>それを受けて、手元で持っている複数の Micro Plan アカウントを、一つのアカウントにまとめる作業を行いました</p>
-
-<p>あるGithubのリポジトリを別アカウントに移管する、という意味になります</p>
-
-<blockquote>
-<p>移動元個人アカウント(XXX)のリポジトリ(X-REPO)<br />
-　　　↓<br />
-移動先個人アカウント(YYY)</p>
-</blockquote>
-
-<p>ドキドキしたけど、結構すんなり出来たので、別にドキドキする必要なかった(^^;)</p>
-
-<p>とはいえ、わたしの様な小心者が、他にもいらっしゃるかもしれないので<br />
-（あと、忘れた頃の未来の自分のため^^;）<br />
-手順を詳細に載せときます</p>
-
-<hr />
-
-<h1 id="giuhub上での操作-移動元">GiuHub上での操作(移動元)</h1>
-
-<ol>
-<li><p>移動元(XXX)のアカウントで GitHub にログインします</p></li>
-
-<li><p>移動元(XXX)のGitHubのリポジトリ(X-REPO)の <strong>Settings＞ Options</strong> に行きます<br />
-<img src="/pic/Transfer-GitHub-repository_00.png" style="border:solid 5px #e6e6e6"/></p></li>
-
-<li><p>一番下に Denger Zone があるので、そこの <strong>Transfer</strong> をクリックして、移動させます<br />
-（まだ、いきなりは移動しないよ）<br />
-<img src="/pic/Transfer-GitHub-repository_01.png" alt="" /></p></li>
-
-<li><p><strong>移動元(XXX)のリポジトリ名(X-REPO)</strong>、<strong>移動先のアカウント名(YYY)</strong> を入力します<br />
-<img src="/pic/Transfer-GitHub-repository_02.png" style="border:solid 5px #e6e6e6"/><br />
-これで、リポジトリを移動させる準備が出来ました</p></li>
-
-<li><p>移動元リポジトリ(X-REPO)は、移動先アカウント(YYY)の許可待ち状態になります<br />
-<img src="/pic/Transfer-GitHub-repository_03.png" alt="" /><br />
-この状態であれば、Abort transferを押して、まだ移管を取り消すことが出来ますね！</p></li>
-</ol>
-
-<h1 id="その後-移動先アカウント-yyy-にメールが届く">その後、移動先アカウント(YYY)にメールが届く</h1>
-
-<ol>
-<li>こんなメールが移動先アカウント(YYY)に届きます</li>
-</ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">＜タイトル＞
-[GitHub] Repository transfer from @XXX (XXX/X-REPO)
-
-＜内容＞ 
-Hello YYY,
-
-@XXX wants to transfer the XXX/X-REPO repository to YYY/X-REPO. To accept the transfer, visit this link:
-
-    (★ここにリンクが記載されている)
-
-If you don’t accept the transfer, it’ll expire in about a day.
-
-Questions? Problems? Email support@github.com any time.
-
-Thanks,
-Your friends at GitHub</code></pre></td></tr></table>
-</div>
-</div>
-<p>ここで★のリンクをクリックすると、突然の移動完了です<br />
-お気を付けください(^_^;)</p>
-
-<p>というわけで、ドキドキしながら★をクリックします</p>
-
-<h1 id="すぐに-移動元アカウント-xxx-にメールが届く">すぐに、移動元アカウント(XXX)にメールが届く</h1>
-
-<ol>
-<li>移動元アカウント(XXX)の方に、通知メールが届きます</li>
-</ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">YYY added you to X-REPO
-
-You can now push to this repository.
-
----
-View it on GitHub:
-https://github.com/YYY/X-REPO</code></pre></td></tr></table>
-</div>
-</div>
-<p>これで、完全に移動が完了しました</p>
-
-<hr />
-
-<p>結構すんなりすぎて、あっけない感じです</p>
-
-<p>issue、Collaborators など、リポジトリに必要な情報がまるっと移動できるので、とても便利でした</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f07%2f20%2ftransfer-github-repository%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGitHub%5d%20GitHub%e3%83%aa%e3%83%9d%e3%82%b8%e3%83%88%e3%83%aa%e3%82%92%e5%88%a5%e3%82%a2%e3%82%ab%e3%82%a6%e3%83%b3%e3%83%88%e3%81%ab%e7%a7%bb%e5%8b%95%e3%81%95%e3%81%9b%e3%82%8b&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f07%2f20%2ftransfer-github-repository%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f07%2f20%2ftransfer-github-repository%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f07%2f20%2ftransfer-github-repository%2f&title=%5bGitHub%5d%20GitHub%e3%83%aa%e3%83%9d%e3%82%b8%e3%83%88%e3%83%aa%e3%82%92%e5%88%a5%e3%82%a2%e3%82%ab%e3%82%a6%e3%83%b3%e3%83%88%e3%81%ab%e7%a7%bb%e5%8b%95%e3%81%95%e3%81%9b%e3%82%8b" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -2265,6 +2236,12 @@ https://github.com/YYY/X-REPO</code></pre></td></tr></table>
                 
                     
                         
+                            <a href="/blog/2020/10/02/fixed-a-diffrent-cpp-runtime-env-causing-a-int-warning/" class="list-group-item">[C&#43;&#43;] 実行環境の差異によるintワーニングが出ない書き方</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2020/09/28/using-githubactions-for-blog/" class="list-group-item">[Github] Github Actionsでブログを更新するようにしました</a><br>
                         
                     
@@ -2310,12 +2287,6 @@ https://github.com/YYY/X-REPO</code></pre></td></tr></table>
                     
                         
                             <a href="/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/" class="list-group-item">[VisualStudio] Visual Studioで使う改行コードを指定する方法</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2019/07/18/how-to-take-a-windows10-region-screenshot-by-built-in-tool/" class="list-group-item">[Windows10] 範囲選択スクリーンショットを撮る機能の紹介</a><br>
                         
                     
                 
@@ -2391,9 +2362,9 @@ https://github.com/YYY/X-REPO</code></pre></td></tr></table>
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/cpp" style="font-size: 41px;">
+                    <a href="http://h-sao.com//tags/cpp" style="font-size: 44px;">
                     
-                        <span class="badge">11</span>
+                        <span class="badge">12</span>
                         cpp
                     </a>
                     </u> &nbsp; 

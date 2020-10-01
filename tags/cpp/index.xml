@@ -6,10 +6,27 @@
     <description>Recent content in Cpp on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 08 May 2020 15:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2020 05:30:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[C&#43;&#43;] 実行環境の差異によるintワーニングが出ない書き方</title>
+      <link>http://h-sao.com/blog/2020/10/02/fixed-a-diffrent-cpp-runtime-env-causing-a-int-warning/</link>
+      <pubDate>Fri, 02 Oct 2020 05:30:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2020/10/02/fixed-a-diffrent-cpp-runtime-env-causing-a-int-warning/</guid>
+      <description>C++のワーニングを放置していたら、そっと同僚の @srz_zumix さんが修正してくれてました
+忘れないうちに&amp;rdquo;φ(・ェ・o)~メモメモ
+x86環境とx64環境が混在してる場合にエラーが出やすい こんなやつとか出ます…
+1 2 3 4 5 6  // Warning が出る例 std::vector&amp;lt;int&amp;gt; my_vec = { 0, 42 }; uint32_t max_loop_counter = my_vec.size(); // ←ここね uint32_t counter = 0; // 以下、counter を max_loop_counter までなんらかの処理    これは x86環境だと warning は出ないのですが x64 環境想定でコンパイルすると、ワーニングが出ます
+ (Clangの例)
+warning: Implicit conversion loses integer precision: &amp;lsquo;std::__1::vector&amp;gt;::size_type&amp;rsquo; (aka &amp;lsquo;unsigned long&amp;rsquo;) to &amp;lsquo;u_int32_t&amp;rsquo; (aka &amp;lsquo;unsigned int&amp;rsquo;) [-Wshorten-64-to-32]
+ (￣□￣;
+ええ、ええ、判っていますとも…
+int 型が処理系によって異なるのは…</description>
+    </item>
     
     <item>
       <title>[c&#43;&#43;] 2次元配列的な書き方</title>
