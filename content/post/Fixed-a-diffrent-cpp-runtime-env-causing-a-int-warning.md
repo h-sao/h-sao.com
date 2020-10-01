@@ -5,7 +5,7 @@ title = "[C++] 実行環境の差異によるintワーニングが出ない書�
 tags = ["cpp"]
 +++
 
-C++のワーニングを放置していたら、そっと同僚の [@srz_zumix](https://twitter.com/srz_zumix) さんが修正してくれてました
+C++のワーニングを放置していたのですが、そっと [@srz_zumix](https://twitter.com/srz_zumix) さんが教えてくれてました
 
 忘れないうちに"φ(・ェ・o)~メモメモ
 

@@ -31,9 +31,9 @@ tags = ["github"]
 
 - [https://github.com/peaceiris/actions-hugo](https://github.com/peaceiris/actions-hugo)
 
-なんと全てはここ↑↑↑に書いていて、例に書いてる `yaml` ファイルのまんまで良い感じにデプロイ出来ました
+ここの例に書いてる `yaml` ファイルのまんまで良い感じにデプロイ出来ました
 
-こんなな感じ↓↓↓
+こんな感じ↓↓↓
 
 - [https://github.com/h-sao/h-sao.com/blob/master/.github/workflows/actions.yml](https://github.com/h-sao/h-sao.com/blob/master/.github/workflows/actions.yml)
 
@@ -85,7 +85,7 @@ jobs:
 ## CNAME 対応
 
 Github Pages でカスタムドメインを使う際には  
-Github Pages の公開ブランチ（わたしは `gh-pages` ）のルートにドメイン名を記載した `CNAME` ファイルを設置する必要があるのですが  
+Github Pages の公開ブランチ（わたしの場合 `gh-pages` ）のルートにドメイン名を記載した `CNAME` ファイルを設置する必要があるのですが  
 これが `peaceiris/actions-gh-pages` を使ってデプロイした際に、消えてしまってました
 
 アクションの方の設定で対応することも出来たようなのですが  
