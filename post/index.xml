@@ -6,10 +6,34 @@
     <description>Recent content in Posts on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 02 Oct 2020 05:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2020 12:00:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Windows] そのexeがx64かx86かを見分ける方法</title>
+      <link>http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/</link>
+      <pubDate>Mon, 26 Oct 2020 12:00:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/</guid>
+      <description>手元にあるexeが64bitなのか32bitなのかを知りたい…
+開発してるとこういう時がたまにあると思う…
+多分ちょっとニッチな需要だけど、検索したらちゃんと誰かが既に調べてくれていました！
+パターン1. Windows のメモ帳（notepad.exe）を使って調べる 何にもない環境でも、OS が Windows なら必ず入っているメモ帳&amp;rdquo;φ(・ェ・o)~メモメモ
+これで調べるのが一番簡単な調査方法だと思います~
+ メモ帳：notepad.exe で調べたい exe ファイルを開く
+ 文字列 PE を検索する
+こんな感じ↓↓↓
+ PE の後ろに空白がちょっとだけあり、その後に続く文字で判別できます
+   PE L  32bit版は L が続く  PR d  64bit版は d が続く   ふむふむなるほど！
+パターン2. バイナリエディタを使って調べる 最近のバイナリエディターのおススメは hexdump for VSCode です
+昔は TEXBIN を使ってましたが、VSCode 内で完結するのが良いですね~
+ hexdump for VSCode
+https://marketplace.visualstudio.com/items?itemName=slevesque.vscode-hexdump   VSCode を開く
+ 調べたい exe をドラッグ＆ドロップする
+ こんなメッセージが出る…（だが気にしない）</description>
+    </item>
     
     <item>
       <title>[C&#43;&#43;] 実行環境の差異によるintワーニングが出ない書き方</title>

@@ -69,6 +69,174 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/" title="[Windows] そのexeがx64かx86かを見分ける方法">[Windows] そのexeがx64かx86かを見分ける方法</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2020.10.26">2020.10.26</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/windows">windows</a>
+        , 
+        
+        <a href="http://h-sao.com/tags/mac">mac</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>手元にあるexeが64bitなのか32bitなのかを知りたい…</p>
+
+<p>開発してるとこういう時がたまにあると思う…</p>
+
+<p>多分ちょっとニッチな需要だけど、検索したらちゃんと誰かが既に調べてくれていました！</p>
+
+<h1 id="パターン1-windows-のメモ帳-notepad-exe-を使って調べる">パターン1. Windows のメモ帳（notepad.exe）を使って調べる</h1>
+
+<p>何にもない環境でも、OS が Windows なら必ず入っているメモ帳&rdquo;φ(・ェ・o)~メモメモ</p>
+
+<p>これで調べるのが一番簡単な調査方法だと思います~</p>
+
+<ol>
+<li><p>メモ帳：notepad.exe で調べたい exe ファイルを開く</p></li>
+
+<li><p>文字列 <strong>PE</strong> を検索する<br />
+こんな感じ↓↓↓<br />
+<img src="/pic/How-to-check-x64-or-x86-windows-binary_00.png" style="border:solid 5px #e6e6e6"/></p></li>
+
+<li><p><strong>PE</strong> の後ろに空白がちょっとだけあり、その後に続く文字で判別できます</p></li>
+</ol>
+
+<ul>
+<li><code>PE  L</code>
+
+<ul>
+<li><strong>32bit版は <code>L</code></strong> が続く</li>
+</ul></li>
+<li><code>PR  d</code>
+
+<ul>
+<li><strong>64bit版は <code>d</code></strong> が続く</li>
+</ul></li>
+</ul>
+
+<p>ふむふむなるほど！</p>
+
+<h1 id="パターン2-バイナリエディタを使って調べる">パターン2. バイナリエディタを使って調べる</h1>
+
+<p>最近のバイナリエディターのおススメは <strong>hexdump for VSCode</strong> です<br />
+昔は <a href="http://www.net3-tv.net/~m-tsuchy/tsuchy/dlpage.htm">TEXBIN</a> を使ってましたが、VSCode 内で完結するのが良いですね~</p>
+
+<ul>
+<li><strong>hexdump for VSCode</strong><br />
+<a href="https://marketplace.visualstudio.com/items?itemName=slevesque.vscode-hexdump">https://marketplace.visualstudio.com/items?itemName=slevesque.vscode-hexdump</a></li>
+</ul>
+
+<p><img src="/pic/How-to-check-x64-or-x86-windows-binary_01.png" alt="" /></p>
+
+<ol>
+<li><p><code>VSCode</code> を開く</p></li>
+
+<li><p>調べたい exe をドラッグ＆ドロップする</p></li>
+
+<li><p>こんなメッセージが出る…（だが気にしない）</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">The file is not displayed in the editor becouse it is either binary or users an unsupported eext encoding.
+Do you want to open it anyway?</code></pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>右上に出てる <code>Show Hexdump</code> をポチッ！<br />
+<img src="/pic/How-to-check-x64-or-x86-windows-binary_02.png" alt="" /></p></li>
+
+<li><p>バイナリモードで見て、<code>0x0100</code> 前後（ファイルによる）の番地あたりに<br />
+<strong>0x5045</strong> （つまり <strong>PE</strong> ）から始まる文字列があるので探す</p></li>
+
+<li><p>こんな感じ</p></li>
+</ol>
+
+<ul>
+<li><code>50 45 00 00 4c</code> →つまり <code>PE  L</code>
+
+<ul>
+<li><strong>32bit版</strong></li>
+</ul></li>
+<li><code>50 45 00 00 64</code> →つまり <code>PR  d</code>
+
+<ul>
+<li><strong>64bit版</strong></li>
+</ul></li>
+</ul>
+
+<p><img src="/pic/How-to-check-x64-or-x86-windows-binary_03.png" alt="" /></p>
+
+<p>ふむふむ、この方法も良い感じです(・ω・)ノ</p>
+
+<h1 id="パターン3-hexdump-コマンドで調べる-macosの場合">パターン3. hexdump コマンドで調べる（macOSの場合）</h1>
+
+<p>mac しか持ってない環境で VSCode も入ってなくて Windows の exe のビットを調べたい時って一体…！？<br />
+とは思いますが(&gt;&lt;)<br />
+先日、わたし自身が必要だったので、これも調べてしまいました</p>
+
+<p>VSCodeがあればパターン2 の方法で調べられるのですが<br />
+mac の標準環境だけで調査したいときは、<strong>hexdump</strong> が標準で装備されているので<br />
+それを使うのも手です(。・_・。)ノ</p>
+
+<pre><code># [-n バイト数] で先頭からのバイト数の分だけ表示出来る
+$hexdump -n 400 バイナリを調べたいファイル名
+</code></pre>
+
+<p><img src="/pic/How-to-check-x64-or-x86-windows-binary_04.png" alt="" /></p>
+
+<p>上記の例だと、x86 のようですね<br />
+良い感じです</p>
+
+<p>素の mac でバイナリデータを見たいときは、これが良いかも</p>
+
+<h2 id="備考">備考</h2>
+
+<p>いくつか他の exe のバイナリデータを見てみました</p>
+
+<p>だいたいファイルの先頭の <code>0x0080</code> ~ <code>0x0140</code> くらいまでに PEヘッダがあるようです</p>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><p>How to check if a binary is 32 or 64 bit on Windows? - superuser (StackExchange)
+<a href="https://superuser.com/questions/358434/how-to-check-if-a-binary-is-32-or-64-bit-on-windows">https://superuser.com/questions/358434/how-to-check-if-a-binary-is-32-or-64-bit-on-windows</a></p></li>
+
+<li><p>今回の調査対象にしたツール（x86版とx64版が配布されてる）<br />
+動画キャプチャツール「AG-デスクトップレコーダー」<br />
+<a href="http://t-ishii.la.coocan.jp/download/AGDRec.html">http://t-ishii.la.coocan.jp/download/AGDRec.html</a></p></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2020%2f10%2f26%2fhow-to-check-x64-or-x86-windows-binary%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bWindows%5d%20%e3%81%9d%e3%81%aeexe%e3%81%8cx64%e3%81%8bx86%e3%81%8b%e3%82%92%e8%a6%8b%e5%88%86%e3%81%91%e3%82%8b%e6%96%b9%e6%b3%95&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2020%2f10%2f26%2fhow-to-check-x64-or-x86-windows-binary%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2020%2f10%2f26%2fhow-to-check-x64-or-x86-windows-binary%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2020%2f10%2f26%2fhow-to-check-x64-or-x86-windows-binary%2f&title=%5bWindows%5d%20%e3%81%9d%e3%81%aeexe%e3%81%8cx64%e3%81%8bx86%e3%81%8b%e3%82%92%e8%a6%8b%e5%88%86%e3%81%91%e3%82%8b%e6%96%b9%e6%b3%95" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2019/07/28/how-to-use-hugo-on-docker/" title="[Hugo] Hugoの環境をDocker上で動かす">[Hugo] Hugoの環境をDocker上で動かす</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2019.07.28">2019.07.28</time>
@@ -1408,6 +1576,12 @@ MacProSao:~ Sao$
                 
                     
                         
+                            <a href="/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/" class="list-group-item">[Windows] そのexeがx64かx86かを見分ける方法</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2020/10/02/fixed-a-diffrent-cpp-runtime-env-causing-a-int-warning/" class="list-group-item">[C&#43;&#43;] 実行環境の差異によるintワーニングが出ない書き方</a><br>
                         
                     
@@ -1453,12 +1627,6 @@ MacProSao:~ Sao$
                     
                         
                             <a href="/blog/2019/07/28/how-to-use-hugo-on-docker/" class="list-group-item">[Hugo] Hugoの環境をDocker上で動かす</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/" class="list-group-item">[VisualStudio] Visual Studioで使う改行コードを指定する方法</a><br>
                         
                     
                 
@@ -1654,9 +1822,9 @@ MacProSao:~ Sao$
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/mac" style="font-size: 29px;">
+                    <a href="http://h-sao.com//tags/mac" style="font-size: 32px;">
                     
-                        <span class="badge">7</span>
+                        <span class="badge">8</span>
                         mac
                     </a>
                     </u> &nbsp; 
@@ -1818,6 +1986,16 @@ MacProSao:~ Sao$
                     
                         <span class="badge">1</span>
                         wercker
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/windows" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        windows
                     </a>
                     </u> &nbsp; 
                     
