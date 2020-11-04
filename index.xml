@@ -26,7 +26,7 @@
  文字列 PE を検索する
 こんな感じ↓↓↓
  PE の後ろに空白がちょっとだけあり、その後に続く文字で判別できます
-   PE L  32bit版は L が続く  PR d  64bit版は d が続く   ふむふむなるほど！
+   PE L  32bit版は L が続く  PE d  64bit版は d が続く   ふむふむなるほど！
 パターン2. バイナリエディタを使って調べる 最近のバイナリエディターのおススメは hexdump for VSCode です
 昔は TEXBIN を使ってましたが、VSCode 内で完結するのが良いですね~
  hexdump for VSCode
