@@ -28,7 +28,7 @@ tags = ["windows", "mac"]
 
 - `PE  L`
   - **32bit版は `L`** が続く
-- `PR  d`
+- `PE  d`
   - **64bit版は `d`** が続く
 
 ふむふむなるほど！
@@ -63,7 +63,7 @@ Do you want to open it anyway?
 
 - `50 45 00 00 4c` →つまり `PE  L`
   - **32bit版**
-- `50 45 00 00 64` →つまり `PR  d`
+- `50 45 00 00 64` →つまり `PE  d`
   - **64bit版**
 
 ![](/pic/How-to-check-x64-or-x86-windows-binary_03.png)  
