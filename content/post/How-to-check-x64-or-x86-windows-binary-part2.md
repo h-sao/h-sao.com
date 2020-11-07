@@ -13,10 +13,9 @@ tags = ["windows", "mac"]
 このブログを公開したところ、Twitterで [@ripjyr](https://twitter.com/ripjyr) さんより  
 macなら `file` コマンドあるよと教えていただいたので追加記事を書いておきます〜
 
-上記のブログ記事では、 exe データが 32bit なのか 64bit なのかを調べるやりかたとして  
-３つのチェック方法を記載しました
-
-今回は４つ目の方法の紹介です〜！
+> 上記のブログ記事では、exeデータが32bitなのか64bitなのかを調べるやりかたとして   
+３つのチェック方法を記載していました  
+今回は４つ目の方法の紹介です
 
 # パターン4. file コマンドで調べる（macOSの場合）
 
@@ -25,7 +24,7 @@ macなら `file` コマンドあるよと教えていただいたので追加記
 mac には `file` コマンドがあって、それを使うと簡単に Windows exe のビット（PEヘッダ）を調べることができます
 
 ```
-# file 調べたいファイル名 
+$ file 調べたいファイル名 
 ```
 
 - x86の場合
@@ -33,7 +32,7 @@ mac には `file` コマンドがあって、それを使うと簡単に Windows
 **PE32 executable (GUI) Intel 80386, for MS Windows** と表示されます！
 
 ```
-# file AGDRec.exe  
+$ file AGDRec.exe  
 AGDRec.exe: PE32 executable (GUI) Intel 80386, for MS Windows
 ```
 
@@ -42,7 +41,7 @@ AGDRec.exe: PE32 executable (GUI) Intel 80386, for MS Windows
 **PE32+ executable (GUI) x86-64, for MS Windows** とでます
 
 ```
-# file AGDRec64.exe
+$ file AGDRec64.exe
 AGDRec64.exe: PE32+ executable (GUI) x86-64, for MS Windows
 ```
 
