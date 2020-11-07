@@ -31,7 +31,7 @@ $ file 調べたいファイル名
 
 **PE32 executable (GUI) Intel 80386, for MS Windows** と表示されます！
 
-```
+```xml
 $ file AGDRec.exe  
 AGDRec.exe: PE32 executable (GUI) Intel 80386, for MS Windows
 ```
@@ -40,7 +40,7 @@ AGDRec.exe: PE32 executable (GUI) Intel 80386, for MS Windows
 
 **PE32+ executable (GUI) x86-64, for MS Windows** とでます
 
-```
+```xml
 $ file AGDRec64.exe
 AGDRec64.exe: PE32+ executable (GUI) x86-64, for MS Windows
 ```
