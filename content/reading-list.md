@@ -18,7 +18,7 @@ A little note :)
 
 # Tsundoku
 
-- 積んどくなし！
+- **子育てで困ったら、これやってみ！** 
 
 
 # Read through
