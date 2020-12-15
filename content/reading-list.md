@@ -15,10 +15,11 @@ A little note :)
 - **子どもが育つ魔法の言葉 - Children Learn What They Live** `chid-rasing` 
 - **みずほ銀行システム統合、苦闘の19年史 史上最大のITプロジェクト「3度目の正直」 史上最大のITプロジェクト「3度目の正直」**  `business`
 - **冨永愛 美の法則** `fasion`
+- **オードリー・タン 天才IT相7つの顔** `business` 
 
 # Tsundoku
 
-- **子育てで困ったら、これやってみ！** 
+- **子育てで困ったら、これやってみ！** `chid-rasing` 
 
 
 # Read through
