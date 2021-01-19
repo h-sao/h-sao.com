@@ -6,29 +6,10 @@
     <description>Recent content in Windows on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 07 Nov 2020 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2020 12:00:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>[Windows] そのexeがx64かx86かを見分ける方法 Part2</title>
-      <link>http://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/</link>
-      <pubDate>Sat, 07 Nov 2020 10:00:00 +0900</pubDate>
-      
-      <guid>http://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/</guid>
-      <description>先日、こんなブログを書きました
- [Windows] そのexeがx64かx86かを見分ける方法
-http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/  このブログを公開したところ、Twitterで @ripjyr さんより
-macなら file コマンドあるよと教えていただいたので追加記事を書いておきます〜
- 上記のブログ記事では、exeデータが32bitなのか64bitなのかを調べるやりかたとして
-３つのチェック方法を記載していました
-今回は４つ目の方法の紹介です
- パターン4. file コマンドで調べる（macOSの場合） これは mac のみの環境で、Win exe を調べたいって時のお話です
-mac には file コマンドがあって、それを使うと簡単に Windows exe のビット（PEヘッダ）を調べることができます
-$ file 調べたいファイル名   x86の場合  PE32 executable (GUI) Intel 80386, for MS Windows と表示されます！
-1 2  $ file AGDRec.exe AGDRec.exe: PE32 executable (GUI) Intel 80386, for MS Windows    x64の場合  PE32+ executable (GUI) x86-64, for MS Windows とでます</description>
-    </item>
     
     <item>
       <title>[Windows] そのexeがx64かx86かを見分ける方法</title>

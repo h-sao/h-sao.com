@@ -69,105 +69,6 @@
         
         
             
-<h1><a href="http://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/" title="[Windows] そのexeがx64かx86かを見分ける方法 Part2">[Windows] そのexeがx64かx86かを見分ける方法 Part2</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2020.11.07">2020.11.07</time>
-    
-    &middot; 
-        
-        <a href="http://h-sao.com/tags/windows">windows</a>
-        , 
-        
-        <a href="http://h-sao.com/tags/mac">mac</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>先日、こんなブログを書きました</p>
-
-<ul>
-<li>[Windows] そのexeがx64かx86かを見分ける方法<br />
-<a href="http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/">http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/</a></li>
-</ul>
-
-<p>このブログを公開したところ、Twitterで <a href="https://twitter.com/ripjyr">@ripjyr</a> さんより<br />
-macなら <code>file</code> コマンドあるよと教えていただいたので追加記事を書いておきます〜</p>
-
-<blockquote>
-<p>上記のブログ記事では、exeデータが32bitなのか64bitなのかを調べるやりかたとして<br />
-３つのチェック方法を記載していました<br />
-今回は４つ目の方法の紹介です</p>
-</blockquote>
-
-<h1 id="パターン4-file-コマンドで調べる-macosの場合">パターン4. file コマンドで調べる（macOSの場合）</h1>
-
-<p>これは mac のみの環境で、Win exe を調べたいって時のお話です</p>
-
-<p>mac には <code>file</code> コマンドがあって、それを使うと簡単に Windows exe のビット（PEヘッダ）を調べることができます</p>
-
-<pre><code>$ file 調べたいファイル名 
-</code></pre>
-
-<ul>
-<li>x86の場合</li>
-</ul>
-
-<p><strong>PE32 executable (GUI) Intel 80386, for MS Windows</strong> と表示されます！</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ file AGDRec.exe  
-AGDRec.exe: PE32 executable (GUI) Intel 80386, for MS Windows</code></pre></td></tr></table>
-</div>
-</div>
-<ul>
-<li>x64の場合</li>
-</ul>
-
-<p><strong>PE32+ executable (GUI) x86-64, for MS Windows</strong> とでます</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ file AGDRec64.exe
-AGDRec64.exe: PE32+ executable (GUI) x86-64, for MS Windows</code></pre></td></tr></table>
-</div>
-</div>
-<p>真に、素の mac でバイナリデータを見たいときは、これが良いですぅ！！！</p>
-
-<h2 id="謝辞">謝辞</h2>
-
-<p>@ripjyr さん、教えてくださってありがとうございました ^^</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2020%2f11%2f07%2fhow-to-check-x64-or-x86-windows-binary-part2%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bWindows%5d%20%e3%81%9d%e3%81%aeexe%e3%81%8cx64%e3%81%8bx86%e3%81%8b%e3%82%92%e8%a6%8b%e5%88%86%e3%81%91%e3%82%8b%e6%96%b9%e6%b3%95%20Part2&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2020%2f11%2f07%2fhow-to-check-x64-or-x86-windows-binary-part2%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2020%2f11%2f07%2fhow-to-check-x64-or-x86-windows-binary-part2%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2020%2f11%2f07%2fhow-to-check-x64-or-x86-windows-binary-part2%2f&title=%5bWindows%5d%20%e3%81%9d%e3%81%aeexe%e3%81%8cx64%e3%81%8bx86%e3%81%8b%e3%82%92%e8%a6%8b%e5%88%86%e3%81%91%e3%82%8b%e6%96%b9%e6%b3%95%20Part2" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
-            
 <h1><a href="http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/" title="[Windows] そのexeがx64かx86かを見分ける方法">[Windows] そのexeがx64かx86かを見分ける方法</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2020.10.26">2020.10.26</time>
@@ -298,17 +199,7 @@ $hexdump -n 400 バイナリを調べたいファイル名
 <p>上記の例だと、x86 のようですね<br />
 良い感じです</p>
 
-<p><del>素の mac でバイナリデータを見たいときは、これが良いかも</del><br />
-パターン４がありました（追記）</p>
-
-<h1 id="パターン4-file-コマンドで調べる-macosの場合">パターン4. file コマンドで調べる（macOSの場合）</h1>
-
-<p>後日、こちらに追記しました</p>
-
-<ul>
-<li>[Windows] そのexeがx64かx86かを見分ける方法 Part2<br />
-<a href="http://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/">http://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/</a></li>
-</ul>
+<p>素の mac でバイナリデータを見たいときは、これが良いかも</p>
 
 <h2 id="備考">備考</h2>
 
@@ -409,12 +300,6 @@ $hexdump -n 400 バイナリを調べたいファイル名
                 
                     
                         
-                            <a href="/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/" class="list-group-item">[Windows] そのexeがx64かx86かを見分ける方法 Part2</a><br>
-                        
-                    
-                
-                    
-                        
                             <a href="/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/" class="list-group-item">[Windows] そのexeがx64かx86かを見分ける方法</a><br>
                         
                     
@@ -460,6 +345,12 @@ $hexdump -n 400 バイナリを調べたいファイル名
                     
                         
                             <a href="/blog/2019/10/15/how-to-fix-git-author/" class="list-group-item">[Git] Commit&amp;PushしてしまったAuthor情報を変更したい</a><br>
+                        
+                    
+                
+                    
+                        
+                            <a href="/blog/2019/07/28/how-to-use-hugo-on-docker/" class="list-group-item">[Hugo] Hugoの環境をDocker上で動かす</a><br>
                         
                     
                 
@@ -655,9 +546,9 @@ $hexdump -n 400 バイナリを調べたいファイル名
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/mac" style="font-size: 35px;">
+                    <a href="http://h-sao.com//tags/mac" style="font-size: 32px;">
                     
-                        <span class="badge">9</span>
+                        <span class="badge">8</span>
                         mac
                     </a>
                     </u> &nbsp; 
@@ -825,9 +716,9 @@ $hexdump -n 400 バイナリを調べたいファイル名
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/windows" style="font-size: 14px;">
+                    <a href="http://h-sao.com//tags/windows" style="font-size: 11px;">
                     
-                        <span class="badge">2</span>
+                        <span class="badge">1</span>
                         windows
                     </a>
                     </u> &nbsp; 
@@ -918,7 +809,7 @@ $hexdump -n 400 バイナリを調べたいファイル名
 <footer class="main-footer">
   <div class="container clearfix">
       <a class="icon-rss" href="http://h-sao.com/post/index.xml" title="RSS"></a>
-      <p>&copy; 2020 &middot; Copyright © Sao Haruka<br> Powered by <a href="http://gohugo.io">Hugo</a>.</p>
+      <p>&copy; 2021 &middot; Copyright © Sao Haruka<br> Powered by <a href="http://gohugo.io">Hugo</a>.</p>
   </div>
 </footer>
 

@@ -6,29 +6,10 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 07 Nov 2020 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2020 12:00:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>[Windows] そのexeがx64かx86かを見分ける方法 Part2</title>
-      <link>http://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/</link>
-      <pubDate>Sat, 07 Nov 2020 10:00:00 +0900</pubDate>
-      
-      <guid>http://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/</guid>
-      <description>先日、こんなブログを書きました
- [Windows] そのexeがx64かx86かを見分ける方法
-http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/  このブログを公開したところ、Twitterで @ripjyr さんより
-macなら file コマンドあるよと教えていただいたので追加記事を書いておきます〜
- 上記のブログ記事では、exeデータが32bitなのか64bitなのかを調べるやりかたとして
-３つのチェック方法を記載していました
-今回は４つ目の方法の紹介です
- パターン4. file コマンドで調べる（macOSの場合） これは mac のみの環境で、Win exe を調べたいって時のお話です
-mac には file コマンドがあって、それを使うと簡単に Windows exe のビット（PEヘッダ）を調べることができます
-$ file 調べたいファイル名   x86の場合  PE32 executable (GUI) Intel 80386, for MS Windows と表示されます！
-1 2  $ file AGDRec.exe AGDRec.exe: PE32 executable (GUI) Intel 80386, for MS Windows    x64の場合  PE32+ executable (GUI) x86-64, for MS Windows とでます</description>
-    </item>
     
     <item>
       <title>[Windows] そのexeがx64かx86かを見分ける方法</title>
@@ -1985,21 +1966,18 @@ A. 回答
       
       <guid>http://h-sao.com/reading-list/</guid>
       <description>blockquote { font-size: 80% }  A little note :)
-Now reading  Modren C++チャレンジ technical 子どもが育つ魔法の言葉 - Children Learn What They Live chid-rasing みずほ銀行システム統合、苦闘の19年史 史上最大のITプロジェクト「3度目の正直」 史上最大のITプロジェクト「3度目の正直」 business 冨永愛 美の法則 fasion オードリー・タン 天才IT相7つの顔 business  Tsundoku  子育てで困ったら、これやってみ！ chid-rasing  Read through 2020 7&amp;frasl;20 お金は銀行に預けるな - 金融リテラシーの基本と実践（勝間和代） business
+Now reading  Modren C++チャレンジ technical 子どもが育つ魔法の言葉 - Children Learn What They Live chid-rasing ウォール街のランダム・ウォーカー 原書第12版 - 株式投資の不滅の真理 business Au オードリー・タン 天才IT相7つの顔 business カリスマ保育士てぃ先生の子育て手困ったら、これやってみ！ chid-rasing  Tsundoku  冨永愛 美の法則 fasion  Read through 2020 7&amp;frasl;21 みずほ銀行システム統合、苦闘の19年史 史上最大のITプロジェクト「3度目の正直」 史上最大のITプロジェクト「3度目の正直」 business
+ みずほ銀行の話題本、感想は縄狩り争いあるあるでしょーもなすぎて、ほんましょーもなーって感じ
+と思いつつ、この統合のやり方によっては自分の仕事が無くなるかと思うと
+誰もが全体最適の目線なんかで考えられるわけないわけで…
+しかし自分の仕事は去り行く仕事かもしれんと悟ったときに、さっと鞍替えできる自分で居たい…と思いました
+あとそもそも縄張りには近寄らない方が良い、ということも…
+正直言って、書籍としてはあまり面白い話では無かったです、前半なんてみずほドヤァしか書いてなかったし
+だけど頑張って最後まで読んだ
+ 7&amp;frasl;20 お金は銀行に預けるな - 金融リテラシーの基本と実践（勝間和代） business
  勝間さんの有名書籍(^^♪
 初版が2007年なのでちょっと数値的なの内容は古くなっていますが、ベースの思想は今も使えるものが書かれていると思います
-全くこれまでお金に関する勉強をしてこなかったので、とても参考になりました…
-特に、ただ銀行に預けているだけだと銀行だけが儲かる仕組み、という箇所にはびっくりしました
-お金を管理してくれてるだけじゃなくて、預けているだけで銀行は儲かっていたんですね(。・_・。)
-他にも投資の方法などが判りやすく記載されていました
-理系畑でこれまで全く興味のなかった分野ですが、他でもちょこちょこと勉強していこうかと思います
-さすがベストセラーだけあるなぁの印象です！読んで良かった！
- 7&amp;frasl;17 お金の真理（与沢翼）　business
- 与沢翼の本第2弾！これは著者自身の人生観を振り返りながら、どうやってお金を稼いで、溜めて、活かして、増やしていくかを書かれています
-読み物としては本当に面白いです
-これを読んだだけでは何もならないって力強く書かれていました…行動するのは自分自身だって！
-元気の出る内容です
- 7&amp;frasl;13 THE BULLET JOURNAL METHEOD (RYDER CARROLL) business</description>
+全くこれまでお金に関する勉強をしてこなかったので、とても参考になりました…</description>
     </item>
     
   </channel>
