@@ -17,11 +17,9 @@ A little note :)
 - **Au オードリー・タン 天才IT相7つの顔** `business`
 - **カリスマ保育士てぃ先生の子育て手困ったら、これやってみ！** `chid-rasing` 
 
-
 # Tsundoku
 
 - **冨永愛 美の法則** `fasion`
-
 
 # Read through
 
