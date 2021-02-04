@@ -2,6 +2,8 @@
 Sao Haruka's blog  
 My personal website hosted on GitHub Pages.
 
+- [http://h-sao.com/](http://h-sao.com/)
+
 ## Powered by
 
 - [Hugo](//gohugo.io/)
