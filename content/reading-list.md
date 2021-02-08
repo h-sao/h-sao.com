@@ -20,6 +20,7 @@ A little note :)
 # Tsundoku
 
 - **冨永愛 美の法則** `fasion`
+- **職業、挑戦者** `business`
 
 # Read through
 
