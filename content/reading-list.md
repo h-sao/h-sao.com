@@ -22,6 +22,7 @@ A little note :)
 - **冨永愛 美の法則** `fasion`
 - **職業、挑戦者** `business`
 - **超スローライフ** `business`
+- **エンジニアのためのマネジメントキャリアパス** `business`
 
 # Read through
 
