@@ -90,7 +90,15 @@ $hexdump -n 400 バイナリを調べたいファイル名
 上記の例だと、x86 のようですね  
 良い感じです
 
-素の mac でバイナリデータを見たいときは、これが良いかも
+~~素の mac でバイナリデータを見たいときは、これが良いかも~~  
+パターン４がありました（追記）
+
+# パターン4. file コマンドで調べる（macOSの場合）
+
+後日、こちらに追記しました
+
+- [Windows] そのexeがx64かx86かを見分ける方法 Part2  
+[http://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/](http://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/)
 
 ## 備考
 
