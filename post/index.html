@@ -69,6 +69,104 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/" title="[Windows] そのexeがx64かx86かを見分ける方法 Part2">[Windows] そのexeがx64かx86かを見分ける方法 Part2</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2020.11.07">2020.11.07</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/windows">windows</a>
+        , 
+        
+        <a href="http://h-sao.com/tags/mac">mac</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>先日、こんなブログを書きました</p>
+
+<ul>
+<li>[Windows] そのexeがx64かx86かを見分ける方法<br />
+<a href="http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/">http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/</a></li>
+</ul>
+
+<p>このブログを公開したところ、Twitterで <a href="https://twitter.com/ripjyr">@ripjyr</a> さんより<br />
+macなら <code>file</code> コマンドあるよと教えていただいたので追加記事を書いておきます～</p>
+
+<p>上記のブログ記事では、 exe データが 32bit なのか 64bit なのかを調べるやりかたとして<br />
+３つのチェック方法を記載しました</p>
+
+<p>今回は４つ目の方法の紹介です～！</p>
+
+<h1 id="パターン4-file-コマンドで調べる-macosの場合">パターン4. file コマンドで調べる（macOSの場合）</h1>
+
+<p>これは mac のみの環境で、Win exe を調べたいって時のお話です</p>
+
+<p>mac には <code>file</code> コマンドがあって、それを使うと簡単に Windows exe のビット（PEヘッダ）を調べることができます</p>
+
+<pre><code>$ file 調べたいファイル名 
+</code></pre>
+
+<ul>
+<li>x86の場合</li>
+</ul>
+
+<p><strong>PE32 executable (GUI) Intel 80386, for MS Windows</strong> と表示されます！</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ file AGDRec.exe  
+AGDRec.exe: PE32 executable (GUI) Intel 80386, for MS Windows</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>x64の場合</li>
+</ul>
+
+<p><strong>PE32+ executable (GUI) x86-64, for MS Windows</strong> とでます</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ file AGDRec64.exe
+AGDRec64.exe: PE32+ executable (GUI) x86-64, for MS Windows</code></pre></td></tr></table>
+</div>
+</div>
+<p>真に、素の mac でバイナリデータを見たいときは、これが良いですぅ！！！</p>
+
+<h2 id="謝辞">謝辞</h2>
+
+<p>@ripjyr さん、教えてくださってありがとうございました ^^</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2020%2f11%2f07%2fhow-to-check-x64-or-x86-windows-binary-part2%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bWindows%5d%20%e3%81%9d%e3%81%aeexe%e3%81%8cx64%e3%81%8bx86%e3%81%8b%e3%82%92%e8%a6%8b%e5%88%86%e3%81%91%e3%82%8b%e6%96%b9%e6%b3%95%20Part2&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2020%2f11%2f07%2fhow-to-check-x64-or-x86-windows-binary-part2%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2020%2f11%2f07%2fhow-to-check-x64-or-x86-windows-binary-part2%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2020%2f11%2f07%2fhow-to-check-x64-or-x86-windows-binary-part2%2f&title=%5bWindows%5d%20%e3%81%9d%e3%81%aeexe%e3%81%8cx64%e3%81%8bx86%e3%81%8b%e3%82%92%e8%a6%8b%e5%88%86%e3%81%91%e3%82%8b%e6%96%b9%e6%b3%95%20Part2" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/" title="[Windows] そのexeがx64かx86かを見分ける方法">[Windows] そのexeがx64かx86かを見分ける方法</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2020.10.26">2020.10.26</time>
@@ -1789,94 +1887,6 @@ cibuilds/hugo   Docker image <span style="color:#66d9ef">for</span> Hugo, the st
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/" title="[VisualStudio] Visual Studioで使う改行コードを指定する方法">[VisualStudio] Visual Studioで使う改行コードを指定する方法</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2019.07.26">2019.07.26</time>
-    
-    &middot; 
-        
-        <a href="http://h-sao.com/tags/unity">unity</a>
-        , 
-        
-        <a href="http://h-sao.com/tags/visualstudio">visualstudio</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>環境</p>
-
-<ul>
-<li>Windows10</li>
-<li>Visual Studio 2019</li>
-<li>Unity 2018</li>
-</ul>
-
-<p>元々これを調べたきっかけは、Unityで作ったプロジェクトファイルを開いたときに<br />
-<strong>改行コード</strong> に関する警告が必ず出ていたからです</p>
-
-<blockquote>
-<p>There are inconsistent line endings in the &lsquo;Assets/Script/xxxxx.cs&rsquo; script. Some are Mac OS X (UNIX) and some are Windows.</p>
-</blockquote>
-
-<p>Windowsで作業してたとしても、Unityのプロジェクトはで作られたソースコードは<br />
-改行コードが <strong>LF</strong> なんですよね<br />
-Visual Studio のデフォルトは <strong>CR+LF</strong></p>
-
-<p>それで改行コードが混じってますよ～とVSが警告出してくれてたんですね。。。</p>
-
-<p>プロジェクト内では、Windows と macOS が入り乱れている状態なので<br />
-<strong>CR+LF</strong> に統一も出来ず<br />
-<strong>LF</strong>に統一するしかない…</p>
-
-<p>そんなときは、<code>.editorcongfig</code> ファイルを作成するのがおススメです！</p>
-
-<h3 id="editorcongfig-ファイル">.editorcongfig ファイル</h3>
-
-<pre><code>[*]
-end_of_line = lf
-charset = utf-8-bom
-</code></pre>
-
-<blockquote>
-<p><code>end_of_line</code> で改行コードを LF 指定にしています<br />
-あとUnityで日本語を扱うなら、Bom付きのUTF-8 が良いらしい（？）</p>
-</blockquote>
-
-<p>この<code>.editorcongfig</code> ファイルをUnityプロジェクト直下に置けばOK</p>
-
-<p>Visual Stusio で編集したコードでも、LFの改行コードとなりました</p>
-
-<p>警告無く作業が出来るようになって、小さなストレスから解放♪</p>
-
-<ul>
-<li>（参考）Unityと改行コード - エフアンダーバー 個人開発の記録<br />
-<a href="https://www.f-sp.com/entry/2017/04/06/023709">https://www.f-sp.com/entry/2017/04/06/023709</a></li>
-</ul>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f07%2f26%2fhow-to-keep-line-feed-code-by-visualstudio-2019%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bVisualStudio%5d%20Visual%20Studio%e3%81%a7%e4%bd%bf%e3%81%86%e6%94%b9%e8%a1%8c%e3%82%b3%e3%83%bc%e3%83%89%e3%82%92%e6%8c%87%e5%ae%9a%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f07%2f26%2fhow-to-keep-line-feed-code-by-visualstudio-2019%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f07%2f26%2fhow-to-keep-line-feed-code-by-visualstudio-2019%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f07%2f26%2fhow-to-keep-line-feed-code-by-visualstudio-2019%2f&title=%5bVisualStudio%5d%20Visual%20Studio%e3%81%a7%e4%bd%bf%e3%81%86%e6%94%b9%e8%a1%8c%e3%82%b3%e3%83%bc%e3%83%89%e3%82%92%e6%8c%87%e5%ae%9a%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
@@ -1947,6 +1957,12 @@ charset = utf-8-bom
                 
                     
                         
+                            <a href="/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/" class="list-group-item">[Windows] そのexeがx64かx86かを見分ける方法 Part2</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/" class="list-group-item">[Windows] そのexeがx64かx86かを見分ける方法</a><br>
                         
                     
@@ -1992,12 +2008,6 @@ charset = utf-8-bom
                     
                         
                             <a href="/blog/2019/10/15/how-to-fix-git-author/" class="list-group-item">[Git] Commit&amp;PushしてしまったAuthor情報を変更したい</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2019/07/28/how-to-use-hugo-on-docker/" class="list-group-item">[Hugo] Hugoの環境をDocker上で動かす</a><br>
                         
                     
                 
@@ -2193,9 +2203,9 @@ charset = utf-8-bom
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/mac" style="font-size: 32px;">
+                    <a href="http://h-sao.com//tags/mac" style="font-size: 35px;">
                     
-                        <span class="badge">8</span>
+                        <span class="badge">9</span>
                         mac
                     </a>
                     </u> &nbsp; 
@@ -2363,9 +2373,9 @@ charset = utf-8-bom
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/windows" style="font-size: 11px;">
+                    <a href="http://h-sao.com//tags/windows" style="font-size: 14px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">2</span>
                         windows
                     </a>
                     </u> &nbsp; 

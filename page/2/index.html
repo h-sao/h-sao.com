@@ -57,6 +57,94 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/" title="[VisualStudio] Visual Studioで使う改行コードを指定する方法">[VisualStudio] Visual Studioで使う改行コードを指定する方法</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2019.07.26">2019.07.26</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/unity">unity</a>
+        , 
+        
+        <a href="http://h-sao.com/tags/visualstudio">visualstudio</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>環境</p>
+
+<ul>
+<li>Windows10</li>
+<li>Visual Studio 2019</li>
+<li>Unity 2018</li>
+</ul>
+
+<p>元々これを調べたきっかけは、Unityで作ったプロジェクトファイルを開いたときに<br />
+<strong>改行コード</strong> に関する警告が必ず出ていたからです</p>
+
+<blockquote>
+<p>There are inconsistent line endings in the &lsquo;Assets/Script/xxxxx.cs&rsquo; script. Some are Mac OS X (UNIX) and some are Windows.</p>
+</blockquote>
+
+<p>Windowsで作業してたとしても、Unityのプロジェクトはで作られたソースコードは<br />
+改行コードが <strong>LF</strong> なんですよね<br />
+Visual Studio のデフォルトは <strong>CR+LF</strong></p>
+
+<p>それで改行コードが混じってますよ～とVSが警告出してくれてたんですね。。。</p>
+
+<p>プロジェクト内では、Windows と macOS が入り乱れている状態なので<br />
+<strong>CR+LF</strong> に統一も出来ず<br />
+<strong>LF</strong>に統一するしかない…</p>
+
+<p>そんなときは、<code>.editorcongfig</code> ファイルを作成するのがおススメです！</p>
+
+<h3 id="editorcongfig-ファイル">.editorcongfig ファイル</h3>
+
+<pre><code>[*]
+end_of_line = lf
+charset = utf-8-bom
+</code></pre>
+
+<blockquote>
+<p><code>end_of_line</code> で改行コードを LF 指定にしています<br />
+あとUnityで日本語を扱うなら、Bom付きのUTF-8 が良いらしい（？）</p>
+</blockquote>
+
+<p>この<code>.editorcongfig</code> ファイルをUnityプロジェクト直下に置けばOK</p>
+
+<p>Visual Stusio で編集したコードでも、LFの改行コードとなりました</p>
+
+<p>警告無く作業が出来るようになって、小さなストレスから解放♪</p>
+
+<ul>
+<li>（参考）Unityと改行コード - エフアンダーバー 個人開発の記録<br />
+<a href="https://www.f-sp.com/entry/2017/04/06/023709">https://www.f-sp.com/entry/2017/04/06/023709</a></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f07%2f26%2fhow-to-keep-line-feed-code-by-visualstudio-2019%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bVisualStudio%5d%20Visual%20Studio%e3%81%a7%e4%bd%bf%e3%81%86%e6%94%b9%e8%a1%8c%e3%82%b3%e3%83%bc%e3%83%89%e3%82%92%e6%8c%87%e5%ae%9a%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f07%2f26%2fhow-to-keep-line-feed-code-by-visualstudio-2019%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f07%2f26%2fhow-to-keep-line-feed-code-by-visualstudio-2019%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f07%2f26%2fhow-to-keep-line-feed-code-by-visualstudio-2019%2f&title=%5bVisualStudio%5d%20Visual%20Studio%e3%81%a7%e4%bd%bf%e3%81%86%e6%94%b9%e8%a1%8c%e3%82%b3%e3%83%bc%e3%83%89%e3%82%92%e6%8c%87%e5%ae%9a%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2019/07/18/how-to-take-a-windows10-region-screenshot-by-built-in-tool/" title="[Windows10] 範囲選択スクリーンショットを撮る機能の紹介">[Windows10] 範囲選択スクリーンショットを撮る機能の紹介</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2019.07.18">2019.07.18</time>
@@ -1281,190 +1369,6 @@ User-Agent Swither for Chrome の更新は、2017年8月3日で止まってる�
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2019/01/30/hello2019/" title="[Diary] 2019年もよろしくお願いします">[Diary] 2019年もよろしくお願いします</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2019.01.30">2019.01.30</time>
-    
-    &middot; 
-        
-        <a href="http://h-sao.com/tags/diary">diary</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>去年の振り返りをしてなかったので、ここでまとめとこうかなと…ブログは自分のメモだからね</p>
-
-<h2 id="技術活動">技術活動</h2>
-
-<p>去年は <strong>ebisu/nakameguro_feature.cpp</strong> という、C++14/17の機能について、知ってる人、調べてきた人がゆるく紹介するという会を続けました<br />
-だいたい月に2回のペースだったかな<br />
-2018/1/1～12/13 まで、全部で11回分開催してます<br />
-出産により(&lsquo;ω&rsquo;) 途中の3月から7月まで、開催をお休みさせてもらいましたが、それでもよく続きましたね☆彡</p>
-
-<ul>
-<li><strong>feature.cpp</strong><br />
-<a href="https://ebisu-effective-modern-cpp.connpass.com/event/">https://ebisu-effective-modern-cpp.connpass.com/event/</a><br />
-<center><img src="/pic/Hello2018_03.png" alt="" /></center></li>
-</ul>
-
-<p>C++17の機能について、みんなのおかげでかなり詳しくなりましたよ(*^▽^*)</p>
-
-<p>ちょうど次回は、1/31(木) 開催～</p>
-
-<ul>
-<li><strong>nakameguro_feature.cpp vol.15</strong><br />
-<a href="https://ebisu-effective-modern-cpp.connpass.com/event/118243/">https://ebisu-effective-modern-cpp.connpass.com/event/118243/</a><br /></li>
-</ul>
-
-<p>あとは、大阪でも主催しました <strong>meetup app osaka @3</strong></p>
-
-<ul>
-<li><strong>meetup app osaka@3</strong><br />
-<a href="https://meetupapp.connpass.com/event/112659/">https://meetupapp.connpass.com/event/112659/</a></li>
-</ul>
-
-<p>元々関西出身なので、帰省がてらに開催させて頂きました<br />
-こちらもコミュニティ仲間が、たくさんたくさん居いるので、開催できました☆彡<br />
-しゃべってくれた人、参加してくれた人、みんなみんなありがとう(*^▽^*)</p>
-
-<p>ネタとしては、AI関係のライブラリの <strong>NimTorch</strong> を紹介しました</p>
-
-<ul>
-<li><strong>NimTorch</strong><br />
-<a href="https://github.com/fragcolor-xyz/nimtorch">https://github.com/fragcolor-xyz/nimtorch</a></li>
-</ul>
-
-<p>（おまけ）<br />
-発表じゃないけど、とても印象深かったものがあります！<br />
-出産後、初の勉強会参加は、C++創始者の <strong>Bjarne Stroustrup</strong> 先生の東京大学での講演会でした</p>
-
-<ul>
-<li><strong>The continuing evolution of C++</strong><br />
-<a href="https://u-tokyo-ist.connpass.com/event/92085/">https://u-tokyo-ist.connpass.com/event/92085/</a></li>
-</ul>
-
-<p>動画も年末に公開されてます(*^▽^*)<br />
-<a href="http://todai.tv/contents-list/2018FY/bjarne_stroustrup/01">http://todai.tv/contents-list/2018FY/bjarne_stroustrup/01</a></p>
-
-<p>これは参加出来て、すごく嬉しかったです</p>
-
-<p>産後、赤ちゃんはかわいいけど、色んな事が辛くて辛くて…<br />
-でも、これを機会にまた、自分の情報発信力を信じて、勉強会やっていこうって思えるようになりました</p>
-
-<h2 id="産休-育休中にしてたこと">産休/育休中にしてたこと</h2>
-
-<p>現在も、保育園がまっっっっっっっっっったく決まらないので、育休中なんですけど<br />
-はっきしいって、大したことは何も出来なかった…</p>
-
-<p>体力も落ちて全身ガタガタだし、授乳で寝れないし、情報発信どころか、あんだけやってたゲームも止まってしまいました</p>
-
-<p>だけど、自分の中でマイナスばかりじゃなくて、良い変化もありました</p>
-
-<ul>
-<li><strong>明らかに、タスクの優先管理ができるようになった</strong><br /></li>
-<li><strong>数分でも、即時に集中できるようになった</strong><br /></li>
-</ul>
-
-<p>いやー実にすばらしい。。。</p>
-
-<p>なぜこれが、働いていた時に出来なかったのか、、、(&lsquo;ω&rsquo;)</p>
-
-<p>それは、自分を拘束するものが無かったから、自分で自由に時間を使えてたんですね～<br />
-まぁ夜更かしすれば挽回できるか～とか、まとめて休日に追い込みだーとかとか…(&lsquo;ω&rsquo;)</p>
-
-<p>前は、時間が足りない～やりたいことをする時間がない！とか思ってたけど、<br />
-これまではやりたいこともいっぱい出来てた、自分で好きに行動できていました！（遠い目）</p>
-
-<p>環境も変わり、プライオリティ付けと集中力が身に付いた…と</p>
-
-<p>どうりで、ワーキングママがテキパキしてるわけですね(*&lsquo;ω&rsquo;*)</p>
-
-<h2 id="そのほか">そのほか</h2>
-
-<p>＜Microsoft MVP＞</p>
-
-<p>去年の7月に、無事、MS MVPのアワード再受賞をさせていただきました<br />
-これまでカテゴリは Windows Development系だったのですが、<br />
- <strong>Microsoft MVP for Developer Technologies</strong> というカテゴリに変わりました</p>
-
-<p>＜タスク管理＞</p>
-
-<p>去年も書きましたタスク管理について、今年も工夫しました</p>
-
-<ul>
-<li><strong>Todoist</strong>(日本語版)<br />
-<a href="https://ja.todoist.com/">https://ja.todoist.com/</a></li>
-</ul>
-
-<p><strong>繰り返し予定</strong> は、これが便利ですね</p>
-
-<p>あと、<strong>思いついたバックログ的な意味合い</strong> にも使っていて<br />
-ばばっと書いておいて、後で整理する感じ<br />
-Todistは良くも悪くもベースが「タスクを１つ登録する」スタイルなので、シンプルでそこが良い感じですね</p>
-
-<ul>
-<li><strong>Trello</strong><br />
-<a href="https://trello.com/ja">https://trello.com/ja</a></li>
-</ul>
-
-<p>Todistは良かったんだけど、プロジェクト的なものは、だんぜん <strong>Trello</strong> が向いてることに気が付きました</p>
-
-<p>タスクにコメント付けをたらたらと書けるのが、好みです</p>
-
-<ul>
-<li><strong>フランクリン・プランナー オーガナイザー</strong><br /></li>
-</ul>
-
-<p>そして、、、ついに戻ってきてしまいました…手帳という紙媒体が復活(&lsquo;ω&rsquo;)<br />
-有名すぎるのですが、<strong>フランクリン・プランナー</strong> という自己啓発で有名な手帳を年末に買いました</p>
-
-<p>これ、、、リーフレット版(?)はめちゃ高額で 5,000円～10,000円くらい<br />
-オーガナイザーというシリーズは、いわゆるノート型の手帳で、アマゾンで 1日1ページ書けるものを 3,400円くらいで買いました</p>
-
-<p>Todist も Trello も、ただのツールなので、<br />
-ツールはわたしが主体的に使わないと、何もしてくれません（当然のことですけど）</p>
-
-<p>なので、自分のモチベーションキープのために、自分の文字で書く手帳ってやつを買ってみました</p>
-
-<p>まぁ手帳も結局はツールなんでね…<br />
-アプリと紙で、適度な感じで、わたしのやる気を補い合ってくれれば良いかなーと思ってます</p>
-
-<hr />
-
-<p>鐘は打てば響く…逆に何もしないと、何も鳴らない<br />
-というのをひしひしと感じた2018年でした</p>
-
-<p>全ては主体的であれ…</p>
-
-<p>そして元気な赤ちゃんが産まれてきてくれました<br />
-本当にありがとう</p>
-
-<p>もう少しで2019年の1月も終わってしまいますが、今年もどうぞ、よろしくお願いします♪</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f01%2f30%2fhello2019%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bDiary%5d%202019%e5%b9%b4%e3%82%82%e3%82%88%e3%82%8d%e3%81%97%e3%81%8f%e3%81%8a%e9%a1%98%e3%81%84%e3%81%97%e3%81%be%e3%81%99&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f01%2f30%2fhello2019%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f01%2f30%2fhello2019%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f01%2f30%2fhello2019%2f&title=%5bDiary%5d%202019%e5%b9%b4%e3%82%82%e3%82%88%e3%82%8d%e3%81%97%e3%81%8f%e3%81%8a%e9%a1%98%e3%81%84%e3%81%97%e3%81%be%e3%81%99" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -1536,6 +1440,12 @@ Todistは良くも悪くもベースが「タスクを１つ登録する」ス�
                 
                     
                         
+                            <a href="/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/" class="list-group-item">[Windows] そのexeがx64かx86かを見分ける方法 Part2</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/" class="list-group-item">[Windows] そのexeがx64かx86かを見分ける方法</a><br>
                         
                     
@@ -1581,12 +1491,6 @@ Todistは良くも悪くもベースが「タスクを１つ登録する」ス�
                     
                         
                             <a href="/blog/2019/10/15/how-to-fix-git-author/" class="list-group-item">[Git] Commit&amp;PushしてしまったAuthor情報を変更したい</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2019/07/28/how-to-use-hugo-on-docker/" class="list-group-item">[Hugo] Hugoの環境をDocker上で動かす</a><br>
                         
                     
                 
@@ -1782,9 +1686,9 @@ Todistは良くも悪くもベースが「タスクを１つ登録する」ス�
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/mac" style="font-size: 32px;">
+                    <a href="http://h-sao.com//tags/mac" style="font-size: 35px;">
                     
-                        <span class="badge">8</span>
+                        <span class="badge">9</span>
                         mac
                     </a>
                     </u> &nbsp; 
@@ -1952,9 +1856,9 @@ Todistは良くも悪くもベースが「タスクを１つ登録する」ス�
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/windows" style="font-size: 11px;">
+                    <a href="http://h-sao.com//tags/windows" style="font-size: 14px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">2</span>
                         windows
                     </a>
                     </u> &nbsp; 
