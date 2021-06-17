@@ -57,6 +57,58 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2021/06/17/select-to-start-os-on-bootcamp/" title="[macOS] BootCampの起動OSを選ぶ">[macOS] BootCampの起動OSを選ぶ</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2021.06.17">2021.06.17</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/bootcamp">bootcamp</a>
+        , 
+        
+        <a href="http://h-sao.com/tags/macos">macos</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p>macOS に BootCamp を入れると、デフォルト起動OSが Windows になります<br />
+（わたしの環境ではそうなりました）</p>
+
+<p>これ、デフォルトを macOS に戻すには、</p>
+
+<blockquote>
+<p>システム環境設定<br />
+　＞ 起動ディスク</p>
+</blockquote>
+
+<p>ここを macOS にすればOK</p>
+
+<p><img src="/pic/Select-to-start-OS-on-BootCamp_00.png" alt="" /></p>
+
+<p>Windows を立ち上げたい時には、電源を入れた直後に <code>option</code> を長押しすれば、起動OS選択画面になります</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2021%2f06%2f17%2fselect-to-start-os-on-bootcamp%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bmacOS%5d%20BootCamp%e3%81%ae%e8%b5%b7%e5%8b%95OS%e3%82%92%e9%81%b8%e3%81%b6&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2021%2f06%2f17%2fselect-to-start-os-on-bootcamp%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2021%2f06%2f17%2fselect-to-start-os-on-bootcamp%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2021%2f06%2f17%2fselect-to-start-os-on-bootcamp%2f&title=%5bmacOS%5d%20BootCamp%e3%81%ae%e8%b5%b7%e5%8b%95OS%e3%82%92%e9%81%b8%e3%81%b6" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/" title="[Windows] そのexeがx64かx86かを見分ける方法 Part2">[Windows] そのexeがx64かx86かを見分ける方法 Part2</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2020.11.07">2020.11.07</time>
@@ -1746,151 +1798,12 @@ Total <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>d
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2019/07/28/how-to-use-hugo-on-docker/" title="[Hugo] Hugoの環境をDocker上で動かす">[Hugo] Hugoの環境をDocker上で動かす</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2019.07.28">2019.07.28</time>
-    
-    &middot; 
-        
-        <a href="http://h-sao.com/tags/hugo">hugo</a>
-        , 
-        
-        <a href="http://h-sao.com/tags/docker">docker</a>
-        , 
-        
-        <a href="http://h-sao.com/tags/mac">mac</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>今回の環境</p>
-
-<ul>
-<li>macOS Mojave</li>
-<li>Docker Desktop</li>
-<li>Hugo</li>
-</ul>
-
-<p>このブログは <a href="https://gohugo.io/">Hugo</a> というスタティックジェネレーターで作っています</p>
-
-<p>Hugoは golang で動いているので、ローカルに Go の環境が必要なわけですが<br />
-以前、MacBookの中にダイレクトに Hugo をインストールしていたら、別で入っているGoのバージョンと、うまくかみ合わなくなったことがありました</p>
-
-<p>解決に結構時間が取られちゃったので、もう macOSを使うときには、なんでもかんでも docker で分離しようと心に決めたのでした…</p>
-
-<p>その方法です</p>
-
-<p>やってみたら、超簡単でした</p>
-
-<hr />
-
-<h3 id="hugo-に対応した-docker-image-をダウンロード">Hugo に対応した docker image をダウンロード</h3>
-
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Hugo で docker を検索</span>
-<span style="display:block;width:100%;background-color:#3c3d38">sao$ docker search hugo
-</span>NAME                  DESCRIPTION                            STARS    OFFICIAL  AUTOMATED
-jojomi/hugo     hugo, see https://gohugo.io                     <span style="color:#ae81ff">44</span>               <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
-publysher/hugo  Docker base image <span style="color:#66d9ef">for</span> static sites generated…   <span style="color:#ae81ff">37</span>               <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
-monachus/hugo   Docker image <span style="color:#66d9ef">for</span> building and running Hugo <span style="color:#f92672">(</span>…   <span style="color:#ae81ff">28</span>               <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
-klakegg/hugo    Minimal image and variants with batteries in…   <span style="color:#ae81ff">22</span>               <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
-cibuilds/hugo   Docker image <span style="color:#66d9ef">for</span> Hugo, the static-site gener…   <span style="color:#ae81ff">10</span>  
-…
-…（いっぱいあった）</code></pre></td></tr></table>
-</div>
-</div>
-
-<p>今回わたしは、<strong><em>klakegg/hugo</em></strong> のバージョンを使うことにしました</p>
-
-<ul>
-<li><p><strong><em>klakegg/hugo</em></strong> - docker hub<br />
-<a href="https://hub.docker.com/r/klakegg/hugo">https://hub.docker.com/r/klakegg/hugo</a></p></li>
-
-<li><p><strong><em>klakegg/hugo</em></strong> - GitHub<br />
-<a href="https://github.com/klakegg/docker-hugo">https://github.com/klakegg/docker-hugo</a></p></li>
-</ul>
-
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span></span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ダウンロード</span>
-<span style="display:block;width:100%;background-color:#3c3d38">sao$ docker pull klakegg/hugo</span></code></pre></td></tr></table>
-</div>
-</div>
-
-<h3 id="起動">起動</h3>
-
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ローカルのマークダウンファイルの場所に移動</span>
-<span style="display:block;width:100%;background-color:#3c3d38">sao$ cd h-sao.com/
-</span>
-<span style="color:#75715e"># まんまこのコマンドでOK</span>
-<span style="display:block;width:100%;background-color:#3c3d38">h-sao.com sao$ docker run --rm -it -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/src -p <span style="color:#ae81ff">1313</span>:1313 klakegg/hugo:0.55.0 server
-</span>
-<span style="color:#75715e"># ブラウザで http://localhost:1313 にアクセスするとOK</span></code></pre></td></tr></table>
-</div>
-</div>
-
-<p>超超超簡単でした。。。</p>
-
-<p>これからも mac環境では docker さまに当分お世話になりますm(_ _)m</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f07%2f28%2fhow-to-use-hugo-on-docker%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bHugo%5d%20Hugo%e3%81%ae%e7%92%b0%e5%a2%83%e3%82%92Docker%e4%b8%8a%e3%81%a7%e5%8b%95%e3%81%8b%e3%81%99&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f07%2f28%2fhow-to-use-hugo-on-docker%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f07%2f28%2fhow-to-use-hugo-on-docker%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2019%2f07%2f28%2fhow-to-use-hugo-on-docker%2f&title=%5bHugo%5d%20Hugo%e3%81%ae%e7%92%b0%e5%a2%83%e3%82%92Docker%e4%b8%8a%e3%81%a7%e5%8b%95%e3%81%8b%e3%81%99" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
     
 
-	<p class="counter"> 1  8</p>
+	<p class="counter"> 1  9</p>
 
 
 	
@@ -1954,6 +1867,12 @@ cibuilds/hugo   Docker image <span style="color:#66d9ef">for</span> Hugo, the st
                 
                     
                         
+                            <a href="/blog/2021/06/17/select-to-start-os-on-bootcamp/" class="list-group-item">[macOS] BootCampの起動OSを選ぶ</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/" class="list-group-item">[Windows] そのexeがx64かx86かを見分ける方法 Part2</a><br>
                         
                     
@@ -2002,12 +1921,6 @@ cibuilds/hugo   Docker image <span style="color:#66d9ef">for</span> Hugo, the st
                 
                     
                 
-                    
-                        
-                            <a href="/blog/2019/10/15/how-to-fix-git-author/" class="list-group-item">[Git] Commit&amp;PushしてしまったAuthor情報を変更したい</a><br>
-                        
-                    
-                
             </div>
 
             <div class="panel-heading">
@@ -2044,6 +1957,16 @@ cibuilds/hugo   Docker image <span style="color:#66d9ef">for</span> Hugo, the st
                     
                         <span class="badge">1</span>
                         asset
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/bootcamp" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        bootcamp
                     </a>
                     </u> &nbsp; 
                     
@@ -2204,6 +2127,16 @@ cibuilds/hugo   Docker image <span style="color:#66d9ef">for</span> Hugo, the st
                     
                         <span class="badge">9</span>
                         mac
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/macos" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        macos
                     </a>
                     </u> &nbsp; 
                     

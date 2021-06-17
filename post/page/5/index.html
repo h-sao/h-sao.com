@@ -69,6 +69,133 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2016/11/15/settings-maya2015-part1/" title="[Maya] Maya2015設定ウィンドウの開き方">[Maya] Maya2015設定ウィンドウの開き方</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.11.15">2016.11.15</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/maya">maya</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>Mayaはいろんな機能がありますね…<br />
+設定の開き方すら判らないという恥ずかしい思いをよくしているので、いざというときの自分のメモです</p>
+
+<p>記載環境は、Maya2015 on Windows10 です</p>
+
+<h2 id="レンダリングエンジンの変更">レンダリングエンジンの変更</h2>
+
+<p>Mayaのデフォルトレンダリングは <strong>OpenGL</strong> になっています<br />
+<strong>DirectX11</strong> に変更する方法</p>
+
+<ol>
+<li><p>プリファレンスウィンドウを開きます<br />
+<strong>Windows</strong><br />
+　&gt; <strong>Settings/Prederences</strong><br />
+　　&gt; <strong>Preferences</strong><br />
+<img src="/pic/Settings-Maya2015-part1_00.png" style="border:solid 5px #e6e6e6"/></p></li>
+
+<li><p><strong>Display</strong> カテゴリの <strong>Viewport 2.0</strong> に<br />
+Rendering engine を変更できるドロップダウンリストがあるので、そこで変更できる<br />
+<img src="/pic/Settings-Maya2015-part1_01.png" style="border:solid 5px #e6e6e6"/></p></li>
+</ol>
+
+<h2 id="レンダー設定">レンダー設定</h2>
+
+<p>上記はレンダリングエンジンについてでしたが、レンダリングの設定を触るところはまた別の箇所になっています</p>
+
+<ol>
+<li><p>レンダー設定のウィンドウを開きます<br />
+<strong>Windows</strong><br />
+　&gt; <strong>Rendering Editors</strong><br />
+　　&gt; <strong>Render Settings</strong><br />
+<img src="/pic/Settings-Maya2015-part1_04.png" style="border:solid 5px #e6e6e6"/></p></li>
+
+<li><p>レンダー設定ウィンドウ<br />
+<img src="/pic/Settings-Maya2015-part1_05.png" style="border:solid 5px #e6e6e6"/></p></li>
+
+<li><p>使うレンダリングの設定を、ここで選ぶことが出来ます<br />
+わたしの場合は Maya Hardware 2.0 を選択したりしてます<br />
+<img src="/pic/Settings-Maya2015-part1_06.png" alt="" /></p></li>
+</ol>
+
+<h2 id="ハードウェアレンダラ2-0設定">ハードウェアレンダラ2.0設定</h2>
+
+<p>浮動小数レンダーターゲットを有効化したいとき</p>
+
+<blockquote>
+<p>この画面は、Maya2015固有みたいです</p>
+</blockquote>
+
+<ol>
+<li><p>Mayaの作業画面（ビューポート）の <strong>Renderer</strong> の <strong>Viewport2.0</strong> の横にある、四角いチェックを押してみます<br />
+<img src="/pic/Settings-Maya2015-part1_02.png" alt="" /></p></li>
+
+<li><p><strong>Hardware Renderer 2.0 Settings</strong> のウィンドウが表示されます<br />
+<img src="/pic/Settings-Maya2015-part1_03.png" style="border:solid 5px #e6e6e6"/></p></li>
+
+<li><p>精度を上げた浮動小数レンダリングをするには<br />
+<strong>Floating Point Render Target</strong> の Enable にチェックを入れます<br />
+フォーマットは、16bit と 32bit が選択できました</p></li>
+</ol>
+
+<h2 id="カメラの設定">カメラの設定</h2>
+
+<ol>
+<li><p>カメラアトリビュートを出すには<br />
+Mayaの作業画面（ビューポート）の <strong>View</strong> の <strong>Select Camera</strong> を選択します<br />
+<img src="/pic/Settings-Maya2015-part1_07.png" alt="" /></p></li>
+
+<li><p><strong>Attribute Editor</strong> がぽこっと現れます<br />
+違うものが現れたときには、<br />
+横のタブに <strong>persp</strong>, <strong>perspShape</strong><br />
+縦のタブに <strong>Channel Box/Layer Editor</strong>, <strong>Attribute Editor</strong> があるので<br />
+開きたいものを選択します<br />
+<img src="/pic/Settings-Maya2015-part1_08.png" alt="" /></p></li>
+</ol>
+
+<h2 id="インストールされているプラグイン">インストールされているプラグイン</h2>
+
+<ol>
+<li><p>プラグインマネージャを開きます<br />
+<strong>Windows</strong><br />
+　&gt; <strong>Settings/Prederences</strong><br />
+　　&gt; <strong>Plug-in Manager</strong><br />
+<img src="/pic/Settings-Maya2015-part1_09.png" style="border:solid 5px #e6e6e6"/></p></li>
+
+<li><p>プラグイン一覧がここで見れます<br />
+<img src="/pic/Settings-Maya2015-part1_10.png" style="border:solid 5px #e6e6e6"/></p></li>
+</ol>
+
+<p>自分の必要なメモ書きでした<br />
+Mayaは奥が深いですね～</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f11%2f15%2fsettings-maya2015-part1%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bMaya%5d%20Maya2015%e8%a8%ad%e5%ae%9a%e3%82%a6%e3%82%a3%e3%83%b3%e3%83%89%e3%82%a6%e3%81%ae%e9%96%8b%e3%81%8d%e6%96%b9&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f11%2f15%2fsettings-maya2015-part1%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f11%2f15%2fsettings-maya2015-part1%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f11%2f15%2fsettings-maya2015-part1%2f&title=%5bMaya%5d%20Maya2015%e8%a8%ad%e5%ae%9a%e3%82%a6%e3%82%a3%e3%83%b3%e3%83%89%e3%82%a6%e3%81%ae%e9%96%8b%e3%81%8d%e6%96%b9" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2016/08/09/prerelease-yebis-for-unity-beta/" title="[Unity] Unity用YEBISプラグインのお話してきました">[Unity] Unity用YEBISプラグインのお話してきました</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.08.09">2016.08.09</time>
@@ -1846,76 +1973,6 @@ remote.origin.url=<span class="hljs-keyword">https://github.com/h-sao/xxx.git</s
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/" title="[勉強会] ebisu_effective_modern.cpp vol.3やりますよ">[勉強会] ebisu_effective_modern.cpp vol.3やりますよ</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.03.27">2016.03.27</time>
-    
-    &middot; 
-        
-        <a href="http://h-sao.com/tags/cpp">cpp</a>
-        , 
-        
-        <a href="http://h-sao.com/tags/ebisucpp">ebisucpp</a>
-        , 
-        
-        <a href="http://h-sao.com/tags/community">community</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<h2 id="ebisu-effective-modern-cppって">ebisu_effective_modern.cppって？</h2>
-
-<p><center>
-<img src="/pic/Information-ebisu-cpp-vol3_00.png" alt="" />
-</center></p>
-
-<p>東京の恵比寿でC++について、みんなの意見を聞きながら本を読み進める勉強会を開いています</p>
-
-<p>昔、大阪でC++の読書会を開催していたのですが、それが結構役に立って面白かったので、東京でも開催してみよう！と思い、始めてみました</p>
-
-<ul>
-<li><p>ebisu_effective_modern.cpp vol.3<br />
-2016/3/31 (木) 20:00-21:30 東京恵比寿<br />
-<a href="http://ebisu-effective-modern-cpp.connpass.com/event/29324/">http://ebisu-effective-modern-cpp.connpass.com/event/29324/</a></p></li>
-
-<li><p>ちなみに大阪はこちらで絶賛開催中ですよ～！<br />
-大阪C++読書会<br />
-<a href="http://cpp-osaka.connpass.com/">http://cpp-osaka.connpass.com/</a></p></li>
-</ul>
-
-<p>ネタが無いと勉強や会話もしずらいので、<br />
-<strong>「Effective Modern C ーC11/14プログラムを進化させる42項目」</strong> を元に進めています</p>
-
-<p>今回は、<strong>５章 右辺値参照、ムーブセマンティックス、完全転送</strong> について…<br />
-前回の vol.2 では、基本的なムーブの動きを簡単に抑えた程度になったので、あまり深いところまでは進めませんでした<br />
-書籍の内容にぐいぐい追いつけるように頑張りますよ～</p>
-
-<p>興味ある方はどうぞ、お気軽にお越しください(^^)/</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f03%2f27%2finformation-ebisu-cpp-vol3%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5b%e5%8b%89%e5%bc%b7%e4%bc%9a%5d%20ebisu_effective_modern.cpp%20vol.3%e3%82%84%e3%82%8a%e3%81%be%e3%81%99%e3%82%88&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f03%2f27%2finformation-ebisu-cpp-vol3%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f03%2f27%2finformation-ebisu-cpp-vol3%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f03%2f27%2finformation-ebisu-cpp-vol3%2f&title=%5b%e5%8b%89%e5%bc%b7%e4%bc%9a%5d%20ebisu_effective_modern.cpp%20vol.3%e3%82%84%e3%82%8a%e3%81%be%e3%81%99%e3%82%88" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
@@ -1988,6 +2045,12 @@ remote.origin.url=<span class="hljs-keyword">https://github.com/h-sao/xxx.git</s
                 
                     
                         
+                            <a href="/blog/2021/06/17/select-to-start-os-on-bootcamp/" class="list-group-item">[macOS] BootCampの起動OSを選ぶ</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/" class="list-group-item">[Windows] そのexeがx64かx86かを見分ける方法 Part2</a><br>
                         
                     
@@ -2036,12 +2099,6 @@ remote.origin.url=<span class="hljs-keyword">https://github.com/h-sao/xxx.git</s
                 
                     
                 
-                    
-                        
-                            <a href="/blog/2019/10/15/how-to-fix-git-author/" class="list-group-item">[Git] Commit&amp;PushしてしまったAuthor情報を変更したい</a><br>
-                        
-                    
-                
             </div>
 
             <div class="panel-heading">
@@ -2078,6 +2135,16 @@ remote.origin.url=<span class="hljs-keyword">https://github.com/h-sao/xxx.git</s
                     
                         <span class="badge">1</span>
                         asset
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/bootcamp" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        bootcamp
                     </a>
                     </u> &nbsp; 
                     
@@ -2238,6 +2305,16 @@ remote.origin.url=<span class="hljs-keyword">https://github.com/h-sao/xxx.git</s
                     
                         <span class="badge">9</span>
                         mac
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/macos" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        macos
                     </a>
                     </u> &nbsp; 
                     
