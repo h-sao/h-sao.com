@@ -17,4 +17,5 @@ macOS に BootCamp を入れると、デフォルト起動OSが Windows にな�
 
 ![](/pic/Select-to-start-OS-on-BootCamp_00.png)
 
-Windows を立ち上げたい時には、電源を入れた直後に `option` を長押しすれば、起動OS選択画面になります
+Windows を立ち上げたい時には、  
+電源を入れた直後に `option` を長押しすれば、起動OS選択画面になります
