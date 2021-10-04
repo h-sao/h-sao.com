@@ -69,6 +69,100 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2016/11/16/ue4-install-requirements/" title="[UE4] Unreal Engine4のインストール要件">[UE4] Unreal Engine4のインストール要件</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.11.16">2016.11.16</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/ue4">ue4</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p>仕事上、色んな Game Engine を試しておりまして<br />
+先日、クリーンで、比較的低スペックな Windows10 PC に<br />
+Epic さんの Unreal Engine 4 をインストールしたときに、はふん？と思った件のメモです</p>
+
+<hr />
+
+<p><strong>Enreal Engine 4 のダウンロード</strong> はダッシュボードから出来ます (ログインが必要)</p>
+
+<ul>
+<li><strong>Enreal Engine 4 ダウンロード</strong><br />
+<a href="https://www.unrealengine.com/dashboard">https://www.unrealengine.com/dashboard</a></li>
+</ul>
+
+<p><img src="/pic/UE4-install-requirements1.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>迷わず、Windows のプラットフォームを選択！</p>
+
+<p>落としてきた EpicGamesLauncherInstaller-2.12.14-3176191.msi (2016/11/16現在) を実行します</p>
+
+<p>あれ？</p>
+
+<p><img src="/pic/UE4-install-requirements0.png" style="border:solid 5px #e6e6e6"/></p>
+
+<blockquote>
+<p>コンピューターにXINPUT1_3.dll がないため、プログラムを開始できません。この問題を解決するには、プログラムを再インストールしてみてください。</p>
+</blockquote>
+
+<p>はて。。。何やら懐かしい香りのDLL名がエラーに上がっています(￣▽￣)</p>
+
+<p>UE4 のインストール要件って、なんだったっけ？と思ったのですが、ダウンロードの画面には、何も書かれてないんですよね～</p>
+
+<p>よく判らないから、ドキュメントを見てみよう！ということで<br />
+「ハードウェア＆ソフトウェア仕様」のドキュメントサイトを見ていくと<br />
+ソフトウェアのインストール要件が書かれていました</p>
+
+<ul>
+<li><p>ハードウェア＆ソフトウェア仕様<br />
+<a href="https://docs.unrealengine.com/latest/JPN/GettingStarted/RecommendedSpecifications/index.html">https://docs.unrealengine.com/latest/JPN/GettingStarted/RecommendedSpecifications/index.html</a></p>
+
+<ul>
+<li>エンジンの実行環境<br />
+OS : Windows 7 / 8 64-bit<br />
+<strong>DirectX Runtime : <a href="https://www.microsoft.com/en-us/download/details.aspx?id=8109">DirectX End-User Runtimes (June 2010)</a></strong></li>
+</ul></li>
+</ul>
+
+<p>おぉぉ、<strong>DXのランタイム</strong>！お前さんだったのかぁ～</p>
+
+<p>というわけで、<strong>DirectX End-User Runtimes (June 2010)</strong> を入れたら、すんなり UE4 のインストールは出来ました(^o^)</p>
+
+<p>ランチャーのランタイムエラーが判りにくいよ…と思ったけど<br />
+これくらいのことはゲーム開発する人にとったら、許容範囲ですかね(^^;)</p>
+
+<p>あと実は、UE4 は Win10 を<br />
+今日現在で、オフィシャルにはサポートしてないのかぁと思いました</p>
+
+<p>単にドキュメントの更新の問題かしら？？？</p>
+
+<p>まぁ今のところ、わたしの Windows10 の環境では<br />
+問題なく UE4 の開発環境は動いてるので、特に問題ないです(^^)</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f11%2f16%2fue4-install-requirements%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bUE4%5d%20Unreal%20Engine4%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e8%a6%81%e4%bb%b6&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f11%2f16%2fue4-install-requirements%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f11%2f16%2fue4-install-requirements%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f11%2f16%2fue4-install-requirements%2f&title=%5bUE4%5d%20Unreal%20Engine4%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e8%a6%81%e4%bb%b6" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2016/11/15/settings-maya2015-part1/" title="[Maya] Maya2015設定ウィンドウの開き方">[Maya] Maya2015設定ウィンドウの開き方</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.11.15">2016.11.15</time>
@@ -1511,468 +1605,6 @@ MonoBehaviour は無くても動くみたいです<br />
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/" title="[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続">[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.05.07">2016.05.07</time>
-    
-    &middot; 
-        
-        <a href="http://h-sao.com/tags/git">git</a>
-        , 
-        
-        <a href="http://h-sao.com/tags/github">github</a>
-        , 
-        
-        <a href="http://h-sao.com/tags/gitextensions">gitextensions</a>
-        , 
-        
-        <a href="http://h-sao.com/tags/ssh">ssh</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>しょっちゅう作っては、作り方を忘れ、また検索で調べる…ということをしているので、sshキーの生成&amp;接続について、忘れないようにメモしておきます</p>
-
-<h1 id="gitサーバへsshキーを使って接続したい">GitサーバへSSHキーを使って接続したい</h1>
-
-<p>Gitサーバに接続するには、</p>
-
-<ul>
-<li>http</li>
-<li>ssh</li>
-</ul>
-
-<p>この2種類の接続方法があるみたいです</p>
-
-<p>Git接続用のクライアントアプリは、どっちで接続するか選択できるものもあるので<br />
-Sourcetreeなどを使っていると、あまり認識してない人もいるかもしれません</p>
-
-<p>今回、こんなクライアント環境で試しました</p>
-
-<ul>
-<li>自端末：Windows10 x64</li>
-<li>Gitサーバ：GitHub</li>
-<li>Gitクライアントアプリ：GitExtensions</li>
-<li>Gitアクセスには、複数アカウントを利用している</li>
-</ul>
-
-<p>これを試そうと思ったモチベーションは、push のたびに IDとパスワードを毎回聞かれるのがやだ、だからキーペアを利用して ssh アクセスにするんだー<br />
-というところから始まってます</p>
-
-<p>GitHub のIDとパスワードをスキップして、セキュアアクセスするのだ！という方の参考になればと思います！</p>
-
-<blockquote>
-<p>あと、番外編として、 非推奨ですが https アクセスでIDとパスワードを毎回聞かれないようにする方法も最後にメモしておきます</p>
-</blockquote>
-
-<h1 id="キーの生成方法-ssh-keygen">キーの生成方法 ssh-keygen</h1>
-
-<p>ここは普通に<br />
-公開鍵と秘密鍵を作ればいいだけなので、知ってる人に取ったら何をいまさら…になりますが、一応メモ</p>
-
-<p>Gitがインストールされているなら <strong>ssh-keygen</strong> が使えますので、コマンドを打つだけ<br />
-(コマンドを打たなくても、Gitのクライアントアプリが勝手にやってくれる場合もあります)</p>
-
-<p>GitBash などを起動します</p>
-
-<p><img src="/pic/Generate-ssh-key-for-GitHub_00.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>コマンドはこちら</p>
-
-<pre><code>$ ssh-keygen -t rsa
-</code></pre>
-
-<p>基本的には、何か聞かれてもエンターで進めばOKです</p>
-
-<p>デフォルトでは <strong>c:\Users\[ユーザ名]\.ssh\** 以下に</strong>秘密鍵（id_rsa）<strong>と</strong>公開鍵（id_rsa.pub）**のキーペアが作成されます</p>
-
-<p>Windowsだとキーの保存位置は c:\Users\[ユーザ名]\.ssh\ にしないといけません</p>
-
-<p>わたしは、Github用のキーだと判るように、名前を github_rsa として作成しました<br />
-（既に別の用途で id_rsa を使っているからです、つまり複数アカウントを利用しています）</p>
-
-<p>実行結果はこれ↓↓↓</p>
-
-<pre><div class="hljs">(SHA256以下の箇所は、適当に x で書き換えています)
-
-haruka.sao@MyPC MINGW64 ~
-<span class="hljs-keyword">$ ssh-keygen -t rsa</span>
-Generating public/private rsa key pair.
-<span class="hljs-string">Enter file in which to save the key (/c/Users/haruka.sao/.ssh/id_rsa):</span> /c/Users/haruka.sao/.ssh/github_rsa
-<span class="hljs-string">Enter passphrase (empty for no passphrase):
-Enter same passphrase again:</span>
-Your identification has been saved in /c/Users/haruka.sao/.ssh/github_rsa.
-Your public key has been saved in /c/Users/haruka.sao/.ssh/github_rsa.pub.
-The key fingerprint is:
-SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx haruka.sao@MyPC
-The key's randomart image is:
-+---[RSA 2048]----+
-|      x          |
-|      x          |
-|      x          |
-|      x          |
-|      x          |
-|      x          |
-|      x          |
-|      x          |
-|      x          |
-+----[SHA256]-----+
-
-haruka.sao@MyPC MINGW64 ~
-$
-</div></pre>
-
-<p>キーペアができたできた</p>
-
-<h1 id="sshキーをgithubに登録">SSHキーをGitHubに登録</h1>
-
-<p>c:\Users\[ユーザ名]\.ssh\ に保存された id_rsa.pub （わたしの場合はgithub_rsa.pub）を GitHubに登録します</p>
-
-<p>自分のアカウントの <strong>Settings &gt; SSH and GPG keys &gt; New SSH key</strong> をクリックすると、先ほど作った公開鍵を登録することができます</p>
-
-<p><img src="/pic/Generate-ssh-key-for-GitHub_01.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>先ほど作った id_rsa.pub 公開鍵を登録しましょう！<br />
-くれぐれも id_rsa の秘密鍵の方ではないので、お間違え無く！</p>
-
-<p>id_rsa.pub の中身を見ればわかりますが、「<strong>ssh-rsa ……</strong>」 から始まっているファイルになります</p>
-
-<p><img src="/pic/Generate-ssh-key-for-GitHub_02.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>登録すると、こんな感じの記載になります</p>
-
-<p><img src="/pic/Generate-ssh-key-for-GitHub_03.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>最後に、自分の秘密鍵が c:\Users\[ユーザ名]\.ssh\ に設置されていることを再確認！</p>
-
-<p><img src="/pic/Generate-ssh-key-for-GitHub_04.png" style="border:solid 5px #e6e6e6"/></p>
-
-<h1 id="openssh-モード">OpenSSH モード</h1>
-
-<p>GitExtensions で ssh 接続したい場合、<br />
-私的にはお勧めなのは、OpenSSHモードにすることです</p>
-
-<p>※ PuTTYアクセスは、PuTTYの独自フォーマットのキーを登録するなどが必要ですので、わたしは利用をやめました</p>
-
-<p><img src="/pic/Generate-ssh-key-for-GitHub_05.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>これで下準備はOK！</p>
-
-<h1 id="pcから-ssh-で接続テスト">PCから ssh で接続テスト</h1>
-
-<p>Git bash で接続テストしてみましょう</p>
-
-<p>さっきの Git bash で、リポジトリの下まで移動します<br />
-もしくは、GitExtensions から起動すると、初期ディレクトリはそのリポジトリの下になります</p>
-
-<p><img src="/pic/Generate-ssh-key-for-GitHub_08.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>確認パターンは２パターンあります</p>
-
-<h2 id="パターン1-id-rsa-で登録している-ssh-キーを利用する場合">(パターン1) id_rsa で登録している ssh キーを利用する場合</h2>
-
-<p>このコマンドで確認します</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ ssh -T git@github.com</code></pre></td></tr></table>
-</div>
-</div>
-<p><strong>id_rsa</strong> というファイル名を、ssh 接続では自動的に認識するようです</p>
-
-<p>初回は、known_hosts に GitHub サーバを登録するよ？と聞いてくるので、 yes を入力します</p>
-
-<blockquote>
-<p>Hi [GitHubユーザ名]! You&rsquo;ve successfully authenticated, but GitHub does not provide shell access.</p>
-</blockquote>
-
-<p>が表示されればOKです</p>
-
-<p>わたしの実行結果はこちら↓↓↓</p>
-
-<pre><div class="hljs">
-<span class="hljs-keyword">$ ssh -T git@github.com</span>
-The authenticity of host 'github.com (192.30.252.122)' can't be established.
-RSA key fingerprint is xx:xx:xx:xx:xx:xx:
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added 'github.com,192.30.252.122' (RSA) to the list of known hosts.
-<span class="hljs-string">Hi h-sao! You've successfully authenticated,</span> but GitHub does not provide shell access.
-
-</div></pre>
-
-<p>known_hosts ファイルがこんな感じで作られました</p>
-
-<p><img src="/pic/Generate-ssh-key-for-GitHub_09.png" style="border:solid 5px #e6e6e6"/></p>
-
-<h2 id="パターン2-独自の名前で作った-ssh-キーを利用する場合">(パターン2) 独自の名前で作った ssh キーを利用する場合</h2>
-
-<p>わたしの場合は、先ほど github_rsa という名前でキーを生成したので、こちらのパターンになりました</p>
-
-<p>まず、 github_rsa という独自名称を ssh アクセス時に認識させる必要があります</p>
-
-<p>c:\Users\[ユーザ名]\.ssh\ 直下に config という名前のファイルを作成します</p>
-
-<blockquote>
-<p>※この部分は、Gitうんぬんは関係のない、ssh 接続の話です<br />
-　Windows の ssh 接続では c:\Users\[ユーザ名]\.ssh\config はすべてのSSH接続で共有されます</p>
-</blockquote>
-
-<p>c:\Users\[ユーザ名]\.ssh\config の内容はこんな感じです</p>
-
-<pre><div class="hljs">
-Host <span class="hljs-string">my.github.server</span>
-  HostName  <span class="hljs-string">github.com</span>
-  Port      <span class="hljs-string">22</span>
-  User      <span class="hljs-string">h-sao</span>
-  IdentityFile  <span class="hljs-string">~/.ssh/github_rsa</span>
-  TCPKeepAlive <span class="hljs-string">yes</span>
-  IdentitiesOnly <span class="hljs-string">yes</span>
-
-</div></pre>
-
-<ul>
-<li><strong>Host</strong><br />
-アクセス識別子なので、どんな名前でもOK</li>
-<li><strong>HostName</strong><br />
-実際にアクセスするアドレス</li>
-<li><strong>Port</strong><br />
-アクセスするポート番号、ssh(Secure Shell)の番号<br />
-OpenSSHのデフォは22番なので、わざわざ書かなくてもいいのですが一応記載</li>
-<li><strong>User</strong><br />
-GitHubユーザ名を入れます</li>
-<li><strong>IdentityFile</strong><br />
-利用する ssh 秘密鍵ファイルのパス</li>
-<li><strong>TCPKeepAlive</strong>：yes<br />
-これもデフォは yes なのですが、念のため<br /></li>
-<li><strong>IdentitiesOnly</strong>：yes<br />
-.ssh/config の設定を増やしていくと「Too many authentication failures」が出ることがあるらしいです、変なエラーはやなので、あらかじめ設定しておきます</li>
-</ul>
-
-<blockquote>
-<p>＜参考リンク＞</p>
-
-<ul>
-<li><p>SSHに公開鍵認証で接続する際に Too many authentication failures が出る - 6vox<br />
-<a href="http://blog.6vox.com/2014/11/ssh-too-many-authentication-failures.html">http://blog.6vox.com/2014/11/ssh-too-many-authentication-failures.html</a></p></li>
-
-<li><p>OpenSSH ssf_configの設定項目 - Life with IT<br />
-<a href="http://l-w-i.net/t/openssh/conf_001.txt">http://l-w-i.net/t/openssh/conf_001.txt</a></p></li>
-</ul>
-</blockquote>
-
-<p>ここまで準備したら、接続テストしましょう<br />
-config に設定した名前で　Host の名称アクセスすることが出来ます！</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ ssh -T my.github.server</code></pre></td></tr></table>
-</div>
-</div>
-<p>うまくいくと、パターン1と同じように、known hostに登録するかどうかを聞かれて、ファイルが作成されます</p>
-
-<p><img src="/pic/Generate-ssh-key-for-GitHub_10.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>また、</p>
-
-<blockquote>
-<p>Hi [GitHubユーザ名]! You&rsquo;ve successfully authenticated, but GitHub does not provide shell access.</p>
-</blockquote>
-
-<p>こんな感じで、自分のGitHub名でアクセス出来たことが判ります<br />
-いちおキャプチャ置いときます</p>
-
-<p><img src="/pic/Generate-ssh-key-for-GitHub_11.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>これで、クライアントPCから GitHub に IDとパスワードを利用せずに接続することが出来ました！</p>
-
-<h1 id="まだgitextensions-から-ssh-アクセスは出来ない">まだGitExtensions から ssh アクセスは出来ない</h1>
-
-<p>さて、この状態で、GitExtensions のプッシュボタンを押して Pushしようとしても、IDとパスワードを聞かれます</p>
-
-<p><img src="/pic/Generate-ssh-key-for-GitHub_06.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>Pushボタンを押すと…</p>
-
-<p><img src="/pic/Generate-ssh-key-for-GitHub_07.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>GitHub のアカウントとパスワードを聞かれます…<br />
-どうやら <strong>https アクセスがデフォルト</strong>みたいです</p>
-
-<p>ちゃんと自身の Git リポジトリに ssh 接続するんだよー</p>
-
-<p>を認識させてあげないといけません</p>
-
-<h1 id="git-リポジトリに-ssh-接続設定を教える">Git リポジトリに ssh 接続設定を教える</h1>
-
-<p>Git リポジトリの設定を Git bash のコマンドで見ることが出来ます</p>
-
-<pre><code>$ git config -l
-</code></pre>
-
-<p>これらの設定は、Git リポジトリ直下にある .\.git\ 以下にあります</p>
-
-<blockquote>
-<p>この下の config ファイルなどを直接編集しても反映されますが、コマンドを使った方が良いでしょう</p>
-</blockquote>
-
-<p>わたしの場合の実行結果はこちら</p>
-
-<pre><div class="hljs">
-haruk@MACBOOKPROAKIKO ~/xxx (master)
-<span class="hljs-keyword">$ git config -l</span>
-core.symlinks=<span class="hljs-string">false</span>
-core.autocrlf=<span class="hljs-string">true</span>
-color.diff=<span class="hljs-string">auto</span>
-color.status=<span class="hljs-string">auto</span>
-color.branch=<span class="hljs-string">auto</span>
-color.interactive=<span class="hljs-string">true</span>
-pack.packsizelimit=<span class="hljs-string">2g</span>
-help.format=<span class="hljs-string">html</span>
-http.sslcainfo=<span class="hljs-string">/bin/curl-ca-bundle.crt</span>
-sendemail.smtpserver=<span class="hljs-string">/bin/msmtp.exe</span>
-diff.astextplain.textconv=<span class="hljs-string">astextplain</span>
-rebase.autosquash=<span class="hljs-string">true</span>
-user.name=<span class="hljs-string">Sao Haruka</span>
-user.email=<span class="hljs-string">xxx@yyy.tmp.com</span>
-core.autocrlf=<span class="hljs-string">True</span>
-core.excludesfile=<span class="hljs-string">C:\Users\haruk\Documents\gitignore_global.txt</span>
-core.editor=<span class="hljs-string">"C:/utils/GitExtensions/GitExtensions.exe" fileeditor</span>
-merge.tool=<span class="hljs-string">kdiff3</span>
-diff.guitool=<span class="hljs-string">kdiff3</span>
-difftool.kdiff3.path=<span class="hljs-string">C:/utils/KDiff3/kdiff3.exe</span>
-mergetool.kdiff3.path=<span class="hljs-string">C:/utils/KDiff3/kdiff3.exe</span>
-core.repositoryformatversion=<span class="hljs-string">0</span>
-core.filemode=<span class="hljs-string">false</span>
-core.bare=<span class="hljs-string">false</span>
-core.logallrefupdates=<span class="hljs-string">true</span>
-core.symlinks=<span class="hljs-string">false</span>
-core.ignorecase=<span class="hljs-string">true</span>
-core.hidedotfiles=<span class="hljs-string">dotGitOnly</span>
-remote.origin.url=<span class="hljs-keyword">https://github.com/h-sao/xxx.git</span>
-remote.origin.fetch=<span class="hljs-string">+refs/heads/*:refs/remotes/origin/*</span>
-branch.master.remote=<span class="hljs-string">origin</span>
-branch.master.merge=<span class="hljs-string">refs/heads/master</span>
-
-</div></pre>
-
-<p>上記の「<strong>remote.origin.url</strong>」が Git サーバにアクセスするときの URL になるので、これを ssh でアクセスするように変更します</p>
-
-<p>デフォルトの id_rsa を利用するときは</p>
-
-<p><strong>git@github.com:[ユーザID]/[リポジトリ].git</strong></p>
-
-<p>を設定します</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ git remote set-url origin git@github.com:h-sao/xxx.git</code></pre></td></tr></table>
-</div>
-</div>
-<p>id_rsa じゃない、別名の ssh キーファイルを利用するときの設定は</p>
-
-<p><strong>[Host名]:[ユーザID]/[リポジトリ].git</strong></p>
-
-<p>になります</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ git remote set-url origin my.github.server:h-sao/xxx.git</code></pre></td></tr></table>
-</div>
-</div>
-<p>GitExtensions で Push してみましょう</p>
-
-<p><img src="/pic/Generate-ssh-key-for-GitHub_12.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>URL の表記がちょっと変わりましたね<br />
-無事、IDとパスワードを聞かれることなく、プッシュが成功しているはずです＼(^o^)／</p>
-
-<p><img src="/pic/Generate-ssh-key-for-GitHub_13.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>やったー</p>
-
-<p>＜参考リンク＞</p>
-
-<ul>
-<li>gitHubでssh接続する手順~公開鍵・秘密鍵の生成から~ - Qiita<br />
-<a href="http://qiita.com/shizuma/items/2b2f873a0034839e47ce">http://qiita.com/shizuma/items/2b2f873a0034839e47ce</a></li>
-</ul>
-
-<h1 id="番外編-httpsアクセスでidとパスワードを聞かれないようにする">(番外編) httpsアクセスでIDとパスワードを聞かれないようにする</h1>
-
-<p>ええ、今回、本当に色々と試しましたとも…</p>
-
-<p>ssh ではなく https アクセスで、毎回アカウント情報を入力しない方法も調べました</p>
-
-<p>あまりセキュアじゃないので、お勧めできませんが<br />
-一応記載しておきます</p>
-
-<pre><code>$ git config -l 
-</code></pre>
-
-<p>で調べた 「<strong>remote.origin.url</strong>」 の初期の記載はこれでした</p>
-
-<pre><div class="hljs">
-remote.origin.url=<span class="hljs-keyword">https://github.com/h-sao/xxx.git</span>
-
-</div></pre>
-
-<p>この https アクセスの URL 中に、IDとパスワードを埋め込めばOKです</p>
-
-<p><strong>https://[ユーザID]:[パスワード]github.com/h-sao/xxx.git</strong></p>
-
-<p>やってみたけど、パスワードが丸々画面に表示されるので、よくないです…<br />
-確かに、ssh キーファイルなど用意しなくてもいいので、便利ではありますが…＞＜；</p>
-
-<p><img src="/pic/Generate-ssh-key-for-GitHub_14.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>利用は自己責任でお願いします</p>
-
-<p>＜参考リンク＞</p>
-
-<ul>
-<li>Windowsにgitをインストールしてgithubにpushするまで - karakaram-blog<br />
-<a href="http://www.karakaram.com/git-install">http://www.karakaram.com/git-install</a></li>
-</ul>
-
-<h2 id="追記記事書きました-2016-5-9">追記記事書きました(2016/5/9)</h2>
-
-<ul>
-<li>[SSH] 複数キー接続のconfig記載について<br />
-<a href="http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/">http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</a></li>
-</ul>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f07%2fgenerate-ssh-key-for-github%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGit%5d%20Git%e3%81%a7%e5%88%a9%e7%94%a8%e3%81%99%e3%82%8bssh%e3%82%ad%e3%83%bc%e3%83%9a%e3%82%a2%e3%81%ae%e4%bd%9c%e6%88%90%e3%80%81ssh%e6%8e%a5%e7%b6%9a%e3%80%81%e8%a4%87%e6%95%b0ID%e6%8e%a5%e7%b6%9a&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f07%2fgenerate-ssh-key-for-github%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f07%2fgenerate-ssh-key-for-github%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f07%2fgenerate-ssh-key-for-github%2f&title=%5bGit%5d%20Git%e3%81%a7%e5%88%a9%e7%94%a8%e3%81%99%e3%82%8bssh%e3%82%ad%e3%83%bc%e3%83%9a%e3%82%a2%e3%81%ae%e4%bd%9c%e6%88%90%e3%80%81ssh%e6%8e%a5%e7%b6%9a%e3%80%81%e8%a4%87%e6%95%b0ID%e6%8e%a5%e7%b6%9a" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
@@ -1981,7 +1613,7 @@ remote.origin.url=<span class="hljs-keyword">https://github.com/h-sao/xxx.git</s
 	<a class="btn newer" href="/post/page/4/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 5  8</p>
+	<p class="counter"> 5  9</p>
 
 
 	
@@ -2045,6 +1677,12 @@ remote.origin.url=<span class="hljs-keyword">https://github.com/h-sao/xxx.git</s
                 
                     
                         
+                            <a href="/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/" class="list-group-item">[C&#43;&#43;]Compiler Explorerの出力結果の表示方法</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2021/06/17/select-to-start-os-on-bootcamp/" class="list-group-item">[macOS] BootCampの起動OSを選ぶ</a><br>
                         
                     
@@ -2097,8 +1735,6 @@ remote.origin.url=<span class="hljs-keyword">https://github.com/h-sao/xxx.git</s
                         
                     
                 
-                    
-                
             </div>
 
             <div class="panel-heading">
@@ -2145,6 +1781,16 @@ remote.origin.url=<span class="hljs-keyword">https://github.com/h-sao/xxx.git</s
                     
                         <span class="badge">1</span>
                         bootcamp
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="http://h-sao.com//tags/c&#43;&#43;" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        c&#43;&#43;
                     </a>
                     </u> &nbsp; 
                     

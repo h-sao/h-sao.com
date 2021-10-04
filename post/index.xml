@@ -6,10 +6,31 @@
     <description>Recent content in Posts on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 17 Jun 2021 14:40:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 05 Oct 2021 00:30:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[C&#43;&#43;]Compiler Explorerの出力結果の表示方法</title>
+      <link>http://h-sao.com/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/</link>
+      <pubDate>Tue, 05 Oct 2021 00:30:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/</guid>
+      <description>Compiler Explorer というオンラインコンパイルサービスがあります
+ Compiler Explorer
+https://godbolt.org/  書いたC++コードのアセンブリ出力結果をリナルタイムに表示してくれるサービスです
+すごーーー👀
+初めてこのサービスを見た時には感激しました〜
+さておき、
+わたし、これで実行結果を見る方法を知らなかったんですね…ハズカシー(*ﾉдﾉ)
+「Output」を押すと出力結果ウィンドウは出てきますが
+このリターン値だけじゃなくて、 std::cout の結果も欲しいんですけど…👀
+ちょっと調べてみたらすぐに判明しました＞＜。
+Outputの設定項目に Execute the code のチェックボックスがあるので、それを選択すれば表示されます
+出力はこんな感じですね〜
+便利です〜</description>
+    </item>
     
     <item>
       <title>[macOS] BootCampの起動OSを選ぶ</title>

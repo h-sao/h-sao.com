@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://h-sao.com/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/</loc>
+    <lastmod>2021-10-05T00:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://h-sao.com/blog/2021/06/17/select-to-start-os-on-bootcamp/</loc>
     <lastmod>2021-06-17T14:40:00+09:00</lastmod>
   </url>
@@ -438,6 +443,12 @@
   </url>
   
   <url>
+    <loc>http://h-sao.com/tags/c&#43;&#43;/</loc>
+    <lastmod>2021-10-05T00:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://h-sao.com/categories/</loc>
     <priority>0</priority>
   </url>
@@ -498,7 +509,7 @@
   
   <url>
     <loc>http://h-sao.com/</loc>
-    <lastmod>2021-06-17T14:40:00+09:00</lastmod>
+    <lastmod>2021-10-05T00:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -582,7 +593,7 @@
   
   <url>
     <loc>http://h-sao.com/post/</loc>
-    <lastmod>2021-06-17T14:40:00+09:00</lastmod>
+    <lastmod>2021-10-05T00:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
