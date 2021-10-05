@@ -12,21 +12,50 @@ A little note :)
 # Now reading
 
 - **Modren C++チャレンジ** `technical`
-- **子どもが育つ魔法の言葉 - Children Learn What They Live** `chid-rasing` 
+- **エキストラバージンの嘘と真実** `food`
 - **ウォール街のランダム・ウォーカー 原書第12版 - 株式投資の不滅の真理** `business`
-- **Au オードリー・タン 天才IT相7つの顔** `business`
-- **カリスマ保育士てぃ先生の子育て手困ったら、これやってみ！** `chid-rasing` 
+- **中学受験の親たちへ**   `chid-rasing` 
+
 
 # Tsundoku
 
+- **桜井政博のゲームを作って思うこと** `business`
+- **よい休息**  `business`
 - **冨永愛 美の法則** `fasion`
 - **職業、挑戦者** `business`
 - **超スローライフ** `business`
 - **エンジニアのためのマネジメントキャリアパス** `business`
+- **More with Less** `business`
+- **トップ5%社員の習慣** `business`
+- **ブレインプログラミング** `business`
+
 
 # Read through
 
+## 2021
+
+- **コウノドリ 全巻（１〜32巻）**
+- **ガラスの仮面**
+- **プラタナスの実（#１〜3）**
+- **カリスマ保育士てぃ先生の子育て手困ったら、これやってみ！** `chid-rasing` 
+- **人生の勝率の高め方**  `business`
+- **33歳で手取り22万円の僕が1億円を貯められた理由** `investment`
+- **お金は寝かせて増やしなさい**  `investment`
+- **勝間式ロジカル不老長寿** `business`
+- **投資の断捨離術** `investment`
+
+10/1 **小さな習慣** `business`
+
 ## 2020
+
+- **子どもが育つ魔法の言葉 - Children Learn What They Live** `chid-rasing` 
+- **Au オードリー・タン 天才IT相7つの顔** `business`
+- **時間術大全**  `business`
+- **働き方無双**  `business`
+- **嫌なこと全部やめたらすごかった**  `business`
+- **1日ひとつだけ強くなる**  `business`
+- **LEAN IN**  `business`
+
 
 7/21 **みずほ銀行システム統合、苦闘の19年史 史上最大のITプロジェクト「3度目の正直」 史上最大のITプロジェクト「3度目の正直」**  `business`
 
