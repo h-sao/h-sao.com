@@ -21,17 +21,17 @@ Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]
 
 # Portrait
 
+
+## Before
+
+<details>
+<summary>Before 2015-2017</summary>
+
 ## Japan MVP Community Connection 2017 Autumn - Nov 12, 2017
 
 - 「Optimized C++!最適化の手法集めました」にて
 
 ![](/pic/portrait-mcc2017.jpg)
-
-
-## Before
-
-<details>
-<summary>Before 2015-2016</summary>
 
 ## meetup app tokyo@2 - Dec 16, 2016
 
@@ -62,6 +62,11 @@ Microsoft MVP for Client App Dev [Jan,2010-Dec,2013]
 </details>
 
 # Slides, Publications
+
+## 2021
+
+Jan 30, 2021 [meetup app osaka@5](http://meetupapp.io/post/meetup-app-osaka-5/)  
+Try C++20 modele! [\[SpeakerDeck\]](https://speakerdeck.com/harukasao/try-c-plus-plus-module-meetup-app-osaka-at-5)
 
 ## 2019
 
