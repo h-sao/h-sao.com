@@ -92,10 +92,6 @@ Dec 23, 2017 [meepup app osaka@2](http://meetupapp.io/post/meetup-app-osaka-2/)
 
 Nov 12, 2017 Japan MVP Community Camp（インターナル）  
 Optimized C++!最適化の手法集めました [\[SpeakerDeck\]](https://speakerdeck.com/harukasao/12-optimized-c-plus-plus)
-## Before
-
-<details>
-<summary>Before 2008-2016</summary>
 
 ## 2016
 
@@ -373,17 +369,16 @@ WPFの基礎
 Sep 25, 2008 [VSUG コラム](http://vsug.jp/tabid/178/articleid/35/Default.aspx)  
 ソースコードとの付き合い方
 
-</details>
 
 
-# Sampel code/tools
+# Sampel code
 
 Work in progress...
 
 # 主催勉強会
 
 - [meetup app tokyo/osaka](http://meetupapp.io) (Nov 21, 2015 - currently)  
-seminar total number 5
+seminar total number 7
 
 - nakame_feature.cpp (Jul 9, 2018 - currently)  
 seminar total number 18
@@ -391,14 +386,11 @@ seminar total number 18
 - ebisu_feature.cpp (Nov 29, 2017 - Feb 14, 2018)  
 seminar total number 5
 
-- Unity Style Developer (Oct 29, 2016 - currently)  
+- Unity Style Developer (Oct 29, 2016)  
 seminar total number 1
 
 - ebisu_optimized.cpp (Mar 30, 2017 - Nov 9, 2017)  
 seminar total number 15
-
-<details>
-<summary>Before 2008-2016</summary>
 
 - ebisu_effective_modern.cpp (Mar 3, 2016 - Jul 21, 2016)  
 seminar total number 10
@@ -429,5 +421,3 @@ seminar total number 12
 
 - [Silverlightを囲む会](http://silverlightsquare.com/) (Mar 14, 2008 - Aug 25, 2012)  
 seminar total number 29
-
-</details>
