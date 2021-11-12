@@ -14,12 +14,12 @@ A little note :)
 - **Modren C++チャレンジ** `technical`
 - **エキストラバージンの嘘と真実** `food`
 - **ウォール街のランダム・ウォーカー 原書第12版 - 株式投資の不滅の真理** `business`
+- **銀の匙** `literature`
+- **桜井政博のゲームを作って思うこと** `business`
 
 
 # Tsundoku
 
-- **銀の匙** `literature`
-- **桜井政博のゲームを作って思うこと** `business`
 - **よい休息**  `business`
 - **冨永愛 美の法則** `fasion`
 - **職業、挑戦者** `business`
