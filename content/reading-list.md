@@ -16,6 +16,7 @@ A little note :)
 - **ウォール街のランダム・ウォーカー 原書第12版 - 株式投資の不滅の真理** `business`
 - **銀の匙** `literature`
 - **桜井政博のゲームを作って思うこと** `business`
+- **ギターで覚える音楽理論** `music`
 
 
 # Tsundoku
