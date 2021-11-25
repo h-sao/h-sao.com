@@ -17,6 +17,7 @@ A little note :)
 - **銀の匙** `literature`
 - **桜井政博のゲームを作って思うこと** `business`
 - **ギターで覚える音楽理論** `music`
+- **リハスタ定番アンプ100%使いこなしガイド** `music`
 
 
 # Tsundoku
