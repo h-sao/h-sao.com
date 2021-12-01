@@ -48,13 +48,15 @@ C++20 対応のメジャーどころのコンパイラ（MSVC/gcc/Clang など�
   - Foo.c++
   - Foo.C
 
-参考
-MSVC [Overview of modules in C++](https://docs.microsoft.com/en-us/cpp/cpp/modules-cpp?view=msvc-170)
-GCC [GCC and File Extensions - Development with GNU/Linux](http://labor-liber.org/en/gnu-linux/development/index.php?diapo=extensions)
+（参考）
+- MSVC  
+[Overview of modules in C++](https://docs.microsoft.com/en-us/cpp/cpp/modules-cpp?view=msvc-170)
+- GCC  
+[GCC and File Extensions - Development with GNU/Linux](http://labor-liber.org/en/gnu-linux/development/index.php?diapo=extensions)
 https://blog.feabhas.com/2021/08/c20-modules-with-gcc11/
 
-今回は、MSVCで話を進めます  
-（コンパイラによって異なる所が多いです）
+以下、、MSVCで話を進めます  
+（コンパイラによって異なる所が多いので）
 
 ## モジュールファイルについて
 
@@ -74,7 +76,7 @@ export int f() {
  }
 ```
 
-利用する側はこんな感じで **import** すれば使えます  
+利用する側はこんな感じで↓↓↓ **import** すれば使えます  
 （従来は `#include "hello.h"` とか書いていた場所です！）
 
 
@@ -100,14 +102,13 @@ int main() {
 
 | | MSVC | Clang |
 | ---- | ---- | ---- |
-| モジュールファイル名 | .ixx | .cppm |
-| モジュールファイルをプリコンパイルしたもの | .ifc | .pcm |
+| モジュールファイル名　　→ | .ixx | .cppm |
+| モジュールファイルをプリコンパイルしたもの→ | .ifc | .pcm |
 
 ちなみに「モジュールファイルをプリコンパイルしたもの」を **BMI** と呼び、  
-Binary Module Interface の略です
+Binary Module Interface の略になります
 
-この BMI を各 cpp ファイルなどが import することになります  
-
+この BMI ファイルを各 cpp ファイルなどが import することになります  
 
 
 ## VC++でのコンパイル方法
@@ -115,7 +116,7 @@ Binary Module Interface の略です
 単純のため、まずはコマンドラインでやってみます  
 コマンドは２つ
 
-```
+```bash
 > cl /c /std:c++20 /EHsc hello.ixx
 > cl /std:c++20 /EHsc /reference MyHello=MyHello.ifc main.cpp hello.obj
 ```
@@ -123,9 +124,9 @@ Binary Module Interface の略です
 1つ目のコマンドでモジュールをプリコンパイルし、  
 2つ目のコマンドで obj をリンク＆ main.exe の出力をします
 
-＜モジュールのプリコンパイル＞
+＜1. モジュールのプリコンパイル＞
 
-```
+```bash
 C:\my\dev\sample_module01>cl /c /std:c++20 hello.ixx
 Microsoft (R) C/C++ Optimizing Compiler Version 19.30.30705 for x86
 Copyright (C) Microsoft Corporation.  All rights reserved.
@@ -135,16 +136,16 @@ hello.ixx
 ```
 これで、hello.obj と MyHello.ifc が出来ました
 
-cl.exe はモジュールのコンパイル時に同時に二つのファイルを出力してくれます（.obj と .ifc）
+> cl.exe はモジュールのコンパイル時に同時に二つのファイルを出力してくれます（.obj と .ifc）
 
 > Clang は別々のコマンドで出力します  
 つまり .pcm ( VC++で言うところの .ifc) を出力した後、それを元に .o ( VC++の .obj) を出力します
 
 
-＜実行ファイル生成＞
+＜2. 実行ファイル生成＞
 
 
-```
+```bash
 C:\my\dev\sample_module01>cl /std:c++20 /EHsc /reference MyHello=MyHello.ifc main.cpp hello.obj
 Microsoft (R) C/C++ Optimizing Compiler Version 19.30.30705 for x86
 Copyright (C) Microsoft Corporation.  All rights reserved.
@@ -162,7 +163,7 @@ main.exe が出来ました
 
 実行してみます
 
-```
+```bash
 C:\my\dev\sample_module01>main.exe
 42
 
@@ -171,7 +172,7 @@ C:\my\dev\sample_module01>main.exe
 問題なし
 
 
-＜コンパイルオプションの注意点＞
+## コンパイルオプションの注意点
 
 VC++のコマンドラインオプションが
 - モジュールを作ったとき
@@ -183,7 +184,7 @@ VC++のコマンドラインオプションが
 そのため今回、hello.ixx 内では `<iostream>` は利用していないのですが、`/EHsc` オプションを付けています
 
 
-<参考>
+（参考）
 - Using C++ Modules in MSVC from the Command Line Part 1: Primary Module Interfaces - C++ Team Blog  
 [https://devblogs.microsoft.com/cppblog/using-cpp-modules-in-msvc-from-the-command-line-part-1/](https://devblogs.microsoft.com/cppblog/using-cpp-modules-in-msvc-from-the-command-line-part-1/)
 
@@ -193,21 +194,21 @@ VC++のコマンドラインオプションが
 
 Modules を使うと、プリコンパイルされた Binary Module Interface というファイルが突如現れましたが、この中身ってどうなってるんでしょうね？
 
-Modules の提案を推し進めている Gabriel Dos Reisさんによると、
+Modules の提案を推し進めている Gabriel Dos Reisさんによると、  
+中身はASTとObjみたいなものになってるらしいです
 
-IFCバイナリ形式のモデル
+- IFCバイナリ形式のモデル  
 [A Principled, Complete, and Efficient Representation of C++ Gabriel Dos Reis and Bjarne Stroustrup](https://www.stroustrup.com/gdr-bs-macis09.pdf)
 
-中身はASTとObjみたいなものになってるらしいです
+
+もちろん、コンパイラによって形式は様々なんでしょう
 
 ## じゃそのモジュール配布できるんじゃない？
 
-と思ったのですが、モジュールはあくまでヘッダファイルの代替品なので、ライブラリ敵に配布はできないのです。。。
+と思ったのですが、モジュールはあくまでヘッダファイルの代替品なので、ライブラリのように配布はできないのです。。。
 
-コンパイラによってAstに解析される、つまりAstはコンパイラに完全依存
-だからAstを配布する意味が無い
-
+コンパイラによってAST＋αに解析されるので…おそらく同じコンパイラでもバージョンによって内容が異なったりするかもしれません
 
 
-[Practical Cpp Modules - CppCon 2019](https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules__boris_kolpackov__cppcon_2019.pdf)
+- [Practical Cpp Modules - CppCon 2019](https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules__boris_kolpackov__cppcon_2019.pdf)
 
