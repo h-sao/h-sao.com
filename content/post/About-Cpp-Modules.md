@@ -114,6 +114,10 @@ int main() {
 
 この BMI ファイルを各 cpp ファイルなどが `import` することになります  
 
+（参考）
+- Practical Cpp Modules - CppCon 2019　　
+[https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules__boris_kolpackov__cppcon_2019.pdf](https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules__boris_kolpackov__cppcon_2019.pdf)
+
 
 ## VC++でのコンパイル方法
 
@@ -144,12 +148,12 @@ Copyright (C) Microsoft Corporation.  All rights reserved.
 hello.ixx
 
 ```
-これで、hello.obj と MyHello.ifc が出来ました
+これで、`hello.obj` と `MyHello.ifc` が出来ました
 
-> （余談）cl.exe はモジュールのコンパイル時に同時に二つのファイルを出力してくれて楽です（.obj と .ifc）
+> （余談）cl.exe はモジュールのコンパイル時に同時に２つ（`.obj` と `.ifc`）のファイルを出力してくれて楽です
 
 > Clang は別々のコマンドで出力するので、cl.exe とは少し作り方が異なっています  
-.pcm ( VC++で言うところの .ifc) を出力した後、それを元に .o ( VC++の .obj) を出力します  
+`.pcm` ( VC++で言うところの `.ifc`) を出力した後、それを元に `.o` ( VC++の `.obj`) を出力します  
 このあたりはまだ次回に投稿したいです  
 
 
@@ -170,7 +174,7 @@ main.obj
 hello.obj
 ```
 
-main.exe が出来ました
+`main.exe` が出来ました
 
 実行してみます
 
@@ -183,18 +187,18 @@ C:\my\dev\sample_module01>main.exe
 問題なし(^^♪
 
 
-## コンパイルオプションの注意点
+## （備考）コンパイルオプションの注意点
 
 VC++のコマンドラインオプションが
 
 - モジュールを作ったとき
 - モジュールを使うとき
 
-これらの間で一致していないとき、コンパイラはワーニングを出しました（C5050）
+これらの間で一致していないとき、ワーニングが出ました（`C5050`）
 
 > main.cpp(7): warning C5050: Possible incompatible environment while importing module 'MyHello': _CPPUNWIND is defined in current command line and not in module command line
 
-そのため今回、hello.ixx 内では `<iostream>` は利用していないのですが、`/EHsc` オプションを付けています
+そのため今回、`hello.ixx` 内では `<iostream>` は利用していないのですが、`/EHsc` オプションを付けています
 
 
 （参考）
@@ -205,23 +209,67 @@ VC++のコマンドラインオプションが
 
 ## BMIってなによ？
 
-Modules を使うと、プリコンパイルされた Binary Module Interface というファイルが突如現れましたが、この中身ってどうなってるんでしょうね？
+プリコンパイルされた Binary Module Interface って何なのでしょうか？  
+この中身は一体？
 
-Modules の提案を推し進めている Gabriel Dos Reisさんによると、  
-中身はASTとObjみたいなものになってるらしいです
+さんざん調べましたが、大した情報が載ってないですね。。。  
 
-- IFCバイナリ形式のモデル  
-[A Principled, Complete, and Efficient Representation of C++ Gabriel Dos Reis and Bjarne Stroustrup](https://www.stroustrup.com/gdr-bs-macis09.pdf)
+これ、BMIというのは Modules を扱うための概念のようです
+
+これはコンパイルの過程のものなので、各コンパイラベンダーが作る箇所であり、明確に公開情報として詳細が提示されているわけではなさそうです  
+現時点では概念がちらほらと記載されているだけのようでした
+
+実際に、プリコンパイルで作られた `.ifc` や `.pcm`  の中身は
+
+- ASTとか
+- Objみたいなもの
+
+がひとまとめにされてる、
+
+という記述を見つけましたが、出展元が判らなくなったので、思い出したら追記します。。。
+
+もちろん、コンパイラによって、さらにバージョンによっても形式は様々なんでしょう
 
 
-もちろん、コンパイラによって形式は様々なんでしょう
 
-## じゃそのモジュール配布できるんじゃない？
+## モジュールの配布ってどうやるの？
 
-と思ったのですが、モジュールはあくまでヘッダファイルの代替品なので、ライブラリのように配布はできないのです。。。
+モジュールのバイナリを配布することはできないです  
+共有する場合はあくまでソースコードと共に配布になります
 
-コンパイラによってAST＋αに解析されるので…おそらく同じコンパイラでもバージョンによって内容が異なったりするかもしれません
+また、作られた BMI = `.ifc` や `.pcm` ファイルは不変的なバイナリではないみたいです
 
+ライブラリのように配布はできないのですね。。。
 
-- [Practical Cpp Modules - CppCon 2019](https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules__boris_kolpackov__cppcon_2019.pdf)
+> （余談）Modules の提案を推し進めている [Gabriel Dos Reisさん](https://cppcast.com/modules-gaby-dos-reis/) は、Common Module Interface Format を作りたいみたいですが…  
+具体的に今の段階では、配布目的のものは出ていないようです
 
+（参考）
+- C++ Modules: What You Should Know  
+[https://github.com/cppp-france/CPPP-19/blob/master/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis.pdf](https://github.com/cppp-france/CPPP-19/blob/master/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis.pdf]
+
+## 所管
+
+まだ2021年12月の時点では、Modules 機能が完全に動作するコンパイラもないみたいですし  
+そもそも各コンパイラによって記載方法や推奨が異なるので、なんとも道半ばな印象はあります
+
+Modules を利用するための手順やお作法も多く、また情報も限られているので、取り組みにくいですね
+
+マイクロソフトのVC++チームブログは、コンパイラベンダーとして結構 Moduleds の具体的な情報を出しているように感じました  
+（Clangももうちょっと頑張って。。。あとGCC。。。おまえはやる気あるのか。。。）
+
+Modules に関して取り組まれている人たちの歴史はとても長く  
+かつ現在のヘッダファイルがベストだとは思えないので  
+個人的に一押ししたい機能だと改めて思いました
+
+## 所管その２
+
+C++ Advent Calendar！
+
+ずいぶん昔に一度だけ参加したことがあったのですが、それからなーんにもしてませんでした
+
+今回、意を決して投稿できて良かったです
+
+かなりよく調べたつもりですけど、間違いなどあったら気軽に [@hr_sao](https://twitter.com/hr_sao) まで教えていただけると嬉しいです
+
+C++楽しい～♪
