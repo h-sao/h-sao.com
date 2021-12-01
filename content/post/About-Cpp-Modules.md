@@ -126,7 +126,7 @@ Binary Module Interface の略になります
 
 ＜1. モジュールのプリコンパイル＞
 
-```bash
+```
 C:\my\dev\sample_module01>cl /c /std:c++20 hello.ixx
 Microsoft (R) C/C++ Optimizing Compiler Version 19.30.30705 for x86
 Copyright (C) Microsoft Corporation.  All rights reserved.
@@ -145,7 +145,7 @@ hello.ixx
 ＜2. 実行ファイル生成＞
 
 
-```bash
+```
 C:\my\dev\sample_module01>cl /std:c++20 /EHsc /reference MyHello=MyHello.ifc main.cpp hello.obj
 Microsoft (R) C/C++ Optimizing Compiler Version 19.30.30705 for x86
 Copyright (C) Microsoft Corporation.  All rights reserved.
@@ -163,7 +163,7 @@ main.exe が出来ました
 
 実行してみます
 
-```bash
+```
 C:\my\dev\sample_module01>main.exe
 42
 
