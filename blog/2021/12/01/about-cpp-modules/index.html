@@ -238,9 +238,12 @@ import MyHello;  <span style="color:#75715e">// モジュール使うよの宣�
 
 <p>この BMI ファイルを各 cpp ファイルなどが <code>import</code> することになります</p>
 
-<p>（参考）
-- Practical Cpp Modules - CppCon 2019　　
-<a href="https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules__boris_kolpackov__cppcon_2019.pdf">https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules<strong>boris_kolpackov</strong>cppcon_2019.pdf</a></p>
+<p>（参考）</p>
+
+<ul>
+<li>Practical Cpp Modules - CppCon 2019　　
+<a href="https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules__boris_kolpackov__cppcon_2019.pdf">https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules<strong>boris_kolpackov</strong>cppcon_2019.pdf</a></li>
+</ul>
 
 <h2 id="vc-でのコンパイル方法">VC++でのコンパイル方法</h2>
 
@@ -327,9 +330,12 @@ hello.obj
 
 <p>そのため今回、<code>hello.ixx</code> 内では <code>&lt;iostream&gt;</code> は利用していないのですが、<code>/EHsc</code> オプションを付けています</p>
 
-<p>（参考）
-- Using C++ Modules in MSVC from the Command Line Part 1: Primary Module Interfaces - C++ Team Blog<br />
-<a href="https://devblogs.microsoft.com/cppblog/using-cpp-modules-in-msvc-from-the-command-line-part-1/">https://devblogs.microsoft.com/cppblog/using-cpp-modules-in-msvc-from-the-command-line-part-1/</a></p>
+<p>（参考）</p>
+
+<ul>
+<li>Using C++ Modules in MSVC from the Command Line Part 1: Primary Module Interfaces - C++ Team Blog<br />
+<a href="https://devblogs.microsoft.com/cppblog/using-cpp-modules-in-msvc-from-the-command-line-part-1/">https://devblogs.microsoft.com/cppblog/using-cpp-modules-in-msvc-from-the-command-line-part-1/</a></li>
+</ul>
 
 <h2 id="bmiってなによ">BMIってなによ？</h2>
 
@@ -361,7 +367,7 @@ hello.obj
 <p>モジュールのバイナリを配布することはできないです<br />
 共有する場合はあくまでソースコードと共に配布になります</p>
 
-<p>また、作られた BMI = <code>.ifc</code> や <code>.pcm</code> ファイルは不変的なバイナリではないみたいです</p>
+<p>また、作られた BMI、つまり <code>.ifc</code> や <code>.pcm</code> ファイルは不変的なバイナリではないみたいです</p>
 
 <p>ライブラリのように配布はできないのですね。。。</p>
 
@@ -370,9 +376,12 @@ hello.obj
 具体的に今の段階では、配布目的のものは出ていないようです</p>
 </blockquote>
 
-<p>（参考）
-- C++ Modules: What You Should Know<br />
-[<a href="https://github.com/cppp-france/CPPP-19/blob/master/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis.pdf](https://github.com/cppp-france/CPPP-19/blob/master/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis.pdf]">https://github.com/cppp-france/CPPP-19/blob/master/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis.pdf](https://github.com/cppp-france/CPPP-19/blob/master/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis.pdf]</a></p>
+<p>（参考）</p>
+
+<ul>
+<li>C++ Modules: What You Should Know<br />
+[<a href="https://github.com/cppp-france/CPPP-19/blob/master/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis.pdf](https://github.com/cppp-france/CPPP-19/blob/master/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis.pdf]">https://github.com/cppp-france/CPPP-19/blob/master/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis.pdf](https://github.com/cppp-france/CPPP-19/blob/master/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis.pdf]</a></li>
+</ul>
 
 <h2 id="所管">所管</h2>
 
@@ -381,7 +390,7 @@ hello.obj
 
 <p>Modules を利用するための手順やお作法も多く、また情報も限られているので、取り組みにくいですね</p>
 
-<p>マイクロソフトのVC++チームブログは、コンパイラベンダーとして結構 Moduleds の具体的な情報を出しているように感じました<br />
+<p>マイクロソフトの <a href="https://devblogs.microsoft.com/cppblog/">VC++チームブログ</a> は、コンパイラベンダーとして結構 Moduleds の具体的な情報を出しているように感じました<br />
 （Clangももうちょっと頑張って。。。あとGCC。。。おまえはやる気あるのか。。。）</p>
 
 <p>Modules に関して取り組まれている人たちの歴史はとても長く<br />
