@@ -128,13 +128,15 @@ C++20 対応のメジャーどころのコンパイラ（MSVC/gcc/Clang など�
 </ul></li>
 </ul>
 
-<p>参考
-MSVC <a href="https://docs.microsoft.com/en-us/cpp/cpp/modules-cpp?view=msvc-170">Overview of modules in C++</a>
-GCC <a href="http://labor-liber.org/en/gnu-linux/development/index.php?diapo=extensions">GCC and File Extensions - Development with GNU/Linux</a>
+<p>（参考）
+- MSVC<br />
+<a href="https://docs.microsoft.com/en-us/cpp/cpp/modules-cpp?view=msvc-170">Overview of modules in C++</a>
+- GCC<br />
+<a href="http://labor-liber.org/en/gnu-linux/development/index.php?diapo=extensions">GCC and File Extensions - Development with GNU/Linux</a>
 <a href="https://blog.feabhas.com/2021/08/c20-modules-with-gcc11/">https://blog.feabhas.com/2021/08/c20-modules-with-gcc11/</a></p>
 
-<p>今回は、MSVCで話を進めます<br />
-（コンパイラによって異なる所が多いです）</p>
+<p>以下、、MSVCで話を進めます<br />
+（コンパイラによって異なる所が多いので）</p>
 
 <h2 id="モジュールファイルについて">モジュールファイルについて</h2>
 
@@ -163,7 +165,7 @@ GCC <a href="http://labor-liber.org/en/gnu-linux/development/index.php?diapo=ext
 </code></pre></td></tr></table>
 </div>
 </div>
-<p>利用する側はこんな感じで <strong>import</strong> すれば使えます<br />
+<p>利用する側はこんな感じで↓↓↓ <strong>import</strong> すれば使えます<br />
 （従来は <code>#include &quot;hello.h&quot;</code> とか書いていた場所です！）</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -211,13 +213,13 @@ import MyHello;  <span style="color:#75715e">// モジュール使うよの宣�
 
 <tbody>
 <tr>
-<td>モジュールファイル名</td>
+<td>モジュールファイル名　　→</td>
 <td>.ixx</td>
 <td>.cppm</td>
 </tr>
 
 <tr>
-<td>モジュールファイルをプリコンパイルしたもの</td>
+<td>モジュールファイルをプリコンパイルしたもの→</td>
 <td>.ifc</td>
 <td>.pcm</td>
 </tr>
@@ -225,68 +227,98 @@ import MyHello;  <span style="color:#75715e">// モジュール使うよの宣�
 </table>
 
 <p>ちなみに「モジュールファイルをプリコンパイルしたもの」を <strong>BMI</strong> と呼び、<br />
-Binary Module Interface の略です</p>
+Binary Module Interface の略になります</p>
 
-<p>この BMI を各 cpp ファイルなどが import することになります</p>
+<p>この BMI ファイルを各 cpp ファイルなどが import することになります</p>
 
 <h2 id="vc-でのコンパイル方法">VC++でのコンパイル方法</h2>
 
 <p>単純のため、まずはコマンドラインでやってみます<br />
 コマンドは２つ</p>
-
-<pre><code>&gt; cl /c /std:c++20 /EHsc hello.ixx
-&gt; cl /std:c++20 /EHsc /reference MyHello=MyHello.ifc main.cpp hello.obj
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; cl /c /std:c++20 /EHsc hello.ixx
+&gt; cl /std:c++20 /EHsc /reference MyHello<span style="color:#f92672">=</span>MyHello.ifc main.cpp hello.obj</code></pre></td></tr></table>
+</div>
+</div>
 <p>1つ目のコマンドでモジュールをプリコンパイルし、<br />
 2つ目のコマンドで obj をリンク＆ main.exe の出力をします</p>
 
-<p>＜モジュールのプリコンパイル＞</p>
+<p>＜1. モジュールのプリコンパイル＞</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">C:<span style="color:#ae81ff">\m</span>y<span style="color:#ae81ff">\d</span>ev<span style="color:#ae81ff">\s</span>ample_module01&gt;cl /c /std:c++20 hello.ixx
+Microsoft <span style="color:#f92672">(</span>R<span style="color:#f92672">)</span> C/C++ Optimizing Compiler Version <span style="color:#ae81ff">19</span>.30.30705 <span style="color:#66d9ef">for</span> x86
+Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> Microsoft Corporation.  All rights reserved.
 
-<pre><code>C:\my\dev\sample_module01&gt;cl /c /std:c++20 hello.ixx
-Microsoft (R) C/C++ Optimizing Compiler Version 19.30.30705 for x86
-Copyright (C) Microsoft Corporation.  All rights reserved.
-
-hello.ixx
-
-</code></pre>
-
+hello.ixx</code></pre></td></tr></table>
+</div>
+</div>
 <p>これで、hello.obj と MyHello.ifc が出来ました</p>
 
+<blockquote>
 <p>cl.exe はモジュールのコンパイル時に同時に二つのファイルを出力してくれます（.obj と .ifc）</p>
 
-<blockquote>
 <p>Clang は別々のコマンドで出力します<br />
 つまり .pcm ( VC++で言うところの .ifc) を出力した後、それを元に .o ( VC++の .obj) を出力します</p>
 </blockquote>
 
-<p>＜実行ファイル生成＞</p>
-
-<pre><code>C:\my\dev\sample_module01&gt;cl /std:c++20 /EHsc /reference MyHello=MyHello.ifc main.cpp hello.obj
-Microsoft (R) C/C++ Optimizing Compiler Version 19.30.30705 for x86
-Copyright (C) Microsoft Corporation.  All rights reserved.
+<p>＜2. 実行ファイル生成＞</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">C:<span style="color:#ae81ff">\m</span>y<span style="color:#ae81ff">\d</span>ev<span style="color:#ae81ff">\s</span>ample_module01&gt;cl /std:c++20 /EHsc /reference MyHello<span style="color:#f92672">=</span>MyHello.ifc main.cpp hello.obj
+Microsoft <span style="color:#f92672">(</span>R<span style="color:#f92672">)</span> C/C++ Optimizing Compiler Version <span style="color:#ae81ff">19</span>.30.30705 <span style="color:#66d9ef">for</span> x86
+Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> Microsoft Corporation.  All rights reserved.
 
 main.cpp
-Microsoft (R) Incremental Linker Version 14.30.30705.0
-Copyright (C) Microsoft Corporation.  All rights reserved.
+Microsoft <span style="color:#f92672">(</span>R<span style="color:#f92672">)</span> Incremental Linker Version <span style="color:#ae81ff">14</span>.30.30705.0
+Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> Microsoft Corporation.  All rights reserved.
 
 /out:main.exe
 main.obj
-hello.obj
-</code></pre>
-
+hello.obj</code></pre></td></tr></table>
+</div>
+</div>
 <p>main.exe が出来ました</p>
 
 <p>実行してみます</p>
-
-<pre><code>C:\my\dev\sample_module01&gt;main.exe
-42
-
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">C:<span style="color:#ae81ff">\m</span>y<span style="color:#ae81ff">\d</span>ev<span style="color:#ae81ff">\s</span>ample_module01&gt;main.exe
+<span style="color:#ae81ff">42</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>問題なし</p>
 
-<p>＜コンパイルオプションの注意点＞</p>
+<h2 id="コンパイルオプションの注意点">コンパイルオプションの注意点</h2>
 
 <p>VC++のコマンドラインオプションが
 - モジュールを作ったとき
@@ -299,7 +331,7 @@ hello.obj
 
 <p>そのため今回、hello.ixx 内では <code>&lt;iostream&gt;</code> は利用していないのですが、<code>/EHsc</code> オプションを付けています</p>
 
-<p>&lt;参考&gt;
+<p>（参考）
 - Using C++ Modules in MSVC from the Command Line Part 1: Primary Module Interfaces - C++ Team Blog<br />
 <a href="https://devblogs.microsoft.com/cppblog/using-cpp-modules-in-msvc-from-the-command-line-part-1/">https://devblogs.microsoft.com/cppblog/using-cpp-modules-in-msvc-from-the-command-line-part-1/</a></p>
 
@@ -307,21 +339,25 @@ hello.obj
 
 <p>Modules を使うと、プリコンパイルされた Binary Module Interface というファイルが突如現れましたが、この中身ってどうなってるんでしょうね？</p>
 
-<p>Modules の提案を推し進めている Gabriel Dos Reisさんによると、</p>
+<p>Modules の提案を推し進めている Gabriel Dos Reisさんによると、<br />
+中身はASTとObjみたいなものになってるらしいです</p>
 
-<p>IFCバイナリ形式のモデル
-<a href="https://www.stroustrup.com/gdr-bs-macis09.pdf">A Principled, Complete, and Efficient Representation of C++ Gabriel Dos Reis and Bjarne Stroustrup</a></p>
+<ul>
+<li>IFCバイナリ形式のモデル<br />
+<a href="https://www.stroustrup.com/gdr-bs-macis09.pdf">A Principled, Complete, and Efficient Representation of C++ Gabriel Dos Reis and Bjarne Stroustrup</a></li>
+</ul>
 
-<p>中身はASTとObjみたいなものになってるらしいです</p>
+<p>もちろん、コンパイラによって形式は様々なんでしょう</p>
 
 <h2 id="じゃそのモジュール配布できるんじゃない">じゃそのモジュール配布できるんじゃない？</h2>
 
-<p>と思ったのですが、モジュールはあくまでヘッダファイルの代替品なので、ライブラリ敵に配布はできないのです。。。</p>
+<p>と思ったのですが、モジュールはあくまでヘッダファイルの代替品なので、ライブラリのように配布はできないのです。。。</p>
 
-<p>コンパイラによってAstに解析される、つまりAstはコンパイラに完全依存
-だからAstを配布する意味が無い</p>
+<p>コンパイラによってAST＋αに解析されるので…おそらく同じコンパイラでもバージョンによって内容が異なったりするかもしれません</p>
 
-<p><a href="https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules__boris_kolpackov__cppcon_2019.pdf">Practical Cpp Modules - CppCon 2019</a></p>
+<ul>
+<li><a href="https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules__boris_kolpackov__cppcon_2019.pdf">Practical Cpp Modules - CppCon 2019</a></li>
+</ul>
 
             <ul class="share-buttons">
     <li></li>
