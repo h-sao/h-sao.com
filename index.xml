@@ -6,10 +6,37 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 05 Oct 2021 00:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 01 Dec 2021 00:30:00 +0900</lastBuildDate>
     
 	<atom:link href="http://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[C&#43;&#43;] About C&#43;&#43; Modules</title>
+      <link>http://h-sao.com/blog/2021/12/01/about-cpp-modules/</link>
+      <pubDate>Wed, 01 Dec 2021 00:30:00 +0900</pubDate>
+      
+      <guid>http://h-sao.com/blog/2021/12/01/about-cpp-modules/</guid>
+      <description>この記事は C++ Advent Calendar 2021 1日目（初日！）の記事です。
+ 少し前からC++に Modules がやってきました
+C++20 対応のメジャーどころのコンパイラ（MSVC/gcc/Clang など）で使うことができます
+個人的にはビックウェーブが来たーーーと思ってまして、つねづねポチポチと Modules について調べていました
+それを少しまとめたいと思います
+モジュールの説明 昔ながらのプリコンパイルヘッダの概念を、今風にした感じでしょうか
+ヘッダファイルをインクルードしていたものを Modules に置き換えることが出来ます
+ヘッダファイルだと、
+インクルードの順番に気を付けたり
+コンパイル時間が長くなったり
+インクルードガード書いたりと
+ゆーてローテク文字列だったのですが、
+それがバイナリとして公式に提供されました
+Modulesを記載するファイル 各コンパイラによって（推奨）拡張子が異なります
+ MSVC (cl.exe)
+ Foo.ixx
+  Clang
+ Foo.cppm  gcc
+ Foo.cc Foo.cp Foo.cxx Foo.cpp Foo.c++ Foo.C   参考 MSVC Overview of modules in C++ GCC GCC and File Extensions - Development with GNU/Linux https://blog.feabhas.com/2021/08/c20-modules-with-gcc11/</description>
+    </item>
     
     <item>
       <title>[C&#43;&#43;]Compiler Explorerの出力結果の表示方法</title>

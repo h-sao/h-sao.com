@@ -69,6 +69,89 @@
         
         
             
+<h1><a href="http://h-sao.com/blog/2014/07/17/divide-file-using-powershell/" title="[PowerShell] ファイル分割スクリプト">[PowerShell] ファイル分割スクリプト</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2014.07.17">2014.07.17</time>
+    
+    &middot; 
+        
+        <a href="http://h-sao.com/tags/powershell">powershell</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p>大きなファイルを分割する必要があって<br />
+めっちゃ困りましたけど、また PowerShell で解決しました<br />
+なかばやけくそ</p>
+
+<p>＜sep.ps1＞</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#960050;background-color:#1e0010">$</span>my_path_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c:/tmp/&#34;</span>
+<span style="color:#960050;background-color:#1e0010">$</span>my_file_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;abc&#34;</span>
+<span style="color:#960050;background-color:#1e0010">$</span>my_file_kind <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;.log&#34;</span>
+<span style="color:#960050;background-color:#1e0010">$</span>cut_num      <span style="color:#f92672">=</span> <span style="color:#ae81ff">2000</span>    <span style="color:#75715e"># 切り取る行数
+</span><span style="color:#75715e"></span>
+<span style="color:#960050;background-color:#1e0010">$</span>my_file <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">$</span>my_path_name <span style="color:#f92672">+</span> <span style="color:#960050;background-color:#1e0010">$</span>my_file_name <span style="color:#f92672">+</span> <span style="color:#960050;background-color:#1e0010">$</span>my_file_kind
+
+<span style="color:#960050;background-color:#1e0010">$</span>count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+Get<span style="color:#f92672">-</span>Content <span style="color:#960050;background-color:#1e0010">$</span>my_file <span style="color:#f92672">-</span>ReadCount <span style="color:#960050;background-color:#1e0010">$</span>cut_num <span style="color:#f92672">-</span>Encoding UTF8 <span style="color:#f92672">|</span> 
+    ForEach<span style="color:#f92672">-</span>Object { 
+        <span style="color:#960050;background-color:#1e0010">$</span>count <span style="color:#f92672">++</span>
+        <span style="color:#960050;background-color:#1e0010">$</span>cfs <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;{0:D3}&#34;</span> <span style="color:#f92672">-</span>f <span style="color:#960050;background-color:#1e0010">$</span>count;
+        <span style="color:#960050;background-color:#1e0010">$</span>_ <span style="color:#f92672">&gt;</span> (<span style="color:#960050;background-color:#1e0010">$</span>my_path_name<span style="color:#f92672">+</span><span style="color:#960050;background-color:#1e0010">$</span>my_file_name<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;_&#39;</span><span style="color:#f92672">+</span><span style="color:#960050;background-color:#1e0010">$</span>cfs<span style="color:#f92672">+</span><span style="color:#960050;background-color:#1e0010">$</span>my_file_kind)
+    }</code></pre></td></tr></table>
+</div>
+</div>
+<p>結果</p>
+
+<p><img src="/pic/Divide-File-Using-PowerShell_00.png" alt="" /></p>
+
+<p>あまり何も考えず、元ネタはこの方のブログですー</p>
+
+<ul>
+<li>参考サイト：powershellが超便利 - fivegangstersのブログ<br />
+<a href="http://blog.livedoor.jp/fivegangsters/tag/powershell">http://blog.livedoor.jp/fivegangsters/tag/powershell</a></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f17%2fdivide-file-using-powershell%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bPowerShell%5d%20%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e5%88%86%e5%89%b2%e3%82%b9%e3%82%af%e3%83%aa%e3%83%97%e3%83%88&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f17%2fdivide-file-using-powershell%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f17%2fdivide-file-using-powershell%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f07%2f17%2fdivide-file-using-powershell%2f&title=%5bPowerShell%5d%20%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e5%88%86%e5%89%b2%e3%82%b9%e3%82%af%e3%83%aa%e3%83%97%e3%83%88" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="http://h-sao.com/blog/2014/07/02/sort-arrays-and-retrieve-one-by-one-for-powershell/" title="[PowerShell] 連想配列をソートしてforeachで一個づつ取り出す">[PowerShell] 連想配列をソートしてforeachで一個づつ取り出す</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2014.07.02">2014.07.02</time>
@@ -847,91 +930,6 @@ git reset <span style="color:#f92672">--</span>hard origin<span style="color:#f9
 
             <hr>
         
-            
-<h1><a href="http://h-sao.com/blog/2014/01/18/rerun-last-sql/" title="[Oracle] 直前のSQLを再実行する">[Oracle] 直前のSQLを再実行する</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2014.01.18">2014.01.18</time>
-    
-    &middot; 
-        
-        <a href="http://h-sao.com/tags/sql">sql</a>
-        , 
-        
-        <a href="http://h-sao.com/tags/oracle">oracle</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>OracleのコマンドラインでSQLを実行させるときのメモ</p>
-
-<p>直前のSQLコマンドを実行は / (スラッシュ)<br />
-この場合、直前のバッファの内容は表示しません</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">/</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>直前のバッファの内容を表示して実行するのは run コマンド</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SQL</span> <span style="color:#f92672">&gt;</span> run</code></pre></td></tr></table>
-</div>
-</div>
-<p>直前のバッファの内容を修正するには edit コマンド<br />
-タイプミスなどを修正できます<br />
-ただし、環境変数 &ldquo;_editor&rdquo; にエディタの設定をしておく必要があります</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SQL</span> <span style="color:#f92672">&gt;</span> define  _editor<span style="color:#f92672">=</span>vi
-<span style="color:#66d9ef">SQL</span> <span style="color:#f92672">&gt;</span> edit</code></pre></td></tr></table>
-</div>
-</div>
-<hr />
-
-<p>（参考）</p>
-
-<ul>
-<li><p>OracleのSQL*Plusで直前に実行したSQLを再実行<br />
-<a href="http://margrave.seesaa.net/article/127477048.html">http://margrave.seesaa.net/article/127477048.html</a></p></li>
-
-<li><p>SQL バッファの編集、エディタで編集する<br />
-<a href="http://www.shift-the-oracle.com/sqlplus/command/edit.html">http://www.shift-the-oracle.com/sqlplus/command/edit.html</a></p></li>
-
-<li><p>直前に実行したSQLをエディタで編集する<br />
-<a href="http://sakusakuit.blog.fc2.com/?m&amp;no=15">http://sakusakuit.blog.fc2.com/?m&amp;no=15</a></p></li>
-</ul>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f18%2frerun-last-sql%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bOracle%5d%20%e7%9b%b4%e5%89%8d%e3%81%aeSQL%e3%82%92%e5%86%8d%e5%ae%9f%e8%a1%8c%e3%81%99%e3%82%8b&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f18%2frerun-last-sql%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f18%2frerun-last-sql%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f18%2frerun-last-sql%2f&title=%5bOracle%5d%20%e7%9b%b4%e5%89%8d%e3%81%aeSQL%e3%82%92%e5%86%8d%e5%ae%9f%e8%a1%8c%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
@@ -1004,6 +1002,12 @@ git reset <span style="color:#f92672">--</span>hard origin<span style="color:#f9
                 
                     
                         
+                            <a href="/blog/2021/12/01/about-cpp-modules/" class="list-group-item">[C&#43;&#43;] About C&#43;&#43; Modules</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/" class="list-group-item">[C&#43;&#43;]Compiler Explorerの出力結果の表示方法</a><br>
                         
                     
@@ -1053,12 +1057,6 @@ git reset <span style="color:#f92672">--</span>hard origin<span style="color:#f9
                     
                         
                             <a href="/blog/2020/02/25/how-to-change-dnsinfo-for-github-custom-domain/" class="list-group-item">[GitHub Pages] カスタムドメインのDNS情報を更新する</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2020/01/29/tips-about-git-history-changed/" class="list-group-item">[Git] Gitの歴史を書き換える関連</a><br>
                         
                     
                 
@@ -1154,9 +1152,9 @@ git reset <span style="color:#f92672">--</span>hard origin<span style="color:#f9
                     
                     
                     <u>
-                    <a href="http://h-sao.com//tags/cpp" style="font-size: 44px;">
+                    <a href="http://h-sao.com//tags/cpp" style="font-size: 47px;">
                     
-                        <span class="badge">12</span>
+                        <span class="badge">13</span>
                         cpp
                     </a>
                     </u> &nbsp; 
