@@ -115,6 +115,7 @@ int main() {
 この BMI ファイルを各 cpp ファイルなどが `import` することになります  
 
 （参考）
+
 - Practical Cpp Modules - CppCon 2019　　
 [https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules__boris_kolpackov__cppcon_2019.pdf](https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules__boris_kolpackov__cppcon_2019.pdf)
 
@@ -202,6 +203,7 @@ VC++のコマンドラインオプションが
 
 
 （参考）
+
 - Using C++ Modules in MSVC from the Command Line Part 1: Primary Module Interfaces - C++ Team Blog  
 [https://devblogs.microsoft.com/cppblog/using-cpp-modules-in-msvc-from-the-command-line-part-1/](https://devblogs.microsoft.com/cppblog/using-cpp-modules-in-msvc-from-the-command-line-part-1/)
 
@@ -237,7 +239,7 @@ VC++のコマンドラインオプションが
 モジュールのバイナリを配布することはできないです  
 共有する場合はあくまでソースコードと共に配布になります
 
-また、作られた BMI = `.ifc` や `.pcm` ファイルは不変的なバイナリではないみたいです
+また、作られた BMI、つまり `.ifc` や `.pcm` ファイルは不変的なバイナリではないみたいです
 
 ライブラリのように配布はできないのですね。。。
 
@@ -245,6 +247,7 @@ VC++のコマンドラインオプションが
 具体的に今の段階では、配布目的のものは出ていないようです
 
 （参考）
+
 - C++ Modules: What You Should Know  
 [https://github.com/cppp-france/CPPP-19/blob/master/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis.pdf](https://github.com/cppp-france/CPPP-19/blob/master/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis.pdf]
 
@@ -255,7 +258,7 @@ VC++のコマンドラインオプションが
 
 Modules を利用するための手順やお作法も多く、また情報も限られているので、取り組みにくいですね
 
-マイクロソフトのVC++チームブログは、コンパイラベンダーとして結構 Moduleds の具体的な情報を出しているように感じました  
+マイクロソフトの [VC++チームブログ](https://devblogs.microsoft.com/cppblog/) は、コンパイラベンダーとして結構 Moduleds の具体的な情報を出しているように感じました  
 （Clangももうちょっと頑張って。。。あとGCC。。。おまえはやる気あるのか。。。）
 
 Modules に関して取り組まれている人たちの歴史はとても長く  
