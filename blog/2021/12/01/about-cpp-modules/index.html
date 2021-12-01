@@ -250,22 +250,15 @@ Binary Module Interface の略になります</p>
 2つ目のコマンドで obj をリンク＆ main.exe の出力をします</p>
 
 <p>＜1. モジュールのプリコンパイル＞</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">C:<span style="color:#ae81ff">\m</span>y<span style="color:#ae81ff">\d</span>ev<span style="color:#ae81ff">\s</span>ample_module01&gt;cl /c /std:c++20 hello.ixx
-Microsoft <span style="color:#f92672">(</span>R<span style="color:#f92672">)</span> C/C++ Optimizing Compiler Version <span style="color:#ae81ff">19</span>.30.30705 <span style="color:#66d9ef">for</span> x86
-Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> Microsoft Corporation.  All rights reserved.
 
-hello.ixx</code></pre></td></tr></table>
-</div>
-</div>
+<pre><code>C:\my\dev\sample_module01&gt;cl /c /std:c++20 hello.ixx
+Microsoft (R) C/C++ Optimizing Compiler Version 19.30.30705 for x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+hello.ixx
+
+</code></pre>
+
 <p>これで、hello.obj と MyHello.ifc が出来ました</p>
 
 <blockquote>
@@ -276,47 +269,29 @@ hello.ixx</code></pre></td></tr></table>
 </blockquote>
 
 <p>＜2. 実行ファイル生成＞</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">C:<span style="color:#ae81ff">\m</span>y<span style="color:#ae81ff">\d</span>ev<span style="color:#ae81ff">\s</span>ample_module01&gt;cl /std:c++20 /EHsc /reference MyHello<span style="color:#f92672">=</span>MyHello.ifc main.cpp hello.obj
-Microsoft <span style="color:#f92672">(</span>R<span style="color:#f92672">)</span> C/C++ Optimizing Compiler Version <span style="color:#ae81ff">19</span>.30.30705 <span style="color:#66d9ef">for</span> x86
-Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> Microsoft Corporation.  All rights reserved.
+
+<pre><code>C:\my\dev\sample_module01&gt;cl /std:c++20 /EHsc /reference MyHello=MyHello.ifc main.cpp hello.obj
+Microsoft (R) C/C++ Optimizing Compiler Version 19.30.30705 for x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
 
 main.cpp
-Microsoft <span style="color:#f92672">(</span>R<span style="color:#f92672">)</span> Incremental Linker Version <span style="color:#ae81ff">14</span>.30.30705.0
-Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> Microsoft Corporation.  All rights reserved.
+Microsoft (R) Incremental Linker Version 14.30.30705.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
 
 /out:main.exe
 main.obj
-hello.obj</code></pre></td></tr></table>
-</div>
-</div>
+hello.obj
+</code></pre>
+
 <p>main.exe が出来ました</p>
 
 <p>実行してみます</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">C:<span style="color:#ae81ff">\m</span>y<span style="color:#ae81ff">\d</span>ev<span style="color:#ae81ff">\s</span>ample_module01&gt;main.exe
-<span style="color:#ae81ff">42</span></code></pre></td></tr></table>
-</div>
-</div>
+
+<pre><code>C:\my\dev\sample_module01&gt;main.exe
+42
+
+</code></pre>
+
 <p>問題なし</p>
 
 <h2 id="コンパイルオプションの注意点">コンパイルオプションの注意点</h2>
