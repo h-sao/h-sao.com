@@ -69,7 +69,7 @@
         
         
             
-<h1><a href="http://h-sao.com/blog/2021/12/01/about-cpp-modules/" title="[C&#43;&#43;] About C&#43;&#43; Modules">[C&#43;&#43;] About C&#43;&#43; Modules</a></h1>
+<h1><a href="http://h-sao.com/blog/2021/12/01/about-cpp-modules/" title="[C&#43;&#43;] Modulesのコンパイル（MSVC ver）とBMIについて">[C&#43;&#43;] Modulesのコンパイル（MSVC ver）とBMIについて</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2021.12.01">2021.12.01</time>
     
@@ -128,7 +128,7 @@ C++20 対応のメジャーどころのコンパイラ（MSVC/gcc/Clang など�
 <li>Foo.cppm</li>
 </ul></li>
 
-<li><p>gcc</p>
+<li><p>GCC</p>
 
 <ul>
 <li>Foo.cc</li>
@@ -140,12 +140,15 @@ C++20 対応のメジャーどころのコンパイラ（MSVC/gcc/Clang など�
 </ul></li>
 </ul>
 
-<p>（参考）
-- MSVC<br />
-<a href="https://docs.microsoft.com/en-us/cpp/cpp/modules-cpp?view=msvc-170">Overview of modules in C++</a>
-- GCC<br />
+<p>（参考）</p>
+
+<ul>
+<li>MSVC<br />
+<a href="https://docs.microsoft.com/en-us/cpp/cpp/modules-cpp?view=msvc-170">Overview of modules in C++</a></li>
+<li>GCC<br />
 <a href="http://labor-liber.org/en/gnu-linux/development/index.php?diapo=extensions">GCC and File Extensions - Development with GNU/Linux</a>
-<a href="https://blog.feabhas.com/2021/08/c20-modules-with-gcc11/">https://blog.feabhas.com/2021/08/c20-modules-with-gcc11/</a></p>
+<a href="https://blog.feabhas.com/2021/08/c20-modules-with-gcc11/">https://blog.feabhas.com/2021/08/c20-modules-with-gcc11/</a></li>
+</ul>
 
 <p>以下、、MSVCで話を進めます<br />
 （コンパイラによって異なる所が多いので）</p>
@@ -208,9 +211,12 @@ import MyHello;  <span style="color:#75715e">// モジュール使うよの宣�
 </code></pre></td></tr></table>
 </div>
 </div>
+<p>サンプルだけ見ると、なんてことのないコードですね<br />
+メイン関数は <code>#include</code> してた箇所を <code>inport</code> に変更しただけです</p>
+
 <h2 id="モジュールをバイナリ化する">モジュールをバイナリ化する</h2>
 
-<p>モジュールを記載する .ixx ファイルは、.ifc にプリコンパイルでバイナリ化されます</p>
+<p>モジュールを記載する <code>.ixx</code> ファイルは、<code>.ifc</code> にプリコンパイルでバイナリ化されます</p>
 
 <p>ややこしいのが、コンパイラによってこのあたりの呼び名が異なってて、こんな感じ</p>
 
@@ -226,27 +232,32 @@ import MyHello;  <span style="color:#75715e">// モジュール使うよの宣�
 <tbody>
 <tr>
 <td>モジュールファイル名　　→</td>
-<td>.ixx</td>
-<td>.cppm</td>
+<td><code>.ixx</code></td>
+<td><code>.cppm</code></td>
 </tr>
 
 <tr>
 <td>モジュールファイルをプリコンパイルしたもの→</td>
-<td>.ifc</td>
-<td>.pcm</td>
+<td><code>.ifc</code></td>
+<td><code>.pcm</code></td>
 </tr>
 </tbody>
 </table>
 
 <p>ちなみに「モジュールファイルをプリコンパイルしたもの」を <strong>BMI</strong> と呼び、<br />
-Binary Module Interface の略になります</p>
+<strong>Binary Module Interface</strong> の略になります</p>
 
-<p>この BMI ファイルを各 cpp ファイルなどが import することになります</p>
+<p>この BMI ファイルを各 cpp ファイルなどが <code>import</code> することになります</p>
 
 <h2 id="vc-でのコンパイル方法">VC++でのコンパイル方法</h2>
 
-<p>単純のため、まずはコマンドラインでやってみます<br />
-コマンドは２つ</p>
+<p>単純のため、まずはコマンドラインでやってみます</p>
+
+<p>利用したVC++バージョンはこちら</p>
+
+<p><img src="/pic/About-Cpp-Modules_00.png" alt="" /></p>
+
+<p>コマンドは２つ</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
@@ -258,7 +269,7 @@ Binary Module Interface の略になります</p>
 </div>
 </div>
 <p>1つ目のコマンドでモジュールをプリコンパイルし、<br />
-2つ目のコマンドで obj をリンク＆ main.exe の出力をします</p>
+2つ目のコマンドで <code>obj</code> をリンク、そして <code>main.exe</code> の出力をします</p>
 
 <p>＜1. モジュールのプリコンパイル＞</p>
 
@@ -273,10 +284,11 @@ hello.ixx
 <p>これで、hello.obj と MyHello.ifc が出来ました</p>
 
 <blockquote>
-<p>cl.exe はモジュールのコンパイル時に同時に二つのファイルを出力してくれます（.obj と .ifc）</p>
+<p>（余談）cl.exe はモジュールのコンパイル時に同時に二つのファイルを出力してくれて楽です（.obj と .ifc）</p>
 
-<p>Clang は別々のコマンドで出力します<br />
-つまり .pcm ( VC++で言うところの .ifc) を出力した後、それを元に .o ( VC++の .obj) を出力します</p>
+<p>Clang は別々のコマンドで出力するので、cl.exe とは少し作り方が異なっています<br />
+.pcm ( VC++で言うところの .ifc) を出力した後、それを元に .o ( VC++の .obj) を出力します<br />
+このあたりはまだ次回に投稿したいです</p>
 </blockquote>
 
 <p>＜2. 実行ファイル生成＞</p>
@@ -303,14 +315,18 @@ hello.obj
 
 </code></pre>
 
-<p>問題なし</p>
+<p>問題なし(^^♪</p>
 
 <h2 id="コンパイルオプションの注意点">コンパイルオプションの注意点</h2>
 
-<p>VC++のコマンドラインオプションが
-- モジュールを作ったとき
-- モジュールを使うとき
-これらの間で一致していないとき、コンパイラはワーニングを出しました（C5050）</p>
+<p>VC++のコマンドラインオプションが</p>
+
+<ul>
+<li>モジュールを作ったとき</li>
+<li>モジュールを使うとき</li>
+</ul>
+
+<p>これらの間で一致していないとき、コンパイラはワーニングを出しました（C5050）</p>
 
 <blockquote>
 <p>main.cpp(7): warning C5050: Possible incompatible environment while importing module &lsquo;MyHello&rsquo;: _CPPUNWIND is defined in current command line and not in module command line</p>
@@ -352,13 +368,13 @@ hello.obj
         <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fh-sao.com%2fblog%2f2021%2f12%2f01%2fabout-cpp-modules%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5d%20About%20C%2b%2b%20Modules&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2021%2f12%2f01%2fabout-cpp-modules%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5d%20Modules%e3%81%ae%e3%82%b3%e3%83%b3%e3%83%91%e3%82%a4%e3%83%ab%ef%bc%88MSVC%20ver%ef%bc%89%e3%81%a8BMI%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6&amp;url=http%3a%2f%2fh-sao.com%2fblog%2f2021%2f12%2f01%2fabout-cpp-modules%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     <li>
         <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fh-sao.com%2fblog%2f2021%2f12%2f01%2fabout-cpp-modules%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2021%2f12%2f01%2fabout-cpp-modules%2f&title=%5bC%2b%2b%5d%20About%20C%2b%2b%20Modules" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fh-sao.com%2fblog%2f2021%2f12%2f01%2fabout-cpp-modules%2f&title=%5bC%2b%2b%5d%20Modules%e3%81%ae%e3%82%b3%e3%83%b3%e3%83%91%e3%82%a4%e3%83%ab%ef%bc%88MSVC%20ver%ef%bc%89%e3%81%a8BMI%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 
@@ -2008,7 +2024,7 @@ cname www h-sao.github.io.
                 
                     
                         
-                            <a href="/blog/2021/12/01/about-cpp-modules/" class="list-group-item">[C&#43;&#43;] About C&#43;&#43; Modules</a><br>
+                            <a href="/blog/2021/12/01/about-cpp-modules/" class="list-group-item">[C&#43;&#43;] Modulesのコンパイル（MSVC ver）とBMIについて</a><br>
                         
                     
                 

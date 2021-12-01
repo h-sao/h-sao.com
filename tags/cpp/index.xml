@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>[C&#43;&#43;] About C&#43;&#43; Modules</title>
+      <title>[C&#43;&#43;] Modulesのコンパイル（MSVC ver）とBMIについて</title>
       <link>http://h-sao.com/blog/2021/12/01/about-cpp-modules/</link>
       <pubDate>Wed, 01 Dec 2021 00:30:00 +0900</pubDate>
       
@@ -34,9 +34,10 @@ Modulesを記載するファイル 各コンパイラによって（推奨）拡
  MSVC (cl.exe)
  Foo.ixx
   Clang
- Foo.cppm  gcc
- Foo.cc Foo.cp Foo.cxx Foo.cpp Foo.c++ Foo.C   （参考） - MSVC
-Overview of modules in C++ - GCC
+ Foo.cppm  GCC
+ Foo.cc Foo.cp Foo.cxx Foo.cpp Foo.c++ Foo.C   （参考）
+ MSVC
+Overview of modules in C++ GCC
 GCC and File Extensions - Development with GNU/Linux https://blog.</description>
     </item>
     
