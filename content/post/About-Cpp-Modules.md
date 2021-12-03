@@ -223,12 +223,20 @@ VC++のコマンドラインオプションが
 
 実際に、プリコンパイルで作られた `.ifc` や `.pcm`  の中身は
 
-- ASTとか
+- プリプロセスで利用した情報とか
+- ASTのダンプ
 - Objみたいなもの
 
-がひとまとめにされてる、
+がひとまとめにされてるようです
 
-という記述を見つけましたが、出展元が判らなくなったので、思い出したら追記します。。。
+~~という記述を見つけましたが、出展元が判らなくなったので、思い出したら追記します。。。~~
+
+> (2021/12/4追記)  
+CppCon2019の資料が参考になりました！  
+Practical Cpp Modules - CppCon 2019　　
+[https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules__boris_kolpackov__cppcon_2019.pdf](https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules__boris_kolpackov__cppcon_2019.pdf)
+
+
 
 もちろん、コンパイラによって、さらにバージョンによっても形式は様々なんでしょう
 
@@ -251,7 +259,7 @@ VC++のコマンドラインオプションが
 - C++ Modules: What You Should Know  
 [https://github.com/cppp-france/CPPP-19/blob/master/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis.pdf](https://github.com/cppp-france/CPPP-19/blob/master/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis.pdf]
 
-## 所管
+## 所感
 
 まだ2021年12月の時点では、Modules 機能が完全に動作するコンパイラもないみたいですし  
 そもそも各コンパイラによって記載方法や推奨が異なるので、なんとも道半ばな印象はあります
@@ -265,7 +273,7 @@ Modules に関して取り組まれている人たちの歴史はとても長く
 かつ現在のヘッダファイルがベストだとは思えないので  
 個人的に一押ししたい機能だと改めて思いました
 
-## 所管その２
+## 所感その２
 
 C++ Advent Calendar！
 
