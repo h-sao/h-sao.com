@@ -257,7 +257,7 @@ Practical Cpp Modules - CppCon 2019　　
 （参考）
 
 - C++ Modules: What You Should Know  
-[https://github.com/cppp-france/CPPP-19/blob/master/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis.pdf](https://github.com/cppp-france/CPPP-19/blob/master/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis.pdf]
+[https://github.com/cppp-france/CPPP-19/blob/master/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis.pdf](https://github.com/cppp-france/CPPP-19/blob/master/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis.pdf)
 
 ## 所感
 
