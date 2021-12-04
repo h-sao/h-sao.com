@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Android on Effectiveさお</title>
-    <link>http://h-sao.com/tags/android/</link>
+    <link>https://h-sao.com/tags/android/</link>
     <description>Recent content in Android on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Fri, 18 Aug 2017 18:40:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/android/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/android/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Android] 謎のエラー「Unable to start debugging.」が出たときの対応</title>
-      <link>http://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/</link>
+      <link>https://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/</link>
       <pubDate>Fri, 18 Aug 2017 18:40:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/</guid>
+      <guid>https://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/</guid>
       <description>Androidデバッグで実行時エラー 環境
  Windows10 x64 Visual Studio 2017 Project type: Native-Activity Application (Android)  ある時…Visual Studio で作っている Android プロジェクトが、実行時エラーになりました
  Unable to start debugging. Check your debugger settings by opening project properties and navigating to &amp;lsquo;Configuration Properties&amp;ndash;&amp;gt; Debugging&amp;rsquo;
@@ -34,10 +34,10 @@ https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/mef.md#mef
     
     <item>
       <title>[Android] Hyper-Vで使うVisual Studio Emulator for Androidの最初の一歩</title>
-      <link>http://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</link>
+      <link>https://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</link>
       <pubDate>Thu, 27 Jul 2017 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</guid>
+      <guid>https://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</guid>
       <description>どうもうまくAndroidエミュレータが動かない… いわゆる ADV Manager をつかって、Androidをエミューレートしたいのですが
 なぜかうまく起動しない…
 環境
@@ -51,10 +51,10 @@ Please ensure Hyper-V is disabled in Windows Features, or refer to the Intel HAX
     
     <item>
       <title>[Android]Xiaomi Redmi Note2にGooglePlayをインストールする</title>
-      <link>http://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/</link>
+      <link>https://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/</link>
       <pubDate>Tue, 06 Oct 2015 04:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/</guid>
+      <guid>https://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/</guid>
       <description>クロスプラットフォームで開発していると、やはり最新の端末が欲しくなりますよね～
 １年以内発売の iPhone と Windows Phone は持っているのですが
 そろそろ新しい Android が欲しい～と思っていたので、買ってしまいました
@@ -75,10 +75,10 @@ GooglePlay installer APKが最適解 検索すると色々な方法が出てく�
     
     <item>
       <title>[Android] 開発者向けオプション表示とAPKインストールコマンド</title>
-      <link>http://h-sao.com/blog/2015/03/13/install-android-apk/</link>
+      <link>https://h-sao.com/blog/2015/03/13/install-android-apk/</link>
       <pubDate>Fri, 13 Mar 2015 22:00:51 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/03/13/install-android-apk/</guid>
+      <guid>https://h-sao.com/blog/2015/03/13/install-android-apk/</guid>
       <description>ずいぶん昔から出ている情報ですが、メモっときます
 Android端末に自作アプリを入れるシンプルな方法です
 Android端末での準備 Android4.2以降の端末だと「開発者向けオプション」が非表示になってるので

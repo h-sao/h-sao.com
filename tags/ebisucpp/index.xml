@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ebisucpp on Effectiveさお</title>
-    <link>http://h-sao.com/tags/ebisucpp/</link>
+    <link>https://h-sao.com/tags/ebisucpp/</link>
     <description>Recent content in Ebisucpp on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 27 Mar 2016 20:30:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/ebisucpp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/ebisucpp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[勉強会] ebisu_effective_modern.cpp vol.3やりますよ</title>
-      <link>http://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</link>
+      <link>https://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</link>
       <pubDate>Sun, 27 Mar 2016 20:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</guid>
+      <guid>https://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</guid>
       <description>ebisu_effective_modern.cppって？  
 東京の恵比寿でC++について、みんなの意見を聞きながら本を読み進める勉強会を開いています
 昔、大阪でC++の読書会を開催していたのですが、それが結構役に立って面白かったので、東京でも開催してみよう！と思い、始めてみました

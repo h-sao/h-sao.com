@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Effectiveさお</title>
-    <link>http://h-sao.com/tags/hugo/</link>
+    <link>https://h-sao.com/tags/hugo/</link>
     <description>Recent content in Hugo on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 28 Jul 2019 18:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Hugo] Hugoの環境をDocker上で動かす</title>
-      <link>http://h-sao.com/blog/2019/07/28/how-to-use-hugo-on-docker/</link>
+      <link>https://h-sao.com/blog/2019/07/28/how-to-use-hugo-on-docker/</link>
       <pubDate>Sun, 28 Jul 2019 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/07/28/how-to-use-hugo-on-docker/</guid>
+      <guid>https://h-sao.com/blog/2019/07/28/how-to-use-hugo-on-docker/</guid>
       <description>今回の環境
  macOS Mojave Docker Desktop Hugo  このブログは Hugo というスタティックジェネレーターで作っています
 Hugoは golang で動いているので、ローカルに Go の環境が必要なわけですが
@@ -29,10 +29,10 @@ Hugo に対応した docker image をダウンロード 1 2 3 4 5 6 7 8 9 10  # 
     
     <item>
       <title>[Hugo] ブログ構築メモ(2)-テンプレートの更新方法（CSSはメインではない）</title>
-      <link>http://h-sao.com/blog/2015/12/13/change-theme-to-minimalist/</link>
+      <link>https://h-sao.com/blog/2015/12/13/change-theme-to-minimalist/</link>
       <pubDate>Sun, 13 Dec 2015 23:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/12/13/change-theme-to-minimalist/</guid>
+      <guid>https://h-sao.com/blog/2015/12/13/change-theme-to-minimalist/</guid>
       <description>前回、スタティックジェネレーターのHugoを使って、GitHub Pages にブログを展開する方法を記載しました
  [Hugo]ブログ構築メモ(1)-Hugoとテンプレート
 http://h-sao.com/blog/2015/09/09/HugoAndTheme/  このとき、「デザインと機能を諦めた」と書きましたが
@@ -66,10 +66,10 @@ https://github.com/digitalcraftsman/hugo-minimalist-theme/  これは相談し�
     
     <item>
       <title>[Hugo]ブログ構築メモ(1)-Hugoとテンプレート</title>
-      <link>http://h-sao.com/blog/2015/09/09/hugoandtheme/</link>
+      <link>https://h-sao.com/blog/2015/09/09/hugoandtheme/</link>
       <pubDate>Wed, 09 Sep 2015 01:11:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/09/09/hugoandtheme/</guid>
+      <guid>https://h-sao.com/blog/2015/09/09/hugoandtheme/</guid>
       <description>Windows10のノートPCに Hugo というスタティックジェネレーターをインストールして、このブログを構築しています
 作ったブログは、GitHub Pages にアップして運用しています
 今のところ気に入っているのは
@@ -91,10 +91,10 @@ C:\Users\haruk\Dropbox\sites&amp;gt;cd Blog C:\Users\haruk\Dropbox\sites\Blog&am
     
     <item>
       <title>[Hugo/wercker]ブログを移行しました</title>
-      <link>http://h-sao.com/blog/2015/08/25/moving-blog/</link>
+      <link>https://h-sao.com/blog/2015/08/25/moving-blog/</link>
       <pubDate>Tue, 25 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/08/25/moving-blog/</guid>
+      <guid>https://h-sao.com/blog/2015/08/25/moving-blog/</guid>
       <description>ライブドアで書いていたブログ 「遥佐保の技術メモ」 http://blog.livedoor.jp/haruka_sao/ を移植することにしました
 思えばライブドアはソースコードを表示するのには適していないブログでした…
 2008年からなので、もう7年も!?

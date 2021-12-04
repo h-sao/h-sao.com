@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unity on Effectiveさお</title>
-    <link>http://h-sao.com/tags/unity/</link>
+    <link>https://h-sao.com/tags/unity/</link>
     <description>Recent content in Unity on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Fri, 26 Jul 2019 17:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/unity/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[VisualStudio] Visual Studioで使う改行コードを指定する方法</title>
-      <link>http://h-sao.com/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/</link>
+      <link>https://h-sao.com/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/</link>
       <pubDate>Fri, 26 Jul 2019 17:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/</guid>
+      <guid>https://h-sao.com/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/</guid>
       <description>環境
  Windows10 Visual Studio 2019 Unity 2018  元々これを調べたきっかけは、Unityで作ったプロジェクトファイルを開いたときに
 改行コード に関する警告が必ず出ていたからです
@@ -36,10 +36,10 @@ LFに統一するしかない…
     
     <item>
       <title>[Unity] エディタを開く前にUnityのバージョンを調べる方法</title>
-      <link>http://h-sao.com/blog/2019/06/19/how-to-check-unity-version-without-open-project/</link>
+      <link>https://h-sao.com/blog/2019/06/19/how-to-check-unity-version-without-open-project/</link>
       <pubDate>Wed, 19 Jun 2019 16:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/06/19/how-to-check-unity-version-without-open-project/</guid>
+      <guid>https://h-sao.com/blog/2019/06/19/how-to-check-unity-version-without-open-project/</guid>
       <description>既存のUnityのプロジェクトを開くとき、バージョンを合わせて開きたいですよね、
 開く前に！
 そしたら事前にそのバージョンのUnityをダウンロードできますし！
@@ -49,10 +49,10 @@ ProjectSettings &amp;gt; ProjectVersion.txt  バージョンがそのまんま�
     
     <item>
       <title>[Unity] Macのトラックパッドのみでシーンビューを動かす</title>
-      <link>http://h-sao.com/blog/2018/08/19/unity-cameras-operation-not-using-mouse/</link>
+      <link>https://h-sao.com/blog/2018/08/19/unity-cameras-operation-not-using-mouse/</link>
       <pubDate>Sun, 19 Aug 2018 10:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2018/08/19/unity-cameras-operation-not-using-mouse/</guid>
+      <guid>https://h-sao.com/blog/2018/08/19/unity-cameras-operation-not-using-mouse/</guid>
       <description>動作環境
  Mac 上で Bootcamp してる Windows10 Unity2018  Unityのシーンビューを操作しようとして、トラックパッドだけで動かすやり方が判らなかったので、そのメモです
  // マウスが引っ越ししで、どこにあるか判らなくなった
@@ -62,10 +62,10 @@ ProjectSettings &amp;gt; ProjectVersion.txt  バージョンがそのまんま�
     
     <item>
       <title>[Unity] Unityのライセンス情報をアンインストールしたい</title>
-      <link>http://h-sao.com/blog/2017/11/02/how-to-uninstall-unity-license-information/</link>
+      <link>https://h-sao.com/blog/2017/11/02/how-to-uninstall-unity-license-information/</link>
       <pubDate>Thu, 02 Nov 2017 09:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/11/02/how-to-uninstall-unity-license-information/</guid>
+      <guid>https://h-sao.com/blog/2017/11/02/how-to-uninstall-unity-license-information/</guid>
       <description>Unityをアンインストールしたけど、あれ？ライセンス情報が残ってる(?_?)
 というのが調べたきっかけです
 PCからUnityの情報を完全消去したいときの参考に
@@ -104,10 +104,10 @@ https://docs.unity3d.com/Manual/ActivationFAQ.html(英語)
     
     <item>
       <title>[Unity] エディタ上でゲーム実行中にエディタの色を変える</title>
-      <link>http://h-sao.com/blog/2017/10/26/change-playmode-color-on-unity/</link>
+      <link>https://h-sao.com/blog/2017/10/26/change-playmode-color-on-unity/</link>
       <pubDate>Thu, 26 Oct 2017 23:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/10/26/change-playmode-color-on-unity/</guid>
+      <guid>https://h-sao.com/blog/2017/10/26/change-playmode-color-on-unity/</guid>
       <description>Unityエディタ上で、ゲームを実行中（再生中）に、色を変える設定です
 // Unity的には「プレイモード」と呼ぶみたいです
  プレイモード時にエディターの色を変える - Unity公式チュートリアル動画 https://unity3d.com/jp/learn/tutorials/topics/tips/play-mode-editor-tint
@@ -121,10 +121,10 @@ https://docs.unity3d.com/Manual/ActivationFAQ.html(英語)
     
     <item>
       <title>[Unity] 常にカメラの前にSpriteを出す</title>
-      <link>http://h-sao.com/blog/2017/06/21/unity-sprite-on-front-of-camera/</link>
+      <link>https://h-sao.com/blog/2017/06/21/unity-sprite-on-front-of-camera/</link>
       <pubDate>Wed, 21 Jun 2017 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/06/21/unity-sprite-on-front-of-camera/</guid>
+      <guid>https://h-sao.com/blog/2017/06/21/unity-sprite-on-front-of-camera/</guid>
       <description>Unityでカメラに追従して、前面にSpriteを出す方法 これ、本当は、カメラの子供として指定すればもっと簡単なんですけど…
 testScript.transform.parent = Camera.main.transform  この場合、
 カメラにアニメーションが付いてる時（メインカメラは固定ポジションのままの時）に
@@ -138,10 +138,10 @@ https://docs.unity3d.com/jp/540/Manual/FrustumSizeAtDistance.html  public class 
     
     <item>
       <title>[Unity] Unity用YEBISプラグインのお話してきました</title>
-      <link>http://h-sao.com/blog/2016/08/09/prerelease-yebis-for-unity-beta/</link>
+      <link>https://h-sao.com/blog/2016/08/09/prerelease-yebis-for-unity-beta/</link>
       <pubDate>Tue, 09 Aug 2016 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/08/09/prerelease-yebis-for-unity-beta/</guid>
+      <guid>https://h-sao.com/blog/2016/08/09/prerelease-yebis-for-unity-beta/</guid>
       <description>たまには、仕事のお話を…
 現在、Unityのプラグインを絶賛開発中で、わたしも少し関わらせて頂いてます
 なんのプラグインかというと、ポストエフェクト処理がかけられる「YEBIS」というプロダクトのプラグイン化になります
@@ -167,10 +167,10 @@ https://github.com/SiliconStudio/YEBIS-plugins  トップは英語で書かれ�
     
     <item>
       <title>[Unity] PC実行時のWindowsサイズの設定の仕方＆起動時フック</title>
-      <link>http://h-sao.com/blog/2016/05/08/change-unity-window-size/</link>
+      <link>https://h-sao.com/blog/2016/05/08/change-unity-window-size/</link>
       <pubDate>Sun, 08 May 2016 14:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/05/08/change-unity-window-size/</guid>
+      <guid>https://h-sao.com/blog/2016/05/08/change-unity-window-size/</guid>
       <description>Unityのバグなのか、わたしの使い方が悪いのか？
 PC実行時のウィンドウサイズの設定が、思うようにできなかったので
 その解決メモです
@@ -193,10 +193,10 @@ Unityのメニューの
     
     <item>
       <title>[Unity] 2D Spriteにシェーダーをかける</title>
-      <link>http://h-sao.com/blog/2016/01/11/unity-shader-2dsprite/</link>
+      <link>https://h-sao.com/blog/2016/01/11/unity-shader-2dsprite/</link>
       <pubDate>Mon, 11 Jan 2016 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/01/11/unity-shader-2dsprite/</guid>
+      <guid>https://h-sao.com/blog/2016/01/11/unity-shader-2dsprite/</guid>
       <description>今年の初めに、「Game a Week」という開発手法がすごい！っと書きました
 とりあえず、週に一度は成果物を公開する、の部分を真似してみようかなと
 （やってみて気が付きましたが、実は1週間って、結構長いです）

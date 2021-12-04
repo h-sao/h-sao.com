@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Visualstudio on Effectiveさお</title>
-    <link>http://h-sao.com/tags/visualstudio/</link>
+    <link>https://h-sao.com/tags/visualstudio/</link>
     <description>Recent content in Visualstudio on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Fri, 26 Jul 2019 17:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/visualstudio/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/visualstudio/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[VisualStudio] Visual Studioで使う改行コードを指定する方法</title>
-      <link>http://h-sao.com/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/</link>
+      <link>https://h-sao.com/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/</link>
       <pubDate>Fri, 26 Jul 2019 17:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/</guid>
+      <guid>https://h-sao.com/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/</guid>
       <description>環境
  Windows10 Visual Studio 2019 Unity 2018  元々これを調べたきっかけは、Unityで作ったプロジェクトファイルを開いたときに
 改行コード に関する警告が必ず出ていたからです
@@ -36,10 +36,10 @@ LFに統一するしかない…
     
     <item>
       <title>[Android] 謎のエラー「Unable to start debugging.」が出たときの対応</title>
-      <link>http://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/</link>
+      <link>https://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/</link>
       <pubDate>Fri, 18 Aug 2017 18:40:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/</guid>
+      <guid>https://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/</guid>
       <description>Androidデバッグで実行時エラー 環境
  Windows10 x64 Visual Studio 2017 Project type: Native-Activity Application (Android)  ある時…Visual Studio で作っている Android プロジェクトが、実行時エラーになりました
  Unable to start debugging. Check your debugger settings by opening project properties and navigating to &amp;lsquo;Configuration Properties&amp;ndash;&amp;gt; Debugging&amp;rsquo;
@@ -57,10 +57,10 @@ https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/mef.md#mef
     
     <item>
       <title>[Android] Hyper-Vで使うVisual Studio Emulator for Androidの最初の一歩</title>
-      <link>http://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</link>
+      <link>https://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</link>
       <pubDate>Thu, 27 Jul 2017 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</guid>
+      <guid>https://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</guid>
       <description>どうもうまくAndroidエミュレータが動かない… いわゆる ADV Manager をつかって、Androidをエミューレートしたいのですが
 なぜかうまく起動しない…
 環境

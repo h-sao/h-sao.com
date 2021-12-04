@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gitextensions on Effectiveさお</title>
-    <link>http://h-sao.com/tags/gitextensions/</link>
+    <link>https://h-sao.com/tags/gitextensions/</link>
     <description>Recent content in Gitextensions on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Thu, 01 Jun 2017 18:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/gitextensions/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/gitextensions/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[SSH] ポート指定GitサーバにSSHでアクセスできない時(Windows/GitExtensions)</title>
-      <link>http://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</link>
+      <link>https://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</link>
       <pubDate>Thu, 01 Jun 2017 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</guid>
+      <guid>https://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</guid>
       <description>最近… 機械学習関係をやってたんですけど、Unityをまた触ることになっています
 てんやわんやして、前回更新から2カ月も経ってしまった…(+o+)
 今回また、タイトル名のGit/SSH関係でオロオロしたので、同現象で困ってる人の助けになれば幸いです
@@ -44,10 +44,10 @@ Please make sure you have the correct access rights and repository exists.
     
     <item>
       <title>[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続</title>
-      <link>http://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</link>
+      <link>https://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</link>
       <pubDate>Sat, 07 May 2016 15:23:30 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</guid>
+      <guid>https://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</guid>
       <description>しょっちゅう作っては、作り方を忘れ、また検索で調べる…ということをしているので、sshキーの生成&amp;amp;接続について、忘れないようにメモしておきます
 GitサーバへSSHキーを使って接続したい Gitサーバに接続するには、
  http ssh  この2種類の接続方法があるみたいです
@@ -75,10 +75,10 @@ Windowsだとキーの保存位置は c:\Users\[ユーザ名]\.ssh\ にしない
     
     <item>
       <title>[GitExtensions] 行単位で変更をリセットするRコマンド</title>
-      <link>http://h-sao.com/blog/2015/03/03/reset-line-to-gitextensions/</link>
+      <link>https://h-sao.com/blog/2015/03/03/reset-line-to-gitextensions/</link>
       <pubDate>Tue, 03 Mar 2015 22:00:28 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/03/03/reset-line-to-gitextensions/</guid>
+      <guid>https://h-sao.com/blog/2015/03/03/reset-line-to-gitextensions/</guid>
       <description>GitExtensions を使ってみました
  http://gitextensions.github.io/  GitExtensions では、commit 時に、行を選択して
 その選択部分だけをリセットする（コミット前に合わせる）という機能があります

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on Effectiveさお</title>
-    <link>http://h-sao.com/tags/docker/</link>
+    <link>https://h-sao.com/tags/docker/</link>
     <description>Recent content in Docker on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 28 Jul 2019 18:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Hugo] Hugoの環境をDocker上で動かす</title>
-      <link>http://h-sao.com/blog/2019/07/28/how-to-use-hugo-on-docker/</link>
+      <link>https://h-sao.com/blog/2019/07/28/how-to-use-hugo-on-docker/</link>
       <pubDate>Sun, 28 Jul 2019 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/07/28/how-to-use-hugo-on-docker/</guid>
+      <guid>https://h-sao.com/blog/2019/07/28/how-to-use-hugo-on-docker/</guid>
       <description>今回の環境
  macOS Mojave Docker Desktop Hugo  このブログは Hugo というスタティックジェネレーターで作っています
 Hugoは golang で動いているので、ローカルに Go の環境が必要なわけですが
@@ -29,10 +29,10 @@ Hugo に対応した docker image をダウンロード 1 2 3 4 5 6 7 8 9 10  # 
     
     <item>
       <title>[Docker] Docker for Macをインストールして Ubuntu の起動や停止まで</title>
-      <link>http://h-sao.com/blog/2019/05/29/how-to-install-docker-for-mac/</link>
+      <link>https://h-sao.com/blog/2019/05/29/how-to-install-docker-for-mac/</link>
       <pubDate>Wed, 29 May 2019 12:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/05/29/how-to-install-docker-for-mac/</guid>
+      <guid>https://h-sao.com/blog/2019/05/29/how-to-install-docker-for-mac/</guid>
       <description>Macbook Pro に Docker をインストール＆テスト稼動させた時のメモ
  数年前までわたしはmacのこと本当によく知らなかったので、初めて mac を使ったときには、こういったインストール方法もわからなかった…
 誰かの役に立つかも知れないので、初歩的なところも書いておきます

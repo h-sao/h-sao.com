@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Opensource on Effectiveさお</title>
-    <link>http://h-sao.com/tags/opensource/</link>
+    <link>https://h-sao.com/tags/opensource/</link>
     <description>Recent content in Opensource on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sat, 21 Nov 2015 16:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/opensource/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/opensource/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[勉強会] meetup app@1 でオープンソースについて発表しました</title>
-      <link>http://h-sao.com/blog/2015/11/21/meetup-app1-opensource/</link>
+      <link>https://h-sao.com/blog/2015/11/21/meetup-app1-opensource/</link>
       <pubDate>Sat, 21 Nov 2015 16:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/11/21/meetup-app1-opensource/</guid>
+      <guid>https://h-sao.com/blog/2015/11/21/meetup-app1-opensource/</guid>
       <description>2015/11/21 Sat meetup app@1 という勉強会を開催しました
 https://meetupapp.doorkeeper.jp/events/33820
  ビジネスにおけるオープンソースの利用価値

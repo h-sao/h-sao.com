@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Chrome on Effectiveさお</title>
-    <link>http://h-sao.com/tags/chrome/</link>
+    <link>https://h-sao.com/tags/chrome/</link>
     <description>Recent content in Chrome on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Tue, 30 Apr 2019 11:30:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Chrome] Google Chromeでモバイル画面を見る User-Agent Swither for Chrome</title>
-      <link>http://h-sao.com/blog/2019/04/30/recommended-extensions-user-agent-swither-in-chrome/</link>
+      <link>https://h-sao.com/blog/2019/04/30/recommended-extensions-user-agent-swither-in-chrome/</link>
       <pubDate>Tue, 30 Apr 2019 11:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/04/30/recommended-extensions-user-agent-swither-in-chrome/</guid>
+      <guid>https://h-sao.com/blog/2019/04/30/recommended-extensions-user-agent-swither-in-chrome/</guid>
       <description>タイトルそのまんま(&amp;lsquo;ω&amp;rsquo;)
 自分メモ
 モバイル画面を PCのChromeで見るエクステンションはたくさんありますが、 わたしはずっと「User-Agent Swither for Chrome」を使っています
@@ -39,10 +39,10 @@ https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdh
     
     <item>
       <title>[Chrome] Google Chromeのマルチプロファイル設定</title>
-      <link>http://h-sao.com/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/</link>
+      <link>https://h-sao.com/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/</link>
       <pubDate>Wed, 04 Jan 2017 23:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/</guid>
+      <guid>https://h-sao.com/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/</guid>
       <description>Google Chrome を使って、Webサイトの開発をしている人向けの情報です
 自分のChromeのユーザプロファイラを使わずに、開発は別のプロファイラを使いたいってこと、ありますよね…？
 [プランA] ユーザプロファイラを切り替える Google Chrome のユーザデータを、開発用と自分個人用とに分けたい

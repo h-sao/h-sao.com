@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tensorflow on Effectiveさお</title>
-    <link>http://h-sao.com/tags/tensorflow/</link>
+    <link>https://h-sao.com/tags/tensorflow/</link>
     <description>Recent content in Tensorflow on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Mon, 10 Apr 2017 18:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/tensorflow/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/tensorflow/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[TensorFlow] TensorFlow on Windows GPU版インストール方法</title>
-      <link>http://h-sao.com/blog/2017/04/10/how-to-install-tensorflow-gpu-on-windows/</link>
+      <link>https://h-sao.com/blog/2017/04/10/how-to-install-tensorflow-gpu-on-windows/</link>
       <pubDate>Mon, 10 Apr 2017 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/04/10/how-to-install-tensorflow-gpu-on-windows/</guid>
+      <guid>https://h-sao.com/blog/2017/04/10/how-to-install-tensorflow-gpu-on-windows/</guid>
       <description>前回、TensorFlowの環境を作るために、Anacondaをインストールしました
  [Anaconda] Anaconda for Windowsインストール方法
 http://h-sao.com/blog/2017/03/29/how-to-install-anaconda-for-windows/  その続きで、TensorFlow GPUバージョンを入れたいと思います

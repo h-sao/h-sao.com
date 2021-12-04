@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cpp on Effectiveさお</title>
-    <link>http://h-sao.com/tags/cpp/</link>
+    <link>https://h-sao.com/tags/cpp/</link>
     <description>Recent content in Cpp on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Wed, 01 Dec 2021 00:30:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[C&#43;&#43;] Modulesのコンパイル（MSVC ver）とBMIについて</title>
-      <link>http://h-sao.com/blog/2021/12/01/about-cpp-modules/</link>
+      <link>https://h-sao.com/blog/2021/12/01/about-cpp-modules/</link>
       <pubDate>Wed, 01 Dec 2021 00:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2021/12/01/about-cpp-modules/</guid>
+      <guid>https://h-sao.com/blog/2021/12/01/about-cpp-modules/</guid>
       <description>この記事は C++ Advent Calendar 2021 1日目（初日！）の記事です。
  少し前からC++に Modules がやってきました
 C++20 対応のメジャーどころのコンパイラ（MSVC/gcc/Clang など）で使うことができます
@@ -43,10 +43,10 @@ GCC and File Extensions - Development with GNU/Linux https://blog.</description>
     
     <item>
       <title>[C&#43;&#43;] 実行環境の差異によるintワーニングが出ない書き方</title>
-      <link>http://h-sao.com/blog/2020/10/02/fixed-a-diffrent-cpp-runtime-env-causing-a-int-warning/</link>
+      <link>https://h-sao.com/blog/2020/10/02/fixed-a-diffrent-cpp-runtime-env-causing-a-int-warning/</link>
       <pubDate>Fri, 02 Oct 2020 05:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2020/10/02/fixed-a-diffrent-cpp-runtime-env-causing-a-int-warning/</guid>
+      <guid>https://h-sao.com/blog/2020/10/02/fixed-a-diffrent-cpp-runtime-env-causing-a-int-warning/</guid>
       <description>C++のワーニングを放置していたのですが、そっと @srz_zumix さんが教えてくれてました
 忘れないうちに&amp;rdquo;φ(・ェ・o)~メモメモ
 x86環境とx64環境が混在してる場合にエラーが出やすい こんなやつとか出ます…
@@ -60,10 +60,10 @@ int 型が処理系によって異なるのは…</description>
     
     <item>
       <title>[c&#43;&#43;] 2次元配列的な書き方</title>
-      <link>http://h-sao.com/blog/2020/05/08/cpp-2-dimensional-array/</link>
+      <link>https://h-sao.com/blog/2020/05/08/cpp-2-dimensional-array/</link>
       <pubDate>Fri, 08 May 2020 15:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2020/05/08/cpp-2-dimensional-array/</guid>
+      <guid>https://h-sao.com/blog/2020/05/08/cpp-2-dimensional-array/</guid>
       <description>自分メモ
 2次元配列 C++11 以前では、2次元配列はこんな感じで書いていました
 1 2 3 4 5 6  // 2-dimensional array (raw type) constexpr static float xy_raw[][2] = { { 0.f, 10.f} // 0  , { 20.f, 30.f} // 1  , { 40.f, 50.f} // 2 };    これでも悪くは無いのですが、生配列を扱うと範囲外アクセスに気が付かない可能性が出てきます そこで C++11 から境界チェックが出来る配列の std::array が登場しました
@@ -75,10 +75,10 @@ https://cpprefjp.github.io/reference/array/array.html  さらに2次元配列に
     
     <item>
       <title>[C&#43;&#43;] std::optionalの使い方を紹介しました</title>
-      <link>http://h-sao.com/blog/2019/03/27/how-to-use-optional-nakamecpp-vol13/</link>
+      <link>https://h-sao.com/blog/2019/03/27/how-to-use-optional-nakamecpp-vol13/</link>
       <pubDate>Wed, 27 Mar 2019 23:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/03/27/how-to-use-optional-nakamecpp-vol13/</guid>
+      <guid>https://h-sao.com/blog/2019/03/27/how-to-use-optional-nakamecpp-vol13/</guid>
       <description>少し前ですが、std::optional について nakameguro_feature.cpp vol.13 で発表したので、その資料を置いときます
  nakameguro_feature.cpp vol.13
 https://ebisu-effective-modern-cpp.connpass.com/event/111469/
@@ -97,10 +97,10 @@ https://ebisu-effective-modern-cpp.connpass.com/event/125272/
     
     <item>
       <title>[Android] 謎のエラー「Unable to start debugging.」が出たときの対応</title>
-      <link>http://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/</link>
+      <link>https://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/</link>
       <pubDate>Fri, 18 Aug 2017 18:40:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/</guid>
+      <guid>https://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/</guid>
       <description>Androidデバッグで実行時エラー 環境
  Windows10 x64 Visual Studio 2017 Project type: Native-Activity Application (Android)  ある時…Visual Studio で作っている Android プロジェクトが、実行時エラーになりました
  Unable to start debugging. Check your debugger settings by opening project properties and navigating to &amp;lsquo;Configuration Properties&amp;ndash;&amp;gt; Debugging&amp;rsquo;
@@ -118,10 +118,10 @@ https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/mef.md#mef
     
     <item>
       <title>[C&#43;&#43;] VisualStusio2015でClangを使う設定</title>
-      <link>http://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/</link>
+      <link>https://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/</link>
       <pubDate>Sun, 15 May 2016 23:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/</guid>
+      <guid>https://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/</guid>
       <description>今日は Clang with Microsoft CodeGen の設定などについて、メモしておきます
 先人たちが既に色々と試している内容と対して変わりませんが、そもそも日本語の情報も少ないので、何かの足しになればと思います
 &amp;ldquo;Clang with Microsoft CodeGen&amp;rdquo; is here! 最近はすっかり、クロスプラットフォームやオープンソースに力を入れているマイクロソフト社のツールセットの中に、Clang対応ってのがあります
@@ -140,10 +140,10 @@ https://blogs.msdn.microsoft.com/vcblog/2016/03/31/clang-with-microsoft-codegen-
     
     <item>
       <title>[勉強会] ebisu_effective_modern.cpp vol.3やりますよ</title>
-      <link>http://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</link>
+      <link>https://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</link>
       <pubDate>Sun, 27 Mar 2016 20:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</guid>
+      <guid>https://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</guid>
       <description>ebisu_effective_modern.cppって？  
 東京の恵比寿でC++について、みんなの意見を聞きながら本を読み進める勉強会を開いています
 昔、大阪でC++の読書会を開催していたのですが、それが結構役に立って面白かったので、東京でも開催してみよう！と思い、始めてみました
@@ -163,10 +163,10 @@ http://cpp-osaka.connpass.com/
     
     <item>
       <title>[C&#43;&#43;11] 参考リンク情報</title>
-      <link>http://h-sao.com/blog/2014/12/19/cpp11-link-note/</link>
+      <link>https://h-sao.com/blog/2014/12/19/cpp11-link-note/</link>
       <pubDate>Fri, 19 Dec 2014 12:30:41 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/12/19/cpp11-link-note/</guid>
+      <guid>https://h-sao.com/blog/2014/12/19/cpp11-link-note/</guid>
       <description>C++11について調べているときに参考になった情報源のメモ
  C++11/14/17 Features In VS 2015 Preview - Visual C++ Team Blog
 http://blogs.msdn.com/b/vcblog/archive/2014/11/17/c-11-14-17-features-in-vs-2015-preview.aspx  VS2013とVS2015 previewで利用できる機能一覧が乗っている
@@ -182,10 +182,10 @@ VC++でのC++11の機能一覧
     
     <item>
       <title>[C&#43;&#43;/CX] MVP Community Camp 2014大阪で「VC&#43;&#43;まわりの非同期処理」セッションしました</title>
-      <link>http://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/</link>
+      <link>https://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/</link>
       <pubDate>Sun, 23 Mar 2014 00:25:28 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/</guid>
+      <guid>https://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/</guid>
       <description>MVP Community Camp 2014大阪にて、VC++系のセッションをさせて頂きました
 MVP Community Camp 2014大阪会場
 http://atnd.org/event/E0024087 (リンク先は削除されている模様です)
@@ -202,10 +202,10 @@ PDF版はこちら
     
     <item>
       <title>Anonymous Struct of C</title>
-      <link>http://h-sao.com/blog/2014/02/24/c-anonymous-struct/</link>
+      <link>https://h-sao.com/blog/2014/02/24/c-anonymous-struct/</link>
       <pubDate>Mon, 24 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/02/24/c-anonymous-struct/</guid>
+      <guid>https://h-sao.com/blog/2014/02/24/c-anonymous-struct/</guid>
       <description>Hi,
 It is very tedious to think about the name of a struct when you use to struct only once.
 In such a case, Anonymous structure comes in handy.
@@ -215,10 +215,10 @@ It is assigned to the anonymous struct
     
     <item>
       <title>C,C&#43;&#43;,C&#43;&#43;/CLI sample program</title>
-      <link>http://h-sao.com/blog/2014/01/31/cpp-sample-program/</link>
+      <link>https://h-sao.com/blog/2014/01/31/cpp-sample-program/</link>
       <pubDate>Fri, 31 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/01/31/cpp-sample-program/</guid>
+      <guid>https://h-sao.com/blog/2014/01/31/cpp-sample-program/</guid>
       <description>Hi,
 C program 1 2 3 4 5 6 7 8  c00.c #include &amp;lt;stdio.h&amp;gt; int main() { printf(&amp;#34;This is a native C program.\n&amp;#34;); return 0; }    compile
 &amp;gt; cl.exe c00.c  C++ program 1 2 3 4 5 6 7 8  c01.cpp #include &amp;lt;iostream&amp;gt; int main() { std::cout &amp;lt;&amp;lt; &amp;#34;This is a native C++ program.&amp;#34; &amp;lt;&amp;lt; std::endl; return 0; }    compile</description>
@@ -226,10 +226,10 @@ C program 1 2 3 4 5 6 7 8  c00.c #include &amp;lt;stdio.h&amp;gt; int main() { p
     
     <item>
       <title>Lightning Talk:How to program C&#43;&#43;/CX</title>
-      <link>http://h-sao.com/blog/2014/01/29/how-to-program-cppcx/</link>
+      <link>https://h-sao.com/blog/2014/01/29/how-to-program-cppcx/</link>
       <pubDate>Wed, 29 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/01/29/how-to-program-cppcx/</guid>
+      <guid>https://h-sao.com/blog/2014/01/29/how-to-program-cppcx/</guid>
       <description>Hi,
 The other day, I spoke about C++/CX in Lightning Talk.
 Click here for article
@@ -240,10 +240,10 @@ Take care!</description>
     
     <item>
       <title>[C/C&#43;&#43;] 割り算を使わないで割り算する方法</title>
-      <link>http://h-sao.com/blog/2008/07/29/how-to-divide-without-division/</link>
+      <link>https://h-sao.com/blog/2008/07/29/how-to-divide-without-division/</link>
       <pubDate>Tue, 29 Jul 2008 01:17:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2008/07/29/how-to-divide-without-division/</guid>
+      <guid>https://h-sao.com/blog/2008/07/29/how-to-divide-without-division/</guid>
       <description>ビット・シフトの計算の練習問題＜上級編＞です
 Q. 割り算をシフトと引き算のみで表現しなさい
 A. 回答

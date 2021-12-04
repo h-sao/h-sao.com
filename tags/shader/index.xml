@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shader on Effectiveさお</title>
-    <link>http://h-sao.com/tags/shader/</link>
+    <link>https://h-sao.com/tags/shader/</link>
     <description>Recent content in Shader on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Mon, 11 Jan 2016 18:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/shader/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/shader/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Unity] 2D Spriteにシェーダーをかける</title>
-      <link>http://h-sao.com/blog/2016/01/11/unity-shader-2dsprite/</link>
+      <link>https://h-sao.com/blog/2016/01/11/unity-shader-2dsprite/</link>
       <pubDate>Mon, 11 Jan 2016 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/01/11/unity-shader-2dsprite/</guid>
+      <guid>https://h-sao.com/blog/2016/01/11/unity-shader-2dsprite/</guid>
       <description>今年の初めに、「Game a Week」という開発手法がすごい！っと書きました
 とりあえず、週に一度は成果物を公開する、の部分を真似してみようかなと
 （やってみて気が付きましたが、実は1週間って、結構長いです）

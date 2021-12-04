@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xiaomi on Effectiveさお</title>
-    <link>http://h-sao.com/tags/xiaomi/</link>
+    <link>https://h-sao.com/tags/xiaomi/</link>
     <description>Recent content in Xiaomi on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Tue, 06 Oct 2015 04:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/xiaomi/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/xiaomi/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Android]Xiaomi Redmi Note2にGooglePlayをインストールする</title>
-      <link>http://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/</link>
+      <link>https://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/</link>
       <pubDate>Tue, 06 Oct 2015 04:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/</guid>
+      <guid>https://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/</guid>
       <description>クロスプラットフォームで開発していると、やはり最新の端末が欲しくなりますよね～
 １年以内発売の iPhone と Windows Phone は持っているのですが
 そろそろ新しい Android が欲しい～と思っていたので、買ってしまいました

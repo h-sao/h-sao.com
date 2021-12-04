@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Diary on Effectiveさお</title>
-    <link>http://h-sao.com/tags/diary/</link>
+    <link>https://h-sao.com/tags/diary/</link>
     <description>Recent content in Diary on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sat, 13 Jul 2019 13:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/diary/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/diary/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[MSMVP] 2019年7月 Microsoft MVP for Developer Technologies を再受賞しました</title>
-      <link>http://h-sao.com/blog/2019/07/13/to-be-rewarded-as-msmvp2019/</link>
+      <link>https://h-sao.com/blog/2019/07/13/to-be-rewarded-as-msmvp2019/</link>
       <pubDate>Sat, 13 Jul 2019 13:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/07/13/to-be-rewarded-as-msmvp2019/</guid>
+      <guid>https://h-sao.com/blog/2019/07/13/to-be-rewarded-as-msmvp2019/</guid>
       <description>遥佐保（はるか・さお）です
 今年も7/1付けでマイクロソフトさまより MVP を受賞させて頂きました
 カテゴリー名称は Developer Technologies となります
@@ -32,10 +32,10 @@
     
     <item>
       <title>[Diary] 2019年もよろしくお願いします</title>
-      <link>http://h-sao.com/blog/2019/01/30/hello2019/</link>
+      <link>https://h-sao.com/blog/2019/01/30/hello2019/</link>
       <pubDate>Wed, 30 Jan 2019 12:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/01/30/hello2019/</guid>
+      <guid>https://h-sao.com/blog/2019/01/30/hello2019/</guid>
       <description>去年の振り返りをしてなかったので、ここでまとめとこうかなと…ブログは自分のメモだからね
 技術活動 去年は ebisu/nakameguro_feature.cpp という、C++14/17の機能について、知ってる人、調べてきた人がゆるく紹介するという会を続けました
 だいたい月に2回のペースだったかな
@@ -71,10 +71,10 @@ http://todai.tv/contents-list/2018FY/bjarne_stroustrup/01
     
     <item>
       <title>[Diary] 2018年もよろしくお願いします</title>
-      <link>http://h-sao.com/blog/2018/02/08/hello2018/</link>
+      <link>https://h-sao.com/blog/2018/02/08/hello2018/</link>
       <pubDate>Thu, 08 Feb 2018 19:50:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2018/02/08/hello2018/</guid>
+      <guid>https://h-sao.com/blog/2018/02/08/hello2018/</guid>
       <description>ここ毎年…新年のブログ挨拶は1月2日に行ってたのですが
 今年は大幅に1カ月も遅れてしまいました&amp;rdquo;(-&amp;ldquo;&amp;rdquo;-)&amp;rdquo;
 今更ですが、今年もどうぞ、よろしくお願いします(&amp;lsquo;ω&amp;rsquo;*)
@@ -114,10 +114,10 @@ https://meetupapp.connpass.com/event/73674/  ここではUnity系の話を発表
     
     <item>
       <title>[Diary] 2017年もよろしくお願いします</title>
-      <link>http://h-sao.com/blog/2017/01/03/hello2017/</link>
+      <link>https://h-sao.com/blog/2017/01/03/hello2017/</link>
       <pubDate>Tue, 03 Jan 2017 16:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/01/03/hello2017/</guid>
+      <guid>https://h-sao.com/blog/2017/01/03/hello2017/</guid>
       <description>遥佐保（はるか・さお）です
 2017年最初のブログになります！
 今年もよろしくお願いします(^_^)
@@ -159,10 +159,10 @@ http://zenmetu.sakura.ne.jp/bar/barae.html
     
     <item>
       <title>[Diary] 2016年もよろしくお願いします</title>
-      <link>http://h-sao.com/blog/2016/01/04/hello2016/</link>
+      <link>https://h-sao.com/blog/2016/01/04/hello2016/</link>
       <pubDate>Mon, 04 Jan 2016 16:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/01/04/hello2016/</guid>
+      <guid>https://h-sao.com/blog/2016/01/04/hello2016/</guid>
       <description>遥佐保（はるか・さお）です
 今年もよろしくお願いしますと共に、去年から気になっていることも踏まえて、記載しています
 MSMVP 2016年1月度受賞 今年もマイクロソフトさまより MVP を再受賞させて頂きました
@@ -204,10 +204,10 @@ https://www.youtube.com/watch?v=8xBuAdnIrJQ  Metalにしろ、これにしろ
     
     <item>
       <title>[MSMVP] 2015年1月度Windows Platform Development再受賞しました</title>
-      <link>http://h-sao.com/blog/2015/01/02/hello2015/</link>
+      <link>https://h-sao.com/blog/2015/01/02/hello2015/</link>
       <pubDate>Fri, 02 Jan 2015 01:01:26 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/01/02/hello2015/</guid>
+      <guid>https://h-sao.com/blog/2015/01/02/hello2015/</guid>
       <description>遥佐保（はるか・さお）です
 今年もマイクロソフトさまより MVP を受賞させて頂きました
 カテゴリー名称は Windows Platform Development となります
@@ -237,10 +237,10 @@ MSマンセーのわたくしが記載するのも全くもってナンセンス
     
     <item>
       <title>Hello World</title>
-      <link>http://h-sao.com/blog/2014/01/28/hello-world/</link>
+      <link>https://h-sao.com/blog/2014/01/28/hello-world/</link>
       <pubDate>Tue, 28 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/01/28/hello-world/</guid>
+      <guid>https://h-sao.com/blog/2014/01/28/hello-world/</guid>
       <description>Hi,
 I&amp;rsquo;m Sao Haruka :)
 Japanese programmer

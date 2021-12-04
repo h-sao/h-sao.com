@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windowsterminal on Effectiveさお</title>
-    <link>http://h-sao.com/tags/windowsterminal/</link>
+    <link>https://h-sao.com/tags/windowsterminal/</link>
     <description>Recent content in Windowsterminal on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Thu, 19 Mar 2020 23:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/windowsterminal/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/windowsterminal/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[WindowsTerminal] Preview版のインストール＆Git Bashを追加したい</title>
-      <link>http://h-sao.com/blog/2020/03/19/how-to-install-windowsterminalpreview/</link>
+      <link>https://h-sao.com/blog/2020/03/19/how-to-install-windowsterminalpreview/</link>
       <pubDate>Thu, 19 Mar 2020 23:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2020/03/19/how-to-install-windowsterminalpreview/</guid>
+      <guid>https://h-sao.com/blog/2020/03/19/how-to-install-windowsterminalpreview/</guid>
       <description>Windows Terminal …どんなもんだろなと思って、使ってみました
 もともとは、Gitのブランチ名をコマンドプロンプトに表示できたらいいのにー と思って調べたのでした
 Windows Terminal に Git Bash (正確には Git for Windows ) が登録できるようなので、それをやってみました

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C&#43;&#43; on Effectiveさお</title>
-    <link>http://h-sao.com/tags/c&#43;&#43;/</link>
+    <link>https://h-sao.com/tags/c&#43;&#43;/</link>
     <description>Recent content in C&#43;&#43; on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Tue, 05 Oct 2021 00:30:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[C&#43;&#43;]Compiler Explorerの出力結果の表示方法</title>
-      <link>http://h-sao.com/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/</link>
+      <link>https://h-sao.com/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/</link>
       <pubDate>Tue, 05 Oct 2021 00:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/</guid>
+      <guid>https://h-sao.com/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/</guid>
       <description>Compiler Explorer というオンラインコンパイルサービスがあります
  Compiler Explorer
 https://godbolt.org/  書いたC++コードのアセンブリ出力結果をリナルタイムに表示してくれるサービスです

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mac on Effectiveさお</title>
-    <link>http://h-sao.com/tags/mac/</link>
+    <link>https://h-sao.com/tags/mac/</link>
     <description>Recent content in Mac on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sat, 07 Nov 2020 10:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Windows] そのexeがx64かx86かを見分ける方法 Part2</title>
-      <link>http://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/</link>
+      <link>https://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/</link>
       <pubDate>Sat, 07 Nov 2020 10:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/</guid>
+      <guid>https://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/</guid>
       <description>先日、こんなブログを書きました
  [Windows] そのexeがx64かx86かを見分ける方法
 http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/  このブログを公開したところ、Twitterで @ripjyr さんより
@@ -32,10 +32,10 @@ $ file 調べたいファイル名   x86の場合  PE32 executable (GUI) Intel 8
     
     <item>
       <title>[Windows] そのexeがx64かx86かを見分ける方法</title>
-      <link>http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/</link>
+      <link>https://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/</link>
       <pubDate>Mon, 26 Oct 2020 12:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/</guid>
+      <guid>https://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/</guid>
       <description>手元にあるexeが64bitなのか32bitなのかを知りたい…
 開発してるとこういう時がたまにあると思う…
 多分ちょっとニッチな需要だけど、検索したらちゃんと誰かが既に調べてくれていました！
@@ -56,10 +56,10 @@ https://marketplace.visualstudio.com/items?itemName=slevesque.vscode-hexdump   V
     
     <item>
       <title>[Hugo] Hugoの環境をDocker上で動かす</title>
-      <link>http://h-sao.com/blog/2019/07/28/how-to-use-hugo-on-docker/</link>
+      <link>https://h-sao.com/blog/2019/07/28/how-to-use-hugo-on-docker/</link>
       <pubDate>Sun, 28 Jul 2019 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/07/28/how-to-use-hugo-on-docker/</guid>
+      <guid>https://h-sao.com/blog/2019/07/28/how-to-use-hugo-on-docker/</guid>
       <description>今回の環境
  macOS Mojave Docker Desktop Hugo  このブログは Hugo というスタティックジェネレーターで作っています
 Hugoは golang で動いているので、ローカルに Go の環境が必要なわけですが
@@ -72,10 +72,10 @@ Hugo に対応した docker image をダウンロード 1 2 3 4 5 6 7 8 9 10  # 
     
     <item>
       <title>[macOS] 自分メモ！Mac手に入れたら最初にすること(多少Windows風)</title>
-      <link>http://h-sao.com/blog/2019/06/26/how-to-set-up-my-new-macos/</link>
+      <link>https://h-sao.com/blog/2019/06/26/how-to-set-up-my-new-macos/</link>
       <pubDate>Wed, 26 Jun 2019 13:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/06/26/how-to-set-up-my-new-macos/</guid>
+      <guid>https://h-sao.com/blog/2019/06/26/how-to-set-up-my-new-macos/</guid>
       <description>新しくMacを入手したときの、自分なりの設定とかインストールするものを列挙してます
 Windowsに慣れた人ならきっとやりたくなるキーボード設定なども書いてます
 完全な自分メモですが、Windows開発者の方の参考になればー！
@@ -107,10 +107,10 @@ Commandキーを　＾Controlに変更</description>
     
     <item>
       <title>[macOS] Homebrewインストールログ2019版</title>
-      <link>http://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/</link>
+      <link>https://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/</link>
       <pubDate>Thu, 30 May 2019 12:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/</guid>
+      <guid>https://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/</guid>
       <description>以前、2015年にも Homebrew をインストールしたログをこのブログに残していました
 その時よりは、ずいぶん手順が楽になってたので、もう一度載せておきます
  （以前に載せていたインストールログの様子）[Mac] Homebrewインストールログ - Effectiveさお
@@ -123,10 +123,10 @@ http://brew.sh/  macOSでのインストールログ（長いので省略版）
     
     <item>
       <title>[Docker] Docker for Macをインストールして Ubuntu の起動や停止まで</title>
-      <link>http://h-sao.com/blog/2019/05/29/how-to-install-docker-for-mac/</link>
+      <link>https://h-sao.com/blog/2019/05/29/how-to-install-docker-for-mac/</link>
       <pubDate>Wed, 29 May 2019 12:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/05/29/how-to-install-docker-for-mac/</guid>
+      <guid>https://h-sao.com/blog/2019/05/29/how-to-install-docker-for-mac/</guid>
       <description>Macbook Pro に Docker をインストール＆テスト稼動させた時のメモ
  数年前までわたしはmacのこと本当によく知らなかったので、初めて mac を使ったときには、こういったインストール方法もわからなかった…
 誰かの役に立つかも知れないので、初歩的なところも書いておきます
@@ -154,10 +154,10 @@ dmg ファイルは Windows で言う所の iso ファイルです
     
     <item>
       <title>[macOS] Mojaveへのアップデート</title>
-      <link>http://h-sao.com/blog/2019/01/11/updated-macos-to-mojave/</link>
+      <link>https://h-sao.com/blog/2019/01/11/updated-macos-to-mojave/</link>
       <pubDate>Fri, 11 Jan 2019 16:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/01/11/updated-macos-to-mojave/</guid>
+      <guid>https://h-sao.com/blog/2019/01/11/updated-macos-to-mojave/</guid>
       <description> macOS Mojaveへのアップデート せっかくmacOSを持っているので、Dockerでもサクッと使うか〜と思って、Dockerをインストールしようとしたところ
  Fatal Error
 Incompatible macOS Version: 10.11.6.
@@ -179,10 +179,10 @@ Docker requires macOS vrsion 10.12.0 or higher.
     
     <item>
       <title>[Mac] Windows Bootcamp 時の PrintScreen</title>
-      <link>http://h-sao.com/blog/2016/01/12/windows-printscreen-key-on-mac/</link>
+      <link>https://h-sao.com/blog/2016/01/12/windows-printscreen-key-on-mac/</link>
       <pubDate>Tue, 12 Jan 2016 02:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/01/12/windows-printscreen-key-on-mac/</guid>
+      <guid>https://h-sao.com/blog/2016/01/12/windows-printscreen-key-on-mac/</guid>
       <description>Windows on Mac の時の PrintScreen キーは？ Macの上で、BootCamp で Windows を動作させているときにはにゃんと！「Print Screen」キーがありません（そらそうだ）
 当然なんですけど、いつもいつも検索しては忘れて…を繰り返すので、いい加減、覚える
     画面全体コピー アクティブウィンドウコピー     Windows Print Screen Alt + Print Screen   Windows on Mac Fn + Shift + F11 Fn + Shift + Option + F11   Mac Shft + Command + 3 Shft + Command + 4     （Mac の Shft + Command + 4　は、画面の範囲選択です）</description>
@@ -190,10 +190,10 @@ Docker requires macOS vrsion 10.12.0 or higher.
     
     <item>
       <title>[Mac] Homebrewインストールログ</title>
-      <link>http://h-sao.com/blog/2015/05/11/install-log-for-homebrew/</link>
+      <link>https://h-sao.com/blog/2015/05/11/install-log-for-homebrew/</link>
       <pubDate>Mon, 11 May 2015 03:05:44 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/05/11/install-log-for-homebrew/</guid>
+      <guid>https://h-sao.com/blog/2015/05/11/install-log-for-homebrew/</guid>
       <description>以下の方法は 2019年現在では古くなってますので、新しいインストールログはこっちの記事を参考にしてください！
  [macOS] Homebrewインストールログ2019版 - Effectiveさお
 http://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/  Homebrew とは、Mac上のアプリケーションパッケージを管理するソフトです

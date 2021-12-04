@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Effectiveさお</title>
-    <link>http://h-sao.com/post/</link>
+    <link>https://h-sao.com/post/</link>
     <description>Recent content in Posts on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Wed, 01 Dec 2021 00:30:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[C&#43;&#43;] Modulesのコンパイル（MSVC ver）とBMIについて</title>
-      <link>http://h-sao.com/blog/2021/12/01/about-cpp-modules/</link>
+      <link>https://h-sao.com/blog/2021/12/01/about-cpp-modules/</link>
       <pubDate>Wed, 01 Dec 2021 00:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2021/12/01/about-cpp-modules/</guid>
+      <guid>https://h-sao.com/blog/2021/12/01/about-cpp-modules/</guid>
       <description>この記事は C++ Advent Calendar 2021 1日目（初日！）の記事です。
  少し前からC++に Modules がやってきました
 C++20 対応のメジャーどころのコンパイラ（MSVC/gcc/Clang など）で使うことができます
@@ -43,10 +43,10 @@ GCC and File Extensions - Development with GNU/Linux https://blog.</description>
     
     <item>
       <title>[C&#43;&#43;]Compiler Explorerの出力結果の表示方法</title>
-      <link>http://h-sao.com/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/</link>
+      <link>https://h-sao.com/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/</link>
       <pubDate>Tue, 05 Oct 2021 00:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/</guid>
+      <guid>https://h-sao.com/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/</guid>
       <description>Compiler Explorer というオンラインコンパイルサービスがあります
  Compiler Explorer
 https://godbolt.org/  書いたC++コードのアセンブリ出力結果をリナルタイムに表示してくれるサービスです
@@ -64,10 +64,10 @@ Outputの設定項目に Execute the code のチェックボックスがある�
     
     <item>
       <title>[macOS] BootCampの起動OSを選ぶ</title>
-      <link>http://h-sao.com/blog/2021/06/17/select-to-start-os-on-bootcamp/</link>
+      <link>https://h-sao.com/blog/2021/06/17/select-to-start-os-on-bootcamp/</link>
       <pubDate>Thu, 17 Jun 2021 14:40:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2021/06/17/select-to-start-os-on-bootcamp/</guid>
+      <guid>https://h-sao.com/blog/2021/06/17/select-to-start-os-on-bootcamp/</guid>
       <description>macOS に BootCamp を入れると、デフォルト起動OSが Windows になります
 （わたしの環境ではそうなりました）
 これ、デフォルトを macOS に戻すには、
@@ -80,10 +80,10 @@ Windows を立ち上げたい時には、
     
     <item>
       <title>[Windows] そのexeがx64かx86かを見分ける方法 Part2</title>
-      <link>http://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/</link>
+      <link>https://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/</link>
       <pubDate>Sat, 07 Nov 2020 10:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/</guid>
+      <guid>https://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/</guid>
       <description>先日、こんなブログを書きました
  [Windows] そのexeがx64かx86かを見分ける方法
 http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/  このブログを公開したところ、Twitterで @ripjyr さんより
@@ -99,10 +99,10 @@ $ file 調べたいファイル名   x86の場合  PE32 executable (GUI) Intel 8
     
     <item>
       <title>[Windows] そのexeがx64かx86かを見分ける方法</title>
-      <link>http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/</link>
+      <link>https://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/</link>
       <pubDate>Mon, 26 Oct 2020 12:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/</guid>
+      <guid>https://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/</guid>
       <description>手元にあるexeが64bitなのか32bitなのかを知りたい…
 開発してるとこういう時がたまにあると思う…
 多分ちょっとニッチな需要だけど、検索したらちゃんと誰かが既に調べてくれていました！
@@ -123,10 +123,10 @@ https://marketplace.visualstudio.com/items?itemName=slevesque.vscode-hexdump   V
     
     <item>
       <title>[C&#43;&#43;] 実行環境の差異によるintワーニングが出ない書き方</title>
-      <link>http://h-sao.com/blog/2020/10/02/fixed-a-diffrent-cpp-runtime-env-causing-a-int-warning/</link>
+      <link>https://h-sao.com/blog/2020/10/02/fixed-a-diffrent-cpp-runtime-env-causing-a-int-warning/</link>
       <pubDate>Fri, 02 Oct 2020 05:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2020/10/02/fixed-a-diffrent-cpp-runtime-env-causing-a-int-warning/</guid>
+      <guid>https://h-sao.com/blog/2020/10/02/fixed-a-diffrent-cpp-runtime-env-causing-a-int-warning/</guid>
       <description>C++のワーニングを放置していたのですが、そっと @srz_zumix さんが教えてくれてました
 忘れないうちに&amp;rdquo;φ(・ェ・o)~メモメモ
 x86環境とx64環境が混在してる場合にエラーが出やすい こんなやつとか出ます…
@@ -140,10 +140,10 @@ int 型が処理系によって異なるのは…</description>
     
     <item>
       <title>[Github] Github Actionsでブログを更新するようにしました</title>
-      <link>http://h-sao.com/blog/2020/09/28/using-githubactions-for-blog/</link>
+      <link>https://h-sao.com/blog/2020/09/28/using-githubactions-for-blog/</link>
       <pubDate>Mon, 28 Sep 2020 12:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2020/09/28/using-githubactions-for-blog/</guid>
+      <guid>https://h-sao.com/blog/2020/09/28/using-githubactions-for-blog/</guid>
       <description>元々、このブログは hugo で作った静的HTMLを wercker でオートデプロイして作っていました
 だけど wercker は設定の変更が多くてすぐにデプロイ出来なくなっていたんですよね~で、辞めました
 これを作った当時は wercker がイケイケドンドンだったので
@@ -162,10 +162,10 @@ Github Actions の設定ファイルを書いてみる 知識なしで初めて�
     
     <item>
       <title>[c&#43;&#43;] 2次元配列的な書き方</title>
-      <link>http://h-sao.com/blog/2020/05/08/cpp-2-dimensional-array/</link>
+      <link>https://h-sao.com/blog/2020/05/08/cpp-2-dimensional-array/</link>
       <pubDate>Fri, 08 May 2020 15:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2020/05/08/cpp-2-dimensional-array/</guid>
+      <guid>https://h-sao.com/blog/2020/05/08/cpp-2-dimensional-array/</guid>
       <description>自分メモ
 2次元配列 C++11 以前では、2次元配列はこんな感じで書いていました
 1 2 3 4 5 6  // 2-dimensional array (raw type) constexpr static float xy_raw[][2] = { { 0.f, 10.f} // 0  , { 20.f, 30.f} // 1  , { 40.f, 50.f} // 2 };    これでも悪くは無いのですが、生配列を扱うと範囲外アクセスに気が付かない可能性が出てきます そこで C++11 から境界チェックが出来る配列の std::array が登場しました
@@ -177,10 +177,10 @@ https://cpprefjp.github.io/reference/array/array.html  さらに2次元配列に
     
     <item>
       <title>[WindowsTerminal] Preview版のインストール＆Git Bashを追加したい</title>
-      <link>http://h-sao.com/blog/2020/03/19/how-to-install-windowsterminalpreview/</link>
+      <link>https://h-sao.com/blog/2020/03/19/how-to-install-windowsterminalpreview/</link>
       <pubDate>Thu, 19 Mar 2020 23:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2020/03/19/how-to-install-windowsterminalpreview/</guid>
+      <guid>https://h-sao.com/blog/2020/03/19/how-to-install-windowsterminalpreview/</guid>
       <description>Windows Terminal …どんなもんだろなと思って、使ってみました
 もともとは、Gitのブランチ名をコマンドプロンプトに表示できたらいいのにー と思って調べたのでした
 Windows Terminal に Git Bash (正確には Git for Windows ) が登録できるようなので、それをやってみました
@@ -198,10 +198,10 @@ Windows Terminal (Preview)のインストール 普通に 「Windows Terminal do
     
     <item>
       <title>[GitHub Pages] カスタムドメインのDNS情報を更新する</title>
-      <link>http://h-sao.com/blog/2020/02/25/how-to-change-dnsinfo-for-github-custom-domain/</link>
+      <link>https://h-sao.com/blog/2020/02/25/how-to-change-dnsinfo-for-github-custom-domain/</link>
       <pubDate>Tue, 25 Feb 2020 12:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2020/02/25/how-to-change-dnsinfo-for-github-custom-domain/</guid>
+      <guid>https://h-sao.com/blog/2020/02/25/how-to-change-dnsinfo-for-github-custom-domain/</guid>
       <description>去年、2019年の4月くらいから
 GitHub Pages にファイルをアップすると、ワーニングが出るようになった
 内容はこんなやつ
@@ -210,10 +210,10 @@ GitHub Pages にファイルをアップすると、ワーニングが出るよ�
     
     <item>
       <title>[Git] Gitの歴史を書き換える関連</title>
-      <link>http://h-sao.com/blog/2020/01/29/tips-about-git-history-changed/</link>
+      <link>https://h-sao.com/blog/2020/01/29/tips-about-git-history-changed/</link>
       <pubDate>Wed, 29 Jan 2020 16:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2020/01/29/tips-about-git-history-changed/</guid>
+      <guid>https://h-sao.com/blog/2020/01/29/tips-about-git-history-changed/</guid>
       <description>よくやらかすので自分メモ
 事前準備 # 今いるブランチの確認 $ git branch # ブランチに移動 $ git checkout feature/xxxxx  PR出す前、きれいな環境にしたいなどで整えておきたいこと
 # 手動ブランチの取得/追従 $ git checkout feature/yyyyy $ git pull  ローカル作業全てを無かったことにする git fetch origin git reset --hard origin/master  pushしてしまった歴史を書き換える # 自分の名前のコミットを検索 $ git log --committer=&amp;quot;Sao Haruka&amp;quot; # ↑の gitlog より戻りたいハッシュ値を探す $ git reset [戻りたいコミットのハッシュ値] --hard # 強制push $ git push -f origin feature/xxxxx  既に feature/xxxxx で誰かが作業していたら強制プッシュはあきらめる
@@ -223,10 +223,10 @@ $ git push --delete origin feature/xxxxx  PRに不要なコミットが混じる
     
     <item>
       <title>[Git] Commit&amp;PushしてしまったAuthor情報を変更したい</title>
-      <link>http://h-sao.com/blog/2019/10/15/how-to-fix-git-author/</link>
+      <link>https://h-sao.com/blog/2019/10/15/how-to-fix-git-author/</link>
       <pubDate>Tue, 15 Oct 2019 12:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/10/15/how-to-fix-git-author/</guid>
+      <guid>https://h-sao.com/blog/2019/10/15/how-to-fix-git-author/</guid>
       <description>最近、GitKraken を使って更新をしています
 Pro バージョンだとアカウント情報の切り替えが簡単に出来るので
 会社用や個人用に切り替えて作業するのがとても便利です
@@ -246,10 +246,10 @@ $ git commit --amend --author=&amp;quot;Sao Haruka &amp;lt;sao@tmp.com&amp;gt;&a
     
     <item>
       <title>[Hugo] Hugoの環境をDocker上で動かす</title>
-      <link>http://h-sao.com/blog/2019/07/28/how-to-use-hugo-on-docker/</link>
+      <link>https://h-sao.com/blog/2019/07/28/how-to-use-hugo-on-docker/</link>
       <pubDate>Sun, 28 Jul 2019 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/07/28/how-to-use-hugo-on-docker/</guid>
+      <guid>https://h-sao.com/blog/2019/07/28/how-to-use-hugo-on-docker/</guid>
       <description>今回の環境
  macOS Mojave Docker Desktop Hugo  このブログは Hugo というスタティックジェネレーターで作っています
 Hugoは golang で動いているので、ローカルに Go の環境が必要なわけですが
@@ -262,10 +262,10 @@ Hugo に対応した docker image をダウンロード 1 2 3 4 5 6 7 8 9 10  # 
     
     <item>
       <title>[VisualStudio] Visual Studioで使う改行コードを指定する方法</title>
-      <link>http://h-sao.com/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/</link>
+      <link>https://h-sao.com/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/</link>
       <pubDate>Fri, 26 Jul 2019 17:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/</guid>
+      <guid>https://h-sao.com/blog/2019/07/26/how-to-keep-line-feed-code-by-visualstudio-2019/</guid>
       <description>環境
  Windows10 Visual Studio 2019 Unity 2018  元々これを調べたきっかけは、Unityで作ったプロジェクトファイルを開いたときに
 改行コード に関する警告が必ず出ていたからです
@@ -285,10 +285,10 @@ LFに統一するしかない…
     
     <item>
       <title>[Windows10] 範囲選択スクリーンショットを撮る機能の紹介</title>
-      <link>http://h-sao.com/blog/2019/07/18/how-to-take-a-windows10-region-screenshot-by-built-in-tool/</link>
+      <link>https://h-sao.com/blog/2019/07/18/how-to-take-a-windows10-region-screenshot-by-built-in-tool/</link>
       <pubDate>Thu, 18 Jul 2019 12:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/07/18/how-to-take-a-windows10-region-screenshot-by-built-in-tool/</guid>
+      <guid>https://h-sao.com/blog/2019/07/18/how-to-take-a-windows10-region-screenshot-by-built-in-tool/</guid>
       <description>macには、範囲選択してスクリーンショットを撮る機能がずいぶん前からあるんですけど
 Windowsはしばらくありませんでした…
 でも（いつから出来るようになったのかよく知らないけど）
@@ -312,10 +312,10 @@ Ctrl + v で貼り付けてもOK(・ω・)ノ
     
     <item>
       <title>[MSMVP] 2019年7月 Microsoft MVP for Developer Technologies を再受賞しました</title>
-      <link>http://h-sao.com/blog/2019/07/13/to-be-rewarded-as-msmvp2019/</link>
+      <link>https://h-sao.com/blog/2019/07/13/to-be-rewarded-as-msmvp2019/</link>
       <pubDate>Sat, 13 Jul 2019 13:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/07/13/to-be-rewarded-as-msmvp2019/</guid>
+      <guid>https://h-sao.com/blog/2019/07/13/to-be-rewarded-as-msmvp2019/</guid>
       <description>遥佐保（はるか・さお）です
 今年も7/1付けでマイクロソフトさまより MVP を受賞させて頂きました
 カテゴリー名称は Developer Technologies となります
@@ -331,10 +331,10 @@ Ctrl + v で貼り付けてもOK(・ω・)ノ
     
     <item>
       <title>[macOS] 自分メモ！Mac手に入れたら最初にすること(多少Windows風)</title>
-      <link>http://h-sao.com/blog/2019/06/26/how-to-set-up-my-new-macos/</link>
+      <link>https://h-sao.com/blog/2019/06/26/how-to-set-up-my-new-macos/</link>
       <pubDate>Wed, 26 Jun 2019 13:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/06/26/how-to-set-up-my-new-macos/</guid>
+      <guid>https://h-sao.com/blog/2019/06/26/how-to-set-up-my-new-macos/</guid>
       <description>新しくMacを入手したときの、自分なりの設定とかインストールするものを列挙してます
 Windowsに慣れた人ならきっとやりたくなるキーボード設定なども書いてます
 完全な自分メモですが、Windows開発者の方の参考になればー！
@@ -366,10 +366,10 @@ Commandキーを　＾Controlに変更</description>
     
     <item>
       <title>[Git] Visual Studio 2019の中のGitコマンドを探せ！</title>
-      <link>http://h-sao.com/blog/2019/06/20/where-is-git-exe-on-vs2019/</link>
+      <link>https://h-sao.com/blog/2019/06/20/where-is-git-exe-on-vs2019/</link>
       <pubDate>Thu, 20 Jun 2019 16:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/06/20/where-is-git-exe-on-vs2019/</guid>
+      <guid>https://h-sao.com/blog/2019/06/20/where-is-git-exe-on-vs2019/</guid>
       <description>Gitクライアント…
 自然に入ってますよね、わざわざ入れなくても。。。( *´艸｀)
 Visual Studio 2019 が入ってる環境だったので、Gitクライアントくらいあるじゃろーと思って、検索してみたらありました！
@@ -393,10 +393,10 @@ Visual Studio 2019 が入ってる環境だったので、Gitクライアント�
     
     <item>
       <title>[Unity] エディタを開く前にUnityのバージョンを調べる方法</title>
-      <link>http://h-sao.com/blog/2019/06/19/how-to-check-unity-version-without-open-project/</link>
+      <link>https://h-sao.com/blog/2019/06/19/how-to-check-unity-version-without-open-project/</link>
       <pubDate>Wed, 19 Jun 2019 16:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/06/19/how-to-check-unity-version-without-open-project/</guid>
+      <guid>https://h-sao.com/blog/2019/06/19/how-to-check-unity-version-without-open-project/</guid>
       <description>既存のUnityのプロジェクトを開くとき、バージョンを合わせて開きたいですよね、
 開く前に！
 そしたら事前にそのバージョンのUnityをダウンロードできますし！
@@ -406,10 +406,10 @@ ProjectSettings &amp;gt; ProjectVersion.txt  バージョンがそのまんま�
     
     <item>
       <title>[macOS] Homebrewインストールログ2019版</title>
-      <link>http://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/</link>
+      <link>https://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/</link>
       <pubDate>Thu, 30 May 2019 12:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/</guid>
+      <guid>https://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/</guid>
       <description>以前、2015年にも Homebrew をインストールしたログをこのブログに残していました
 その時よりは、ずいぶん手順が楽になってたので、もう一度載せておきます
  （以前に載せていたインストールログの様子）[Mac] Homebrewインストールログ - Effectiveさお
@@ -422,10 +422,10 @@ http://brew.sh/  macOSでのインストールログ（長いので省略版）
     
     <item>
       <title>[Docker] Docker for Macをインストールして Ubuntu の起動や停止まで</title>
-      <link>http://h-sao.com/blog/2019/05/29/how-to-install-docker-for-mac/</link>
+      <link>https://h-sao.com/blog/2019/05/29/how-to-install-docker-for-mac/</link>
       <pubDate>Wed, 29 May 2019 12:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/05/29/how-to-install-docker-for-mac/</guid>
+      <guid>https://h-sao.com/blog/2019/05/29/how-to-install-docker-for-mac/</guid>
       <description>Macbook Pro に Docker をインストール＆テスト稼動させた時のメモ
  数年前までわたしはmacのこと本当によく知らなかったので、初めて mac を使ったときには、こういったインストール方法もわからなかった…
 誰かの役に立つかも知れないので、初歩的なところも書いておきます
@@ -453,10 +453,10 @@ dmg ファイルは Windows で言う所の iso ファイルです
     
     <item>
       <title>[Chrome] Google Chromeでモバイル画面を見る User-Agent Swither for Chrome</title>
-      <link>http://h-sao.com/blog/2019/04/30/recommended-extensions-user-agent-swither-in-chrome/</link>
+      <link>https://h-sao.com/blog/2019/04/30/recommended-extensions-user-agent-swither-in-chrome/</link>
       <pubDate>Tue, 30 Apr 2019 11:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/04/30/recommended-extensions-user-agent-swither-in-chrome/</guid>
+      <guid>https://h-sao.com/blog/2019/04/30/recommended-extensions-user-agent-swither-in-chrome/</guid>
       <description>タイトルそのまんま(&amp;lsquo;ω&amp;rsquo;)
 自分メモ
 モバイル画面を PCのChromeで見るエクステンションはたくさんありますが、 わたしはずっと「User-Agent Swither for Chrome」を使っています
@@ -479,10 +479,10 @@ https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdh
     
     <item>
       <title>[C&#43;&#43;] std::optionalの使い方を紹介しました</title>
-      <link>http://h-sao.com/blog/2019/03/27/how-to-use-optional-nakamecpp-vol13/</link>
+      <link>https://h-sao.com/blog/2019/03/27/how-to-use-optional-nakamecpp-vol13/</link>
       <pubDate>Wed, 27 Mar 2019 23:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/03/27/how-to-use-optional-nakamecpp-vol13/</guid>
+      <guid>https://h-sao.com/blog/2019/03/27/how-to-use-optional-nakamecpp-vol13/</guid>
       <description>少し前ですが、std::optional について nakameguro_feature.cpp vol.13 で発表したので、その資料を置いときます
  nakameguro_feature.cpp vol.13
 https://ebisu-effective-modern-cpp.connpass.com/event/111469/
@@ -501,10 +501,10 @@ https://ebisu-effective-modern-cpp.connpass.com/event/125272/
     
     <item>
       <title>[Diary] 2019年もよろしくお願いします</title>
-      <link>http://h-sao.com/blog/2019/01/30/hello2019/</link>
+      <link>https://h-sao.com/blog/2019/01/30/hello2019/</link>
       <pubDate>Wed, 30 Jan 2019 12:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/01/30/hello2019/</guid>
+      <guid>https://h-sao.com/blog/2019/01/30/hello2019/</guid>
       <description>去年の振り返りをしてなかったので、ここでまとめとこうかなと…ブログは自分のメモだからね
 技術活動 去年は ebisu/nakameguro_feature.cpp という、C++14/17の機能について、知ってる人、調べてきた人がゆるく紹介するという会を続けました
 だいたい月に2回のペースだったかな
@@ -540,10 +540,10 @@ http://todai.tv/contents-list/2018FY/bjarne_stroustrup/01
     
     <item>
       <title>[macOS] Mojaveへのアップデート</title>
-      <link>http://h-sao.com/blog/2019/01/11/updated-macos-to-mojave/</link>
+      <link>https://h-sao.com/blog/2019/01/11/updated-macos-to-mojave/</link>
       <pubDate>Fri, 11 Jan 2019 16:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/01/11/updated-macos-to-mojave/</guid>
+      <guid>https://h-sao.com/blog/2019/01/11/updated-macos-to-mojave/</guid>
       <description> macOS Mojaveへのアップデート せっかくmacOSを持っているので、Dockerでもサクッと使うか〜と思って、Dockerをインストールしようとしたところ
  Fatal Error
 Incompatible macOS Version: 10.11.6.
@@ -565,10 +565,10 @@ Docker requires macOS vrsion 10.12.0 or higher.
     
     <item>
       <title>[Asset] 素材のリンク集ー3Dモデル系</title>
-      <link>http://h-sao.com/blog/2018/09/12/collection-of-useful-links-for-3d-models/</link>
+      <link>https://h-sao.com/blog/2018/09/12/collection-of-useful-links-for-3d-models/</link>
       <pubDate>Wed, 12 Sep 2018 08:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2018/09/12/collection-of-useful-links-for-3d-models/</guid>
+      <guid>https://h-sao.com/blog/2018/09/12/collection-of-useful-links-for-3d-models/</guid>
       <description>プログラマが個人でゲーム作る時にすぐにぶち当たる壁の一つとして、コンテンツの問題があります
 いわゆる素材不足…モデルが欲しい、テクスチャが欲しい、IBLしたい…
 最終的には有料のものを買うか、デザイナーやサウンドクリエイターを巻き込むかのどちらかになるんですけど
@@ -614,10 +614,10 @@ SketchFabほどの華やかさはありませんが、リグ付きゲーム素�
     
     <item>
       <title>[Unity] Macのトラックパッドのみでシーンビューを動かす</title>
-      <link>http://h-sao.com/blog/2018/08/19/unity-cameras-operation-not-using-mouse/</link>
+      <link>https://h-sao.com/blog/2018/08/19/unity-cameras-operation-not-using-mouse/</link>
       <pubDate>Sun, 19 Aug 2018 10:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2018/08/19/unity-cameras-operation-not-using-mouse/</guid>
+      <guid>https://h-sao.com/blog/2018/08/19/unity-cameras-operation-not-using-mouse/</guid>
       <description>動作環境
  Mac 上で Bootcamp してる Windows10 Unity2018  Unityのシーンビューを操作しようとして、トラックパッドだけで動かすやり方が判らなかったので、そのメモです
  // マウスが引っ越ししで、どこにあるか判らなくなった
@@ -627,10 +627,10 @@ SketchFabほどの華やかさはありませんが、リグ付きゲーム素�
     
     <item>
       <title>[Diary] 2018年もよろしくお願いします</title>
-      <link>http://h-sao.com/blog/2018/02/08/hello2018/</link>
+      <link>https://h-sao.com/blog/2018/02/08/hello2018/</link>
       <pubDate>Thu, 08 Feb 2018 19:50:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2018/02/08/hello2018/</guid>
+      <guid>https://h-sao.com/blog/2018/02/08/hello2018/</guid>
       <description>ここ毎年…新年のブログ挨拶は1月2日に行ってたのですが
 今年は大幅に1カ月も遅れてしまいました&amp;rdquo;(-&amp;ldquo;&amp;rdquo;-)&amp;rdquo;
 今更ですが、今年もどうぞ、よろしくお願いします(&amp;lsquo;ω&amp;rsquo;*)
@@ -670,10 +670,10 @@ https://meetupapp.connpass.com/event/73674/  ここではUnity系の話を発表
     
     <item>
       <title>[Unity] Unityのライセンス情報をアンインストールしたい</title>
-      <link>http://h-sao.com/blog/2017/11/02/how-to-uninstall-unity-license-information/</link>
+      <link>https://h-sao.com/blog/2017/11/02/how-to-uninstall-unity-license-information/</link>
       <pubDate>Thu, 02 Nov 2017 09:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/11/02/how-to-uninstall-unity-license-information/</guid>
+      <guid>https://h-sao.com/blog/2017/11/02/how-to-uninstall-unity-license-information/</guid>
       <description>Unityをアンインストールしたけど、あれ？ライセンス情報が残ってる(?_?)
 というのが調べたきっかけです
 PCからUnityの情報を完全消去したいときの参考に
@@ -712,10 +712,10 @@ https://docs.unity3d.com/Manual/ActivationFAQ.html(英語)
     
     <item>
       <title>[Windows10] コントロールパネルの場所</title>
-      <link>http://h-sao.com/blog/2017/10/31/where-is-controlpanel/</link>
+      <link>https://h-sao.com/blog/2017/10/31/where-is-controlpanel/</link>
       <pubDate>Tue, 31 Oct 2017 08:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/10/31/where-is-controlpanel/</guid>
+      <guid>https://h-sao.com/blog/2017/10/31/where-is-controlpanel/</guid>
       <description>コントロールパネルはいずこへ…(;^ω^)
 Windows10を使ってかなり経ちますが、以前の見慣れたコントロールパネルを出したくて、何となく探したことありませんか？
 コントロールパネルが無くても、Windows10 仕様の「設定」アプリでも、そこまで困ることは無いのですが…
@@ -733,10 +733,10 @@ https://support.microsoft.com/en-us/help/13764/windows-where-is-control-panel  �
     
     <item>
       <title>[Unity] エディタ上でゲーム実行中にエディタの色を変える</title>
-      <link>http://h-sao.com/blog/2017/10/26/change-playmode-color-on-unity/</link>
+      <link>https://h-sao.com/blog/2017/10/26/change-playmode-color-on-unity/</link>
       <pubDate>Thu, 26 Oct 2017 23:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/10/26/change-playmode-color-on-unity/</guid>
+      <guid>https://h-sao.com/blog/2017/10/26/change-playmode-color-on-unity/</guid>
       <description>Unityエディタ上で、ゲームを実行中（再生中）に、色を変える設定です
 // Unity的には「プレイモード」と呼ぶみたいです
  プレイモード時にエディターの色を変える - Unity公式チュートリアル動画 https://unity3d.com/jp/learn/tutorials/topics/tips/play-mode-editor-tint
@@ -750,10 +750,10 @@ https://support.microsoft.com/en-us/help/13764/windows-where-is-control-panel  �
     
     <item>
       <title>[PowerShell] ZoneIDとPowerShellの実行ポリシー</title>
-      <link>http://h-sao.com/blog/2017/10/20/zoneid_and_powershell_excutionpolicy/</link>
+      <link>https://h-sao.com/blog/2017/10/20/zoneid_and_powershell_excutionpolicy/</link>
       <pubDate>Fri, 20 Oct 2017 19:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/10/20/zoneid_and_powershell_excutionpolicy/</guid>
+      <guid>https://h-sao.com/blog/2017/10/20/zoneid_and_powershell_excutionpolicy/</guid>
       <description>PowerShellでちょっとしたツールを動かそうと思って、初歩的なところであれ？となったので、書いておきます
 PowerShellの実行ポリシー（Execution Policy）は、
 1  &amp;gt; Get-ExecutionPolicy   このコマンドで確認できます
@@ -779,10 +779,10 @@ http://www.atmarkit.co.jp/ait/articles/0805/16/news139.html</description>
     
     <item>
       <title>[Android] 謎のエラー「Unable to start debugging.」が出たときの対応</title>
-      <link>http://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/</link>
+      <link>https://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/</link>
       <pubDate>Fri, 18 Aug 2017 18:40:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/</guid>
+      <guid>https://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/</guid>
       <description>Androidデバッグで実行時エラー 環境
  Windows10 x64 Visual Studio 2017 Project type: Native-Activity Application (Android)  ある時…Visual Studio で作っている Android プロジェクトが、実行時エラーになりました
  Unable to start debugging. Check your debugger settings by opening project properties and navigating to &amp;lsquo;Configuration Properties&amp;ndash;&amp;gt; Debugging&amp;rsquo;
@@ -800,10 +800,10 @@ https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/mef.md#mef
     
     <item>
       <title>[Android] Hyper-Vで使うVisual Studio Emulator for Androidの最初の一歩</title>
-      <link>http://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</link>
+      <link>https://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</link>
       <pubDate>Thu, 27 Jul 2017 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</guid>
+      <guid>https://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</guid>
       <description>どうもうまくAndroidエミュレータが動かない… いわゆる ADV Manager をつかって、Androidをエミューレートしたいのですが
 なぜかうまく起動しない…
 環境
@@ -817,10 +817,10 @@ Please ensure Hyper-V is disabled in Windows Features, or refer to the Intel HAX
     
     <item>
       <title>[Unity] 常にカメラの前にSpriteを出す</title>
-      <link>http://h-sao.com/blog/2017/06/21/unity-sprite-on-front-of-camera/</link>
+      <link>https://h-sao.com/blog/2017/06/21/unity-sprite-on-front-of-camera/</link>
       <pubDate>Wed, 21 Jun 2017 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/06/21/unity-sprite-on-front-of-camera/</guid>
+      <guid>https://h-sao.com/blog/2017/06/21/unity-sprite-on-front-of-camera/</guid>
       <description>Unityでカメラに追従して、前面にSpriteを出す方法 これ、本当は、カメラの子供として指定すればもっと簡単なんですけど…
 testScript.transform.parent = Camera.main.transform  この場合、
 カメラにアニメーションが付いてる時（メインカメラは固定ポジションのままの時）に
@@ -834,10 +834,10 @@ https://docs.unity3d.com/jp/540/Manual/FrustumSizeAtDistance.html  public class 
     
     <item>
       <title>[SSH] ポート指定GitサーバにSSHでアクセスできない時(Windows/GitExtensions)</title>
-      <link>http://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</link>
+      <link>https://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</link>
       <pubDate>Thu, 01 Jun 2017 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</guid>
+      <guid>https://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</guid>
       <description>最近… 機械学習関係をやってたんですけど、Unityをまた触ることになっています
 てんやわんやして、前回更新から2カ月も経ってしまった…(+o+)
 今回また、タイトル名のGit/SSH関係でオロオロしたので、同現象で困ってる人の助けになれば幸いです
@@ -865,10 +865,10 @@ Please make sure you have the correct access rights and repository exists.
     
     <item>
       <title>[TensorFlow] TensorFlow on Windows GPU版インストール方法</title>
-      <link>http://h-sao.com/blog/2017/04/10/how-to-install-tensorflow-gpu-on-windows/</link>
+      <link>https://h-sao.com/blog/2017/04/10/how-to-install-tensorflow-gpu-on-windows/</link>
       <pubDate>Mon, 10 Apr 2017 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/04/10/how-to-install-tensorflow-gpu-on-windows/</guid>
+      <guid>https://h-sao.com/blog/2017/04/10/how-to-install-tensorflow-gpu-on-windows/</guid>
       <description>前回、TensorFlowの環境を作るために、Anacondaをインストールしました
  [Anaconda] Anaconda for Windowsインストール方法
 http://h-sao.com/blog/2017/03/29/how-to-install-anaconda-for-windows/  その続きで、TensorFlow GPUバージョンを入れたいと思います
@@ -896,10 +896,10 @@ http://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/
     
     <item>
       <title>[Anaconda] Anaconda for Windowsインストール方法</title>
-      <link>http://h-sao.com/blog/2017/03/29/how-to-install-anaconda-for-windows/</link>
+      <link>https://h-sao.com/blog/2017/03/29/how-to-install-anaconda-for-windows/</link>
       <pubDate>Wed, 29 Mar 2017 20:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/03/29/how-to-install-anaconda-for-windows/</guid>
+      <guid>https://h-sao.com/blog/2017/03/29/how-to-install-anaconda-for-windows/</guid>
       <description>ちょっとPCのグラフィックボードを新しくしたので、TensorFlowでなんかモデルでも作ってみるかということで、Pythonを使うためにAnacondaをインストールしました
 初回のインストールでは何も問題が起きなかったのですが、Anacondaのバージョンを上げようとして、なんか色々やってるうちに、エラーにはまったので、その解決メモです
 （ただし、あまり良い解決方法じゃありません、ごめんなさい）
@@ -924,10 +924,10 @@ Administrator権限で起動してるのですが、出てしまいます…（�
     
     <item>
       <title>[Chrome] Google Chromeのマルチプロファイル設定</title>
-      <link>http://h-sao.com/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/</link>
+      <link>https://h-sao.com/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/</link>
       <pubDate>Wed, 04 Jan 2017 23:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/</guid>
+      <guid>https://h-sao.com/blog/2017/01/04/how-to-use-multiple-browser-profiles-in-chrome/</guid>
       <description>Google Chrome を使って、Webサイトの開発をしている人向けの情報です
 自分のChromeのユーザプロファイラを使わずに、開発は別のプロファイラを使いたいってこと、ありますよね…？
 [プランA] ユーザプロファイラを切り替える Google Chrome のユーザデータを、開発用と自分個人用とに分けたい
@@ -963,10 +963,10 @@ Chromeユーザプロファイルのデフォルトの位置はこちら↓↓�
     
     <item>
       <title>[Diary] 2017年もよろしくお願いします</title>
-      <link>http://h-sao.com/blog/2017/01/03/hello2017/</link>
+      <link>https://h-sao.com/blog/2017/01/03/hello2017/</link>
       <pubDate>Tue, 03 Jan 2017 16:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/01/03/hello2017/</guid>
+      <guid>https://h-sao.com/blog/2017/01/03/hello2017/</guid>
       <description>遥佐保（はるか・さお）です
 2017年最初のブログになります！
 今年もよろしくお願いします(^_^)
@@ -1008,10 +1008,10 @@ http://zenmetu.sakura.ne.jp/bar/barae.html
     
     <item>
       <title>[Outlook] 使わなくなったOutlook on the webの予定表（カレンダー）を削除する方法</title>
-      <link>http://h-sao.com/blog/2016/12/21/delete-outlook-on-the-web-data/</link>
+      <link>https://h-sao.com/blog/2016/12/21/delete-outlook-on-the-web-data/</link>
       <pubDate>Wed, 21 Dec 2016 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/12/21/delete-outlook-on-the-web-data/</guid>
+      <guid>https://h-sao.com/blog/2016/12/21/delete-outlook-on-the-web-data/</guid>
       <description>Office365とかの Outlook カレンダーではなく
 Webベースでアクセスできる Outlook on the web について
 データの削除がとてもややこしかったので、ちょっとメモしておきたいと思います
@@ -1041,10 +1041,10 @@ https://support.office.com/ja-jp/article/Outlook-on-the-web-で予定表を使�
     
     <item>
       <title>[UE4] Unreal Engine4のインストール要件</title>
-      <link>http://h-sao.com/blog/2016/11/16/ue4-install-requirements/</link>
+      <link>https://h-sao.com/blog/2016/11/16/ue4-install-requirements/</link>
       <pubDate>Wed, 16 Nov 2016 20:45:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/11/16/ue4-install-requirements/</guid>
+      <guid>https://h-sao.com/blog/2016/11/16/ue4-install-requirements/</guid>
       <description>仕事上、色んな Game Engine を試しておりまして
 先日、クリーンで、比較的低スペックな Windows10 PC に
 Epic さんの Unreal Engine 4 をインストールしたときに、はふん？と思った件のメモです
@@ -1069,10 +1069,10 @@ DirectX Runtime : DirectX End-User Runtimes (June 2010)   おぉぉ、DXのラ�
     
     <item>
       <title>[Maya] Maya2015設定ウィンドウの開き方</title>
-      <link>http://h-sao.com/blog/2016/11/15/settings-maya2015-part1/</link>
+      <link>https://h-sao.com/blog/2016/11/15/settings-maya2015-part1/</link>
       <pubDate>Tue, 15 Nov 2016 19:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/11/15/settings-maya2015-part1/</guid>
+      <guid>https://h-sao.com/blog/2016/11/15/settings-maya2015-part1/</guid>
       <description>Mayaはいろんな機能がありますね…
 設定の開き方すら判らないという恥ずかしい思いをよくしているので、いざというときの自分のメモです
 記載環境は、Maya2015 on Windows10 です
@@ -1100,10 +1100,10 @@ Windows
     
     <item>
       <title>[Unity] Unity用YEBISプラグインのお話してきました</title>
-      <link>http://h-sao.com/blog/2016/08/09/prerelease-yebis-for-unity-beta/</link>
+      <link>https://h-sao.com/blog/2016/08/09/prerelease-yebis-for-unity-beta/</link>
       <pubDate>Tue, 09 Aug 2016 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/08/09/prerelease-yebis-for-unity-beta/</guid>
+      <guid>https://h-sao.com/blog/2016/08/09/prerelease-yebis-for-unity-beta/</guid>
       <description>たまには、仕事のお話を…
 現在、Unityのプラグインを絶賛開発中で、わたしも少し関わらせて頂いてます
 なんのプラグインかというと、ポストエフェクト処理がかけられる「YEBIS」というプロダクトのプラグイン化になります
@@ -1129,10 +1129,10 @@ https://github.com/SiliconStudio/YEBIS-plugins  トップは英語で書かれ�
     
     <item>
       <title>[Windows10] PCのGPUを確認する</title>
-      <link>http://h-sao.com/blog/2016/07/26/check-gpu-on-pc/</link>
+      <link>https://h-sao.com/blog/2016/07/26/check-gpu-on-pc/</link>
       <pubDate>Tue, 26 Jul 2016 21:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/07/26/check-gpu-on-pc/</guid>
+      <guid>https://h-sao.com/blog/2016/07/26/check-gpu-on-pc/</guid>
       <description>PCのGPU、つまりグラフィックボードってなんだろな？と思った時の操作メモです
 対象は Windows10
 (1) まず Windows10 のディスプレイ画面を表示させます
@@ -1158,10 +1158,10 @@ GPUだけは新しい型のものにしとかないと…とかとか
     
     <item>
       <title>[GitHub] GitHubリポジトリを別アカウントに移動させる</title>
-      <link>http://h-sao.com/blog/2016/07/20/transfer-github-repository/</link>
+      <link>https://h-sao.com/blog/2016/07/20/transfer-github-repository/</link>
       <pubDate>Wed, 20 Jul 2016 20:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/07/20/transfer-github-repository/</guid>
+      <guid>https://h-sao.com/blog/2016/07/20/transfer-github-repository/</guid>
       <description>旧 Github Micro Plan では、プライベートリポジトリは5つまでしか持てませんでしたが
 最近は Presonal Plan に変更されて、リポジトリ制限数が無制限になりましたね
  GitHub価格ページ
@@ -1187,10 +1187,10 @@ GiuHub上での操作(移動元)  移動元(XXX)のアカウントで GitHub に
     
     <item>
       <title>[English] Study Hacker English Companyに通ったら英語苦手じゃなくなったよ</title>
-      <link>http://h-sao.com/blog/2016/07/19/english-study-hucker/</link>
+      <link>https://h-sao.com/blog/2016/07/19/english-study-hucker/</link>
       <pubDate>Tue, 19 Jul 2016 23:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/07/19/english-study-hucker/</guid>
+      <guid>https://h-sao.com/blog/2016/07/19/english-study-hucker/</guid>
       <description>なんか、ポストが長くなったので、最初にまとめを書いておきます
 英語がめっちゃ嫌いだったんだけど、英語学習を自主的に継続して出来るようになったよ！というメモ書きです
 TOEICの得点が上がったとか、ペラペラ話せるようになったという内容じゃないです
@@ -1246,10 +1246,10 @@ Programming の下地があるので、なんとか概要は判る程度では�
     
     <item>
       <title>[Windows10] シャットダウンができない対策</title>
-      <link>http://h-sao.com/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/</link>
+      <link>https://h-sao.com/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/</link>
       <pubDate>Wed, 15 Jun 2016 12:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/</guid>
+      <guid>https://h-sao.com/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/</guid>
       <description>Windows10 でシャットダウンが出来ない現象にあった方はいらっしゃいますか～？
 わたしもそんな一人でした……(^_^;)
 シャットダウンを選択しても、勝手に再起動するんです…　やめてぇ～(つд⊂)ｴｰﾝ
@@ -1269,10 +1269,10 @@ Programming の下地があるので、なんとか概要は判る程度では�
     
     <item>
       <title>[C&#43;&#43;] VisualStusio2015でClangを使う設定</title>
-      <link>http://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/</link>
+      <link>https://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/</link>
       <pubDate>Sun, 15 May 2016 23:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/</guid>
+      <guid>https://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/</guid>
       <description>今日は Clang with Microsoft CodeGen の設定などについて、メモしておきます
 先人たちが既に色々と試している内容と対して変わりませんが、そもそも日本語の情報も少ないので、何かの足しになればと思います
 &amp;ldquo;Clang with Microsoft CodeGen&amp;rdquo; is here! 最近はすっかり、クロスプラットフォームやオープンソースに力を入れているマイクロソフト社のツールセットの中に、Clang対応ってのがあります
@@ -1291,10 +1291,10 @@ https://blogs.msdn.microsoft.com/vcblog/2016/03/31/clang-with-microsoft-codegen-
     
     <item>
       <title>[SSH] 複数キー接続のconfig記載について</title>
-      <link>http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</link>
+      <link>https://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</link>
       <pubDate>Mon, 09 May 2016 23:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</guid>
+      <guid>https://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</guid>
       <description>前回、
 [Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続
 で Gitサーバにアクセスするための ssh 接続について記載しました
@@ -1314,10 +1314,10 @@ https://blogs.msdn.microsoft.com/vcblog/2016/03/31/clang-with-microsoft-codegen-
     
     <item>
       <title>[Unity] PC実行時のWindowsサイズの設定の仕方＆起動時フック</title>
-      <link>http://h-sao.com/blog/2016/05/08/change-unity-window-size/</link>
+      <link>https://h-sao.com/blog/2016/05/08/change-unity-window-size/</link>
       <pubDate>Sun, 08 May 2016 14:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/05/08/change-unity-window-size/</guid>
+      <guid>https://h-sao.com/blog/2016/05/08/change-unity-window-size/</guid>
       <description>Unityのバグなのか、わたしの使い方が悪いのか？
 PC実行時のウィンドウサイズの設定が、思うようにできなかったので
 その解決メモです
@@ -1340,10 +1340,10 @@ Unityのメニューの
     
     <item>
       <title>[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続</title>
-      <link>http://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</link>
+      <link>https://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</link>
       <pubDate>Sat, 07 May 2016 15:23:30 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</guid>
+      <guid>https://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</guid>
       <description>しょっちゅう作っては、作り方を忘れ、また検索で調べる…ということをしているので、sshキーの生成&amp;amp;接続について、忘れないようにメモしておきます
 GitサーバへSSHキーを使って接続したい Gitサーバに接続するには、
  http ssh  この2種類の接続方法があるみたいです
@@ -1371,10 +1371,10 @@ Windowsだとキーの保存位置は c:\Users\[ユーザ名]\.ssh\ にしない
     
     <item>
       <title>[勉強会] ebisu_effective_modern.cpp vol.3やりますよ</title>
-      <link>http://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</link>
+      <link>https://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</link>
       <pubDate>Sun, 27 Mar 2016 20:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</guid>
+      <guid>https://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</guid>
       <description>ebisu_effective_modern.cppって？  
 東京の恵比寿でC++について、みんなの意見を聞きながら本を読み進める勉強会を開いています
 昔、大阪でC++の読書会を開催していたのですが、それが結構役に立って面白かったので、東京でも開催してみよう！と思い、始めてみました
@@ -1394,10 +1394,10 @@ http://cpp-osaka.connpass.com/
     
     <item>
       <title>[Mac] Windows Bootcamp 時の PrintScreen</title>
-      <link>http://h-sao.com/blog/2016/01/12/windows-printscreen-key-on-mac/</link>
+      <link>https://h-sao.com/blog/2016/01/12/windows-printscreen-key-on-mac/</link>
       <pubDate>Tue, 12 Jan 2016 02:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/01/12/windows-printscreen-key-on-mac/</guid>
+      <guid>https://h-sao.com/blog/2016/01/12/windows-printscreen-key-on-mac/</guid>
       <description>Windows on Mac の時の PrintScreen キーは？ Macの上で、BootCamp で Windows を動作させているときにはにゃんと！「Print Screen」キーがありません（そらそうだ）
 当然なんですけど、いつもいつも検索しては忘れて…を繰り返すので、いい加減、覚える
     画面全体コピー アクティブウィンドウコピー     Windows Print Screen Alt + Print Screen   Windows on Mac Fn + Shift + F11 Fn + Shift + Option + F11   Mac Shft + Command + 3 Shft + Command + 4     （Mac の Shft + Command + 4　は、画面の範囲選択です）</description>
@@ -1405,10 +1405,10 @@ http://cpp-osaka.connpass.com/
     
     <item>
       <title>[Unity] 2D Spriteにシェーダーをかける</title>
-      <link>http://h-sao.com/blog/2016/01/11/unity-shader-2dsprite/</link>
+      <link>https://h-sao.com/blog/2016/01/11/unity-shader-2dsprite/</link>
       <pubDate>Mon, 11 Jan 2016 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/01/11/unity-shader-2dsprite/</guid>
+      <guid>https://h-sao.com/blog/2016/01/11/unity-shader-2dsprite/</guid>
       <description>今年の初めに、「Game a Week」という開発手法がすごい！っと書きました
 とりあえず、週に一度は成果物を公開する、の部分を真似してみようかなと
 （やってみて気が付きましたが、実は1週間って、結構長いです）
@@ -1430,10 +1430,10 @@ Unity のシェーダー言語：ShaderLab Unity のシェーダーは 「Shader
     
     <item>
       <title>[Utility] ISOファイルからBoot用USBを作成するアプリRufus</title>
-      <link>http://h-sao.com/blog/2016/01/06/usb-boot-app-rufus/</link>
+      <link>https://h-sao.com/blog/2016/01/06/usb-boot-app-rufus/</link>
       <pubDate>Wed, 06 Jan 2016 01:50:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/01/06/usb-boot-app-rufus/</guid>
+      <guid>https://h-sao.com/blog/2016/01/06/usb-boot-app-rufus/</guid>
       <description>Windows10 の isoファイルからUBSインストールメディアを作りたいと思ったときに、便利なソフトを見つけました
 実際は、「USB ブート 作成」などなどで検索すれば、やり方はいくらでも載ってるんですけど
 省コストで、ぱぱっとやりたいことを実現してくれたので、紹介しておきます
@@ -1451,10 +1451,10 @@ UBSインストールメディア作成中
     
     <item>
       <title>[Diary] 2016年もよろしくお願いします</title>
-      <link>http://h-sao.com/blog/2016/01/04/hello2016/</link>
+      <link>https://h-sao.com/blog/2016/01/04/hello2016/</link>
       <pubDate>Mon, 04 Jan 2016 16:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/01/04/hello2016/</guid>
+      <guid>https://h-sao.com/blog/2016/01/04/hello2016/</guid>
       <description>遥佐保（はるか・さお）です
 今年もよろしくお願いしますと共に、去年から気になっていることも踏まえて、記載しています
 MSMVP 2016年1月度受賞 今年もマイクロソフトさまより MVP を再受賞させて頂きました
@@ -1496,10 +1496,10 @@ https://www.youtube.com/watch?v=8xBuAdnIrJQ  Metalにしろ、これにしろ
     
     <item>
       <title>[Hugo] ブログ構築メモ(2)-テンプレートの更新方法（CSSはメインではない）</title>
-      <link>http://h-sao.com/blog/2015/12/13/change-theme-to-minimalist/</link>
+      <link>https://h-sao.com/blog/2015/12/13/change-theme-to-minimalist/</link>
       <pubDate>Sun, 13 Dec 2015 23:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/12/13/change-theme-to-minimalist/</guid>
+      <guid>https://h-sao.com/blog/2015/12/13/change-theme-to-minimalist/</guid>
       <description>前回、スタティックジェネレーターのHugoを使って、GitHub Pages にブログを展開する方法を記載しました
  [Hugo]ブログ構築メモ(1)-Hugoとテンプレート
 http://h-sao.com/blog/2015/09/09/HugoAndTheme/  このとき、「デザインと機能を諦めた」と書きましたが
@@ -1533,10 +1533,10 @@ https://github.com/digitalcraftsman/hugo-minimalist-theme/  これは相談し�
     
     <item>
       <title>[勉強会] meetup app@1 でオープンソースについて発表しました</title>
-      <link>http://h-sao.com/blog/2015/11/21/meetup-app1-opensource/</link>
+      <link>https://h-sao.com/blog/2015/11/21/meetup-app1-opensource/</link>
       <pubDate>Sat, 21 Nov 2015 16:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/11/21/meetup-app1-opensource/</guid>
+      <guid>https://h-sao.com/blog/2015/11/21/meetup-app1-opensource/</guid>
       <description>2015/11/21 Sat meetup app@1 という勉強会を開催しました
 https://meetupapp.doorkeeper.jp/events/33820
  ビジネスにおけるオープンソースの利用価値
@@ -1547,10 +1547,10 @@ https://speakerdeck.com/harukasao/21-opensource-value   仰々しいタイトル
     
     <item>
       <title>[Android]Xiaomi Redmi Note2にGooglePlayをインストールする</title>
-      <link>http://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/</link>
+      <link>https://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/</link>
       <pubDate>Tue, 06 Oct 2015 04:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/</guid>
+      <guid>https://h-sao.com/blog/2015/10/06/install-googleplay-onxiaomi/</guid>
       <description>クロスプラットフォームで開発していると、やはり最新の端末が欲しくなりますよね～
 １年以内発売の iPhone と Windows Phone は持っているのですが
 そろそろ新しい Android が欲しい～と思っていたので、買ってしまいました
@@ -1571,10 +1571,10 @@ GooglePlay installer APKが最適解 検索すると色々な方法が出てく�
     
     <item>
       <title>[Hugo]ブログ構築メモ(1)-Hugoとテンプレート</title>
-      <link>http://h-sao.com/blog/2015/09/09/hugoandtheme/</link>
+      <link>https://h-sao.com/blog/2015/09/09/hugoandtheme/</link>
       <pubDate>Wed, 09 Sep 2015 01:11:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/09/09/hugoandtheme/</guid>
+      <guid>https://h-sao.com/blog/2015/09/09/hugoandtheme/</guid>
       <description>Windows10のノートPCに Hugo というスタティックジェネレーターをインストールして、このブログを構築しています
 作ったブログは、GitHub Pages にアップして運用しています
 今のところ気に入っているのは
@@ -1596,10 +1596,10 @@ C:\Users\haruk\Dropbox\sites&amp;gt;cd Blog C:\Users\haruk\Dropbox\sites\Blog&am
     
     <item>
       <title>[Hugo/wercker]ブログを移行しました</title>
-      <link>http://h-sao.com/blog/2015/08/25/moving-blog/</link>
+      <link>https://h-sao.com/blog/2015/08/25/moving-blog/</link>
       <pubDate>Tue, 25 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/08/25/moving-blog/</guid>
+      <guid>https://h-sao.com/blog/2015/08/25/moving-blog/</guid>
       <description>ライブドアで書いていたブログ 「遥佐保の技術メモ」 http://blog.livedoor.jp/haruka_sao/ を移植することにしました
 思えばライブドアはソースコードを表示するのには適していないブログでした…
 2008年からなので、もう7年も!?
@@ -1635,10 +1635,10 @@ Hugoは、機能あれもない、これもないの、(ヾﾉ･∀･`)ﾅｲ�
     
     <item>
       <title>[Mac] Homebrewインストールログ</title>
-      <link>http://h-sao.com/blog/2015/05/11/install-log-for-homebrew/</link>
+      <link>https://h-sao.com/blog/2015/05/11/install-log-for-homebrew/</link>
       <pubDate>Mon, 11 May 2015 03:05:44 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/05/11/install-log-for-homebrew/</guid>
+      <guid>https://h-sao.com/blog/2015/05/11/install-log-for-homebrew/</guid>
       <description>以下の方法は 2019年現在では古くなってますので、新しいインストールログはこっちの記事を参考にしてください！
  [macOS] Homebrewインストールログ2019版 - Effectiveさお
 http://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/  Homebrew とは、Mac上のアプリケーションパッケージを管理するソフトです
@@ -1653,10 +1653,10 @@ http://brew.sh/
     
     <item>
       <title>[PMP] PMPロゴのダウンロード場所</title>
-      <link>http://h-sao.com/blog/2015/04/13/download-pmp-logo/</link>
+      <link>https://h-sao.com/blog/2015/04/13/download-pmp-logo/</link>
       <pubDate>Mon, 13 Apr 2015 22:30:04 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/04/13/download-pmp-logo/</guid>
+      <guid>https://h-sao.com/blog/2015/04/13/download-pmp-logo/</guid>
       <description>何かと探したけど、全く判らなかった…
 「PMP ロゴ ダウンロード」で検索に引っかかる情報が、個人的に理解できなかった
 古いのか、単にわたしのITリテラシーが低いだけなのか…
@@ -1674,10 +1674,10 @@ IEだと、JPGロゴがダウンロード出来ましたよ&amp;nbsp;</descripti
     
     <item>
       <title>[Android] 開発者向けオプション表示とAPKインストールコマンド</title>
-      <link>http://h-sao.com/blog/2015/03/13/install-android-apk/</link>
+      <link>https://h-sao.com/blog/2015/03/13/install-android-apk/</link>
       <pubDate>Fri, 13 Mar 2015 22:00:51 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/03/13/install-android-apk/</guid>
+      <guid>https://h-sao.com/blog/2015/03/13/install-android-apk/</guid>
       <description>ずいぶん昔から出ている情報ですが、メモっときます
 Android端末に自作アプリを入れるシンプルな方法です
 Android端末での準備 Android4.2以降の端末だと「開発者向けオプション」が非表示になってるので
@@ -1703,10 +1703,10 @@ UBSでAndroid端末をPCに接続した状態で
     
     <item>
       <title>[GitExtensions] 行単位で変更をリセットするRコマンド</title>
-      <link>http://h-sao.com/blog/2015/03/03/reset-line-to-gitextensions/</link>
+      <link>https://h-sao.com/blog/2015/03/03/reset-line-to-gitextensions/</link>
       <pubDate>Tue, 03 Mar 2015 22:00:28 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/03/03/reset-line-to-gitextensions/</guid>
+      <guid>https://h-sao.com/blog/2015/03/03/reset-line-to-gitextensions/</guid>
       <description>GitExtensions を使ってみました
  http://gitextensions.github.io/  GitExtensions では、commit 時に、行を選択して
 その選択部分だけをリセットする（コミット前に合わせる）という機能があります
@@ -1731,10 +1731,10 @@ Giet Extensionsを見ると、ファイルが変更されたので、Commit(1) �
     
     <item>
       <title>[勉強会]2015 MVP Community Camp～大阪～「クロスプラットフォーム開発 の紹介」</title>
-      <link>http://h-sao.com/blog/2015/01/31/presentation-mvp-comunity-camp-osaka2015/</link>
+      <link>https://h-sao.com/blog/2015/01/31/presentation-mvp-comunity-camp-osaka2015/</link>
       <pubDate>Sat, 31 Jan 2015 17:38:14 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/01/31/presentation-mvp-comunity-camp-osaka2015/</guid>
+      <guid>https://h-sao.com/blog/2015/01/31/presentation-mvp-comunity-camp-osaka2015/</guid>
       <description>2015/1/31 に 2015 MVP Community Camp～大阪～ というイベントが開催されました
 http://connpass.com/event/10478/
 そちらで一枠セッションをさせていただきました
@@ -1748,10 +1748,10 @@ Satya Nadilla からのメッセージということで
     
     <item>
       <title>[MSMVP] 2015年1月度Windows Platform Development再受賞しました</title>
-      <link>http://h-sao.com/blog/2015/01/02/hello2015/</link>
+      <link>https://h-sao.com/blog/2015/01/02/hello2015/</link>
       <pubDate>Fri, 02 Jan 2015 01:01:26 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/01/02/hello2015/</guid>
+      <guid>https://h-sao.com/blog/2015/01/02/hello2015/</guid>
       <description>遥佐保（はるか・さお）です
 今年もマイクロソフトさまより MVP を受賞させて頂きました
 カテゴリー名称は Windows Platform Development となります
@@ -1781,10 +1781,10 @@ MSマンセーのわたくしが記載するのも全くもってナンセンス
     
     <item>
       <title>[C&#43;&#43;11] 参考リンク情報</title>
-      <link>http://h-sao.com/blog/2014/12/19/cpp11-link-note/</link>
+      <link>https://h-sao.com/blog/2014/12/19/cpp11-link-note/</link>
       <pubDate>Fri, 19 Dec 2014 12:30:41 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/12/19/cpp11-link-note/</guid>
+      <guid>https://h-sao.com/blog/2014/12/19/cpp11-link-note/</guid>
       <description>C++11について調べているときに参考になった情報源のメモ
  C++11/14/17 Features In VS 2015 Preview - Visual C++ Team Blog
 http://blogs.msdn.com/b/vcblog/archive/2014/11/17/c-11-14-17-features-in-vs-2015-preview.aspx  VS2013とVS2015 previewで利用できる機能一覧が乗っている
@@ -1800,10 +1800,10 @@ VC++でのC++11の機能一覧
     
     <item>
       <title>[勉強会] Introducing Windows Runtime：Hokuriku.NETvol.15の資料公開しました</title>
-      <link>http://h-sao.com/blog/2014/08/31/hokuriku-net-vol-15-introducing-windows-runtime/</link>
+      <link>https://h-sao.com/blog/2014/08/31/hokuriku-net-vol-15-introducing-windows-runtime/</link>
       <pubDate>Sun, 31 Aug 2014 12:35:04 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/08/31/hokuriku-net-vol-15-introducing-windows-runtime/</guid>
+      <guid>https://h-sao.com/blog/2014/08/31/hokuriku-net-vol-15-introducing-windows-runtime/</guid>
       <description>北陸にお邪魔しました！
 Hokuriku.NET vol.15
 http://hokurikunet.doorkeeper.jp/events/13746
@@ -1819,10 +1819,10 @@ http://jyurimaru.info/data/20140830Hokurikunet15/201400830_Introducing_Windows_R
     
     <item>
       <title>[PowerShell] ファイル分割スクリプト</title>
-      <link>http://h-sao.com/blog/2014/07/17/divide-file-using-powershell/</link>
+      <link>https://h-sao.com/blog/2014/07/17/divide-file-using-powershell/</link>
       <pubDate>Thu, 17 Jul 2014 21:57:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/07/17/divide-file-using-powershell/</guid>
+      <guid>https://h-sao.com/blog/2014/07/17/divide-file-using-powershell/</guid>
       <description>大きなファイルを分割する必要があって
 めっちゃ困りましたけど、また PowerShell で解決しました
 なかばやけくそ
@@ -1833,10 +1833,10 @@ http://jyurimaru.info/data/20140830Hokurikunet15/201400830_Introducing_Windows_R
     
     <item>
       <title>[PowerShell] 連想配列をソートしてforeachで一個づつ取り出す</title>
-      <link>http://h-sao.com/blog/2014/07/02/sort-arrays-and-retrieve-one-by-one-for-powershell/</link>
+      <link>https://h-sao.com/blog/2014/07/02/sort-arrays-and-retrieve-one-by-one-for-powershell/</link>
       <pubDate>Wed, 02 Jul 2014 17:46:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/07/02/sort-arrays-and-retrieve-one-by-one-for-powershell/</guid>
+      <guid>https://h-sao.com/blog/2014/07/02/sort-arrays-and-retrieve-one-by-one-for-powershell/</guid>
       <description>PowerShell で連想配列を用いた時のソート＆foreach のサンプルがなかなか探せなかったのでメモします
 とある連想配列
 PS C:\&amp;gt; $tbl = @{ &amp;gt;&amp;gt; k00 = &amp;quot;orange&amp;quot;; &amp;gt;&amp;gt; k01 = &amp;quot;peach&amp;quot;; &amp;gt;&amp;gt; k02 = &amp;quot;apple&amp;quot; &amp;gt;&amp;gt; }  出力は簡単
@@ -1846,10 +1846,10 @@ PS C:\&amp;gt; $tbl.GetEnumerator() | Sort-Object Value Name Value ---- ----- k0
     
     <item>
       <title>[PowerShell] 32bitと64bitの使い分け</title>
-      <link>http://h-sao.com/blog/2014/04/19/about-powershell-x32-and-x64/</link>
+      <link>https://h-sao.com/blog/2014/04/19/about-powershell-x32-and-x64/</link>
       <pubDate>Sat, 19 Apr 2014 21:46:45 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/04/19/about-powershell-x32-and-x64/</guid>
+      <guid>https://h-sao.com/blog/2014/04/19/about-powershell-x32-and-x64/</guid>
       <description>PowerShellにはちゃんと 32bit版と 64bit版が備わっています
 Windows2008 R2
 Windows2012 R2
@@ -1874,10 +1874,10 @@ http://harikofu.blog.fc2.com/blog-entry-114.html
     
     <item>
       <title>[Oracle]テーブル・カラム名が不明でもDBに入っている値を検索したい</title>
-      <link>http://h-sao.com/blog/2014/04/10/mining-for-value-from-db/</link>
+      <link>https://h-sao.com/blog/2014/04/10/mining-for-value-from-db/</link>
       <pubDate>Thu, 10 Apr 2014 18:00:15 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/04/10/mining-for-value-from-db/</guid>
+      <guid>https://h-sao.com/blog/2014/04/10/mining-for-value-from-db/</guid>
       <description>見知らぬデータベースを渡され、中を解析したい時…
 ありますよね？ありますよね！？
 全テーブルの全列に入っている値を横断検索したいという要求、あるんじゃないでしょうか？
@@ -1900,10 +1900,10 @@ https://community.oracle.com/thread/2334738?tstart=0  方法は2種類
     
     <item>
       <title>[C&#43;&#43;/CX] MVP Community Camp 2014大阪で「VC&#43;&#43;まわりの非同期処理」セッションしました</title>
-      <link>http://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/</link>
+      <link>https://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/</link>
       <pubDate>Sun, 23 Mar 2014 00:25:28 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/</guid>
+      <guid>https://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/</guid>
       <description>MVP Community Camp 2014大阪にて、VC++系のセッションをさせて頂きました
 MVP Community Camp 2014大阪会場
 http://atnd.org/event/E0024087 (リンク先は削除されている模様です)
@@ -1920,10 +1920,10 @@ PDF版はこちら
     
     <item>
       <title>Anonymous Struct of C</title>
-      <link>http://h-sao.com/blog/2014/02/24/c-anonymous-struct/</link>
+      <link>https://h-sao.com/blog/2014/02/24/c-anonymous-struct/</link>
       <pubDate>Mon, 24 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/02/24/c-anonymous-struct/</guid>
+      <guid>https://h-sao.com/blog/2014/02/24/c-anonymous-struct/</guid>
       <description>Hi,
 It is very tedious to think about the name of a struct when you use to struct only once.
 In such a case, Anonymous structure comes in handy.
@@ -1933,10 +1933,10 @@ It is assigned to the anonymous struct
     
     <item>
       <title>[Git] ローカルを強制上書きして、作業をなかったことにしたい</title>
-      <link>http://h-sao.com/blog/2014/02/03/force-reset-my-git-repository/</link>
+      <link>https://h-sao.com/blog/2014/02/03/force-reset-my-git-repository/</link>
       <pubDate>Mon, 03 Feb 2014 18:54:41 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/02/03/force-reset-my-git-repository/</guid>
+      <guid>https://h-sao.com/blog/2014/02/03/force-reset-my-git-repository/</guid>
       <description>ローカルの作業が何やらおかしくなったから
 リモートのファイル内容に戻したい～という時
 以下のコマンドでさくっと戻りました
@@ -1953,10 +1953,10 @@ http://stackoverflow.com/questions/1628088/how-to-reset-my-local-repository-to-b
     
     <item>
       <title>C,C&#43;&#43;,C&#43;&#43;/CLI sample program</title>
-      <link>http://h-sao.com/blog/2014/01/31/cpp-sample-program/</link>
+      <link>https://h-sao.com/blog/2014/01/31/cpp-sample-program/</link>
       <pubDate>Fri, 31 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/01/31/cpp-sample-program/</guid>
+      <guid>https://h-sao.com/blog/2014/01/31/cpp-sample-program/</guid>
       <description>Hi,
 C program 1 2 3 4 5 6 7 8  c00.c #include &amp;lt;stdio.h&amp;gt; int main() { printf(&amp;#34;This is a native C program.\n&amp;#34;); return 0; }    compile
 &amp;gt; cl.exe c00.c  C++ program 1 2 3 4 5 6 7 8  c01.cpp #include &amp;lt;iostream&amp;gt; int main() { std::cout &amp;lt;&amp;lt; &amp;#34;This is a native C++ program.&amp;#34; &amp;lt;&amp;lt; std::endl; return 0; }    compile</description>
@@ -1964,10 +1964,10 @@ C program 1 2 3 4 5 6 7 8  c00.c #include &amp;lt;stdio.h&amp;gt; int main() { p
     
     <item>
       <title>Lightning Talk:How to program C&#43;&#43;/CX</title>
-      <link>http://h-sao.com/blog/2014/01/29/how-to-program-cppcx/</link>
+      <link>https://h-sao.com/blog/2014/01/29/how-to-program-cppcx/</link>
       <pubDate>Wed, 29 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/01/29/how-to-program-cppcx/</guid>
+      <guid>https://h-sao.com/blog/2014/01/29/how-to-program-cppcx/</guid>
       <description>Hi,
 The other day, I spoke about C++/CX in Lightning Talk.
 Click here for article
@@ -1978,10 +1978,10 @@ Take care!</description>
     
     <item>
       <title>Hello World</title>
-      <link>http://h-sao.com/blog/2014/01/28/hello-world/</link>
+      <link>https://h-sao.com/blog/2014/01/28/hello-world/</link>
       <pubDate>Tue, 28 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/01/28/hello-world/</guid>
+      <guid>https://h-sao.com/blog/2014/01/28/hello-world/</guid>
       <description>Hi,
 I&amp;rsquo;m Sao Haruka :)
 Japanese programmer
@@ -1991,10 +1991,10 @@ Thank you.</description>
     
     <item>
       <title>[Oracle] 直前のSQLを再実行する</title>
-      <link>http://h-sao.com/blog/2014/01/18/rerun-last-sql/</link>
+      <link>https://h-sao.com/blog/2014/01/18/rerun-last-sql/</link>
       <pubDate>Sat, 18 Jan 2014 00:53:07 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/01/18/rerun-last-sql/</guid>
+      <guid>https://h-sao.com/blog/2014/01/18/rerun-last-sql/</guid>
       <description>OracleのコマンドラインでSQLを実行させるときのメモ
 直前のSQLコマンドを実行は / (スラッシュ)
 この場合、直前のバッファの内容は表示しません
@@ -2014,10 +2014,10 @@ http://sakusakuit.blog.fc2.com/?m&amp;amp;no=15
     
     <item>
       <title>[C/C&#43;&#43;] 割り算を使わないで割り算する方法</title>
-      <link>http://h-sao.com/blog/2008/07/29/how-to-divide-without-division/</link>
+      <link>https://h-sao.com/blog/2008/07/29/how-to-divide-without-division/</link>
       <pubDate>Tue, 29 Jul 2008 01:17:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2008/07/29/how-to-divide-without-division/</guid>
+      <guid>https://h-sao.com/blog/2008/07/29/how-to-divide-without-division/</guid>
       <description>ビット・シフトの計算の練習問題＜上級編＞です
 Q. 割り算をシフトと引き算のみで表現しなさい
 A. 回答

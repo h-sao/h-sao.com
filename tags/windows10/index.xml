@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows10 on Effectiveさお</title>
-    <link>http://h-sao.com/tags/windows10/</link>
+    <link>https://h-sao.com/tags/windows10/</link>
     <description>Recent content in Windows10 on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Thu, 18 Jul 2019 12:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/windows10/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/windows10/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Windows10] 範囲選択スクリーンショットを撮る機能の紹介</title>
-      <link>http://h-sao.com/blog/2019/07/18/how-to-take-a-windows10-region-screenshot-by-built-in-tool/</link>
+      <link>https://h-sao.com/blog/2019/07/18/how-to-take-a-windows10-region-screenshot-by-built-in-tool/</link>
       <pubDate>Thu, 18 Jul 2019 12:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/07/18/how-to-take-a-windows10-region-screenshot-by-built-in-tool/</guid>
+      <guid>https://h-sao.com/blog/2019/07/18/how-to-take-a-windows10-region-screenshot-by-built-in-tool/</guid>
       <description>macには、範囲選択してスクリーンショットを撮る機能がずいぶん前からあるんですけど
 Windowsはしばらくありませんでした…
 でも（いつから出来るようになったのかよく知らないけど）
@@ -40,10 +40,10 @@ Ctrl + v で貼り付けてもOK(・ω・)ノ
     
     <item>
       <title>[Windows10] コントロールパネルの場所</title>
-      <link>http://h-sao.com/blog/2017/10/31/where-is-controlpanel/</link>
+      <link>https://h-sao.com/blog/2017/10/31/where-is-controlpanel/</link>
       <pubDate>Tue, 31 Oct 2017 08:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/10/31/where-is-controlpanel/</guid>
+      <guid>https://h-sao.com/blog/2017/10/31/where-is-controlpanel/</guid>
       <description>コントロールパネルはいずこへ…(;^ω^)
 Windows10を使ってかなり経ちますが、以前の見慣れたコントロールパネルを出したくて、何となく探したことありませんか？
 コントロールパネルが無くても、Windows10 仕様の「設定」アプリでも、そこまで困ることは無いのですが…
@@ -61,10 +61,10 @@ https://support.microsoft.com/en-us/help/13764/windows-where-is-control-panel  �
     
     <item>
       <title>[Windows10] PCのGPUを確認する</title>
-      <link>http://h-sao.com/blog/2016/07/26/check-gpu-on-pc/</link>
+      <link>https://h-sao.com/blog/2016/07/26/check-gpu-on-pc/</link>
       <pubDate>Tue, 26 Jul 2016 21:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/07/26/check-gpu-on-pc/</guid>
+      <guid>https://h-sao.com/blog/2016/07/26/check-gpu-on-pc/</guid>
       <description>PCのGPU、つまりグラフィックボードってなんだろな？と思った時の操作メモです
 対象は Windows10
 (1) まず Windows10 のディスプレイ画面を表示させます
@@ -90,10 +90,10 @@ GPUだけは新しい型のものにしとかないと…とかとか
     
     <item>
       <title>[Windows10] シャットダウンができない対策</title>
-      <link>http://h-sao.com/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/</link>
+      <link>https://h-sao.com/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/</link>
       <pubDate>Wed, 15 Jun 2016 12:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/</guid>
+      <guid>https://h-sao.com/blog/2016/06/15/recommend-uncheck-fast-startup-for-windows10/</guid>
       <description>Windows10 でシャットダウンが出来ない現象にあった方はいらっしゃいますか～？
 わたしもそんな一人でした……(^_^;)
 シャットダウンを選択しても、勝手に再起動するんです…　やめてぇ～(つд⊂)ｴｰﾝ

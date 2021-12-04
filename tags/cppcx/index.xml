@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cppcx on Effectiveさお</title>
-    <link>http://h-sao.com/tags/cppcx/</link>
+    <link>https://h-sao.com/tags/cppcx/</link>
     <description>Recent content in Cppcx on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 23 Mar 2014 00:25:28 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/cppcx/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/cppcx/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[C&#43;&#43;/CX] MVP Community Camp 2014大阪で「VC&#43;&#43;まわりの非同期処理」セッションしました</title>
-      <link>http://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/</link>
+      <link>https://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/</link>
       <pubDate>Sun, 23 Mar 2014 00:25:28 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/</guid>
+      <guid>https://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/</guid>
       <description>MVP Community Camp 2014大阪にて、VC++系のセッションをさせて頂きました
 MVP Community Camp 2014大阪会場
 http://atnd.org/event/E0024087 (リンク先は削除されている模様です)
@@ -33,10 +33,10 @@ PDF版はこちら
     
     <item>
       <title>Lightning Talk:How to program C&#43;&#43;/CX</title>
-      <link>http://h-sao.com/blog/2014/01/29/how-to-program-cppcx/</link>
+      <link>https://h-sao.com/blog/2014/01/29/how-to-program-cppcx/</link>
       <pubDate>Wed, 29 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/01/29/how-to-program-cppcx/</guid>
+      <guid>https://h-sao.com/blog/2014/01/29/how-to-program-cppcx/</guid>
       <description>Hi,
 The other day, I spoke about C++/CX in Lightning Talk.
 Click here for article

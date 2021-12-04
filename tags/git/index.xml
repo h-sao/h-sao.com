@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on Effectiveさお</title>
-    <link>http://h-sao.com/tags/git/</link>
+    <link>https://h-sao.com/tags/git/</link>
     <description>Recent content in Git on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Wed, 29 Jan 2020 16:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Git] Gitの歴史を書き換える関連</title>
-      <link>http://h-sao.com/blog/2020/01/29/tips-about-git-history-changed/</link>
+      <link>https://h-sao.com/blog/2020/01/29/tips-about-git-history-changed/</link>
       <pubDate>Wed, 29 Jan 2020 16:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2020/01/29/tips-about-git-history-changed/</guid>
+      <guid>https://h-sao.com/blog/2020/01/29/tips-about-git-history-changed/</guid>
       <description>よくやらかすので自分メモ
 事前準備 # 今いるブランチの確認 $ git branch # ブランチに移動 $ git checkout feature/xxxxx  PR出す前、きれいな環境にしたいなどで整えておきたいこと
 # 手動ブランチの取得/追従 $ git checkout feature/yyyyy $ git pull  ローカル作業全てを無かったことにする git fetch origin git reset --hard origin/master  pushしてしまった歴史を書き換える # 自分の名前のコミットを検索 $ git log --committer=&amp;quot;Sao Haruka&amp;quot; # ↑の gitlog より戻りたいハッシュ値を探す $ git reset [戻りたいコミットのハッシュ値] --hard # 強制push $ git push -f origin feature/xxxxx  既に feature/xxxxx で誰かが作業していたら強制プッシュはあきらめる
@@ -26,10 +26,10 @@ $ git push --delete origin feature/xxxxx  PRに不要なコミットが混じる
     
     <item>
       <title>[Git] Commit&amp;PushしてしまったAuthor情報を変更したい</title>
-      <link>http://h-sao.com/blog/2019/10/15/how-to-fix-git-author/</link>
+      <link>https://h-sao.com/blog/2019/10/15/how-to-fix-git-author/</link>
       <pubDate>Tue, 15 Oct 2019 12:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/10/15/how-to-fix-git-author/</guid>
+      <guid>https://h-sao.com/blog/2019/10/15/how-to-fix-git-author/</guid>
       <description>最近、GitKraken を使って更新をしています
 Pro バージョンだとアカウント情報の切り替えが簡単に出来るので
 会社用や個人用に切り替えて作業するのがとても便利です
@@ -49,10 +49,10 @@ $ git commit --amend --author=&amp;quot;Sao Haruka &amp;lt;sao@tmp.com&amp;gt;&a
     
     <item>
       <title>[Git] Visual Studio 2019の中のGitコマンドを探せ！</title>
-      <link>http://h-sao.com/blog/2019/06/20/where-is-git-exe-on-vs2019/</link>
+      <link>https://h-sao.com/blog/2019/06/20/where-is-git-exe-on-vs2019/</link>
       <pubDate>Thu, 20 Jun 2019 16:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2019/06/20/where-is-git-exe-on-vs2019/</guid>
+      <guid>https://h-sao.com/blog/2019/06/20/where-is-git-exe-on-vs2019/</guid>
       <description>Gitクライアント…
 自然に入ってますよね、わざわざ入れなくても。。。( *´艸｀)
 Visual Studio 2019 が入ってる環境だったので、Gitクライアントくらいあるじゃろーと思って、検索してみたらありました！
@@ -76,10 +76,10 @@ Visual Studio 2019 が入ってる環境だったので、Gitクライアント�
     
     <item>
       <title>[SSH] ポート指定GitサーバにSSHでアクセスできない時(Windows/GitExtensions)</title>
-      <link>http://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</link>
+      <link>https://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</link>
       <pubDate>Thu, 01 Jun 2017 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</guid>
+      <guid>https://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</guid>
       <description>最近… 機械学習関係をやってたんですけど、Unityをまた触ることになっています
 てんやわんやして、前回更新から2カ月も経ってしまった…(+o+)
 今回また、タイトル名のGit/SSH関係でオロオロしたので、同現象で困ってる人の助けになれば幸いです
@@ -107,10 +107,10 @@ Please make sure you have the correct access rights and repository exists.
     
     <item>
       <title>[SSH] 複数キー接続のconfig記載について</title>
-      <link>http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</link>
+      <link>https://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</link>
       <pubDate>Mon, 09 May 2016 23:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</guid>
+      <guid>https://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</guid>
       <description>前回、
 [Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続
 で Gitサーバにアクセスするための ssh 接続について記載しました
@@ -130,10 +130,10 @@ Please make sure you have the correct access rights and repository exists.
     
     <item>
       <title>[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続</title>
-      <link>http://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</link>
+      <link>https://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</link>
       <pubDate>Sat, 07 May 2016 15:23:30 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</guid>
+      <guid>https://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</guid>
       <description>しょっちゅう作っては、作り方を忘れ、また検索で調べる…ということをしているので、sshキーの生成&amp;amp;接続について、忘れないようにメモしておきます
 GitサーバへSSHキーを使って接続したい Gitサーバに接続するには、
  http ssh  この2種類の接続方法があるみたいです
@@ -161,10 +161,10 @@ Windowsだとキーの保存位置は c:\Users\[ユーザ名]\.ssh\ にしない
     
     <item>
       <title>[GitExtensions] 行単位で変更をリセットするRコマンド</title>
-      <link>http://h-sao.com/blog/2015/03/03/reset-line-to-gitextensions/</link>
+      <link>https://h-sao.com/blog/2015/03/03/reset-line-to-gitextensions/</link>
       <pubDate>Tue, 03 Mar 2015 22:00:28 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/03/03/reset-line-to-gitextensions/</guid>
+      <guid>https://h-sao.com/blog/2015/03/03/reset-line-to-gitextensions/</guid>
       <description>GitExtensions を使ってみました
  http://gitextensions.github.io/  GitExtensions では、commit 時に、行を選択して
 その選択部分だけをリセットする（コミット前に合わせる）という機能があります
@@ -189,10 +189,10 @@ Giet Extensionsを見ると、ファイルが変更されたので、Commit(1) �
     
     <item>
       <title>[Git] ローカルを強制上書きして、作業をなかったことにしたい</title>
-      <link>http://h-sao.com/blog/2014/02/03/force-reset-my-git-repository/</link>
+      <link>https://h-sao.com/blog/2014/02/03/force-reset-my-git-repository/</link>
       <pubDate>Mon, 03 Feb 2014 18:54:41 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/02/03/force-reset-my-git-repository/</guid>
+      <guid>https://h-sao.com/blog/2014/02/03/force-reset-my-git-repository/</guid>
       <description>ローカルの作業が何やらおかしくなったから
 リモートのファイル内容に戻したい～という時
 以下のコマンドでさくっと戻りました

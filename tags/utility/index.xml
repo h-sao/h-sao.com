@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Utility on Effectiveさお</title>
-    <link>http://h-sao.com/tags/utility/</link>
+    <link>https://h-sao.com/tags/utility/</link>
     <description>Recent content in Utility on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Wed, 06 Jan 2016 01:50:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/utility/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/utility/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Utility] ISOファイルからBoot用USBを作成するアプリRufus</title>
-      <link>http://h-sao.com/blog/2016/01/06/usb-boot-app-rufus/</link>
+      <link>https://h-sao.com/blog/2016/01/06/usb-boot-app-rufus/</link>
       <pubDate>Wed, 06 Jan 2016 01:50:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/01/06/usb-boot-app-rufus/</guid>
+      <guid>https://h-sao.com/blog/2016/01/06/usb-boot-app-rufus/</guid>
       <description>Windows10 の isoファイルからUBSインストールメディアを作りたいと思ったときに、便利なソフトを見つけました
 実際は、「USB ブート 作成」などなどで検索すれば、やり方はいくらでも載ってるんですけど
 省コストで、ぱぱっとやりたいことを実現してくれたので、紹介しておきます

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ssh on Effectiveさお</title>
-    <link>http://h-sao.com/tags/ssh/</link>
+    <link>https://h-sao.com/tags/ssh/</link>
     <description>Recent content in Ssh on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Thu, 01 Jun 2017 18:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[SSH] ポート指定GitサーバにSSHでアクセスできない時(Windows/GitExtensions)</title>
-      <link>http://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</link>
+      <link>https://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</link>
       <pubDate>Thu, 01 Jun 2017 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</guid>
+      <guid>https://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/</guid>
       <description>最近… 機械学習関係をやってたんですけど、Unityをまた触ることになっています
 てんやわんやして、前回更新から2カ月も経ってしまった…(+o+)
 今回また、タイトル名のGit/SSH関係でオロオロしたので、同現象で困ってる人の助けになれば幸いです
@@ -44,10 +44,10 @@ Please make sure you have the correct access rights and repository exists.
     
     <item>
       <title>[SSH] 複数キー接続のconfig記載について</title>
-      <link>http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</link>
+      <link>https://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</link>
       <pubDate>Mon, 09 May 2016 23:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</guid>
+      <guid>https://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</guid>
       <description>前回、
 [Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続
 で Gitサーバにアクセスするための ssh 接続について記載しました
@@ -67,10 +67,10 @@ Please make sure you have the correct access rights and repository exists.
     
     <item>
       <title>[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続</title>
-      <link>http://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</link>
+      <link>https://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</link>
       <pubDate>Sat, 07 May 2016 15:23:30 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</guid>
+      <guid>https://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</guid>
       <description>しょっちゅう作っては、作り方を忘れ、また検索で調べる…ということをしているので、sshキーの生成&amp;amp;接続について、忘れないようにメモしておきます
 GitサーバへSSHキーを使って接続したい Gitサーバに接続するには、
  http ssh  この2種類の接続方法があるみたいです

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Asset on Effectiveさお</title>
-    <link>http://h-sao.com/tags/asset/</link>
+    <link>https://h-sao.com/tags/asset/</link>
     <description>Recent content in Asset on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Wed, 12 Sep 2018 08:30:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/asset/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/asset/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Asset] 素材のリンク集ー3Dモデル系</title>
-      <link>http://h-sao.com/blog/2018/09/12/collection-of-useful-links-for-3d-models/</link>
+      <link>https://h-sao.com/blog/2018/09/12/collection-of-useful-links-for-3d-models/</link>
       <pubDate>Wed, 12 Sep 2018 08:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2018/09/12/collection-of-useful-links-for-3d-models/</guid>
+      <guid>https://h-sao.com/blog/2018/09/12/collection-of-useful-links-for-3d-models/</guid>
       <description>プログラマが個人でゲーム作る時にすぐにぶち当たる壁の一つとして、コンテンツの問題があります
 いわゆる素材不足…モデルが欲しい、テクスチャが欲しい、IBLしたい…
 最終的には有料のものを買うか、デザイナーやサウンドクリエイターを巻き込むかのどちらかになるんですけど

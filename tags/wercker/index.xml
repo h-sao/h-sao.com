@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wercker on Effectiveさお</title>
-    <link>http://h-sao.com/tags/wercker/</link>
+    <link>https://h-sao.com/tags/wercker/</link>
     <description>Recent content in Wercker on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Tue, 25 Aug 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/wercker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/wercker/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Hugo/wercker]ブログを移行しました</title>
-      <link>http://h-sao.com/blog/2015/08/25/moving-blog/</link>
+      <link>https://h-sao.com/blog/2015/08/25/moving-blog/</link>
       <pubDate>Tue, 25 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/08/25/moving-blog/</guid>
+      <guid>https://h-sao.com/blog/2015/08/25/moving-blog/</guid>
       <description>ライブドアで書いていたブログ 「遥佐保の技術メモ」 http://blog.livedoor.jp/haruka_sao/ を移植することにしました
 思えばライブドアはソースコードを表示するのには適していないブログでした…
 2008年からなので、もう7年も!?

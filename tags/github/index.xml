@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Github on Effectiveさお</title>
-    <link>http://h-sao.com/tags/github/</link>
+    <link>https://h-sao.com/tags/github/</link>
     <description>Recent content in Github on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Mon, 28 Sep 2020 12:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Github] Github Actionsでブログを更新するようにしました</title>
-      <link>http://h-sao.com/blog/2020/09/28/using-githubactions-for-blog/</link>
+      <link>https://h-sao.com/blog/2020/09/28/using-githubactions-for-blog/</link>
       <pubDate>Mon, 28 Sep 2020 12:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2020/09/28/using-githubactions-for-blog/</guid>
+      <guid>https://h-sao.com/blog/2020/09/28/using-githubactions-for-blog/</guid>
       <description>元々、このブログは hugo で作った静的HTMLを wercker でオートデプロイして作っていました
 だけど wercker は設定の変更が多くてすぐにデプロイ出来なくなっていたんですよね~で、辞めました
 これを作った当時は wercker がイケイケドンドンだったので
@@ -35,10 +35,10 @@ Github Actions の設定ファイルを書いてみる 知識なしで初めて�
     
     <item>
       <title>[GitHub Pages] カスタムドメインのDNS情報を更新する</title>
-      <link>http://h-sao.com/blog/2020/02/25/how-to-change-dnsinfo-for-github-custom-domain/</link>
+      <link>https://h-sao.com/blog/2020/02/25/how-to-change-dnsinfo-for-github-custom-domain/</link>
       <pubDate>Tue, 25 Feb 2020 12:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2020/02/25/how-to-change-dnsinfo-for-github-custom-domain/</guid>
+      <guid>https://h-sao.com/blog/2020/02/25/how-to-change-dnsinfo-for-github-custom-domain/</guid>
       <description>去年、2019年の4月くらいから
 GitHub Pages にファイルをアップすると、ワーニングが出るようになった
 内容はこんなやつ
@@ -47,10 +47,10 @@ GitHub Pages にファイルをアップすると、ワーニングが出るよ�
     
     <item>
       <title>[GitHub] GitHubリポジトリを別アカウントに移動させる</title>
-      <link>http://h-sao.com/blog/2016/07/20/transfer-github-repository/</link>
+      <link>https://h-sao.com/blog/2016/07/20/transfer-github-repository/</link>
       <pubDate>Wed, 20 Jul 2016 20:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/07/20/transfer-github-repository/</guid>
+      <guid>https://h-sao.com/blog/2016/07/20/transfer-github-repository/</guid>
       <description>旧 Github Micro Plan では、プライベートリポジトリは5つまでしか持てませんでしたが
 最近は Presonal Plan に変更されて、リポジトリ制限数が無制限になりましたね
  GitHub価格ページ
@@ -76,10 +76,10 @@ GiuHub上での操作(移動元)  移動元(XXX)のアカウントで GitHub に
     
     <item>
       <title>[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続</title>
-      <link>http://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</link>
+      <link>https://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</link>
       <pubDate>Sat, 07 May 2016 15:23:30 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</guid>
+      <guid>https://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/</guid>
       <description>しょっちゅう作っては、作り方を忘れ、また検索で調べる…ということをしているので、sshキーの生成&amp;amp;接続について、忘れないようにメモしておきます
 GitサーバへSSHキーを使って接続したい Gitサーバに接続するには、
  http ssh  この2種類の接続方法があるみたいです

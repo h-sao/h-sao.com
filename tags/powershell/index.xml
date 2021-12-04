@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Powershell on Effectiveさお</title>
-    <link>http://h-sao.com/tags/powershell/</link>
+    <link>https://h-sao.com/tags/powershell/</link>
     <description>Recent content in Powershell on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Fri, 20 Oct 2017 19:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[PowerShell] ZoneIDとPowerShellの実行ポリシー</title>
-      <link>http://h-sao.com/blog/2017/10/20/zoneid_and_powershell_excutionpolicy/</link>
+      <link>https://h-sao.com/blog/2017/10/20/zoneid_and_powershell_excutionpolicy/</link>
       <pubDate>Fri, 20 Oct 2017 19:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/10/20/zoneid_and_powershell_excutionpolicy/</guid>
+      <guid>https://h-sao.com/blog/2017/10/20/zoneid_and_powershell_excutionpolicy/</guid>
       <description>PowerShellでちょっとしたツールを動かそうと思って、初歩的なところであれ？となったので、書いておきます
 PowerShellの実行ポリシー（Execution Policy）は、
 1  &amp;gt; Get-ExecutionPolicy   このコマンドで確認できます
@@ -42,10 +42,10 @@ http://www.atmarkit.co.jp/ait/articles/0805/16/news139.html</description>
     
     <item>
       <title>[PowerShell] ファイル分割スクリプト</title>
-      <link>http://h-sao.com/blog/2014/07/17/divide-file-using-powershell/</link>
+      <link>https://h-sao.com/blog/2014/07/17/divide-file-using-powershell/</link>
       <pubDate>Thu, 17 Jul 2014 21:57:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/07/17/divide-file-using-powershell/</guid>
+      <guid>https://h-sao.com/blog/2014/07/17/divide-file-using-powershell/</guid>
       <description>大きなファイルを分割する必要があって
 めっちゃ困りましたけど、また PowerShell で解決しました
 なかばやけくそ
@@ -56,10 +56,10 @@ http://www.atmarkit.co.jp/ait/articles/0805/16/news139.html</description>
     
     <item>
       <title>[PowerShell] 連想配列をソートしてforeachで一個づつ取り出す</title>
-      <link>http://h-sao.com/blog/2014/07/02/sort-arrays-and-retrieve-one-by-one-for-powershell/</link>
+      <link>https://h-sao.com/blog/2014/07/02/sort-arrays-and-retrieve-one-by-one-for-powershell/</link>
       <pubDate>Wed, 02 Jul 2014 17:46:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/07/02/sort-arrays-and-retrieve-one-by-one-for-powershell/</guid>
+      <guid>https://h-sao.com/blog/2014/07/02/sort-arrays-and-retrieve-one-by-one-for-powershell/</guid>
       <description>PowerShell で連想配列を用いた時のソート＆foreach のサンプルがなかなか探せなかったのでメモします
 とある連想配列
 PS C:\&amp;gt; $tbl = @{ &amp;gt;&amp;gt; k00 = &amp;quot;orange&amp;quot;; &amp;gt;&amp;gt; k01 = &amp;quot;peach&amp;quot;; &amp;gt;&amp;gt; k02 = &amp;quot;apple&amp;quot; &amp;gt;&amp;gt; }  出力は簡単
@@ -69,10 +69,10 @@ PS C:\&amp;gt; $tbl.GetEnumerator() | Sort-Object Value Name Value ---- ----- k0
     
     <item>
       <title>[PowerShell] 32bitと64bitの使い分け</title>
-      <link>http://h-sao.com/blog/2014/04/19/about-powershell-x32-and-x64/</link>
+      <link>https://h-sao.com/blog/2014/04/19/about-powershell-x32-and-x64/</link>
       <pubDate>Sat, 19 Apr 2014 21:46:45 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/04/19/about-powershell-x32-and-x64/</guid>
+      <guid>https://h-sao.com/blog/2014/04/19/about-powershell-x32-and-x64/</guid>
       <description>PowerShellにはちゃんと 32bit版と 64bit版が備わっています
 Windows2008 R2
 Windows2012 R2

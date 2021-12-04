@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clang on Effectiveさお</title>
-    <link>http://h-sao.com/tags/clang/</link>
+    <link>https://h-sao.com/tags/clang/</link>
     <description>Recent content in Clang on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 15 May 2016 23:30:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/clang/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/clang/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[C&#43;&#43;] VisualStusio2015でClangを使う設定</title>
-      <link>http://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/</link>
+      <link>https://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/</link>
       <pubDate>Sun, 15 May 2016 23:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/</guid>
+      <guid>https://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/</guid>
       <description>今日は Clang with Microsoft CodeGen の設定などについて、メモしておきます
 先人たちが既に色々と試している内容と対して変わりませんが、そもそも日本語の情報も少ないので、何かの足しになればと思います
 &amp;ldquo;Clang with Microsoft CodeGen&amp;rdquo; is here! 最近はすっかり、クロスプラットフォームやオープンソースに力を入れているマイクロソフト社のツールセットの中に、Clang対応ってのがあります

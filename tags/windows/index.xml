@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows on Effectiveさお</title>
-    <link>http://h-sao.com/tags/windows/</link>
+    <link>https://h-sao.com/tags/windows/</link>
     <description>Recent content in Windows on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sat, 07 Nov 2020 10:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Windows] そのexeがx64かx86かを見分ける方法 Part2</title>
-      <link>http://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/</link>
+      <link>https://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/</link>
       <pubDate>Sat, 07 Nov 2020 10:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/</guid>
+      <guid>https://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/</guid>
       <description>先日、こんなブログを書きました
  [Windows] そのexeがx64かx86かを見分ける方法
 http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/  このブログを公開したところ、Twitterで @ripjyr さんより
@@ -32,10 +32,10 @@ $ file 調べたいファイル名   x86の場合  PE32 executable (GUI) Intel 8
     
     <item>
       <title>[Windows] そのexeがx64かx86かを見分ける方法</title>
-      <link>http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/</link>
+      <link>https://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/</link>
       <pubDate>Mon, 26 Oct 2020 12:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/</guid>
+      <guid>https://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/</guid>
       <description>手元にあるexeが64bitなのか32bitなのかを知りたい…
 開発してるとこういう時がたまにあると思う…
 多分ちょっとニッチな需要だけど、検索したらちゃんと誰かが既に調べてくれていました！

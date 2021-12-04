@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Community on Effectiveさお</title>
-    <link>http://h-sao.com/tags/community/</link>
+    <link>https://h-sao.com/tags/community/</link>
     <description>Recent content in Community on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 27 Mar 2016 20:30:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/community/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/community/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[勉強会] ebisu_effective_modern.cpp vol.3やりますよ</title>
-      <link>http://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</link>
+      <link>https://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</link>
       <pubDate>Sun, 27 Mar 2016 20:30:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</guid>
+      <guid>https://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/</guid>
       <description>ebisu_effective_modern.cppって？  
 東京の恵比寿でC++について、みんなの意見を聞きながら本を読み進める勉強会を開いています
 昔、大阪でC++の読書会を開催していたのですが、それが結構役に立って面白かったので、東京でも開催してみよう！と思い、始めてみました
@@ -36,10 +36,10 @@ http://cpp-osaka.connpass.com/
     
     <item>
       <title>[勉強会] meetup app@1 でオープンソースについて発表しました</title>
-      <link>http://h-sao.com/blog/2015/11/21/meetup-app1-opensource/</link>
+      <link>https://h-sao.com/blog/2015/11/21/meetup-app1-opensource/</link>
       <pubDate>Sat, 21 Nov 2015 16:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/11/21/meetup-app1-opensource/</guid>
+      <guid>https://h-sao.com/blog/2015/11/21/meetup-app1-opensource/</guid>
       <description>2015/11/21 Sat meetup app@1 という勉強会を開催しました
 https://meetupapp.doorkeeper.jp/events/33820
  ビジネスにおけるオープンソースの利用価値
@@ -50,10 +50,10 @@ https://speakerdeck.com/harukasao/21-opensource-value   仰々しいタイトル
     
     <item>
       <title>[勉強会]2015 MVP Community Camp～大阪～「クロスプラットフォーム開発 の紹介」</title>
-      <link>http://h-sao.com/blog/2015/01/31/presentation-mvp-comunity-camp-osaka2015/</link>
+      <link>https://h-sao.com/blog/2015/01/31/presentation-mvp-comunity-camp-osaka2015/</link>
       <pubDate>Sat, 31 Jan 2015 17:38:14 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2015/01/31/presentation-mvp-comunity-camp-osaka2015/</guid>
+      <guid>https://h-sao.com/blog/2015/01/31/presentation-mvp-comunity-camp-osaka2015/</guid>
       <description>2015/1/31 に 2015 MVP Community Camp～大阪～ というイベントが開催されました
 http://connpass.com/event/10478/
 そちらで一枠セッションをさせていただきました
@@ -67,10 +67,10 @@ Satya Nadilla からのメッセージということで
     
     <item>
       <title>[勉強会] Introducing Windows Runtime：Hokuriku.NETvol.15の資料公開しました</title>
-      <link>http://h-sao.com/blog/2014/08/31/hokuriku-net-vol-15-introducing-windows-runtime/</link>
+      <link>https://h-sao.com/blog/2014/08/31/hokuriku-net-vol-15-introducing-windows-runtime/</link>
       <pubDate>Sun, 31 Aug 2014 12:35:04 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/08/31/hokuriku-net-vol-15-introducing-windows-runtime/</guid>
+      <guid>https://h-sao.com/blog/2014/08/31/hokuriku-net-vol-15-introducing-windows-runtime/</guid>
       <description>北陸にお邪魔しました！
 Hokuriku.NET vol.15
 http://hokurikunet.doorkeeper.jp/events/13746
@@ -86,10 +86,10 @@ http://jyurimaru.info/data/20140830Hokurikunet15/201400830_Introducing_Windows_R
     
     <item>
       <title>[C&#43;&#43;/CX] MVP Community Camp 2014大阪で「VC&#43;&#43;まわりの非同期処理」セッションしました</title>
-      <link>http://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/</link>
+      <link>https://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/</link>
       <pubDate>Sun, 23 Mar 2014 00:25:28 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/</guid>
+      <guid>https://h-sao.com/blog/2014/03/23/presentation-mvp-community-camp-osaka2014/</guid>
       <description>MVP Community Camp 2014大阪にて、VC++系のセッションをさせて頂きました
 MVP Community Camp 2014大阪会場
 http://atnd.org/event/E0024087 (リンク先は削除されている模様です)

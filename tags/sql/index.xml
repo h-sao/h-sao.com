@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sql on Effectiveさお</title>
-    <link>http://h-sao.com/tags/sql/</link>
+    <link>https://h-sao.com/tags/sql/</link>
     <description>Recent content in Sql on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Thu, 10 Apr 2014 18:00:15 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/sql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Oracle]テーブル・カラム名が不明でもDBに入っている値を検索したい</title>
-      <link>http://h-sao.com/blog/2014/04/10/mining-for-value-from-db/</link>
+      <link>https://h-sao.com/blog/2014/04/10/mining-for-value-from-db/</link>
       <pubDate>Thu, 10 Apr 2014 18:00:15 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/04/10/mining-for-value-from-db/</guid>
+      <guid>https://h-sao.com/blog/2014/04/10/mining-for-value-from-db/</guid>
       <description>見知らぬデータベースを渡され、中を解析したい時…
 ありますよね？ありますよね！？
 全テーブルの全列に入っている値を横断検索したいという要求、あるんじゃないでしょうか？
@@ -39,10 +39,10 @@ https://community.oracle.com/thread/2334738?tstart=0  方法は2種類
     
     <item>
       <title>[Oracle] 直前のSQLを再実行する</title>
-      <link>http://h-sao.com/blog/2014/01/18/rerun-last-sql/</link>
+      <link>https://h-sao.com/blog/2014/01/18/rerun-last-sql/</link>
       <pubDate>Sat, 18 Jan 2014 00:53:07 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2014/01/18/rerun-last-sql/</guid>
+      <guid>https://h-sao.com/blog/2014/01/18/rerun-last-sql/</guid>
       <description>OracleのコマンドラインでSQLを実行させるときのメモ
 直前のSQLコマンドを実行は / (スラッシュ)
 この場合、直前のバッファの内容は表示しません

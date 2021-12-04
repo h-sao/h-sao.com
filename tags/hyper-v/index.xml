@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hyper V on Effectiveさお</title>
-    <link>http://h-sao.com/tags/hyper-v/</link>
+    <link>https://h-sao.com/tags/hyper-v/</link>
     <description>Recent content in Hyper V on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Thu, 27 Jul 2017 18:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://h-sao.com/tags/hyper-v/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h-sao.com/tags/hyper-v/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Android] Hyper-Vで使うVisual Studio Emulator for Androidの最初の一歩</title>
-      <link>http://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</link>
+      <link>https://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</link>
       <pubDate>Thu, 27 Jul 2017 18:00:00 +0900</pubDate>
       
-      <guid>http://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</guid>
+      <guid>https://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/</guid>
       <description>どうもうまくAndroidエミュレータが動かない… いわゆる ADV Manager をつかって、Androidをエミューレートしたいのですが
 なぜかうまく起動しない…
 環境
