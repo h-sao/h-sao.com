@@ -11,6 +11,7 @@ A little note :)
 
 # Now reading
 
+- **DirectX 12の魔導書 3Dレンダリングの基礎からMMDモデルを踊らせるまで** `technical`
 - **Modren C++チャレンジ** `technical`
 - **ウォール街のランダム・ウォーカー 原書第12版 - 株式投資の不滅の真理** `business`
 - **銀の匙** `literature`
