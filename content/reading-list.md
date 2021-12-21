@@ -75,12 +75,12 @@ A little note :)
 
 ## 2020
 
-- **子どもが育つ魔法の言葉 - Children Learn What They Live** `chid-rasing` 
+- **子どもが育つ魔法の言葉 - Children Learn What They Live （Dorothy Law Nolte, Rachel Harris）** `chid-rasing` 
 - **Au オードリー・タン 天才IT相7つの顔** `business`
-- **時間術大全**  `business`
-- **働き方無双**  `business`
-- **嫌なこと全部やめたらすごかった**  `business`
-- **1日ひとつだけ強くなる**  `business`
+- **時間術大全（Jake Knapp, John Zeratsky）**  `business`
+- **働き方無双（ゆろゆき）**  `business`
+- **嫌なこと全部やめたらすごかった（小田桐あさぎ）**  `business`
+- **1日ひとつだけ強くなる（梅原大吾）**  `business`
 - **LEAN IN（Sheryl Sandberg）**  `business`
 
 
