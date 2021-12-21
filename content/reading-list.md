@@ -81,7 +81,7 @@ A little note :)
 - **働き方無双**  `business`
 - **嫌なこと全部やめたらすごかった**  `business`
 - **1日ひとつだけ強くなる**  `business`
-- **LEAN IN**  `business`
+- **LEAN IN（Sheryl Sandberg）**  `business`
 
 
 7/21 **みずほ銀行システム統合、苦闘の19年史 史上最大のITプロジェクト「3度目の正直」 史上最大のITプロジェクト「3度目の正直」**  `business`
