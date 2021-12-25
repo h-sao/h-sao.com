@@ -10,26 +10,33 @@ tags = ["cpp"]
 
 過去に参加した C++ Advent Calendar の自分の記事のリンク
 
-## C++ Advent Calendar jp 2010
+### C++ Advent Calendar jp 2010
 
-[[C++]高速化について思うところ](https://h-sao.com/blog/2011/01/01/think-about-sppding-up-cpp/)
+- [C++]高速化について思うところ  
+[https://h-sao.com/blog/2011/01/01/think-about-sppding-up-cpp/](https://h-sao.com/blog/2011/01/01/think-about-sppding-up-cpp/)
 
-## Boost Advent Calendar 2011
+### Boost Advent Calendar 2011
 
-[[Boost/WinRT]Windows8のメトロスタイルアプリでBoost！](http://blog.livedoor.jp/haruka_sao/archives/51954974.html)
+- [Boost/WinRT]Windows8のメトロスタイルアプリでBoost！  
+[http://blog.livedoor.jp/haruka_sao/archives/51954974.html](http://blog.livedoor.jp/haruka_sao/archives/51954974.html)
 
-## C++ Advent Calendar jp 2012
+### C++ Advent Calendar jp 2012
 
-[[C++]VisualStudio2012とTaskとAMPの入門](http://blog.livedoor.jp/haruka_sao/archives/52015184.html)
+- [C++]VisualStudio2012とTaskとAMPの入門  
+[http://blog.livedoor.jp/haruka_sao/archives/52015184.html](http://blog.livedoor.jp/haruka_sao/archives/52015184.html)
 
-## C++ Advent Calendar 2013
+### C++ Advent Calendar 2013
 
-[[C++]VisualStudio2013NovCTP：C++17(予定)resumable/await紹介](http://blog.livedoor.jp/haruka_sao/archives/52056922.html)
+- [C++]VisualStudio2013NovCTP：C++17(予定)resumable/await紹介  
+[http://blog.livedoor.jp/haruka_sao/archives/52056922.html](http://blog.livedoor.jp/haruka_sao/archives/52056922.html)
 
-## C++ Advent Calendar 2021
+### C++ Advent Calendar 2021
 
-[[C++] Modulesのコンパイル（MSVC ver）とBMIについて](https://h-sao.com/blog/2021/12/01/about-cpp-modules/)
+- [C++] Modulesのコンパイル（MSVC ver）とBMIについて  
+[https://h-sao.com/blog/2021/12/01/about-cpp-modules/](https://h-sao.com/blog/2021/12/01/about-cpp-modules/)
 
 ---
 
-こうやって記録に残すのってなんか気分が良いですね
+意外と参加してました。。。
+
+こうやって記録に残すのは、なんだか気分が良いですね
