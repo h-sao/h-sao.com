@@ -172,9 +172,9 @@
 
 <p>明けましておめでとうございます♪<br>
 遥佐保（はるか・さお）です<br>
-２０１１年もどうぞ、よろしくお願いします<br>
+2011年もどうぞ、よろしくお願いします<br>
 <br>
-これは<a href="http://atnd.org/events/10573" target="_blank">C++ Advent Calendar jp 2010</a>への２６日目（補欠１号！）の参加記事です<br>
+これは <strong>C++ Advent Calendar jp 2010</strong> (<a href="http://atnd.org/events/10573">http://atnd.org/events/10573</a>) への26日目（補欠１号！）の参加記事です<br>
 <br>
 C++の仕様やBoostについては全然詳しくないので、、すみません<br>
 C++でのゲーム作成の時期が長かったので、高速化について、思うところを記載してみます<br>
@@ -191,9 +191,9 @@ C++でのゲーム作成の時期が長かったので、高速化について�
 <blockquote>
 <p>（※）確保出来なかった場合どうなるのか？ですが、<br />
 優先順位を決めて確保の可否を判断したりします<br />
-自分がどうしても確保されなければならないＯＢＪの場合<br />
-他の生きているＯＢＪで優先順位の低いやつを探して<br />
-そのＯＢＪを殺し、自分に新たに割り当てたりします</p>
+自分がどうしても確保されなければならないOBJの場合<br />
+他の生きているOBJで優先順位の低いやつを探して<br />
+そのOBJを殺し、自分に新たに割り当てたりします</p>
 </blockquote>
 
 <p>そうなってくると、最初に予め new しておいて、それを使いまわすということになるのですが、そしたらコンストラクタやデストラクタに依存しない作りをルールにしておく必要があります<br></p>
@@ -223,8 +223,8 @@ C++でのゲーム作成の時期が長かったので、高速化について�
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 最初に確保
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span><span style="color:#f92672">*</span>    p_mem <span style="color:#f92672">=</span> operator new( max_size <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>( WORK ));
- WORK<span style="color:#f92672">*</span> box <span style="color:#f92672">=</span> static_cast<span style="color:#f92672">&lt;</span>WORK<span style="color:#f92672">*&gt;</span>( p_mem );
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>p_mem <span style="color:#f92672">=</span> operator new( max_size <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>( WORK ));
+ WORK <span style="color:#f92672">*</span>box <span style="color:#f92672">=</span> static_cast<span style="color:#f92672">&lt;</span>WORK<span style="color:#f92672">*&gt;</span>( p_mem );
  <span style="color:#66d9ef">for</span>( i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> max_size; i <span style="color:#f92672">++</span> ){
     new( <span style="color:#f92672">&amp;</span>box[i] ) WORK();
  }
@@ -247,7 +247,7 @@ C++でのゲーム作成の時期が長かったので、高速化について�
 
 <p>結構みんなインライン化大好きなのですが、ソースコードの量が増えていくことになるので、多分あまり大きなインライン関数を書いてしまうと、キャッシュが効きにくくなったり、ソースの肥大化によるコンパイル時間の増加（そこらじゅうでincludeされてたり）など、諸刃の剣ですけどね<br></p>
 
-<h2 id="ｓｔｌコンテナは使用用途を考えて">ＳＴＬコンテナは使用用途を考えて</h2>
+<h2 id="stlコンテナは使用用途を考えて">STLコンテナは使用用途を考えて</h2>
 
 <p>vector,mapなど使うのは、楽して（作業時間をかけずに）早く作りたいときだと思います<br>
 例えばツール類やデバック環境での操作などなど<br>
@@ -260,7 +260,7 @@ C++でのゲーム作成の時期が長かったので、高速化について�
 
 <h2 id="オーダリングテーブルなどは高速化対象になる">オーダリングテーブルなどは高速化対象になる</h2>
 
-<p>オーダリングテーブルとは、３Ｄ描画処理を行う場合によく使用されます<br>
+<p>オーダリングテーブルとは、3D描画処理を行う場合によく使用されます<br>
 自分（カメラ）から見て奥のもの、つまり遠くのものから書いていく必要があります<br>
 不透明なオブジェクトばかりの場合（建物とか人物とか）ピクセル単位のＺバッファがかかるので、あまり意識しなくても良いのですが、半透明のオブジェクトを描画するときには、既に自分より奥のものを描画し終わっている必要があります<br>
 <br>
