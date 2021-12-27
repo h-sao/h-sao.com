@@ -244,7 +244,8 @@ $ git push --delete origin feature/xxxxx  PRに不要なコミットが混じる
       <pubDate>Fri, 10 Jan 2020 12:00:00 +0900</pubDate>
       
       <guid>https://h-sao.com/about/</guid>
-      <description>Akiko Kawai (a.k.a. Sao Haruka)
+      <description>Akiko Kawai
+a.k.a. 遥佐保（はるか・さお）Sao Haruka
 Twitter: @hr_sao
 Github: h-sao
 mail: haruka.sao@gmail.com
