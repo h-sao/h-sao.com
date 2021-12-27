@@ -5,7 +5,8 @@ title = "About me"
 tags = [""]
 +++
 
-Akiko Kawai (a.k.a. Sao Haruka)  
+Akiko Kawai  
+ a.k.a. 遥佐保（はるか・さお）Sao Haruka  
 Twitter: [@hr_sao](https://twitter.com/hr_sao)  
 Github: [h-sao](https://github.com/h-sao)  
 mail: haruka.sao@gmail.com  
