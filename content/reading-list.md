@@ -40,6 +40,14 @@ A little note :)
 
 ## 2021
 
+- `comic` 35 books  
+- `business` 5 books  
+-  `investment` 4 books
+- `chid-rasing` 2 books  
+- `food` 1 book
+- `mystery` 1 book
+ 
+
 12/30 **超習慣術（DaiGo）** `business`  
 > 多くの論文の引用と対処法が載っている本です  
 ただ処世術が多すぎる気がするので、やろうと思っても覚えられないかも  
@@ -73,9 +81,9 @@ A little note :)
 - **33歳で手取り22万円の僕が1億円を貯められた理由** `investment`
 - **人生の勝率の高め方**  `business`
 - **カリスマ保育士てぃ先生の子育て手困ったら、これやってみ！** `chid-rasing` 
-- **プラタナスの実（#１〜3）**
-- **ガラスの仮面**
-- **コウノドリ 全巻（１〜32巻）**
+- **プラタナスの実（#１〜3）** `comic`
+- **ガラスの仮面** `comic`
+- **コウノドリ 全巻（１〜32巻）** `comic`
 
 
 ## 2020
