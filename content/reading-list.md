@@ -1,5 +1,5 @@
 +++
-date = "2021-12-30T013:20:00+09:00"
+date = "2022-01-02T17:0:00+09:00"
 draft = false
 title = "Reading list"
 tags = [""]
