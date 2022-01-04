@@ -1,5 +1,5 @@
 +++
-date = "2021-12-30T013:20:00+09:00"
+date = "2021-12-30T13:20:00+09:00"
 draft = false
 title = "Reading list"
 tags = [""]
@@ -14,12 +14,12 @@ A little note :)
 - **DirectX 12の魔導書 3Dレンダリングの基礎からMMDモデルを踊らせるまで(川野週竜一)** `technical`
 - **Modren C++チャレンジ** `technical`
 - **ウォール街のランダム・ウォーカー 原書第12版 - 株式投資の不滅の真理** `business`
-- **銀の匙** `literature`
+- **銀の匙(中勘助 )** `literature`
 - **桜井政博のゲームを作って思うこと（桜井政博）** `business`
 - **ギターで覚える音楽理論** `music`
 - **リハスタ定番アンプ100%使いこなしガイド** `music`
 - **元彼の遺言状（新川帆立）** `mystery`
-- **トップ5%社員の習慣** `business`
+- **トップ5%社員の習慣(越川 慎司)** `business`
 - **エンジニアのためのマネジメントキャリアパス(Camille Fournier)** `business`
 
 # Tsundoku
@@ -32,7 +32,7 @@ A little note :)
 - **More with Less** `business`
 - **ブレインプログラミング** `business`
 - **ホームページの値段が「１３０万円」と言われたんですが、これって相場でしょうか？** `business`
-- **終わりで大きく儲かる「つみたて投資」**　`investment`
+- **終わりで大きく儲かる「つみたて投資」** `investment`
 - **桜の園** `literature`
 - **リーダーの仮面** `business`
 
