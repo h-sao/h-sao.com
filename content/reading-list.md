@@ -1,5 +1,5 @@
 +++
-date = "2022-01-02T17:00:00+09:00"
+date = "2021-12-30T013:20:00+09:00"
 draft = false
 title = "Reading list"
 tags = [""]
@@ -11,7 +11,7 @@ A little note :)
 
 # Now reading
 
-- **DirectX 12の魔導書 3Dレンダリングの基礎からMMDモデルを踊らせるまで** `technical`
+- **DirectX 12の魔導書 3Dレンダリングの基礎からMMDモデルを踊らせるまで(川野週竜一)** `technical`
 - **Modren C++チャレンジ** `technical`
 - **ウォール街のランダム・ウォーカー 原書第12版 - 株式投資の不滅の真理** `business`
 - **銀の匙** `literature`
@@ -20,15 +20,15 @@ A little note :)
 - **リハスタ定番アンプ100%使いこなしガイド** `music`
 - **元彼の遺言状（新川帆立）** `mystery`
 - **トップ5%社員の習慣** `business`
+- **エンジニアのためのマネジメントキャリアパス(Camille Fournier)** `business`
 
 # Tsundoku
 
-- **急成長を導くマネージャーの型 地位・権力が通用しない時代の“イーブン”なマネジメント(長村禎庸)**  `business`
+- **HLSLシェーダーの魔導書(清原隆行)**  `technical`
 - **よい休息**  `business`
-- **冨永愛 美の法則** `fasion`
+- **冨永愛 美の法則(冨永愛)** `fasion`
 - **職業、挑戦者** `business`
 - **超スローライフ** `business`
-- **エンジニアのためのマネジメントキャリアパス** `business`
 - **More with Less** `business`
 - **ブレインプログラミング** `business`
 - **ホームページの値段が「１３０万円」と言われたんですが、これって相場でしょうか？** `business`
@@ -39,15 +39,10 @@ A little note :)
 
 # Read through
 
+## 2022
+
 ## 2021
 
-- `comic` 35 books  
-- `business` 5 books  
--  `investment` 4 books
-- `chid-rasing` 2 books  
-- `food` 1 book
-- `mystery` 1 book
- 
 12/30 **超習慣術（DaiGo）** `business`  
 > 多くの論文の引用と対処法が載っている本です  
 ただ処世術が多すぎる気がするので、やろうと思っても覚えられないかも  
@@ -81,9 +76,9 @@ A little note :)
 - **33歳で手取り22万円の僕が1億円を貯められた理由** `investment`
 - **人生の勝率の高め方**  `business`
 - **カリスマ保育士てぃ先生の子育て手困ったら、これやってみ！** `chid-rasing` 
-- **プラタナスの実（#１〜3）** `comic`
-- **ガラスの仮面** `comic`
-- **コウノドリ 全巻（１〜32巻）** `comic`
+- **プラタナスの実（#１〜3）**
+- **ガラスの仮面**
+- **コウノドリ 全巻（１〜32巻）**
 
 
 ## 2020
