@@ -6,20 +6,10 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 02 Jan 2022 17:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 26 Dec 2021 01:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Reading list</title>
-      <link>https://h-sao.com/reading-list/</link>
-      <pubDate>Sun, 02 Jan 2022 17:00:00 +0900</pubDate>
-      
-      <guid>https://h-sao.com/reading-list/</guid>
-      <description>blockquote { font-size: 80% }  A little note :)
-Now reading  DirectX 12の魔導書 3Dレンダリングの基礎からMMDモデルを踊らせるまで technical Modren C++チャレンジ technical ウォール街のランダム・ウォーカー 原書第12版 - 株式投資の不滅の真理 business 銀の匙 literature 桜井政博のゲームを作って思うこと（桜井政博） business ギターで覚える音楽理論 music リハスタ定番アンプ100%使いこなしガイド music 元彼の遺言状（新川帆立） mystery トップ5%社員の習慣 business  Tsundoku  急成長を導くマネージャーの型 地位・権力が通用しない時代の“イーブン”なマネジメント(長村禎庸) business よい休息 business 冨永愛 美の法則 fasion 職業、挑戦者 business 超スローライフ business エンジニアのためのマネジメントキャリアパス business More with Less business ブレインプログラミング business ホームページの値段が「１３０万円」と言われたんですが、これって相場でしょうか？ business 終わりで大きく儲かる「つみたて投資」　investment 桜の園 literature リーダーの仮面 business  Read through 2021  comic 35 books</description>
-    </item>
     
     <item>
       <title>[C&#43;&#43;] Advent Calendarへの参加履歴 2010-2021</title>
@@ -2106,6 +2096,16 @@ C++でのゲーム作成の時期が長かったので、高速化について�
 Q. 割り算をシフトと引き算のみで表現しなさい
 A. 回答
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  // x / y = ans // x: 分子 // y: 分母 // ans:答え  ans = 0; while( x &amp;gt;= y ){ dammy = y; syou = 1; while( x &amp;gt;= dammy ){ // 割られる数を超えるまで割る数をシフト  dammy = dammy &amp;lt;&amp;lt; 1; syou = syou &amp;lt;&amp;lt; 1; } dammy = dammy &amp;gt;&amp;gt; 1; // 超える手前まで戻す  syou = syou &amp;gt;&amp;gt; 1; x = x - dammy; // 筆算  ans = ans + syou; // 答え  } printf( &amp;#34;%d ・・・%d\n&amp;#34;, ans, x );    新人研修などにどうでしょう？</description>
+    </item>
+    
+    <item>
+      <title>Reading list</title>
+      <link>https://h-sao.com/reading-list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://h-sao.com/reading-list/</guid>
+      <description>blockquote { font-size: 80% }  A little note :)
+Now reading  DirectX 12の魔導書 3Dレンダリングの基礎からMMDモデルを踊らせるまで(川野週竜一) technical Modren C++チャレンジ technical ウォール街のランダム・ウォーカー 原書第12版 - 株式投資の不滅の真理 business 銀の匙 literature 桜井政博のゲームを作って思うこと（桜井政博） business ギターで覚える音楽理論 music リハスタ定番アンプ100%使いこなしガイド music 元彼の遺言状（新川帆立） mystery トップ5%社員の習慣 business エンジニアのためのマネジメントキャリアパス(Camille Fournier) business  Tsundoku  HLSLシェーダーの魔導書(清原隆行) technical よい休息 business 冨永愛 美の法則(冨永愛) fasion 職業、挑戦者 business 超スローライフ business More with Less business ブレインプログラミング business ホームページの値段が「１３０万円」と言われたんですが、これって相場でしょうか？ business 終わりで大きく儲かる「つみたて投資」　investment 桜の園 literature リーダーの仮面 business  Read through 2022 2021 12&amp;frasl;30 超習慣術（DaiGo） business</description>
     </item>
     
   </channel>
