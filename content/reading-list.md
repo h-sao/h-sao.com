@@ -22,6 +22,7 @@ A little note :)
 - **元彼の遺言状（新川帆立）** `mystery`
 - **トップ5%社員の習慣(越川 慎司)** `business`
 - **エンジニアのためのマネジメントキャリアパス(Camille Fournier)** `business`
+- **終わりで大きく儲かる「つみたて投資」(星野泰平)** `investment`
 
 # Tsundoku
 
@@ -33,7 +34,6 @@ A little note :)
 - **More with Less** `business`
 - **ブレインプログラミング** `business`
 - **ホームページの値段が「１３０万円」と言われたんですが、これって相場でしょうか？** `business`
-- **終わりで大きく儲かる「つみたて投資」** `investment`
 - **桜の園** `literature`
 - **リーダーの仮面** `business`
 
