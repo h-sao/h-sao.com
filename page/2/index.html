@@ -57,6 +57,521 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2020/03/19/how-to-install-windowsterminalpreview/" title="[WindowsTerminal] Preview版のインストール＆Git Bashを追加したい">[WindowsTerminal] Preview版のインストール＆Git Bashを追加したい</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2020.03.19">2020.03.19</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/windowsterminal">windowsterminal</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p><strong>Windows Terminal</strong> …どんなもんだろなと思って、使ってみました</p>
+
+<p>もともとは、<strong>Gitのブランチ名をコマンドプロンプトに表示できたらいいのにー</strong> と思って調べたのでした<br />
+Windows Terminal に Git Bash (正確には <code>Git for Windows</code> ) が登録できるようなので、それをやってみました</p>
+
+<h2 id="windows-terminal-preview-のインストール">Windows Terminal (Preview)のインストール</h2>
+
+<p>普通に 「Windows Terminal download」で検索すると、わたしの場合「マイクロソフトストア」のリンクがトップに来ましたけど<br />
+ストアとかよくわからんし…</p>
+
+<p>よく見ると
+Windows Terminal は GitHub に公開されてます</p>
+
+<ul>
+<li><a href="https://github.com/microsoft/terminal">https://github.com/microsoft/terminal</a></li>
+</ul>
+
+<p>ここから Preview版をGet★</p>
+
+<ul>
+<li><a href="https://github.com/microsoft/terminal/releases">https://github.com/microsoft/terminal/releases</a></li>
+</ul>
+
+<p>3/19時点では、<strong>Windows Terminal Preview v0.10.761.0</strong> のバージョンでした</p>
+
+<hr />
+
+<p>以下、やったこと</p>
+
+<h3 id="1-msixbundle-を実行するとこんな画面">1) <code>msixbundle</code> を実行するとこんな画面↓↓↓</h3>
+
+<p><img src="/pic/How-to-Install-WindowsTerminalPreview_02.png" style="border:solid 5px #e6e6e6"/></p>
+
+<h3 id="2-インストールを押すと-わたしの環境ではエラーになりました">2) インストールを押すと、わたしの環境ではエラーになりました</h3>
+
+<p><img src="/pic/How-to-Install-WindowsTerminalPreview_00.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>エラーメッセージ内容：</p>
+
+<blockquote>
+<p>Microsoft.WindowsTerminal_0.10.761.0_x64__8wekyb3d8bbwe をインストールできません。このパッケージはデバイスと互換性がありません。このパッケージをインストールするには、OS バージョン 10.0.18362.0 またはそれ以降の Windows.Mobile デバイス ファミリが必要です。現在、デバイスでは OS バージョン 10.0.17763.1098 が実行されています。 (0x80073cfd)</p>
+</blockquote>
+
+<p>おぉ。。。めっちゃ判りやすいメッセージが！</p>
+
+<h3 id="3-よくわからんけど-windows-updateしてみます">3) よくわからんけど、Windows Updateしてみます</h3>
+
+<p><img src="/pic/How-to-Install-WindowsTerminalPreview_01.png" style="border:solid 5px #e6e6e6"/></p>
+
+<h3 id="4-もう一度ダウンロードした-msixbundle-を実行">4) もう一度ダウンロードした <code>msixbundle</code> を実行</h3>
+
+<h3 id="5-正常にインストールできたみたい">5) 正常にインストールできたみたい！</h3>
+
+<p><img src="/pic/How-to-Install-WindowsTerminalPreview_03.png" alt="" /></p>
+
+<h3 id="6-開くウィンドウのタイプを選べます">6) 開くウィンドウのタイプを選べます</h3>
+
+<p><img src="/pic/How-to-Install-WindowsTerminalPreview_04.png" alt="" /></p>
+
+<p>よしよし</p>
+
+<h2 id="タブに-git-bash-を追加">タブに Git Bash を追加</h2>
+
+<p>先人が居てました。。。！</p>
+
+<ul>
+<li><p>Adding Git-Bash to the new Windows Terminal - stackoverflow<br />
+<a href="https://stackoverflow.com/questions/56839307/adding-git-bash-to-the-new-windows-terminal">https://stackoverflow.com/questions/56839307/adding-git-bash-to-the-new-windows-terminal</a></p></li>
+
+<li><p>Windows TerminalにPowerShell Coreを追加する - kkamegawa&rsquo;s weblog<br />
+<a href="https://kkamegawa.hatenablog.jp/entry/2019/06/23/135124">https://kkamegawa.hatenablog.jp/entry/2019/06/23/135124</a></p></li>
+</ul>
+
+<p>あと中の人のスコット・ハンセルマンのブログも参考になりました</p>
+
+<ul>
+<li>Now is the time to make a fresh new Windows Terminal profiles.json<br />
+<a href="https://www.hanselman.com/blog/NowIsTheTimeToMakeAFreshNewWindowsTerminalProfilesjson.aspx">https://www.hanselman.com/blog/NowIsTheTimeToMakeAFreshNewWindowsTerminalProfilesjson.aspx</a></li>
+</ul>
+
+<p>真似してわたしもやってみます</p>
+
+<h3 id="7-powershell-で-guidを取得します">7) PowerShell で GUIDを取得します</h3>
+
+<p>GUIDの設定は、生成できるものであればなんでも良いみたいです</p>
+
+<ul>
+<li>mehulmpt/profiles.json - コメントに注目<br />
+<a href="https://gist.github.com/mehulmpt/16826be279bb9bf70310b465ca9c5de3">https://gist.github.com/mehulmpt/16826be279bb9bf70310b465ca9c5de3</a></li>
+</ul>
+
+<p>GUID生成サイトもありました(。・_・。)</p>
+
+<ul>
+<li><a href="http://new-guid.com/">http://new-guid.com/</a></li>
+</ul>
+
+<p>わたしは PowerShell で作ってみます</p>
+
+<pre><code>&gt; [guid]::NewGuid()
+</code></pre>
+
+<p>こんな感じで取得できました</p>
+
+<p><img src="/pic/How-to-Install-WindowsTerminalPreview_05.png" alt="" /></p>
+
+<h3 id="8-windows-terminal-の-settings-を開きます">8) Windows Terminal の settings を開きます</h3>
+
+<p>これは json ファイルになってました</p>
+
+<p>わたしの環境では、以下のパスに存在していました<br />
+※ xxx&hellip; は編集しています、適当な文字列でした</p>
+
+<blockquote>
+<p>C:\Users\akiko.kawai\AppData\Local\Packages\Microsoft.WindowsTerminal_xxxxxxxxxxxxx\LocalState\profiles.json</p>
+</blockquote>
+
+<p>デフォルトの中身はこんな感じ↓↓↓</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">46
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// To view the default settings, hold &#34;alt&#34; while clicking on the &#34;Settings&#34; button.
+</span><span style="color:#75715e">// For documentation on these settings, see: https://aka.ms/terminal-documentation
+</span><span style="color:#75715e"></span>
+{
+    <span style="color:#e6db74">&#34;$schema&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://aka.ms/terminal-profiles-schema&#34;</span>,
+
+    <span style="color:#e6db74">&#34;defaultProfile&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;{61c54bbd-c2c6-5271-96e7-009a87ff44bf}&#34;</span>,
+
+    <span style="color:#e6db74">&#34;profiles&#34;</span><span style="color:#f92672">:</span>
+    {
+        <span style="color:#e6db74">&#34;defaults&#34;</span><span style="color:#f92672">:</span>
+        {
+            <span style="color:#75715e">// Put settings here that you want to apply to all profiles
+</span><span style="color:#75715e"></span>        },
+        <span style="color:#e6db74">&#34;list&#34;</span><span style="color:#f92672">:</span>
+        [
+            {
+                <span style="color:#75715e">// Make changes here to the powershell.exe profile
+</span><span style="color:#75715e"></span>                <span style="color:#e6db74">&#34;guid&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;{61c54bbd-c2c6-5271-96e7-009a87ff44bf}&#34;</span>,
+                <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Windows PowerShell&#34;</span>,
+                <span style="color:#e6db74">&#34;commandline&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;powershell.exe&#34;</span>,
+                <span style="color:#e6db74">&#34;hidden&#34;</span><span style="color:#f92672">:</span> false
+            },
+            {
+                <span style="color:#75715e">// Make changes here to the cmd.exe profile
+</span><span style="color:#75715e"></span>                <span style="color:#e6db74">&#34;guid&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;{0caa0dad-35be-5f56-a8ff-afceeeaa6101}&#34;</span>,
+                <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;cmd&#34;</span>,
+                <span style="color:#e6db74">&#34;commandline&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;cmd.exe&#34;</span>,
+                <span style="color:#e6db74">&#34;hidden&#34;</span><span style="color:#f92672">:</span> false
+            },
+            {
+                <span style="color:#e6db74">&#34;guid&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;{b453ae62-4e3d-5e58-b989-0a998ec441b8}&#34;</span>,
+                <span style="color:#e6db74">&#34;hidden&#34;</span><span style="color:#f92672">:</span> false,
+                <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Azure Cloud Shell&#34;</span>,
+                <span style="color:#e6db74">&#34;source&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Windows.Terminal.Azure&#34;</span>
+            }
+        ]
+    },
+
+    <span style="color:#75715e">// Add custom color schemes to this array
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#34;schemes&#34;</span><span style="color:#f92672">:</span> [],
+
+    <span style="color:#75715e">// Add any keybinding overrides to this array.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// To unbind a default keybinding, set the command to &#34;unbound&#34;
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#34;keybindings&#34;</span><span style="color:#f92672">:</span> []
+}</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="9-profiles-の個所に以下を追加します">9) <code>profiles</code> の個所に以下を追加します</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">{
+    <span style="color:#75715e">// さっき PowerShellで作ったGUID
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#34;guid&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;{99999999-9999-9999-9999-999999999999}&#34;</span>,
+    <span style="color:#75715e">// ウィンドウの半透明度合い
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#34;acrylicOpacity&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">0.75</span>,
+    <span style="color:#e6db74">&#34;closeOnExit&#34;</span> <span style="color:#f92672">:</span> true,
+    <span style="color:#e6db74">&#34;colorScheme&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Campbell&#34;</span>,
+    <span style="color:#75715e">// Git Bash の exe のある場所
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#34;commandline&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">%PROGRAMFILES%</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">git</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">usr</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">bin</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">bash.exe</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74"> -i -l&#34;</span>,
+    <span style="color:#e6db74">&#34;cursorColor&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;#FFFFFF&#34;</span>,
+    <span style="color:#e6db74">&#34;cursorShape&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bar&#34;</span>,
+    <span style="color:#e6db74">&#34;fontFace&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Consolas&#34;</span>,
+    <span style="color:#e6db74">&#34;fontSize&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
+    <span style="color:#e6db74">&#34;historySize&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">9001</span>,
+    <span style="color:#75715e">// CMDアイコンならこれ
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//&#34;icon&#34; : &#34;ms-appx:///ProfileIcons/{0caa0dad-35be-5f56-a8ff-afceeeaa6101}.png&#34;,
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// Git for Windows の ico ファイルを直接指定することも出来る
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#34;icon&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;%PROGRAMFILES%</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">git</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">mingw64</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">share</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">git</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">git-for-windows.ico&#34;</span>
+    <span style="color:#75715e">// 追加タブに表示する名前
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;GitBash&#34;</span>,
+    <span style="color:#e6db74">&#34;padding&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0, 0, 0, 0&#34;</span>,
+    <span style="color:#e6db74">&#34;snapOnInput&#34;</span> <span style="color:#f92672">:</span> true,
+    <span style="color:#75715e">// 初期ディレクトリ、 &#34;C:\\dev&#34; などでもOK
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#34;startingDirectory&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;%USERPROFILE%&#34;</span>,
+    <span style="color:#e6db74">&#34;useAcrylic&#34;</span> <span style="color:#f92672">:</span> true
+}</code></pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h4 id="アイコンについて">◆アイコンについて</h4>
+
+<p>アイコンの登録は ms-appxのURL のまんまが使えるみたいです</p>
+
+<p>参考：</p>
+
+<ul>
+<li>Feature Request - List Icons in the default profiles.json - microsoft/terminal<br />
+<a href="https://github.com/microsoft/terminal/issues/1456">https://github.com/microsoft/terminal/issues/1456</a></li>
+</ul>
+
+<p>試しに Linux アイコンにしてみたら、ペンギンになりました(。・_・。)ノ</p>
+
+<p><img src="/pic/How-to-Install-WindowsTerminalPreview_09.png" alt="" /></p>
+
+<p>CMDアイコンだとこんな感じ</p>
+
+<p><img src="/pic/How-to-Install-WindowsTerminalPreview_10.png" alt="" /></p>
+
+<hr />
+
+<h4 id="guidについて">◆GUIDについて</h4>
+
+<p>今回は GUID は適当なものを PowerShell で作りましたが</p>
+
+<p><code>profiles.json</code> の中の <code>&quot;defaultProfile&quot;</code> の値を<br />
+自分の Git Bash の GUIDに設定すると<br />
+Windows Terminal のデフォルト起動時のウィンドウに出来ました</p>
+
+<hr />
+
+<h4 id="profiles-json">◆profiles.json</h4>
+
+<p><code>profiles.json</code> の全体像はこんな感じ</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">72
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// To view the default settings, hold &#34;alt&#34; while clicking on the &#34;Settings&#34; button.
+</span><span style="color:#75715e">// For documentation on these settings, see: https://aka.ms/terminal-documentation
+</span><span style="color:#75715e"></span>
+{
+    <span style="color:#e6db74">&#34;$schema&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://aka.ms/terminal-profiles-schema&#34;</span>,
+
+    <span style="color:#e6db74">&#34;defaultProfile&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;{61c54bbd-c2c6-5271-96e7-009a87ff44bf}&#34;</span>,
+
+    <span style="color:#e6db74">&#34;profiles&#34;</span><span style="color:#f92672">:</span>
+    {
+        <span style="color:#e6db74">&#34;defaults&#34;</span><span style="color:#f92672">:</span>
+        {
+            <span style="color:#75715e">// Put settings here that you want to apply to all profiles
+</span><span style="color:#75715e"></span>        },
+        <span style="color:#e6db74">&#34;list&#34;</span><span style="color:#f92672">:</span>
+        [
+            {
+                <span style="color:#75715e">// Make changes here to the powershell.exe profile
+</span><span style="color:#75715e"></span>                <span style="color:#e6db74">&#34;guid&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;{61c54bbd-c2c6-5271-96e7-009a87ff44bf}&#34;</span>,
+                <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Windows PowerShell&#34;</span>,
+                <span style="color:#e6db74">&#34;commandline&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;powershell.exe&#34;</span>,
+                <span style="color:#e6db74">&#34;hidden&#34;</span><span style="color:#f92672">:</span> false
+            },
+            {
+                <span style="color:#75715e">// Make changes here to the cmd.exe profile
+</span><span style="color:#75715e"></span>                <span style="color:#e6db74">&#34;guid&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;{0caa0dad-35be-5f56-a8ff-afceeeaa6101}&#34;</span>,
+                <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;cmd&#34;</span>,
+                <span style="color:#e6db74">&#34;commandline&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;cmd.exe&#34;</span>,
+                <span style="color:#e6db74">&#34;hidden&#34;</span><span style="color:#f92672">:</span> false
+            },
+            {
+                <span style="color:#e6db74">&#34;guid&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;{b453ae62-4e3d-5e58-b989-0a998ec441b8}&#34;</span>,
+                <span style="color:#e6db74">&#34;hidden&#34;</span><span style="color:#f92672">:</span> false,
+                <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Azure Cloud Shell&#34;</span>,
+                <span style="color:#e6db74">&#34;source&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Windows.Terminal.Azure&#34;</span>
+            },
+            {
+                <span style="color:#75715e">// さっき PowerShellで作ったGUID
+</span><span style="color:#75715e"></span>                <span style="color:#e6db74">&#34;guid&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;{99999999-9999-9999-9999-999999999999}&#34;</span>,
+                <span style="color:#75715e">// ウィンドウの半透明度合い
+</span><span style="color:#75715e"></span>                <span style="color:#e6db74">&#34;acrylicOpacity&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">0.75</span>,
+                <span style="color:#e6db74">&#34;closeOnExit&#34;</span> <span style="color:#f92672">:</span> true,
+                <span style="color:#e6db74">&#34;colorScheme&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Campbell&#34;</span>,
+                <span style="color:#75715e">// Git Bash の exe のある場所
+</span><span style="color:#75715e"></span>                <span style="color:#e6db74">&#34;commandline&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">%PROGRAMFILES%</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">git</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">usr</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">bin</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">bash.exe</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74"> -i -l&#34;</span>,
+                <span style="color:#e6db74">&#34;cursorColor&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;#FFFFFF&#34;</span>,
+                <span style="color:#e6db74">&#34;cursorShape&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bar&#34;</span>,
+                <span style="color:#e6db74">&#34;fontFace&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Consolas&#34;</span>,
+                <span style="color:#e6db74">&#34;fontSize&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
+                <span style="color:#e6db74">&#34;historySize&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">9001</span>,
+                <span style="color:#75715e">// CMDアイコンならこれ
+</span><span style="color:#75715e"></span>                <span style="color:#75715e">//&#34;icon&#34; : &#34;ms-appx:///ProfileIcons/{0caa0dad-35be-5f56-a8ff-afceeeaa6101}.png&#34;,
+</span><span style="color:#75715e"></span>                <span style="color:#75715e">// Git for Windows の ico ファイルを直接指定することも出来る
+</span><span style="color:#75715e"></span>                <span style="color:#e6db74">&#34;icon&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;%PROGRAMFILES%</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">git</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">mingw64</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">share</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">git</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">git-for-windows.ico&#34;</span>
+                <span style="color:#75715e">// 追加タブに表示する名前
+</span><span style="color:#75715e"></span>                <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;GitBash&#34;</span>,
+                <span style="color:#e6db74">&#34;padding&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0, 0, 0, 0&#34;</span>,
+                <span style="color:#e6db74">&#34;snapOnInput&#34;</span> <span style="color:#f92672">:</span> true,
+                <span style="color:#75715e">// 初期ディレクトリ、 &#34;C:\\dev&#34; などでもOK
+</span><span style="color:#75715e"></span>                <span style="color:#e6db74">&#34;startingDirectory&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;%USERPROFILE%&#34;</span>,
+                <span style="color:#e6db74">&#34;useAcrylic&#34;</span> <span style="color:#f92672">:</span> true
+            }
+        ]
+    },
+
+    <span style="color:#75715e">// Add custom color schemes to this array
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#34;schemes&#34;</span><span style="color:#f92672">:</span> [],
+
+    <span style="color:#75715e">// Add any keybinding overrides to this array.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// To unbind a default keybinding, set the command to &#34;unbound&#34;
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#34;keybindings&#34;</span><span style="color:#f92672">:</span> []
+}</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="10-おぉ-bashタブがリアルタイムに追加されてる">10) おぉ！Bashタブがリアルタイムに追加されてる！</h3>
+
+<p>Windows Terminal を開きっぱなしの状態でも<br />
+追加のタブを見ると Git Bash 項目が見えました<br />
+やったー</p>
+
+<p><img src="/pic/How-to-Install-WindowsTerminalPreview_07.png" alt="" /></p>
+
+<h3 id="11-作業したいブランチ名もちゃんと表示されてます">11) 作業したいブランチ名もちゃんと表示されてます</h3>
+
+<p>当然といえば当然</p>
+
+<p><img src="/pic/How-to-Install-WindowsTerminalPreview_08.png" alt="" /></p>
+
+<hr />
+
+<p>結構いろいろと簡単にやりたいことが出来た印象です</p>
+
+<p>調べてもすぐ情報が見つかったし<br />
+WindowsTerminal、早く Preview 取れて欲しいですね♪</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f03%2f19%2fhow-to-install-windowsterminalpreview%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bWindowsTerminal%5d%20Preview%e7%89%88%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%ef%bc%86Git%20Bash%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%97%e3%81%9f%e3%81%84&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f03%2f19%2fhow-to-install-windowsterminalpreview%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f03%2f19%2fhow-to-install-windowsterminalpreview%2f&title=%5bWindowsTerminal%5d%20Preview%e7%89%88%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%ef%bc%86Git%20Bash%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%97%e3%81%9f%e3%81%84" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2020/02/25/how-to-change-dnsinfo-for-github-custom-domain/" title="[GitHub Pages] カスタムドメインのDNS情報を更新する">[GitHub Pages] カスタムドメインのDNS情報を更新する</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2020.02.25">2020.02.25</time>
@@ -1073,48 +1588,6 @@ C:\dev&gt;
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2019/06/19/how-to-check-unity-version-without-open-project/" title="[Unity] エディタを開く前にUnityのバージョンを調べる方法">[Unity] エディタを開く前にUnityのバージョンを調べる方法</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2019.06.19">2019.06.19</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/unity">unity</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>既存のUnityのプロジェクトを開くとき、バージョンを合わせて開きたいですよね、<br />
-<strong>開く前に！</strong><br />
-そしたら事前にそのバージョンのUnityをダウンロードできますし！</p>
-
-<p>そんなときはここのディレクトリを見ると良いです！</p>
-
-<pre><code>ProjectSettings &gt; ProjectVersion.txt
-</code></pre>
-
-<p>バージョンがそのまんま書いています( ^^) _旦~~</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2019%2f06%2f19%2fhow-to-check-unity-version-without-open-project%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bUnity%5d%20%e3%82%a8%e3%83%87%e3%82%a3%e3%82%bf%e3%82%92%e9%96%8b%e3%81%8f%e5%89%8d%e3%81%abUnity%e3%81%ae%e3%83%90%e3%83%bc%e3%82%b8%e3%83%a7%e3%83%b3%e3%82%92%e8%aa%bf%e3%81%b9%e3%82%8b%e6%96%b9%e6%b3%95&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2019%2f06%2f19%2fhow-to-check-unity-version-without-open-project%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2019%2f06%2f19%2fhow-to-check-unity-version-without-open-project%2f&title=%5bUnity%5d%20%e3%82%a8%e3%83%87%e3%82%a3%e3%82%bf%e3%82%92%e9%96%8b%e3%81%8f%e5%89%8d%e3%81%abUnity%e3%81%ae%e3%83%90%e3%83%bc%e3%82%b8%e3%83%a7%e3%83%b3%e3%82%92%e8%aa%bf%e3%81%b9%e3%82%8b%e6%96%b9%e6%b3%95" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -1186,6 +1659,12 @@ C:\dev&gt;
                 
                     
                         
+                            <a href="/blog/2022/01/25/hello2022/" class="list-group-item">[Diary] 2022年もよろしくお願いします</a><br>
+                        
+                    
+                
+                    
+                        
                     
                 
                     
@@ -1233,12 +1712,6 @@ C:\dev&gt;
                     
                         
                             <a href="/blog/2020/09/28/using-githubactions-for-blog/" class="list-group-item">[Github] Github Actionsでブログを更新するようにしました</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2020/05/08/cpp-2-dimensional-array/" class="list-group-item">[c&#43;&#43;] 2次元配列的な書き方</a><br>
                         
                     
                 
@@ -1364,9 +1837,9 @@ C:\dev&gt;
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/diary" style="font-size: 29px;">
+                    <a href="https://h-sao.com//tags/diary" style="font-size: 32px;">
                     
-                        <span class="badge">7</span>
+                        <span class="badge">8</span>
                         diary
                     </a>
                     </u> &nbsp; 

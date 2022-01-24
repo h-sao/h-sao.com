@@ -57,6 +57,48 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2019/06/19/how-to-check-unity-version-without-open-project/" title="[Unity] エディタを開く前にUnityのバージョンを調べる方法">[Unity] エディタを開く前にUnityのバージョンを調べる方法</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2019.06.19">2019.06.19</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/unity">unity</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p>既存のUnityのプロジェクトを開くとき、バージョンを合わせて開きたいですよね、<br />
+<strong>開く前に！</strong><br />
+そしたら事前にそのバージョンのUnityをダウンロードできますし！</p>
+
+<p>そんなときはここのディレクトリを見ると良いです！</p>
+
+<pre><code>ProjectSettings &gt; ProjectVersion.txt
+</code></pre>
+
+<p>バージョンがそのまんま書いています( ^^) _旦~~</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2019%2f06%2f19%2fhow-to-check-unity-version-without-open-project%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bUnity%5d%20%e3%82%a8%e3%83%87%e3%82%a3%e3%82%bf%e3%82%92%e9%96%8b%e3%81%8f%e5%89%8d%e3%81%abUnity%e3%81%ae%e3%83%90%e3%83%bc%e3%82%b8%e3%83%a7%e3%83%b3%e3%82%92%e8%aa%bf%e3%81%b9%e3%82%8b%e6%96%b9%e6%b3%95&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2019%2f06%2f19%2fhow-to-check-unity-version-without-open-project%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2019%2f06%2f19%2fhow-to-check-unity-version-without-open-project%2f&title=%5bUnity%5d%20%e3%82%a8%e3%83%87%e3%82%a3%e3%82%bf%e3%82%92%e9%96%8b%e3%81%8f%e5%89%8d%e3%81%abUnity%e3%81%ae%e3%83%90%e3%83%bc%e3%82%b8%e3%83%a7%e3%83%b3%e3%82%92%e8%aa%bf%e3%81%b9%e3%82%8b%e6%96%b9%e6%b3%95" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/" title="[macOS] Homebrewインストールログ2019版">[macOS] Homebrewインストールログ2019版</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2019.05.30">2019.05.30</time>
@@ -1713,123 +1755,6 @@ SketchFabほどの華やかさはありませんが、リグ付きゲーム素�
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2017/11/02/how-to-uninstall-unity-license-information/" title="[Unity] Unityのライセンス情報をアンインストールしたい">[Unity] Unityのライセンス情報をアンインストールしたい</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.02">2017.11.02</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/unity">unity</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>Unityをアンインストールしたけど、あれ？ライセンス情報が残ってる(?_?)<br />
-というのが調べたきっかけです</p>
-
-<p>PCからUnityの情報を完全消去したいときの参考に</p>
-
-<h2 id="ライセンス情報-unity5-x系">ライセンス情報 (Unity5.x系)</h2>
-
-<p>ライセンスファイルは、Unityをアンインストールしても消えません＞＜</p>
-
-<p>以下にライセンスファイル(.ulfファイル)が残っています</p>
-
-<ul>
-<li>C:/ProgramData/Unity/Unity_v5.x.ulf</li>
-<li>C:/Users/(username)/AppData/Local/VirtualStore/ProgramData/Unity/<br />
-（UACで C:/ProgramData/Unity/ へアクセス制限されてる時）</li>
-</ul>
-
-<p>で…</p>
-
-<p>確かに上記を消したら、アクティベーション情報は消えるのですが<br />
-Unityにログインしたユーザ情報は残ってる様です</p>
-
-<p>キャッシュ的なものも消さないと、完全アンインストールにはならないみたい</p>
-
-<h2 id="その他-アンインストールで消えないディレクトリ">その他、アンインストールで消えないディレクトリ</h2>
-
-<ul>
-<li>C:/Users/(username)/AppData/Local/Unity</li>
-
-<li><p>C:/Users/(username)/AppData/Roaming/Unity<br />
-上記２点には、エディタに関する何か？キャッシュ的な何か？が残っています<br />
-起動した際の、Unityプロジェクトの表示とか…<br />
-おそらくこの２つのディレクトリ以下に、ユーザ情報も入ってるみたいです</p></li>
-
-<li><p>C:/Users/(username)/AppData/RoamingLocalLow/Unity<br />
-この下もちょっとよく判らないですが、<br />
-このディレクトリ配下の「Asset Store-5.x」の下には<br />
-アセットストアからダウンロードしてきたパッケージファイルが入っていました<br />
-（.unitypackage）</p></li>
-</ul>
-
-<h2 id="まとめ">まとめ</h2>
-
-<p>逆の言い方をすると、<br />
-上に書いたディレクトリ４つ</p>
-
-<ul>
-<li>C:/ProgramData/Unity/</li>
-<li>C:/Users/(username)/AppData/Local/Unity</li>
-<li>C:/Users/(username)/AppData/Roaming/Unity</li>
-<li>C:/Users/(username)/AppData/RoamingLocalLow/Unity</li>
-</ul>
-
-<p>を消せば、Unityをアンインストールしなくても<br />
-ライセンス情報のリセット、ユーザ情報のリセットが可能でした</p>
-
-<blockquote>
-<p>もちろん<br />
-C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x<br />
-の下は、ライセンスファイルとは無関係みたいです</p>
-</blockquote>
-
-<h2 id="unity2017系は">Unity2017系は？</h2>
-
-<p>Unity2017 では、ライセンスディレクトリは同様で、ライセンスファイル名が</p>
-
-<ul>
-<li>Unity_lic.ulf</li>
-</ul>
-
-<p>になってるみたいです<br />
-（消さないといけないディレクトリまでは、2017系では調べてないので、ごめんなさい）</p>
-
-<p>参考：</p>
-
-<ul>
-<li><p>アクティベーションに関する FAQ - Unity公式<br />
-<a href="https://docs.unity3d.com/ja/current/Manual/ActivationFAQ.html">https://docs.unity3d.com/ja/current/Manual/ActivationFAQ.html</a>(日本語)<br />
-<a href="https://docs.unity3d.com/Manual/ActivationFAQ.html">https://docs.unity3d.com/Manual/ActivationFAQ.html</a>(英語)</p></li>
-
-<li><p>Unityの再インストール - FreelyApps<br />
-<a href="http://freelyapps.blog.jp/archives/1032543378.html">http://freelyapps.blog.jp/archives/1032543378.html</a></p></li>
-</ul>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2017%2f11%2f02%2fhow-to-uninstall-unity-license-information%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bUnity%5d%20Unity%e3%81%ae%e3%83%a9%e3%82%a4%e3%82%bb%e3%83%b3%e3%82%b9%e6%83%85%e5%a0%b1%e3%82%92%e3%82%a2%e3%83%b3%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%97%e3%81%9f%e3%81%84&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2017%2f11%2f02%2fhow-to-uninstall-unity-license-information%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2017%2f11%2f02%2fhow-to-uninstall-unity-license-information%2f&title=%5bUnity%5d%20Unity%e3%81%ae%e3%83%a9%e3%82%a4%e3%82%bb%e3%83%b3%e3%82%b9%e6%83%85%e5%a0%b1%e3%82%92%e3%82%a2%e3%83%b3%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%97%e3%81%9f%e3%81%84" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -1901,6 +1826,12 @@ C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x<br />
                 
                     
                         
+                            <a href="/blog/2022/01/25/hello2022/" class="list-group-item">[Diary] 2022年もよろしくお願いします</a><br>
+                        
+                    
+                
+                    
+                        
                     
                 
                     
@@ -1948,12 +1879,6 @@ C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x<br />
                     
                         
                             <a href="/blog/2020/09/28/using-githubactions-for-blog/" class="list-group-item">[Github] Github Actionsでブログを更新するようにしました</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2020/05/08/cpp-2-dimensional-array/" class="list-group-item">[c&#43;&#43;] 2次元配列的な書き方</a><br>
                         
                     
                 
@@ -2079,9 +2004,9 @@ C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x<br />
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/diary" style="font-size: 29px;">
+                    <a href="https://h-sao.com//tags/diary" style="font-size: 32px;">
                     
-                        <span class="badge">7</span>
+                        <span class="badge">8</span>
                         diary
                     </a>
                     </u> &nbsp; 

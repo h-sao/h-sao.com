@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Sql &middot; Effectiveさお</title>
+        <title>Effectiveさお</title>
         <meta name="author">
         <meta name="description" content="The awesome blog of Sao Haruka.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,33 +52,19 @@
             <a href="https://h-sao.com/about">About me</a>
         </div>
 
+
 <div class="container clearfix">
     <main role="main" class="content">
-        <a class="btn home" href="https://h-sao.com/" title="">&laquo; </a>
-        <div align="center">
-            <h1>
-                &quot;<script language="JavaScript"><!--
-                var $dir = location.href.split("/");
-                var $dir2 = $dir[$dir.length -2];
-                document.write($dir2);
-                </script>&quot;
-            </h1>
-        </div>
-        <br>
-
-        
-        
+        <article class="post">
+            <a class="btn home" href="https://h-sao.com/" title="">&laquo; </a>
             
-<h1><a href="https://h-sao.com/blog/2014/04/10/mining-for-value-from-db/" title="[Oracle]テーブル・カラム名が不明でもDBに入っている値を検索したい">[Oracle]テーブル・カラム名が不明でもDBに入っている値を検索したい</a></h1>
+<h1><a href="https://h-sao.com/blog/2022/01/25/hello2022/" title="[Diary] 2022年もよろしくお願いします">[Diary] 2022年もよろしくお願いします</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2014.04.10">2014.04.10</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2022.01.25">2022.01.25</time>
     
     &middot; 
         
-        <a href="https://h-sao.com/tags/oracle">oracle</a>
-        , 
-        
-        <a href="https://h-sao.com/tags/sql">sql</a>
+        <a href="https://h-sao.com/tags/diary">diary</a>
         
         
     
@@ -86,226 +72,92 @@
 </span>
 </footer>
  </footer>
-                <p>見知らぬデータベースを渡され、中を解析したい時…</p>
+            <p>自分がブログを始めたのが <a href="http://blog.livedoor.jp/haruka_sao/archives/50865578.html">2008/1/20</a> だったみたいで、当時はライブドアブログに書いてました</p>
 
-<p>ありますよね？ありますよね！？</p>
+<p>それから毎年1月を迎えるときに、「今年もよろしくブログ」を書いていましたが。。。<br />
+2019年で途絶えてしまいました…（Ｔ△Ｔ）</p>
 
-<p>全テーブルの全列に入っている値を横断検索したいという要求、あるんじゃないでしょうか？</p>
+<p>2022年の今年は書いておこうかなと！重い腰をあげてみました、ヨイショ！</p>
 
-<p>探したら同じことを考えている人が居ました</p>
-
-<ul>
-<li>全テーブルの全列の値の検索方法について - Oracle Community<br />
-<a href="https://community.oracle.com/thread/2334738?tstart=0">https://community.oracle.com/thread/2334738?tstart=0</a></li>
-</ul>
-
-<p>方法は2種類<br />
-一つは <strong>dmp 出力して、テキスト検索</strong> をするというもの<br />
-だいぶ力技ですけど、確かに、確実に検索できますね…</p>
-
-<p>もう一つの方法は、<strong>PL/SQL で全データを総検索</strong> するというもの</p>
-
-<p>この方法、<br />
-やってみると、良い感じに動きます<br />
-お勧めです<br />
-テーブル名やカラム名が判らなくても、動きますしね！</p>
-
-<p>めっちゃ感激したので、この記事にも SQL を載せておきます</p>
-
-<p>このサンプルでは、全ての値に 「あ」 が入っているデータを検索します<br />
-どのテーブルの、どのカラムに、何件入っているかが判ります</p>
-
-<p>う、嬉しい～!!!</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">declare</span>
- sSQL VARCHAR2(<span style="color:#ae81ff">128</span>);
- sDATA VARCHAR2(<span style="color:#ae81ff">500</span>);
- <span style="color:#66d9ef">type</span> cursor_type <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">ref</span> <span style="color:#66d9ef">cursor</span>;
- cur_search cursor_type;
- vCount INTEGER;
- ERR_CODE NUMBER :<span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
- ERR_MSG VARCHAR(<span style="color:#ae81ff">255</span>);
-<span style="color:#66d9ef">begin</span>
- <span style="color:#66d9ef">for</span> vRec <span style="color:#66d9ef">in</span> (<span style="color:#66d9ef">select</span> <span style="color:#66d9ef">COLUMN_NAME</span>,<span style="color:#66d9ef">TABLE_NAME</span> <span style="color:#66d9ef">from</span> USER_TAB_COLS <span style="color:#66d9ef">where</span> DATA_TYPE <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;%CHAR%&#39;</span>)
- loop
-  <span style="color:#66d9ef">begin</span>
-    <span style="color:#66d9ef">open</span> cur_search <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#39;select count(*) as cnt from &#39;</span> <span style="color:#f92672">||</span> vRec.<span style="color:#66d9ef">TABLE_NAME</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39; where &#39;</span> <span style="color:#f92672">||</span> vRec.<span style="color:#66d9ef">COLUMN_NAME</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39; like &#39;&#39;%あ%&#39;&#39;&#39;</span>;
-        <span style="color:#66d9ef">fetch</span> cur_search <span style="color:#66d9ef">into</span> vCount;
-        <span style="color:#66d9ef">if</span> vCount <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">then</span>
-          dbms_output.put_line(vRec.<span style="color:#66d9ef">TABLE_NAME</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">||</span> vRec.<span style="color:#66d9ef">COLUMN_NAME</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#f92672">||</span> vCount <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;件あり&#39;</span>);
-        <span style="color:#66d9ef">end</span> <span style="color:#66d9ef">if</span>;
-        <span style="color:#66d9ef">close</span> cur_search;
-  <span style="color:#66d9ef">exception</span>
-   <span style="color:#66d9ef">WHEN</span> OTHERS <span style="color:#66d9ef">THEN</span>
-    ERR_CODE :<span style="color:#f92672">=</span> <span style="color:#66d9ef">SQLCODE</span>;
-    ERR_MSG  :<span style="color:#f92672">=</span> SUBSTRB(SQLERRM,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">255</span>);
-    dbms_output.put_line(<span style="color:#e6db74">&#39;error:&#39;</span> <span style="color:#f92672">||</span> ERR_CODE <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">||</span> ERR_MSG <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">||</span> vRec.<span style="color:#66d9ef">TABLE_NAME</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">||</span> vRec.<span style="color:#66d9ef">COLUMN_NAME</span>);
-  <span style="color:#66d9ef">end</span>;
- <span style="color:#66d9ef">end</span> loop;
-<span style="color:#66d9ef">end</span>;</code></pre></td></tr></table>
-</div>
-</div>
-<p>DBの構造を解析するツールは結構探せばあるのですが、データの中身となると、調べるのは手間ですよね…<br />
-このSQLには助けられました～</p>
-
-<p>話は変わりますが、<br />
-DB系のクライアントツールで、わたしがよく使っているのは  <strong>A5:SQL Mk-2</strong> （フリーソフト）です</p>
-
-<ul>
-<li>A5:SQL Mk-2 : SQL Development Studio<br />
-<a href="http://a5m2.mmatsubara.com/">http://a5m2.mmatsubara.com/</a></li>
-</ul>
-
-<p>Oracle, SQLServer, MySQL など多くのDBに対応しています<br />
-一番うれしいのは、Oracle への接続に、Oracle Client が無くても接続できる所ですね</p>
-
-<blockquote>
-<p>OCI経由か、直接 IPアドレスなどを指定して接続するかを選択できる！！</p>
-</blockquote>
-
-<p>ER図も自動生成してくれるし、<br />
-めっちゃ、現場で役立ってます</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f10%2fmining-for-value-from-db%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bOracle%5d%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%83%bb%e3%82%ab%e3%83%a9%e3%83%a0%e5%90%8d%e3%81%8c%e4%b8%8d%e6%98%8e%e3%81%a7%e3%82%82DB%e3%81%ab%e5%85%a5%e3%81%a3%e3%81%a6%e3%81%84%e3%82%8b%e5%80%a4%e3%82%92%e6%a4%9c%e7%b4%a2%e3%81%97%e3%81%9f%e3%81%84&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f10%2fmining-for-value-from-db%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f10%2fmining-for-value-from-db%2f&title=%5bOracle%5d%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%83%bb%e3%82%ab%e3%83%a9%e3%83%a0%e5%90%8d%e3%81%8c%e4%b8%8d%e6%98%8e%e3%81%a7%e3%82%82DB%e3%81%ab%e5%85%a5%e3%81%a3%e3%81%a6%e3%81%84%e3%82%8b%e5%80%a4%e3%82%92%e6%a4%9c%e7%b4%a2%e3%81%97%e3%81%9f%e3%81%84" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
-            
-<h1><a href="https://h-sao.com/blog/2014/01/18/rerun-last-sql/" title="[Oracle] 直前のSQLを再実行する">[Oracle] 直前のSQLを再実行する</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2014.01.18">2014.01.18</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/sql">sql</a>
-        , 
-        
-        <a href="https://h-sao.com/tags/oracle">oracle</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>OracleのコマンドラインでSQLを実行させるときのメモ</p>
-
-<p>直前のSQLコマンドを実行は / (スラッシュ)<br />
-この場合、直前のバッファの内容は表示しません</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">/</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>直前のバッファの内容を表示して実行するのは run コマンド</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SQL</span> <span style="color:#f92672">&gt;</span> run</code></pre></td></tr></table>
-</div>
-</div>
-<p>直前のバッファの内容を修正するには edit コマンド<br />
-タイプミスなどを修正できます<br />
-ただし、環境変数 &ldquo;_editor&rdquo; にエディタの設定をしておく必要があります</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SQL</span> <span style="color:#f92672">&gt;</span> define  _editor<span style="color:#f92672">=</span>vi
-<span style="color:#66d9ef">SQL</span> <span style="color:#f92672">&gt;</span> edit</code></pre></td></tr></table>
-</div>
-</div>
 <hr />
 
-<p>（参考）</p>
+<p>2021年の私的ハイライトといえば、<strong>バレットジャーナル</strong> を書き始めたことですね！<br />
+これは自作の手帳にバンバン書き込んでいくスタイルで、わたしには合っていました</p>
+
+<p>あと子供も居てるので、なかなか思うように時間が取れなくなり、物事を習慣化するようにしました</p>
+
+<p><strong>小さな習慣</strong> という本を読んで、うまく習慣化ができるようになったので<br />
+このブログも、自分のための勉強も、習慣でぽちぽちとやっています</p>
+
+<p>習慣でものごとをやると、いつの間にかできてるなぁという感激になるのが嬉しいですね</p>
+
+<p>（半面、期日の決まった目標達成には、習慣は不向きというのが判りました<br />
+　何事も経験してみるもんですね）</p>
+
+<p>毎日、習慣化を意識的にやってるのは以下</p>
 
 <ul>
-<li><p>OracleのSQL*Plusで直前に実行したSQLを再実行<br />
-<a href="http://margrave.seesaa.net/article/127477048.html">http://margrave.seesaa.net/article/127477048.html</a></p></li>
-
-<li><p>SQL バッファの編集、エディタで編集する<br />
-<a href="http://www.shift-the-oracle.com/sqlplus/command/edit.html">http://www.shift-the-oracle.com/sqlplus/command/edit.html</a></p></li>
-
-<li><p>直前に実行したSQLをエディタで編集する<br />
-<a href="http://sakusakuit.blog.fc2.com/?m&amp;no=15">http://sakusakuit.blog.fc2.com/?m&amp;no=15</a></p></li>
+<li>技術的な勉強</li>
+<li>ギターの練習</li>
+<li>ブログの下書き</li>
 </ul>
+
+<p>すでに苦にならず毎日習慣化ＤＯＮＥのもの</p>
+
+<ul>
+<li>読書</li>
+</ul>
+
+<p>意識して毎日必ずやるようにしたら、歯磨きのように無意識で読書は出来るようになりました</p>
+
+<p>この調子で、他のものも完全な習慣にしたい。。。というのが今年の目標かな～</p>
+
+<p>あとは Visual Studio が 2022 になったのもあって、何か作りたいなーと思い、ゲーム屋さんらしくレンダリング（まずは DirectX12）の勉強を年末から開始しています<br />
+このブログにもなんかトピックが書けるようになったら良いかな～</p>
+
+<p>2022年も、どうぞよろしくお願い致します！</p>
 
             <ul class="share-buttons">
     <li></li>
     <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f18%2frerun-last-sql%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f01%2f25%2fhello2022%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bOracle%5d%20%e7%9b%b4%e5%89%8d%e3%81%aeSQL%e3%82%92%e5%86%8d%e5%ae%9f%e8%a1%8c%e3%81%99%e3%82%8b&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f18%2frerun-last-sql%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bDiary%5d%202022%e5%b9%b4%e3%82%82%e3%82%88%e3%82%8d%e3%81%97%e3%81%8f%e3%81%8a%e9%a1%98%e3%81%84%e3%81%97%e3%81%be%e3%81%99&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f01%2f25%2fhello2022%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f18%2frerun-last-sql%2f&title=%5bOracle%5d%20%e7%9b%b4%e5%89%8d%e3%81%aeSQL%e3%82%92%e5%86%8d%e5%ae%9f%e8%a1%8c%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f01%2f25%2fhello2022%2f&title=%5bDiary%5d%202022%e5%b9%b4%e3%82%82%e3%82%88%e3%82%8d%e3%81%97%e3%81%8f%e3%81%8a%e9%a1%98%e3%81%84%e3%81%97%e3%81%be%e3%81%99" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 
-            <hr>
+        </article>
         
-
-        <div class="pagination">
-<nav>
-
-	<p class="counter"> 1  1</p>
-
-
-</nav>
-</div>
-
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "harukasao" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
     </main>
-
     <aside class="author">
   <img class="profile-image" src="https://h-sao.com/pic/saoharuka128.png" alt="遥佐保/Sao Haruka" />
   <p class="name"> 
@@ -896,6 +748,7 @@ DB系のクライアントツールで、わたしがよく使っているのは
 
 
 </div>
+
 <footer class="main-footer">
   <div class="container clearfix">
       <a class="icon-rss" href="https://h-sao.com/post/index.xml" title="RSS"></a>
