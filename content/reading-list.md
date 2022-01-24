@@ -1,5 +1,5 @@
 +++
-date = "2020-02-23T013:20:00+09:00"
+date = "2021-12-30T13:20:00+09:00"
 draft = false
 title = "Reading list"
 tags = [""]
@@ -11,35 +11,50 @@ A little note :)
 
 # Now reading
 
-- **DirectX 12の魔導書 3Dレンダリングの基礎からMMDモデルを踊らせるまで** `technical`
+- **DirectX12 programming vol.1** `technical`
+- **DirectX 12の魔導書 3Dレンダリングの基礎からMMDモデルを踊らせるまで(川野週竜一)** `technical`
 - **Modren C++チャレンジ** `technical`
 - **ウォール街のランダム・ウォーカー 原書第12版 - 株式投資の不滅の真理** `business`
-- **銀の匙** `literature`
+- **銀の匙(中勘助 )** `literature`
 - **桜井政博のゲームを作って思うこと（桜井政博）** `business`
 - **ギターで覚える音楽理論** `music`
 - **リハスタ定番アンプ100%使いこなしガイド** `music`
 - **元彼の遺言状（新川帆立）** `mystery`
-- **トップ5%社員の習慣** `business`
-- **超習慣術（DaiGo）** `business`
+- **トップ5%社員の習慣(越川 慎司)** `business`
+- **エンジニアのためのマネジメントキャリアパス(Camille Fournier)** `business`
+- **終わりで大きく儲かる「つみたて投資」(星野泰平)** `investment`
 
 # Tsundoku
 
+- **HLSLシェーダーの魔導書(清原隆行)**  `technical`
 - **よい休息**  `business`
-- **冨永愛 美の法則** `fasion`
+- **冨永愛 美の法則(冨永愛)** `fasion`
 - **職業、挑戦者** `business`
 - **超スローライフ** `business`
-- **エンジニアのためのマネジメントキャリアパス** `business`
 - **More with Less** `business`
 - **ブレインプログラミング** `business`
 - **ホームページの値段が「１３０万円」と言われたんですが、これって相場でしょうか？** `business`
-- **終わりで大きく儲かる「つみたて投資」**　`investment`
 - **桜の園** `literature`
 - **リーダーの仮面** `business`
 
 
 # Read through
 
+## 2022
+
+1/14 **ちょっと理系な育児（牧野すみれ）** `chid-rasing`  
+
+> 出産直後から母乳育児を確立させるためのノウハウ本  
+ほとんどのことは作者のブログに記載されてますが書籍としてまとまっているので人によっては読みやすいかもしれない  
+離乳食ではない、補完食の説明まで記載されていました
+
 ## 2021
+
+12/30 **超習慣術（DaiGo）** `business`  
+
+> 多くの論文の引用と対処法が載っている本です  
+ただ処世術が多すぎる気がするので、やろうと思っても覚えられないかも  
+やはり個人的には「小さな習慣」のほうがグッとくる内容だったなーを再認識しました
 
 12/16 **自分を変える1つの習慣（Rory Vaden）** `business`
 

@@ -233,7 +233,7 @@ VC++のコマンドラインオプションが
 
 > (2021/12/4追記)  
 CppCon2019の資料が参考になりました！  
-Practical Cpp Modules - CppCon 2019　　
+Practical Cpp Modules - CppCon 2019  
 [https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules__boris_kolpackov__cppcon_2019.pdf](https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules__boris_kolpackov__cppcon_2019.pdf)
 
 
