@@ -23,13 +23,11 @@ tags = ["cpp", "HackerRank"]
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ふーん。。HackerRank、こんな感じで解いていくとバッチが付くのか～実績解除していく感じやな <a href="https://t.co/AM6d7s6rUU">pic.twitter.com/AM6d7s6rUU</a></p>&mdash; 遥佐保 (@hr_sao) <a href="https://twitter.com/hr_sao/status/1487152495843758081?ref_src=twsrc%5Etfw">January 28, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-バッチは言語の能力によって変っていて、
+バッチは Language Proficiency でポイントを稼ぐとスターが付いていく方式です
 
 - 10 ポイントで 1 Star（Bronze）
 - ...  
 - 250 ポイントで 5 Star（Gold）  
-
-らしいです
 
 最初に触ってみたのは c++ Language Proficiency Badges だったのですが  
 どう考えても面白くないというか、C++もう業務で何年も使えてるので  
