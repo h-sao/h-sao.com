@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://h-sao.com/blog/2022/01/30/start-hackerrank/</loc>
+    <lastmod>2022-01-30T12:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://h-sao.com/blog/2022/01/25/hello2022/</loc>
     <lastmod>2022-01-25T01:30:00+09:00</lastmod>
   </url>
@@ -498,7 +503,7 @@
   
   <url>
     <loc>https://h-sao.com/tags/cpp/</loc>
-    <lastmod>2021-12-26T01:00:00+09:00</lastmod>
+    <lastmod>2022-01-30T12:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -534,7 +539,7 @@
   
   <url>
     <loc>https://h-sao.com/</loc>
-    <lastmod>2022-01-25T01:30:00+09:00</lastmod>
+    <lastmod>2022-01-30T12:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -559,6 +564,12 @@
   <url>
     <loc>https://h-sao.com/tags/github/</loc>
     <lastmod>2020-09-28T12:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://h-sao.com/tags/hackerrank/</loc>
+    <lastmod>2022-01-30T12:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -618,7 +629,7 @@
   
   <url>
     <loc>https://h-sao.com/post/</loc>
-    <lastmod>2022-01-25T01:30:00+09:00</lastmod>
+    <lastmod>2022-01-30T12:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

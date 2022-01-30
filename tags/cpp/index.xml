@@ -6,10 +6,37 @@
     <description>Recent content in Cpp on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 26 Dec 2021 01:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 30 Jan 2022 12:30:00 +0900</lastBuildDate>
     
 	<atom:link href="https://h-sao.com/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[C&#43;&#43;] HackerRank始めました</title>
+      <link>https://h-sao.com/blog/2022/01/30/start-hackerrank/</link>
+      <pubDate>Sun, 30 Jan 2022 12:30:00 +0900</pubDate>
+      
+      <guid>https://h-sao.com/blog/2022/01/30/start-hackerrank/</guid>
+      <description>友達に、HackerRankやってみるといいよと言われたので、始めてみました
+ HackerRank
+https://www.hackerrank.com/  自分のプロフィールはこれ。。。
+まだC++の問題を２問解いただけだけど
+https://www.hackerrank.com/haruka_sao
+履歴のために、自分の解いたコードをGitHubにアップしたりして…
+https://github.com/h-sao/HackerRank/
+ランクによってバッチが付きます
+ふーん。。HackerRank、こんな感じで解いていくとバッチが付くのか～実績解除していく感じやな pic.twitter.com/AM6d7s6rUU
+&amp;mdash; 遥佐保 (@hr_sao) January 28, 2022 
+バッチは言語の能力によって変っていて、
+ 10 ポイントで 1 Star（Bronze） &amp;hellip;
+ 250 ポイントで 5 Star（Gold）
+  らしいです
+最初に触ってみたのは c++ Language Proficiency Badges だったのですが
+どう考えても面白くないというか、C++もう業務で何年も使えてるので
+言語のほうは余暇で楽しむとして、アルゴリズム問題のほうを頑張っていこかなと思います
+Problem Solving Badges は
+ 1 Star - Bronze 30 2 Star - Bronze 100 3 Star - Silver 200 4 Star - Silver 475 5 Star - Gold 850 6 Star - Gold 2200  こんな感じ…</description>
+    </item>
     
     <item>
       <title>[C&#43;&#43;] Advent Calendarへの参加履歴 2010-2021</title>
