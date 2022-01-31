@@ -22,6 +22,7 @@ A little note :)
 - **元彼の遺言状（新川帆立）** `mystery`
 - **エンジニアのためのマネジメントキャリアパス(Camille Fournier)** `business`
 - **終わりで大きく儲かる「つみたて投資」(星野泰平)** `investment`
+- **勝間式金持ちになる読書法（勝間和代）** `business`
 
 # Tsundoku
 
