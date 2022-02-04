@@ -11,7 +11,7 @@ A little note :)
 
 # Now reading
 
-- **DirectX12 programming vol.2** `technical`
+- **DirectX12 programming vol.2(山田英伸)** `technical`
 - **DirectX 12の魔導書 3Dレンダリングの基礎からMMDモデルを踊らせるまで(川野週竜一)** `technical`
 - **Modren C++チャレンジ** `technical`
 - **ウォール街のランダム・ウォーカー 原書第12版 - 株式投資の不滅の真理** `business`
@@ -26,6 +26,7 @@ A little note :)
 
 # Tsundoku
 
+- **DirectX12 programming vol.3(山田英伸)** `technical`
 - **HLSLシェーダーの魔導書(清原隆行)**  `technical`
 - **よい休息**  `business`
 - **冨永愛 美の法則(冨永愛)** `fasion`
@@ -55,7 +56,7 @@ A little note :)
 > 最初はふーんと読んでたけど、「トップ５％」の言葉が出過ぎてきて最後の方はかなりうるさく感じてしまった  
 > あとトップ５％の人の情報収集の内容にSNSが入ってなくて、え！？そんなことないやろ？と思ってしまった
 
-1/22 **DirectX12 programming vol.1** `technical`
+1/22 **DirectX12 programming vol.1(山田英伸)** `technical`
 
 > DirectX12の初心者向け資料、なかなか良かった  
 GitHubのサンプルコードが結構良かった
