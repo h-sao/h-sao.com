@@ -11,21 +11,22 @@ A little note :)
 
 # Now reading
 
-- **DirectX12 programming vol.2(山田英伸)** `technical`
 - **DirectX 12の魔導書 3Dレンダリングの基礎からMMDモデルを踊らせるまで(川野週竜一)** `technical`
-- **Modren C++チャレンジ** `technical`
+- **DirectX12 programming vol.2(山田英伸)** `technical`
 - **ウォール街のランダム・ウォーカー 原書第12版 - 株式投資の不滅の真理** `business`
 - **銀の匙(中勘助 )** `literature`
 - **桜井政博のゲームを作って思うこと（桜井政博）** `business`
-- **ギターで覚える音楽理論** `music`
-- **リハスタ定番アンプ100%使いこなしガイド** `music`
-- **元彼の遺言状（新川帆立）** `mystery`
-- **エンジニアのためのマネジメントキャリアパス(Camille Fournier)** `business`
 - **終わりで大きく儲かる「つみたて投資」(星野泰平)** `investment`
 - **勝間式金持ちになる読書法（勝間和代）** `business`
+- **LIFE SHIFT(Lynda Gratton/Andrew J. Scott)**　`business`
 
 # Tsundoku
 
+- **ギターで覚える音楽理論** `music`
+- **Modren C++チャレンジ** `technical`
+- **リハスタ定番アンプ100%使いこなしガイド** `music`
+- **元彼の遺言状（新川帆立）** `mystery`
+- **エンジニアのためのマネジメントキャリアパス(Camille Fournier)** `business`
 - **DirectX12 programming vol.3(山田英伸)** `technical`
 - **HLSLシェーダーの魔導書(清原隆行)**  `technical`
 - **よい休息**  `business`
@@ -36,7 +37,7 @@ A little note :)
 - **ブレインプログラミング** `business`
 - **ホームページの値段が「１３０万円」と言われたんですが、これって相場でしょうか？** `business`
 - **桜の園** `literature`
-
+- **捜査線上の夕映え（有栖川有栖）** `mystery`
 
 # Read through
 
