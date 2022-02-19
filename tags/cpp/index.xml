@@ -6,10 +6,23 @@
     <description>Recent content in Cpp on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 30 Jan 2022 12:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 19 Feb 2022 09:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://h-sao.com/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[C&#43;&#43;] ラムダのパラメータリスト()が省略できるようになった</title>
+      <link>https://h-sao.com/blog/2022/02/19/cpp23-lambda/</link>
+      <pubDate>Sat, 19 Feb 2022 09:00:00 +0900</pubDate>
+      
+      <guid>https://h-sao.com/blog/2022/02/19/cpp23-lambda/</guid>
+      <description>この記事は meetup app osaka@6 の記事です。
+ C++23 でタイトルの通り、パラメータリストのカッコが省略できるようになりました
+ Make () more optional for lambdas
+http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1102r2.html  gccなら12以上、Clangは14以上で動作するようです
+1 2 3 4  [=] () // mutable 書いてても省略可能に！ mutable {}    (もう少し追記するとおもいますが、今はこれで…)</description>
+    </item>
     
     <item>
       <title>[C&#43;&#43;] HackerRank始めました</title>

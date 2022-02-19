@@ -69,6 +69,66 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2022/02/19/cpp23-lambda/" title="[C&#43;&#43;] ラムダのパラメータリスト()が省略できるようになった">[C&#43;&#43;] ラムダのパラメータリスト()が省略できるようになった</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2022.02.19">2022.02.19</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/cpp">cpp</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <blockquote>
+<p>この記事は <a href="https://connpass.com/event/240210/">meetup app osaka@6</a> の記事です。</p>
+</blockquote>
+
+<p>C++23 でタイトルの通り、パラメータリストのカッコが省略できるようになりました</p>
+
+<ul>
+<li>Make () more optional for lambdas<br />
+<a href="P1102R2">http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1102r2.html</a></li>
+</ul>
+
+<p>gccなら12以上、Clangは14以上で動作するようです</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">[<span style="color:#f92672">=</span>]
+()    <span style="color:#75715e">// mutable 書いてても省略可能に！
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">mutable</span>
+{}
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>(もう少し追記するとおもいますが、今はこれで…)</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f02%2f19%2fcpp23-lambda%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5d%20%e3%83%a9%e3%83%a0%e3%83%80%e3%81%ae%e3%83%91%e3%83%a9%e3%83%a1%e3%83%bc%e3%82%bf%e3%83%aa%e3%82%b9%e3%83%88%28%29%e3%81%8c%e7%9c%81%e7%95%a5%e3%81%a7%e3%81%8d%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%9f&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f02%2f19%2fcpp23-lambda%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f02%2f19%2fcpp23-lambda%2f&title=%5bC%2b%2b%5d%20%e3%83%a9%e3%83%a0%e3%83%80%e3%81%ae%e3%83%91%e3%83%a9%e3%83%a1%e3%83%bc%e3%82%bf%e3%83%aa%e3%82%b9%e3%83%88%28%29%e3%81%8c%e7%9c%81%e7%95%a5%e3%81%a7%e3%81%8d%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%9f" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2022/01/30/start-hackerrank/" title="[C&#43;&#43;] HackerRank始めました">[C&#43;&#43;] HackerRank始めました</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2022.01.30">2022.01.30</time>
@@ -1203,197 +1263,6 @@ int 型が処理系によって異なるのは…</p>
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2020/09/28/using-githubactions-for-blog/" title="[Github] Github Actionsでブログを更新するようにしました">[Github] Github Actionsでブログを更新するようにしました</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2020.09.28">2020.09.28</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/github">github</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>元々、このブログは <code>hugo</code> で作った静的HTMLを <code>wercker</code> でオートデプロイして作っていました<br />
-だけど <code>wercker</code> は設定の変更が多くてすぐにデプロイ出来なくなっていたんですよね~で、辞めました<br />
-これを作った当時は <code>wercker</code> がイケイケドンドンだったので<br />
-<code>CircleCI</code> から乗り換える人も多かったのですが<br />
-今となってはカジュアルデプロイは <code>CircleCI</code> …いやいや <code>Github Actions</code> があるやないか！<br />
-ということで、 <code>Github Actions</code> でデプロイするようにしてみました</p>
-
-<h2 id="github-actions-の設定on">Github Actions の設定ON</h2>
-
-<p>ここをポチっと押すと、Actionsの設定画面へ</p>
-
-<p><img src="/pic/Using-GithubActions-for-blog_00.png" style="border:solid 5px #e6e6e6"/></p>
-
-<h2 id="github-actions-の設定ファイルを書いてみる">Github Actions の設定ファイルを書いてみる</h2>
-
-<p>知識なしで初めてみましたが、すんなり簡単にビルド＆デプロイすることが出来ました</p>
-
-<p>というのも、<code>GitHub Actions for GitHub Pages</code> というデプロイするためのオールインワンアクションを公開してくれている方がいらっしゃいました<br />
-設定ファイルをまんま真似するだけで使えます</p>
-
-<ul>
-<li><a href="https://github.com/peaceiris/actions-gh-pages">https://github.com/peaceiris/actions-gh-pages</a></li>
-</ul>
-
-<p>そしてこの方、<code>hugo</code> 対応のアクションも公開して下さっています！</p>
-
-<ul>
-<li><a href="https://github.com/peaceiris/actions-hugo">https://github.com/peaceiris/actions-hugo</a></li>
-</ul>
-
-<p>ここの例に書いてる <code>yaml</code> ファイルのまんまで良い感じにデプロイ出来ました</p>
-
-<p>こんな感じ↓↓↓</p>
-
-<ul>
-<li><a href="https://github.com/h-sao/h-sao.com/blob/master/.github/workflows/actions.yml">https://github.com/h-sao/h-sao.com/blob/master/.github/workflows/actions.yml</a></li>
-</ul>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">40
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># This is a basic workflow to help you get started with Actions</span>
-
-name: Deploy Github Pages to Hugo
-
-<span style="color:#75715e"># Controls when the action will run. Triggers the workflow on push or pull request</span>
-<span style="color:#75715e"># events but only for the master branch</span>
-on:
-  push:
-    branches: <span style="color:#f92672">[</span> master <span style="color:#f92672">]</span>
-
-<span style="color:#75715e"># A workflow run is made up of one or more jobs that can run sequentially or in parallel</span>
-jobs:
-  <span style="color:#75715e"># This workflow contains a single job called &#34;build&#34;</span>
-  build:
-    <span style="color:#75715e"># The type of runner that the job will run on</span>
-    runs-on: ubuntu-latest
-
-    <span style="color:#75715e"># Steps represent a sequence of tasks that will be executed as part of the job</span>
-    steps:
-      <span style="color:#75715e"># Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it</span>
-      - uses: actions/checkout@v2
-      
-      - name: Hugo setup
-        uses: peaceiris/actions-hugo@v2
-        with:
-          <span style="color:#75715e"># The Hugo version to download (if necessary) and use. Example: 0.58.2</span>
-          hugo-version: <span style="color:#ae81ff">0</span>.54.0 
-          <span style="color:#75715e"># Download (if necessary) and use Hugo extended version. Example: true</span>
-          <span style="color:#75715e"># extended: true</span> 
-
-      <span style="color:#75715e"># Runs a single command using the runners shell</span>
-      - name: Build Hugo
-        run: hugo -v
-
-      <span style="color:#75715e"># Runs a set of commands using the runners shell</span>
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: <span style="color:#e6db74">${</span>{ secrets.GITHUB_TOKEN <span style="color:#e6db74">}</span><span style="color:#f92672">}</span>
-          publish_dir: ./public</code></pre></td></tr></table>
-</div>
-</div>
-<p>超カンタンでした(。・_・。)ノ</p>
-
-<h2 id="cname-対応">CNAME 対応</h2>
-
-<p>Github Pages でカスタムドメインを使う際には<br />
-Github Pages の公開ブランチ（わたしの場合 <code>gh-pages</code> ）のルートにドメイン名を記載した <code>CNAME</code> ファイルを設置する必要があるのですが<br />
-これが <code>peaceiris/actions-gh-pages</code> を使ってデプロイした際に、消えてしまってました</p>
-
-<p>アクションの方の設定で対応することも出来たようなのですが<br />
-わたしはHugoそのものの設定を変えて、対応しました</p>
-
-<p>Hugo の変換元のディレクトリに <code>static/CNAME</code> を設置するだけです<br />
-これも超カンタン</p>
-
-<ul>
-<li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#use-a-custom-domain">https://gohugo.io/hosting-and-deployment/hosting-on-github/#use-a-custom-domain</a></li>
-</ul>
-
-<h2 id="感想">感想</h2>
-
-<p>SSHキーの外部登録などもしなくて良いし、Github の中で閉じてビルド＆デプロイ出来るのが良いですね！</p>
-
-<p>コネコネしたいときは <code>CircleCI</code> とか使うかもなぁと思いつつ、Github へのアクションメインの自動化であれば、これで充分ですね<br />
-今後も使っていくと思います~</p>
-
-<h2 id="参考">参考</h2>
-
-<ul>
-<li><p>ポートフォリオサイトを Hugo で Github Pages + Github Actions で構築する話<br />
-<a href="https://mather.github.io/posts/2019/12/08/hugo_with_github_pages/">https://mather.github.io/posts/2019/12/08/hugo_with_github_pages/</a></p></li>
-
-<li><p>Hugoで生成したコードをgithub pagesへデプロイするたびにカスタムドメインが初期化される<br />
-<a href="https://blog.app.melvins-nest.com/posts/lost-cname/">https://blog.app.melvins-nest.com/posts/lost-cname/</a></p></li>
-</ul>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f09%2f28%2fusing-githubactions-for-blog%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGithub%5d%20Github%20Actions%e3%81%a7%e3%83%96%e3%83%ad%e3%82%b0%e3%82%92%e6%9b%b4%e6%96%b0%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%97%e3%81%be%e3%81%97%e3%81%9f&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f09%2f28%2fusing-githubactions-for-blog%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f09%2f28%2fusing-githubactions-for-blog%2f&title=%5bGithub%5d%20Github%20Actions%e3%81%a7%e3%83%96%e3%83%ad%e3%82%b0%e3%82%92%e6%9b%b4%e6%96%b0%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%97%e3%81%be%e3%81%97%e3%81%9f" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
@@ -1464,6 +1333,12 @@ Github Pages の公開ブランチ（わたしの場合 <code>gh-pages</code> �
                 
                     
                         
+                            <a href="/blog/2022/02/19/cpp23-lambda/" class="list-group-item">[C&#43;&#43;] ラムダのパラメータリスト()が省略できるようになった</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2022/01/30/start-hackerrank/" class="list-group-item">[C&#43;&#43;] HackerRank始めました</a><br>
                         
                     
@@ -1511,12 +1386,6 @@ Github Pages の公開ブランチ（わたしの場合 <code>gh-pages</code> �
                     
                         
                             <a href="/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/" class="list-group-item">[Windows] そのexeがx64かx86かを見分ける方法</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2020/10/02/fixed-a-diffrent-cpp-runtime-env-causing-a-int-warning/" class="list-group-item">[C&#43;&#43;] 実行環境の差異によるintワーニングが出ない書き方</a><br>
                         
                     
                 
@@ -1612,9 +1481,9 @@ Github Pages の公開ブランチ（わたしの場合 <code>gh-pages</code> �
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/cpp" style="font-size: 56px;">
+                    <a href="https://h-sao.com//tags/cpp" style="font-size: 59px;">
                     
-                        <span class="badge">16</span>
+                        <span class="badge">17</span>
                         cpp
                     </a>
                     </u> &nbsp; 
