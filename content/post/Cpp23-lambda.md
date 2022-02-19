@@ -6,7 +6,7 @@ tags = ["cpp"]
 +++
 
 
-> この記事は [meetup app osaka@6](https://connpass.com/event/240210/) の記事です。
+> この記事は [meetup app osaka@6](https://connpass.com/event/240210/) の参加記事です。
 
 C++23 でタイトルの通り、パラメータリストのカッコが省略できるようになりました
 
