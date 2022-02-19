@@ -17,7 +17,7 @@
       <pubDate>Sat, 19 Feb 2022 09:00:00 +0900</pubDate>
       
       <guid>https://h-sao.com/blog/2022/02/19/cpp23-lambda/</guid>
-      <description>この記事は meetup app osaka@6 の記事です。
+      <description>この記事は meetup app osaka@6 の参加記事です。
  C++23 でタイトルの通り、パラメータリストのカッコが省略できるようになりました
  Make () more optional for lambdas
 http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1102r2.html  gccなら12以上、Clangは14以上で動作するようです
