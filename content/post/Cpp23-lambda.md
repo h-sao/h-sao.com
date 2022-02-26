@@ -11,7 +11,7 @@ tags = ["cpp"]
 C++23 でタイトルの通り、パラメータリストのカッコが省略できるようになりました
 
 - Make () more optional for lambdas  
-[http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1102r2.html](P1102R2)
+[http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1102r2.html](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1102r2.html)
 
 gccなら12以上、Clangは14以上で動作するようです
 
