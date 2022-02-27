@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Hackerrank &middot; Effectiveさお</title>
+        <title>Effectiveさお</title>
         <meta name="author">
         <meta name="description" content="The awesome blog of Sao Haruka.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,33 +52,22 @@
             <a href="https://h-sao.com/about">About me</a>
         </div>
 
+
 <div class="container clearfix">
     <main role="main" class="content">
-        <a class="btn home" href="https://h-sao.com/" title="">&laquo; </a>
-        <div align="center">
-            <h1>
-                &quot;<script language="JavaScript"><!--
-                var $dir = location.href.split("/");
-                var $dir2 = $dir[$dir.length -2];
-                document.write($dir2);
-                </script>&quot;
-            </h1>
-        </div>
-        <br>
-
-        
-        
+        <article class="post">
+            <a class="btn home" href="https://h-sao.com/" title="">&laquo; </a>
             
-<h1><a href="https://h-sao.com/blog/2022/01/30/start-hackerrank/" title="[C&#43;&#43;] HackerRank始めました">[C&#43;&#43;] HackerRank始めました</a></h1>
+<h1><a href="https://h-sao.com/blog/2022/02/27/how-to-update-fork-repository-on-git/" title="[Git] ">[Git] </a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2022.01.30">2022.01.30</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2022.02.27">2022.02.27</time>
     
     &middot; 
         
-        <a href="https://h-sao.com/tags/cpp">cpp</a>
+        <a href="https://h-sao.com/tags/git">git</a>
         , 
         
-        <a href="https://h-sao.com/tags/hackerrank">hackerrank</a>
+        <a href="https://h-sao.com/tags/github">github</a>
         
         
     
@@ -86,88 +75,122 @@
 </span>
 </footer>
  </footer>
-                <p>友達に、HackerRankやってみるといいよと言われたので、始めてみました</p>
+            <p>よくフォークしたリポジトリを最新化する方法を忘れては検索を繰り返してるので、いい加減自分のブログにメモしておきます</p>
+
+<p>最初の <code>fork</code> 以降、フォーク元のリポジトリに追いつきたいとき</p>
+
+<ol>
+<li>自分のローカルのリポジトリに登録されているリモート情報を見てみる</li>
+</ol>
+
+<pre><code>$ git remote -v
+</code></pre>
+
+<p>わたしの実行結果はこんな感じ、まだフォーク元との関連はなし</p>
+
+<pre><code>$ git remote -v
+origin	https://github.com/h-sao/xxx.git (fetch)
+origin	https://github.com/h-sao/xxx.git (push)
+</code></pre>
+
+<ol>
+<li>フォーク元のURLを <code>upstream</code> に登録します</li>
+</ol>
+
+<p>（フォーク元は zzz/xxx という名前で公開されている場合です）</p>
+
+<pre><code>$ git remote add upstream https://github.com/zzz/xxx.git
+</code></pre>
+
+<p>ちゃんと登録されてるかどうかは、さっきの <code>git remote -v</code> で確認します</p>
+
+<pre><code>$ git remote -v
+origin	https://github.com/h-sao/xxx.git (fetch)
+origin	https://github.com/h-sao/xxx.git (push)
+upstream	https://github.com/zzz/xxx.git (fetch)
+upstream	https://github.com/zzz/xxx.git (push)
+</code></pre>
+
+<p><code>upstream</code> にフォーク元が登録されていますね</p>
+
+<p>＜余談＞</p>
+
+<blockquote>
+<p>もし <code>upstream</code> の内容を間違って登録してしまったときは<br />
+<code>$ git remote remove upstream</code><br />
+このコマンドで削除することができます</p>
+</blockquote>
+
+<ol>
+<li>フォーク元リポジトリを <code>fetch</code> and <code>mearge</code> します</li>
+</ol>
+
+<pre><code>$ git fetch upstream
+$ git merge upstream/master
+</code></pre>
+
+<p>ローカルのリポジトリ内容が、フォーク元と同じに最新化されました！</p>
+
+<hr />
+
+<p>あとは別ブランチでプルリクエストを出すなりなんなりすればOK</p>
+
+<p>ローカルの <code>master</code> はこのまま <code>push</code> しておくのも忘れずに♪</p>
+
+<p>一度この作業をやっておくと、GitHub側に <code>Fetch upstream</code> というボタンが出てくるので、次からはこのボタンをポチッとするだけで内容がフォーク元に追いつきます</p>
+
+<p><img src="/pic/How-to-update-fork-repository-on-git_00.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>便利ですね〜★</p>
+
+<p>（参考）</p>
 
 <ul>
-<li>HackerRank<br />
-<a href="https://www.hackerrank.com/">https://www.hackerrank.com/</a></li>
+<li>他人のリポジトリをフォークして、最新版を追従する方法 - akitoshiblog
+<a href="https://akitoshiblog.hatenablog.jp/entry/2020/09/22/155538">https://akitoshiblog.hatenablog.jp/entry/2020/09/22/155538</a></li>
 </ul>
-
-<p>自分のプロフィールはこれ。。。<br />
-まだC++の問題を２問解いただけだけど<br />
-<a href="https://www.hackerrank.com/haruka_sao">https://www.hackerrank.com/haruka_sao</a></p>
-
-<p>履歴のために、自分の解いたコードをGitHubにアップしたりして…</p>
-
-<p><a href="https://github.com/h-sao/HackerRank/">https://github.com/h-sao/HackerRank/</a></p>
-
-<p>ランクによってバッチが付きます</p>
-
-<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ふーん。。HackerRank、こんな感じで解いていくとバッチが付くのか～実績解除していく感じやな <a href="https://t.co/AM6d7s6rUU">pic.twitter.com/AM6d7s6rUU</a></p>&mdash; 遥佐保 (@hr_sao) <a href="https://twitter.com/hr_sao/status/1487152495843758081?ref_src=twsrc%5Etfw">January 28, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
-
-<p>バッチは Language Proficiency でポイントを稼ぐとスターが付いていく方式です</p>
-
-<ul>
-<li>10 ポイントで 1 Star（Bronze）</li>
-<li>&hellip;<br /></li>
-<li>250 ポイントで 5 Star（Gold）<br /></li>
-</ul>
-
-<p>最初に触ってみたのは c++ Language Proficiency Badges だったのですが<br />
-どう考えても面白くないというか、C++もう業務で何年も使えてるので<br />
-言語のほうは余暇で楽しむとして、アルゴリズム問題のほうを頑張っていこかなと思います</p>
-
-<p>Problem Solving Badges は</p>
-
-<ul>
-<li>1 Star - Bronze 30</li>
-<li>2 Star - Bronze 100</li>
-<li>3 Star - Silver 200</li>
-<li>4 Star - Silver 475</li>
-<li>5 Star - Gold 850</li>
-<li>6 Star - Gold 2200</li>
-</ul>
-
-<p>こんな感じ…<br />
-先は長そうだけど、Gold目指して勉強になりそうだからぼちぼちやってみよかな～</p>
-
-<p>他の競技プロブラムとは違って、自分のペースで取り組めそうなモードなので、わたしには合ってる予感</p>
-
-<p>普段業務で使ってる/使ってたことでも、<br />
-自分なりに勉強してバージョンアップしていかないといけないなーと思ってたので、ちょうど良いタイミングで始められたような気がする</p>
-
-<p>（自分が学生だったら、こういうのにめっちゃのめりこんでたんだろうなーと思うと、今の学生さんは環境が良くてうらやましいです）</p>
-
-<p>時代遅れな人にならないように意識していかないとね。。。</p>
 
             <ul class="share-buttons">
     <li></li>
     <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f01%2f30%2fstart-hackerrank%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f02%2f27%2fhow-to-update-fork-repository-on-git%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5d%20HackerRank%e5%a7%8b%e3%82%81%e3%81%be%e3%81%97%e3%81%9f&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f01%2f30%2fstart-hackerrank%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGit%5d%20&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f02%2f27%2fhow-to-update-fork-repository-on-git%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f01%2f30%2fstart-hackerrank%2f&title=%5bC%2b%2b%5d%20HackerRank%e5%a7%8b%e3%82%81%e3%81%be%e3%81%97%e3%81%9f" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f02%2f27%2fhow-to-update-fork-repository-on-git%2f&title=%5bGit%5d%20" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 
-            <hr>
+        </article>
         
-
-        <div class="pagination">
-<nav>
-
-	<p class="counter"> 1  1</p>
-
-
-</nav>
-</div>
-
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "harukasao" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
     </main>
-
     <aside class="author">
   <img class="profile-image" src="https://h-sao.com/pic/saoharuka128.png" alt="遥佐保/Sao Haruka" />
   <p class="name"> 
@@ -768,6 +791,7 @@
 
 
 </div>
+
 <footer class="main-footer">
   <div class="container clearfix">
       <a class="icon-rss" href="https://h-sao.com/post/index.xml" title="RSS"></a>
