@@ -12,20 +12,17 @@
     
     
     <item>
-      <title>[Git] </title>
+      <title>[Git] フォーク元のリポジトリに追いつきたいときメモ</title>
       <link>https://h-sao.com/blog/2022/02/27/how-to-update-fork-repository-on-git/</link>
       <pubDate>Sun, 27 Feb 2022 01:00:00 +0900</pubDate>
       
       <guid>https://h-sao.com/blog/2022/02/27/how-to-update-fork-repository-on-git/</guid>
       <description>よくフォークしたリポジトリを最新化する方法を忘れては検索を繰り返してるので、いい加減自分のブログにメモしておきます
-最初の fork 以降、フォーク元のリポジトリに追いつきたいとき
- 自分のローカルのリポジトリに登録されているリモート情報を見てみる  $ git remote -v  わたしの実行結果はこんな感じ、まだフォーク元との関連はなし
-$ git remote -v origin	https://github.com/h-sao/xxx.git (fetch) origin	https://github.com/h-sao/xxx.git (push)   フォーク元のURLを upstream に登録します  （フォーク元は zzz/xxx という名前で公開されている場合です）
-$ git remote add upstream https://github.com/zzz/xxx.git  ちゃんと登録されてるかどうかは、さっきの git remote -v で確認します
-$ git remote -v origin	https://github.com/h-sao/xxx.git (fetch) origin	https://github.com/h-sao/xxx.git (push) upstream	https://github.com/zzz/xxx.git (fetch) upstream	https://github.com/zzz/xxx.git (push)  upstream にフォーク元が登録されていますね
-＜余談＞
- もし upstream の内容を間違って登録してしまったときは
-$ git remote remove upstream</description>
+最初の fork 以降、フォーク元のリポジトリに追いつきたいときのお話です
+1. 自分のローカルのリポジトリに登録されているリモート情報を見てみる 1  $ git remote -v   わたしの実行結果はこんな感じ、まだフォーク元との関連はなし
+1 2 3  $ git remote -v origin	https://github.com/h-sao/xxx.git (fetch) origin	https://github.com/h-sao/xxx.git (push)   2. フォーク元のURLを upstream に登録します （フォーク元は zzz/xxx という名前で公開されている場合です）
+1  $ git remote add upstream https://github.com/zzz/xxx.git   ちゃんと登録されてるかどうかは、さっきの git remote -v で確認します
+1 2 3 4 5  $ git remote -v origin	https://github.com/h-sao/xxx.git (fetch) origin	https://github.com/h-sao/xxx.git (push) upstream	https://github.</description>
     </item>
     
     <item>

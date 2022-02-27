@@ -69,7 +69,7 @@
         
         
             
-<h1><a href="https://h-sao.com/blog/2022/02/27/how-to-update-fork-repository-on-git/" title="[Git] ">[Git] </a></h1>
+<h1><a href="https://h-sao.com/blog/2022/02/27/how-to-update-fork-repository-on-git/" title="[Git] フォーク元のリポジトリに追いつきたいときメモ">[Git] フォーク元のリポジトリに追いつきたいときメモ</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2022.02.27">2022.02.27</time>
     
@@ -86,42 +86,64 @@
 </span>
 </footer>
  </footer>
-                <p>よくフォークしたリポジトリを最新化する方法を忘れては検索を繰り返してるので、いい加減自分のブログにメモしておきます</p>
+                
 
-<p>最初の <code>fork</code> 以降、フォーク元のリポジトリに追いつきたいとき</p>
+<p>よくフォークしたリポジトリを最新化する方法を忘れては検索を繰り返してるので、いい加減自分のブログにメモしておきます</p>
 
-<ol>
-<li>自分のローカルのリポジトリに登録されているリモート情報を見てみる</li>
-</ol>
+<p>最初の <code>fork</code> 以降、フォーク元のリポジトリに追いつきたいときのお話です</p>
 
-<pre><code>$ git remote -v
-</code></pre>
+<hr />
 
+<h2 id="1-自分のローカルのリポジトリに登録されているリモート情報を見てみる">1. 自分のローカルのリポジトリに登録されているリモート情報を見てみる</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ git remote -v</code></pre></td></tr></table>
+</div>
+</div>
 <p>わたしの実行結果はこんな感じ、まだフォーク元との関連はなし</p>
-
-<pre><code>$ git remote -v
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ git remote -v
 origin	https://github.com/h-sao/xxx.git (fetch)
-origin	https://github.com/h-sao/xxx.git (push)
-</code></pre>
-
-<ol>
-<li>フォーク元のURLを <code>upstream</code> に登録します</li>
-</ol>
+origin	https://github.com/h-sao/xxx.git (push)</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="2-フォーク元のurlを-upstream-に登録します">2. フォーク元のURLを <code>upstream</code> に登録します</h2>
 
 <p>（フォーク元は zzz/xxx という名前で公開されている場合です）</p>
-
-<pre><code>$ git remote add upstream https://github.com/zzz/xxx.git
-</code></pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ git remote add upstream https://github.com/zzz/xxx.git</code></pre></td></tr></table>
+</div>
+</div>
 <p>ちゃんと登録されてるかどうかは、さっきの <code>git remote -v</code> で確認します</p>
-
-<pre><code>$ git remote -v
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ git remote -v
 origin	https://github.com/h-sao/xxx.git (fetch)
 origin	https://github.com/h-sao/xxx.git (push)
 upstream	https://github.com/zzz/xxx.git (fetch)
-upstream	https://github.com/zzz/xxx.git (push)
-</code></pre>
-
+upstream	https://github.com/zzz/xxx.git (push)</code></pre></td></tr></table>
+</div>
+</div>
 <p><code>upstream</code> にフォーク元が登録されていますね</p>
 
 <p>＜余談＞</p>
@@ -132,14 +154,17 @@ upstream	https://github.com/zzz/xxx.git (push)
 このコマンドで削除することができます</p>
 </blockquote>
 
-<ol>
-<li>フォーク元リポジトリを <code>fetch</code> and <code>mearge</code> します</li>
-</ol>
-
-<pre><code>$ git fetch upstream
-$ git merge upstream/master
-</code></pre>
-
+<h2 id="3-フォーク元リポジトリを-fetch-and-mearge-します">3. フォーク元リポジトリを <code>fetch</code> and <code>mearge</code> します</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ git fetch upstream
+$ git merge upstream/master</code></pre></td></tr></table>
+</div>
+</div>
 <p>ローカルのリポジトリ内容が、フォーク元と同じに最新化されました！</p>
 
 <hr />
@@ -148,9 +173,11 @@ $ git merge upstream/master
 
 <p>ローカルの <code>master</code> はこのまま <code>push</code> しておくのも忘れずに♪</p>
 
-<p>一度この作業をやっておくと、GitHub側に <code>Fetch upstream</code> というボタンが出てくるので、次からはこのボタンをポチッとするだけで内容がフォーク元に追いつきます</p>
+<p>一度この作業をやっておくと、GitHub側に <code>Fetch upstream</code> というボタンが出てくるので、次からはこのボタンをポチッとするだけで↓↓↓</p>
 
 <p><img src="/pic/How-to-update-fork-repository-on-git_00.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>内容がフォーク元に追いつきます</p>
 
 <p>便利ですね〜★</p>
 
@@ -167,11 +194,11 @@ $ git merge upstream/master
         <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f02%2f27%2fhow-to-update-fork-repository-on-git%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGit%5d%20&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f02%2f27%2fhow-to-update-fork-repository-on-git%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGit%5d%20%e3%83%95%e3%82%a9%e3%83%bc%e3%82%af%e5%85%83%e3%81%ae%e3%83%aa%e3%83%9d%e3%82%b8%e3%83%88%e3%83%aa%e3%81%ab%e8%bf%bd%e3%81%84%e3%81%a4%e3%81%8d%e3%81%9f%e3%81%84%e3%81%a8%e3%81%8d%e3%83%a1%e3%83%a2&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f02%2f27%2fhow-to-update-fork-repository-on-git%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f02%2f27%2fhow-to-update-fork-repository-on-git%2f&title=%5bGit%5d%20" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f02%2f27%2fhow-to-update-fork-repository-on-git%2f&title=%5bGit%5d%20%e3%83%95%e3%82%a9%e3%83%bc%e3%82%af%e5%85%83%e3%81%ae%e3%83%aa%e3%83%9d%e3%82%b8%e3%83%88%e3%83%aa%e3%81%ab%e8%bf%bd%e3%81%84%e3%81%a4%e3%81%8d%e3%81%9f%e3%81%84%e3%81%a8%e3%81%8d%e3%83%a1%e3%83%a2" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 
@@ -1352,7 +1379,7 @@ git reset <span style="color:#f92672">--</span>hard origin<span style="color:#f9
                 
                     
                         
-                            <a href="/blog/2022/02/27/how-to-update-fork-repository-on-git/" class="list-group-item">[Git] </a><br>
+                            <a href="/blog/2022/02/27/how-to-update-fork-repository-on-git/" class="list-group-item">[Git] フォーク元のリポジトリに追いつきたいときメモ</a><br>
                         
                     
                 
