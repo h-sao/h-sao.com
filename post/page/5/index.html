@@ -69,6 +69,113 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2017/06/21/unity-sprite-on-front-of-camera/" title="[Unity] 常にカメラの前にSpriteを出す">[Unity] 常にカメラの前にSpriteを出す</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.06.21">2017.06.21</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/unity">unity</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<h2 id="unityでカメラに追従して-前面にspriteを出す方法">Unityでカメラに追従して、前面にSpriteを出す方法</h2>
+
+<p>これ、本当は、カメラの子供として指定すればもっと簡単なんですけど…</p>
+
+<pre><code>testScript.transform.parent = Camera.main.transform
+</code></pre>
+
+<p>この場合、<br />
+カメラにアニメーションが付いてる時（メインカメラは固定ポジションのままの時）に<br />
+うまく乗せられなかったりして、<br />
+面倒だなーと思い、Update毎に自分で位置を更新することにしました<br />
+（変に親子関係があるのも、後で何か制限されたらやだなーとかとかもあり…）</p>
+
+<p>以下を参考にしたら、簡単にカメラの前に表示するスプライトを簡単に表現できました</p>
+
+<ul>
+<li>カメラからの距離で求める錐台のサイズ<br />
+<a href="https://docs.unity3d.com/jp/540/Manual/FrustumSizeAtDistance.html">https://docs.unity3d.com/jp/540/Manual/FrustumSizeAtDistance.html</a></li>
+</ul>
+
+<pre><code>public class TestExecutor : MonoBehaviour
+{
+    private Texture2D blackTexture;
+    private SpriteRenderer testSprite;
+
+    void Start()
+    {
+        // Create black texture
+        blackTexture = new Texture2D(32, 32, TextureFormat.RGB24, false);
+        blackTexture.SetPixel(0, 0, Color.white);
+        blackTexture.Apply();
+
+        // Create Sprite
+        var sprite = Sprite.Create(
+          texture: blackTexture,
+          rect: new Rect(0, 0, blackTexture.width, blackTexture.height),
+          pivot: new Vector2(0.5f, 0.5f)
+        );
+
+        // スクリプトからSprite生成
+        testSprite = new GameObject(&quot;TestSprite&quot;).AddComponent&lt;SpriteRenderer&gt;();
+        testSprite.sprite = sprite;
+    }
+
+    void Update()
+    {
+        var distance = 10f;
+
+        // カメラの前に置く距離に応じて、ワールド座標でのスクリーンサイズを求める
+        // (distance +1f) の意味は、スクリーンサイズよりちょい大きめで画面を覆いたいから
+        var worldScreenH = 2.0f * (distance + 1f) * Mathf.Tan(Camera.main.fieldOfView * 0.5f * Mathf.Deg2Rad);
+        var worldScreenW = worldScreenH * Camera.main.aspect;
+
+        // Spriteのサイズを調整
+        testSprite.transform.localScale = new Vector3(worldScreenW / testSprite.sprite.bounds.size.x, worldScreenH / testSprite.sprite.bounds.size.y);
+
+        // カメラの角度と位置をコピー、前に置くだけならforwardベクトルが便利
+        testSprite.transform.position = Camera.main.transform.position + testSprite.transform.forward.normalized * distance;
+        testSprite.transform.rotation = Camera.main.transform.rotation;
+        
+        // フェードとかさせたいなら、ここでαを調整
+        testSprite.color = new Color(0, 0, 0, fadingAlpha);
+    }
+}
+</code></pre>
+
+<p><a href="https://gist.github.com/h-sao/1871a05001c611436dd24b3b11fd9554">Gist - Unity Sprite on front of camera</a></p>
+
+<p>こんな感じで、Spriteがカメラにくっついてきてくれます</p>
+
+<p><img src="/pic/Unity-Sprite-on-front-of-camera_00.gif" alt="" /></p>
+
+<p>忘れそうな自分へのメモ</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2017%2f06%2f21%2funity-sprite-on-front-of-camera%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bUnity%5d%20%e5%b8%b8%e3%81%ab%e3%82%ab%e3%83%a1%e3%83%a9%e3%81%ae%e5%89%8d%e3%81%abSprite%e3%82%92%e5%87%ba%e3%81%99&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2017%2f06%2f21%2funity-sprite-on-front-of-camera%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2017%2f06%2f21%2funity-sprite-on-front-of-camera%2f&title=%5bUnity%5d%20%e5%b8%b8%e3%81%ab%e3%82%ab%e3%83%a1%e3%83%a9%e3%81%ae%e5%89%8d%e3%81%abSprite%e3%82%92%e5%87%ba%e3%81%99" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2017/06/01/when-cant-connect-to-git-server-for-ssh-on-windows-gitextensions/" title="[SSH] ポート指定GitサーバにSSHでアクセスできない時(Windows/GitExtensions)">[SSH] ポート指定GitサーバにSSHでアクセスできない時(Windows/GitExtensions)</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.06.01">2017.06.01</time>
@@ -2073,90 +2180,6 @@ Mayaは奥が深いですね～</p>
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2016/07/26/check-gpu-on-pc/" title="[Windows10] PCのGPUを確認する">[Windows10] PCのGPUを確認する</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.07.26">2016.07.26</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/windows10">windows10</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>PCのGPU、つまりグラフィックボードってなんだろな？と思った時の操作メモです</p>
-
-<p>対象は Windows10</p>
-
-<p>(1) まず Windows10 のディスプレイ画面を表示させます</p>
-
-<blockquote>
-<p>デスクトップ画面を右クリック<br />
-　＞ディスプレイ設定</p>
-</blockquote>
-
-<p>もしくは</p>
-
-<blockquote>
-<p>Windowsのスタートボタン<br />
-　＞設定<br />
-　　＞システム</p>
-</blockquote>
-
-<p>(2) 「ディスプレイの詳細設定」を選択！</p>
-
-<p><img src="/pic/Check-gpu-on-pc_00.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>(3) ディスプレイのカスタマイズの項目の中の、「アダプターのプロパティの表示」を選択！</p>
-
-<p><img src="/pic/Check-gpu-on-pc_01.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>(4) グラフィックボードの情報が出てきます</p>
-
-<p><img src="/pic/Check-gpu-on-pc_02.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>このPCはインテルボードでした</p>
-
-<hr />
-
-<p>別の調べ方としては、DirectX 診断ツール（dxdiag）を使う方法もあり</p>
-
-<p>dxdiag で検索すると、一致するコマンドが出てきます</p>
-
-<p><img src="/pic/Check-gpu-on-pc_03.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>実行すると、こんな感じで、表示を出してくれます</p>
-
-<p><img src="/pic/Check-gpu-on-pc_04.png" style="border:solid 5px #e6e6e6"/></p>
-
-<hr />
-
-<p>GPU…気になりますよね…<br />
-CPUは多少型が古くても、それほど差が出ないけど<br />
-GPUだけは新しい型のものにしとかないと…とかとか<br />
-私的にはこだわりたいのです！！！<br />
-（実行出来てるかどうかは…涙）</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2016%2f07%2f26%2fcheck-gpu-on-pc%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bWindows10%5d%20PC%e3%81%aeGPU%e3%82%92%e7%a2%ba%e8%aa%8d%e3%81%99%e3%82%8b&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2016%2f07%2f26%2fcheck-gpu-on-pc%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2016%2f07%2f26%2fcheck-gpu-on-pc%2f&title=%5bWindows10%5d%20PC%e3%81%aeGPU%e3%82%92%e7%a2%ba%e8%aa%8d%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
@@ -2229,6 +2252,12 @@ GPUだけは新しい型のものにしとかないと…とかとか<br />
                 
                     
                         
+                            <a href="/blog/2022/03/08/how-to-create-blank-windows-app/" class="list-group-item">[C&#43;&#43;] Windowsの空のアプリケーションを作る手順メモ</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2022/02/27/how-to-update-fork-repository-on-git/" class="list-group-item">[Git] フォーク元のリポジトリに追いつきたいときメモ</a><br>
                         
                     
@@ -2276,12 +2305,6 @@ GPUだけは新しい型のものにしとかないと…とかとか<br />
                     
                         
                             <a href="/blog/2021/06/17/select-to-start-os-on-bootcamp/" class="list-group-item">[macOS] BootCampの起動OSを選ぶ</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/" class="list-group-item">[Windows] そのexeがx64かx86かを見分ける方法 Part2</a><br>
                         
                     
                 
@@ -2377,9 +2400,9 @@ GPUだけは新しい型のものにしとかないと…とかとか<br />
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/cpp" style="font-size: 59px;">
+                    <a href="https://h-sao.com//tags/cpp" style="font-size: 62px;">
                     
-                        <span class="badge">17</span>
+                        <span class="badge">18</span>
                         cpp
                     </a>
                     </u> &nbsp; 
@@ -2687,9 +2710,9 @@ GPUだけは新しい型のものにしとかないと…とかとか<br />
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/windows" style="font-size: 14px;">
+                    <a href="https://h-sao.com//tags/windows" style="font-size: 17px;">
                     
-                        <span class="badge">2</span>
+                        <span class="badge">3</span>
                         windows
                     </a>
                     </u> &nbsp; 
