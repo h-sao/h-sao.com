@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 08 Mar 2022 15:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 20 Mar 2022 02:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[C&#43;&#43;] 2次元Vectorのメモ</title>
+      <link>https://h-sao.com/blog/2022/03/20/note-two-dimensional-vector/</link>
+      <pubDate>Sun, 20 Mar 2022 02:00:00 +0900</pubDate>
+      
+      <guid>https://h-sao.com/blog/2022/03/20/note-two-dimensional-vector/</guid>
+      <description>HackerRankやってるときによく２次元配列が出てくるので、ちゃちゃっとやりたいときのメモです
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31  // ２次元配列の宣言,,,出来れば v じゃなくて用途名にしたいところ… std::vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; v(2, vector&amp;lt;int&amp;gt;(3)); // こんな配列が出来てる↓↓↓ v.at(0).at(0); v.at(0).at(1); v.at(0).at(2); v.at(1).at(0); v.at(1).at(1); v.at(1).at(2); // 呼び先でも内容を更新したいときは参照が楽… void func(vector&amp;lt;int&amp;gt; &amp;amp;t) void func(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; &amp;amp;v) // べた書きループはかなり楽 for(unsigned int i = 0; i &amp;lt; v.size(); ++i){ for(unsigned int j = 0; j &amp;lt; v.</description>
+    </item>
     
     <item>
       <title>[C&#43;&#43;] Windowsの空のアプリケーションを作る手順メモ</title>
