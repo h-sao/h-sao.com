@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://h-sao.com/blog/2022/03/24/how-to-support-hugo-auto-deploy-to-cname-when-using-github-actions/</loc>
+    <lastmod>2022-03-24T15:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://h-sao.com/blog/2022/03/20/note-two-dimensional-vector/</loc>
     <lastmod>2022-03-20T02:00:00+09:00</lastmod>
   </url>
@@ -559,7 +564,7 @@
   
   <url>
     <loc>https://h-sao.com/</loc>
-    <lastmod>2022-03-20T02:00:00+09:00</lastmod>
+    <lastmod>2022-03-24T15:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -583,7 +588,7 @@
   
   <url>
     <loc>https://h-sao.com/tags/github/</loc>
-    <lastmod>2022-02-27T01:00:00+09:00</lastmod>
+    <lastmod>2022-03-24T15:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -595,7 +600,7 @@
   
   <url>
     <loc>https://h-sao.com/tags/hugo/</loc>
-    <lastmod>2019-07-28T18:00:00+09:00</lastmod>
+    <lastmod>2022-03-24T15:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -649,7 +654,7 @@
   
   <url>
     <loc>https://h-sao.com/post/</loc>
-    <lastmod>2022-03-20T02:00:00+09:00</lastmod>
+    <lastmod>2022-03-24T15:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

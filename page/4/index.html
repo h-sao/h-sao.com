@@ -57,6 +57,65 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2019/03/27/how-to-use-optional-nakamecpp-vol13/" title="[C&#43;&#43;] std::optionalの使い方を紹介しました">[C&#43;&#43;] std::optionalの使い方を紹介しました</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2019.03.27">2019.03.27</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/cpp">cpp</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p>少し前ですが、<code>std::optional</code> について nakameguro_feature.cpp vol.13 で発表したので、その資料を置いときます</p>
+
+<ul>
+<li><strong>nakameguro_feature.cpp vol.13</strong><br />
+<a href="https://ebisu-effective-modern-cpp.connpass.com/event/111469/">https://ebisu-effective-modern-cpp.connpass.com/event/111469/</a><br /></li>
+</ul>
+
+<script async class="speakerdeck-embed" data-id="35d4887f4e6344428ae9e24b268ae643" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+<p>私的感想としては、<code>optional</code> を使うと<br />
+<strong>値取得に失敗しても、例外を書くことなく <code>if</code> で処理出来る</strong> のが、なんだか良いなぁと思った次第でした</p>
+
+<p>あと、<code>optional</code> の無効状態をどう表すか？<br />
+<code>reset() / std::nullopt / {}</code> のどれよ？<br />
+という話は、参加者の人たちの意見も GitHub の検索結果と同じで<br />
+<code>reset()</code> に軍配があがっていました(&lsquo;ω&rsquo;)</p>
+
+<p>こういう意見交換の場は、本当に恵まれてるなぁ～しみじみ</p>
+
+<p>次回は 3 / 28 (木)開催で、vol.18 です！</p>
+
+<ul>
+<li><strong>nakameguro_feature.cpp vol.18</strong><br />
+<a href="https://ebisu-effective-modern-cpp.connpass.com/event/125272/">https://ebisu-effective-modern-cpp.connpass.com/event/125272/</a><br /></li>
+</ul>
+
+<p>お時間ある方は、ぜひお立ち寄りください～！</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2019%2f03%2f27%2fhow-to-use-optional-nakamecpp-vol13%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5d%20std%3a%3aoptional%e3%81%ae%e4%bd%bf%e3%81%84%e6%96%b9%e3%82%92%e7%b4%b9%e4%bb%8b%e3%81%97%e3%81%be%e3%81%97%e3%81%9f&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2019%2f03%2f27%2fhow-to-use-optional-nakamecpp-vol13%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2019%2f03%2f27%2fhow-to-use-optional-nakamecpp-vol13%2f&title=%5bC%2b%2b%5d%20std%3a%3aoptional%e3%81%ae%e4%bd%bf%e3%81%84%e6%96%b9%e3%82%92%e7%b4%b9%e4%bb%8b%e3%81%97%e3%81%be%e3%81%97%e3%81%9f" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2019/01/30/hello2019/" title="[Diary] 2019年もよろしくお願いします">[Diary] 2019年もよろしくお願いします</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2019.01.30">2019.01.30</time>
@@ -1270,127 +1329,6 @@ Windowsはローカルファイルと区別出来るようにしてくれてる�
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2017/08/18/how-to-fixed-error-unable-to-start-debugging/" title="[Android] 謎のエラー「Unable to start debugging.」が出たときの対応">[Android] 謎のエラー「Unable to start debugging.」が出たときの対応</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.18">2017.08.18</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/cpp">cpp</a>
-        , 
-        
-        <a href="https://h-sao.com/tags/visualstudio">visualstudio</a>
-        , 
-        
-        <a href="https://h-sao.com/tags/android">android</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<h2 id="androidデバッグで実行時エラー">Androidデバッグで実行時エラー</h2>
-
-<p>環境</p>
-
-<ul>
-<li>Windows10 x64</li>
-<li>Visual Studio 2017</li>
-<li>Project type: Native-Activity Application (Android)</li>
-</ul>
-
-<p>ある時…Visual Studio で作っている Android プロジェクトが、実行時エラーになりました</p>
-
-<p><img src="/pic/How-to-fixed-error-Unable-to-start-debugging_00.png" style="border:solid 5px #e6e6e6"/></p>
-
-<blockquote>
-<p>Unable to start debugging. Check your debugger settings by opening project properties and navigating to &lsquo;Configuration Properties&ndash;&gt; Debugging&rsquo;</p>
-</blockquote>
-
-<p>デバック出来ないからね！プロジェクトの設定見てね！的な意味みたいですが<br />
-デバッグモードで動かしてるし…<br />
-一体どこの何の事を言ってるのか判らない…＞＜。</p>
-
-<p>リリースモードならOKなのかしら？と思っても、同様のエラー&rdquo;(-&ldquo;&rdquo;-)&rdquo;</p>
-
-<h2 id="解決案-わたしはこれでは解決しませんでしたが">解決案（わたしはこれでは解決しませんでしたが）</h2>
-
-<p>検索しても、実のある回答は特に出てこず…<br />
-唯一、解決っぽいのが、NVIDIAさんのフォーラムに載ってました</p>
-
-<ul>
-<li><strong>CodeWorks for Android 1R4: Unable to start debugging - NVIDIA DEVELOPER</strong><br />
-<a href="https://devtalk.nvidia.com/default/topic/957019/codeworks-for-android-1r4-unable-to-start-debugging/">https://devtalk.nvidia.com/default/topic/957019/codeworks-for-android-1r4-unable-to-start-debugging/</a></li>
-</ul>
-
-<p>元ネタリンクはMicrosoftさんのGitHub情報みたいです</p>
-
-<ul>
-<li><strong>MEF - GitHub Microsoft/VSProjectSystem</strong><br />
-<a href="https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/mef.md#mef-inside-visual-studio">https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/mef.md#mef-inside-visual-studio</a></li>
-</ul>
-
-<p>簡単に言うと、VSの <strong>Developer Command Prompt</strong> を使って、キャッシュクリアしてみたら？というもの<br />
-やってみました</p>
-
-<ol>
-<li><p>Developer Command Prompt を検索して立ち上げる<br />
-<img src="/pic/How-to-fixed-error-Unable-to-start-debugging_01.png" style="border:solid 5px #e6e6e6"/></p></li>
-
-<li><p>以下のコマンドを打つ</p></li>
-</ol>
-
-<blockquote>
-<p>Devenv /UpdateConfiguration<br />
-Devenv /ClearCache</p>
-</blockquote>
-
-<p><img src="/pic/How-to-fixed-error-Unable-to-start-debugging_02.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>もっともらしい対策なんですけど、わたしの実行時エラーは解決しませんでした<br />
-何がダメなのだろ…((+_+))</p>
-
-<h2 id="わたしが解決した方法">わたしが解決した方法</h2>
-
-<p>で、実際の解決策ですが…<br />
-すみません、散々あーだこーだ書いてますが<br />
-<strong>スタートアッププロジェクトの設定もれ</strong> でした…( ;∀;)<br />
-いやはや、お恥ずかしい…</p>
-
-<p><img src="/pic/How-to-fixed-error-Unable-to-start-debugging_03.png" alt="" /></p>
-
-<p>Androidプロジェクトが参照する、別のプロジェクト達が<br />
-同じソリューションファイルの中に複数存在しています</p>
-
-<p>なのに、Androidプロジェクトを起動プロジェクトに設定しておらず…</p>
-
-<p>ポカミスとはまさにこの事！( ;∀;)</p>
-
-<p>なぜこれに気が付かなかったのか…相当焦ってて、周りが見えてなかったみたいです</p>
-
-<p>二度と同じ過ちを繰り返さないように…＞＜。<br />
-あと、同様のエラーで困ってる人の何かしらの参考になればと思います＞＜。</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2017%2f08%2f18%2fhow-to-fixed-error-unable-to-start-debugging%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bAndroid%5d%20%e8%ac%8e%e3%81%ae%e3%82%a8%e3%83%a9%e3%83%bc%e3%80%8cUnable%20to%20start%20debugging.%e3%80%8d%e3%81%8c%e5%87%ba%e3%81%9f%e3%81%a8%e3%81%8d%e3%81%ae%e5%af%be%e5%bf%9c&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2017%2f08%2f18%2fhow-to-fixed-error-unable-to-start-debugging%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2017%2f08%2f18%2fhow-to-fixed-error-unable-to-start-debugging%2f&title=%5bAndroid%5d%20%e8%ac%8e%e3%81%ae%e3%82%a8%e3%83%a9%e3%83%bc%e3%80%8cUnable%20to%20start%20debugging.%e3%80%8d%e3%81%8c%e5%87%ba%e3%81%9f%e3%81%a8%e3%81%8d%e3%81%ae%e5%af%be%e5%bf%9c" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -1462,6 +1400,12 @@ Devenv /ClearCache</p>
                 
                     
                         
+                            <a href="/blog/2022/03/24/how-to-support-hugo-auto-deploy-to-cname-when-using-github-actions/" class="list-group-item">[Hugo] GitHub Actionsでサイトを自動デプロイしたときにCNAMEを残す方法</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2022/03/20/note-two-dimensional-vector/" class="list-group-item">[C&#43;&#43;] 2次元Vectorのメモ</a><br>
                         
                     
@@ -1509,12 +1453,6 @@ Devenv /ClearCache</p>
                     
                         
                             <a href="/blog/2021/12/01/about-cpp-modules/" class="list-group-item">[C&#43;&#43;] Modulesのコンパイル（MSVC ver）とBMIについて</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/" class="list-group-item">[C&#43;&#43;]Compiler Explorerの出力結果の表示方法</a><br>
                         
                     
                 
@@ -1700,9 +1638,9 @@ Devenv /ClearCache</p>
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/github" style="font-size: 23px;">
+                    <a href="https://h-sao.com//tags/github" style="font-size: 26px;">
                     
-                        <span class="badge">5</span>
+                        <span class="badge">6</span>
                         github
                     </a>
                     </u> &nbsp; 
@@ -1720,9 +1658,9 @@ Devenv /ClearCache</p>
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/hugo" style="font-size: 20px;">
+                    <a href="https://h-sao.com//tags/hugo" style="font-size: 23px;">
                     
-                        <span class="badge">4</span>
+                        <span class="badge">5</span>
                         hugo
                     </a>
                     </u> &nbsp; 

@@ -57,6 +57,57 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2022/03/24/how-to-support-hugo-auto-deploy-to-cname-when-using-github-actions/" title="[Hugo] GitHub Actionsでサイトを自動デプロイしたときにCNAMEを残す方法">[Hugo] GitHub Actionsでサイトを自動デプロイしたときにCNAMEを残す方法</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2022.03.24">2022.03.24</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/hugo">hugo</a>
+        , 
+        
+        <a href="https://h-sao.com/tags/github">github</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p><code>Hugo</code> に限らないのですが<br />
+<code>gh-pages</code> ブランチを利用して <code>GitHub Pages</code> を作った時<br />
+自動デプロイで、独自ドメインの設定を記載した <code>CNAME</code> が消えちゃうことがあります</p>
+
+<p>そのトラブルシュートについてです</p>
+
+<hr />
+
+<p><code>Hugo</code> 自体の設定もあるのですが、それよりも<br />
+元のコンテンツに <code>CNAME</code> ファイルを含めてしまうのがシンプルで簡単です</p>
+
+<p><code>Hugo</code> ならメインブランチの <code>static</code> ディレクトリ以下に <code>CNAME</code> を設置します</p>
+
+<p><img src="/pic/How-to-support-Hugo-auto-deploy-to-CNAME-when-using-GitHub-Actions_00.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>これだけでOK！</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f03%2f24%2fhow-to-support-hugo-auto-deploy-to-cname-when-using-github-actions%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bHugo%5d%20GitHub%20Actions%e3%81%a7%e3%82%b5%e3%82%a4%e3%83%88%e3%82%92%e8%87%aa%e5%8b%95%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4%e3%81%97%e3%81%9f%e3%81%a8%e3%81%8d%e3%81%abCNAME%e3%82%92%e6%ae%8b%e3%81%99%e6%96%b9%e6%b3%95&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f03%2f24%2fhow-to-support-hugo-auto-deploy-to-cname-when-using-github-actions%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f03%2f24%2fhow-to-support-hugo-auto-deploy-to-cname-when-using-github-actions%2f&title=%5bHugo%5d%20GitHub%20Actions%e3%81%a7%e3%82%b5%e3%82%a4%e3%83%88%e3%82%92%e8%87%aa%e5%8b%95%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4%e3%81%97%e3%81%9f%e3%81%a8%e3%81%8d%e3%81%abCNAME%e3%82%92%e6%ae%8b%e3%81%99%e6%96%b9%e6%b3%95" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2022/03/20/note-two-dimensional-vector/" title="[C&#43;&#43;] 2次元Vectorのメモ">[C&#43;&#43;] 2次元Vectorのメモ</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2022.03.20">2022.03.20</time>
@@ -1127,57 +1178,6 @@ Practical Cpp Modules - CppCon 2019<br />
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2021/06/17/select-to-start-os-on-bootcamp/" title="[macOS] BootCampの起動OSを選ぶ">[macOS] BootCampの起動OSを選ぶ</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2021.06.17">2021.06.17</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/bootcamp">bootcamp</a>
-        , 
-        
-        <a href="https://h-sao.com/tags/macos">macos</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>macOS に BootCamp を入れると、デフォルト起動OSが Windows になります<br />
-（わたしの環境ではそうなりました）</p>
-
-<p>これ、デフォルトを macOS に戻すには、</p>
-
-<blockquote>
-<p>システム環境設定<br />
-　＞ 起動ディスク</p>
-</blockquote>
-
-<p>ここを macOS にすればOK</p>
-
-<p><img src="/pic/Select-to-start-OS-on-BootCamp_00.png" alt="" /></p>
-
-<p>Windows を立ち上げたい時には、<br />
-電源を入れた直後に <code>option</code> を長押しすれば、起動OS選択画面になります</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2021%2f06%2f17%2fselect-to-start-os-on-bootcamp%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bmacOS%5d%20BootCamp%e3%81%ae%e8%b5%b7%e5%8b%95OS%e3%82%92%e9%81%b8%e3%81%b6&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2021%2f06%2f17%2fselect-to-start-os-on-bootcamp%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2021%2f06%2f17%2fselect-to-start-os-on-bootcamp%2f&title=%5bmacOS%5d%20BootCamp%e3%81%ae%e8%b5%b7%e5%8b%95OS%e3%82%92%e9%81%b8%e3%81%b6" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -1247,6 +1247,12 @@ Practical Cpp Modules - CppCon 2019<br />
                 
                     
                         
+                            <a href="/blog/2022/03/24/how-to-support-hugo-auto-deploy-to-cname-when-using-github-actions/" class="list-group-item">[Hugo] GitHub Actionsでサイトを自動デプロイしたときにCNAMEを残す方法</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2022/03/20/note-two-dimensional-vector/" class="list-group-item">[C&#43;&#43;] 2次元Vectorのメモ</a><br>
                         
                     
@@ -1294,12 +1300,6 @@ Practical Cpp Modules - CppCon 2019<br />
                     
                         
                             <a href="/blog/2021/12/01/about-cpp-modules/" class="list-group-item">[C&#43;&#43;] Modulesのコンパイル（MSVC ver）とBMIについて</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/" class="list-group-item">[C&#43;&#43;]Compiler Explorerの出力結果の表示方法</a><br>
                         
                     
                 
@@ -1485,9 +1485,9 @@ Practical Cpp Modules - CppCon 2019<br />
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/github" style="font-size: 23px;">
+                    <a href="https://h-sao.com//tags/github" style="font-size: 26px;">
                     
-                        <span class="badge">5</span>
+                        <span class="badge">6</span>
                         github
                     </a>
                     </u> &nbsp; 
@@ -1505,9 +1505,9 @@ Practical Cpp Modules - CppCon 2019<br />
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/hugo" style="font-size: 20px;">
+                    <a href="https://h-sao.com//tags/hugo" style="font-size: 23px;">
                     
-                        <span class="badge">4</span>
+                        <span class="badge">5</span>
                         hugo
                     </a>
                     </u> &nbsp; 

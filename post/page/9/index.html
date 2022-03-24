@@ -69,6 +69,107 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2014/04/19/about-powershell-x32-and-x64/" title="[PowerShell] 32bitと64bitの使い分け">[PowerShell] 32bitと64bitの使い分け</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2014.04.19">2014.04.19</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/powershell">powershell</a>
+        , 
+        
+        <a href="https://h-sao.com/tags/oracle">oracle</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p>PowerShellにはちゃんと 32bit版と 64bit版が備わっています</p>
+
+<p>Windows2008 R2<br />
+Windows2012 R2<br />
+共に同じ場所にあります(~o~)</p>
+
+<p>64bit版<br />
+<strong>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</strong></p>
+
+<p>32bit版<br />
+<strong>C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe</strong></p>
+
+<p>デフォルトの64bitマシンであれば、コンソールで</p>
+
+<pre><code>&gt; powershell
+</code></pre>
+
+<p>とすると、64bitモードが立ち上がります</p>
+
+<p>これはどういうことかというと、64bitのアプリから使うライブラリなどは、64bitでないとダメってことです</p>
+
+<p>何にはまったかというと、PowerShell から System.Data.OracleClient に接続するとき</p>
+
+<p>たとえDBサーバが 64bit Oracle だったとしても<br />
+Oracle Client はデフォルトでは 32bit になっているようです</p>
+
+<p>powershell から oracle に接続しようとしたときこんな感じになります</p>
+
+<pre><code># アセンブリのロード
+[void][System.Reflection.Assembly]::LoadWithPartialName(&quot;System.Data.OracleClient&quot;)
+
+# 接続
+$conn_str = &quot;Data Source=saoDB;User ID=sao;Password=password;Integrated Security=false;&quot;
+$ora_conn = New-Object System.Data.OracleClient.OracleConnection($conn_str)
+
+# インスタンス
+$ora_cmd = New-Object System.Data.OracleClient.OracleCommand
+$ora_cmd.Connection = $ora_conn
+
+# データベースに接続
+$ora_conn.Open()
+</code></pre>
+
+<p>（参考）powerShellからOracleを使う（接続・切断）<br />
+<a href="http://harikofu.blog.fc2.com/blog-entry-114.html">http://harikofu.blog.fc2.com/blog-entry-114.html</a></p>
+
+<p>このDB接続直後に、64bit のPowerShell だと<br />
+こんなエラーが出ます</p>
+
+<pre><code>&quot;0&quot; 個の引数を指定して &quot;Open&quot; を呼び出し中に例外が発生しました: &quot;Oracle クライアント ライブラリを読み込もうとしましたが、BadImageFormatException が発行されました。この問題は、32 ビットの Oracle クライアント コンポーネントが
+インストールされている環境で 64 ビット モードを実行すると発生します。&quot;
+発生場所 行:1 文字:22
++ $ora_conn.Open &lt;&lt;&lt;&lt; ()
+    + CategoryInfo          : NotSpecified: (:) []、MethodInvocationException
+    + FullyQualifiedErrorId : DotNetMethodException
+</code></pre>
+
+<p>問題解決方法は2つ</p>
+
+<ul>
+<li>Oracle Client を 64bit版をインストールする（たとえDBサーバ上であっても…</li>
+<li>呼び出す側のPowerShellを 32bit版にする</li>
+</ul>
+
+<p>既存の稼働環境に影響を与えない様にするという意味では<br />
+不毛ですが後者を選択すると波風立てずにコトを済ませられます</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f19%2fabout-powershell-x32-and-x64%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bPowerShell%5d%2032bit%e3%81%a864bit%e3%81%ae%e4%bd%bf%e3%81%84%e5%88%86%e3%81%91&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f19%2fabout-powershell-x32-and-x64%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f04%2f19%2fabout-powershell-x32-and-x64%2f&title=%5bPowerShell%5d%2032bit%e3%81%a864bit%e3%81%ae%e4%bd%bf%e3%81%84%e5%88%86%e3%81%91" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2014/04/10/mining-for-value-from-db/" title="[Oracle]テーブル・カラム名が不明でもDBに入っている値を検索したい">[Oracle]テーブル・カラム名が不明でもDBに入っている値を検索したい</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2014.04.10">2014.04.10</time>
@@ -853,95 +954,6 @@ C++でのゲーム作成の時期が長かったので、高速化について�
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2008/07/29/how-to-divide-without-division/" title="[C/C&#43;&#43;] 割り算を使わないで割り算する方法">[C/C&#43;&#43;] 割り算を使わないで割り算する方法</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2008.07.29">2008.07.29</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/cpp">cpp</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>ビット・シフトの計算の練習問題＜上級編＞です</p>
-
-<p><strong>Q. 割り算をシフトと引き算のみで表現しなさい</strong></p>
-
-<p><strong>A. 回答</strong></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// x / y = ans
-</span><span style="color:#75715e">// x: 分子
-</span><span style="color:#75715e">// y: 分母
-</span><span style="color:#75715e">// ans:答え
-</span><span style="color:#75715e"></span>
-ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
- <span style="color:#66d9ef">while</span>( x <span style="color:#f92672">&gt;=</span> y ){
-    dammy <span style="color:#f92672">=</span> y;
-    syou <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-    <span style="color:#66d9ef">while</span>( x <span style="color:#f92672">&gt;=</span> dammy ){            <span style="color:#75715e">// 割られる数を超えるまで割る数をシフト
-</span><span style="color:#75715e"></span>        dammy <span style="color:#f92672">=</span> dammy <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">1</span>;
-        syou  <span style="color:#f92672">=</span> syou  <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">1</span>;
-    }
-    
-    dammy <span style="color:#f92672">=</span> dammy <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span>;             <span style="color:#75715e">// 超える手前まで戻す
-</span><span style="color:#75715e"></span>    syou <span style="color:#f92672">=</span> syou <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span>;
-    
-    x <span style="color:#f92672">=</span> x <span style="color:#f92672">-</span> dammy;                  <span style="color:#75715e">// 筆算
-</span><span style="color:#75715e"></span>    ans <span style="color:#f92672">=</span> ans <span style="color:#f92672">+</span> syou;               <span style="color:#75715e">// 答え
-</span><span style="color:#75715e"></span> }
- printf( <span style="color:#e6db74">&#34;%d ・・・%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans, x );
-</code></pre></td></tr></table>
-</div>
-</div>
-<p>新人研修などにどうでしょう？</p>
-
-<p>※ 実は最後に足し算使ってますね…(&gt;_&lt;)</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2008%2f07%2f29%2fhow-to-divide-without-division%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2fC%2b%2b%5d%20%e5%89%b2%e3%82%8a%e7%ae%97%e3%82%92%e4%bd%bf%e3%82%8f%e3%81%aa%e3%81%84%e3%81%a7%e5%89%b2%e3%82%8a%e7%ae%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2008%2f07%2f29%2fhow-to-divide-without-division%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2008%2f07%2f29%2fhow-to-divide-without-division%2f&title=%5bC%2fC%2b%2b%5d%20%e5%89%b2%e3%82%8a%e7%ae%97%e3%82%92%e4%bd%bf%e3%82%8f%e3%81%aa%e3%81%84%e3%81%a7%e5%89%b2%e3%82%8a%e7%ae%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
@@ -950,9 +962,11 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 	<a class="btn newer" href="/post/page/8/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 9  9</p>
+	<p class="counter"> 9  10</p>
 
 
+	
+	<a class="btn older" href="/post/page/10/" title=""> &raquo;</a>
 	
 
 </nav>
@@ -1012,6 +1026,12 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
                 
                     
                         
+                            <a href="/blog/2022/03/24/how-to-support-hugo-auto-deploy-to-cname-when-using-github-actions/" class="list-group-item">[Hugo] GitHub Actionsでサイトを自動デプロイしたときにCNAMEを残す方法</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2022/03/20/note-two-dimensional-vector/" class="list-group-item">[C&#43;&#43;] 2次元Vectorのメモ</a><br>
                         
                     
@@ -1059,12 +1079,6 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
                     
                         
                             <a href="/blog/2021/12/01/about-cpp-modules/" class="list-group-item">[C&#43;&#43;] Modulesのコンパイル（MSVC ver）とBMIについて</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/" class="list-group-item">[C&#43;&#43;]Compiler Explorerの出力結果の表示方法</a><br>
                         
                     
                 
@@ -1250,9 +1264,9 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/github" style="font-size: 23px;">
+                    <a href="https://h-sao.com//tags/github" style="font-size: 26px;">
                     
-                        <span class="badge">5</span>
+                        <span class="badge">6</span>
                         github
                     </a>
                     </u> &nbsp; 
@@ -1270,9 +1284,9 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/hugo" style="font-size: 20px;">
+                    <a href="https://h-sao.com//tags/hugo" style="font-size: 23px;">
                     
-                        <span class="badge">4</span>
+                        <span class="badge">5</span>
                         hugo
                     </a>
                     </u> &nbsp; 
