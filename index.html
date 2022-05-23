@@ -57,7 +57,7 @@
         
         
             
-<h1><a href="https://h-sao.com/blog/2022/05/22/using-git-command-line-on-mac/" title="[git] macでgitを初めて使う時">[git] macでgitを初めて使う時</a></h1>
+<h1><a href="https://h-sao.com/blog/2022/05/22/using-git-command-line-on-mac/" title="[Git] macでgitを初めて使う時">[Git] macでgitを初めて使う時</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2022.05.22">2022.05.22</time>
     
@@ -92,22 +92,24 @@
 
 <h2 id="git-コマンドが使えなかった">git コマンドが使えなかった</h2>
 
-<p>こんなエラーが出ました。。。</p>
+<p>Gitをコマンドラインで打つと、こんなエラーが出ました。。。</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">% git 
-xcrun: error: invalid active developer path <span style="color:#f92672">(</span>/Library/Developer/CommandLineTools<span style="color:#f92672">)</span>, missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
-% </code></pre></td></tr></table>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">% git </code></pre></td></tr></table>
 </div>
 </div>
+<blockquote>
+<p>xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun</p>
+</blockquote>
+
 <p>開発者ツールが入ってないらしい</p>
 
 <h2 id="xcode-をインストールする">Xcode をインストールする</h2>
+
+<p><code>xcode-select --install</code> でインストールします</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
@@ -124,7 +126,7 @@ code-select: note: install requested <span style="color:#66d9ef">for</span> comm
 
 <p><img src="/pic/Using-git-command-line-on-mac_00.png" alt="" /></p>
 
-<p><img src="/pic/Using-git-command-line-on-mac_01.png" alt="" /></p>
+<p><img src="/pic/Using-git-command-line-on-mac_01.png" style="border:solid 5px #e6e6e6"/></p>
 
 <p><img src="/pic/Using-git-command-line-on-mac_02.png" alt="" /></p>
 
@@ -135,30 +137,25 @@ code-select: note: install requested <span style="color:#66d9ef">for</span> comm
 <p>そしてインストール完了のウィンドウが出てほっ…</p>
 
 <h2 id="gitコマンドが使えるように">Gitコマンドが使えるように</h2>
+
+<p><code>git</code> と打ってみる</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">% git                   
-usage: git <span style="color:#f92672">[</span>--version<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--help<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-C &lt;path&gt;<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-c &lt;name&gt;<span style="color:#f92672">=</span>&lt;value&gt;<span style="color:#f92672">]</span>
-           <span style="color:#f92672">[</span>--exec-path<span style="color:#f92672">[=</span>&lt;path&gt;<span style="color:#f92672">]]</span> <span style="color:#f92672">[</span>--html-path<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--man-path<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--info-path<span style="color:#f92672">]</span>
-           <span style="color:#f92672">[</span>-p | --paginate | -P | --no-pager<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--no-replace-objects<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--bare<span style="color:#f92672">]</span>
-           <span style="color:#f92672">[</span>--git-dir<span style="color:#f92672">=</span>&lt;path&gt;<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--work-tree<span style="color:#f92672">=</span>&lt;path&gt;<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--namespace<span style="color:#f92672">=</span>&lt;name&gt;<span style="color:#f92672">]</span>
-           &lt;command&gt; <span style="color:#f92672">[</span>&lt;args&gt;<span style="color:#f92672">]</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">% git                   </code></pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>usage: git [&ndash;version] [&ndash;help] [-C <path>] [-c <name>=<value>]<br />
+           [&ndash;exec-path[=<path>]] [&ndash;html-path] [&ndash;man-path] [&ndash;info-path]<br />
+           [-p | &ndash;paginate | -P | &ndash;no-pager] [&ndash;no-replace-objects] [&ndash;bare]<br />
+           [&ndash;git-dir=<path>] [&ndash;work-tree=<path>] [&ndash;namespace=<name>]<br />
+           <command> [<args>]<br />
+&hellip;</p>
+</blockquote>
 
-These are common Git commands used in various situations:
-...</code></pre></td></tr></table>
-</div>
-</div>
 <p>無事、コマンドラインから git が使えるようになりました〜</p>
 
             <ul class="share-buttons">
@@ -167,11 +164,11 @@ These are common Git commands used in various situations:
         <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f05%2f22%2fusing-git-command-line-on-mac%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bgit%5d%20mac%e3%81%a7git%e3%82%92%e5%88%9d%e3%82%81%e3%81%a6%e4%bd%bf%e3%81%86%e6%99%82&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f05%2f22%2fusing-git-command-line-on-mac%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGit%5d%20mac%e3%81%a7git%e3%82%92%e5%88%9d%e3%82%81%e3%81%a6%e4%bd%bf%e3%81%86%e6%99%82&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f05%2f22%2fusing-git-command-line-on-mac%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f05%2f22%2fusing-git-command-line-on-mac%2f&title=%5bgit%5d%20mac%e3%81%a7git%e3%82%92%e5%88%9d%e3%82%81%e3%81%a6%e4%bd%bf%e3%81%86%e6%99%82" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f05%2f22%2fusing-git-command-line-on-mac%2f&title=%5bGit%5d%20mac%e3%81%a7git%e3%82%92%e5%88%9d%e3%82%81%e3%81%a6%e4%bd%bf%e3%81%86%e6%99%82" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 
@@ -1303,7 +1300,7 @@ Practical Cpp Modules - CppCon 2019<br />
                 
                     
                         
-                            <a href="/blog/2022/05/22/using-git-command-line-on-mac/" class="list-group-item">[git] macでgitを初めて使う時</a><br>
+                            <a href="/blog/2022/05/22/using-git-command-line-on-mac/" class="list-group-item">[Git] macでgitを初めて使う時</a><br>
                         
                     
                 
