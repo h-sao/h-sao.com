@@ -37,9 +37,9 @@ code-select: note: install requested for command line developer tools
 
 こんな感じでインストールが進みます
 
-![](/pic/Using-git-command-line-on-mac_00.png)
+<img src="/pic/Using-git-command-line-on-mac_00.png" style="border:solid 5px #e6e6e6"/> 
 
-<img src="/pic/Using-git-command-line-on-mac_01.png" style="border:solid 5px #e6e6e6"/> 
+![](/pic/Using-git-command-line-on-mac_01.png)
 
 ![](/pic/Using-git-command-line-on-mac_02.png)
 
