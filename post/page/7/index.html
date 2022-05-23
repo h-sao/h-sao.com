@@ -69,6 +69,466 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2016/05/07/generate-ssh-key-for-github/" title="[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続">[Git] Gitで利用するsshキーペアの作成、ssh接続、複数ID接続</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.05.07">2016.05.07</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/git">git</a>
+        , 
+        
+        <a href="https://h-sao.com/tags/github">github</a>
+        , 
+        
+        <a href="https://h-sao.com/tags/gitextensions">gitextensions</a>
+        , 
+        
+        <a href="https://h-sao.com/tags/ssh">ssh</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>しょっちゅう作っては、作り方を忘れ、また検索で調べる…ということをしているので、sshキーの生成&amp;接続について、忘れないようにメモしておきます</p>
+
+<h1 id="gitサーバへsshキーを使って接続したい">GitサーバへSSHキーを使って接続したい</h1>
+
+<p>Gitサーバに接続するには、</p>
+
+<ul>
+<li>http</li>
+<li>ssh</li>
+</ul>
+
+<p>この2種類の接続方法があるみたいです</p>
+
+<p>Git接続用のクライアントアプリは、どっちで接続するか選択できるものもあるので<br />
+Sourcetreeなどを使っていると、あまり認識してない人もいるかもしれません</p>
+
+<p>今回、こんなクライアント環境で試しました</p>
+
+<ul>
+<li>自端末：Windows10 x64</li>
+<li>Gitサーバ：GitHub</li>
+<li>Gitクライアントアプリ：GitExtensions</li>
+<li>Gitアクセスには、複数アカウントを利用している</li>
+</ul>
+
+<p>これを試そうと思ったモチベーションは、push のたびに IDとパスワードを毎回聞かれるのがやだ、だからキーペアを利用して ssh アクセスにするんだー<br />
+というところから始まってます</p>
+
+<p>GitHub のIDとパスワードをスキップして、セキュアアクセスするのだ！という方の参考になればと思います！</p>
+
+<blockquote>
+<p>あと、番外編として、 非推奨ですが https アクセスでIDとパスワードを毎回聞かれないようにする方法も最後にメモしておきます</p>
+</blockquote>
+
+<h1 id="キーの生成方法-ssh-keygen">キーの生成方法 ssh-keygen</h1>
+
+<p>ここは普通に<br />
+公開鍵と秘密鍵を作ればいいだけなので、知ってる人に取ったら何をいまさら…になりますが、一応メモ</p>
+
+<p>Gitがインストールされているなら <strong>ssh-keygen</strong> が使えますので、コマンドを打つだけ<br />
+(コマンドを打たなくても、Gitのクライアントアプリが勝手にやってくれる場合もあります)</p>
+
+<p>GitBash などを起動します</p>
+
+<p><img src="/pic/Generate-ssh-key-for-GitHub_00.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>コマンドはこちら</p>
+
+<pre><code>$ ssh-keygen -t rsa
+</code></pre>
+
+<p>基本的には、何か聞かれてもエンターで進めばOKです</p>
+
+<p>デフォルトでは <strong>c:\Users\[ユーザ名]\.ssh\** 以下に</strong>秘密鍵（id_rsa）<strong>と</strong>公開鍵（id_rsa.pub）**のキーペアが作成されます</p>
+
+<p>Windowsだとキーの保存位置は c:\Users\[ユーザ名]\.ssh\ にしないといけません</p>
+
+<p>わたしは、Github用のキーだと判るように、名前を github_rsa として作成しました<br />
+（既に別の用途で id_rsa を使っているからです、つまり複数アカウントを利用しています）</p>
+
+<p>実行結果はこれ↓↓↓</p>
+
+<pre><div class="hljs">(SHA256以下の箇所は、適当に x で書き換えています)
+
+haruka.sao@MyPC MINGW64 ~
+<span class="hljs-keyword">$ ssh-keygen -t rsa</span>
+Generating public/private rsa key pair.
+<span class="hljs-string">Enter file in which to save the key (/c/Users/haruka.sao/.ssh/id_rsa):</span> /c/Users/haruka.sao/.ssh/github_rsa
+<span class="hljs-string">Enter passphrase (empty for no passphrase):
+Enter same passphrase again:</span>
+Your identification has been saved in /c/Users/haruka.sao/.ssh/github_rsa.
+Your public key has been saved in /c/Users/haruka.sao/.ssh/github_rsa.pub.
+The key fingerprint is:
+SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx haruka.sao@MyPC
+The key's randomart image is:
++---[RSA 2048]----+
+|      x          |
+|      x          |
+|      x          |
+|      x          |
+|      x          |
+|      x          |
+|      x          |
+|      x          |
+|      x          |
++----[SHA256]-----+
+
+haruka.sao@MyPC MINGW64 ~
+$
+</div></pre>
+
+<p>キーペアができたできた</p>
+
+<h1 id="sshキーをgithubに登録">SSHキーをGitHubに登録</h1>
+
+<p>c:\Users\[ユーザ名]\.ssh\ に保存された id_rsa.pub （わたしの場合はgithub_rsa.pub）を GitHubに登録します</p>
+
+<p>自分のアカウントの <strong>Settings &gt; SSH and GPG keys &gt; New SSH key</strong> をクリックすると、先ほど作った公開鍵を登録することができます</p>
+
+<p><img src="/pic/Generate-ssh-key-for-GitHub_01.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>先ほど作った id_rsa.pub 公開鍵を登録しましょう！<br />
+くれぐれも id_rsa の秘密鍵の方ではないので、お間違え無く！</p>
+
+<p>id_rsa.pub の中身を見ればわかりますが、「<strong>ssh-rsa ……</strong>」 から始まっているファイルになります</p>
+
+<p><img src="/pic/Generate-ssh-key-for-GitHub_02.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>登録すると、こんな感じの記載になります</p>
+
+<p><img src="/pic/Generate-ssh-key-for-GitHub_03.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>最後に、自分の秘密鍵が c:\Users\[ユーザ名]\.ssh\ に設置されていることを再確認！</p>
+
+<p><img src="/pic/Generate-ssh-key-for-GitHub_04.png" style="border:solid 5px #e6e6e6"/></p>
+
+<h1 id="openssh-モード">OpenSSH モード</h1>
+
+<p>GitExtensions で ssh 接続したい場合、<br />
+私的にはお勧めなのは、OpenSSHモードにすることです</p>
+
+<p>※ PuTTYアクセスは、PuTTYの独自フォーマットのキーを登録するなどが必要ですので、わたしは利用をやめました</p>
+
+<p><img src="/pic/Generate-ssh-key-for-GitHub_05.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>これで下準備はOK！</p>
+
+<h1 id="pcから-ssh-で接続テスト">PCから ssh で接続テスト</h1>
+
+<p>Git bash で接続テストしてみましょう</p>
+
+<p>さっきの Git bash で、リポジトリの下まで移動します<br />
+もしくは、GitExtensions から起動すると、初期ディレクトリはそのリポジトリの下になります</p>
+
+<p><img src="/pic/Generate-ssh-key-for-GitHub_08.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>確認パターンは２パターンあります</p>
+
+<h2 id="パターン1-id-rsa-で登録している-ssh-キーを利用する場合">(パターン1) id_rsa で登録している ssh キーを利用する場合</h2>
+
+<p>このコマンドで確認します</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ ssh -T git@github.com</code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>id_rsa</strong> というファイル名を、ssh 接続では自動的に認識するようです</p>
+
+<p>初回は、known_hosts に GitHub サーバを登録するよ？と聞いてくるので、 yes を入力します</p>
+
+<blockquote>
+<p>Hi [GitHubユーザ名]! You&rsquo;ve successfully authenticated, but GitHub does not provide shell access.</p>
+</blockquote>
+
+<p>が表示されればOKです</p>
+
+<p>わたしの実行結果はこちら↓↓↓</p>
+
+<pre><div class="hljs">
+<span class="hljs-keyword">$ ssh -T git@github.com</span>
+The authenticity of host 'github.com (192.30.252.122)' can't be established.
+RSA key fingerprint is xx:xx:xx:xx:xx:xx:
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.252.122' (RSA) to the list of known hosts.
+<span class="hljs-string">Hi h-sao! You've successfully authenticated,</span> but GitHub does not provide shell access.
+
+</div></pre>
+
+<p>known_hosts ファイルがこんな感じで作られました</p>
+
+<p><img src="/pic/Generate-ssh-key-for-GitHub_09.png" style="border:solid 5px #e6e6e6"/></p>
+
+<h2 id="パターン2-独自の名前で作った-ssh-キーを利用する場合">(パターン2) 独自の名前で作った ssh キーを利用する場合</h2>
+
+<p>わたしの場合は、先ほど github_rsa という名前でキーを生成したので、こちらのパターンになりました</p>
+
+<p>まず、 github_rsa という独自名称を ssh アクセス時に認識させる必要があります</p>
+
+<p>c:\Users\[ユーザ名]\.ssh\ 直下に config という名前のファイルを作成します</p>
+
+<blockquote>
+<p>※この部分は、Gitうんぬんは関係のない、ssh 接続の話です<br />
+　Windows の ssh 接続では c:\Users\[ユーザ名]\.ssh\config はすべてのSSH接続で共有されます</p>
+</blockquote>
+
+<p>c:\Users\[ユーザ名]\.ssh\config の内容はこんな感じです</p>
+
+<pre><div class="hljs">
+Host <span class="hljs-string">my.github.server</span>
+  HostName  <span class="hljs-string">github.com</span>
+  Port      <span class="hljs-string">22</span>
+  User      <span class="hljs-string">h-sao</span>
+  IdentityFile  <span class="hljs-string">~/.ssh/github_rsa</span>
+  TCPKeepAlive <span class="hljs-string">yes</span>
+  IdentitiesOnly <span class="hljs-string">yes</span>
+
+</div></pre>
+
+<ul>
+<li><strong>Host</strong><br />
+アクセス識別子なので、どんな名前でもOK</li>
+<li><strong>HostName</strong><br />
+実際にアクセスするアドレス</li>
+<li><strong>Port</strong><br />
+アクセスするポート番号、ssh(Secure Shell)の番号<br />
+OpenSSHのデフォは22番なので、わざわざ書かなくてもいいのですが一応記載</li>
+<li><strong>User</strong><br />
+GitHubユーザ名を入れます</li>
+<li><strong>IdentityFile</strong><br />
+利用する ssh 秘密鍵ファイルのパス</li>
+<li><strong>TCPKeepAlive</strong>：yes<br />
+これもデフォは yes なのですが、念のため<br /></li>
+<li><strong>IdentitiesOnly</strong>：yes<br />
+.ssh/config の設定を増やしていくと「Too many authentication failures」が出ることがあるらしいです、変なエラーはやなので、あらかじめ設定しておきます</li>
+</ul>
+
+<blockquote>
+<p>＜参考リンク＞</p>
+
+<ul>
+<li><p>SSHに公開鍵認証で接続する際に Too many authentication failures が出る - 6vox<br />
+<a href="http://blog.6vox.com/2014/11/ssh-too-many-authentication-failures.html">http://blog.6vox.com/2014/11/ssh-too-many-authentication-failures.html</a></p></li>
+
+<li><p>OpenSSH ssf_configの設定項目 - Life with IT<br />
+<a href="http://l-w-i.net/t/openssh/conf_001.txt">http://l-w-i.net/t/openssh/conf_001.txt</a></p></li>
+</ul>
+</blockquote>
+
+<p>ここまで準備したら、接続テストしましょう<br />
+config に設定した名前で　Host の名称アクセスすることが出来ます！</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ ssh -T my.github.server</code></pre></td></tr></table>
+</div>
+</div>
+<p>うまくいくと、パターン1と同じように、known hostに登録するかどうかを聞かれて、ファイルが作成されます</p>
+
+<p><img src="/pic/Generate-ssh-key-for-GitHub_10.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>また、</p>
+
+<blockquote>
+<p>Hi [GitHubユーザ名]! You&rsquo;ve successfully authenticated, but GitHub does not provide shell access.</p>
+</blockquote>
+
+<p>こんな感じで、自分のGitHub名でアクセス出来たことが判ります<br />
+いちおキャプチャ置いときます</p>
+
+<p><img src="/pic/Generate-ssh-key-for-GitHub_11.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>これで、クライアントPCから GitHub に IDとパスワードを利用せずに接続することが出来ました！</p>
+
+<h1 id="まだgitextensions-から-ssh-アクセスは出来ない">まだGitExtensions から ssh アクセスは出来ない</h1>
+
+<p>さて、この状態で、GitExtensions のプッシュボタンを押して Pushしようとしても、IDとパスワードを聞かれます</p>
+
+<p><img src="/pic/Generate-ssh-key-for-GitHub_06.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>Pushボタンを押すと…</p>
+
+<p><img src="/pic/Generate-ssh-key-for-GitHub_07.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>GitHub のアカウントとパスワードを聞かれます…<br />
+どうやら <strong>https アクセスがデフォルト</strong>みたいです</p>
+
+<p>ちゃんと自身の Git リポジトリに ssh 接続するんだよー</p>
+
+<p>を認識させてあげないといけません</p>
+
+<h1 id="git-リポジトリに-ssh-接続設定を教える">Git リポジトリに ssh 接続設定を教える</h1>
+
+<p>Git リポジトリの設定を Git bash のコマンドで見ることが出来ます</p>
+
+<pre><code>$ git config -l
+</code></pre>
+
+<p>これらの設定は、Git リポジトリ直下にある .\.git\ 以下にあります</p>
+
+<blockquote>
+<p>この下の config ファイルなどを直接編集しても反映されますが、コマンドを使った方が良いでしょう</p>
+</blockquote>
+
+<p>わたしの場合の実行結果はこちら</p>
+
+<pre><div class="hljs">
+haruk@MACBOOKPROAKIKO ~/xxx (master)
+<span class="hljs-keyword">$ git config -l</span>
+core.symlinks=<span class="hljs-string">false</span>
+core.autocrlf=<span class="hljs-string">true</span>
+color.diff=<span class="hljs-string">auto</span>
+color.status=<span class="hljs-string">auto</span>
+color.branch=<span class="hljs-string">auto</span>
+color.interactive=<span class="hljs-string">true</span>
+pack.packsizelimit=<span class="hljs-string">2g</span>
+help.format=<span class="hljs-string">html</span>
+http.sslcainfo=<span class="hljs-string">/bin/curl-ca-bundle.crt</span>
+sendemail.smtpserver=<span class="hljs-string">/bin/msmtp.exe</span>
+diff.astextplain.textconv=<span class="hljs-string">astextplain</span>
+rebase.autosquash=<span class="hljs-string">true</span>
+user.name=<span class="hljs-string">Sao Haruka</span>
+user.email=<span class="hljs-string">xxx@yyy.tmp.com</span>
+core.autocrlf=<span class="hljs-string">True</span>
+core.excludesfile=<span class="hljs-string">C:\Users\haruk\Documents\gitignore_global.txt</span>
+core.editor=<span class="hljs-string">"C:/utils/GitExtensions/GitExtensions.exe" fileeditor</span>
+merge.tool=<span class="hljs-string">kdiff3</span>
+diff.guitool=<span class="hljs-string">kdiff3</span>
+difftool.kdiff3.path=<span class="hljs-string">C:/utils/KDiff3/kdiff3.exe</span>
+mergetool.kdiff3.path=<span class="hljs-string">C:/utils/KDiff3/kdiff3.exe</span>
+core.repositoryformatversion=<span class="hljs-string">0</span>
+core.filemode=<span class="hljs-string">false</span>
+core.bare=<span class="hljs-string">false</span>
+core.logallrefupdates=<span class="hljs-string">true</span>
+core.symlinks=<span class="hljs-string">false</span>
+core.ignorecase=<span class="hljs-string">true</span>
+core.hidedotfiles=<span class="hljs-string">dotGitOnly</span>
+remote.origin.url=<span class="hljs-keyword">https://github.com/h-sao/xxx.git</span>
+remote.origin.fetch=<span class="hljs-string">+refs/heads/*:refs/remotes/origin/*</span>
+branch.master.remote=<span class="hljs-string">origin</span>
+branch.master.merge=<span class="hljs-string">refs/heads/master</span>
+
+</div></pre>
+
+<p>上記の「<strong>remote.origin.url</strong>」が Git サーバにアクセスするときの URL になるので、これを ssh でアクセスするように変更します</p>
+
+<p>デフォルトの id_rsa を利用するときは</p>
+
+<p><strong>git@github.com:[ユーザID]/[リポジトリ].git</strong></p>
+
+<p>を設定します</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ git remote set-url origin git@github.com:h-sao/xxx.git</code></pre></td></tr></table>
+</div>
+</div>
+<p>id_rsa じゃない、別名の ssh キーファイルを利用するときの設定は</p>
+
+<p><strong>[Host名]:[ユーザID]/[リポジトリ].git</strong></p>
+
+<p>になります</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ git remote set-url origin my.github.server:h-sao/xxx.git</code></pre></td></tr></table>
+</div>
+</div>
+<p>GitExtensions で Push してみましょう</p>
+
+<p><img src="/pic/Generate-ssh-key-for-GitHub_12.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>URL の表記がちょっと変わりましたね<br />
+無事、IDとパスワードを聞かれることなく、プッシュが成功しているはずです＼(^o^)／</p>
+
+<p><img src="/pic/Generate-ssh-key-for-GitHub_13.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>やったー</p>
+
+<p>＜参考リンク＞</p>
+
+<ul>
+<li>gitHubでssh接続する手順~公開鍵・秘密鍵の生成から~ - Qiita<br />
+<a href="http://qiita.com/shizuma/items/2b2f873a0034839e47ce">http://qiita.com/shizuma/items/2b2f873a0034839e47ce</a></li>
+</ul>
+
+<h1 id="番外編-httpsアクセスでidとパスワードを聞かれないようにする">(番外編) httpsアクセスでIDとパスワードを聞かれないようにする</h1>
+
+<p>ええ、今回、本当に色々と試しましたとも…</p>
+
+<p>ssh ではなく https アクセスで、毎回アカウント情報を入力しない方法も調べました</p>
+
+<p>あまりセキュアじゃないので、お勧めできませんが<br />
+一応記載しておきます</p>
+
+<pre><code>$ git config -l 
+</code></pre>
+
+<p>で調べた 「<strong>remote.origin.url</strong>」 の初期の記載はこれでした</p>
+
+<pre><div class="hljs">
+remote.origin.url=<span class="hljs-keyword">https://github.com/h-sao/xxx.git</span>
+
+</div></pre>
+
+<p>この https アクセスの URL 中に、IDとパスワードを埋め込めばOKです</p>
+
+<p><strong>https://[ユーザID]:[パスワード]github.com/h-sao/xxx.git</strong></p>
+
+<p>やってみたけど、パスワードが丸々画面に表示されるので、よくないです…<br />
+確かに、ssh キーファイルなど用意しなくてもいいので、便利ではありますが…＞＜；</p>
+
+<p><img src="/pic/Generate-ssh-key-for-GitHub_14.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>利用は自己責任でお願いします</p>
+
+<p>＜参考リンク＞</p>
+
+<ul>
+<li>Windowsにgitをインストールしてgithubにpushするまで - karakaram-blog<br />
+<a href="http://www.karakaram.com/git-install">http://www.karakaram.com/git-install</a></li>
+</ul>
+
+<h2 id="追記記事書きました-2016-5-9">追記記事書きました(2016/5/9)</h2>
+
+<ul>
+<li>[SSH] 複数キー接続のconfig記載について<br />
+<a href="http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/">http://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/</a></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f07%2fgenerate-ssh-key-for-github%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGit%5d%20Git%e3%81%a7%e5%88%a9%e7%94%a8%e3%81%99%e3%82%8bssh%e3%82%ad%e3%83%bc%e3%83%9a%e3%82%a2%e3%81%ae%e4%bd%9c%e6%88%90%e3%80%81ssh%e6%8e%a5%e7%b6%9a%e3%80%81%e8%a4%87%e6%95%b0ID%e6%8e%a5%e7%b6%9a&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f07%2fgenerate-ssh-key-for-github%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f07%2fgenerate-ssh-key-for-github%2f&title=%5bGit%5d%20Git%e3%81%a7%e5%88%a9%e7%94%a8%e3%81%99%e3%82%8bssh%e3%82%ad%e3%83%bc%e3%83%9a%e3%82%a2%e3%81%ae%e4%bd%9c%e6%88%90%e3%80%81ssh%e6%8e%a5%e7%b6%9a%e3%80%81%e8%a4%87%e6%95%b0ID%e6%8e%a5%e7%b6%9a" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2016/03/27/information-ebisu-cpp-vol3/" title="[勉強会] ebisu_effective_modern.cpp vol.3やりますよ">[勉強会] ebisu_effective_modern.cpp vol.3やりますよ</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.03.27">2016.03.27</time>
@@ -1447,93 +1907,6 @@ CMSに当たり前にあって、Hugoには無い機能を、実装していく�
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2015/08/25/moving-blog/" title="[Hugo/wercker]ブログを移行しました">[Hugo/wercker]ブログを移行しました</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2015.08.25">2015.08.25</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/hugo">hugo</a>
-        , 
-        
-        <a href="https://h-sao.com/tags/wercker">wercker</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>ライブドアで書いていたブログ <a href="http://blog.livedoor.jp/haruka_sao/">「遥佐保の技術メモ」 http://blog.livedoor.jp/haruka_sao/</a> を移植することにしました</p>
-
-<p>思えばライブドアはソースコードを表示するのには適していないブログでした…<br />
-2008年からなので、もう7年も!?<br />
-かなり気づくのが遅かったですね…</p>
-
-<ul>
-<li>Hugo - <a href="https://gohugo.io/">https://gohugo.io/</a></li>
-</ul>
-
-<p>もともと、<strong>Sao`s Closed Circle</strong> というGitHub Pages の練習用のブログを <a href="http://jekyllbootstrap.com/">JekyllBootstrap</a> で作っていました<br />
-今回からは、ツールも新たに <a href="https://gohugo.io/">Hugo</a> を使うようにしました</p>
-
-<p>書くほどのお知らせじゃないですが、このブログはHugoという静的サイトジェネレーターで作っています、静的、つまりただのHTMLです<br />
-自前運用です<br />
-ここ5年くらい前？から流行っているらしいです<br />
-最近は技術系以外でもよく使われているらしいです</p>
-
-<p>どのジェネレーターが良いかと言うのは、よくわからないですけど<br />
-<a href="http://jekyllrb.com/">Jekyll</a>（Rubyベース）が有名なのかなーと思います</p>
-
-<p><strong>Static Site Generators</strong> まとめによるとJekyllはGithubスター数がトップですね<br />
-（Static Site Generatorsは、ちまたの静的サイトジネェレータ一覧です）<br />
-<a href="https://staticsitegenerators.net/">https://staticsitegenerators.net/</a><br />
-こうしてみると、Hugoは後発ながら結構人気みたい</p>
-
-<p>Jekyllはとても高機能で（イイコトなんですけど）<br />
-でもわたし、Rubyがよくわからなくて（すまん…Web屋さんじゃないの…）<br />
-そんなときにGoで作られた、ちょっぱや生成のHugoを知ってしまったら、もうJekyllには戻れなくなりました、haha&hellip;</p>
-
-<p>Jekyllの方が事例も多いし、検索ですぐ解決できるけど、ちょっとジェネレートの時間がかかるのが弱点かも<br />
-たいして記事数のないわたしでもそう思いましたから、記事数の多い人に取ったらちょっとイライラの原因だったかもしれませんね</p>
-
-<p>Hugoは、機能あれもない、これもないの、(ヾﾉ･∀･`)ﾅｲﾅｲずくし<br />
-けどそこが良い！シンプルで良いんです！(_≧Д≦)ﾉ彡☆</p>
-
-<ul>
-<li>wercker - <a href="http://wercker.com/">http://wercker.com/</a></li>
-</ul>
-
-<p>さらに、生成するだけでなく、CIサービスである <a href="http://wercker.com/">wercker</a> を使って、GitHubにプッシュしたら自動でデプロイするという仕組みにしました<br />
-これを構築したメモもおいおい記載していくつもりです<br />
-（そうしないと自分が忘れてしまう…）</p>
-
-<p>このブログ自体もまだまだ作り中で、色々と足りてない機能が多いのですが、勉強しながら追加していこうと思います</p>
-
-<p>過去ブログの情報移植もこれからです<br />
-（RSSが変に更新されるかもしれません）</p>
-
-<p>気持ちも新たに、役立つ情報を発信していければと思っています！</p>
-
-<p>またよろしくお願いしまーす！</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2015%2f08%2f25%2fmoving-blog%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bHugo%2fwercker%5d%e3%83%96%e3%83%ad%e3%82%b0%e3%82%92%e7%a7%bb%e8%a1%8c%e3%81%97%e3%81%be%e3%81%97%e3%81%9f&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2015%2f08%2f25%2fmoving-blog%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2015%2f08%2f25%2fmoving-blog%2f&title=%5bHugo%2fwercker%5d%e3%83%96%e3%83%ad%e3%82%b0%e3%82%92%e7%a7%bb%e8%a1%8c%e3%81%97%e3%81%be%e3%81%97%e3%81%9f" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
@@ -1606,6 +1979,12 @@ CMSに当たり前にあって、Hugoには無い機能を、実装していく�
                 
                     
                         
+                            <a href="/blog/2022/05/22/using-git-command-line-on-mac/" class="list-group-item">[git] macでgitを初めて使う時</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2022/03/24/how-to-support-hugo-auto-deploy-to-cname-when-using-github-actions/" class="list-group-item">[Hugo] GitHub Actionsでサイトを自動デプロイしたときにCNAMEを残す方法</a><br>
                         
                     
@@ -1653,12 +2032,6 @@ CMSに当たり前にあって、Hugoには無い機能を、実装していく�
                     
                         
                             <a href="/blog/2021/12/26/summary-adventcalentar-from2010-to2021/" class="list-group-item">[C&#43;&#43;] Advent Calendarへの参加履歴 2010-2021</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2021/12/01/about-cpp-modules/" class="list-group-item">[C&#43;&#43;] Modulesのコンパイル（MSVC ver）とBMIについて</a><br>
                         
                     
                 
@@ -1824,9 +2197,9 @@ CMSに当たり前にあって、Hugoには無い機能を、実装していく�
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/git" style="font-size: 35px;">
+                    <a href="https://h-sao.com//tags/git" style="font-size: 38px;">
                     
-                        <span class="badge">9</span>
+                        <span class="badge">10</span>
                         git
                     </a>
                     </u> &nbsp; 
@@ -1884,9 +2257,9 @@ CMSに当たり前にあって、Hugoには無い機能を、実装していく�
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/mac" style="font-size: 35px;">
+                    <a href="https://h-sao.com//tags/mac" style="font-size: 38px;">
                     
-                        <span class="badge">9</span>
+                        <span class="badge">10</span>
                         mac
                     </a>
                     </u> &nbsp; 
@@ -2098,6 +2471,16 @@ CMSに当たり前にあって、Hugoには無い機能を、実装していく�
                     
                         <span class="badge">1</span>
                         windowsterminal
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/xcode" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        xcode
                     </a>
                     </u> &nbsp; 
                     

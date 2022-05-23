@@ -6,10 +6,25 @@
     <description>Recent content in Mac on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 07 Nov 2020 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 22 May 2022 16:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://h-sao.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[git] macでgitを初めて使う時</title>
+      <link>https://h-sao.com/blog/2022/05/22/using-git-command-line-on-mac/</link>
+      <pubDate>Sun, 22 May 2022 16:00:00 +0900</pubDate>
+      
+      <guid>https://h-sao.com/blog/2022/05/22/using-git-command-line-on-mac/</guid>
+      <description>mac で初めてコマンドから git を使う時の設定メモです
+ わたしの環境  MacBook Pro 16-inch, 2019 macOS Monterey   git コマンドが使えなかった こんなエラーが出ました。。。
+1 2 3  % git xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun %    開発者ツールが入ってないらしい
+Xcode をインストールする 1 2 3  % xcode-select --install code-select: note: install requested for command line developer tools %    こんな感じでインストールが進みます
+実際のダウンロードは、わたしの環境では20分くらい、インストールは10分くらいでした
+そしてインストール完了のウィンドウが出てほっ…
+Gitコマンドが使えるように 1 2 3 4 5 6 7 8 9  % git usage: git [--version] [--help] [-C &amp;lt;path&amp;gt;] [-c &amp;lt;name&amp;gt;=&amp;lt;value&amp;gt;] [--exec-path[=&amp;lt;path&amp;gt;]] [--html-path] [--man-path] [--info-path] [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare] [--git-dir=&amp;lt;path&amp;gt;] [--work-tree=&amp;lt;path&amp;gt;] [--namespace=&amp;lt;name&amp;gt;] &amp;lt;command&amp;gt; [&amp;lt;args&amp;gt;] These are common Git commands used in various situations: .</description>
+    </item>
     
     <item>
       <title>[Windows] そのexeがx64かx86かを見分ける方法 Part2</title>

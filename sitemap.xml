@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://h-sao.com/blog/2022/05/22/using-git-command-line-on-mac/</loc>
+    <lastmod>2022-05-22T16:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://h-sao.com/blog/2022/03/24/how-to-support-hugo-auto-deploy-to-cname-when-using-github-actions/</loc>
     <lastmod>2022-03-24T15:00:00+09:00</lastmod>
   </url>
@@ -564,7 +569,7 @@
   
   <url>
     <loc>https://h-sao.com/</loc>
-    <lastmod>2022-03-24T15:00:00+09:00</lastmod>
+    <lastmod>2022-05-22T16:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -576,7 +581,7 @@
   
   <url>
     <loc>https://h-sao.com/tags/git/</loc>
-    <lastmod>2022-02-27T01:00:00+09:00</lastmod>
+    <lastmod>2022-05-22T16:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -612,7 +617,7 @@
   
   <url>
     <loc>https://h-sao.com/tags/mac/</loc>
-    <lastmod>2020-11-07T10:00:00+09:00</lastmod>
+    <lastmod>2022-05-22T16:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -654,7 +659,7 @@
   
   <url>
     <loc>https://h-sao.com/post/</loc>
-    <lastmod>2022-03-24T15:00:00+09:00</lastmod>
+    <lastmod>2022-05-22T16:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -751,6 +756,12 @@
   <url>
     <loc>https://h-sao.com/tags/windowsterminal/</loc>
     <lastmod>2020-03-19T23:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://h-sao.com/tags/xcode/</loc>
+    <lastmod>2022-05-22T16:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
