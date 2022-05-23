@@ -1,7 +1,7 @@
 +++
 date = "2022-05-22T16:00:00+09:00"
 draft = false
-title = "[git] macでgitを初めて使う時"
+title = "[Git] macでgitを初めて使う時"
 tags = ["git", "mac", "xcode"]
 +++
 
@@ -13,17 +13,21 @@ mac で初めてコマンドから git を使う時の設定メモです
 
 ## git コマンドが使えなかった
 
-こんなエラーが出ました。。。
+Gitをコマンドラインで打つと、こんなエラーが出ました。。。
+
 
 ```bash
 % git 
-xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
-% 
 ```
+
+> xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+
 
 開発者ツールが入ってないらしい
 
 ## Xcode をインストールする
+
+`xcode-select --install` でインストールします
 
 ```bash
 % xcode-select --install
@@ -35,7 +39,7 @@ code-select: note: install requested for command line developer tools
 
 ![](/pic/Using-git-command-line-on-mac_00.png)
 
-![](/pic/Using-git-command-line-on-mac_01.png)
+<img src="/pic/Using-git-command-line-on-mac_01.png" style="border:solid 5px #e6e6e6"/> 
 
 ![](/pic/Using-git-command-line-on-mac_02.png)
 
@@ -47,16 +51,17 @@ code-select: note: install requested for command line developer tools
 
 ## Gitコマンドが使えるように
 
+`git` と打ってみる
+
 ```bash
 % git                   
-usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
-           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
-           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
-           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
-           <command> [<args>]
-
-These are common Git commands used in various situations:
-...
 ```
+
+> usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]  
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]  
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]  
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]  
+           <command> [<args>]  
+...
 
 無事、コマンドラインから git が使えるようになりました〜
