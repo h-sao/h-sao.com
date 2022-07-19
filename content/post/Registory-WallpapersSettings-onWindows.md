@@ -1,7 +1,7 @@
 +++
 date = "2022-07-19T01:00:00+09:00"
 draft = false
-title = "[Windows] 壁紙のレジストリデータ"
+title = "[Windows] 壁紙のレジストリ設定場所"
 tags = ["Windows"]
 +++
 
