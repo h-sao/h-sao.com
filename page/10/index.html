@@ -57,6 +57,89 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2014/01/18/rerun-last-sql/" title="[Oracle] 直前のSQLを再実行する">[Oracle] 直前のSQLを再実行する</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2014.01.18">2014.01.18</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/sql">sql</a>
+        , 
+        
+        <a href="https://h-sao.com/tags/oracle">oracle</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p>OracleのコマンドラインでSQLを実行させるときのメモ</p>
+
+<p>直前のSQLコマンドを実行は / (スラッシュ)<br />
+この場合、直前のバッファの内容は表示しません</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">/</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>直前のバッファの内容を表示して実行するのは run コマンド</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SQL</span> <span style="color:#f92672">&gt;</span> run</code></pre></td></tr></table>
+</div>
+</div>
+<p>直前のバッファの内容を修正するには edit コマンド<br />
+タイプミスなどを修正できます<br />
+ただし、環境変数 &ldquo;_editor&rdquo; にエディタの設定をしておく必要があります</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SQL</span> <span style="color:#f92672">&gt;</span> define  _editor<span style="color:#f92672">=</span>vi
+<span style="color:#66d9ef">SQL</span> <span style="color:#f92672">&gt;</span> edit</code></pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<p>（参考）</p>
+
+<ul>
+<li><p>OracleのSQL*Plusで直前に実行したSQLを再実行<br />
+<a href="http://margrave.seesaa.net/article/127477048.html">http://margrave.seesaa.net/article/127477048.html</a></p></li>
+
+<li><p>SQL バッファの編集、エディタで編集する<br />
+<a href="http://www.shift-the-oracle.com/sqlplus/command/edit.html">http://www.shift-the-oracle.com/sqlplus/command/edit.html</a></p></li>
+
+<li><p>直前に実行したSQLをエディタで編集する<br />
+<a href="http://sakusakuit.blog.fc2.com/?m&amp;no=15">http://sakusakuit.blog.fc2.com/?m&amp;no=15</a></p></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f18%2frerun-last-sql%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bOracle%5d%20%e7%9b%b4%e5%89%8d%e3%81%aeSQL%e3%82%92%e5%86%8d%e5%ae%9f%e8%a1%8c%e3%81%99%e3%82%8b&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f18%2frerun-last-sql%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f18%2frerun-last-sql%2f&title=%5bOracle%5d%20%e7%9b%b4%e5%89%8d%e3%81%aeSQL%e3%82%92%e5%86%8d%e5%ae%9f%e8%a1%8c%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2011/01/01/think-about-sppding-up-cpp/" title="[C&#43;&#43;] 高速化について思うところ">[C&#43;&#43;] 高速化について思うところ</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2011.01.01">2011.01.01</time>
@@ -312,7 +395,7 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
             
 <h2><a href="https://h-sao.com/post/" title="Posts">Posts</a></h2>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2022.05.22">2022.05.22</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2022.07.19">2022.07.19</time>
     
 </span>
 </footer>
@@ -403,6 +486,12 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
                 
                     
                         
+                            <a href="/blog/2022/07/19/registory-wallpaperssettings-onwindows/" class="list-group-item">[Windows] 壁紙のレジストリデータ</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2022/05/22/using-git-command-line-on-mac/" class="list-group-item">[Git] macでgitを初めて使う時</a><br>
                         
                     
@@ -450,12 +539,6 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
                     
                 
                     
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2021/12/26/summary-adventcalentar-from2010-to2021/" class="list-group-item">[C&#43;&#43;] Advent Calendarへの参加履歴 2010-2021</a><br>
                         
                     
                 
@@ -861,9 +944,9 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/windows" style="font-size: 17px;">
+                    <a href="https://h-sao.com//tags/windows" style="font-size: 20px;">
                     
-                        <span class="badge">3</span>
+                        <span class="badge">4</span>
                         windows
                     </a>
                     </u> &nbsp; 

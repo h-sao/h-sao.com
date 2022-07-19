@@ -6,10 +6,30 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 22 May 2022 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 19 Jul 2022 01:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Windows] 壁紙のレジストリデータ</title>
+      <link>https://h-sao.com/blog/2022/07/19/registory-wallpaperssettings-onwindows/</link>
+      <pubDate>Tue, 19 Jul 2022 01:00:00 +0900</pubDate>
+      
+      <guid>https://h-sao.com/blog/2022/07/19/registory-wallpaperssettings-onwindows/</guid>
+      <description>PCの壁紙にしてる画像データ…どこにあるんだっけ？
+デスクトップにはあるんだけど…
+そんな時は一度、レジストリの中を見てみたら解決するかもしれません
+Windows11の環境で見てみました
+壁紙のレジストリ設定  regedit でアプリを検索すると Registry Editor が出てきます
+ HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Wallpapers
+の中に、壁紙として登録されている画像情報のパスが入っています
+  元のファイルを消しちゃったけど、デスクトップの壁紙だけは残ってるってときは、どこにあるんでしょうかね…
+どなたか知ってる方いらっしゃれば教えてくださいｍｍ
+（参考）
+- Windows 10 最近使用したデスクトップの背景画像をWindowsの設定から削除して更新する
+https://www.billionwallet.com/windows10/backimage-remove.html</description>
+    </item>
     
     <item>
       <title>[Git] macでgitを初めて使う時</title>
