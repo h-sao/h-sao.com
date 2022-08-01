@@ -18,6 +18,7 @@ A little note :)
 - **桜井政博のゲームを作って思うこと（桜井政博）** `business`
 - **LIFE SHIFT(Lynda Gratton/Andrew J. Scott)**　`business`
 - **エンジニアのためのマネジメントキャリアパス(Camille Fournier)** `business`
+- **ホームページの値段が「１３０万円」と言われたんですが、これって相場でしょうか？** `business`
 
 # Tsundoku
 
@@ -33,7 +34,6 @@ A little note :)
 - **超スローライフ（勝間和代）** `business`
 - **More with Less** `business`
 - **ブレインプログラミング** `business`
-- **ホームページの値段が「１３０万円」と言われたんですが、これって相場でしょうか？** `business`
 - **桜の園** `literature`
 - **捜査線上の夕映え（有栖川有栖）** `mystery`
 - **無理なく続けられる年収10倍アップ勉強法（勝間和代）** `business`
