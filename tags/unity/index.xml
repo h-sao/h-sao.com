@@ -13,10 +13,10 @@
     
     <item>
       <title>[Unity] Windows/macOS内にあるUnityの場所</title>
-      <link>https://h-sao.com/here-is-unityeditor/</link>
+      <link>https://h-sao.com/blog/2022/08/02/here-is-unityeditor/</link>
       <pubDate>Tue, 02 Aug 2022 17:30:00 +0900</pubDate>
       
-      <guid>https://h-sao.com/here-is-unityeditor/</guid>
+      <guid>https://h-sao.com/blog/2022/08/02/here-is-unityeditor/</guid>
       <description>バッチモードとかでUnityを起動させたいとき
 Windowsだと
 C:¥Program Files¥Unity¥Hub¥Editor¥(バージョン名)¥Editor¥Unity.exe
