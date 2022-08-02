@@ -6,10 +6,26 @@
     <description>Recent content in Unity on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 26 Jul 2019 17:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 02 Aug 2022 17:30:00 +0900</lastBuildDate>
     
 	<atom:link href="https://h-sao.com/tags/unity/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Unity] Windows/macOS内にあるUnityの場所</title>
+      <link>https://h-sao.com/here-is-unityeditor/</link>
+      <pubDate>Tue, 02 Aug 2022 17:30:00 +0900</pubDate>
+      
+      <guid>https://h-sao.com/here-is-unityeditor/</guid>
+      <description>バッチモードとかでUnityを起動させたいとき
+Windowsだと
+C:¥Program Files¥Unity¥Hub¥Editor¥(バージョン名)¥Editor¥Unity.exe
+とまぁ想像のつく位置にいてるんですけど
+macOSのとき、あれ？どこにあるんだっけな？になったので、そのメモです
+mac の場合はここに居てました
+/Applications/Unity/Hub/Editor/(バージョン名)/Unity.app/Contents/MacOS/Unity
+(バージョン名) は例えば 2021.3.2f1 とかになります</description>
+    </item>
     
     <item>
       <title>[VisualStudio] Visual Studioで使う改行コードを指定する方法</title>

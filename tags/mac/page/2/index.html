@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Effectiveさお</title>
+        <title>Mac &middot; Effectiveさお</title>
         <meta name="author">
         <meta name="description" content="The awesome blog of Sao Haruka.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,19 +52,30 @@
             <a href="https://h-sao.com/about">About me</a>
         </div>
 
-
 <div class="container clearfix">
     <main role="main" class="content">
-        <article class="post">
-            <a class="btn home" href="https://h-sao.com/" title="">&laquo; </a>
-            
-<h1><a href="https://h-sao.com/blog/2020/02/25/how-to-change-dnsinfo-for-github-custom-domain/" title="[GitHub Pages] カスタムドメインのDNS情報を更新する">[GitHub Pages] カスタムドメインのDNS情報を更新する</a></h1>
+        <a class="btn home" href="https://h-sao.com/" title="">&laquo; </a>
+        <div align="center">
+            <h1>
+                &quot;<script language="JavaScript"><!--
+                var $dir = location.href.split("/");
+                var $dir2 = $dir[$dir.length -2];
+                document.write($dir2);
+                </script>&quot;
+            </h1>
+        </div>
+        <br>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2020.02.25">2020.02.25</time>
+        
+        
+            
+<h1><a href="https://h-sao.com/blog/2015/05/11/install-log-for-homebrew/" title="[Mac] Homebrewインストールログ">[Mac] Homebrewインストールログ</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2015.05.11">2015.05.11</time>
     
     &middot; 
         
-        <a href="https://h-sao.com/tags/github">github</a>
+        <a href="https://h-sao.com/tags/mac">mac</a>
         
         
     
@@ -72,180 +83,145 @@
 </span>
 </footer>
  </footer>
-            
+                <hr />
 
-<p>去年、2019年の4月くらいから<br />
-GitHub Pages にファイルをアップすると、ワーニングが出るようになった</p>
-
-<p>内容はこんなやつ</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">Title: [h-sao/h-sao.com] Page build warning
-
-The page build completed successfully, but returned the following warning for the `gh-pages` branch:
-
-The custom domain for your GitHub Pages site is pointed at an outdated IP address. You must update your site&#39;s DNS records if you&#39;d like it to be available via your custom domain. For more information, see https://help.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site.
-
-For information on troubleshooting Jekyll see:
-
-  https://help.github.com/articles/troubleshooting-jekyll-builds
-
-If you have any questions you can contact us by replying to this email.</code></pre></td></tr></table>
-</div>
-</div>
-<p>(*￣-￣)ふ～ん、よくわからんけど<br />
-何やらDNSの設定を変えないといけないのね</p>
-
-<p>めんどくさー<br />
-後で後で…と思い続けて早10か月ほど…</p>
-
-<p>さすがに対応しないと、自分のブログがアクセスできなくなるかもと焦り、重い腰を上げました</p>
-
-<h2 id="前提条件-このブログの運用情報">(前提条件)このブログの運用情報</h2>
+<p>以下の方法は 2019年現在では古くなってますので、新しいインストールログはこっちの記事を参考にしてください！</p>
 
 <ul>
-<li><a href="https://h-sao.com/">https://h-sao.com/</a> は GitHub Pages の上で動いてる</li>
-<li><code>h-sao.com</code> ドメイン自体の管理は <a href="https://www.value-domain.com/">Valueドメイン</a> を利用してる</li>
-<li>動いているリポジトリは <a href="https://github.com/h-sao/h-sao.com">https://github.com/h-sao/h-sao.com</a>
-
-<ul>
-<li>リポジトリの <code>master</code> ブランチには <code>Hugo</code> で記載したのテンプレートファイルやマークダウンで記載したコンテンツ情報を置いてる</li>
-<li>同じく <code>gh-pages</code> ブランチは、実際にサイトとして公開している html/css ファイルを置いてる</li>
-<li>（おまけ）<code>master</code> に記事のマークダウンを <code>push</code> すると<br />
-<code>Webhooks</code> に登録している <code>wercker</code> に通知が送られ<br />
-<code>Hugo</code> でhtml生成 ＆ <code>gh-pages</code> に htmlファイルなどをオートで <code>push</code> する<br />
-というちょっとした自動化の仕組みになってる</li>
-</ul></li>
+<li>[macOS] Homebrewインストールログ2019版 - Effectiveさお<br />
+<a href="http://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/">http://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/</a></li>
 </ul>
 
-<h2 id="カスタムドメインを-github-pages-に割り当てる方法">カスタムドメインを GitHub Pages に割り当てる方法</h2>
+<hr />
 
-<p>調べてみると全然難しくなくて<br />
-上記のワーニングメールに書かれてたURLにアクセスしたら、全てが書かれてました</p>
+<p><strong>Homebrew</strong> とは、Mac上のアプリケーションパッケージを管理するソフトです</p>
 
-<p>ただわたしにとっては真剣に読む気で読まないと頭の中スルー…って感じの内容だったので、ちょっと真剣に読んでみました</p>
-
-<p>英語版はこれ↓↓↓なのですけど</p>
-
-<p><a href="https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site">https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site</a></p>
-
-<p>ご丁寧に日本語版も提供されています</p>
+<p>詳しくはこちら↓↓↓に書かれているのですが、自分のメモとログを残します</p>
 
 <ul>
-<li>カスタムドメインとGitHub Pagesについて<br />
-<a href="https://help.github.com/ja/github/working-with-github-pages/about-custom-domains-and-github-pages">https://help.github.com/ja/github/working-with-github-pages/about-custom-domains-and-github-pages</a></li>
+<li><p>MacにHomebrewをインストールする - Qiita<br />
+<a href="http://qiita.com/is0me/items/475fdbc4d770534f9ef1">http://qiita.com/is0me/items/475fdbc4d770534f9ef1</a></p></li>
+
+<li><p>Homebrewの本家<br />
+<a href="http://brew.sh/">http://brew.sh/</a></p></li>
 </ul>
 
-<p>これを見ながらやってみます</p>
+<p>Macでのインストールログ</p>
 
-<p>まずわたしのGitHub Pagesの設定画面は、こんな感じで黄色いワーニングが出てました</p>
+<pre><code>## Homebrew入ってない状態
+MacProSao:~ Sao$ brew
+-bash: brew: command not found
+ 
+## VIMでバッシュプロファイル作成
+MacProSao:~ Sao$ vim .bash_profile
 
-<p><img src="/pic/How-to-change-DNSInfo-for-GitHub-custom-domain_00.png" alt="" /></p>
+MacProSao:~ Sao$ more .bash_profile 
+export PATH=/usr/local:$PATH
 
-<p>今までずーっと無視してきましたが、いよいよ解決する日が来ましたよ</p>
+MacProSao:~ Sao$ pwd
+/Users/Sao
 
-<p>わたしが割り当てているカスタムドメインは <strong>Apex ドメイン</strong> になっています<br />
-（ www.h-sao.com ではなく、 h-sao.com としてアクセス）</p>
+## /usr/local の作成 
+MacProSao:usr Sao$ sudo mkdir /usr/local/
 
-<p>日本語版の「カスタムドメインとGitHub Pagesについて」の説明を読んでみると、<br />
-<strong>「GitHub Pages サイト用のカスタムドメインを管理する」を参照してください。</strong> とあるので、素直にそのリンクに飛びます</p>
+WARNING: Improper use of the sudo command could lead to data loss
+or the deletion of important system files. Please double-check your
+typing when using sudo. Type &quot;man sudo&quot; for more information.
 
-<ul>
-<li>「GitHub Pages サイト用のカスタムドメインを管理する」<br />
-<a href="https://help.github.com/ja/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">https://help.github.com/ja/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain</a></li>
-</ul>
+To proceed, enter your password, or type Ctrl-C to abort.
 
-<p>ここにありました！ Apexドメインを設定する方法が！<br />
-<code>A</code> レコードのIPアドレスが書いてありました</p>
+Password:
+MacProSao:usr Sao$ ls -al
+total 8
+drwxr-xr-x@   12 root  wheel    408  5 11 02:24 .
+drwxr-xr-x    30 root  wheel   1088  5 11 02:17 ..
+drwxr-xr-x     5 root  wheel    170  9 10  2014 X11
+lrwxr-xr-x     1 root  wheel      3  2 22 18:01 X11R6 -&gt; X11
+drwxr-xr-x  1053 root  wheel  35802  5  2 23:30 bin
+drwxr-xr-x   257 root  wheel   8738  5 11 01:25 include
+drwxr-xr-x   271 root  wheel   9214  5 11 01:25 lib
+drwxr-xr-x   170 root  wheel   5780  4 26 13:43 libexec
+drwxr-xr-x     2 root  wheel     68  5 11 02:24 local
+drwxr-xr-x   244 root  wheel   8296  4 26 13:40 sbin
+drwxr-xr-x    44 root  wheel   1496  5 11 01:25 share
+drwxr-xr-x     4 root  wheel    136  2 22 17:56 standalone
 
-<pre><code>185.199.108.153
-185.199.109.153
-185.199.110.153
-185.199.111.153
+## Homebrewのインストール
+MacProSao:usr Sao$ ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+==&gt; This script will install:
+/usr/local/bin/brew
+/usr/local/Library/...
+/usr/local/share/man/man1/brew.1
+==&gt; The following directories will be made group writable:
+/usr/local/.
+==&gt; The following directories will have their group set to admin:
+/usr/local/.
+
+Press RETURN to continue or any other key to abort
+==&gt; /usr/bin/sudo /bin/chmod g+rwx /usr/local/.
+==&gt; /usr/bin/sudo /usr/bin/chgrp admin /usr/local/.
+==&gt; /usr/bin/sudo /bin/mkdir /Library/Caches/Homebrew
+==&gt; /usr/bin/sudo /bin/chmod g+rwx /Library/Caches/Homebrew
+==&gt; Downloading and installing Homebrew...
+remote: Counting objects: 3572, done.
+remote: Compressing objects: 100% (3421/3421), done.
+remote: Total 3572 (delta 35), reused 1459 (delta 18), pack-reused 0
+Receiving objects: 100% (3572/3572), 2.72 MiB | 2.47 MiB/s, done.
+Resolving deltas: 100% (35/35), done.
+From https://github.com/Homebrew/homebrew
+ * [new branch]      master     -&gt; origin/master
+HEAD is now at c007efc Riak 2.1.1
+==&gt; Installation successful!
+==&gt; Next steps
+Run `brew help` to get started
+
+## プロファイル読み込み 
+MacProSao:~ Sao$ source .bash_profile 
+
+## バージョン確認
+MacProSao:~ Sao$ brew -v
+Homebrew 0.9.5
+ 
+MacProSao:~ Sao$ 
 </code></pre>
 
-<p>あと、最初の「カスタムドメインとGitHub Pagesについて」には、こんな記載もありました</p>
-
-<blockquote>
-<p>サイトには、カスタムドメインの一方または両方を設定できます。 <strong>Apex ドメインを使用している場合でも、www サブドメインを使用することをおすすめします。</strong></p>
-</blockquote>
-
-<p>ふむふむ、www は付けるのを推奨してるのね、了解<br />
-<code>cname</code> も追加してみました</p>
-
-<pre><code># 設定するAレコード
-a @ 185.199.108.153
-a @ 185.199.109.153
-a @ 185.199.110.153
-a @ 185.199.111.153
-
-# サブドメインも設定しておく
-cname www h-sao.github.io.
-</code></pre>
-
-<p>Valueドメインの設定画面<br />
-<img src="/pic/How-to-change-DNSInfo-for-GitHub-custom-domain_03.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>これを設定すると、わたしの場合はちょうど１５分後に設定が反映されました</p>
-
-<p><img src="/pic/How-to-change-DNSInfo-for-GitHub-custom-domain_01.png" alt="" /></p>
-
-<p>よかったー！</p>
+<p>Hugoを入れるためにインストールしてみました<br />
+ついにわたしもGoを使う日が来るなんて…(ﾟ∇ﾟ ;)</p>
 
             <ul class="share-buttons">
     <li></li>
     <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f02%2f25%2fhow-to-change-dnsinfo-for-github-custom-domain%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2015%2f05%2f11%2finstall-log-for-homebrew%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGitHub%20Pages%5d%20%e3%82%ab%e3%82%b9%e3%82%bf%e3%83%a0%e3%83%89%e3%83%a1%e3%82%a4%e3%83%b3%e3%81%aeDNS%e6%83%85%e5%a0%b1%e3%82%92%e6%9b%b4%e6%96%b0%e3%81%99%e3%82%8b&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f02%2f25%2fhow-to-change-dnsinfo-for-github-custom-domain%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bMac%5d%20Homebrew%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%83%ad%e3%82%b0&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2015%2f05%2f11%2finstall-log-for-homebrew%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f02%2f25%2fhow-to-change-dnsinfo-for-github-custom-domain%2f&title=%5bGitHub%20Pages%5d%20%e3%82%ab%e3%82%b9%e3%82%bf%e3%83%a0%e3%83%89%e3%83%a1%e3%82%a4%e3%83%b3%e3%81%aeDNS%e6%83%85%e5%a0%b1%e3%82%92%e6%9b%b4%e6%96%b0%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2015%2f05%2f11%2finstall-log-for-homebrew%2f&title=%5bMac%5d%20Homebrew%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%83%ad%e3%82%b0" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 
-        </article>
+            <hr>
         
-        <div class="comments">
-            <h3></h3>
-            <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
+
+        <div class="pagination">
+<nav>
+
     
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "harukasao" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-        </div>
-        
+	<a class="btn newer" href="/tags/mac/" title="">&laquo; </a>
+	
+
+	<p class="counter"> 2  2</p>
+
+
+	
+
+</nav>
+</div>
+
     </main>
+
     <aside class="author">
   <img class="profile-image" src="https://h-sao.com/pic/saoharuka128.png" alt="遥佐保/Sao Haruka" />
   <p class="name"> 
@@ -858,7 +834,6 @@ cname www h-sao.github.io.
 
 
 </div>
-
 <footer class="main-footer">
   <div class="container clearfix">
       <a class="icon-rss" href="https://h-sao.com/post/index.xml" title="RSS"></a>

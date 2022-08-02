@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://h-sao.com/here-is-unityeditor/</loc>
+    <lastmod>2022-08-02T17:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://h-sao.com/blog/2022/07/19/registory-wallpaperssettings-onwindows/</loc>
     <lastmod>2022-07-19T01:00:00+09:00</lastmod>
   </url>
@@ -574,7 +579,7 @@
   
   <url>
     <loc>https://h-sao.com/</loc>
-    <lastmod>2022-07-19T01:00:00+09:00</lastmod>
+    <lastmod>2022-08-02T17:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -622,7 +627,7 @@
   
   <url>
     <loc>https://h-sao.com/tags/mac/</loc>
-    <lastmod>2022-05-22T16:00:00+09:00</lastmod>
+    <lastmod>2022-08-02T17:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -718,7 +723,7 @@
   
   <url>
     <loc>https://h-sao.com/tags/unity/</loc>
-    <lastmod>2019-07-26T17:00:00+09:00</lastmod>
+    <lastmod>2022-08-02T17:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -742,7 +747,7 @@
   
   <url>
     <loc>https://h-sao.com/tags/windows/</loc>
-    <lastmod>2022-07-19T01:00:00+09:00</lastmod>
+    <lastmod>2022-08-02T17:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
