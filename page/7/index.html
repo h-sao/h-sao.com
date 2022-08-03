@@ -57,6 +57,236 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2016/05/15/use-clang-on-visualstudio/" title="[C&#43;&#43;] VisualStusio2015でClangを使う設定">[C&#43;&#43;] VisualStusio2015でClangを使う設定</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.05.15">2016.05.15</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/cpp">cpp</a>
+        , 
+        
+        <a href="https://h-sao.com/tags/clang">clang</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>今日は Clang with Microsoft CodeGen の設定などについて、メモしておきます</p>
+
+<p>先人たちが既に色々と試している内容と対して変わりませんが、そもそも日本語の情報も少ないので、何かの足しになればと思います</p>
+
+<h1 id="clang-with-microsoft-codegen-is-here">&ldquo;Clang with Microsoft CodeGen&rdquo; is here!</h1>
+
+<p>最近はすっかり、クロスプラットフォームやオープンソースに力を入れているマイクロソフト社のツールセットの中に、Clang対応ってのがあります</p>
+
+<p>2015年の年末にですが、Clang が正式に Visual Studio 2015 Update1 で利用できるよ～<br />
+とVC++チームブログで発表されていました</p>
+
+<ul>
+<li><p>Clang with Microsoft CodeGen in VS 2015 Update 1 - Visual C++ Team Blog<br />
+<a href="https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/">https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/</a></p></li>
+
+<li><p>Clang with Microsoft CodeGen (March 2016) released- Visual C++ Team Blog<br />
+<a href="https://blogs.msdn.microsoft.com/vcblog/2016/03/31/clang-with-microsoft-codegen-march-2016-released/">https://blogs.msdn.microsoft.com/vcblog/2016/03/31/clang-with-microsoft-codegen-march-2016-released/</a></p></li>
+</ul>
+
+<p>良いですねー(^^)<br />
+現在のVS2015には <strong>Clang with Microsoft CodeGen</strong> というツールセットが提供されており、目玉はなんといっても、Clang のデバックを Visual Studioのエディターで確認できるところでしょうか！</p>
+
+<p>他にも、Clang でコンパイルしたobjと VC でコンパイルしたobjがリンクできるところもすごいです<br />
+既存資産をフル活用出来そうですね</p>
+
+<blockquote>
+<p>（2016/5/15現在、Visual Studio 2015 Update2 が最新です）<br />
+<a href="https://www.visualstudio.com/ja-jp/news/vs2015-update2-vs.aspx">https://www.visualstudio.com/ja-jp/news/vs2015-update2-vs.aspx</a></p>
+</blockquote>
+
+<hr />
+
+<p>LLVM側にも記事が上がっています</p>
+
+<ul>
+<li>Getting Started with the LLVM System using Microsoft Visual Studio - LLVM本家<br />
+<a href="http://llvm.org/docs/GettingStartedVS.html">http://llvm.org/docs/GettingStartedVS.html</a></li>
+</ul>
+
+<hr />
+
+<p>日本でも既に先人が試されているので、読んでみると良いと思います</p>
+
+<ul>
+<li><p>Clang/C2をコマンドプロンプトで使ってみる - イグトランスの頭の中（のかけら）<br />
+<a href="http://dev.activebasic.com/egtra/2015/12/09/850/">http://dev.activebasic.com/egtra/2015/12/09/850/</a></p></li>
+
+<li><p>Clang with Microsoft CodeGenがでたので試す - C++初心者Advent Calendar 2015 9日目<br />
+<a href="http://qiita.com/yumetodo/items/bd41f31f39dd590e8c80">http://qiita.com/yumetodo/items/bd41f31f39dd590e8c80</a></p></li>
+</ul>
+
+<hr />
+
+<p>ちなみに、この Clang with Microsoft CodeGen は VC++チームブログにも &ldquo;a.k.a. Clang/C2&rdquo; と記載されており、別名を <strong>Clang/C2</strong> というようです</p>
+
+<p>また、今回対応している <strong>Clang 側のバージョンは 3.7</strong> です</p>
+
+<h1 id="clang-exe-の場所">clang.exe の場所</h1>
+
+<h3 id="clang">Clang</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Clang 3.7\bin\x86\clang.exe</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="ちなみにvc">ちなみにVC++</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe</code></pre></td></tr></table>
+</div>
+</div>
+<p>どちらでも、コマンドプロンプトでコンパイル可能です</p>
+
+<h1 id="vsでのコンパイラの切り替え設定">VSでのコンパイラの切り替え設定</h1>
+
+<p>Visual Stidon 2015 上で &ldquo;Alt + F7&rdquo; を押すか</p>
+
+<blockquote>
+<p>プロジェクト &gt; [プロジェクト名]のプロパティ</p>
+</blockquote>
+
+<p>で設定UIを表示させます</p>
+
+<blockquote>
+<p>構成プロパティ &gt; 全般 &gt; プラットフォームツールセット</p>
+</blockquote>
+
+<p>この項目を &ldquo;Clang 3.7 with Microsoft CodeGen (v140_clang_3_7)&rdquo; に変更するだけです</p>
+
+<p><img src="/pic/Use-Clang-on-VisualStudio_00.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>結構簡単＼(^o^)／</p>
+
+<h1 id="ソリューション作成は何でもok">ソリューション作成は何でもOK</h1>
+
+<p>上記の様に、コンパイラが簡単に切り替えられるので、空のプロジェクトでも、Win32コンソールアプリケーションでもOKです</p>
+
+<p>一応、Clangっぽいプロジェクトはあるんですけど、いきなり dll というのもなんだか敷居が高いので、</p>
+
+<p><img src="/pic/Use-Clang-on-VisualStudio_01.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>exe を作りたいだけなら、Win32コンソールアプリケーションで良いと思います</p>
+
+<h1 id="余談-文字コードはutf8の方が良い-様な気がする">[余談]文字コードはUTF8の方が良い(様な気がする)</h1>
+
+<p>最初に書いておくと、Sift-JIS でも Clang/C2 でコンパイルは通ります</p>
+
+<p>…なのですが、一応、なんとなく</p>
+
+<p>個々の環境によって異なるのかもしれませんが<br />
+わたしがVS2015で作成した cpp ファイルは、デフォルトで Sift-JIS になります</p>
+
+<p>既に、<a href="https://blogs.msdn.microsoft.com/vcblog/2015/12/04/clang-with-microsoft-codegen-in-vs-2015-update-1/">VC++チームブログ</a> にはこんな感じで↓↓↓</p>
+
+<blockquote>
+<p>If source files in the project you are trying to convert are UTF-16 encoded, you will need to resave them as UTF-8 when Clang gives you an error about UTF-16 encoded source with BOM.</p>
+</blockquote>
+
+<p>UTF-16はだめらしいです<br />
+Sift-JIS は無関係かもしれませんが、一応…</p>
+
+<h1 id="サンプルコード">サンプルコード</h1>
+
+<p><a href="http://cpprefjp.github.io/">cpprefjp</a> を参照して、サンプルコードを書いてみました</p>
+
+<ul>
+<li>constexprの制限緩和
+<a href="http://cpprefjp.github.io/lang/cpp14/relaxing_constraints_on_constexpr.html">http://cpprefjp.github.io/lang/cpp14/relaxing_constraints_on_constexpr.html</a></li>
+</ul>
+
+<p>VC2015 Update2 では未対応だけど、Clang 3.7 は対応しているというコードです</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;stdafx.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">constexpr</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">f</span>()
+{
+	<span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">return</span> result;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+	std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Hello: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> f() <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+
+	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="visual-studio-2015-v140-でコンパイルすると-エラー">Visual Studio 2015 (v140) でコンパイルすると、エラー</h2>
+
+<p><img src="/pic/Use-Clang-on-VisualStudio_02.png" alt="" /></p>
+
+<p>VS2015 ではまだ、constexpr関数内の変数宣言がエラーになる様です</p>
+
+<h2 id="clang-3-7-with-microsoft-codegen-v140-clang-3-7-でのコンパイル">Clang 3.7 with Microsoft CodeGen (v140_clang_3_7) でのコンパイル</h2>
+
+<p><img src="/pic/Use-Clang-on-VisualStudio_03.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>Clang はOKです<br />
+いい感じに動作しました！</p>
+
+<hr />
+
+<p>VC++も Clang も、VS上でデバック出来るのは良いですね<br />
+噂には聞いていましたが、自分で動作させてみると、感激するもんがあります</p>
+
+<p>今はまだプレビューらしいので、早く安定化して欲しいですね～</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f15%2fuse-clang-on-visualstudio%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5d%20VisualStusio2015%e3%81%a7Clang%e3%82%92%e4%bd%bf%e3%81%86%e8%a8%ad%e5%ae%9a&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f15%2fuse-clang-on-visualstudio%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f15%2fuse-clang-on-visualstudio%2f&title=%5bC%2b%2b%5d%20VisualStusio2015%e3%81%a7Clang%e3%82%92%e4%bd%bf%e3%81%86%e8%a8%ad%e5%ae%9a" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2016/05/09/add-ssh-config-for-git/" title="[SSH] 複数キー接続のconfig記載について">[SSH] 複数キー接続のconfig記載について</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.05.09">2016.05.09</time>
@@ -1681,56 +1911,6 @@ C++の勉強会や集まりなど、筋トレは続けたいです…</p>
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2015/11/21/meetup-app1-opensource/" title="[勉強会] meetup app@1 でオープンソースについて発表しました">[勉強会] meetup app@1 でオープンソースについて発表しました</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2015.11.21">2015.11.21</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/community">community</a>
-        , 
-        
-        <a href="https://h-sao.com/tags/opensource">opensource</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>2015/11/21 Sat meetup app@1 という勉強会を開催しました</p>
-
-<p><a href="https://meetupapp.doorkeeper.jp/events/33820">https://meetupapp.doorkeeper.jp/events/33820</a></p>
-
-<ul>
-<li>ビジネスにおけるオープンソースの利用価値<br />
-<a href="https://speakerdeck.com/harukasao/21-opensource-value">https://speakerdeck.com/harukasao/21-opensource-value</a></li>
-</ul>
-
-<script async class="speakerdeck-embed" data-id="59c8b5f6dfa649309199bcd9ac3103fe" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
-
-<p>仰々しいタイトルが付いていますが、完全に私見まとめを発表させて頂きました</p>
-
-<p>オープンソースだけというよりは、最後の方は、普通に製品やサービスのロードマップ、ビジネスモデル的な観点になりました<br />
-もちろんこれが全てではないと思うし、わたしはマーケティングのプロでもないので間違っているかもしれないですけど</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2015%2f11%2f21%2fmeetup-app1-opensource%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5b%e5%8b%89%e5%bc%b7%e4%bc%9a%5d%20meetup%20app%401%20%e3%81%a7%e3%82%aa%e3%83%bc%e3%83%97%e3%83%b3%e3%82%bd%e3%83%bc%e3%82%b9%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e7%99%ba%e8%a1%a8%e3%81%97%e3%81%be%e3%81%97%e3%81%9f&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2015%2f11%2f21%2fmeetup-app1-opensource%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2015%2f11%2f21%2fmeetup-app1-opensource%2f&title=%5b%e5%8b%89%e5%bc%b7%e4%bc%9a%5d%20meetup%20app%401%20%e3%81%a7%e3%82%aa%e3%83%bc%e3%83%97%e3%83%b3%e3%82%bd%e3%83%bc%e3%82%b9%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e7%99%ba%e8%a1%a8%e3%81%97%e3%81%be%e3%81%97%e3%81%9f" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -1802,6 +1982,12 @@ C++の勉強会や集まりなど、筋トレは続けたいです…</p>
                 
                     
                         
+                            <a href="/blog/2022/08/03/add-gitlfs-file/" class="list-group-item">[Git] </a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2022/08/02/here-is-unityeditor/" class="list-group-item">[Unity] Windows/macOS内にあるUnityの場所</a><br>
                         
                     
@@ -1851,12 +2037,6 @@ C++の勉強会や集まりなど、筋トレは続けたいです…</p>
                     
                         
                             <a href="/blog/2022/01/30/start-hackerrank/" class="list-group-item">[C&#43;&#43;] HackerRank始めました</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2022/01/25/hello2022/" class="list-group-item">[Diary] 2022年もよろしくお願いします</a><br>
                         
                     
                 
@@ -2022,9 +2202,9 @@ C++の勉強会や集まりなど、筋トレは続けたいです…</p>
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/git" style="font-size: 38px;">
+                    <a href="https://h-sao.com//tags/git" style="font-size: 41px;">
                     
-                        <span class="badge">10</span>
+                        <span class="badge">11</span>
                         git
                     </a>
                     </u> &nbsp; 
@@ -2042,10 +2222,20 @@ C++の勉強会や集まりなど、筋トレは続けたいです…</p>
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/github" style="font-size: 26px;">
+                    <a href="https://h-sao.com//tags/github" style="font-size: 29px;">
                     
-                        <span class="badge">6</span>
+                        <span class="badge">7</span>
                         github
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/gitlfs" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        gitlfs
                     </a>
                     </u> &nbsp; 
                     
