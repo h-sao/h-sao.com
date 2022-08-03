@@ -25,8 +25,8 @@
 &amp;gt;git lfs install Updated Git hooks. Git LFS initialized.  2) git lfs version でバージョンを確認しておく
 &amp;gt;git lfs version git-lfs/3.2.0 (GitHub; windows amd64; go 1.18.2)  3) git lfs track とすると、.gitattributes に格納されている対象データの情報が見れます
 例えばこんな感じ
-&amp;gt;git lfs track Listing tracked patterns *.dll (.gitattributes) *.exe (.gitattributes) Listing excluded patterns  4) git lfs track でLFS管理に入れたいファイルを指定します
-&amp;gt;git lfs track &amp;quot;*.</description>
+&amp;gt;git lfs track Listing tracked patterns *.dll (.gitattributes) *.exe (.gitattributes)  4) git lfs track でLFS管理に入れたいファイルを指定します
+&amp;gt;git lfs track &amp;quot;*.o&amp;quot; Tracking &amp;quot;*.</description>
     </item>
     
     <item>
