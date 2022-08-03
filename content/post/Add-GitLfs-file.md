@@ -36,7 +36,6 @@ git-lfs/3.2.0 (GitHub; windows amd64; go 1.18.2)
 Listing tracked patterns
     *.dll (.gitattributes)
     *.exe (.gitattributes)
-Listing excluded patterns
 ```
 
 4) `git lfs track` でLFS管理に入れたいファイルを指定します
