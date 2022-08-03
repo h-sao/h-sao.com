@@ -69,7 +69,7 @@
         
         
             
-<h1><a href="https://h-sao.com/blog/2022/08/03/add-gitlfs-file/" title="[Git] ">[Git] </a></h1>
+<h1><a href="https://h-sao.com/blog/2022/08/03/add-gitlfs-file/" title="[Git] コミット済みのファイルを Git LFS 管理対象にしたいとき">[Git] コミット済みのファイルを Git LFS 管理対象にしたいとき</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2022.08.03">2022.08.03</time>
     
@@ -95,27 +95,21 @@
 
 <p>わたしの環境は <code>Windows</code> での動作確認になります</p>
 
-<ol>
-<li><code>git lfs install</code> で <code>Git LFS</code> をインストールします<br />
-わたしの環境にはすでに入っていたみたい…</li>
-</ol>
+<p>1) <code>git lfs install</code> で <code>Git LFS</code> をインストールします<br />
+わたしの環境にはすでに入っていたみたい…</p>
 
 <pre><code>&gt;git lfs install
 Updated Git hooks.
 Git LFS initialized.
 </code></pre>
 
-<ol>
-<li><code>git lfs version</code> でバージョンを確認しておく</li>
-</ol>
+<p>2) <code>git lfs version</code> でバージョンを確認しておく</p>
 
 <pre><code>&gt;git lfs version
 git-lfs/3.2.0 (GitHub; windows amd64; go 1.18.2)
 </code></pre>
 
-<ol>
-<li><code>git lfs track</code> とすると、<code>.gitattributes</code> に格納されている対象データの情報が見れます</li>
-</ol>
+<p>3) <code>git lfs track</code> とすると、<code>.gitattributes</code> に格納されている対象データの情報が見れます</p>
 
 <p>例えばこんな感じ</p>
 
@@ -126,9 +120,7 @@ Listing tracked patterns
 Listing excluded patterns
 </code></pre>
 
-<ol>
-<li><code>git lfs track</code> でLFS管理に入れたいファイルを指定します</li>
-</ol>
+<p>4) <code>git lfs track</code> でLFS管理に入れたいファイルを指定します</p>
 
 <pre><code>&gt;git lfs track &quot;*.o&quot;
 Tracking &quot;*.o&quot;
@@ -139,8 +131,11 @@ Tracking &quot;*.o&quot;
 <pre><code>&gt;git lfs track &quot;*aaa/bbb/ccc.bin&quot;
 </code></pre>
 
-<p><code>.gitattributes</code> に追加した対象ファイルが記載されているので<br />
+<p>5) <code>.gitattributes</code> に追加した対象ファイルが記載されているので<br />
 それをコミット＆プッシュすればOK</p>
+
+<p>6) すでにLFS管理してなかったときにコミットしてしまったファイルは<br />
+いったん削除コミットをしてから、もう一度コミット＆プッシュするのが良さそうでした</p>
 
 <hr />
 
@@ -159,11 +154,11 @@ Tracking &quot;*.o&quot;
         <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f08%2f03%2fadd-gitlfs-file%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGit%5d%20&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f08%2f03%2fadd-gitlfs-file%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGit%5d%20%e3%82%b3%e3%83%9f%e3%83%83%e3%83%88%e6%b8%88%e3%81%bf%e3%81%ae%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%20Git%20LFS%20%e7%ae%a1%e7%90%86%e5%af%be%e8%b1%a1%e3%81%ab%e3%81%97%e3%81%9f%e3%81%84%e3%81%a8%e3%81%8d&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f08%2f03%2fadd-gitlfs-file%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f08%2f03%2fadd-gitlfs-file%2f&title=%5bGit%5d%20" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f08%2f03%2fadd-gitlfs-file%2f&title=%5bGit%5d%20%e3%82%b3%e3%83%9f%e3%83%83%e3%83%88%e6%b8%88%e3%81%bf%e3%81%ae%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%20Git%20LFS%20%e7%ae%a1%e7%90%86%e5%af%be%e8%b1%a1%e3%81%ab%e3%81%97%e3%81%9f%e3%81%84%e3%81%a8%e3%81%8d" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 
@@ -995,7 +990,7 @@ $ git merge upstream/master</code></pre></td></tr></table>
                 
                     
                         
-                            <a href="/blog/2022/08/03/add-gitlfs-file/" class="list-group-item">[Git] </a><br>
+                            <a href="/blog/2022/08/03/add-gitlfs-file/" class="list-group-item">[Git] コミット済みのファイルを Git LFS 管理対象にしたいとき</a><br>
                         
                     
                 
