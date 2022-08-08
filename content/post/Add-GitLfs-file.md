@@ -48,7 +48,7 @@ Tracking "*.o"
 ファイル単体を指定したければ、直接指定すればOK
 
 ```
->git lfs track "*aaa/bbb/ccc.bin"
+>git lfs track "aaa/bbb/ccc.bin"
 ```
 
 5) `.gitattributes` に追加した対象ファイルが記載されているので  
