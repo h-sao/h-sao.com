@@ -57,6 +57,205 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2022/12/07/how-to-develop-hackerrank-for-vscode/" title="[C&#43;&#43;] VC&#43;&#43;でHackerRankの環境構築">[C&#43;&#43;] VC&#43;&#43;でHackerRankの環境構築</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2022.12.07">2022.12.07</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/cpp">cpp</a>
+        , 
+        
+        <a href="https://h-sao.com/tags/hackerrank">hackerrank</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<blockquote>
+<p>この記事は <a href="https://qiita.com/advent-calendar/2022/cxx">C++ Advent Calendar 2022</a> 7日目の記事です。</p>
+</blockquote>
+
+<p>（内容まとめ）<br />
+競プロ勢にとったら当たり前のローカル環境設定についての記事です<br />
+自分の言葉でまとめなおしたメモになります<br />
+みんな！AtCoder もいいけど HackerRank も面白いよ！</p>
+
+<hr />
+
+<p>今年の3月ごろ、同僚（海外の方）から「HackerRank 結構いいよ、わたしは週末によくやってるよ～」と教えてもらいまして<br />
+たまにポチポチ解いています</p>
+
+<ul>
+<li>HackerRank<br />
+<a href="https://www.hackerrank.com/">https://www.hackerrank.com/</a></li>
+</ul>
+
+<p>ざっくり言うと、お題に対するコードを書いて、要求通りの出力が出来れば Pass! でポイントが溜まっていってバッチがもらえたりします<br />
+わたしは主にC++の Problem Solving を解いています<br />
+（数学系の問題も多いです）</p>
+
+<blockquote>
+<p>C++ language のジャンルで解くことも出来ますが、こっちは文法確認問題なので、あまり面白くない</p>
+</blockquote>
+
+<p>HackerRankは他のオンラインコーディングプラットフォームとはちょっと異なっていて<br />
+競技で問題を解いてランクを上げるというよりは、スキルの習得に焦点を当てているような気がします<br />
+解いて欲しい問題用の関数がミニマムに提供されてて、最初に記載するであろう入力系の処理が予め記載されているので、解くのに集中出来ますね</p>
+
+<p>で、それまで真面目に <code>Easy</code> 問題を解いていたのですが、簡単すぎるし量も多い…つまらん…<br />
+となって、教えてくれた同僚に<br />
+「HackerRank、何の問題を解いてる？」<br />
+と聞いたところ、<br />
+「えぇー <code>Easy</code> やってるの？時間の無駄だよ～わたしは <code>Hard</code> しかやらないよ」<br />
+と突っ込まれました＞＜。</p>
+
+<p>さてそこで、<code>Hard</code> 問題をやり始めましたが、あら。。。難しい。。。<br />
+こんなけ難しかったらデバッグしたくなるんだけど、HackerRankのサイトに組み込まれたコードエディタ上から問題を解くので、プリントデバッグしか方法がない<br />
+変数の中身や配列の中身をもっとアグレッシブに確認したい…</p>
+
+<p>前置きが長くなりましたが、HackerRankをやるときに、Visual Studio上でコードを書いて確認する方法を記載しましたｍｍ</p>
+
+<p>＜今回の環境＞</p>
+
+<ul>
+<li>Windows10</li>
+<li>Visual Sutdio 2019</li>
+<li>Hacker Rank の C++ 問題を対象</li>
+</ul>
+
+<hr />
+
+<h2 id="vsにコードコピペしてhackerrankの問題を解きたい">VSにコードコピペしてHackerRankの問題を解きたい</h2>
+
+<p>コピペ出来ないとしんどいです！</p>
+
+<p>しかし HackerRank も他の競プロと同じく、<strong>#include <bits/stdc++.h></strong> があります<br />
+そのまんまじゃリンク通りません</p>
+
+<p>なので、ライブラリを認知する箇所に stdc++.h を置いておけば良いのです</p>
+
+<ul>
+<li><bits/stdc++.h> のコピペ元のgist<br />
+<strong>reza-ryte-club/stdc++.h</strong><br />
+<a href="https://gist.github.com/reza-ryte-club/97c39f35dab0c45a5d924dd9e50c445f">https://gist.github.com/reza-ryte-club/97c39f35dab0c45a5d924dd9e50c445f</a></li>
+</ul>
+
+<p>他にも色んな方が公開されてますけど、検索するとこの方の↑↑↑リンクがよく見つかりました</p>
+
+<p>これを、VC++がデフォで認知する場所に置きます</p>
+
+<p>一番簡単な場所に調べ方は、</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>とコードに書いて、<code>F12</code> で <code>iostream</code> の場所までジャンプ<br />
+→ソースのタブを右クリックすると、そこのディレクトリの場所までジャンプ出来る</p>
+
+<p><img src="/pic/How-to-develop-HackerRank-for-VSCode_00.png" alt="" /></p>
+
+<blockquote>
+<p>ちなみにわたしの場合は、ここにありました<br />
+C:\Program Files (x86)<br />
+　\Microsoft Visual Studio<br />
+　　\2019<br />
+　　　\Enterprise<br />
+　　　　\VC<br />
+　　　　　\Tools<br />
+　　　　　　\MSVC<br />
+　　　　　　　\14.29.30133<br />
+　　　　　　　　\include</p>
+</blockquote>
+
+<h2 id="エラーやワーニングが出る場合">エラーやワーニングが出る場合</h2>
+
+<p>めんどいですが、毎回エラー除去のための <code>define</code> を書くのが無難な対応だと思います<br />
+（業務のコードじゃないし）</p>
+
+<p>例えば、HackerRank でよく出てくるこんなコード</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">ofstream <span style="color:#a6e22e">fout</span>(getenv(<span style="color:#e6db74">&#34;OUTPUT_PATH&#34;</span>));
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>エラーになります</p>
+
+<blockquote>
+<p>error C4996: &lsquo;getenv&rsquo;: This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.</p>
+</blockquote>
+
+<p>あんた <code>getenv</code> は非推奨だけど使いたいなら、<code>_CRT_SECURE_NO_WARNINGS</code> 定義しなさいよ！ってやつです<br />
+ええ、使いたいんです、HackerRank にコードコピペしたいんで！<br />
+なのでわたしはガッツリと先ほどの <strong>#include <bits/stdc++.h></strong> の上の方に定義を追記しています</p>
+
+<p>自分はVSに慣れてるので、慣れた環境でコード書けるのが快適ですね</p>
+
+<h2 id="余談-vscodeでやろうとしたが">(余談) VSCodeでやろうとしたが…</h2>
+
+<p>最初は、Windoows の VSCode で環境構築をしようとしてたのですが、なかなか手ごわいです…</p>
+
+<p>mac はさくっとものの数分で C++デバッグ環境が構築できたのに、Windows だと、半日かけてもうまく動きませんでした＞＜。<br />
+（VC++ がうまく動かなくて、gcc はなんとか動作したって感じです）</p>
+
+<p>色々調べていた時に、VSCode on Windows 情報でいちばん面白かったのが、この中国の投稿サイトでした</p>
+
+<ul>
+<li>Visual Studio Code はどのように C および C++ プログラムを作成して実行しますか?（翻訳） - zhihu.com<br />
+<a href="https://www.zhihu.com/question/30315894">https://www.zhihu.com/question/30315894</a></li>
+</ul>
+
+<p>わたしは中国語はよくわからないので、Googleのページ翻訳でよくここの Zhihu サイトを見るのですが<br />
+この記事は見てて笑っちゃいました。。。<br />
+情報量も多いし、皮肉アリ、ぶっちゃけトークありで、読み物として面白かったです</p>
+
+<p>ここを見て、あ、VSCode on Windows でVC++使うのちょっと大変かも…と思いました<br />
+中国は同じように感じがあるので、そこの悩みも詳細にかかれてて、親近感沸きました</p>
+
+<p>あんまり日本でこういう記事見ないな～なんでだろ、ぶっちゃけすぎるからかな？</p>
+
+<p>C++だけじゃなくてUnityの情報も多いです、知識投稿サイトってやつかなー？とにかく面白い</p>
+
+<hr />
+
+<p>（まとめ）</p>
+
+<p>コード書くなら開発環境は整えようね！</p>
+
+<p>C++ で mac なら VSCode だけど、Win なら VS 使おうぜ！</p>
+
+<p>HackerRank ほんとお勧め、地道に解くのが楽しい</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f12%2f07%2fhow-to-develop-hackerrank-for-vscode%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5d%20VC%2b%2b%e3%81%a7HackerRank%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f12%2f07%2fhow-to-develop-hackerrank-for-vscode%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f12%2f07%2fhow-to-develop-hackerrank-for-vscode%2f&title=%5bC%2b%2b%5d%20VC%2b%2b%e3%81%a7HackerRank%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2022/08/03/add-gitlfs-file/" title="[Git] コミット済みのファイルを Git LFS 管理対象にしたいとき">[Git] コミット済みのファイルを Git LFS 管理対象にしたいとき</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2022.08.03">2022.08.03</time>
@@ -819,94 +1018,6 @@ $ git merge upstream/master</code></pre></td></tr></table>
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2022/01/30/start-hackerrank/" title="[C&#43;&#43;] HackerRank始めました">[C&#43;&#43;] HackerRank始めました</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2022.01.30">2022.01.30</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/cpp">cpp</a>
-        , 
-        
-        <a href="https://h-sao.com/tags/hackerrank">hackerrank</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>友達に、HackerRankやってみるといいよと言われたので、始めてみました</p>
-
-<ul>
-<li>HackerRank<br />
-<a href="https://www.hackerrank.com/">https://www.hackerrank.com/</a></li>
-</ul>
-
-<p>自分のプロフィールはこれ。。。<br />
-まだC++の問題を２問解いただけだけど<br />
-<a href="https://www.hackerrank.com/haruka_sao">https://www.hackerrank.com/haruka_sao</a></p>
-
-<p>履歴のために、自分の解いたコードをGitHubにアップしたりして…</p>
-
-<p><a href="https://github.com/h-sao/HackerRank/">https://github.com/h-sao/HackerRank/</a></p>
-
-<p>ランクによってバッチが付きます</p>
-
-<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ふーん。。HackerRank、こんな感じで解いていくとバッチが付くのか～実績解除していく感じやな <a href="https://t.co/AM6d7s6rUU">pic.twitter.com/AM6d7s6rUU</a></p>&mdash; 遥佐保 (@hr_sao) <a href="https://twitter.com/hr_sao/status/1487152495843758081?ref_src=twsrc%5Etfw">January 28, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
-
-<p>バッチは Language Proficiency でポイントを稼ぐとスターが付いていく方式です</p>
-
-<ul>
-<li>10 ポイントで 1 Star（Bronze）</li>
-<li>&hellip;<br /></li>
-<li>250 ポイントで 5 Star（Gold）<br /></li>
-</ul>
-
-<p>最初に触ってみたのは c++ Language Proficiency Badges だったのですが<br />
-どう考えても面白くないというか、C++もう業務で何年も使えてるので<br />
-言語のほうは余暇で楽しむとして、アルゴリズム問題のほうを頑張っていこかなと思います</p>
-
-<p>Problem Solving Badges は</p>
-
-<ul>
-<li>1 Star - Bronze 30</li>
-<li>2 Star - Bronze 100</li>
-<li>3 Star - Silver 200</li>
-<li>4 Star - Silver 475</li>
-<li>5 Star - Gold 850</li>
-<li>6 Star - Gold 2200</li>
-</ul>
-
-<p>こんな感じ…<br />
-先は長そうだけど、Gold目指して勉強になりそうだからぼちぼちやってみよかな～</p>
-
-<p>他の競技プロブラムとは違って、自分のペースで取り組めそうなモードなので、わたしには合ってる予感</p>
-
-<p>普段業務で使ってる/使ってたことでも、<br />
-自分なりに勉強してバージョンアップしていかないといけないなーと思ってたので、ちょうど良いタイミングで始められたような気がする</p>
-
-<p>（自分が学生だったら、こういうのにめっちゃのめりこんでたんだろうなーと思うと、今の学生さんは環境が良くてうらやましいです）</p>
-
-<p>時代遅れな人にならないように意識していかないとね。。。</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f01%2f30%2fstart-hackerrank%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5d%20HackerRank%e5%a7%8b%e3%82%81%e3%81%be%e3%81%97%e3%81%9f&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f01%2f30%2fstart-hackerrank%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f01%2f30%2fstart-hackerrank%2f&title=%5bC%2b%2b%5d%20HackerRank%e5%a7%8b%e3%82%81%e3%81%be%e3%81%97%e3%81%9f" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -976,6 +1087,12 @@ $ git merge upstream/master</code></pre></td></tr></table>
                 
                     
                         
+                            <a href="/blog/2022/12/07/how-to-develop-hackerrank-for-vscode/" class="list-group-item">[C&#43;&#43;] VC&#43;&#43;でHackerRankの環境構築</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2022/08/03/add-gitlfs-file/" class="list-group-item">[Git] コミット済みのファイルを Git LFS 管理対象にしたいとき</a><br>
                         
                     
@@ -1025,12 +1142,6 @@ $ git merge upstream/master</code></pre></td></tr></table>
                     
                         
                             <a href="/blog/2022/02/19/cpp23-lambda/" class="list-group-item">[C&#43;&#43;] ラムダのパラメータリスト()が省略できるようになった</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2022/01/30/start-hackerrank/" class="list-group-item">[C&#43;&#43;] HackerRank始めました</a><br>
                         
                     
                 
@@ -1126,9 +1237,9 @@ $ git merge upstream/master</code></pre></td></tr></table>
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/cpp" style="font-size: 65px;">
+                    <a href="https://h-sao.com//tags/cpp" style="font-size: 68px;">
                     
-                        <span class="badge">19</span>
+                        <span class="badge">20</span>
                         cpp
                     </a>
                     </u> &nbsp; 
@@ -1236,9 +1347,9 @@ $ git merge upstream/master</code></pre></td></tr></table>
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/hackerrank" style="font-size: 11px;">
+                    <a href="https://h-sao.com//tags/hackerrank" style="font-size: 14px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">2</span>
                         hackerrank
                     </a>
                     </u> &nbsp; 

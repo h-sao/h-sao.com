@@ -6,10 +6,45 @@
     <description>Recent content in Posts on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 03 Aug 2022 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 07 Dec 2022 20:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[C&#43;&#43;] VC&#43;&#43;でHackerRankの環境構築</title>
+      <link>https://h-sao.com/blog/2022/12/07/how-to-develop-hackerrank-for-vscode/</link>
+      <pubDate>Wed, 07 Dec 2022 20:00:00 +0900</pubDate>
+      
+      <guid>https://h-sao.com/blog/2022/12/07/how-to-develop-hackerrank-for-vscode/</guid>
+      <description>この記事は C++ Advent Calendar 2022 7日目の記事です。
+ （内容まとめ）
+競プロ勢にとったら当たり前のローカル環境設定についての記事です
+自分の言葉でまとめなおしたメモになります
+みんな！AtCoder もいいけど HackerRank も面白いよ！
+今年の3月ごろ、同僚（海外の方）から「HackerRank 結構いいよ、わたしは週末によくやってるよ～」と教えてもらいまして
+たまにポチポチ解いています
+ HackerRank
+https://www.hackerrank.com/  ざっくり言うと、お題に対するコードを書いて、要求通りの出力が出来れば Pass! でポイントが溜まっていってバッチがもらえたりします
+わたしは主にC++の Problem Solving を解いています
+（数学系の問題も多いです）
+ C++ language のジャンルで解くことも出来ますが、こっちは文法確認問題なので、あまり面白くない
+ HackerRankは他のオンラインコーディングプラットフォームとはちょっと異なっていて
+競技で問題を解いてランクを上げるというよりは、スキルの習得に焦点を当てているような気がします
+解いて欲しい問題用の関数がミニマムに提供されてて、最初に記載するであろう入力系の処理が予め記載されているので、解くのに集中出来ますね
+で、それまで真面目に Easy 問題を解いていたのですが、簡単すぎるし量も多い…つまらん…
+となって、教えてくれた同僚に
+「HackerRank、何の問題を解いてる？」
+と聞いたところ、
+「えぇー Easy やってるの？時間の無駄だよ～わたしは Hard しかやらないよ」
+と突っ込まれました＞＜。
+さてそこで、Hard 問題をやり始めましたが、あら。。。難しい。。。
+こんなけ難しかったらデバッグしたくなるんだけど、HackerRankのサイトに組み込まれたコードエディタ上から問題を解くので、プリントデバッグしか方法がない
+変数の中身や配列の中身をもっとアグレッシブに確認したい…
+前置きが長くなりましたが、HackerRankをやるときに、Visual Studio上でコードを書いて確認する方法を記載しましたｍｍ
+＜今回の環境＞
+ Windows10 Visual Sutdio 2019 Hacker Rank の C++ 問題を対象  VSにコードコピペしてHackerRankの問題を解きたい コピペ出来ないとしんどいです！</description>
+    </item>
     
     <item>
       <title>[Git] コミット済みのファイルを Git LFS 管理対象にしたいとき</title>
