@@ -147,3 +147,10 @@ C++だけじゃなくてUnityの情報も多いです、知識投稿サイトっ
 C++ で mac なら VSCode だけど、Win なら VS 使おうぜ！
 
 HackerRank ほんとお勧め、地道に解くのが楽しい
+
+---
+
+（参考）
+
+- Visual StudioでC++のbits/stdc++.hを使う  
+[https://qiita.com/kokosan60/items/d24ab868f7090586b0bc](https://qiita.com/kokosan60/items/d24ab868f7090586b0bc)
