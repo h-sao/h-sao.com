@@ -1,7 +1,7 @@
 +++
 date = "2022-12-09T16:00:00+09:00"
 draft = false
-title = "[C#] $文字をエスケープしたい"
+title = "[C#] $文字を置換したい"
 tags = ["csharp", "unity"]
 +++
 
