@@ -6,10 +6,27 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 07 Dec 2022 20:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 09 Dec 2022 16:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[C#] $文字をエスケープしたい</title>
+      <link>https://h-sao.com/blog/2022/12/09/how-to-replace-daller-sign-on-unity/</link>
+      <pubDate>Fri, 09 Dec 2022 16:00:00 +0900</pubDate>
+      
+      <guid>https://h-sao.com/blog/2022/12/09/how-to-replace-daller-sign-on-unity/</guid>
+      <description>ちょっと素人臭い問題ですが、$ 文字をひっかけようとしてうまくいかなかったので、その時のメモです
+今回の開発環境はこちら
+ Visual Studio 2019 Windows10 Unity 2021.3.0f1  Unityで string 文字列の中の $ 文字を置換使用を思いましたが、うまく出来ませんでした
+1  text = text.Replace(&amp;#34;\\$&amp;#34;, &amp;#34;&amp;#34;);   はて。。。なんでかな？
+調べてみて、こちらなら思った通りの動作になりました
+1  text = Regex.Replace(text, &amp;#34;\\$&amp;#34;, &amp;#34;&amp;#34;);   正規表現だとうまく行くみたいです
+参考：
+ Simple way to trim Dollar Sign if present in C# - stack overflow
+https://stackoverflow.com/questions/154845/simple-way-to-trim-dollar-sign-if-present-in-c-sharp  </description>
+    </item>
     
     <item>
       <title>[C&#43;&#43;] VC&#43;&#43;でHackerRankの環境構築</title>

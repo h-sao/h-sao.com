@@ -69,6 +69,81 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2022/12/09/how-to-replace-daller-sign-on-unity/" title="[C#] $文字をエスケープしたい">[C#] $文字をエスケープしたい</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2022.12.09">2022.12.09</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/csharp">csharp</a>
+        , 
+        
+        <a href="https://h-sao.com/tags/unity">unity</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p>ちょっと素人臭い問題ですが、<code>$</code> 文字をひっかけようとしてうまくいかなかったので、その時のメモです</p>
+
+<p>今回の開発環境はこちら</p>
+
+<ul>
+<li>Visual Studio 2019</li>
+<li>Windows10</li>
+<li>Unity 2021.3.0f1</li>
+</ul>
+
+<hr />
+
+<p>Unityで <code>string</code> 文字列の中の <code>$</code> 文字を置換使用を思いましたが、うまく出来ませんでした</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">text = text.Replace(<span style="color:#e6db74">&#34;\\$&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>);</code></pre></td></tr></table>
+</div>
+</div>
+<p>はて。。。なんでかな？</p>
+
+<p>調べてみて、こちらなら思った通りの動作になりました</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">text = Regex.Replace(text, <span style="color:#e6db74">&#34;\\$&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>);</code></pre></td></tr></table>
+</div>
+</div>
+<p>正規表現だとうまく行くみたいです</p>
+
+<p>参考：</p>
+
+<ul>
+<li>Simple way to trim Dollar Sign if present in C# - stack overflow<br />
+<a href="https://stackoverflow.com/questions/154845/simple-way-to-trim-dollar-sign-if-present-in-c-sharp">https://stackoverflow.com/questions/154845/simple-way-to-trim-dollar-sign-if-present-in-c-sharp</a></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f12%2f09%2fhow-to-replace-daller-sign-on-unity%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%23%5d%20%24%e6%96%87%e5%ad%97%e3%82%92%e3%82%a8%e3%82%b9%e3%82%b1%e3%83%bc%e3%83%97%e3%81%97%e3%81%9f%e3%81%84&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f12%2f09%2fhow-to-replace-daller-sign-on-unity%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f12%2f09%2fhow-to-replace-daller-sign-on-unity%2f&title=%5bC%23%5d%20%24%e6%96%87%e5%ad%97%e3%82%92%e3%82%a8%e3%82%b9%e3%82%b1%e3%83%bc%e3%83%97%e3%81%97%e3%81%9f%e3%81%84" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2022/08/02/here-is-unityeditor/" title="[Unity] Windows/macOS内にあるUnityの場所">[Unity] Windows/macOS内にあるUnityの場所</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2022.08.02">2022.08.02</time>
@@ -876,254 +951,18 @@ MonoBehaviour は無くても動くみたいです<br />
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2016/01/11/unity-shader-2dsprite/" title="[Unity] 2D Spriteにシェーダーをかける">[Unity] 2D Spriteにシェーダーをかける</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.01.11">2016.01.11</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/unity">unity</a>
-        , 
-        
-        <a href="https://h-sao.com/tags/shader">shader</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p><a href="/blog/2016/01/04/hello2016/">今年の初めに</a>、「Game a Week」という開発手法がすごい！っと書きました<br />
-とりあえず、週に一度は成果物を公開する、の部分を真似してみようかなと<br />
-（やってみて気が付きましたが、実は1週間って、結構長いです）</p>
-
-<p>今をトキメクGame Engine: <strong>Unity</strong> について、去年から触る機会があり、ポチポチとやっております</p>
-
-<p>そしてこれは既知の情報ですが、先週は2Dスプライトにシンプルなグラデーションのシェーダーを適用してみました</p>
-
-<p>やってみると判るのですが、Unity ではスプライトにシンプルシェーダーだけを適用しようと思っても出来なくて、<br />
-先に結論を書いておくと、スプライトとして扱う場合は必ず何かしらのテクスチャアセットが必要でした<br />
-そのメモと感想文になります</p>
-
-<p>2016年1月11日現在、Unityのバージョンは 5.3.1 です</p>
-
-<h1 id="unity-のシェーダー言語-shaderlab">Unity のシェーダー言語：ShaderLab</h1>
-
-<p>Unity のシェーダーは 「ShaderLab」 という Unity オリジナルのシェーダー言語で記載することになります<br />
-といっても HLSL のラッパーのような言語なので、Unity で使うときのお作法であり、Unity と シェーダーの仲介役の言語、と思って良いみたい</p>
-
-<h2 id="最小限の-shaderlab">最小限の ShaderLab</h2>
-
-<p>最小限の ShaderLab の枠組みはこんな感じ<br />
-（これより削ると、エラーが出た）</p>
-
-<pre><code>// BG_shader.shader
-// 最小限の ShaderLab
-Shader &quot;Custom/BG_shader&quot; {
-    SubShader
-    {
-        Pass {}
-    }
-}
-</code></pre>
-
-<p>実際に、このカスタムシェーダーをマテリアルに適用するとこんな感じ</p>
-
-<p><img src="/pic/Unity-Shader-2DSprite_00.png" alt="" /></p>
-
-<p>何もしないマテリアルを作ることが出来ました</p>
-
-<h2 id="シンプルなグラデーション">シンプルなグラデーション</h2>
-
-<p>今回、ゲーム背景を単純なカラーグラデーションにしようと思ったので、そういうシンプルシェーダーを書いていきます</p>
-
-<pre><code>// BG_shader.shader
-// 黄色くグラデーションする
-Shader &quot;Custom/BG_shader&quot; {
-    SubShader
-    {
-        Pass{
-            CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
-
-            // VS2015のグラフィックデバックON
-            #pragma enable_d3d11_debug_symbols
-
-            struct VertexInput {
-                float4 pos:  POSITION;    // 3D空間座標
-                float2 uv:   TEXCOORD0;   // テクスチャ座標
-            };
-
-            struct VertexOutput {
-                float4 v:    SV_POSITION; // 2D座標
-                float2 uv:   TEXCOORD0;   // テクスチャ座標
-            };
-
-            // 頂点 shader
-            VertexOutput vert(VertexInput input)
-            {
-                VertexOutput output;
-                output.v = mul(UNITY_MATRIX_MVP, input.pos);
-                output.uv = input.uv;
-
-                return output;
-            }
-
-            // ピクセル shader
-            fixed4 frag( VertexOutput output) : SV_Target
-            {
-                float2 tex = output.uv;
-                // 黄色→白色のグラデーション
-                return fixed4( 1.0, 1.0, 1.0 - tex.y, 1.0);
-            }
-
-            ENDCG
-        }
-    }
-}
-</code></pre>
-
-<p>ちょっとマテリアルではわかりにくいですけど、一応、線形にグラデーションされています</p>
-
-<p><img src="/pic/Unity-Shader-2DSprite_01.png" alt="" /></p>
-
-<h1 id="2d-sprite-に適用する方法">2D Sprite に適用する方法</h1>
-
-<p>シンプルなシェーダーとマテリアルが出来たので、実際に、Sprite に登録します</p>
-
-<h2 id="sprite-と-material-だけでは足りない">Sprite と Material だけでは足りない</h2>
-
-<p>ただし、ちょっとここでクセがあって、このマテリアルを Sprite にアタッチしても、何も起こりません<br />
-それどころか、ワーニングメッセージが…</p>
-
-<p><img src="/pic/Unity-Shader-2DSprite_02.png" alt="" /></p>
-
-<blockquote>
-<p>Material does not have a _MainTex texture property. It is required for SpriteRenderer.</p>
-</blockquote>
-
-<p>あら…<br />
-Sprite Renderer に登録するマテリアルには、テクスチャが必要ということみたいです<br />
-シェーダーに戻って、言われているとおり、 _MainTex にテクスチャを登録します</p>
-
-<pre><code>// BG_shader.shader の Properties を追加
-    Properties
-    {
-        _MainTex( &quot;2D Texture&quot;, 2D ) = &quot;white&quot; {}
-    }
-</code></pre>
-
-<p>テクスチャを登録できるし、デフォルトでは white テクスチャを使いますよ。という意味になります<br />
-ちなみに、_MainTex() の内蔵テクスチャには</p>
-
-<ul>
-<li>white</li>
-<li>black</li>
-<li>gray</li>
-<li>bump</li>
-</ul>
-
-<p>の4種類が用意されています<br />
-* ShaderLab: Properties - Unity Documentation<br />
- <a href="http://docs.unity3d.com/Manual/SL-Properties.html">http://docs.unity3d.com/Manual/SL-Properties.html</a></p>
-
-<p><img src="/pic/Unity-Shader-2DSprite_03.png" alt="" /></p>
-
-<p>マテリアルにテクスチャを持つ設定にしました</p>
-
-<h2 id="sprite-には-ベースとしてリアルな-texture-が必要">Sprite には、ベースとしてリアルな Texture が必要</h2>
-
-<p>Sprite のワーニングも消えたのですが、やはりシーンに Sprite object が表示されません</p>
-
-<p><img src="/pic/Unity-Shader-2DSprite_04.png" alt="" /></p>
-
-<p>どうやら、Sprite はあくまで、テクスチャ画像を表示させるための機能に特化しており、マテリアルだけでは動作しない様です</p>
-
-<p>仕方がないので、Sprite 用のテクスチャを用意します<br />
-サイズ感がよくわからなかったのですが、 white.jpg という 8*8 のテクスチャを Assets の下に入れました</p>
-
-<p>Sprite の Inspector にて、Sprite Rendere &gt; Sprite にて white テクスチャを選択します</p>
-
-<blockquote>
-<p>あぁ…これ、デフォルトで白いテクスチャくらい、システムで用意してほしいなかと思いましたが、まぁしょーがないです<br />
-<img src="/pic/Unity-Shader-2DSprite_05.png" alt="" /></p>
-</blockquote>
-
-<p>でたー</p>
-
-<p><img src="/pic/Unity-Shader-2DSprite_06.png" alt="" /></p>
-
-<h1 id="まとめ">まとめ</h1>
-
-<p>シンプルな 3D model では</p>
-
-<ul>
-<li><strong>Mesh Renderer</strong><br />
-→ <strong>Material</strong> (たとえば Standard Shader)<br />
-　→ <strong>Texture</strong><br /></li>
-</ul>
-
-<p>という構造なので、</p>
-
-<p>2D Sprite では</p>
-
-<ul>
-<li><strong>Sprite Renderer</strong><br />
-→ <strong>Material</strong> or <strong>Texture</strong></li>
-</ul>
-
-<p>なのかなーと思っていたのですが、実際には</p>
-
-<ul>
-<li><strong>Sprite Renderer</strong><br />
-→ <strong>Material</strong><br />
-　→ <strong>Texture</strong> (Shader の _MainTex() )<br />
-→ <strong>Sprite</strong><br />
-　→ <strong>Texture</strong> (リアル画像)</li>
-</ul>
-
-<p>という構造が必要でした</p>
-
-<p>これを受けて、</p>
-
-<p>「え、シンプルなシェーダーのみを適用したいなら、<br />
-Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
-
-<p>という疑問が出てきましたが、<br />
-実際のゲーム制作においては、シチュエーション依存ですかね…<br />
-今回のわたしの場合は、Sprite を採用しました</p>
-
-<p>この記事の Unity プロジェクト（ソース、アセット）を Github に置いておきます<br />
-<a href="https://github.com/h-sao/UnitySampleCode/tree/master/SpriteGradationalShader">https://github.com/h-sao/UnitySampleCode/tree/master/SpriteGradationalShader</a></p>
-
-<p>何かの参考になれば幸いです</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2016%2f01%2f11%2funity-shader-2dsprite%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bUnity%5d%202D%20Sprite%e3%81%ab%e3%82%b7%e3%82%a7%e3%83%bc%e3%83%80%e3%83%bc%e3%82%92%e3%81%8b%e3%81%91%e3%82%8b&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2016%2f01%2f11%2funity-shader-2dsprite%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2016%2f01%2f11%2funity-shader-2dsprite%2f&title=%5bUnity%5d%202D%20Sprite%e3%81%ab%e3%82%b7%e3%82%a7%e3%83%bc%e3%83%80%e3%83%bc%e3%82%92%e3%81%8b%e3%81%91%e3%82%8b" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
 
-	<p class="counter"> 1  1</p>
+    
 
+	<p class="counter"> 1  2</p>
+
+
+	
+	<a class="btn older" href="/tags/unity/page/2/" title=""> &raquo;</a>
+	
 
 </nav>
 </div>
@@ -1182,6 +1021,12 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
                 
                     
                         
+                            <a href="/blog/2022/12/09/how-to-replace-daller-sign-on-unity/" class="list-group-item">[C#] $文字をエスケープしたい</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2022/12/07/how-to-develop-hackerrank-for-vscode/" class="list-group-item">[C&#43;&#43;] VC&#43;&#43;でHackerRankの環境構築</a><br>
                         
                     
@@ -1231,12 +1076,6 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
                     
                         
                             <a href="/blog/2022/02/27/how-to-update-fork-repository-on-git/" class="list-group-item">[Git] フォーク元のリポジトリに追いつきたいときメモ</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2022/02/19/cpp23-lambda/" class="list-group-item">[C&#43;&#43;] ラムダのパラメータリスト()が省略できるようになった</a><br>
                         
                     
                 
@@ -1346,6 +1185,16 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
                     
                         <span class="badge">2</span>
                         cppcx
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/csharp" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        csharp
                     </a>
                     </u> &nbsp; 
                     
@@ -1612,9 +1461,9 @@ Sprite でなくて 3D Plane Model にしたらいいんでない？」</p>
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/unity" style="font-size: 38px;">
+                    <a href="https://h-sao.com//tags/unity" style="font-size: 41px;">
                     
-                        <span class="badge">10</span>
+                        <span class="badge">11</span>
                         unity
                     </a>
                     </u> &nbsp; 

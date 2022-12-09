@@ -57,6 +57,81 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2022/12/09/how-to-replace-daller-sign-on-unity/" title="[C#] $文字をエスケープしたい">[C#] $文字をエスケープしたい</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2022.12.09">2022.12.09</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/csharp">csharp</a>
+        , 
+        
+        <a href="https://h-sao.com/tags/unity">unity</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p>ちょっと素人臭い問題ですが、<code>$</code> 文字をひっかけようとしてうまくいかなかったので、その時のメモです</p>
+
+<p>今回の開発環境はこちら</p>
+
+<ul>
+<li>Visual Studio 2019</li>
+<li>Windows10</li>
+<li>Unity 2021.3.0f1</li>
+</ul>
+
+<hr />
+
+<p>Unityで <code>string</code> 文字列の中の <code>$</code> 文字を置換使用を思いましたが、うまく出来ませんでした</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">text = text.Replace(<span style="color:#e6db74">&#34;\\$&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>);</code></pre></td></tr></table>
+</div>
+</div>
+<p>はて。。。なんでかな？</p>
+
+<p>調べてみて、こちらなら思った通りの動作になりました</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">text = Regex.Replace(text, <span style="color:#e6db74">&#34;\\$&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>);</code></pre></td></tr></table>
+</div>
+</div>
+<p>正規表現だとうまく行くみたいです</p>
+
+<p>参考：</p>
+
+<ul>
+<li>Simple way to trim Dollar Sign if present in C# - stack overflow<br />
+<a href="https://stackoverflow.com/questions/154845/simple-way-to-trim-dollar-sign-if-present-in-c-sharp">https://stackoverflow.com/questions/154845/simple-way-to-trim-dollar-sign-if-present-in-c-sharp</a></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f12%2f09%2fhow-to-replace-daller-sign-on-unity%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%23%5d%20%24%e6%96%87%e5%ad%97%e3%82%92%e3%82%a8%e3%82%b9%e3%82%b1%e3%83%bc%e3%83%97%e3%81%97%e3%81%9f%e3%81%84&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f12%2f09%2fhow-to-replace-daller-sign-on-unity%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f12%2f09%2fhow-to-replace-daller-sign-on-unity%2f&title=%5bC%23%5d%20%24%e6%96%87%e5%ad%97%e3%82%92%e3%82%a8%e3%82%b9%e3%82%b1%e3%83%bc%e3%83%97%e3%81%97%e3%81%9f%e3%81%84" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2022/12/07/how-to-develop-hackerrank-for-vscode/" title="[C&#43;&#43;] VC&#43;&#43;でHackerRankの環境構築">[C&#43;&#43;] VC&#43;&#43;でHackerRankの環境構築</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2022.12.07">2022.12.07</time>
@@ -970,66 +1045,6 @@ $ git merge upstream/master</code></pre></td></tr></table>
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2022/02/19/cpp23-lambda/" title="[C&#43;&#43;] ラムダのパラメータリスト()が省略できるようになった">[C&#43;&#43;] ラムダのパラメータリスト()が省略できるようになった</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2022.02.19">2022.02.19</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/cpp">cpp</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <blockquote>
-<p>この記事は <a href="https://connpass.com/event/240210/">meetup app osaka@6</a> の参加記事です。</p>
-</blockquote>
-
-<p>C++23 でタイトルの通り、パラメータリストのカッコが省略できるようになりました</p>
-
-<ul>
-<li>Make () more optional for lambdas<br />
-<a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1102r2.html">http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1102r2.html</a></li>
-</ul>
-
-<p>gccなら12以上、Clangは14以上で動作するようです</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">[<span style="color:#f92672">=</span>]
-<span style="color:#75715e">// ()    // mutable 書いてても省略可能に！
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">mutable</span>
-{}
-</code></pre></td></tr></table>
-</div>
-</div>
-<p>(もう少し追記するとおもいますが、今はこれで…)</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f02%2f19%2fcpp23-lambda%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5d%20%e3%83%a9%e3%83%a0%e3%83%80%e3%81%ae%e3%83%91%e3%83%a9%e3%83%a1%e3%83%bc%e3%82%bf%e3%83%aa%e3%82%b9%e3%83%88%28%29%e3%81%8c%e7%9c%81%e7%95%a5%e3%81%a7%e3%81%8d%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%9f&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f02%2f19%2fcpp23-lambda%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f02%2f19%2fcpp23-lambda%2f&title=%5bC%2b%2b%5d%20%e3%83%a9%e3%83%a0%e3%83%80%e3%81%ae%e3%83%91%e3%83%a9%e3%83%a1%e3%83%bc%e3%82%bf%e3%83%aa%e3%82%b9%e3%83%88%28%29%e3%81%8c%e7%9c%81%e7%95%a5%e3%81%a7%e3%81%8d%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%9f" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -1099,6 +1114,12 @@ $ git merge upstream/master</code></pre></td></tr></table>
                 
                     
                         
+                            <a href="/blog/2022/12/09/how-to-replace-daller-sign-on-unity/" class="list-group-item">[C#] $文字をエスケープしたい</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2022/12/07/how-to-develop-hackerrank-for-vscode/" class="list-group-item">[C&#43;&#43;] VC&#43;&#43;でHackerRankの環境構築</a><br>
                         
                     
@@ -1148,12 +1169,6 @@ $ git merge upstream/master</code></pre></td></tr></table>
                     
                         
                             <a href="/blog/2022/02/27/how-to-update-fork-repository-on-git/" class="list-group-item">[Git] フォーク元のリポジトリに追いつきたいときメモ</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2022/02/19/cpp23-lambda/" class="list-group-item">[C&#43;&#43;] ラムダのパラメータリスト()が省略できるようになった</a><br>
                         
                     
                 
@@ -1263,6 +1278,16 @@ $ git merge upstream/master</code></pre></td></tr></table>
                     
                         <span class="badge">2</span>
                         cppcx
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/csharp" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        csharp
                     </a>
                     </u> &nbsp; 
                     
@@ -1529,9 +1554,9 @@ $ git merge upstream/master</code></pre></td></tr></table>
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/unity" style="font-size: 38px;">
+                    <a href="https://h-sao.com//tags/unity" style="font-size: 41px;">
                     
-                        <span class="badge">10</span>
+                        <span class="badge">11</span>
                         unity
                     </a>
                     </u> &nbsp; 
