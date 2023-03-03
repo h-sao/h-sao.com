@@ -2330,5 +2330,29 @@ A. 回答
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  // x / y = ans // x: 分子 // y: 分母 // ans:答え  ans = 0; while( x &amp;gt;= y ){ dammy = y; syou = 1; while( x &amp;gt;= dammy ){ // 割られる数を超えるまで割る数をシフト  dammy = dammy &amp;lt;&amp;lt; 1; syou = syou &amp;lt;&amp;lt; 1; } dammy = dammy &amp;gt;&amp;gt; 1; // 超える手前まで戻す  syou = syou &amp;gt;&amp;gt; 1; x = x - dammy; // 筆算  ans = ans + syou; // 答え  } printf( &amp;#34;%d ・・・%d\n&amp;#34;, ans, x );    新人研修などにどうでしょう？</description>
     </item>
     
+    <item>
+      <title>[C&#43;&#43;] C&#43;&#43;の新しいパターンマッチ「inspect」</title>
+      <link>https://h-sao.com/blog/1/01/01/using-inspect-pattern-matching/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://h-sao.com/blog/1/01/01/using-inspect-pattern-matching/</guid>
+      <description>この記事は meetup app osaka@7 online への参加記事です
+先日 2023/2/20 ごろにISO WG21 C++ 委員会メンバーのAntony PolukhinさんがMedium(Yandexサイト)で 「C++23が完成したよ～」と記事を書かれていました
+ C++23 Is Finalized. Here Comes C++26
+https://medium.com/yandex/c-23-is-finalized-here-comes-c-26-1677a9cee5b2  それでちょっと新しいC++の機能には何があるのかなと調べていたところ
+知らない文法が増えそうな予感の「Pattern Matching」inspect を見つけたので
+それについてメモしてます
+ これはどこのC++に入るかは決まってないので、将来的には採用されないかもしれないです
+ ＜試した環境＞
+ Compiler Explorer
+https://godbolt.org/
+ c++ compiler
+x86-64 clang (experimental pattern matching) option
+-std=c++20  サンプルコードはこちら↓↓↓
+https://godbolt.org/z/a95M9nxPY
+  もともとパターンマッチするといえば、こんな感じで switch case を使ってると思います
+1 2 3 4 5 6 7 8 9  int x(42); switch (x) { case 0: std::cout &amp;lt;&amp;lt; &amp;#34;zero&amp;#34;; break; case 42: std::cout &amp;lt;&amp;lt; &amp;#34;forty-two&amp;#34;; break; default: std::cout &amp;lt;&amp;lt; &amp;#34;something else&amp;#34;; } // output // &amp;#34;forty-two&amp;#34;    これが、inspect を用いるとこんな感じに書けます</description>
+    </item>
+    
   </channel>
 </rss>
