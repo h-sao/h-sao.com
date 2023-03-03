@@ -1,7 +1,7 @@
 +++
 date = "2023-3-03T15:00:00+09:00"
 draft = false
-title = "[C++] C++の新しいパターンマッチ"inspect" "
+title = "[C++] C++の新しいパターンマッチ「inspect」"
 tags = ["cpp"]
 +++
 
