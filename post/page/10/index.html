@@ -69,6 +69,82 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2014/02/24/c-anonymous-struct/" title="Anonymous Struct of C">Anonymous Struct of C</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2014.02.24">2014.02.24</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/cpp">cpp</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p>Hi,</p>
+
+<p>It is very tedious to think about the name of a struct when you use to struct only once.<br />
+In such a case, Anonymous structure comes in handy.</p>
+
+<p>It is assigned to the anonymous struct</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span>{
+        <span style="color:#66d9ef">char</span>    <span style="color:#ae81ff">1</span>st_name[<span style="color:#ae81ff">0x80</span>];
+        <span style="color:#66d9ef">char</span>    <span style="color:#ae81ff">2</span>nd_name[<span style="color:#ae81ff">0x80</span>];
+ 
+    } name_tbl[] <span style="color:#f92672">=</span> {
+        { <span style="color:#e6db74">&#34;Isami&#34;</span>,   <span style="color:#e6db74">&#34;Kondou&#34;</span> },
+        { <span style="color:#e6db74">&#34;Toshizo&#34;</span>, <span style="color:#e6db74">&#34;Hijikata&#34;</span> },
+        { <span style="color:#e6db74">&#34;Kogorou&#34;</span>, <span style="color:#e6db74">&#34;Kathura&#34;</span> },
+    };
+ 
+    <span style="color:#66d9ef">for</span>( i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">sizeof</span>( name_tbl ); i <span style="color:#f92672">++</span> ){
+        printf( <span style="color:#e6db74">&#34;%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, name_tbl[ i ]<span style="color:#ae81ff">.1</span>st_name );
+        printf( <span style="color:#e6db74">&#34;%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, name_tbl[ i ]<span style="color:#ae81ff">.2</span>nd_name );
+    } 
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>This code is very straightforward!</p>
+
+<p>This method is effective only when there is no necessity that you use 2 times and this structure.</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f02%2f24%2fc-anonymous-struct%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Anonymous%20Struct%20of%20C&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f02%2f24%2fc-anonymous-struct%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f02%2f24%2fc-anonymous-struct%2f&title=Anonymous%20Struct%20of%20C" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2014/02/03/force-reset-my-git-repository/" title="[Git] ローカルを強制上書きして、作業をなかったことにしたい">[Git] ローカルを強制上書きして、作業をなかったことにしたい</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2014.02.03">2014.02.03</time>
@@ -675,246 +751,6 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/1/01/01/using-inspect-pattern-matching/" title="[C&#43;&#43;] C&#43;&#43;の新しいパターンマッチ「inspect」">[C&#43;&#43;] C&#43;&#43;の新しいパターンマッチ「inspect」</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="0001.01.01">0001.01.01</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/cpp">cpp</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>この記事は <a href="https://meetupapp.connpass.com/event/276301/">meetup app osaka@7 online</a> への参加記事です</p>
-
-<p>先日 2023/2/20 ごろにISO WG21 C++ 委員会メンバーのAntony PolukhinさんがMedium(Yandexサイト)で
-「C++23が完成したよ～」と記事を書かれていました</p>
-
-<ul>
-<li>C++23 Is Finalized. Here Comes C++26<br />
-<a href="https://medium.com/yandex/c-23-is-finalized-here-comes-c-26-1677a9cee5b2">https://medium.com/yandex/c-23-is-finalized-here-comes-c-26-1677a9cee5b2</a></li>
-</ul>
-
-<p>それでちょっと新しいC++の機能には何があるのかなと調べていたところ<br />
-知らない文法が増えそうな予感の「Pattern Matching」<code>inspect</code> を見つけたので<br />
-それについてメモしてます</p>
-
-<blockquote>
-<p>これはどこのC++に入るかは決まってないので、将来的には採用されないかもしれないです</p>
-</blockquote>
-
-<hr />
-
-<p>＜試した環境＞</p>
-
-<ul>
-<li><p>Compiler Explorer<br />
-<a href="https://godbolt.org/">https://godbolt.org/</a></p>
-
-<ul>
-<li>c++ compiler<br />
-<code>x86-64 clang (experimental pattern matching)</code></li>
-<li>option<br />
-<code>-std=c++20</code></li>
-</ul></li>
-
-<li><p>サンプルコードはこちら↓↓↓<br />
-<a href="https://godbolt.org/z/a95M9nxPY">https://godbolt.org/z/a95M9nxPY</a></p></li>
-</ul>
-
-<hr />
-
-<p>もともとパターンマッチするといえば、こんな感じで <code>switch case</code> を使ってると思います</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">9
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">x</span>(<span style="color:#ae81ff">42</span>);
-<span style="color:#66d9ef">switch</span> (x) {
-    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span> std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;zero&#34;</span>; <span style="color:#66d9ef">break</span>;
-    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">42</span><span style="color:#f92672">:</span> std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;forty-two&#34;</span>; <span style="color:#66d9ef">break</span>;
-    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span> std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;something else&#34;</span>;
-}
-
-<span style="color:#75715e">// output
-</span><span style="color:#75715e">// &#34;forty-two&#34;
-</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>これが、<code>inspect</code> を用いるとこんな感じに書けます</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// number
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">x</span>(<span style="color:#ae81ff">42</span>);
-inspect(x) {
-    <span style="color:#ae81ff">0</span> <span style="color:#f92672">=&gt;</span> { std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span>  <span style="color:#e6db74">&#34;zero&#34;</span>; }
-    <span style="color:#ae81ff">42</span><span style="color:#f92672">=&gt;</span> { std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span>  <span style="color:#e6db74">&#34;forty-two&#34;</span>; }
-    _<span style="color:#f92672">=&gt;</span> { std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span>  <span style="color:#e6db74">&#34;something else&#34;</span>; }
-};
-
-<span style="color:#75715e">// output
-</span><span style="color:#75715e">// &#34;forty-two&#34;
-</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>文字列マッチもこんな感じに</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// string
-</span><span style="color:#75715e"></span>std<span style="color:#f92672">::</span>string s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;foo&#34;</span>;
-inspect (s) {
-    <span style="color:#e6db74">&#34;foo&#34;</span> <span style="color:#f92672">=&gt;</span> { std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;got foo&#34;</span>;}
-    <span style="color:#e6db74">&#34;bar&#34;</span> <span style="color:#f92672">=&gt;</span> { std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;got bar&#34;</span>;}
-    __ <span style="color:#f92672">=&gt;</span> { std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;don&#39;t care&#34;</span>;}
-};
-
-<span style="color:#75715e">// output
-</span><span style="color:#75715e">// &#34;foo&#34;
-</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>タプル的な値のマッチも比較的少ない行数で書ける</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// tuple
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">auto</span> box <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>pair(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">42</span>);
-<span style="color:#66d9ef">auto</span><span style="color:#f92672">&amp;&amp;</span> [i, j] <span style="color:#f92672">=</span> box;
-inspect (box) {
-    [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>]<span style="color:#f92672">=&gt;</span> { std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;all zero&#34;</span>;}
-    [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>]<span style="color:#f92672">=&gt;</span> { std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;i=1, j=0&#34;</span>;}
-    [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>]<span style="color:#f92672">=&gt;</span> { std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;i=0, j=1&#34;</span>;}
-    [__, __]<span style="color:#f92672">=&gt;</span> { std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> i <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;,&#39;</span> <span style="color:#f92672">&lt;&lt;</span> j;}
-};
-
-<span style="color:#75715e">// output
-</span><span style="color:#75715e">// 0,42
-</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>ポリモーフィックに型判定も出来るらしい<br />
-というのも、現時点ではまだ実装されていないみたいで動作しなかったです</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// polymorphic type
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> Fruits { <span style="color:#66d9ef">virtual</span> <span style="color:#f92672">~</span>Fruits() <span style="color:#f92672">=</span> <span style="color:#66d9ef">default</span>; };
-<span style="color:#66d9ef">struct</span> Orange : Fruits { <span style="color:#66d9ef">int</span> ore; };
-<span style="color:#66d9ef">struct</span> Apple : Fruits { <span style="color:#66d9ef">int</span> ap; };
-<span style="color:#66d9ef">auto</span> o <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Orange();
-inspect (o)
-{
-<span style="color:#75715e">//    2023/3/3 時はコンパイルエラー
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">&lt;</span>Orange<span style="color:#f92672">&gt;</span> <span style="color:#f92672">=&gt;</span> { std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span>  <span style="color:#e6db74">&#34;Orange&#34;</span>; }
-    <span style="color:#f92672">&lt;</span>Apple<span style="color:#f92672">&gt;</span>  <span style="color:#f92672">=&gt;</span> { std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span>  <span style="color:#e6db74">&#34;Apple&#34;</span>; }
-};
-</code></pre></td></tr></table>
-</div>
-</div>
-<p>これが出来れば、あとはテンプレートのオペレーター演算子も比較的少ない行数で実装できるという…</p>
-
-<hr />
-
-<p>まだまだ未来の機能ですが、差分学習しておかないと完全に置いて行かれますね…<br />
-C++の言語機能は複雑すぎます</p>
-
-<p>とはいえ業務コードでも、競プロなどでも<br />
-少ない行数で書けるのはとても良いと思うので（＝バグの入る余地が減る）<br />
-どんどん進化していってもらいたいですね！</p>
-
-<p>＜参考＞</p>
-
-<ul>
-<li><p><strong>Pattern Matching Document #: P1371R2 Date: 2020-01-13</strong> - Open Standards<br />
-<a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1371r2.pdf">https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1371r2.pdf</a></p></li>
-
-<li><p><strong>Pattern Matching for C++</strong> - Welcome to Bjarne Stroustrup&rsquo;s homepage!<br />
-<a href="https://www.stroustrup.com/pattern-matching-November-2014.pdf">https://www.stroustrup.com/pattern-matching-November-2014.pdf</a></p></li>
-
-<li><p><strong>C++ の歩き方 | cppmap
-C++23 以降に向けた提案</strong> - C++ の歩き方 | cppmap<br />
-<a href="https://cppmap.github.io/standardization/cppx/">https://cppmap.github.io/standardization/cppx/</a></p></li>
-</ul>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f1%2f01%2f01%2fusing-inspect-pattern-matching%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5d%20C%2b%2b%e3%81%ae%e6%96%b0%e3%81%97%e3%81%84%e3%83%91%e3%82%bf%e3%83%bc%e3%83%b3%e3%83%9e%e3%83%83%e3%83%81%e3%80%8cinspect%e3%80%8d&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f1%2f01%2f01%2fusing-inspect-pattern-matching%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f1%2f01%2f01%2fusing-inspect-pattern-matching%2f&title=%5bC%2b%2b%5d%20C%2b%2b%e3%81%ae%e6%96%b0%e3%81%97%e3%81%84%e3%83%91%e3%82%bf%e3%83%bc%e3%83%b3%e3%83%9e%e3%83%83%e3%83%81%e3%80%8cinspect%e3%80%8d" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
@@ -985,6 +821,12 @@ C++23 以降に向けた提案</strong> - C++ の歩き方 | cppmap<br />
                 
                     
                         
+                            <a href="/blog/2023/03/03/using-inspect-pattern-matching/" class="list-group-item">[C&#43;&#43;] C&#43;&#43;の新しいパターンマッチ「inspect」</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2022/12/09/how-to-replace-daller-sign-on-unity/" class="list-group-item">[C#] $文字を置換したい</a><br>
                         
                     
@@ -1034,12 +876,6 @@ C++23 以降に向けた提案</strong> - C++ の歩き方 | cppmap<br />
                     
                         
                             <a href="/blog/2022/03/08/how-to-create-blank-windows-app/" class="list-group-item">[C&#43;&#43;] Windowsの空のアプリケーションを作る手順メモ</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2022/02/27/how-to-update-fork-repository-on-git/" class="list-group-item">[Git] フォーク元のリポジトリに追いつきたいときメモ</a><br>
                         
                     
                 
