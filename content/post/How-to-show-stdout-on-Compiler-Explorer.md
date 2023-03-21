@@ -2,7 +2,7 @@
 date = "2021-10-05T00:30:00+09:00"
 draft = false
 title = "[C++]Compiler Explorerの出力結果の表示方法"
-tags = ["C++"]
+tags = ["Cpp"]
 +++
 
 **Compiler Explorer** というオンラインコンパイルサービスがあります
