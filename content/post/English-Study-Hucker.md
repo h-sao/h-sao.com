@@ -2,7 +2,7 @@
 date = "2016-07-19T23:30:00+09:00"
 draft = false
 title = "[English] Study Hacker English Companyに通ったら英語苦手じゃなくなったよ"
-tags = ["English", "Dialy"]
+tags = ["English", "Diary"]
 +++
 
 > なんか、ポストが長くなったので、最初にまとめを書いておきます  
