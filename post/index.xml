@@ -6,10 +6,46 @@
     <description>Recent content in Posts on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 03 Mar 2023 15:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 21 Mar 2023 13:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[US配列] 再起動なしにUS配列に変更するULE4JIS</title>
+      <link>https://h-sao.com/blog/2023/03/21/how-to-change-us-layout-noreboot/</link>
+      <pubDate>Tue, 21 Mar 2023 13:00:00 +0900</pubDate>
+      
+      <guid>https://h-sao.com/blog/2023/03/21/how-to-change-us-layout-noreboot/</guid>
+      <description>キーボードレイアウトはみなさん何を使ってますか？
+最近はリモートワークも加速したため、わたしは私用でも会社でもハイスペックゲーミングノートPCを利用するようになりました
+（持ち運べるので）
+わたしはノートPCのキー配列は、たいてい、日本語配列を購入します
+でも、外付けキーボードを用いて作業するときは、US配列にしています
+これは昔に、人のPCで何かデバッグしたりとか、限られたサーバールームなどの環境で作業したりする際に
+キー配列でイラッとして打ち間違い多発とかがよくあったのです
+そんなときでも違和感なくキー操作できるように
+普段からあえて、どちらのキー配列でも作業できるようにしといたほうが良いかなーと思い
+常時（US/JIS）配列に触れる環境をあえて作っています
+やり始めた当初は、通常作業が相当ストレスフルだったのですが
+今となっては慣れたもんで、Winwodでも macOSでも、US配列でも日本語配列でも
+なんでもすんなりと受け入れられるようになりました
+ 日常のコツで、パスワードの記号は、両方の配置を確実に覚えられるものにしておくか、覚えられない位置の記号は利用しないか、という行動にもつながりました…
+ ともあれ、ノートについてるのは日本語配列、外付けキーボードはUS配列、で日によってちょこちょこと行き来したいとき、キー配列の変更のためにわざわざ再起動をするのはとても腰が重いです
+そこで、キー配列のエミュレータをしてくれる常駐アプリをいつも入れています
+ ULE4JIS
+https://github.com/dezz/ULE4JIS/tree/master/publish  サクサクと軽いです
+インストールも必要ないし、変なランタイムにも依存してません
+で、この ULE4JIS を起動している時だけUS配列になります
+（US配列を辞めたいときは常駐終了させるか
+タスクバーのアイコンから「エミュレーション停止」をするかで簡単に変更できる）
+再起動が不要！！！これ超重要！！
+ずいぶん昔に公開されているツールですが、わたしの Windows11 でも問題なく動作しています
+この作者の方に募金したいレベルで毎日使わせてもらってます！
+（特に募金も Githubスポンサーもは見当たらない）
+いつもありがとうございます！！！
+と声を大にして言いたいと思って、ブログ書きましたｍｍ</description>
+    </item>
     
     <item>
       <title>[C&#43;&#43;] C&#43;&#43;の新しいパターンマッチ「inspect」</title>
