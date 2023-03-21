@@ -1296,6 +1296,71 @@ Practical Cpp Modules - CppCon 2019<br />
             <hr>
         
             
+<h1><a href="https://h-sao.com/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/" title="[C&#43;&#43;]Compiler Explorerの出力結果の表示方法">[C&#43;&#43;]Compiler Explorerの出力結果の表示方法</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2021.10.05">2021.10.05</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/cpp">cpp</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p><strong>Compiler Explorer</strong> というオンラインコンパイルサービスがあります</p>
+
+<ul>
+<li><strong>Compiler Explorer</strong><br />
+<a href="https://godbolt.org/">https://godbolt.org/</a></li>
+</ul>
+
+<p>書いたC++コードのアセンブリ出力結果をリナルタイムに表示してくれるサービスです</p>
+
+<p><img src="/pic/How-to-show-stdout-on-Compiler-Explorer_00.png" alt="" /></p>
+
+<p>すごーーー👀<br />
+初めてこのサービスを見た時には感激しました〜</p>
+
+<p>さておき、<br />
+わたし、これで実行結果を見る方法を知らなかったんですね…ハズカシー(*ﾉдﾉ)</p>
+
+<p>「Output」を押すと出力結果ウィンドウは出てきますが<br />
+このリターン値だけじゃなくて、 <code>std::cout</code> の結果も欲しいんですけど…👀</p>
+
+<p><img src="/pic/How-to-show-stdout-on-Compiler-Explorer_01.png" alt="" /></p>
+
+<p>ちょっと調べてみたらすぐに判明しました＞＜。</p>
+
+<p>Outputの設定項目に <strong>Execute the code</strong> のチェックボックスがあるので、それを選択すれば表示されます</p>
+
+<p><img src="/pic/How-to-show-stdout-on-Compiler-Explorer_02.png" alt="" /></p>
+
+<p>出力はこんな感じですね〜</p>
+
+<p><img src="/pic/How-to-show-stdout-on-Compiler-Explorer_03.png" alt="" /></p>
+
+<p>便利です〜</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2021%2f10%2f05%2fhow-to-show-stdout-on-compiler-explorer%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5dCompiler%20Explorer%e3%81%ae%e5%87%ba%e5%8a%9b%e7%b5%90%e6%9e%9c%e3%81%ae%e8%a1%a8%e7%a4%ba%e6%96%b9%e6%b3%95&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2021%2f10%2f05%2fhow-to-show-stdout-on-compiler-explorer%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2021%2f10%2f05%2fhow-to-show-stdout-on-compiler-explorer%2f&title=%5bC%2b%2b%5dCompiler%20Explorer%e3%81%ae%e5%87%ba%e5%8a%9b%e7%b5%90%e6%9e%9c%e3%81%ae%e8%a1%a8%e7%a4%ba%e6%96%b9%e6%b3%95" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2020/10/02/fixed-a-diffrent-cpp-runtime-env-causing-a-int-warning/" title="[C&#43;&#43;] 実行環境の差異によるintワーニングが出ない書き方">[C&#43;&#43;] 実行環境の差異によるintワーニングが出ない書き方</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2020.10.02">2020.10.02</time>
@@ -1408,186 +1473,6 @@ int 型が処理系によって異なるのは…</p>
     
     <li>
         <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f10%2f02%2ffixed-a-diffrent-cpp-runtime-env-causing-a-int-warning%2f&title=%5bC%2b%2b%5d%20%e5%ae%9f%e8%a1%8c%e7%92%b0%e5%a2%83%e3%81%ae%e5%b7%ae%e7%95%b0%e3%81%ab%e3%82%88%e3%82%8bint%e3%83%af%e3%83%bc%e3%83%8b%e3%83%b3%e3%82%b0%e3%81%8c%e5%87%ba%e3%81%aa%e3%81%84%e6%9b%b8%e3%81%8d%e6%96%b9" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
-            
-<h1><a href="https://h-sao.com/blog/2020/05/08/cpp-2-dimensional-array/" title="[c&#43;&#43;] 2次元配列的な書き方">[c&#43;&#43;] 2次元配列的な書き方</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2020.05.08">2020.05.08</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/cpp">cpp</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>自分メモ</p>
-
-<h2 id="2次元配列">2次元配列</h2>
-
-<p><code>C++11</code> 以前では、2次元配列はこんな感じで書いていました</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 2-dimensional array (raw type)
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">constexpr</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">float</span> xy_raw[][<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> {
-      { <span style="color:#ae81ff">0.f</span>,  <span style="color:#ae81ff">10.f</span>}  <span style="color:#75715e">// 0
-</span><span style="color:#75715e"></span>    , { <span style="color:#ae81ff">20.f</span>, <span style="color:#ae81ff">30.f</span>}  <span style="color:#75715e">// 1
-</span><span style="color:#75715e"></span>    , { <span style="color:#ae81ff">40.f</span>, <span style="color:#ae81ff">50.f</span>}  <span style="color:#75715e">// 2
-</span><span style="color:#75715e"></span>};
-</code></pre></td></tr></table>
-</div>
-</div>
-<p>これでも悪くは無いのですが、生配列を扱うと範囲外アクセスに気が付かない可能性が出てきます
-そこで <code>C++11</code> から境界チェックが出来る配列の <code>std::array</code> が登場しました<br />
-これを使えば、C-styleの配列のノリで扱うことが可能です</p>
-
-<ul>
-<li>std::array - cpprefjp<br />
-<a href="https://cpprefjp.github.io/reference/array/array.html">https://cpprefjp.github.io/reference/array/array.html</a></li>
-</ul>
-
-<p>さらに2次元配列にしたければ <code>std::array</code> を <code>std::vector</code> に入れることで実現可能です</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 2-dimensional array (using stl)
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span>std<span style="color:#f92672">::</span>array<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">float</span>, <span style="color:#ae81ff">2</span><span style="color:#f92672">&gt;&gt;</span> xy_array <span style="color:#f92672">=</span> {
-      { <span style="color:#ae81ff">0.f</span>,  <span style="color:#ae81ff">10.f</span>}  <span style="color:#75715e">// 0
-</span><span style="color:#75715e"></span>    , { <span style="color:#ae81ff">20.f</span>, <span style="color:#ae81ff">30.f</span>}  <span style="color:#75715e">// 1
-</span><span style="color:#75715e"></span>    , { <span style="color:#ae81ff">40.f</span>, <span style="color:#ae81ff">50.f</span>}  <span style="color:#75715e">// 2
-</span><span style="color:#75715e"></span>};
-</code></pre></td></tr></table>
-</div>
-</div>
-<p>悪くなさそう</p>
-
-<h2 id="動作確認">動作確認</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">32
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;array&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
-  <span style="color:#75715e">// ---------------------------------
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 2-dimensional array (raw type)
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">constexpr</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">float</span> xy_raw[][<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> {
-        { <span style="color:#ae81ff">0.f</span>,  <span style="color:#ae81ff">10.f</span>}  <span style="color:#75715e">// 0
-</span><span style="color:#75715e"></span>      , { <span style="color:#ae81ff">20.f</span>, <span style="color:#ae81ff">30.f</span>}  <span style="color:#75715e">// 1
-</span><span style="color:#75715e"></span>      , { <span style="color:#ae81ff">40.f</span>, <span style="color:#ae81ff">50.f</span>}  <span style="color:#75715e">// 2
-</span><span style="color:#75715e"></span>  };
-
-  std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;xy_raw[0][1]: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> xy_raw[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&lt;&lt;</span>  <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>; <span style="color:#75715e">// 10
-</span><span style="color:#75715e"></span>
-  <span style="color:#75715e">// xy_raw[1][2] は out of rangeだけど warningになってる
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// これはたまたま xy_raw[2][0] と同じなので動作しているだけ
-</span><span style="color:#75715e"></span>  std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;xy_raw[1][2]: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> xy_raw[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">2</span>] <span style="color:#f92672">&lt;&lt;</span>  <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>; <span style="color:#75715e">// 40
-</span><span style="color:#75715e"></span>
-  <span style="color:#75715e">// ---------------------------------
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 2-dimensional array (using stl)
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span>std<span style="color:#f92672">::</span>array<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">float</span>, <span style="color:#ae81ff">2</span><span style="color:#f92672">&gt;&gt;</span> xy_array <span style="color:#f92672">=</span> {
-        { <span style="color:#ae81ff">0.f</span>,  <span style="color:#ae81ff">10.f</span>}  <span style="color:#75715e">// 0
-</span><span style="color:#75715e"></span>      , { <span style="color:#ae81ff">20.f</span>, <span style="color:#ae81ff">30.f</span>}  <span style="color:#75715e">// 1
-</span><span style="color:#75715e"></span>      , { <span style="color:#ae81ff">40.f</span>, <span style="color:#ae81ff">50.f</span>}  <span style="color:#75715e">// 2
-</span><span style="color:#75715e"></span>  };
-
-  std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;xy_array[2][0]: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> xy_array.at(<span style="color:#ae81ff">2</span>).at(<span style="color:#ae81ff">0</span>) <span style="color:#f92672">&lt;&lt;</span>  <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;  <span style="color:#75715e">//40  
-</span><span style="color:#75715e"></span>
-  <span style="color:#75715e">// compile error
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//std::cout &lt;&lt; &#34;xy_array[1][2]: &#34; &lt;&lt; xy_array.at(1).at(2) &lt;&lt;  &#34;\n&#34;;  // out of range accsess
-</span><span style="color:#75715e"></span>}
-</code></pre></td></tr></table>
-</div>
-</div>
-<h3 id="結果">結果</h3>
-
-<blockquote>
-<p>xy_raw[0][1]: 10<br />
-xy_raw[1][2]: 40<br />
-xy_array[2][0]: 40</p>
-</blockquote>
-
-<p>コンパイル時に教えてくれるので助かります</p>
-
-<h3 id="参考">参考</h3>
-
-<ul>
-<li><p>コンパイル結果：<br />
-<a href="https://repl.it/repls/StudiousImaginativeParallelcomputing">https://repl.it/repls/StudiousImaginativeParallelcomputing</a></p></li>
-
-<li><p>C++ - Vector of Float Arrays - stackoverflow
-<a href="https://stackoverflow.com/questions/33711878/c-vector-of-float-arrays">https://stackoverflow.com/questions/33711878/c-vector-of-float-arrays</a></p></li>
-</ul>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f05%2f08%2fcpp-2-dimensional-array%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bc%2b%2b%5d%202%e6%ac%a1%e5%85%83%e9%85%8d%e5%88%97%e7%9a%84%e3%81%aa%e6%9b%b8%e3%81%8d%e6%96%b9&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f05%2f08%2fcpp-2-dimensional-array%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f05%2f08%2fcpp-2-dimensional-array%2f&title=%5bc%2b%2b%5d%202%e6%ac%a1%e5%85%83%e9%85%8d%e5%88%97%e7%9a%84%e3%81%aa%e6%9b%b8%e3%81%8d%e6%96%b9" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 
@@ -1773,16 +1658,6 @@ xy_array[2][0]: 40</p>
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/c&#43;&#43;" style="font-size: 11px;">
-                    
-                        <span class="badge">1</span>
-                        c&#43;&#43;
-                    </a>
-                    </u> &nbsp; 
-                    
-                    
-                    
-                    <u>
                     <a href="https://h-sao.com//tags/chrome" style="font-size: 14px;">
                     
                         <span class="badge">2</span>
@@ -1813,9 +1688,9 @@ xy_array[2][0]: 40</p>
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/cpp" style="font-size: 71px;">
+                    <a href="https://h-sao.com//tags/cpp" style="font-size: 74px;">
                     
-                        <span class="badge">21</span>
+                        <span class="badge">22</span>
                         cpp
                     </a>
                     </u> &nbsp; 

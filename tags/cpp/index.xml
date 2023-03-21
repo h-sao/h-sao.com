@@ -187,6 +187,27 @@ GCC and File Extensions - Development with GNU/Linux https://blog.</description>
     </item>
     
     <item>
+      <title>[C&#43;&#43;]Compiler Explorerの出力結果の表示方法</title>
+      <link>https://h-sao.com/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/</link>
+      <pubDate>Tue, 05 Oct 2021 00:30:00 +0900</pubDate>
+      
+      <guid>https://h-sao.com/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/</guid>
+      <description>Compiler Explorer というオンラインコンパイルサービスがあります
+ Compiler Explorer
+https://godbolt.org/  書いたC++コードのアセンブリ出力結果をリナルタイムに表示してくれるサービスです
+すごーーー👀
+初めてこのサービスを見た時には感激しました〜
+さておき、
+わたし、これで実行結果を見る方法を知らなかったんですね…ハズカシー(*ﾉдﾉ)
+「Output」を押すと出力結果ウィンドウは出てきますが
+このリターン値だけじゃなくて、 std::cout の結果も欲しいんですけど…👀
+ちょっと調べてみたらすぐに判明しました＞＜。
+Outputの設定項目に Execute the code のチェックボックスがあるので、それを選択すれば表示されます
+出力はこんな感じですね〜
+便利です〜</description>
+    </item>
+    
+    <item>
       <title>[C&#43;&#43;] 実行環境の差異によるintワーニングが出ない書き方</title>
       <link>https://h-sao.com/blog/2020/10/02/fixed-a-diffrent-cpp-runtime-env-causing-a-int-warning/</link>
       <pubDate>Fri, 02 Oct 2020 05:30:00 +0900</pubDate>

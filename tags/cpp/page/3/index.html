@@ -69,6 +69,170 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2011/01/01/think-about-sppding-up-cpp/" title="[C&#43;&#43;] 高速化について思うところ">[C&#43;&#43;] 高速化について思うところ</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2011.01.01">2011.01.01</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/cpp">cpp</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>明けましておめでとうございます♪<br>
+遥佐保（はるか・さお）です<br>
+2011年もどうぞ、よろしくお願いします<br>
+<br>
+これは <strong>C++ Advent Calendar jp 2010</strong> (<a href="http://atnd.org/events/10573">http://atnd.org/events/10573</a>) への26日目（補欠１号！）の参加記事です<br>
+<br>
+C++の仕様やBoostについては全然詳しくないので、、すみません<br>
+C++でのゲーム作成の時期が長かったので、高速化について、思うところを記載してみます<br>
+読み物として目を通して頂ければと思います<br>
+<br>
+最初に。。<br>
+ゲームは結果を出せれば何でもアリな世界で<br>
+極端な話どんなに可動性に欠けても規格に則ってなくても<br>
+良い作品が出来ればそれでヨシ！という感じなので<br>
+有識者が見たら反感を買うコードがうじゃうじゃかもしれません<br></p>
+
+<p>例えば、オブジェクトを生成するためには new するわけですが、new は知ってのとおり、１フレーム内で大量に処理するには時間がかかり過ぎるし、タイミングによっては最悪、確保出来ない場合（※）もあります</p>
+
+<blockquote>
+<p>（※）確保出来なかった場合どうなるのか？ですが、<br />
+優先順位を決めて確保の可否を判断したりします<br />
+自分がどうしても確保されなければならないOBJの場合<br />
+他の生きているOBJで優先順位の低いやつを探して<br />
+そのOBJを殺し、自分に新たに割り当てたりします</p>
+</blockquote>
+
+<p>そうなってくると、最初に予め new しておいて、それを使いまわすということになるのですが、そしたらコンストラクタやデストラクタに依存しない作りをルールにしておく必要があります<br></p>
+
+<blockquote>
+<p>// もしくは、デストラクタを明示的に自力で呼ぶルール</p>
+</blockquote>
+
+<p>全然事情の知らない人が、このルールだけを見たら<br>
+「C++のデストラクタは信用できないから使わないんだってさ、ばかじゃないの！？」<br>
+と言うかもしれないけど、ゲームはメモリ確保関連は動的に見えて、ほぼ静的なので<br>
+こりゃ仕方ない<br>
+<br>
+そういうのって凄まじい試行錯誤から生み出された究極のソースコードなので、許してもらいたいです<br>
+↓↓例えばこんな例<br></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 最初に確保
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>p_mem <span style="color:#f92672">=</span> operator new( max_size <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>( WORK ));
+ WORK <span style="color:#f92672">*</span>box <span style="color:#f92672">=</span> static_cast<span style="color:#f92672">&lt;</span>WORK<span style="color:#f92672">*&gt;</span>( p_mem );
+ <span style="color:#66d9ef">for</span>( i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> max_size; i <span style="color:#f92672">++</span> ){
+    new( <span style="color:#f92672">&amp;</span>box[i] ) WORK();
+ }
+ 
+ <span style="color:#75715e">// 自分でデストラクタ呼び
+</span><span style="color:#75715e"></span> box[i].<span style="color:#f92672">~</span>WORK();</code></pre></td></tr></table>
+</div>
+</div>
+<p><br></p>
+
+<h2 id="インライン化をうまく使う">インライン化をうまく使う</h2>
+
+<p>何度も何度も、１フレームに何千回と呼ばれるような処理も中にはあります<br>
+その処理を関数にしておくと、もちろん関数呼び出しの分処理が遅くなってしまいます<br>
+そこでインライン化です<br>
+これはＣ言語のマクロ展開ほとんど同じです</p>
+
+<blockquote>
+<p>// マクロ展開はプリプロセッサで行われるけど、インライン化はコンパイラが行います<br />
+// インライン化の方が型宣言の指定などがきっちりできるしね</p>
+</blockquote>
+
+<p>結構みんなインライン化大好きなのですが、ソースコードの量が増えていくことになるので、多分あまり大きなインライン関数を書いてしまうと、キャッシュが効きにくくなったり、ソースの肥大化によるコンパイル時間の増加（そこらじゅうでincludeされてたり）など、諸刃の剣ですけどね<br></p>
+
+<h2 id="stlコンテナは使用用途を考えて">STLコンテナは使用用途を考えて</h2>
+
+<p>vector,mapなど使うのは、楽して（作業時間をかけずに）早く作りたいときだと思います<br>
+例えばツール類やデバック環境での操作などなど<br>
+<br>
+実行速度を求めだすと、やはりこれらは使えないかな。。<br>
+私的には最後はＣ風の自作コンテナが攻めるところになってくるのかと思います<br>
+（そこまでやっても、実は対して高速化できないんですけどねぇ<br>
+　それよりは、ポリゴン数減らす方がよっぽど速度向上になるんですけど<br>
+　プログラマの頑張りどころではあるので、こういうところに行き着くのかも。。）<br></p>
+
+<h2 id="オーダリングテーブルなどは高速化対象になる">オーダリングテーブルなどは高速化対象になる</h2>
+
+<p>オーダリングテーブルとは、3D描画処理を行う場合によく使用されます<br>
+自分（カメラ）から見て奥のもの、つまり遠くのものから書いていく必要があります<br>
+不透明なオブジェクトばかりの場合（建物とか人物とか）ピクセル単位のＺバッファがかかるので、あまり意識しなくても良いのですが、半透明のオブジェクトを描画するときには、既に自分より奥のものを描画し終わっている必要があります<br>
+<br>
+というわけで、奥のものから順に描画していくための仕組みがオーダリングテーブルです<br>
+プログラマはオーダリングテーブルに自分の描画したいポリゴンを登録しておけば<br>
+あとは描画システムがそのテーブル順に描画していくことになります<br>
+<br>
+例えばＺバッファ（奥行）を1024段階(程度)に分割します<br>
+自分のオブジェクトの位置（ポジション）を1024段階のどこに相当するか、割り当てます<br>
+その後、奥から順にレンダリングしていきます<br></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 分かりやすく書くとvectorで
+</span><span style="color:#75715e"></span> vector <span style="color:#f92672">&lt;</span>Ordering_tbl<span style="color:#f92672">&gt;</span> ot;
+ <span style="color:#66d9ef">for</span>( i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> ot.size(); <span style="color:#f92672">++</span> i ){
+    ot[i].draw();
+ }</code></pre></td></tr></table>
+</div>
+</div>
+<p>こういう部分は高速化のやりがいがあるところです<br>
+使用する立場から見ると、各ot[n]の中がさらにリンクになっていると、効果抜群です<br>
+ばかみたいですが、過去に<a href="http://blog.livedoor.jp/haruka_sao/archives/51186849.html" target="_blank">自作リンク</a>作ったことがあるので、参考までに<br>
+<br>
+他に余談ですが、いわゆる「生ポインタ」の隠ぺいなどは、実はあまり考えてなかったような気がします<br>
+生ぽ使うな！ってことは、使用者のスキルが低いときには大変有効です、新人さんと組むとか<br>
+もちろん、ケアレスミスを防ぐ意味では、有識者に対しても効果ありなのですが、そこに力を注ぐ風潮は、わたしの周りにはあんまり無かったかな。。<br>
+やっぱり昔ながらのアセンブラ上がりの方も多かったため、今の風潮にはマッチしてないのかもしれませんね<br>
+<br>
+だらだらと書いてしまいました<br>
+どうぞ、今年もよろしくお願いします</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2011%2f01%2f01%2fthink-about-sppding-up-cpp%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5d%20%e9%ab%98%e9%80%9f%e5%8c%96%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e6%80%9d%e3%81%86%e3%81%a8%e3%81%93%e3%82%8d&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2011%2f01%2f01%2fthink-about-sppding-up-cpp%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2011%2f01%2f01%2fthink-about-sppding-up-cpp%2f&title=%5bC%2b%2b%5d%20%e9%ab%98%e9%80%9f%e5%8c%96%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e6%80%9d%e3%81%86%e3%81%a8%e3%81%93%e3%82%8d" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2008/07/29/how-to-divide-without-division/" title="[C/C&#43;&#43;] 割り算を使わないで割り算する方法">[C/C&#43;&#43;] 割り算を使わないで割り算する方法</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2008.07.29">2008.07.29</time>
@@ -337,16 +501,6 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/c&#43;&#43;" style="font-size: 11px;">
-                    
-                        <span class="badge">1</span>
-                        c&#43;&#43;
-                    </a>
-                    </u> &nbsp; 
-                    
-                    
-                    
-                    <u>
                     <a href="https://h-sao.com//tags/chrome" style="font-size: 14px;">
                     
                         <span class="badge">2</span>
@@ -377,9 +531,9 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/cpp" style="font-size: 71px;">
+                    <a href="https://h-sao.com//tags/cpp" style="font-size: 74px;">
                     
-                        <span class="badge">21</span>
+                        <span class="badge">22</span>
                         cpp
                     </a>
                     </u> &nbsp; 
