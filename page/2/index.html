@@ -57,6 +57,111 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2022/03/20/note-two-dimensional-vector/" title="[C&#43;&#43;] 2次元Vectorのメモ">[C&#43;&#43;] 2次元Vectorのメモ</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2022.03.20">2022.03.20</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/cpp">cpp</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p>HackerRankやってるときによく２次元配列が出てくるので、ちゃちゃっとやりたいときのメモです</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">31
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// ２次元配列の宣言,,,出来れば v じゃなくて用途名にしたいところ…
+</span><span style="color:#75715e"></span>std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> v(<span style="color:#ae81ff">2</span>, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">3</span>));
+<span style="color:#75715e">// こんな配列が出来てる↓↓↓
+</span><span style="color:#75715e"></span>v.at(<span style="color:#ae81ff">0</span>).at(<span style="color:#ae81ff">0</span>);
+v.at(<span style="color:#ae81ff">0</span>).at(<span style="color:#ae81ff">1</span>);
+v.at(<span style="color:#ae81ff">0</span>).at(<span style="color:#ae81ff">2</span>);
+v.at(<span style="color:#ae81ff">1</span>).at(<span style="color:#ae81ff">0</span>);
+v.at(<span style="color:#ae81ff">1</span>).at(<span style="color:#ae81ff">1</span>);
+v.at(<span style="color:#ae81ff">1</span>).at(<span style="color:#ae81ff">2</span>);
+
+<span style="color:#75715e">// 呼び先でも内容を更新したいときは参照が楽…
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">func</span>(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;</span>t)
+<span style="color:#66d9ef">void</span> func(vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> <span style="color:#f92672">&amp;</span>v)
+
+<span style="color:#75715e">// べた書きループはかなり楽
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> v.size(); <span style="color:#f92672">++</span>i){
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> v.at(i).size(); <span style="color:#f92672">++</span>j){
+        <span style="color:#75715e">// 何か処理
+</span><span style="color:#75715e"></span>    }
+}
+<span style="color:#75715e">// べた書きループ、
+</span><span style="color:#75715e">// サイズチェックが気になる or 他でも利用するなるなら…
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> row <span style="color:#f92672">=</span> v.size();
+<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> row; <span style="color:#f92672">++</span>i){
+    <span style="color:#66d9ef">auto</span> <span style="color:#f92672">&amp;</span>box <span style="color:#f92672">=</span> v.at(i);
+    <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> col <span style="color:#f92672">=</span> box.size();
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> col; <span style="color:#f92672">++</span>j){
+        <span style="color:#66d9ef">auto</span> <span style="color:#f92672">&amp;</span>ck_data <span style="color:#f92672">=</span> v.at(i).at(j);
+        <span style="color:#75715e">// 何か処理
+</span><span style="color:#75715e"></span>    }
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>業務や後に残るコードではなく、とにかくちゃちゃっとやりたい、という要望って<br />
+自分はこれまで出会ったことが無かったので<br />
+この手のコーディングは、自分的にはかなり新しいというか新鮮な感じがします</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f03%2f20%2fnote-two-dimensional-vector%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5d%202%e6%ac%a1%e5%85%83Vector%e3%81%ae%e3%83%a1%e3%83%a2&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f03%2f20%2fnote-two-dimensional-vector%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f03%2f20%2fnote-two-dimensional-vector%2f&title=%5bC%2b%2b%5d%202%e6%ac%a1%e5%85%83Vector%e3%81%ae%e3%83%a1%e3%83%a2" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2022/03/08/how-to-create-blank-windows-app/" title="[C&#43;&#43;] Windowsの空のアプリケーションを作る手順メモ">[C&#43;&#43;] Windowsの空のアプリケーションを作る手順メモ</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2022.03.08">2022.03.08</time>
@@ -1073,102 +1178,6 @@ Practical Cpp Modules - CppCon 2019<br />
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2020/11/07/how-to-check-x64-or-x86-windows-binary-part2/" title="[Windows] そのexeがx64かx86かを見分ける方法 Part2">[Windows] そのexeがx64かx86かを見分ける方法 Part2</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2020.11.07">2020.11.07</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/windows">windows</a>
-        , 
-        
-        <a href="https://h-sao.com/tags/mac">mac</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>先日、こんなブログを書きました</p>
-
-<ul>
-<li>[Windows] そのexeがx64かx86かを見分ける方法<br />
-<a href="http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/">http://h-sao.com/blog/2020/10/26/how-to-check-x64-or-x86-windows-binary/</a></li>
-</ul>
-
-<p>このブログを公開したところ、Twitterで <a href="https://twitter.com/ripjyr">@ripjyr</a> さんより<br />
-macなら <code>file</code> コマンドあるよと教えていただいたので追加記事を書いておきます～</p>
-
-<p>上記のブログ記事では、 exe データが 32bit なのか 64bit なのかを調べるやりかたとして<br />
-３つのチェック方法を記載しました</p>
-
-<p>今回は４つ目の方法の紹介です～！</p>
-
-<h1 id="パターン4-file-コマンドで調べる-macosの場合">パターン4. file コマンドで調べる（macOSの場合）</h1>
-
-<p>これは mac のみの環境で、Win exe を調べたいって時のお話です</p>
-
-<p>mac には <code>file</code> コマンドがあって、それを使うと簡単に Windows exe のビット（PEヘッダ）を調べることができます</p>
-
-<pre><code>$ file 調べたいファイル名 
-</code></pre>
-
-<ul>
-<li>x86の場合</li>
-</ul>
-
-<p><strong>PE32 executable (GUI) Intel 80386, for MS Windows</strong> と表示されます！</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ file AGDRec.exe  
-AGDRec.exe: PE32 executable (GUI) Intel 80386, for MS Windows</code></pre></td></tr></table>
-</div>
-</div>
-<ul>
-<li>x64の場合</li>
-</ul>
-
-<p><strong>PE32+ executable (GUI) x86-64, for MS Windows</strong> とでます</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">$ file AGDRec64.exe
-AGDRec64.exe: PE32+ executable (GUI) x86-64, for MS Windows</code></pre></td></tr></table>
-</div>
-</div>
-<p>真に、素の mac でバイナリデータを見たいときは、これが良いですぅ！！！</p>
-
-<h2 id="謝辞">謝辞</h2>
-
-<p>@ripjyr さん、教えてくださってありがとうございました ^^</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f11%2f07%2fhow-to-check-x64-or-x86-windows-binary-part2%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bWindows%5d%20%e3%81%9d%e3%81%aeexe%e3%81%8cx64%e3%81%8bx86%e3%81%8b%e3%82%92%e8%a6%8b%e5%88%86%e3%81%91%e3%82%8b%e6%96%b9%e6%b3%95%20Part2&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f11%2f07%2fhow-to-check-x64-or-x86-windows-binary-part2%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f11%2f07%2fhow-to-check-x64-or-x86-windows-binary-part2%2f&title=%5bWindows%5d%20%e3%81%9d%e3%81%aeexe%e3%81%8cx64%e3%81%8bx86%e3%81%8b%e3%82%92%e8%a6%8b%e5%88%86%e3%81%91%e3%82%8b%e6%96%b9%e6%b3%95%20Part2" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -1176,7 +1185,7 @@ AGDRec64.exe: PE32+ executable (GUI) x86-64, for MS Windows</code></pre></td></t
 	<a class="btn newer" href="/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 2  10</p>
+	<p class="counter"> 2  11</p>
 
 
 	
@@ -1240,6 +1249,12 @@ AGDRec64.exe: PE32+ executable (GUI) x86-64, for MS Windows</code></pre></td></t
                 
                     
                         
+                            <a href="/blog/2023/12/25/aboutsimulatorandusestdvariant/" class="list-group-item">[C&#43;&#43;] std::variantを使ってシミュレータでオートプレイさせる</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2023/03/21/how-to-change-us-layout-noreboot/" class="list-group-item">[US配列] 再起動なしにUS配列に変更するULE4JIS</a><br>
                         
                     
@@ -1289,12 +1304,6 @@ AGDRec64.exe: PE32+ executable (GUI) x86-64, for MS Windows</code></pre></td></t
                     
                         
                             <a href="/blog/2022/03/24/how-to-support-hugo-auto-deploy-to-cname-when-using-github-actions/" class="list-group-item">[Hugo] GitHub Actionsでサイトを自動デプロイしたときにCNAMEを残す方法</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2022/03/20/note-two-dimensional-vector/" class="list-group-item">[C&#43;&#43;] 2次元Vectorのメモ</a><br>
                         
                     
                 
@@ -1380,9 +1389,9 @@ AGDRec64.exe: PE32+ executable (GUI) x86-64, for MS Windows</code></pre></td></t
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/cpp" style="font-size: 74px;">
+                    <a href="https://h-sao.com//tags/cpp" style="font-size: 77px;">
                     
-                        <span class="badge">22</span>
+                        <span class="badge">23</span>
                         cpp
                     </a>
                     </u> &nbsp; 

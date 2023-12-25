@@ -69,6 +69,178 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2017/07/27/setting-visual-studio-android-emulator-on-hyper-v/" title="[Android] Hyper-Vで使うVisual Studio Emulator for Androidの最初の一歩">[Android] Hyper-Vで使うVisual Studio Emulator for Androidの最初の一歩</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.27">2017.07.27</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/android">android</a>
+        , 
+        
+        <a href="https://h-sao.com/tags/visualstudio">visualstudio</a>
+        , 
+        
+        <a href="https://h-sao.com/tags/hyper-v">hyper-v</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<h2 id="どうもうまくandroidエミュレータが動かない">どうもうまくAndroidエミュレータが動かない…</h2>
+
+<p>いわゆる ADV Manager をつかって、Androidをエミューレートしたいのですが<br />
+なぜかうまく起動しない…</p>
+
+<p>環境</p>
+
+<ul>
+<li>Windows10 x64</li>
+<li>Visual Studio 2017</li>
+</ul>
+
+<p>Android SDK Managerをよく見てみると、HAXM installer が &ldquo;Not compatible with Windows&rdquo; となっています</p>
+
+<p><img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_00.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>ふむ…<br />
+無理矢理 HAXM のインストーラーをダウンロードしてきても、こんな感じでエラー</p>
+
+<p><img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_01.png" style="border:solid 5px #e6e6e6"/></p>
+
+<blockquote>
+<p>This computer does not support Intel Virtualization Technology (VT-x) or it is being exclusively used by Hyper-V, HAXM cannot be installed.<br />
+Please ensure Hyper-V is disabled in Windows Features, or refer to the Intel HAXM documentation for more information.</p>
+</blockquote>
+
+<p>なんですと…Hyper-Vが入ってたら使えないよだと…(｀・ω・´)</p>
+
+<p>ワタクシ、<strong>Android 開発のために手元の Hyper-V を辞める事は出来ないデスヨ！</strong><br />
+調べてみると「<strong>Visual Studio Emulator for Android</strong>」というHyper-Vベースで動くエミュレーターが用意されているらしいので設定してみました</p>
+
+<h2 id="visual-studio-emulator-for-android">Visual Studio Emulator for Android</h2>
+
+<p>すでに色んな方が同じ様な記事を書かれていますが、わたくしも今一度、再確認でございます…</p>
+
+<h3 id="1-まず-hyper-v-が有効なこと">1. まず、Hyper-V が有効なこと</h3>
+
+<p>（Control Panle &gt; Programs and Features &gt; Turn Windows features on or off）</p>
+
+<p><img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_02.png" style="border:solid 5px #e6e6e6"/></p>
+
+<h3 id="2-visual-studio-2017のインストーラーで-visual-studio-emulator-for-android-を選択すること">2. Visual Studio 2017のインストーラーで「Visual Studio Emulator for Android」を選択すること</h3>
+
+<p>下の図では「Google Android Emulator」「HAXM」も選択してますが、はっきり言って<br />
+この２つと、「Visual Studio Emulator for Android」は、排他の関係にあるので<br />
+「Visual Studio Emulator for Android」だけ選択でOK</p>
+
+<p><img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_03.png" style="border:solid 5px #e6e6e6"/></p>
+
+<h3 id="3-visual-studio-emulator-for-android-を立ち上げる">3. 「Visual Studio Emulator for Android」を立ち上げる</h3>
+
+<p>検索すると、インストールされてます<br />
+<img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_04.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>立ち上げたらこんな画面<br />
+<img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_05.png" alt="" /></p>
+
+<p>これでまずは準備完了</p>
+
+<h2 id="エミュレーターの起動">エミュレーターの起動</h2>
+
+<h3 id="1-空のプロジェクトを作る">1. 空のプロジェクトを作る</h3>
+
+<p>わたしはC++で開発したかったので、Androidプロジェクトの「Native-Activity Application (Android)」で新規作成しました</p>
+
+<p><img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_06.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>デバックメニューに「Visual Studio Emulator for Android」の欄が増えてますね<br />
+<img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_07.png" alt="" /></p>
+
+<p>（注意！）<strong>「x86」を選択しないと、このエミュレーターは出てきません！</strong></p>
+
+<h3 id="2-visual-studio-emulator-for-android-でandroidを起動させる">2. 「Visual Studio Emulator for Android」でAndroidを起動させる</h3>
+
+<p>先ほど立ち上げた「Visual Studio Emulator for Android」のメニューより、緑の三角印を押して、エミュレーターを起動させます<br />
+<img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_08.png" alt="" /></p>
+
+<p><img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_09.png" alt="" /></p>
+
+<p>起動できた(｀・ω・´)</p>
+
+<h2 id="エミュレーターが起動しない時">エミュレーターが起動しない時</h2>
+
+<p>最初、わたしはエミュレーターが起動途中でストップしてしまいました(-_-)zzz</p>
+
+<p><img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_10.png" alt="" /></p>
+
+<blockquote>
+<p>The emulator is unable to connect to the device operating system:<br />
+Could&rsquo;t auto-detect the guest system IP address.<br />
+Some functionality might be disabled.</p>
+</blockquote>
+
+<p>なんじゃこりゃ…(´・ω・`)<br />
+IPうんぬんと書かれてるので、NWプロパティを見てみます</p>
+
+<p>Conrtol Panel<br />
+　＞ Network and Internet<br />
+　　＞ Network Connections</p>
+
+<p>Hyper-Vが「Visual Studio Emulator for Android」のために作ったと思われるアダプターがありました</p>
+
+<p>わたしの場合<br />
+<strong>vEthernet (Internal Ethernet Port Windows Phone Emulator Internal Switch)</strong><br />
+という名前です</p>
+
+<p>IPv4プロパティを見てみると、変なIPアドレスが割り当てられてる…？<br />
+慌てて削除し、動的に変更する設定に変えます↓↓↓</p>
+
+<p><img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_11.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>いちお、NWアダプタは「識別されてないネットワーク」状態ですが<br />
+エラー表示にはなっていません</p>
+
+<p><img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_14.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>この状態で、エミュレーターを起動させると、無事立ち上がりました(<em>^^</em>)良かった！</p>
+
+<h2 id="エミュレーターでデバックする">エミュレーターでデバックする</h2>
+
+<p>VSに戻ってみると、こんな感じでエミュレーターがデバックで使えるようになってます！<br />
+<img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_12.png" alt="" /></p>
+
+<p>VSからデバック実行させると<br />
+<img src="/pic/Setting-Visual-Studio-Android-Emulator-on-Hyper-V_13.png" alt="" /></p>
+
+<p>サンプルが動作しました</p>
+
+<p>この状態でブレークポイントも効くので、まずは最初の設定完了って感じでしょうか<br />
+パチパチ(<em>^^</em>)</p>
+
+<p>※ちなみに実機でデバックする時には、「x86」じゃなくて「ARM」など、その実機に合ったCPUを選択したらOKです</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2017%2f07%2f27%2fsetting-visual-studio-android-emulator-on-hyper-v%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bAndroid%5d%20Hyper-V%e3%81%a7%e4%bd%bf%e3%81%86Visual%20Studio%20Emulator%20for%20Android%e3%81%ae%e6%9c%80%e5%88%9d%e3%81%ae%e4%b8%80%e6%ad%a9&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2017%2f07%2f27%2fsetting-visual-studio-android-emulator-on-hyper-v%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2017%2f07%2f27%2fsetting-visual-studio-android-emulator-on-hyper-v%2f&title=%5bAndroid%5d%20Hyper-V%e3%81%a7%e4%bd%bf%e3%81%86Visual%20Studio%20Emulator%20for%20Android%e3%81%ae%e6%9c%80%e5%88%9d%e3%81%ae%e4%b8%80%e6%ad%a9" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2017/06/21/unity-sprite-on-front-of-camera/" title="[Unity] 常にカメラの前にSpriteを出す">[Unity] 常にカメラの前にSpriteを出す</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.06.21">2017.06.21</time>
@@ -2101,85 +2273,6 @@ Mayaは奥が深いですね～</p>
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2016/08/09/prerelease-yebis-for-unity-beta/" title="[Unity] Unity用YEBISプラグインのお話してきました">[Unity] Unity用YEBISプラグインのお話してきました</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.08.09">2016.08.09</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/unity">unity</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>たまには、仕事のお話を…<br />
-現在、Unityのプラグインを絶賛開発中で、わたしも少し関わらせて頂いてます</p>
-
-<p>なんのプラグインかというと、ポストエフェクト処理がかけられる「YEBIS」というプロダクトのプラグイン化になります</p>
-
-<p>今、ベータ版として期間限定のトライアルを出し中。。</p>
-
-<ul>
-<li><strong>YEBIS for Unity (beta)</strong> ダウンロードサイト
-<a href="https://siliconstudio.github.io/YebisForUnityBeta/">https://siliconstudio.github.io/YebisForUnityBeta/</a></li>
-</ul>
-
-<p>あぁ、なんでUnityのアセットストアじゃないのかって…？</p>
-
-<p>実は、「特濃！ゲーム開発塾５」というイベントでこのプラグインの話をしてきたのですが、ストアの申請が間に合わず…＞＜<br />
-とりあえず、GitHub Pagesに置いてます<br />
-（なので、アセットストアに公開するまでの、期間限定サイトです）</p>
-
-<p>ちなみに、イベントURLはこれ</p>
-
-<ul>
-<li><strong>特濃！ゲーム開発塾５</strong><br />
-<a href="http://eventregist.com/e/tokunou5">http://eventregist.com/e/tokunou5</a><br />
-<a href="https://www.facebook.com/IwateGameFactory/">https://www.facebook.com/IwateGameFactory/</a></li>
-</ul>
-
-<p>岩手県盛岡市はIT支援がとても盛んらしく、こんなゲーム開発者向けのお祭りイベントがあるんですね~</p>
-
-<p>わたしが参加した日程は 8月9日(火)<br />
-対象となる人はプログラマー、もしくはプログラムを将来仕事にしたい人向け<br />
-現在、DMM.comラボにてプロデューサをされている松本卓也さんがメイン講師をされました</p>
-
-<p>わたしは３０分ほどセッション時間を頂き、このUnityプラグインのお話をさせて頂きました<br />
-発表に利用した資料はこれです</p>
-
-<script async class="speakerdeck-embed" data-id="5106b47adb0c4f2286a4654095b81fc4" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
-
-<p>ベータ版なので動作不安定な点がいくつもあるのですが、人柱的に試しても良いかなーという心優しい方は、トライしてみてくださいm(__)m</p>
-
-<p>ちなみにドキュメントはこちら</p>
-
-<ul>
-<li>SiliconStudio/YEBIS-plugins - GitHub<br />
-<a href="https://github.com/SiliconStudio/YEBIS-plugins">https://github.com/SiliconStudio/YEBIS-plugins</a></li>
-</ul>
-
-<p>トップは英語で書かれてますが、実は日本語のドキュメントしか今は無いです</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2016%2f08%2f09%2fprerelease-yebis-for-unity-beta%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bUnity%5d%20Unity%e7%94%a8YEBIS%e3%83%97%e3%83%a9%e3%82%b0%e3%82%a4%e3%83%b3%e3%81%ae%e3%81%8a%e8%a9%b1%e3%81%97%e3%81%a6%e3%81%8d%e3%81%be%e3%81%97%e3%81%9f&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2016%2f08%2f09%2fprerelease-yebis-for-unity-beta%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2016%2f08%2f09%2fprerelease-yebis-for-unity-beta%2f&title=%5bUnity%5d%20Unity%e7%94%a8YEBIS%e3%83%97%e3%83%a9%e3%82%b0%e3%82%a4%e3%83%b3%e3%81%ae%e3%81%8a%e8%a9%b1%e3%81%97%e3%81%a6%e3%81%8d%e3%81%be%e3%81%97%e3%81%9f" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
@@ -2252,6 +2345,12 @@ Mayaは奥が深いですね～</p>
                 
                     
                         
+                            <a href="/blog/2023/12/25/aboutsimulatorandusestdvariant/" class="list-group-item">[C&#43;&#43;] std::variantを使ってシミュレータでオートプレイさせる</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2023/03/21/how-to-change-us-layout-noreboot/" class="list-group-item">[US配列] 再起動なしにUS配列に変更するULE4JIS</a><br>
                         
                     
@@ -2301,12 +2400,6 @@ Mayaは奥が深いですね～</p>
                     
                         
                             <a href="/blog/2022/03/24/how-to-support-hugo-auto-deploy-to-cname-when-using-github-actions/" class="list-group-item">[Hugo] GitHub Actionsでサイトを自動デプロイしたときにCNAMEを残す方法</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2022/03/20/note-two-dimensional-vector/" class="list-group-item">[C&#43;&#43;] 2次元Vectorのメモ</a><br>
                         
                     
                 
@@ -2392,9 +2485,9 @@ Mayaは奥が深いですね～</p>
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/cpp" style="font-size: 74px;">
+                    <a href="https://h-sao.com//tags/cpp" style="font-size: 77px;">
                     
-                        <span class="badge">22</span>
+                        <span class="badge">23</span>
                         cpp
                     </a>
                     </u> &nbsp; 

@@ -69,6 +69,832 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2023/12/25/aboutsimulatorandusestdvariant/" title="[C&#43;&#43;] std::variantを使ってシミュレータでオートプレイさせる">[C&#43;&#43;] std::variantを使ってシミュレータでオートプレイさせる</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2023.12.25">2023.12.25</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/cpp">cpp</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<blockquote>
+<p>この記事は <a href="https://qiita.com/advent-calendar/2023/cxx">C++ Advent Calendar 2023</a> 24日目の記事です。</p>
+</blockquote>
+
+<p>ゲームドメインでのお話です<br />
+少し前にC++でAIシミュレータ作ってオートプレイさせてみたので、どんだけの人に刺さる内容かは判らないですが<br />
+自分の振り返り的に紹介します</p>
+
+<p>前半が、シミュレータについての話で、<br />
+後半が、オートプレイの時に <code>std::variant</code> が良い感じだった話<br />
+です</p>
+
+<p>記載量が多くなってしまいました<br />
+前半はC++に直接関係のない話なので、読み物として見て頂ければと思います！</p>
+
+<h2 id="シミュレータとは">シミュレータとは</h2>
+
+<p>シミュレータと聞いてピンとくる方は少ないと思います<br />
+実際、自分自身もあまり意味が判っていませんでした</p>
+
+<p>きっかけは、ゲームで機械学習を取り入れるには、シミュレータが必要と聞いたことが始まりです</p>
+
+<p>自分なりにまとめてみると、シミュレータには観点が３つあることに気が付きました</p>
+
+<ul>
+<li>Ai学習</li>
+<li>テスト</li>
+<li>リプレイ</li>
+</ul>
+
+<h3 id="ai学習観点">■ AI学習観点</h3>
+
+<ul>
+<li>誰かがやったログを再現して、それを学習する</li>
+<li>自分自身でなんらかのオートプレイを行って、それを学習する</li>
+</ul>
+
+<p>何らかの学習系AIを導入しようと思ったら、必ずシミュレータが必要になります<br />
+そして学習するだけでなく、シミュレータでのオートプレイが出来ると以下のように色々と夢も広がります</p>
+
+<h3 id="テスト観点">■ テスト観点</h3>
+
+<ul>
+<li>オートプレイしてくれるってことは、エージングテスト（長時間のオートテスト）出来るね</li>
+<li>プレイしたログを保存し、それを再生したらデグレテストに使えるね（回帰テスト）</li>
+</ul>
+
+<p>こんな感じで<br />
+シミュレータがあると、テスト関係の人たちも喜ぶわけです</p>
+
+<h3 id="リプレイ観点">■ リプレイ観点</h3>
+
+<ul>
+<li>プレイログを保存しておけば、録画再生みたいに後からでも楽しめるね！</li>
+<li>同期再生にも有効（クライアント間やサーバーとの整合性が取れる）</li>
+</ul>
+
+<p>つまりシミュレータを作ることが出来たら、</p>
+
+<ul>
+<li>AI学習</li>
+<li>テスト</li>
+<li>リプレイを用いたゲームのプランニングや設計思想</li>
+</ul>
+
+<p>に有効なネタとなりそうです</p>
+
+<h2 id="シミュレータを作るのはちょっと工夫が必要">シミュレータを作るのはちょっと工夫が必要</h2>
+
+<p>実際にシミュレータを作るには<br />
+周りからの理解も必要であり、性能面でもシビアな要求が求められます</p>
+
+<blockquote>
+<p>例えば、学習系のAIモデルを作るためのシミュレータであれば、億の回数くらいのバトルはしゃっと実行して欲しいところです<br />
+1バトルシミュレーションするのに1分かかります～では話にならないのです<br />
+それだと2日経っても3000バトルすらこなせないことになります</p>
+</blockquote>
+
+<p>そもそも、「●●を入力したら必ず▲▲の結果になること！」という <strong>決定論的シミュレータ</strong> を作るのは
+最初から設計を考えておく必要があり、後付けでは難しいです</p>
+
+<p>また、キー情報を入力値としてリプレイさせるのは昔からよくある手法だと思いますが<br />
+後々のこと（学習系で利用）を考えると、入力値は「キー」ではなく、「状態」が好ましいです</p>
+
+<p>簡単にターン制バトルで言うとこんな感じ</p>
+
+<pre><code>＜入力＞
+「勇者」が「鉄の盾」「鉄の剣」を装備して
+「はぐれメタル」に「剣で攻撃」をした  
+（攻撃力１０）
+
+＜それを受けた出力＞
+「はぐれメタル」が（内部防御力９で）
+「ダメージ－１」を受けた  
+（そして逃げるフラグが立った）  
+※（カッコ）の中は内部パラメータなので、ゲーム画面では見えない情報
+</code></pre>
+
+<p>こんな感じで「バトルを直接的に変化させる内部状態を入出力の対象にする」のが良いです<br />
+「状態」であれば学習系でも利用できるし、何より人が見ても読めます（キー入力よりは…）</p>
+
+<blockquote>
+<p>→実際に目検で状態を読むのは困難ではありますが…</p>
+</blockquote>
+
+<p>他にも大量のログを管理する方法なども含めて「シミュレータそのもの」を作るコツはたくさんあるのですが<br />
+今回の話題からはちょっと外れるのでこのへんにしときます</p>
+
+<h2 id="作ったシミュレータを活躍させる方法">作ったシミュレータを活躍させる方法</h2>
+
+<p>ヤッター！シミュレータが出来たぞー<br />
+同じログを入力したら、同じ結果になったぞー！</p>
+
+<p>と喜んでいるのもつかの間…</p>
+
+<p>苦労して作ったのですが、もちろんそれだけではとある部品が出来ただけなので、何にも良いことはありません</p>
+
+<p>何かの目的があってシミュレータを作ったのでしょうから、それに向かって突き進むべきなのですが<br />
+最初に成果が出やすくて、チームに役に立ったと思ってもらえるのは<br />
+上に挙げた３つ（Ai学習/テスト/リプレイ）の中でも特に、<strong>テスト観点での活用</strong> が良いように思います</p>
+
+<p>テスト観点であれば、本体プロダクトとは別で話を進めやすく、またシミュレータ作成側のエンジニアのみで作業の完結も出来るので、おすすめです</p>
+
+<p>そこでやっと今回の本題に来ました</p>
+
+<p><strong>オートプレイ</strong> です！</p>
+
+<p>強化学習にしろ機械学習にしろ、オートプレイは必須！<br />
+それがテストにも転用できる！</p>
+
+<p>となれば、時間のかかる学習系を粛々と進めつつ<br />
+直近はテスト目的でシミュレータを活躍させるのが良いと思います</p>
+
+<blockquote>
+<p>→もちろんプランナーが乗り気でリプレイ機能を求めているなら、そっちを作ってください</p>
+</blockquote>
+
+<p>みんなが学習系に乗り気で、結果をすぐに出したいと思っていても<br />
+残念ながらなかなか早期に学習系の結果は出ないのです…<br />
+R&amp;D要素の大きく、学習させても期待値に満たない可能性もあります</p>
+
+<p>なのでAI学習目的でシミュレータを作り始めたとしても、テスト活躍案は持っておいた方が良いです</p>
+
+<p>しかもテストでの実績が目に見えて出てくると<br />
+リプレイ観点の設計もぐっと提案しやすくなり、録画機能やチート対策などにも話題が広がると思います</p>
+
+<blockquote>
+<p>→このリプレイ観点の話題は、GDCセッションでもよく出てます</p>
+</blockquote>
+
+<p>（本当は学習系で成果がポンと出せるのが一番良いのですがね…）</p>
+
+<blockquote>
+<p>ただし、テスト観点のみで走り進めてしまうと、リプレイ出来ない設計になってしまうこともあります<br />
+「テストのためにシミュレータでオートプレイをする」のと<br />
+「学習のためにシミュレータでオートプレイをする」のと<br />
+「リプレイのためにシミュレータでオートプレイをする」のとだと<br />
+結果が似てるようで設計思想が異なるので、良い感じの和集合設計を意識しながら作るのもエンジニアの腕の見せ所ではあります</p>
+</blockquote>
+
+<h2 id="オートプレイの実装１-とりあえず動作した版">オートプレイの実装１（とりあえず動作した版）</h2>
+
+<p>今回はＣ＋＋のアドカレ記事で、やっとＣ＋＋の話が出てきます<br />
+長い前置きでしたが、お待たせしました</p>
+
+<p>＜前提＞</p>
+
+<ul>
+<li>ターン制バトル</li>
+<li>敵も味方も、色んな技をいっぱい出し続けたい
+
+<ul>
+<li>変な挙動が起きないか？ストップバグなどが無いか？を見る</li>
+</ul></li>
+<li>技を出すことが目的なので、自分も相手も無敵モード</li>
+<li>技を出し尽くしたら、装備を変えて、次のバトルへ遷移する</li>
+</ul>
+
+<p>状況はこんな感じで、実際に実装してみます</p>
+
+<p>＜実装例＞</p>
+
+<p><code>main()</code> で動作するように、1ターンだけオートプレイとして動作するバージョンを例に書いてみました<br />
+Conpiler Explorerに全く同じものをアップしています</p>
+
+<ul>
+<li>手続き的に実装した版 - Conpiler Explor<br />
+<a href="https://godbolt.org/z/hxPjz49ab">https://godbolt.org/z/hxPjz49ab</a></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">97
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// ---------------------
+</span><span style="color:#75715e">// main.cpp
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;functional&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;memory&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">enum</span> <span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">CharactorId</span>
+{
+    Player,       <span style="color:#75715e">// プレイヤー
+</span><span style="color:#75715e"></span>    FriendAlice,  <span style="color:#75715e">// 味方
+</span><span style="color:#75715e"></span>    FriendBob,
+    EnemyEve,     <span style="color:#75715e">// 以下は敵
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/* ... */</span>
+};
+
+<span style="color:#75715e">// 技の種類
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">enum</span> <span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">OrderType</span>
+{
+    Attack,    <span style="color:#75715e">// 攻撃
+</span><span style="color:#75715e"></span>    Buff,      <span style="color:#75715e">// バフ
+</span><span style="color:#75715e"></span>    Summon,    <span style="color:#75715e">// 召喚
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/* ... */</span>
+};
+
+<span style="color:#75715e">// 実際にそのターンでどんな技を出すのかの情報(★0)
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">AutoPlayOrder</span>
+{
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    AutoPlayOrder(CharactorId id, OrderType type)
+    {
+        charactorId_ <span style="color:#f92672">=</span> id;
+        CurrentOrderType <span style="color:#f92672">=</span> type;
+
+        <span style="color:#75715e">// enumでのタイプ分け(★1)
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">switch</span> (CurrentOrderType)
+        {
+        <span style="color:#66d9ef">case</span> OrderType<span style="color:#f92672">::</span>Attack:
+            hitPoint_ <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;     <span style="color:#75715e">// default
+</span><span style="color:#75715e"></span>            ExecuteFunction <span style="color:#f92672">=</span> [<span style="color:#66d9ef">this</span>]() {ExecuteAttack(); };
+            <span style="color:#66d9ef">break</span>;
+        <span style="color:#66d9ef">case</span> OrderType<span style="color:#f92672">::</span>Buff:
+            buffPoint_ <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;     <span style="color:#75715e">// default
+</span><span style="color:#75715e"></span>            ExecuteFunction <span style="color:#f92672">=</span> [<span style="color:#66d9ef">this</span>]() {ExecuteBuff(); };
+            <span style="color:#66d9ef">break</span>;
+        <span style="color:#66d9ef">case</span> OrderType<span style="color:#f92672">::</span>Summon:
+        <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+            summonFriendId_ <span style="color:#f92672">=</span> CharactorId<span style="color:#f92672">::</span>FriendBob;   <span style="color:#75715e">// default
+</span><span style="color:#75715e"></span>            ExecuteFunction <span style="color:#f92672">=</span> [<span style="color:#66d9ef">this</span>]() {ExecuteSummon(); };
+            <span style="color:#66d9ef">break</span>;
+        }
+    }
+
+    OrderType CurrentOrderType;
+    std<span style="color:#f92672">::</span>function<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">void</span>()<span style="color:#f92672">&gt;</span> ExecuteFunction;
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ExecuteAttack</span>() <span style="color:#66d9ef">const</span> { std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Attack:&#34;</span> <span style="color:#f92672">&lt;&lt;</span> hitPoint_ <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>; }
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ExecuteBuff</span>() <span style="color:#66d9ef">const</span> { std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Buff:&#34;</span> <span style="color:#f92672">&lt;&lt;</span> buffPoint_ <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>; }
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ExecuteSummon</span>() <span style="color:#66d9ef">const</span> { std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Summon:&#34;</span> <span style="color:#f92672">&lt;&lt;</span> (<span style="color:#66d9ef">int</span>)summonFriendId_ <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>; }
+
+<span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+    CharactorId charactorId_;
+
+    <span style="color:#75715e">// 技によって必要なメンバ変数が異なる(★2)
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> hitPoint_;                 <span style="color:#75715e">// orderType == Attack なら、攻撃力
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> buffPoint_;                <span style="color:#75715e">// orderType == Buff なら、バフ量
+</span><span style="color:#75715e"></span>    CharactorId summonFriendId_;   <span style="color:#75715e">// orderType == Summon なら、一緒に召喚する味方ID
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/* ... */</span>
+
+};
+
+<span style="color:#75715e">// オートプレイの取りまとめクラス
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">AutoPlay</span>
+{
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span>std<span style="color:#f92672">::</span>shared_ptr<span style="color:#f92672">&lt;</span>AutoPlayOrder<span style="color:#f92672">&gt;&gt;</span> OrderList;
+};
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;===AutoPlay===</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+
+    <span style="color:#66d9ef">auto</span> autoPlay <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>make_unique<span style="color:#f92672">&lt;</span>AutoPlay<span style="color:#f92672">&gt;</span>();
+
+    <span style="color:#75715e">// 今回は、とあるターンでの技が３つあったとする
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 何の技が出せるのかは、今出している技を見たりするので結構複雑な処理になる(★3)
+</span><span style="color:#75715e"></span>    autoPlay<span style="color:#f92672">-&gt;</span>OrderList.emplace_back(std<span style="color:#f92672">::</span>make_shared<span style="color:#f92672">&lt;</span>AutoPlayOrder<span style="color:#f92672">&gt;</span>(CharactorId<span style="color:#f92672">::</span>Player, OrderType<span style="color:#f92672">::</span>Attack));
+    autoPlay<span style="color:#f92672">-&gt;</span>OrderList.emplace_back(std<span style="color:#f92672">::</span>make_shared<span style="color:#f92672">&lt;</span>AutoPlayOrder<span style="color:#f92672">&gt;</span>(CharactorId<span style="color:#f92672">::</span>FriendAlice, OrderType<span style="color:#f92672">::</span>Summon));
+    autoPlay<span style="color:#f92672">-&gt;</span>OrderList.emplace_back(std<span style="color:#f92672">::</span>make_shared<span style="color:#f92672">&lt;</span>AutoPlayOrder<span style="color:#f92672">&gt;</span>(CharactorId<span style="color:#f92672">::</span>FriendBob, OrderType<span style="color:#f92672">::</span>Buff));
+
+    <span style="color:#75715e">// execute
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> <span style="color:#66d9ef">const</span><span style="color:#f92672">&amp;</span> order : autoPlay<span style="color:#f92672">-&gt;</span>OrderList)
+    {
+        <span style="color:#75715e">// オートプレイ実行時はポリモーフィックに出来てる(★4)
+</span><span style="color:#75715e"></span>        order<span style="color:#f92672">-&gt;</span>ExecuteFunction();
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>出力結果</p>
+
+<pre><code>===AutoPlay===
+Attack:10
+Summon:2
+Buff:5
+</code></pre>
+
+<h2 id="オートプレイの実装１の考察">オートプレイの実装１の考察</h2>
+
+<p>これは <code>OrderList</code> に出せる技をバンバン登録して、それをしていくコードです</p>
+
+<h3 id="新規に登録する用の型が必要-0">■新規に登録する用の型が必要(★0)</h3>
+
+<p><code>OrderList</code> というリストに登録するための管理用の型 <code>AutoPlayOrder</code> を新たに作っています</p>
+
+<h3 id="技にによっては使わないメンバを持っている-2">■技にによっては使わないメンバを持っている(★2)</h3>
+
+<p>無駄があり、あまり良いコードとは言えないです<br />
+そしてこれは、全部の敵や味方が必要な情報を網羅する必要のある神クラスになってしまってます</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 技によって必要なメンバ変数が異なる(★2)
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> hitPoint_;                 <span style="color:#75715e">// orderType == Attack なら、攻撃力
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> buffPoint_;                <span style="color:#75715e">// orderType == Buff なら、バフ量
+</span><span style="color:#75715e"></span>CharactorId summonFriendId_;   <span style="color:#75715e">// orderType == Summon なら、一緒に召喚する味方ID
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>ちょっと何とかしたい…</p>
+
+<p>そんな時には、Orderのベースクラスを作って、継承で攻撃クラスを作れば<br />
+プレイヤーだけが <code>hitPoint_</code> のメンバを持てるわけなので<br />
+継承するか<br />
+数が少ないのであれば、我慢して必要情報を全持ちするかで、とりあえずは動作出来ます</p>
+
+<p>どうしよう…これだけのために継承するのは、依存関係や制約が強すぎる気がします<br />
+（今回の場合は継承でリファクタしても悪くないとは思いますが…）</p>
+
+<h3 id="結局enum判定をがっつりやっている-1">■結局enum判定をがっつりやっている(★1)</h3>
+
+<p>技を実行している箇所について↓↓↓</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">order<span style="color:#f92672">-&gt;</span>ExecuteFunction();
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>ここあたりは、<code>std::function</code> を使ってポリモーフィックで良い感じに見えますが<br />
+結局のところ、「何の技を出せる？」という判断をするときに、今時点で何がリストに上がっているか？を調べたくなるので(★3)<br />
+（サンプルコードには書いてませんけど）実際はリスト内の <code>OrderType</code> の <code>enum</code> をめちゃめちゃ判定に利用しています<br />
+つまり実行時のみポリモーフィックにしたところで、結局 <code>enum</code> で場合分けすることが多いので、あまりうまみが無くてシュン…って感じ</p>
+
+<p>この状態でもオートプレイの動作に問題は無いのですが、リファクタしていこうと思います</p>
+
+<h2 id="オートプレイの実装２-std-variant版">オートプレイの実装２（std::variant版）</h2>
+
+<p>継承はあんまり使いたくないという発想のもとで、<br />
+とりあえず、コンストラクタ生成時の引数制約で、必要な情報を入手するようにします<br />
+今回はやってませんが、共通クラスを作ってコンポジションで強制しても良いと思います</p>
+
+<p>また、<code>enum</code> 判定を減らしたいので、<code>std::varriant</code> を用いて <code>OrderList</code> に既に登録されている技を型判定無しで取得する手段を提供してみます</p>
+
+<ul>
+<li>varriantを用いた版 - Conpiler Explor<br />
+<a href="https://godbolt.org/z/78qx3eTqe">https://godbolt.org/z/78qx3eTqe</a></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">118
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">119
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">120
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">121
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">122
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">123
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">124
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">125
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">126
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">127
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">128
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">129
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">130
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">131
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// ---------------------
+</span><span style="color:#75715e">// main.cpp
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;functional&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;memory&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;variant&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// ... 既存のenum定義はそのまま記載 ...
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// ---------------------------------------------------
+</span><span style="color:#75715e">// 実際にそのターンでどんな技を出すのかの情報(★0&#39;)
+</span><span style="color:#75715e">// 攻撃
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">OrderAttack</span>
+{
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    OrderAttack(CharactorId id, <span style="color:#66d9ef">int</span> hitPoint) <span style="color:#f92672">:</span>
+        CurrentOrderType(OrderType<span style="color:#f92672">::</span>Attack),
+        charactorId_(id),
+        hitPoint_(hitPoint) {}
+
+    OrderType CurrentOrderType;
+    CharactorId <span style="color:#a6e22e">GetCharactor</span>() { <span style="color:#66d9ef">return</span> charactorId_; }
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ExecuteOrder</span>() { std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Attack:&#34;</span> <span style="color:#f92672">&lt;&lt;</span> hitPoint_ <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>; }
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">UpdatePlayerAttack</span>(<span style="color:#66d9ef">int</span> newHitPoint){hitPoint_ <span style="color:#f92672">=</span> newHitPoint;}
+<span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+    CharactorId charactorId_;
+    <span style="color:#66d9ef">int</span> hitPoint_;                 <span style="color:#75715e">// 攻撃力
+</span><span style="color:#75715e"></span>};
+<span style="color:#75715e">// バフ
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">OrderBuff</span>
+{
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    OrderBuff(CharactorId id, <span style="color:#66d9ef">int</span> buff) <span style="color:#f92672">:</span>
+        CurrentOrderType(OrderType<span style="color:#f92672">::</span>Buff),
+        charactorId_(id),
+        buffPoint_(buff) {}
+
+    OrderType CurrentOrderType;
+    CharactorId <span style="color:#a6e22e">GetCharactor</span>() { <span style="color:#66d9ef">return</span> charactorId_; }
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ExecuteOrder</span>() { std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Buff:&#34;</span> <span style="color:#f92672">&lt;&lt;</span> buffPoint_ <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>; }
+<span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+    CharactorId charactorId_;
+    <span style="color:#66d9ef">int</span> buffPoint_;                 <span style="color:#75715e">// バフ量
+</span><span style="color:#75715e"></span>};
+<span style="color:#75715e">// 召喚
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">OrderSummon</span>
+{
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    OrderSummon(CharactorId id, CharactorId summonFriend) <span style="color:#f92672">:</span>
+        CurrentOrderType(OrderType<span style="color:#f92672">::</span>Summon),
+        charactorId_(id),
+        summonFriendId_(summonFriend) {}
+
+    OrderType CurrentOrderType;
+    CharactorId <span style="color:#a6e22e">GetCharactor</span>() { <span style="color:#66d9ef">return</span> charactorId_; }
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ExecuteOrder</span>() { std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Summon:&#34;</span> <span style="color:#f92672">&lt;&lt;</span> (<span style="color:#66d9ef">int</span>)summonFriendId_ <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>; }
+<span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+    CharactorId charactorId_;
+    CharactorId summonFriendId_;            <span style="color:#75715e">// 一緒に召喚する味方ID
+</span><span style="color:#75715e"></span>};
+
+<span style="color:#75715e">// ---------------------------------------------------
+</span><span style="color:#75715e">// キャラクターIDを取得するための構造体
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> GetCharactorId
+{
+    <span style="color:#66d9ef">void</span> <span style="color:#66d9ef">operator</span>()(<span style="color:#66d9ef">const</span> std<span style="color:#f92672">::</span>shared_ptr<span style="color:#f92672">&lt;</span>OrderAttack<span style="color:#f92672">&gt;&amp;</span> order) <span style="color:#66d9ef">const</span> { order<span style="color:#f92672">-&gt;</span>GetCharactor(); }
+    <span style="color:#66d9ef">void</span> <span style="color:#66d9ef">operator</span>()(<span style="color:#66d9ef">const</span> std<span style="color:#f92672">::</span>shared_ptr<span style="color:#f92672">&lt;</span>OrderBuff<span style="color:#f92672">&gt;&amp;</span> order) <span style="color:#66d9ef">const</span> { order<span style="color:#f92672">-&gt;</span>GetCharactor(); }
+    <span style="color:#66d9ef">void</span> <span style="color:#66d9ef">operator</span>()(<span style="color:#66d9ef">const</span> std<span style="color:#f92672">::</span>shared_ptr<span style="color:#f92672">&lt;</span>OrderSummon<span style="color:#f92672">&gt;&amp;</span> order) <span style="color:#66d9ef">const</span> { order<span style="color:#f92672">-&gt;</span>GetCharactor(); }
+};
+
+<span style="color:#75715e">// 技の実行をまとめている構造体
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> ExecuteOrder
+{
+    <span style="color:#66d9ef">void</span> <span style="color:#66d9ef">operator</span>()(<span style="color:#66d9ef">const</span> std<span style="color:#f92672">::</span>shared_ptr<span style="color:#f92672">&lt;</span>OrderAttack<span style="color:#f92672">&gt;&amp;</span> order) <span style="color:#66d9ef">const</span> { order<span style="color:#f92672">-&gt;</span>ExecuteOrder(); }
+    <span style="color:#66d9ef">void</span> <span style="color:#66d9ef">operator</span>()(<span style="color:#66d9ef">const</span> std<span style="color:#f92672">::</span>shared_ptr<span style="color:#f92672">&lt;</span>OrderBuff<span style="color:#f92672">&gt;&amp;</span> order) <span style="color:#66d9ef">const</span> { order<span style="color:#f92672">-&gt;</span>ExecuteOrder(); }
+    <span style="color:#66d9ef">void</span> <span style="color:#66d9ef">operator</span>()(<span style="color:#66d9ef">const</span> std<span style="color:#f92672">::</span>shared_ptr<span style="color:#f92672">&lt;</span>OrderSummon<span style="color:#f92672">&gt;&amp;</span> order) <span style="color:#66d9ef">const</span> { order<span style="color:#f92672">-&gt;</span>ExecuteOrder(); }
+};
+
+<span style="color:#75715e">// ---------------------------------------------------
+</span><span style="color:#75715e">// オートプレイの取りまとめクラス
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">AutoPlay</span>
+{
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span>std<span style="color:#f92672">::</span>variant<span style="color:#f92672">&lt;</span>std<span style="color:#f92672">::</span>shared_ptr<span style="color:#f92672">&lt;</span>OrderAttack<span style="color:#f92672">&gt;</span>, std<span style="color:#f92672">::</span>shared_ptr<span style="color:#f92672">&lt;</span>OrderBuff<span style="color:#f92672">&gt;</span>, std<span style="color:#f92672">::</span>shared_ptr<span style="color:#f92672">&lt;</span>OrderSummon<span style="color:#f92672">&gt;&gt;&gt;</span> OrderList;
+
+    <span style="color:#75715e">// このターンで実行したい、全部のオートプレイの技を実行する
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ExecuteAllOrder</span>()
+    {
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> <span style="color:#66d9ef">const</span><span style="color:#f92672">&amp;</span> order : OrderList)
+        {
+            std<span style="color:#f92672">::</span>visit(ExecuteOrder{}, order);
+        }
+    }
+
+    <span style="color:#75715e">// 特定の何かの値を更新したい
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 例）プレイヤーの攻撃力をあとから更新
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">UpdatePlayerAttackPoint</span>(<span style="color:#66d9ef">int</span> newHitPoint)
+    {
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span><span style="color:#f92672">&amp;</span> order : OrderList)
+        {
+            <span style="color:#75715e">// OrderAttackオブジェクトを探す
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">auto</span> attackOrder <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>get_if<span style="color:#f92672">&lt;</span>std<span style="color:#f92672">::</span>shared_ptr<span style="color:#f92672">&lt;</span>OrderAttack<span style="color:#f92672">&gt;&gt;</span>(<span style="color:#f92672">&amp;</span>order);
+            <span style="color:#66d9ef">if</span> (attackOrder <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#f92672">*</span>attackOrder)<span style="color:#f92672">-&gt;</span>GetCharactor() <span style="color:#f92672">==</span> CharactorId<span style="color:#f92672">::</span>Player)
+            {
+                (<span style="color:#f92672">*</span>attackOrder)<span style="color:#f92672">-&gt;</span>UpdatePlayerAttack(newHitPoint);  <span style="color:#75715e">// (★3&#39;)
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">break</span>;
+            }
+        }
+    }
+};
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;===AutoPlay===</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+
+    <span style="color:#66d9ef">auto</span> autoPlay <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>make_unique<span style="color:#f92672">&lt;</span>AutoPlay<span style="color:#f92672">&gt;</span>();
+
+    <span style="color:#75715e">// 何の技が出せるのかは、今出している技を見たりして登録していく
+</span><span style="color:#75715e"></span>    autoPlay<span style="color:#f92672">-&gt;</span>OrderList.emplace_back(std<span style="color:#f92672">::</span>make_shared<span style="color:#f92672">&lt;</span>OrderAttack<span style="color:#f92672">&gt;</span>(CharactorId<span style="color:#f92672">::</span>Player, <span style="color:#ae81ff">10</span>));
+    autoPlay<span style="color:#f92672">-&gt;</span>OrderList.emplace_back(std<span style="color:#f92672">::</span>make_shared<span style="color:#f92672">&lt;</span>OrderSummon<span style="color:#f92672">&gt;</span>(CharactorId<span style="color:#f92672">::</span>FriendAlice, CharactorId<span style="color:#f92672">::</span>FriendBob));
+
+    <span style="color:#75715e">// 例えば、ここの時点で何かバフがかかったとして、既にPlayerに登録されている値をこの時点で更新したい、という時
+</span><span style="color:#75715e"></span>    autoPlay<span style="color:#f92672">-&gt;</span>UpdatePlayerAttackPoint(<span style="color:#ae81ff">20</span>);
+
+    autoPlay<span style="color:#f92672">-&gt;</span>OrderList.emplace_back(std<span style="color:#f92672">::</span>make_shared<span style="color:#f92672">&lt;</span>OrderBuff<span style="color:#f92672">&gt;</span>(CharactorId<span style="color:#f92672">::</span>FriendBob, <span style="color:#ae81ff">5</span>));
+
+    <span style="color:#75715e">// 実行したい技が整ったので、実行！
+</span><span style="color:#75715e"></span>    autoPlay<span style="color:#f92672">-&gt;</span>ExecuteAllOrder();
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+<pre><code>===AutoPlay===
+Attack:20
+Summon:2
+Buff:5
+</code></pre>
+
+<p>先ほどは <code>OrderType</code> のenumを使って、技の処理を振り分けしていたのですが</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span> GetCharactorId{}
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>これをうまく使うことによって、場合分けしなくて済むようになりました</p>
+
+<p>さっきは、<code>std::function</code> のおかげで実行時のみは、かろうじてポリモーフィックに動作していましたが、<code>std::variant</code> のおかげで、他の処理も技の型（ <code>OrderType</code> で持っていたもの）に依存せずに記載することができました(★3&rsquo;)</p>
+
+<p>また、<code>struct GetCharactorId</code> や <code>struct ExecuteOrder</code> を定義する必要があるものの、<code>class OrderAttack</code> はインタフェースや継承を持っていないので、なんだか自由を手に入れた気分になります</p>
+
+<p><code>std::variant</code> を使ってみると、こんな書き方が出来るのか～という自分なりの新たな発見でした</p>
+
+<h2 id="終わりに">終わりに</h2>
+
+<p>今回、シミュレータを作った際に、色々と勉強になることがあったので、ひっくるめて記載してみました</p>
+
+<p>シミュレータという機能がニッチながらも、ゲーム開発においては重要なポイントになりそうなこと、<br />
+また今回記載した <code>std::variant</code> を使って書いた処理は Visitor Pattern というらしいですが<br />
+継承、インタフェース、コンポジションなどなど、やりながらあれ？これは？という箇所がたくさんあったので、そういったコードを試行錯誤できたことなどが良い経験だったなーと思って書きました</p>
+
+<p>自分としては継承を使った記載方法でも、今回は良さそうだなと思ったし、<br />
+最初に記載した、 <code>AutoPlayOrder</code> という手続き的な神クラスの記載方法も、技の数が少ないなど状況によってはそこまで悪くないかもなと思いました</p>
+
+<p>シミュレータを突き詰めていくと、技や手札やゲーム環境などのパラメータ追加の容易さと、実行時にいかに高速に動作することが求められてくるので<br />
+そうなっていくとまた設計思想も変わってきそうだなとも思いましたが、今回はこのへんまでで終わろうと思います！</p>
+
+<h2 id="参考">参考</h2>
+
+<p><code>std::variant</code> に気が付けたのは、CppCon2022の <strong>Klaus Iglberger</strong> さんの<br />
+「Breaking Dependencies - The Visitor Design Pattern in Cpp」<br />
+というセッションを見て、おおおおおーと思ったからです</p>
+
+<ul>
+<li>Breaking Dependencies - The Visitor Design Pattern in Cpp<br />
+<a href="https://www.youtube.com/watch?v=PEcy1vYHb8A">https://www.youtube.com/watch?v=PEcy1vYHb8A</a></li>
+</ul>
+
+<p>C++を言語にしたデザインパターンの書籍も出されています</p>
+
+<ul>
+<li>「C++ソフトウェア設計」(オライリー)<br />
+<a href="https://www.oreilly.co.jp/books/9784814400454/">https://www.oreilly.co.jp/books/9784814400454/</a></li>
+</ul>
+
+<p>この著書の中で、ベースクラスそんなに気軽に更新できないし、純仮想関数を強いた日には同僚とのバーベキューパーティに呼ばれなくなるかもしれないよ！という注釈が何度も出てきて、個人的にウケました</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2023%2f12%2f25%2faboutsimulatorandusestdvariant%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5d%20std%3a%3avariant%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6%e3%82%b7%e3%83%9f%e3%83%a5%e3%83%ac%e3%83%bc%e3%82%bf%e3%81%a7%e3%82%aa%e3%83%bc%e3%83%88%e3%83%97%e3%83%ac%e3%82%a4%e3%81%95%e3%81%9b%e3%82%8b&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2023%2f12%2f25%2faboutsimulatorandusestdvariant%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2023%2f12%2f25%2faboutsimulatorandusestdvariant%2f&title=%5bC%2b%2b%5d%20std%3a%3avariant%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6%e3%82%b7%e3%83%9f%e3%83%a5%e3%83%ac%e3%83%bc%e3%82%bf%e3%81%a7%e3%82%aa%e3%83%bc%e3%83%88%e3%83%97%e3%83%ac%e3%82%a4%e3%81%95%e3%81%9b%e3%82%8b" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2023/03/21/how-to-change-us-layout-noreboot/" title="[US配列] 再起動なしにUS配列に変更するULE4JIS">[US配列] 再起動なしにUS配列に変更するULE4JIS</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2023.03.21">2023.03.21</time>
@@ -1062,111 +1888,6 @@ code-select: note: install requested <span style="color:#66d9ef">for</span> comm
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2022/03/20/note-two-dimensional-vector/" title="[C&#43;&#43;] 2次元Vectorのメモ">[C&#43;&#43;] 2次元Vectorのメモ</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2022.03.20">2022.03.20</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/cpp">cpp</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>HackerRankやってるときによく２次元配列が出てくるので、ちゃちゃっとやりたいときのメモです</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">31
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// ２次元配列の宣言,,,出来れば v じゃなくて用途名にしたいところ…
-</span><span style="color:#75715e"></span>std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> v(<span style="color:#ae81ff">2</span>, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">3</span>));
-<span style="color:#75715e">// こんな配列が出来てる↓↓↓
-</span><span style="color:#75715e"></span>v.at(<span style="color:#ae81ff">0</span>).at(<span style="color:#ae81ff">0</span>);
-v.at(<span style="color:#ae81ff">0</span>).at(<span style="color:#ae81ff">1</span>);
-v.at(<span style="color:#ae81ff">0</span>).at(<span style="color:#ae81ff">2</span>);
-v.at(<span style="color:#ae81ff">1</span>).at(<span style="color:#ae81ff">0</span>);
-v.at(<span style="color:#ae81ff">1</span>).at(<span style="color:#ae81ff">1</span>);
-v.at(<span style="color:#ae81ff">1</span>).at(<span style="color:#ae81ff">2</span>);
-
-<span style="color:#75715e">// 呼び先でも内容を更新したいときは参照が楽…
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">func</span>(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;</span>t)
-<span style="color:#66d9ef">void</span> func(vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> <span style="color:#f92672">&amp;</span>v)
-
-<span style="color:#75715e">// べた書きループはかなり楽
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> v.size(); <span style="color:#f92672">++</span>i){
-    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> v.at(i).size(); <span style="color:#f92672">++</span>j){
-        <span style="color:#75715e">// 何か処理
-</span><span style="color:#75715e"></span>    }
-}
-<span style="color:#75715e">// べた書きループ、
-</span><span style="color:#75715e">// サイズチェックが気になる or 他でも利用するなるなら…
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> row <span style="color:#f92672">=</span> v.size();
-<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> row; <span style="color:#f92672">++</span>i){
-    <span style="color:#66d9ef">auto</span> <span style="color:#f92672">&amp;</span>box <span style="color:#f92672">=</span> v.at(i);
-    <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> col <span style="color:#f92672">=</span> box.size();
-    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> col; <span style="color:#f92672">++</span>j){
-        <span style="color:#66d9ef">auto</span> <span style="color:#f92672">&amp;</span>ck_data <span style="color:#f92672">=</span> v.at(i).at(j);
-        <span style="color:#75715e">// 何か処理
-</span><span style="color:#75715e"></span>    }
-}
-</code></pre></td></tr></table>
-</div>
-</div>
-<p>業務や後に残るコードではなく、とにかくちゃちゃっとやりたい、という要望って<br />
-自分はこれまで出会ったことが無かったので<br />
-この手のコーディングは、自分的にはかなり新しいというか新鮮な感じがします</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f03%2f20%2fnote-two-dimensional-vector%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5d%202%e6%ac%a1%e5%85%83Vector%e3%81%ae%e3%83%a1%e3%83%a2&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f03%2f20%2fnote-two-dimensional-vector%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f03%2f20%2fnote-two-dimensional-vector%2f&title=%5bC%2b%2b%5d%202%e6%ac%a1%e5%85%83Vector%e3%81%ae%e3%83%a1%e3%83%a2" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
@@ -1237,6 +1958,12 @@ v.at(<span style="color:#ae81ff">1</span>).at(<span style="color:#ae81ff">2</spa
                 
                     
                         
+                            <a href="/blog/2023/12/25/aboutsimulatorandusestdvariant/" class="list-group-item">[C&#43;&#43;] std::variantを使ってシミュレータでオートプレイさせる</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2023/03/21/how-to-change-us-layout-noreboot/" class="list-group-item">[US配列] 再起動なしにUS配列に変更するULE4JIS</a><br>
                         
                     
@@ -1286,12 +2013,6 @@ v.at(<span style="color:#ae81ff">1</span>).at(<span style="color:#ae81ff">2</spa
                     
                         
                             <a href="/blog/2022/03/24/how-to-support-hugo-auto-deploy-to-cname-when-using-github-actions/" class="list-group-item">[Hugo] GitHub Actionsでサイトを自動デプロイしたときにCNAMEを残す方法</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2022/03/20/note-two-dimensional-vector/" class="list-group-item">[C&#43;&#43;] 2次元Vectorのメモ</a><br>
                         
                     
                 
@@ -1377,9 +2098,9 @@ v.at(<span style="color:#ae81ff">1</span>).at(<span style="color:#ae81ff">2</spa
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/cpp" style="font-size: 74px;">
+                    <a href="https://h-sao.com//tags/cpp" style="font-size: 77px;">
                     
-                        <span class="badge">22</span>
+                        <span class="badge">23</span>
                         cpp
                     </a>
                     </u> &nbsp; 

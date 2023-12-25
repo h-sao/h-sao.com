@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://h-sao.com/blog/2023/12/25/aboutsimulatorandusestdvariant/</loc>
+    <lastmod>2023-12-25T00:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://h-sao.com/blog/2023/03/21/how-to-change-us-layout-noreboot/</loc>
     <lastmod>2023-03-21T13:00:00+09:00</lastmod>
   </url>
@@ -562,7 +567,7 @@
   
   <url>
     <loc>https://h-sao.com/tags/cpp/</loc>
-    <lastmod>2023-03-03T15:00:00+09:00</lastmod>
+    <lastmod>2023-12-25T00:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -598,7 +603,7 @@
   
   <url>
     <loc>https://h-sao.com/</loc>
-    <lastmod>2023-03-21T13:00:00+09:00</lastmod>
+    <lastmod>2023-12-25T00:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -694,7 +699,7 @@
   
   <url>
     <loc>https://h-sao.com/post/</loc>
-    <lastmod>2023-03-21T13:00:00+09:00</lastmod>
+    <lastmod>2023-12-25T00:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
