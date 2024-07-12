@@ -8,7 +8,7 @@ tags = ["diary"]
 遥佐保（はるか・さお）です
 
 今年7月もマイクロソフトの MVP プログラムを再受賞させて頂きました  
-カテゴリー名称は引き続き **Developer Technologies** です
+カテゴリー名称は引き続き **Developer Technologies(C++)** です
 
 ![](/pic/MVPLogo.png)
 
