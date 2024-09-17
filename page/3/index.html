@@ -57,6 +57,71 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/" title="[C&#43;&#43;]Compiler Explorerの出力結果の表示方法">[C&#43;&#43;]Compiler Explorerの出力結果の表示方法</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2021.10.05">2021.10.05</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/cpp">cpp</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p><strong>Compiler Explorer</strong> というオンラインコンパイルサービスがあります</p>
+
+<ul>
+<li><strong>Compiler Explorer</strong><br />
+<a href="https://godbolt.org/">https://godbolt.org/</a></li>
+</ul>
+
+<p>書いたC++コードのアセンブリ出力結果をリナルタイムに表示してくれるサービスです</p>
+
+<p><img src="/pic/How-to-show-stdout-on-Compiler-Explorer_00.png" alt="" /></p>
+
+<p>すごーーー👀<br />
+初めてこのサービスを見た時には感激しました〜</p>
+
+<p>さておき、<br />
+わたし、これで実行結果を見る方法を知らなかったんですね…ハズカシー(*ﾉдﾉ)</p>
+
+<p>「Output」を押すと出力結果ウィンドウは出てきますが<br />
+このリターン値だけじゃなくて、 <code>std::cout</code> の結果も欲しいんですけど…👀</p>
+
+<p><img src="/pic/How-to-show-stdout-on-Compiler-Explorer_01.png" alt="" /></p>
+
+<p>ちょっと調べてみたらすぐに判明しました＞＜。</p>
+
+<p>Outputの設定項目に <strong>Execute the code</strong> のチェックボックスがあるので、それを選択すれば表示されます</p>
+
+<p><img src="/pic/How-to-show-stdout-on-Compiler-Explorer_02.png" alt="" /></p>
+
+<p>出力はこんな感じですね〜</p>
+
+<p><img src="/pic/How-to-show-stdout-on-Compiler-Explorer_03.png" alt="" /></p>
+
+<p>便利です〜</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2021%2f10%2f05%2fhow-to-show-stdout-on-compiler-explorer%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5dCompiler%20Explorer%e3%81%ae%e5%87%ba%e5%8a%9b%e7%b5%90%e6%9e%9c%e3%81%ae%e8%a1%a8%e7%a4%ba%e6%96%b9%e6%b3%95&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2021%2f10%2f05%2fhow-to-show-stdout-on-compiler-explorer%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2021%2f10%2f05%2fhow-to-show-stdout-on-compiler-explorer%2f&title=%5bC%2b%2b%5dCompiler%20Explorer%e3%81%ae%e5%87%ba%e5%8a%9b%e7%b5%90%e6%9e%9c%e3%81%ae%e8%a1%a8%e7%a4%ba%e6%96%b9%e6%b3%95" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2021/06/17/select-to-start-os-on-bootcamp/" title="[macOS] BootCampの起動OSを選ぶ">[macOS] BootCampの起動OSを選ぶ</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2021.06.17">2021.06.17</time>
@@ -1637,148 +1702,6 @@ $ git push -f origin feature/xxxxx
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2019/10/15/how-to-fix-git-author/" title="[Git] Commit&amp;PushしてしまったAuthor情報を変更したい">[Git] Commit&amp;PushしてしまったAuthor情報を変更したい</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2019.10.15">2019.10.15</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/git">git</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>最近、GitKraken を使って更新をしています<br />
-Pro バージョンだとアカウント情報の切り替えが簡単に出来るので<br />
-会社用や個人用に切り替えて作業するのがとても便利です</p>
-
-<p>しかしたまに切り替え忘れて、本来のアカウントじゃないやつでコミットしてしまって<br />
-意図しないメアドやユーザ名が入ったりして…(-&ldquo;-;A &hellip;アセアセ</p>
-
-<p>そんなときの変更の方法です</p>
-
-<h2 id="author-変更方法">Author 変更方法</h2>
-
-<p>直前のコミットを変更したい場合です</p>
-
-<pre><code>$ git commit --amend
-</code></pre>
-
-<p>を使うと、コミット履歴が書き換えられるんですけど<br />
-これで書き換えると、コミットの作者（Author）は変わらず、コミッター（Commiter）が変わるだけです</p>
-
-<p>Authorを書き換えるには</p>
-
-<pre><code>$ git commit --amend --author=&quot;Sao Haruka &lt;sao@tmp.com&gt;&quot;
-</code></pre>
-
-<p>こうすると書き換わります<br />
-こんな感じね↓↓↓</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git commit --amend --author<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Sao Haruka &lt;sao@tmp.com&gt;&#34;</span>
-<span style="color:#f92672">[</span>feature/xxxxx <span style="color:#ae81ff">9999999999</span><span style="color:#f92672">]</span> <span style="color:#f92672">[</span>WIP<span style="color:#f92672">]</span> Added hogehoge
- Date: Thu Oct <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">22</span>:30:00 <span style="color:#ae81ff">2019</span> +0900
- <span style="color:#ae81ff">1</span> files changed, <span style="color:#ae81ff">1</span> insertions<span style="color:#f92672">(</span>+<span style="color:#f92672">)</span>, <span style="color:#ae81ff">1</span> deletions<span style="color:#f92672">(</span>-<span style="color:#f92672">)</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>書き換わったー！</p>
-
-<h2 id="サーバーに-push-しちゃってるとき">サーバーに push しちゃってるとき</h2>
-
-<p>もし自分だけの作業ブランチでやってるのであれば、サーバーの履歴を強制的に書き換えることが出来ます<br />
-（共通ブランチでは、強制書き換えはやめよう）</p>
-
-<pre><code>$ git push -f [repository] [branch]
-</code></pre>
-
-<p>恐る恐るやってみる</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># まずは強制オプションをつけずにやってみる(もちろんエラー)</span>
-
-$ git push origin feature/xxxxx
-To tmp.com:ohoho/hoge.git
- ! <span style="color:#f92672">[</span>rejected<span style="color:#f92672">]</span>              feature/xxxxx -&gt; feature/xxxxx <span style="color:#f92672">(</span>non-fast-forward<span style="color:#f92672">)</span>
-error: failed to push some refs to <span style="color:#e6db74">&#39;tmp.com:ohoho/hoge.git&#39;</span>
-hint: Updates were rejected because the tip of your current branch is behind
-hint: its remote counterpart. Integrate the remote changes <span style="color:#f92672">(</span>e.g.
-hint: <span style="color:#e6db74">&#39;git pull ...&#39;</span><span style="color:#f92672">)</span> before pushing again.
-hint: See the <span style="color:#e6db74">&#39;Note about fast-forwards&#39;</span> in <span style="color:#e6db74">&#39;git push --help&#39;</span> <span style="color:#66d9ef">for</span> details.
-
-<span style="color:#75715e"># 強制オプションをつけてpush</span>
-
-$ git push -f origin feature/xxxxx
-Enumerating objects: <span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">done</span>.
-Counting objects: <span style="color:#ae81ff">100</span>% <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span>/1<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
-Delta compression using up to <span style="color:#ae81ff">1</span> threads
-Compressing objects: <span style="color:#ae81ff">100</span>% <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span>/1<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
-Writing objects: <span style="color:#ae81ff">100</span>% <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span>/1<span style="color:#f92672">)</span>, <span style="color:#ae81ff">1</span> KiB | <span style="color:#ae81ff">1</span> MiB/s, <span style="color:#66d9ef">done</span>.
-Total <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>delta <span style="color:#ae81ff">1</span><span style="color:#f92672">)</span>, reused <span style="color:#ae81ff">0</span> <span style="color:#f92672">(</span>delta <span style="color:#ae81ff">0</span><span style="color:#f92672">)</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>事なきを得た(_・ω・)_ﾊﾞｧﾝ…</p>
-
-<p>参考：</p>
-
-<ul>
-<li><p>Git の Commit Author と Commiter を変更する<br />
-<a href="https://qiita.com/sea_mountain/items/d70216a5bc16a88ed932">https://qiita.com/sea_mountain/items/d70216a5bc16a88ed932</a></p></li>
-
-<li><p>typoしてpushしてしまったコミットコメントを修正してpushしなおす方法<br />
-<a href="https://qiita.com/ykawakami/items/71b462057a8d714d7382">https://qiita.com/ykawakami/items/71b462057a8d714d7382</a></p></li>
-</ul>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2019%2f10%2f15%2fhow-to-fix-git-author%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGit%5d%20Commit%26Push%e3%81%97%e3%81%a6%e3%81%97%e3%81%be%e3%81%a3%e3%81%9fAuthor%e6%83%85%e5%a0%b1%e3%82%92%e5%a4%89%e6%9b%b4%e3%81%97%e3%81%9f%e3%81%84&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2019%2f10%2f15%2fhow-to-fix-git-author%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2019%2f10%2f15%2fhow-to-fix-git-author%2f&title=%5bGit%5d%20Commit%26Push%e3%81%97%e3%81%a6%e3%81%97%e3%81%be%e3%81%a3%e3%81%9fAuthor%e6%83%85%e5%a0%b1%e3%82%92%e5%a4%89%e6%9b%b4%e3%81%97%e3%81%9f%e3%81%84" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -1850,6 +1773,12 @@ Total <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>d
                 
                     
                         
+                            <a href="/blog/2024/09/18/how-to-update-github-submodule/" class="list-group-item">[Git] サブモジュールの更新メモ</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2024/07/12/to-be-rewarded-as-msmvp2024/" class="list-group-item">[MSMVP] 2024年7月 Microsoft MVP for Developer Technologies を再受賞しました</a><br>
                         
                     
@@ -1899,12 +1828,6 @@ Total <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>d
                     
                         
                             <a href="/blog/2022/07/19/registory-wallpaperssettings-onwindows/" class="list-group-item">[Windows] 壁紙のレジストリ設定場所</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2022/05/22/using-git-command-line-on-mac/" class="list-group-item">[Git] macでgitを初めて使う時</a><br>
                         
                     
                 
@@ -2060,9 +1983,9 @@ Total <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>d
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/git" style="font-size: 41px;">
+                    <a href="https://h-sao.com//tags/git" style="font-size: 44px;">
                     
-                        <span class="badge">11</span>
+                        <span class="badge">12</span>
                         git
                     </a>
                     </u> &nbsp; 
@@ -2080,9 +2003,9 @@ Total <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>d
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/github" style="font-size: 29px;">
+                    <a href="https://h-sao.com//tags/github" style="font-size: 32px;">
                     
-                        <span class="badge">7</span>
+                        <span class="badge">8</span>
                         github
                     </a>
                     </u> &nbsp; 

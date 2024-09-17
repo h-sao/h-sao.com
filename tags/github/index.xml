@@ -6,10 +6,27 @@
     <description>Recent content in Github on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 03 Aug 2022 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 18 Sep 2024 06:30:00 +0900</lastBuildDate>
     
 	<atom:link href="https://h-sao.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Git] サブモジュールの更新メモ</title>
+      <link>https://h-sao.com/blog/2024/09/18/how-to-update-github-submodule/</link>
+      <pubDate>Wed, 18 Sep 2024 06:30:00 +0900</pubDate>
+      
+      <guid>https://h-sao.com/blog/2024/09/18/how-to-update-github-submodule/</guid>
+      <description>最近は自分で苦労して調べたことをブログにメモしなくても
+何度でもAIさんが根気よく同じことを嫌がらずに教えてくれるので
+自分のブログメモが減ってしまいました…
+しかしさすがに同じことを何回聞いてるねん！？となったので、メモしておきます
+リポジトリ内にサブモジュールがあるときの更新方法メモです
+手順 develop/build00 のサブモジュール &amp;ldquo;libs/XXX&amp;rdquo; のブランチ master を紐付けたいとする
+既にサブモジュールブランチ XXX の master は更新済み &amp;amp; Push済みとします
+develop/build00 がみんなの作業ブランチの場合、PR用のブランチ maintenance/update-submodule00 などを作って更新対象にする
+# 作業前におかしな状態になってないかどうかを確認する git status # メインリポジトリのブランチをチェックアウト git checkout develop/build00 git pull # 目的のブランチに居てるよね？の確認 # （この場合develop/build00に居る） git branch # 念のためサブモジュールを更新 git submodule update --init --recursive # PRのための新しいブランチを作成 git checkout -b maintenance/update-submodule00 # 今のブランチは maintenance/update-submodule00 のはず git branch # libs/XXX サブモジュールに移動 cd libs/XXX # サブモジュールの目的のブランチをチェックアウト git checkout master git pull # 目的のブランチに居てるよね？の確認 # （この場合masterに居る） git branch # メインリポジトリに戻る cd .</description>
+    </item>
     
     <item>
       <title>[Git] コミット済みのファイルを Git LFS 管理対象にしたいとき</title>

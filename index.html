@@ -57,6 +57,108 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2024/09/18/how-to-update-github-submodule/" title="[Git] サブモジュールの更新メモ">[Git] サブモジュールの更新メモ</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2024.09.18">2024.09.18</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/git">git</a>
+        , 
+        
+        <a href="https://h-sao.com/tags/github">github</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>最近は自分で苦労して調べたことをブログにメモしなくても<br />
+何度でもAIさんが根気よく同じことを嫌がらずに教えてくれるので<br />
+自分のブログメモが減ってしまいました…</p>
+
+<p>しかしさすがに同じことを何回聞いてるねん！？となったので、メモしておきます</p>
+
+<p>リポジトリ内にサブモジュールがあるときの更新方法メモです</p>
+
+<h2 id="手順">手順</h2>
+
+<p><code>develop/build00</code> のサブモジュール &ldquo;libs/XXX&rdquo; のブランチ <code>master</code> を紐付けたいとする</p>
+
+<p>既にサブモジュールブランチ XXX の <code>master</code> は更新済み &amp; Push済みとします</p>
+
+<p><code>develop/build00</code> がみんなの作業ブランチの場合、PR用のブランチ <code>maintenance/update-submodule00</code> などを作って更新対象にする</p>
+
+<pre><code># 作業前におかしな状態になってないかどうかを確認する
+git status
+
+# メインリポジトリのブランチをチェックアウト
+git checkout develop/build00
+git pull
+
+# 目的のブランチに居てるよね？の確認
+# （この場合develop/build00に居る）
+git branch
+
+# 念のためサブモジュールを更新
+git submodule update --init --recursive
+
+# PRのための新しいブランチを作成
+git checkout -b maintenance/update-submodule00
+
+# 今のブランチは maintenance/update-submodule00 のはず
+git branch
+
+# libs/XXX サブモジュールに移動
+cd libs/XXX
+
+# サブモジュールの目的のブランチをチェックアウト
+git checkout master
+git pull
+
+# 目的のブランチに居てるよね？の確認
+# （この場合masterに居る）
+git branch
+
+# メインリポジトリに戻る
+cd ../..
+
+# しつこいけど、今のブランチは maintenance/update-submodule00 のはず
+git branch
+
+# メインリポジトリでサブモジュールの新しい状態をcommit
+git add libs/XXX
+git commit -m &quot;Update libs/XXX submodule&quot;
+
+# メインリポジトリの変更をプッシュ
+git push origin maintenance/update-submodule00
+
+# 最後に Github 上で maintenance/update-submodule00 から develop/build00 へPRを出す
+
+</code></pre>
+
+<p>こんな感じですね</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2024%2f09%2f18%2fhow-to-update-github-submodule%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGit%5d%20%e3%82%b5%e3%83%96%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e3%81%ae%e6%9b%b4%e6%96%b0%e3%83%a1%e3%83%a2&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2024%2f09%2f18%2fhow-to-update-github-submodule%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2024%2f09%2f18%2fhow-to-update-github-submodule%2f&title=%5bGit%5d%20%e3%82%b5%e3%83%96%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e3%81%ae%e6%9b%b4%e6%96%b0%e3%83%a1%e3%83%a2" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2024/07/12/to-be-rewarded-as-msmvp2024/" title="[MSMVP] 2024年7月 Microsoft MVP for Developer Technologies を再受賞しました">[MSMVP] 2024年7月 Microsoft MVP for Developer Technologies を再受賞しました</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2024.07.12">2024.07.12</time>
@@ -1760,124 +1862,6 @@ Tracking &quot;*.o&quot;
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2022/05/22/using-git-command-line-on-mac/" title="[Git] macでgitを初めて使う時">[Git] macでgitを初めて使う時</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2022.05.22">2022.05.22</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/git">git</a>
-        , 
-        
-        <a href="https://h-sao.com/tags/mac">mac</a>
-        , 
-        
-        <a href="https://h-sao.com/tags/xcode">xcode</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>mac で初めてコマンドから git を使う時の設定メモです</p>
-
-<ul>
-<li>わたしの環境
-
-<ul>
-<li>MacBook Pro 16-inch, 2019</li>
-<li>macOS Monterey</li>
-</ul></li>
-</ul>
-
-<h2 id="git-コマンドが使えなかった">git コマンドが使えなかった</h2>
-
-<p>Gitをコマンドラインで打つと、こんなエラーが出ました。。。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">% git </code></pre></td></tr></table>
-</div>
-</div>
-<blockquote>
-<p>xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun</p>
-</blockquote>
-
-<p>開発者ツールが入ってないらしい</p>
-
-<h2 id="xcode-をインストールする">Xcode をインストールする</h2>
-
-<p><code>xcode-select --install</code> でインストールします</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">% xcode-select --install
-code-select: note: install requested <span style="color:#66d9ef">for</span> command line developer tools
-% </code></pre></td></tr></table>
-</div>
-</div>
-<p>こんな感じでインストールが進みます</p>
-
-<p><img src="/pic/Using-git-command-line-on-mac_00.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p><img src="/pic/Using-git-command-line-on-mac_01.png" alt="" /></p>
-
-<p><img src="/pic/Using-git-command-line-on-mac_02.png" alt="" /></p>
-
-<p>実際のダウンロードは、わたしの環境では20分くらい、インストールは10分くらいでした</p>
-
-<p><img src="/pic/Using-git-command-line-on-mac_03.png" alt="" /></p>
-
-<p>そしてインストール完了のウィンドウが出てほっ…</p>
-
-<h2 id="gitコマンドが使えるように">Gitコマンドが使えるように</h2>
-
-<p><code>git</code> と打ってみる</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">% git                   </code></pre></td></tr></table>
-</div>
-</div>
-<blockquote>
-<p>usage: git [&ndash;version] [&ndash;help] [-C <path>] [-c <name>=<value>]<br />
-           [&ndash;exec-path[=<path>]] [&ndash;html-path] [&ndash;man-path] [&ndash;info-path]<br />
-           [-p | &ndash;paginate | -P | &ndash;no-pager] [&ndash;no-replace-objects] [&ndash;bare]<br />
-           [&ndash;git-dir=<path>] [&ndash;work-tree=<path>] [&ndash;namespace=<name>]<br />
-           <command> [<args>]<br />
-&hellip;</p>
-</blockquote>
-
-<p>無事、コマンドラインから git が使えるようになりました〜</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f05%2f22%2fusing-git-command-line-on-mac%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGit%5d%20mac%e3%81%a7git%e3%82%92%e5%88%9d%e3%82%81%e3%81%a6%e4%bd%bf%e3%81%86%e6%99%82&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f05%2f22%2fusing-git-command-line-on-mac%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f05%2f22%2fusing-git-command-line-on-mac%2f&title=%5bGit%5d%20mac%e3%81%a7git%e3%82%92%e5%88%9d%e3%82%81%e3%81%a6%e4%bd%bf%e3%81%86%e6%99%82" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -1947,6 +1931,12 @@ code-select: note: install requested <span style="color:#66d9ef">for</span> comm
                 
                     
                         
+                            <a href="/blog/2024/09/18/how-to-update-github-submodule/" class="list-group-item">[Git] サブモジュールの更新メモ</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2024/07/12/to-be-rewarded-as-msmvp2024/" class="list-group-item">[MSMVP] 2024年7月 Microsoft MVP for Developer Technologies を再受賞しました</a><br>
                         
                     
@@ -1996,12 +1986,6 @@ code-select: note: install requested <span style="color:#66d9ef">for</span> comm
                     
                         
                             <a href="/blog/2022/07/19/registory-wallpaperssettings-onwindows/" class="list-group-item">[Windows] 壁紙のレジストリ設定場所</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2022/05/22/using-git-command-line-on-mac/" class="list-group-item">[Git] macでgitを初めて使う時</a><br>
                         
                     
                 
@@ -2157,9 +2141,9 @@ code-select: note: install requested <span style="color:#66d9ef">for</span> comm
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/git" style="font-size: 41px;">
+                    <a href="https://h-sao.com//tags/git" style="font-size: 44px;">
                     
-                        <span class="badge">11</span>
+                        <span class="badge">12</span>
                         git
                     </a>
                     </u> &nbsp; 
@@ -2177,9 +2161,9 @@ code-select: note: install requested <span style="color:#66d9ef">for</span> comm
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/github" style="font-size: 29px;">
+                    <a href="https://h-sao.com//tags/github" style="font-size: 32px;">
                     
-                        <span class="badge">7</span>
+                        <span class="badge">8</span>
                         github
                     </a>
                     </u> &nbsp; 
