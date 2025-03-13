@@ -2503,6 +2503,7 @@ A. 回答
 デフォルトでは前回ログインしたユーザー名が表示されていて、便利です
 しかし、これが便利だなーと思うときと、毎回表示してほしいなーと思うときがあります
 その設定の場所のメモです
+環境：Windows11
 Windows + R キーで Local Group Policy Editor を起動します
  Local Computer Policy
 &amp;gt; Windows Settings
