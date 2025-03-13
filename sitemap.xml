@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://h-sao.com/blog/2025/03/13/how-to-display-username-at-sing-in/</loc>
+    <lastmod>2025-03-13T09:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://h-sao.com/blog/2024/09/18/how-to-update-github-submodule/</loc>
     <lastmod>2024-09-18T06:30:00+09:00</lastmod>
   </url>
@@ -613,7 +618,7 @@
   
   <url>
     <loc>https://h-sao.com/</loc>
-    <lastmod>2024-09-18T06:30:00+09:00</lastmod>
+    <lastmod>2025-03-13T09:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -709,7 +714,7 @@
   
   <url>
     <loc>https://h-sao.com/post/</loc>
-    <lastmod>2024-09-18T06:30:00+09:00</lastmod>
+    <lastmod>2025-03-13T09:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -727,6 +732,7 @@
   
   <url>
     <loc>https://h-sao.com/tags/security/</loc>
+    <lastmod>2025-03-13T09:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -792,7 +798,7 @@
   
   <url>
     <loc>https://h-sao.com/tags/windows/</loc>
-    <lastmod>2023-03-21T13:00:00+09:00</lastmod>
+    <lastmod>2025-03-13T09:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -824,10 +830,6 @@
     <loc>https://h-sao.com/tags/xiaomi/</loc>
     <lastmod>2015-10-06T04:00:00+09:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://h-sao.com/blog/1/01/01/how-to-display-username-at-sing-in/</loc>
   </url>
   
 </urlset>

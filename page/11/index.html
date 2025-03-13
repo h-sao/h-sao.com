@@ -57,6 +57,89 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2014/01/18/rerun-last-sql/" title="[Oracle] 直前のSQLを再実行する">[Oracle] 直前のSQLを再実行する</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2014.01.18">2014.01.18</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/sql">sql</a>
+        , 
+        
+        <a href="https://h-sao.com/tags/oracle">oracle</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p>OracleのコマンドラインでSQLを実行させるときのメモ</p>
+
+<p>直前のSQLコマンドを実行は / (スラッシュ)<br />
+この場合、直前のバッファの内容は表示しません</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">/</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>直前のバッファの内容を表示して実行するのは run コマンド</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SQL</span> <span style="color:#f92672">&gt;</span> run</code></pre></td></tr></table>
+</div>
+</div>
+<p>直前のバッファの内容を修正するには edit コマンド<br />
+タイプミスなどを修正できます<br />
+ただし、環境変数 &ldquo;_editor&rdquo; にエディタの設定をしておく必要があります</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SQL</span> <span style="color:#f92672">&gt;</span> define  _editor<span style="color:#f92672">=</span>vi
+<span style="color:#66d9ef">SQL</span> <span style="color:#f92672">&gt;</span> edit</code></pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<p>（参考）</p>
+
+<ul>
+<li><p>OracleのSQL*Plusで直前に実行したSQLを再実行<br />
+<a href="http://margrave.seesaa.net/article/127477048.html">http://margrave.seesaa.net/article/127477048.html</a></p></li>
+
+<li><p>SQL バッファの編集、エディタで編集する<br />
+<a href="http://www.shift-the-oracle.com/sqlplus/command/edit.html">http://www.shift-the-oracle.com/sqlplus/command/edit.html</a></p></li>
+
+<li><p>直前に実行したSQLをエディタで編集する<br />
+<a href="http://sakusakuit.blog.fc2.com/?m&amp;no=15">http://sakusakuit.blog.fc2.com/?m&amp;no=15</a></p></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f18%2frerun-last-sql%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bOracle%5d%20%e7%9b%b4%e5%89%8d%e3%81%aeSQL%e3%82%92%e5%86%8d%e5%ae%9f%e8%a1%8c%e3%81%99%e3%82%8b&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f18%2frerun-last-sql%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f18%2frerun-last-sql%2f&title=%5bOracle%5d%20%e7%9b%b4%e5%89%8d%e3%81%aeSQL%e3%82%92%e5%86%8d%e5%ae%9f%e8%a1%8c%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2011/01/01/think-about-sppding-up-cpp/" title="[C&#43;&#43;] 高速化について思うところ">[C&#43;&#43;] 高速化について思うところ</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2011.01.01">2011.01.01</time>
@@ -312,7 +395,7 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
             
 <h2><a href="https://h-sao.com/post/" title="Posts">Posts</a></h2>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2024.09.18">2024.09.18</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2025.03.13">2025.03.13</time>
     
 </span>
 </footer>
@@ -329,69 +412,6 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
     
     <li>
         <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fpost%2f&title=Posts" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
-            
-<h1><a href="https://h-sao.com/blog/1/01/01/how-to-display-username-at-sing-in/" title="[Windows] サインイン時のデフォルトユーザー名の表示">[Windows] サインイン時のデフォルトユーザー名の表示</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="0001.01.01">0001.01.01</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/windows">windows</a>
-        , 
-        
-        <a href="https://h-sao.com/tags/security">security</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>WindowsのPCログイン時って、何も設定しなければ<br />
-デフォルトでは前回ログインしたユーザー名が表示されていて、便利です</p>
-
-<p>しかし、これが便利だなーと思うときと、毎回表示してほしいなーと思うときがあります</p>
-
-<p>その設定の場所のメモです</p>
-
-<p>環境：Windows11</p>
-
-<p>Windows + R キーで <code>Local Group Policy Editor</code> を起動します</p>
-
-<blockquote>
-<p>Local Computer Policy<br />
-　　&gt; Windows Settings<br />
-　　　&gt; Security Settings<br />
-　　　　&gt; Local Policies<br />
-　　　　　&gt; Security Options</p>
-</blockquote>
-
-<p>ここの下の</p>
-
-<blockquote>
-<p>Interactive logon: Don&rsquo;t display username at sing in</p>
-</blockquote>
-
-<p><img src="/pic/How-to-display-username-at-sing-in_00.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>これを有効にすることで、思ったようなサインイン表示になります</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f1%2f01%2f01%2fhow-to-display-username-at-sing-in%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bWindows%5d%20%e3%82%b5%e3%82%a4%e3%83%b3%e3%82%a4%e3%83%b3%e6%99%82%e3%81%ae%e3%83%87%e3%83%95%e3%82%a9%e3%83%ab%e3%83%88%e3%83%a6%e3%83%bc%e3%82%b6%e3%83%bc%e5%90%8d%e3%81%ae%e8%a1%a8%e7%a4%ba&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f1%2f01%2f01%2fhow-to-display-username-at-sing-in%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f1%2f01%2f01%2fhow-to-display-username-at-sing-in%2f&title=%5bWindows%5d%20%e3%82%b5%e3%82%a4%e3%83%b3%e3%82%a4%e3%83%b3%e6%99%82%e3%81%ae%e3%83%87%e3%83%95%e3%82%a9%e3%83%ab%e3%83%88%e3%83%a6%e3%83%bc%e3%82%b6%e3%83%bc%e5%90%8d%e3%81%ae%e8%a1%a8%e7%a4%ba" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 
@@ -466,6 +486,12 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
                 
                     
                         
+                            <a href="/blog/2025/03/13/how-to-display-username-at-sing-in/" class="list-group-item">[Windows] サインイン時のデフォルトユーザー名の表示</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2024/09/18/how-to-update-github-submodule/" class="list-group-item">[Git] サブモジュールの更新メモ</a><br>
                         
                     
@@ -515,12 +541,6 @@ ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
                     
                         
                             <a href="/blog/2022/08/02/here-is-unityeditor/" class="list-group-item">[Unity] Windows/macOS内にあるUnityの場所</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2022/07/19/registory-wallpaperssettings-onwindows/" class="list-group-item">[Windows] 壁紙のレジストリ設定場所</a><br>
                         
                     
                 

@@ -69,6 +69,69 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2025/03/13/how-to-display-username-at-sing-in/" title="[Windows] サインイン時のデフォルトユーザー名の表示">[Windows] サインイン時のデフォルトユーザー名の表示</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2025.03.13">2025.03.13</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/windows">windows</a>
+        , 
+        
+        <a href="https://h-sao.com/tags/security">security</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p>WindowsのPCログイン時って、何も設定しなければ<br />
+デフォルトでは前回ログインしたユーザー名が表示されていて、便利です</p>
+
+<p>しかし、これが便利だなーと思うときと、毎回表示してほしいなーと思うときがあります</p>
+
+<p>その設定の場所のメモです</p>
+
+<p>環境：Windows11</p>
+
+<p>Windows + R キーで <code>Local Group Policy Editor</code> を起動します</p>
+
+<blockquote>
+<p>Local Computer Policy<br />
+　　&gt; Windows Settings<br />
+　　　&gt; Security Settings<br />
+　　　　&gt; Local Policies<br />
+　　　　　&gt; Security Options</p>
+</blockquote>
+
+<p>ここの下の</p>
+
+<blockquote>
+<p>Interactive logon: Don&rsquo;t display username at sing in</p>
+</blockquote>
+
+<p><img src="/pic/How-to-display-username-at-sing-in_00.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>これを有効にすることで、思ったようなサインイン表示になります</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2025%2f03%2f13%2fhow-to-display-username-at-sing-in%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bWindows%5d%20%e3%82%b5%e3%82%a4%e3%83%b3%e3%82%a4%e3%83%b3%e6%99%82%e3%81%ae%e3%83%87%e3%83%95%e3%82%a9%e3%83%ab%e3%83%88%e3%83%a6%e3%83%bc%e3%82%b6%e3%83%bc%e5%90%8d%e3%81%ae%e8%a1%a8%e7%a4%ba&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2025%2f03%2f13%2fhow-to-display-username-at-sing-in%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2025%2f03%2f13%2fhow-to-display-username-at-sing-in%2f&title=%5bWindows%5d%20%e3%82%b5%e3%82%a4%e3%83%b3%e3%82%a4%e3%83%b3%e6%99%82%e3%81%ae%e3%83%87%e3%83%95%e3%82%a9%e3%83%ab%e3%83%88%e3%83%a6%e3%83%bc%e3%82%b6%e3%83%bc%e5%90%8d%e3%81%ae%e8%a1%a8%e7%a4%ba" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2024/09/18/how-to-update-github-submodule/" title="[Git] サブモジュールの更新メモ">[Git] サブモジュールの更新メモ</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2024.09.18">2024.09.18</time>
@@ -1805,75 +1868,6 @@ Tracking &quot;*.o&quot;
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2022/07/19/registory-wallpaperssettings-onwindows/" title="[Windows] 壁紙のレジストリ設定場所">[Windows] 壁紙のレジストリ設定場所</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2022.07.19">2022.07.19</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/windows">windows</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>PCの壁紙にしてる画像データ…どこにあるんだっけ？<br />
-デスクトップでは見えてるんだけど…</p>
-
-<p>そんな時は一度、レジストリの中を見てみたら解決するかもしれません</p>
-
-<p>Windows11の環境で見てみました</p>
-
-<hr />
-
-<h2 id="壁紙のレジストリ設定">壁紙のレジストリ設定</h2>
-
-<ol>
-<li><p><code>regedit</code> でアプリを検索すると <code>Registry Editor</code> が出てきます<br />
-<img src="/pic/Registory-WallpapersSettings-onWindows_00.png" alt="" /></p></li>
-
-<li><p><code>HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Wallpapers</code><br />
-の中に、壁紙として登録されている画像情報のパスが入っています<br />
-<img src="/pic/Registory-WallpapersSettings-onWindows_01.png" alt="" /></p></li>
-</ol>
-
-<p>おお。。。ここにありましたか。。。！</p>
-
-<p>しかし、<br />
-元のファイルを消しちゃったけど、デスクトップの壁紙だけは残ってるってときは<br />
-どこにあるんでしょうかね…<br />
-どなたか知ってる方いらっしゃれば教えてくださいｍｍ</p>
-
-<hr />
-
-<p>（参考）</p>
-
-<ul>
-<li>Windows 10 最近使用したデスクトップの背景画像をWindowsの設定から削除して更新する<br />
-<a href="https://www.billionwallet.com/windows10/backimage-remove.html">https://www.billionwallet.com/windows10/backimage-remove.html</a></li>
-</ul>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f07%2f19%2fregistory-wallpaperssettings-onwindows%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bWindows%5d%20%e5%a3%81%e7%b4%99%e3%81%ae%e3%83%ac%e3%82%b8%e3%82%b9%e3%83%88%e3%83%aa%e8%a8%ad%e5%ae%9a%e5%a0%b4%e6%89%80&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f07%2f19%2fregistory-wallpaperssettings-onwindows%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f07%2f19%2fregistory-wallpaperssettings-onwindows%2f&title=%5bWindows%5d%20%e5%a3%81%e7%b4%99%e3%81%ae%e3%83%ac%e3%82%b8%e3%82%b9%e3%83%88%e3%83%aa%e8%a8%ad%e5%ae%9a%e5%a0%b4%e6%89%80" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
@@ -1944,6 +1938,12 @@ Tracking &quot;*.o&quot;
                 
                     
                         
+                            <a href="/blog/2025/03/13/how-to-display-username-at-sing-in/" class="list-group-item">[Windows] サインイン時のデフォルトユーザー名の表示</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2024/09/18/how-to-update-github-submodule/" class="list-group-item">[Git] サブモジュールの更新メモ</a><br>
                         
                     
@@ -1993,12 +1993,6 @@ Tracking &quot;*.o&quot;
                     
                         
                             <a href="/blog/2022/08/02/here-is-unityeditor/" class="list-group-item">[Unity] Windows/macOS内にあるUnityの場所</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2022/07/19/registory-wallpaperssettings-onwindows/" class="list-group-item">[Windows] 壁紙のレジストリ設定場所</a><br>
                         
                     
                 

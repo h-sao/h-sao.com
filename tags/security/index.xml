@@ -6,16 +6,17 @@
     <description>Recent content in Security on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
+    <lastBuildDate>Thu, 13 Mar 2025 09:30:00 +0900</lastBuildDate>
     
 	<atom:link href="https://h-sao.com/tags/security/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Windows] サインイン時のデフォルトユーザー名の表示</title>
-      <link>https://h-sao.com/blog/1/01/01/how-to-display-username-at-sing-in/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://h-sao.com/blog/2025/03/13/how-to-display-username-at-sing-in/</link>
+      <pubDate>Thu, 13 Mar 2025 09:30:00 +0900</pubDate>
       
-      <guid>https://h-sao.com/blog/1/01/01/how-to-display-username-at-sing-in/</guid>
+      <guid>https://h-sao.com/blog/2025/03/13/how-to-display-username-at-sing-in/</guid>
       <description>WindowsのPCログイン時って、何も設定しなければ
 デフォルトでは前回ログインしたユーザー名が表示されていて、便利です
 しかし、これが便利だなーと思うときと、毎回表示してほしいなーと思うときがあります

@@ -57,6 +57,382 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2021/12/01/about-cpp-modules/" title="[C&#43;&#43;] Modulesのコンパイル（MSVC ver）とBMIについて">[C&#43;&#43;] Modulesのコンパイル（MSVC ver）とBMIについて</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2021.12.01">2021.12.01</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/cpp">cpp</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<blockquote>
+<p>この記事は <a href="https://qiita.com/advent-calendar/2021/cxx">C++ Advent Calendar 2021</a> 1日目（初日！）の記事です。</p>
+</blockquote>
+
+<p>少し前からC++に <strong>Modules</strong> がやってきました<br />
+C++20 対応のメジャーどころのコンパイラ（MSVC/gcc/Clang など）で使うことができます</p>
+
+<p>個人的にはビックウェーブが来たーーーと思ってまして、つねづねポチポチと Modules について調べていました</p>
+
+<p>それを少しまとめたいと思います</p>
+
+<h2 id="モジュールの説明">モジュールの説明</h2>
+
+<p>昔ながらのプリコンパイルヘッダの概念を、今風にした感じでしょうか</p>
+
+<p>ヘッダファイルをインクルードしていたものを Modules に置き換えることが出来ます</p>
+
+<p>ヘッダファイルだと、</p>
+
+<p>インクルードの順番に気を付けたり<br />
+コンパイル時間が長くなったり<br />
+インクルードガード書いたりと<br />
+ゆーてローテク文字列だったのですが、</p>
+
+<p>それがバイナリとして公式に提供されました</p>
+
+<h2 id="modulesを記載するファイル">Modulesを記載するファイル</h2>
+
+<p>各コンパイラによって（推奨）拡張子が異なります</p>
+
+<ul>
+<li><p>MSVC (cl.exe)</p>
+
+<ul>
+<li>Foo.ixx<br /></li>
+</ul></li>
+
+<li><p>Clang</p>
+
+<ul>
+<li>Foo.cppm</li>
+</ul></li>
+
+<li><p>GCC</p>
+
+<ul>
+<li>Foo.cc</li>
+<li>Foo.cp</li>
+<li>Foo.cxx</li>
+<li>Foo.cpp</li>
+<li>Foo.c++</li>
+<li>Foo.C</li>
+</ul></li>
+</ul>
+
+<p>（参考）</p>
+
+<ul>
+<li>MSVC<br />
+<a href="https://docs.microsoft.com/en-us/cpp/cpp/modules-cpp?view=msvc-170">Overview of modules in C++</a></li>
+<li>GCC<br />
+<a href="http://labor-liber.org/en/gnu-linux/development/index.php?diapo=extensions">GCC and File Extensions - Development with GNU/Linux</a>
+<a href="https://blog.feabhas.com/2021/08/c20-modules-with-gcc11/">https://blog.feabhas.com/2021/08/c20-modules-with-gcc11/</a></li>
+</ul>
+
+<p>以下、、MSVCで話を進めます<br />
+（コンパイラによって異なる所が多いので）</p>
+
+<h2 id="モジュールファイルについて">モジュールファイルについて</h2>
+
+<p>MSVC の場合、モジュールにしたいファイルは <strong>.ixx</strong> という拡張子を付けます<br />
+（Clangだと .cppm、GCCだと .cxx とかになります）</p>
+
+<p>サンプルはこんな感じ</p>
+
+<p>hello.ixx</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// hello.ixx:
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> module MyHello;
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">f</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">42</span>;
+ }
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>利用する側はこんな感じで↓↓↓ <strong>import</strong> すれば使えます<br />
+（従来は <code>#include &quot;hello.h&quot;</code> とか書いていた場所です！）</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// main.cpp 
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;cstdlib&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+import MyHello;  <span style="color:#75715e">// モジュール使うよの宣言
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+  <span style="color:#66d9ef">auto</span> a <span style="color:#f92672">=</span> f();
+
+  std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> f();
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>サンプルだけ見ると、なんてことのないコードですね<br />
+メイン関数は <code>#include</code> してた箇所を <code>inport</code> に変更しただけです</p>
+
+<h2 id="モジュールをバイナリ化する">モジュールをバイナリ化する</h2>
+
+<p>モジュールを記載する <code>.ixx</code> ファイルは、<code>.ifc</code> にプリコンパイルでバイナリ化されます</p>
+
+<p>ややこしいのが、コンパイラによってこのあたりの呼び名が異なってて、こんな感じ</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MSVC</th>
+<th>Clang</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>モジュールファイル名　　→</td>
+<td><code>.ixx</code></td>
+<td><code>.cppm</code></td>
+</tr>
+
+<tr>
+<td>モジュールファイルをプリコンパイルしたもの→</td>
+<td><code>.ifc</code></td>
+<td><code>.pcm</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>ちなみに「モジュールファイルをプリコンパイルしたもの」を <strong>BMI</strong> と呼び、<br />
+<strong>Binary Module Interface</strong> の略になります</p>
+
+<p>この BMI ファイルを各 cpp ファイルなどが <code>import</code> することになります</p>
+
+<p>（参考）</p>
+
+<ul>
+<li>Practical Cpp Modules - CppCon 2019<br />
+<a href="https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules__boris_kolpackov__cppcon_2019.pdf">https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules_boris_kolpackov_cppcon_2019.pdf</a></li>
+</ul>
+
+<h2 id="vc-でのコンパイル方法">VC++でのコンパイル方法</h2>
+
+<p>単純のため、まずはコマンドラインでやってみます</p>
+
+<p>利用したVC++バージョンはこちら</p>
+
+<p><img src="/pic/About-Cpp-Modules_00.png" alt="" /></p>
+
+<p>コマンドは２つ</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; cl /c /std:c++20 /EHsc hello.ixx
+&gt; cl /std:c++20 /EHsc /reference MyHello<span style="color:#f92672">=</span>MyHello.ifc main.cpp hello.obj</code></pre></td></tr></table>
+</div>
+</div>
+<p>1つ目のコマンドでモジュールをプリコンパイルし、<br />
+2つ目のコマンドで <code>obj</code> をリンク、そして <code>main.exe</code> の出力をします</p>
+
+<p>＜1. モジュールのプリコンパイル＞</p>
+
+<pre><code>C:\my\dev\sample_module01&gt;cl /c /std:c++20 hello.ixx
+Microsoft (R) C/C++ Optimizing Compiler Version 19.30.30705 for x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+hello.ixx
+
+</code></pre>
+
+<p>これで、<code>hello.obj</code> と <code>MyHello.ifc</code> が出来ました</p>
+
+<blockquote>
+<p>（余談）cl.exe はモジュールのコンパイル時に同時に２つ（<code>.obj</code> と <code>.ifc</code>）のファイルを出力してくれて楽です</p>
+
+<p>Clang は別々のコマンドで出力するので、cl.exe とは少し作り方が異なっています<br />
+<code>.pcm</code> ( VC++で言うところの <code>.ifc</code>) を出力した後、それを元に <code>.o</code> ( VC++の <code>.obj</code>) を出力します<br />
+このあたりはまだ次回に投稿したいです</p>
+</blockquote>
+
+<p>＜2. 実行ファイル生成＞</p>
+
+<pre><code>C:\my\dev\sample_module01&gt;cl /std:c++20 /EHsc /reference MyHello=MyHello.ifc main.cpp hello.obj
+Microsoft (R) C/C++ Optimizing Compiler Version 19.30.30705 for x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+main.cpp
+Microsoft (R) Incremental Linker Version 14.30.30705.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:main.exe
+main.obj
+hello.obj
+</code></pre>
+
+<p><code>main.exe</code> が出来ました</p>
+
+<p>実行してみます</p>
+
+<pre><code>C:\my\dev\sample_module01&gt;main.exe
+42
+
+</code></pre>
+
+<p>問題なし(^^♪</p>
+
+<h2 id="備考-コンパイルオプションの注意点">（備考）コンパイルオプションの注意点</h2>
+
+<p>VC++のコマンドラインオプションが</p>
+
+<ul>
+<li>モジュールを作ったとき</li>
+<li>モジュールを使うとき</li>
+</ul>
+
+<p>これらの間で一致していないとき、ワーニングが出ました（<code>C5050</code>）</p>
+
+<blockquote>
+<p>main.cpp(7): warning C5050: Possible incompatible environment while importing module &lsquo;MyHello&rsquo;: _CPPUNWIND is defined in current command line and not in module command line</p>
+</blockquote>
+
+<p>そのため今回、<code>hello.ixx</code> 内では <code>&lt;iostream&gt;</code> は利用していないのですが、<code>/EHsc</code> オプションを付けています</p>
+
+<p>（参考）</p>
+
+<ul>
+<li>Using C++ Modules in MSVC from the Command Line Part 1: Primary Module Interfaces - C++ Team Blog<br />
+<a href="https://devblogs.microsoft.com/cppblog/using-cpp-modules-in-msvc-from-the-command-line-part-1/">https://devblogs.microsoft.com/cppblog/using-cpp-modules-in-msvc-from-the-command-line-part-1/</a></li>
+</ul>
+
+<h2 id="bmiってなによ">BMIってなによ？</h2>
+
+<p>プリコンパイルされた Binary Module Interface って何なのでしょうか？<br />
+この中身は一体？</p>
+
+<p>さんざん調べましたが、大した情報が載ってないですね。。。</p>
+
+<p>これ、BMIというのは Modules を扱うための概念のようです</p>
+
+<p>これはコンパイルの過程のものなので、各コンパイラベンダーが作る箇所であり、明確に公開情報として詳細が提示されているわけではなさそうです<br />
+現時点では概念がちらほらと記載されているだけのようでした</p>
+
+<p>実際に、プリコンパイルで作られた <code>.ifc</code> や <code>.pcm</code>  の中身は</p>
+
+<ul>
+<li>プリプロセスで利用した情報とか</li>
+<li>ASTのダンプ</li>
+<li>Objみたいなもの</li>
+</ul>
+
+<p>がひとまとめにされてるようです</p>
+
+<p><del>という記述を見つけましたが、出展元が判らなくなったので、思い出したら追記します。。。</del></p>
+
+<blockquote>
+<p>(2021/12/4追記)<br />
+CppCon2019の資料が参考になりました！<br />
+Practical Cpp Modules - CppCon 2019<br />
+<a href="https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules__boris_kolpackov__cppcon_2019.pdf">https://github.com/CppCon/CppCon2019/blob/master/Presentations/practical_cpp_modules/practical_cpp_modules<strong>boris_kolpackov</strong>cppcon_2019.pdf</a></p>
+</blockquote>
+
+<p>もちろん、コンパイラによって、さらにバージョンによっても形式は様々なんでしょう</p>
+
+<h2 id="モジュールの配布ってどうやるの">モジュールの配布ってどうやるの？</h2>
+
+<p>モジュールのバイナリを配布することはできないです<br />
+共有する場合はあくまでソースコードと共に配布になります</p>
+
+<p>また、作られた BMI、つまり <code>.ifc</code> や <code>.pcm</code> ファイルは不変的なバイナリではないみたいです</p>
+
+<p>ライブラリのように配布はできないのですね。。。</p>
+
+<blockquote>
+<p>（余談）Modules の提案を推し進めている <a href="https://cppcast.com/modules-gaby-dos-reis/">Gabriel Dos Reisさん</a> は、Common Module Interface Format を作りたいみたいですが…<br />
+具体的に今の段階では、配布目的のものは出ていないようです</p>
+</blockquote>
+
+<p>（参考）</p>
+
+<ul>
+<li>C++ Modules: What You Should Know<br />
+<a href="https://github.com/cppp-france/CPPP-19/blob/master/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis.pdf">https://github.com/cppp-france/CPPP-19/blob/master/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis/C%2B%2B_modules_what_you_should_know-Gabriel_Dos_Reis.pdf</a></li>
+</ul>
+
+<h2 id="所感">所感</h2>
+
+<p>まだ2021年12月の時点では、Modules 機能が完全に動作するコンパイラもないみたいですし<br />
+そもそも各コンパイラによって記載方法や推奨が異なるので、なんとも道半ばな印象はあります</p>
+
+<p>Modules を利用するための手順やお作法も多く、また情報も限られているので、取り組みにくいですね</p>
+
+<p>マイクロソフトの <a href="https://devblogs.microsoft.com/cppblog/">VC++チームブログ</a> は、コンパイラベンダーとして結構 Moduleds の具体的な情報を出しているように感じました<br />
+（Clangももうちょっと頑張って。。。あとGCC。。。おまえはやる気あるのか。。。）</p>
+
+<p>Modules に関して取り組まれている人たちの歴史はとても長く<br />
+かつ現在のヘッダファイルがベストだとは思えないので<br />
+個人的に一押ししたい機能だと改めて思いました</p>
+
+<h2 id="所感その２">所感その２</h2>
+
+<p>C++ Advent Calendar！</p>
+
+<p>ずいぶん昔に一度だけ参加したことがあったのですが、それからなーんにもしてませんでした</p>
+
+<p>今回、意を決して投稿できて良かったです</p>
+
+<p>かなりよく調べたつもりですけど、間違いなどあったら気軽に <a href="https://twitter.com/hr_sao">@hr_sao</a> まで教えていただけると嬉しいです</p>
+
+<p>C++楽しい～♪</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2021%2f12%2f01%2fabout-cpp-modules%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5d%20Modules%e3%81%ae%e3%82%b3%e3%83%b3%e3%83%91%e3%82%a4%e3%83%ab%ef%bc%88MSVC%20ver%ef%bc%89%e3%81%a8BMI%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2021%2f12%2f01%2fabout-cpp-modules%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2021%2f12%2f01%2fabout-cpp-modules%2f&title=%5bC%2b%2b%5d%20Modules%e3%81%ae%e3%82%b3%e3%83%b3%e3%83%91%e3%82%a4%e3%83%ab%ef%bc%88MSVC%20ver%ef%bc%89%e3%81%a8BMI%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/" title="[C&#43;&#43;]Compiler Explorerの出力結果の表示方法">[C&#43;&#43;]Compiler Explorerの出力結果の表示方法</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2021.10.05">2021.10.05</time>
@@ -1612,96 +1988,6 @@ cname www h-sao.github.io.
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2020/01/29/tips-about-git-history-changed/" title="[Git] Gitの歴史を書き換える関連">[Git] Gitの歴史を書き換える関連</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2020.01.29">2020.01.29</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/git">git</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>よくやらかすので自分メモ</p>
-
-<h2 id="事前準備">事前準備</h2>
-
-<pre><code># 今いるブランチの確認
-$ git branch
-
-# ブランチに移動
-$ git checkout feature/xxxxx
-</code></pre>
-
-<p>PR出す前、きれいな環境にしたいなどで整えておきたいこと</p>
-
-<pre><code># 手動ブランチの取得/追従
-$ git checkout feature/yyyyy
-$ git pull
-</code></pre>
-
-<h2 id="ローカル作業全てを無かったことにする">ローカル作業全てを無かったことにする</h2>
-
-<pre><code>git fetch origin
-git reset --hard origin/master
-</code></pre>
-
-<h2 id="pushしてしまった歴史を書き換える">pushしてしまった歴史を書き換える</h2>
-
-<pre><code># 自分の名前のコミットを検索
-$ git log --committer=&quot;Sao Haruka&quot;
-
-# ↑の gitlog より戻りたいハッシュ値を探す
-
-$ git reset [戻りたいコミットのハッシュ値] --hard
-
-# 強制push
-$ git push -f origin feature/xxxxx
-</code></pre>
-
-<p>既に <code>feature/xxxxx</code> で誰かが作業していたら強制プッシュはあきらめる</p>
-
-<h2 id="不要になったブランチを削除する">不要になったブランチを削除する</h2>
-
-<p>要らないブランチは削除しとく</p>
-
-<pre><code>$ git push --delete origin feature/xxxxx
-</code></pre>
-
-<h2 id="prに不要なコミットが混じる">PRに不要なコミットが混じる</h2>
-
-<p>原因：</p>
-
-<ul>
-<li>ブランチが追従されてないのが問題</li>
-<li>マージ先が間違ってる</li>
-</ul>
-
-<p>マージ先の最新を取っとくと大丈夫</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f01%2f29%2ftips-about-git-history-changed%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGit%5d%20Git%e3%81%ae%e6%ad%b4%e5%8f%b2%e3%82%92%e6%9b%b8%e3%81%8d%e6%8f%9b%e3%81%88%e3%82%8b%e9%96%a2%e9%80%a3&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f01%2f29%2ftips-about-git-history-changed%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f01%2f29%2ftips-about-git-history-changed%2f&title=%5bGit%5d%20Git%e3%81%ae%e6%ad%b4%e5%8f%b2%e3%82%92%e6%9b%b8%e3%81%8d%e6%8f%9b%e3%81%88%e3%82%8b%e9%96%a2%e9%80%a3" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -1773,6 +2059,12 @@ $ git push -f origin feature/xxxxx
                 
                     
                         
+                            <a href="/blog/2025/03/13/how-to-display-username-at-sing-in/" class="list-group-item">[Windows] サインイン時のデフォルトユーザー名の表示</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2024/09/18/how-to-update-github-submodule/" class="list-group-item">[Git] サブモジュールの更新メモ</a><br>
                         
                     
@@ -1822,12 +2114,6 @@ $ git push -f origin feature/xxxxx
                     
                         
                             <a href="/blog/2022/08/02/here-is-unityeditor/" class="list-group-item">[Unity] Windows/macOS内にあるUnityの場所</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2022/07/19/registory-wallpaperssettings-onwindows/" class="list-group-item">[Windows] 壁紙のレジストリ設定場所</a><br>
                         
                     
                 

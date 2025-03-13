@@ -6,10 +6,32 @@
     <description>Recent content in Posts on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 18 Sep 2024 06:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 13 Mar 2025 09:30:00 +0900</lastBuildDate>
     
 	<atom:link href="https://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Windows] サインイン時のデフォルトユーザー名の表示</title>
+      <link>https://h-sao.com/blog/2025/03/13/how-to-display-username-at-sing-in/</link>
+      <pubDate>Thu, 13 Mar 2025 09:30:00 +0900</pubDate>
+      
+      <guid>https://h-sao.com/blog/2025/03/13/how-to-display-username-at-sing-in/</guid>
+      <description>WindowsのPCログイン時って、何も設定しなければ
+デフォルトでは前回ログインしたユーザー名が表示されていて、便利です
+しかし、これが便利だなーと思うときと、毎回表示してほしいなーと思うときがあります
+その設定の場所のメモです
+環境：Windows11
+Windows + R キーで Local Group Policy Editor を起動します
+ Local Computer Policy
+&amp;gt; Windows Settings
+&amp;gt; Security Settings
+&amp;gt; Local Policies
+&amp;gt; Security Options
+ ここの下の
+ Interactive logon: Don&amp;rsquo;t display username at sing in
+ これを有効にすることで、思ったようなサインイン表示になります</description>
+    </item>
     
     <item>
       <title>[Git] サブモジュールの更新メモ</title>
@@ -2459,28 +2481,6 @@ C++でのゲーム作成の時期が長かったので、高速化について�
 Q. 割り算をシフトと引き算のみで表現しなさい
 A. 回答
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  // x / y = ans // x: 分子 // y: 分母 // ans:答え  ans = 0; while( x &amp;gt;= y ){ dammy = y; syou = 1; while( x &amp;gt;= dammy ){ // 割られる数を超えるまで割る数をシフト  dammy = dammy &amp;lt;&amp;lt; 1; syou = syou &amp;lt;&amp;lt; 1; } dammy = dammy &amp;gt;&amp;gt; 1; // 超える手前まで戻す  syou = syou &amp;gt;&amp;gt; 1; x = x - dammy; // 筆算  ans = ans + syou; // 答え  } printf( &amp;#34;%d ・・・%d\n&amp;#34;, ans, x );    新人研修などにどうでしょう？</description>
-    </item>
-    
-    <item>
-      <title>[Windows] サインイン時のデフォルトユーザー名の表示</title>
-      <link>https://h-sao.com/blog/1/01/01/how-to-display-username-at-sing-in/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://h-sao.com/blog/1/01/01/how-to-display-username-at-sing-in/</guid>
-      <description>WindowsのPCログイン時って、何も設定しなければ
-デフォルトでは前回ログインしたユーザー名が表示されていて、便利です
-しかし、これが便利だなーと思うときと、毎回表示してほしいなーと思うときがあります
-その設定の場所のメモです
-環境：Windows11
-Windows + R キーで Local Group Policy Editor を起動します
- Local Computer Policy
-&amp;gt; Windows Settings
-&amp;gt; Security Settings
-&amp;gt; Local Policies
-&amp;gt; Security Options
- ここの下の
- Interactive logon: Don&amp;rsquo;t display username at sing in
- これを有効にすることで、思ったようなサインイン表示になります</description>
     </item>
     
   </channel>
