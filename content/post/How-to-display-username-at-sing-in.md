@@ -1,5 +1,5 @@
 +++
-date = "2025-3-13T09:30:00+09:00"
+date = "2025-03-13T09:30:00+09:00"
 draft = false
 title = "[Windows] サインイン時のデフォルトユーザー名の表示"
 tags = ["windows", "Security"]
