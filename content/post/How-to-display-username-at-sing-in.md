@@ -12,6 +12,8 @@ WindowsのPCログイン時って、何も設定しなければ
 
 その設定の場所のメモです
 
+環境：Windows11
+
 Windows + R キーで `Local Group Policy Editor` を起動します
 
 > Local Computer Policy  
