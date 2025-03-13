@@ -726,6 +726,11 @@
   </url>
   
   <url>
+    <loc>https://h-sao.com/tags/security/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://h-sao.com/tags/shader/</loc>
     <lastmod>2016-01-11T18:00:00+09:00</lastmod>
     <priority>0</priority>
@@ -819,6 +824,10 @@
     <loc>https://h-sao.com/tags/xiaomi/</loc>
     <lastmod>2015-10-06T04:00:00+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://h-sao.com/blog/1/01/01/how-to-display-username-at-sing-in/</loc>
   </url>
   
 </urlset>

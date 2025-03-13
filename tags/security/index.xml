@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on Effectiveさお</title>
+    <link>https://h-sao.com/tags/security/</link>
+    <description>Recent content in Security on Effectiveさお</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    
+	<atom:link href="https://h-sao.com/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Windows] サインイン時のデフォルトユーザー名の表示</title>
+      <link>https://h-sao.com/blog/1/01/01/how-to-display-username-at-sing-in/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://h-sao.com/blog/1/01/01/how-to-display-username-at-sing-in/</guid>
+      <description>WindowsのPCログイン時って、何も設定しなければ
+デフォルトでは前回ログインしたユーザー名が表示されていて、便利です
+しかし、これが便利だなーと思うときと、毎回表示してほしいなーと思うときがあります
+その設定の場所のメモです
+Windows + R キーで Local Group Policy Editor を起動します
+ Local Computer Policy
+&amp;gt; Windows Settings
+&amp;gt; Security Settings
+&amp;gt; Local Policies
+&amp;gt; Security Options
+ ここの下の
+ Interactive logon: Don&amp;rsquo;t display username at sing in
+ これを有効にすることで、思ったようなサインイン表示になります</description>
+    </item>
+    
+  </channel>
+</rss>
