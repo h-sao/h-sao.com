@@ -69,6 +69,71 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2021/10/05/how-to-show-stdout-on-compiler-explorer/" title="[C&#43;&#43;]Compiler Explorerの出力結果の表示方法">[C&#43;&#43;]Compiler Explorerの出力結果の表示方法</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2021.10.05">2021.10.05</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/cpp">cpp</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                <p><strong>Compiler Explorer</strong> というオンラインコンパイルサービスがあります</p>
+
+<ul>
+<li><strong>Compiler Explorer</strong><br />
+<a href="https://godbolt.org/">https://godbolt.org/</a></li>
+</ul>
+
+<p>書いたC++コードのアセンブリ出力結果をリナルタイムに表示してくれるサービスです</p>
+
+<p><img src="/pic/How-to-show-stdout-on-Compiler-Explorer_00.png" alt="" /></p>
+
+<p>すごーーー👀<br />
+初めてこのサービスを見た時には感激しました〜</p>
+
+<p>さておき、<br />
+わたし、これで実行結果を見る方法を知らなかったんですね…ハズカシー(*ﾉдﾉ)</p>
+
+<p>「Output」を押すと出力結果ウィンドウは出てきますが<br />
+このリターン値だけじゃなくて、 <code>std::cout</code> の結果も欲しいんですけど…👀</p>
+
+<p><img src="/pic/How-to-show-stdout-on-Compiler-Explorer_01.png" alt="" /></p>
+
+<p>ちょっと調べてみたらすぐに判明しました＞＜。</p>
+
+<p>Outputの設定項目に <strong>Execute the code</strong> のチェックボックスがあるので、それを選択すれば表示されます</p>
+
+<p><img src="/pic/How-to-show-stdout-on-Compiler-Explorer_02.png" alt="" /></p>
+
+<p>出力はこんな感じですね〜</p>
+
+<p><img src="/pic/How-to-show-stdout-on-Compiler-Explorer_03.png" alt="" /></p>
+
+<p>便利です〜</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2021%2f10%2f05%2fhow-to-show-stdout-on-compiler-explorer%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%2b%2b%5dCompiler%20Explorer%e3%81%ae%e5%87%ba%e5%8a%9b%e7%b5%90%e6%9e%9c%e3%81%ae%e8%a1%a8%e7%a4%ba%e6%96%b9%e6%b3%95&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2021%2f10%2f05%2fhow-to-show-stdout-on-compiler-explorer%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2021%2f10%2f05%2fhow-to-show-stdout-on-compiler-explorer%2f&title=%5bC%2b%2b%5dCompiler%20Explorer%e3%81%ae%e5%87%ba%e5%8a%9b%e7%b5%90%e6%9e%9c%e3%81%ae%e8%a1%a8%e7%a4%ba%e6%96%b9%e6%b3%95" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2020/10/02/fixed-a-diffrent-cpp-runtime-env-causing-a-int-warning/" title="[C&#43;&#43;] 実行環境の差異によるintワーニングが出ない書き方">[C&#43;&#43;] 実行環境の差異によるintワーニングが出ない書き方</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2020.10.02">2020.10.02</time>
@@ -1019,124 +1084,6 @@ In such a case, Anonymous structure comes in handy.</p>
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2014/01/31/cpp-sample-program/" title="C,C&#43;&#43;,C&#43;&#43;/CLI sample program">C,C&#43;&#43;,C&#43;&#43;/CLI sample program</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2014.01.31">2014.01.31</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/cpp">cpp</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>Hi,</p>
-
-<h2 id="c-program">C program</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">8
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">c00.c
-<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">int</span> main()
-{
-    printf(<span style="color:#e6db74">&#34;This is a native C program.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-} 
-</code></pre></td></tr></table>
-</div>
-</div>
-<p>compile</p>
-
-<pre><code>&gt; cl.exe c00.c
-</code></pre>
-
-<h2 id="c-program-1">C++ program</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">8
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">c01.cpp
-<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">int</span> main()
-{
-    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;This is a native C++ program.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-}
-</code></pre></td></tr></table>
-</div>
-</div>
-<p>compile</p>
-
-<pre><code>&gt; cl.exe /EHsc c01.cpp
-</code></pre>
-
-<h2 id="c-cli-program">C++/CLI program</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">c02.cpp
-<span style="color:#66d9ef">int</span> main()
-{
-    System<span style="color:#f92672">::</span>Console<span style="color:#f92672">::</span>WriteLine(<span style="color:#e6db74">&#34;This is a Visual C++ program.&#34;</span>);
-}
-</code></pre></td></tr></table>
-</div>
-</div>
-<p>compile</p>
-
-<pre><code>&gt; cl.exe /clr c02.cpp
-</code></pre>
-
-<p>That is very interesting!</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f31%2fcpp-sample-program%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=C%2cC%2b%2b%2cC%2b%2b%2fCLI%20sample%20program&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f31%2fcpp-sample-program%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2014%2f01%2f31%2fcpp-sample-program%2f&title=C%2cC%2b%2b%2cC%2b%2b%2fCLI%20sample%20program" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
@@ -1209,6 +1156,12 @@ In such a case, Anonymous structure comes in handy.</p>
                 
                     
                         
+                            <a href="/blog/2025/03/31/meetup-app9-cppvscsharp/" class="list-group-item">[勉強会] meetup app osaka@9を開催しました</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2025/03/13/how-to-display-username-at-sing-in/" class="list-group-item">[Windows] サインイン時のデフォルトユーザー名の表示</a><br>
                         
                     
@@ -1258,12 +1211,6 @@ In such a case, Anonymous structure comes in handy.</p>
                     
                         
                             <a href="/blog/2022/08/03/add-gitlfs-file/" class="list-group-item">[Git] コミット済みのファイルを Git LFS 管理対象にしたいとき</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2022/08/02/here-is-unityeditor/" class="list-group-item">[Unity] Windows/macOS内にあるUnityの場所</a><br>
                         
                     
                 
@@ -1339,9 +1286,9 @@ In such a case, Anonymous structure comes in handy.</p>
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/community" style="font-size: 23px;">
+                    <a href="https://h-sao.com//tags/community" style="font-size: 26px;">
                     
-                        <span class="badge">5</span>
+                        <span class="badge">6</span>
                         community
                     </a>
                     </u> &nbsp; 
@@ -1349,9 +1296,9 @@ In such a case, Anonymous structure comes in handy.</p>
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/cpp" style="font-size: 77px;">
+                    <a href="https://h-sao.com//tags/cpp" style="font-size: 80px;">
                     
-                        <span class="badge">23</span>
+                        <span class="badge">24</span>
                         cpp
                     </a>
                     </u> &nbsp; 
@@ -1369,9 +1316,9 @@ In such a case, Anonymous structure comes in handy.</p>
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/csharp" style="font-size: 11px;">
+                    <a href="https://h-sao.com//tags/csharp" style="font-size: 14px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">2</span>
                         csharp
                     </a>
                     </u> &nbsp; 

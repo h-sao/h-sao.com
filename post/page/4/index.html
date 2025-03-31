@@ -69,6 +69,170 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2020/02/25/how-to-change-dnsinfo-for-github-custom-domain/" title="[GitHub Pages] カスタムドメインのDNS情報を更新する">[GitHub Pages] カスタムドメインのDNS情報を更新する</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2020.02.25">2020.02.25</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/github">github</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>去年、2019年の4月くらいから<br />
+GitHub Pages にファイルをアップすると、ワーニングが出るようになった</p>
+
+<p>内容はこんなやつ</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">Title: [h-sao/h-sao.com] Page build warning
+
+The page build completed successfully, but returned the following warning for the `gh-pages` branch:
+
+The custom domain for your GitHub Pages site is pointed at an outdated IP address. You must update your site&#39;s DNS records if you&#39;d like it to be available via your custom domain. For more information, see https://help.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site.
+
+For information on troubleshooting Jekyll see:
+
+  https://help.github.com/articles/troubleshooting-jekyll-builds
+
+If you have any questions you can contact us by replying to this email.</code></pre></td></tr></table>
+</div>
+</div>
+<p>(*￣-￣)ふ～ん、よくわからんけど<br />
+何やらDNSの設定を変えないといけないのね</p>
+
+<p>めんどくさー<br />
+後で後で…と思い続けて早10か月ほど…</p>
+
+<p>さすがに対応しないと、自分のブログがアクセスできなくなるかもと焦り、重い腰を上げました</p>
+
+<h2 id="前提条件-このブログの運用情報">(前提条件)このブログの運用情報</h2>
+
+<ul>
+<li><a href="https://h-sao.com/">https://h-sao.com/</a> は GitHub Pages の上で動いてる</li>
+<li><code>h-sao.com</code> ドメイン自体の管理は <a href="https://www.value-domain.com/">Valueドメイン</a> を利用してる</li>
+<li>動いているリポジトリは <a href="https://github.com/h-sao/h-sao.com">https://github.com/h-sao/h-sao.com</a>
+
+<ul>
+<li>リポジトリの <code>master</code> ブランチには <code>Hugo</code> で記載したのテンプレートファイルやマークダウンで記載したコンテンツ情報を置いてる</li>
+<li>同じく <code>gh-pages</code> ブランチは、実際にサイトとして公開している html/css ファイルを置いてる</li>
+<li>（おまけ）<code>master</code> に記事のマークダウンを <code>push</code> すると<br />
+<code>Webhooks</code> に登録している <code>wercker</code> に通知が送られ<br />
+<code>Hugo</code> でhtml生成 ＆ <code>gh-pages</code> に htmlファイルなどをオートで <code>push</code> する<br />
+というちょっとした自動化の仕組みになってる</li>
+</ul></li>
+</ul>
+
+<h2 id="カスタムドメインを-github-pages-に割り当てる方法">カスタムドメインを GitHub Pages に割り当てる方法</h2>
+
+<p>調べてみると全然難しくなくて<br />
+上記のワーニングメールに書かれてたURLにアクセスしたら、全てが書かれてました</p>
+
+<p>ただわたしにとっては真剣に読む気で読まないと頭の中スルー…って感じの内容だったので、ちょっと真剣に読んでみました</p>
+
+<p>英語版はこれ↓↓↓なのですけど</p>
+
+<p><a href="https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site">https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site</a></p>
+
+<p>ご丁寧に日本語版も提供されています</p>
+
+<ul>
+<li>カスタムドメインとGitHub Pagesについて<br />
+<a href="https://help.github.com/ja/github/working-with-github-pages/about-custom-domains-and-github-pages">https://help.github.com/ja/github/working-with-github-pages/about-custom-domains-and-github-pages</a></li>
+</ul>
+
+<p>これを見ながらやってみます</p>
+
+<p>まずわたしのGitHub Pagesの設定画面は、こんな感じで黄色いワーニングが出てました</p>
+
+<p><img src="/pic/How-to-change-DNSInfo-for-GitHub-custom-domain_00.png" alt="" /></p>
+
+<p>今までずーっと無視してきましたが、いよいよ解決する日が来ましたよ</p>
+
+<p>わたしが割り当てているカスタムドメインは <strong>Apex ドメイン</strong> になっています<br />
+（ www.h-sao.com ではなく、 h-sao.com としてアクセス）</p>
+
+<p>日本語版の「カスタムドメインとGitHub Pagesについて」の説明を読んでみると、<br />
+<strong>「GitHub Pages サイト用のカスタムドメインを管理する」を参照してください。</strong> とあるので、素直にそのリンクに飛びます</p>
+
+<ul>
+<li>「GitHub Pages サイト用のカスタムドメインを管理する」<br />
+<a href="https://help.github.com/ja/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">https://help.github.com/ja/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain</a></li>
+</ul>
+
+<p>ここにありました！ Apexドメインを設定する方法が！<br />
+<code>A</code> レコードのIPアドレスが書いてありました</p>
+
+<pre><code>185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+</code></pre>
+
+<p>あと、最初の「カスタムドメインとGitHub Pagesについて」には、こんな記載もありました</p>
+
+<blockquote>
+<p>サイトには、カスタムドメインの一方または両方を設定できます。 <strong>Apex ドメインを使用している場合でも、www サブドメインを使用することをおすすめします。</strong></p>
+</blockquote>
+
+<p>ふむふむ、www は付けるのを推奨してるのね、了解<br />
+<code>cname</code> も追加してみました</p>
+
+<pre><code># 設定するAレコード
+a @ 185.199.108.153
+a @ 185.199.109.153
+a @ 185.199.110.153
+a @ 185.199.111.153
+
+# サブドメインも設定しておく
+cname www h-sao.github.io.
+</code></pre>
+
+<p>Valueドメインの設定画面<br />
+<img src="/pic/How-to-change-DNSInfo-for-GitHub-custom-domain_03.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>これを設定すると、わたしの場合はちょうど１５分後に設定が反映されました</p>
+
+<p><img src="/pic/How-to-change-DNSInfo-for-GitHub-custom-domain_01.png" alt="" /></p>
+
+<p>よかったー！</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f02%2f25%2fhow-to-change-dnsinfo-for-github-custom-domain%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGitHub%20Pages%5d%20%e3%82%ab%e3%82%b9%e3%82%bf%e3%83%a0%e3%83%89%e3%83%a1%e3%82%a4%e3%83%b3%e3%81%aeDNS%e6%83%85%e5%a0%b1%e3%82%92%e6%9b%b4%e6%96%b0%e3%81%99%e3%82%8b&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f02%2f25%2fhow-to-change-dnsinfo-for-github-custom-domain%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2020%2f02%2f25%2fhow-to-change-dnsinfo-for-github-custom-domain%2f&title=%5bGitHub%20Pages%5d%20%e3%82%ab%e3%82%b9%e3%82%bf%e3%83%a0%e3%83%89%e3%83%a1%e3%82%a4%e3%83%b3%e3%81%aeDNS%e6%83%85%e5%a0%b1%e3%82%92%e6%9b%b4%e6%96%b0%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2020/01/29/tips-about-git-history-changed/" title="[Git] Gitの歴史を書き換える関連">[Git] Gitの歴史を書き換える関連</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2020.01.29">2020.01.29</time>
@@ -963,210 +1127,6 @@ C:\dev&gt;
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2019/05/30/how-to-install-homebrew-on-macos-2019/" title="[macOS] Homebrewインストールログ2019版">[macOS] Homebrewインストールログ2019版</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2019.05.30">2019.05.30</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/mac">mac</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>以前、2015年にも <strong>Homebrew</strong> をインストールしたログをこのブログに残していました<br />
-その時よりは、ずいぶん手順が楽になってたので、もう一度載せておきます</p>
-
-<ul>
-<li>（以前に載せていたインストールログの様子）[Mac] Homebrewインストールログ - Effectiveさお<br />
-<a href="http://h-sao.com/blog/2015/05/11/install-log-for-homebrew/">http://h-sao.com/blog/2015/05/11/install-log-for-homebrew/</a></li>
-</ul>
-
-<p>今回は、これの2019年度版です<br />
-2019/5/30現在、Homebrew のバージョンは 2.1.4 でした</p>
-
-<ul>
-<li>Homebrewの本家<br />
-<a href="http://brew.sh/">http://brew.sh/</a></li>
-</ul>
-
-<p>macOSでのインストールログ（長いので省略版）</p>
-
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">52
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">53
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">54
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">55
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">56
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">57
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">58
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">59
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">60
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">61
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">62
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">63
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">64
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">65
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">66
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">67
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">68
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">69
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Homebrew入ってない状態</span>
-<span style="display:block;width:100%;background-color:#3c3d38">SAO-MAC:~ sao.haruka$ brew -V
-</span>-bash: brew: command not found
-
-<span style="color:#75715e"># Homebrew本家に載っているインストールコマンドを入力！</span>
-<span style="display:block;width:100%;background-color:#3c3d38">SAO-MAC:~ sao.haruka$ /usr/bin/ruby -e <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-</span><span style="color:#f92672">==</span>&gt; This script will install:
-/usr/local/bin/brew
-/usr/local/share/doc/homebrew
-/usr/local/share/man/man1/brew.1
-   ...<span style="color:#f92672">(</span>省略<span style="color:#f92672">)</span>
-/usr/local/Caskroom
-/usr/local/Homebrew
-/usr/local/Frameworks
-
-<span style="display:block;width:100%;background-color:#3c3d38">Press RETURN to <span style="color:#66d9ef">continue</span> or any other key to abort
-</span><span style="color:#f92672">==</span>&gt; /usr/bin/sudo /bin/chmod u+rwx /usr/local/bin /usr/local/lib
-<span style="display:block;width:100%;background-color:#3c3d38">Password:
-</span><span style="color:#f92672">==</span>&gt; /usr/bin/sudo /bin/chmod g+rwx /usr/local/bin /usr/local/lib
-<span style="color:#f92672">==</span>&gt; /usr/bin/sudo /usr/sbin/chown sao.haruka /usr/local/bin /usr/local/lib
-   ...<span style="color:#f92672">(</span>省略<span style="color:#f92672">)</span>
-<span style="color:#f92672">==</span>&gt; /usr/bin/sudo /usr/bin/chgrp admin /Users/sao.haruka/Library/Caches/Homebrew
-<span style="color:#f92672">==</span>&gt; Downloading and installing Homebrew...
-remote: Enumerating objects: <span style="color:#ae81ff">20</span>, <span style="color:#66d9ef">done</span>.
-remote: Counting objects: <span style="color:#ae81ff">100</span>% <span style="color:#f92672">(</span><span style="color:#ae81ff">20</span>/20<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
-remote: Compressing objects: <span style="color:#ae81ff">100</span>% <span style="color:#f92672">(</span><span style="color:#ae81ff">17</span>/17<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
-remote: Total <span style="color:#ae81ff">123873</span> <span style="color:#f92672">(</span>delta <span style="color:#ae81ff">5</span><span style="color:#f92672">)</span>, reused <span style="color:#ae81ff">13</span> <span style="color:#f92672">(</span>delta <span style="color:#ae81ff">3</span><span style="color:#f92672">)</span>, pack-reused <span style="color:#ae81ff">123853</span>
-Receiving objects: <span style="color:#ae81ff">100</span>% <span style="color:#f92672">(</span><span style="color:#ae81ff">123873</span>/123873<span style="color:#f92672">)</span>, <span style="color:#ae81ff">29</span>.26 MiB | <span style="color:#ae81ff">6</span>.32 MiB/s, <span style="color:#66d9ef">done</span>.
-Resolving deltas: <span style="color:#ae81ff">100</span>% <span style="color:#f92672">(</span><span style="color:#ae81ff">90744</span>/90744<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
-From https://github.com/Homebrew/brew
- * <span style="color:#f92672">[</span>new branch<span style="color:#f92672">]</span>      master     -&gt; origin/master
- * <span style="color:#f92672">[</span>new tag<span style="color:#f92672">]</span>         <span style="color:#ae81ff">0</span>.1        -&gt; <span style="color:#ae81ff">0</span>.1
- * <span style="color:#f92672">[</span>new tag<span style="color:#f92672">]</span>         <span style="color:#ae81ff">0</span>.2        -&gt; <span style="color:#ae81ff">0</span>.2
- * <span style="color:#f92672">[</span>new tag<span style="color:#f92672">]</span>         <span style="color:#ae81ff">0</span>.3        -&gt; <span style="color:#ae81ff">0</span>.3
-   ...<span style="color:#f92672">(</span>省略<span style="color:#f92672">)</span> 
- * <span style="color:#f92672">[</span>new tag<span style="color:#f92672">]</span>         <span style="color:#ae81ff">2</span>.1.3      -&gt; <span style="color:#ae81ff">2</span>.1.3
- * <span style="color:#f92672">[</span>new tag<span style="color:#f92672">]</span>         <span style="color:#ae81ff">2</span>.1.4      -&gt; <span style="color:#ae81ff">2</span>.1.4
-HEAD is now at 7c3bb36ca Merge pull request <span style="color:#75715e">#6181 from Homebrew/dependabot/bundler/Library/Homebrew/ruby-progressbar-1.10.1</span>
-<span style="color:#f92672">==</span>&gt; Homebrew is run entirely by unpaid volunteers. Please consider donating:
-  https://github.com/Homebrew/brew#donations
-<span style="color:#f92672">==</span>&gt; Tapping homebrew/core
-Cloning into <span style="color:#e6db74">&#39;/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core&#39;</span>...
-remote: Enumerating objects: <span style="color:#ae81ff">4996</span>, <span style="color:#66d9ef">done</span>.
-remote: Counting objects: <span style="color:#ae81ff">100</span>% <span style="color:#f92672">(</span><span style="color:#ae81ff">4996</span>/4996<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
-remote: Compressing objects: <span style="color:#ae81ff">100</span>% <span style="color:#f92672">(</span><span style="color:#ae81ff">4787</span>/4787<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
-remote: Total <span style="color:#ae81ff">4996</span> <span style="color:#f92672">(</span>delta <span style="color:#ae81ff">51</span><span style="color:#f92672">)</span>, reused <span style="color:#ae81ff">809</span> <span style="color:#f92672">(</span>delta <span style="color:#ae81ff">16</span><span style="color:#f92672">)</span>, pack-reused <span style="color:#ae81ff">0</span>
-Receiving objects: <span style="color:#ae81ff">100</span>% <span style="color:#f92672">(</span><span style="color:#ae81ff">4996</span>/4996<span style="color:#f92672">)</span>, <span style="color:#ae81ff">4</span>.01 MiB | <span style="color:#ae81ff">4</span>.19 MiB/s, <span style="color:#66d9ef">done</span>.
-Resolving deltas: <span style="color:#ae81ff">100</span>% <span style="color:#f92672">(</span><span style="color:#ae81ff">51</span>/51<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
-Tapped <span style="color:#ae81ff">2</span> commands and <span style="color:#ae81ff">4782</span> formulae <span style="color:#f92672">(</span><span style="color:#ae81ff">5</span>,038 files, <span style="color:#ae81ff">12</span>.5MB<span style="color:#f92672">)</span>.
-Already up-to-date.
-<span style="color:#f92672">==</span>&gt; Installation successful!
-
-<span style="color:#f92672">==</span>&gt; Homebrew has enabled anonymous aggregate formulae and cask analytics.
-Read the analytics documentation <span style="color:#f92672">(</span>and how to opt-out<span style="color:#f92672">)</span> here:
-  https://docs.brew.sh/Analytics
-
-<span style="color:#f92672">==</span>&gt; Homebrew is run entirely by unpaid volunteers. Please consider donating:
-  https://github.com/Homebrew/brew#donations
-<span style="color:#f92672">==</span>&gt; Next steps:
-- Run <span style="color:#e6db74">`</span>brew help<span style="color:#e6db74">`</span> to get started
-- Further documentation: 
-    https://docs.brew.sh
-SAO-MAC:~ sao.haruka$ 
-
-<span style="color:#75715e"># インストールしたバージョンの確認</span>
-<span style="display:block;width:100%;background-color:#3c3d38">SAO-MAC:~ sao.haruka$ brew --version
-</span>Homebrew <span style="color:#ae81ff">2</span>.1.4
-Homebrew/homebrew-core <span style="color:#f92672">(</span>git revision 8bdd; last commit <span style="color:#ae81ff">2019</span>-05-30<span style="color:#f92672">)</span>
-SAO-MAC:~ sao.haruka$ </code></pre></td></tr></table>
-</div>
-</div>
-
-<p>インストールログの完全版はgistに載せています</p>
-
-<ul>
-<li>Install_log_Homebrew_on_macOS<br />
-<a href="https://gist.github.com/h-sao/c6ad49171ba1ff6b11cffab67730a9fe">https://gist.github.com/h-sao/c6ad49171ba1ff6b11cffab67730a9fe</a></li>
-</ul>
-
-<p>途中はキーの入力を1回、パーミッション変更のためのパスワード入力を1回、聞かれるだけでした<br />
-コマンド一つで berw が使えるようになったので、とても楽でした</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2019%2f05%2f30%2fhow-to-install-homebrew-on-macos-2019%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bmacOS%5d%20Homebrew%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%83%ad%e3%82%b02019%e7%89%88&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2019%2f05%2f30%2fhow-to-install-homebrew-on-macos-2019%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2019%2f05%2f30%2fhow-to-install-homebrew-on-macos-2019%2f&title=%5bmacOS%5d%20Homebrew%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%83%ad%e3%82%b02019%e7%89%88" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
@@ -1239,6 +1199,12 @@ SAO-MAC:~ sao.haruka$ </code></pre></td></tr></table>
                 
                     
                         
+                            <a href="/blog/2025/03/31/meetup-app9-cppvscsharp/" class="list-group-item">[勉強会] meetup app osaka@9を開催しました</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2025/03/13/how-to-display-username-at-sing-in/" class="list-group-item">[Windows] サインイン時のデフォルトユーザー名の表示</a><br>
                         
                     
@@ -1288,12 +1254,6 @@ SAO-MAC:~ sao.haruka$ </code></pre></td></tr></table>
                     
                         
                             <a href="/blog/2022/08/03/add-gitlfs-file/" class="list-group-item">[Git] コミット済みのファイルを Git LFS 管理対象にしたいとき</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2022/08/02/here-is-unityeditor/" class="list-group-item">[Unity] Windows/macOS内にあるUnityの場所</a><br>
                         
                     
                 
@@ -1369,9 +1329,9 @@ SAO-MAC:~ sao.haruka$ </code></pre></td></tr></table>
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/community" style="font-size: 23px;">
+                    <a href="https://h-sao.com//tags/community" style="font-size: 26px;">
                     
-                        <span class="badge">5</span>
+                        <span class="badge">6</span>
                         community
                     </a>
                     </u> &nbsp; 
@@ -1379,9 +1339,9 @@ SAO-MAC:~ sao.haruka$ </code></pre></td></tr></table>
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/cpp" style="font-size: 77px;">
+                    <a href="https://h-sao.com//tags/cpp" style="font-size: 80px;">
                     
-                        <span class="badge">23</span>
+                        <span class="badge">24</span>
                         cpp
                     </a>
                     </u> &nbsp; 
@@ -1399,9 +1359,9 @@ SAO-MAC:~ sao.haruka$ </code></pre></td></tr></table>
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/csharp" style="font-size: 11px;">
+                    <a href="https://h-sao.com//tags/csharp" style="font-size: 14px;">
                     
-                        <span class="badge">1</span>
+                        <span class="badge">2</span>
                         csharp
                     </a>
                     </u> &nbsp; 

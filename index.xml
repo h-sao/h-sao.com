@@ -6,10 +6,29 @@
     <description>Recent content on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 13 Mar 2025 09:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 31 Mar 2025 23:15:44 +0900</lastBuildDate>
     
 	<atom:link href="https://h-sao.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[勉強会] meetup app osaka@9を開催しました</title>
+      <link>https://h-sao.com/blog/2025/03/31/meetup-app9-cppvscsharp/</link>
+      <pubDate>Mon, 31 Mar 2025 23:15:44 +0900</pubDate>
+      
+      <guid>https://h-sao.com/blog/2025/03/31/meetup-app9-cppvscsharp/</guid>
+      <description>2025/3/29 meetup app osaka@9という勉強会を開催しました
+ meetup app osaka@9
+https://meetupapp.connpass.com/event/348237/  わたしは「C++とC#の書き心地」というタイトルで発表しました
+ 「C++とC#の書き心地」発表資料
+https://speakerdeck.com/harukasao/coding-experience-cpp-vs-csharp-meetup-app-osaka-at-9  勉強会自体は結構盛況で、開催して本当に良かったなーと思いました
+新規の方や若い方の参加もあり、気づきもたくさんありました
+わたしのセッションは、気軽にこんなネタあったら面白いだろなーと思って描き始めたものの
+徐々に言語の仕様や規格を確認し出したりして、書いてる後半部分はこのネタにしたことをちょっとだけ後悔したくらい面倒でした
+これからもどこかで発信していく活動は続けたいなーと改めて思いました
+懇親会も盛り上がり、本当に楽しかったです
+また頑張って企画しようと思いました</description>
+    </item>
     
     <item>
       <title>[Windows] サインイン時のデフォルトユーザー名の表示</title>
