@@ -12,7 +12,7 @@ Windows11では、デフォルトのPowerShellは `version 5` 系です
 前提環境：  
 - Windows11
 
-# PowerShell 7 のインストール
+## PowerShell 7 のインストール
 
 - Windowsのインストールガイド（公式）：  
 [https://learn.microsoft.com/ja-jp/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.5](https://learn.microsoft.com/ja-jp/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.5)
@@ -21,7 +21,7 @@ Windows11では、デフォルトのPowerShellは `version 5` 系です
 ログ付きにしておくので、誰かの参考になればと思います  
 わたしは `WinGet` で入れました
 
-## 前提:デフォルトのPowerShellのバージョンを調べておく 
+### 前提:デフォルトのPowerShellのバージョンを調べておく 
 
 5系でした
 
@@ -39,7 +39,7 @@ WSManStackVersion              3.0
 PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
-## 1. `WinGet` でインストールする
+### 1. `WinGet` でインストールする
 
 ```
 PS C:\WINDOWS\System32> winget search Microsoft.PowerShell
@@ -69,7 +69,7 @@ PS C:\WINDOWS\System32>
 `v7` のプロンプトに切り替えなければいけません  
 つまり PowerShellは `v5` と `v7` が共存できます
 
-## 2. PowerShell 7を起動
+### 2. PowerShell 7を起動
 
 スタートメニューから `powershell` と入れると上部にはWindows11デフォルトのものが表示されます  
 よく見ると `PowerShell 7` も選択できるようになっているので、そちらを選択します
@@ -97,7 +97,7 @@ PS C:\Users\sao>
 
 無事に `PowerShell 7` が利用できるようになりました！
 
-# PowerShell 5/ 7/ cmd のコマンドラインでの切り替え
+## PowerShell 5/ 7/ cmd のコマンドラインでの切り替え
 
 ずばり、コマンドはこれです: `cmd/powershell/pwsh`
 
@@ -105,7 +105,7 @@ PS C:\Users\sao>
 - `powershell`  (PowerShell 5)
 - `pwsh`  (PowerShell 7)
 
-## cmd: Command Prompt
+### cmd: Command Prompt
 
 ```
 PS C:\Users\sao> cmd
@@ -115,7 +115,7 @@ Microsoft Windows [Version 10.0.26200.6899]
 C:\Users\sao>
 ```
 
-## powershell: PowerShell 5
+### powershell: PowerShell 5
 
 念のため、`$PSVersionTable` でバージョン確認
 
@@ -140,7 +140,7 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-## powershell: PowerShell 7
+### powershell: PowerShell 7
 
 ```
 C:\Users\sao>pwsh
