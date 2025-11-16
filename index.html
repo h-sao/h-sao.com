@@ -80,7 +80,7 @@
 <p>前提環境：<br />
 - Windows11</p>
 
-<h1 id="powershell-7-のインストール">PowerShell 7 のインストール</h1>
+<h2 id="powershell-7-のインストール">PowerShell 7 のインストール</h2>
 
 <ul>
 <li>Windowsのインストールガイド（公式）：<br />
@@ -91,7 +91,7 @@
 ログ付きにしておくので、誰かの参考になればと思います<br />
 わたしは <code>WinGet</code> で入れました</p>
 
-<h2 id="前提-デフォルトのpowershellのバージョンを調べておく">前提:デフォルトのPowerShellのバージョンを調べておく</h2>
+<h3 id="前提-デフォルトのpowershellのバージョンを調べておく">前提:デフォルトのPowerShellのバージョンを調べておく</h3>
 
 <p>5系でした</p>
 
@@ -109,7 +109,7 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 </code></pre>
 
-<h2 id="1-winget-でインストールする">1. <code>WinGet</code> でインストールする</h2>
+<h3 id="1-winget-でインストールする">1. <code>WinGet</code> でインストールする</h3>
 
 <pre><code>PS C:\WINDOWS\System32&gt; winget search Microsoft.PowerShell
 The `msstore` source requires that you view the following agreements before using.
@@ -138,7 +138,7 @@ PS C:\WINDOWS\System32&gt;
 <code>v7</code> のプロンプトに切り替えなければいけません<br />
 つまり PowerShellは <code>v5</code> と <code>v7</code> が共存できます</p>
 
-<h2 id="2-powershell-7を起動">2. PowerShell 7を起動</h2>
+<h3 id="2-powershell-7を起動">2. PowerShell 7を起動</h3>
 
 <p>スタートメニューから <code>powershell</code> と入れると上部にはWindows11デフォルトのものが表示されます<br />
 よく見ると <code>PowerShell 7</code> も選択できるようになっているので、そちらを選択します</p>
@@ -165,7 +165,7 @@ PS C:\Users\sao&gt;
 
 <p>無事に <code>PowerShell 7</code> が利用できるようになりました！</p>
 
-<h1 id="powershell-5-7-cmd-のコマンドラインでの切り替え">PowerShell 5/ 7/ cmd のコマンドラインでの切り替え</h1>
+<h2 id="powershell-5-7-cmd-のコマンドラインでの切り替え">PowerShell 5/ 7/ cmd のコマンドラインでの切り替え</h2>
 
 <p>ずばり、コマンドはこれです: <code>cmd/powershell/pwsh</code></p>
 
@@ -175,7 +175,7 @@ PS C:\Users\sao&gt;
 <li><code>pwsh</code>  (PowerShell 7)</li>
 </ul>
 
-<h2 id="cmd-command-prompt">cmd: Command Prompt</h2>
+<h3 id="cmd-command-prompt">cmd: Command Prompt</h3>
 
 <pre><code>PS C:\Users\sao&gt; cmd
 Microsoft Windows [Version 10.0.26200.6899]
@@ -184,7 +184,7 @@ Microsoft Windows [Version 10.0.26200.6899]
 C:\Users\sao&gt;
 </code></pre>
 
-<h2 id="powershell-powershell-5">powershell: PowerShell 5</h2>
+<h3 id="powershell-powershell-5">powershell: PowerShell 5</h3>
 
 <p>念のため、<code>$PSVersionTable</code> でバージョン確認</p>
 
@@ -208,7 +208,7 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 </code></pre>
 
-<h2 id="powershell-powershell-7">powershell: PowerShell 7</h2>
+<h3 id="powershell-powershell-7">powershell: PowerShell 7</h3>
 
 <pre><code>C:\Users\sao&gt;pwsh
 PowerShell 7.5.4
