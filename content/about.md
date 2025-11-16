@@ -14,7 +14,7 @@ Presentation: [Speaker Deck](https://speakerdeck.com/harukasao)
 [Reading list](../reading-list/)
 
 
-[Microsoft MVP for Developer Technologies [Jul,2018-Jun,2025]](https://mvp.microsoft.com/ja-jp/PublicProfile/4027291)  
+[Microsoft MVP for Developer Technologies [Jul,2018-Jun,2026]](https://mvp.microsoft.com/ja-jp/PublicProfile/4027291)  
 Microsoft MVP for Windows Development [Jan,2016-Jun,2018]  
 Microsoft MVP for Windows Platform Development [Jan,2015-Dec,2015]  
 Microsoft MVP for Client Development [Jan,2014-Dec,2014]  
