@@ -25,7 +25,7 @@ Windows11では、デフォルトのPowerShellは `version 5` 系です
 
 5系でした
 
-```powershell
+```
 PS C:\WINDOWS\System32> $PSVersionTable
 
 Name                           Value
@@ -76,7 +76,7 @@ PS C:\WINDOWS\System32>
 
 <img src="/pic/Switch-powershell_00.png" style="border:solid 5px #e6e6e6"/> 
 
-```powershell
+```
 PowerShell 7.5.4
 PS C:\Users\sao> $PSVersionTable
 
@@ -107,7 +107,7 @@ PS C:\Users\sao>
 
 ## cmd: Command Prompt
 
-```cmd
+```
 PS C:\Users\sao> cmd
 Microsoft Windows [Version 10.0.26200.6899]
 (c) Microsoft Corporation. All rights reserved.
@@ -119,7 +119,7 @@ C:\Users\sao>
 
 念のため、`$PSVersionTable` でバージョン確認
 
-```powershell
+```
 PS C:\Users\sao> powershell
 Windows PowerShell
 Copyright (C) Microsoft Corporation. All rights reserved.
@@ -142,7 +142,7 @@ SerializationVersion           1.1.0.1
 
 ## powershell: PowerShell 7
 
-```powershell
+```
 C:\Users\sao>pwsh
 PowerShell 7.5.4
 PS C:\Users\sao> $PSVersionTable
