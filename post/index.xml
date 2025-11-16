@@ -26,7 +26,7 @@ https://learn.microsoft.com/ja-jp/powershell/scripting/install/installing-powers
 ログ付きにしておくので、誰かの参考になればと思います
 わたしは WinGet で入れました
 前提:デフォルトのPowerShellのバージョンを調べておく 5系でした
-1 2 3 4 5 6 7 8 9 10 11 12  PS C:\WINDOWS\System32&amp;gt; $PSVersionTable Name Value ---- ----- PSVersion 5.1.26100.6899 PSEdition Desktop PSCompatibleVersions {1.0, 2.0, 3.0, 4.0...} BuildVersion 10.0.26100.6899 CLRVersion 4.0.30319.42000 WSManStackVersion 3.0 PSRemotingProtocolVersion 2.3 SerializationVersion 1.1.0.1   1. WinGet でインストールする PS C:\WINDOWS\System32&amp;gt; winget search Microsoft.</description>
+PS C:\WINDOWS\System32&amp;gt; $PSVersionTable Name Value ---- ----- PSVersion 5.1.26100.6899 PSEdition Desktop PSCompatibleVersions {1.0, 2.0, 3.0, 4.0...} BuildVersion 10.0.26100.6899 CLRVersion 4.0.30319.42000 WSManStackVersion 3.0 PSRemotingProtocolVersion 2.3 SerializationVersion 1.1.0.1  1. WinGet でインストールする PS C:\WINDOWS\System32&amp;gt; winget search Microsoft.PowerShell The `msstore` source requires that you view the following agreements before using.</description>
     </item>
     
     <item>

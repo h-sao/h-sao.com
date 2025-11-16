@@ -95,23 +95,8 @@
 <h2 id="前提-デフォルトのpowershellのバージョンを調べておく">前提:デフォルトのPowerShellのバージョンを調べておく</h2>
 
 <p>5系でした</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">PS C<span style="color:#960050;background-color:#1e0010">:</span>\WINDOWS\System32&gt; $PSVersionTable
+
+<pre><code>PS C:\WINDOWS\System32&gt; $PSVersionTable
 
 Name                           Value
 ----                           -----
@@ -122,9 +107,9 @@ BuildVersion                   10.0.26100.6899
 CLRVersion                     4.0.30319.42000
 WSManStackVersion              3.0
 PSRemotingProtocolVersion      2.3
-SerializationVersion           1.1.0.1</code></pre></td></tr></table>
-</div>
-</div>
+SerializationVersion           1.1.0.1
+</code></pre>
+
 <h2 id="1-winget-でインストールする">1. <code>WinGet</code> でインストールする</h2>
 
 <pre><code>PS C:\WINDOWS\System32&gt; winget search Microsoft.PowerShell
@@ -160,28 +145,9 @@ PS C:\WINDOWS\System32&gt;
 よく見ると <code>PowerShell 7</code> も選択できるようになっているので、そちらを選択します</p>
 
 <p><img src="/pic/Switch-powershell_00.png" style="border:solid 5px #e6e6e6"/></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">PowerShell 7.5.4
-PS C<span style="color:#960050;background-color:#1e0010">:</span>\Users\sao&gt; $PSVersionTable
+
+<pre><code>PowerShell 7.5.4
+PS C:\Users\sao&gt; $PSVersionTable
 
 Name                           Value
 ----                           -----
@@ -190,14 +156,14 @@ PSEdition                      Core
 GitCommitId                    7.5.4
 OS                             Microsoft Windows 10.0.26200
 Platform                       Win32NT
-PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0<span style="color:#960050;background-color:#1e0010">…</span>}
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0…}
 PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 WSManStackVersion              3.0
 
-PS C<span style="color:#960050;background-color:#1e0010">:</span>\Users\sao&gt;</code></pre></td></tr></table>
-</div>
-</div>
+PS C:\Users\sao&gt;
+</code></pre>
+
 <p>無事に <code>PowerShell 7</code> が利用できるようになりました！</p>
 
 <h1 id="powershell-5-7-cmd-のコマンドラインでの切り替え">PowerShell 5/ 7/ cmd のコマンドラインでの切り替え</h1>
@@ -211,54 +177,25 @@ PS C<span style="color:#960050;background-color:#1e0010">:</span>\Users\sao&gt;<
 </ul>
 
 <h2 id="cmd-command-prompt">cmd: Command Prompt</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">PS C:\Users\sao<span style="color:#75715e">&gt; cmd</span>
+
+<pre><code>PS C:\Users\sao&gt; cmd
 Microsoft Windows [Version 10.0.26200.6899]
 (c) Microsoft Corporation. All rights reserved.
 
-C:\Users\sao<span style="color:#75715e">&gt;</span></code></pre></td></tr></table>
-</div>
-</div>
+C:\Users\sao&gt;
+</code></pre>
+
 <h2 id="powershell-powershell-5">powershell: PowerShell 5</h2>
 
 <p>念のため、<code>$PSVersionTable</code> でバージョン確認</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">PS C<span style="color:#960050;background-color:#1e0010">:</span>\Users\sao&gt; powershell
+
+<pre><code>PS C:\Users\sao&gt; powershell
 Windows PowerShell
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Install the latest PowerShell <span style="color:#66d9ef">for</span> new features and improvements! https<span style="color:#960050;background-color:#1e0010">:</span>//aka.ms/PSWindows
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
 
-PS C<span style="color:#960050;background-color:#1e0010">:</span>\Users\sao&gt; $PSVersionTable
+PS C:\Users\sao&gt; $PSVersionTable
 
 Name                           Value
 ----                           -----
@@ -269,34 +206,14 @@ BuildVersion                   10.0.26100.6899
 CLRVersion                     4.0.30319.42000
 WSManStackVersion              3.0
 PSRemotingProtocolVersion      2.3
-SerializationVersion           1.1.0.1</code></pre></td></tr></table>
-</div>
-</div>
+SerializationVersion           1.1.0.1
+</code></pre>
+
 <h2 id="powershell-powershell-7">powershell: PowerShell 7</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C<span style="color:#960050;background-color:#1e0010">:</span>\Users\sao&gt;pwsh
+
+<pre><code>C:\Users\sao&gt;pwsh
 PowerShell 7.5.4
-PS C<span style="color:#960050;background-color:#1e0010">:</span>\Users\sao&gt; $PSVersionTable
+PS C:\Users\sao&gt; $PSVersionTable
 
 Name                           Value
 ----                           -----
@@ -305,14 +222,14 @@ PSEdition                      Core
 GitCommitId                    7.5.4
 OS                             Microsoft Windows 10.0.26200
 Platform                       Win32NT
-PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0<span style="color:#960050;background-color:#1e0010">…</span>}
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0…}
 PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 WSManStackVersion              3.0
 
-PS C<span style="color:#960050;background-color:#1e0010">:</span>\Users\sao&gt;</code></pre></td></tr></table>
-</div>
-</div>
+PS C:\Users\sao&gt;
+</code></pre>
+
 <p>この <code>pwsh</code> ってコマンドをよく忘れてしまい、何度も調べてるので、自分のブログに書きました</p>
 
             <ul class="share-buttons">
