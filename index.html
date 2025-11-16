@@ -57,6 +57,280 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2025/11/16/switch-powershell/" title="[PowerShell]  PowerShell7のインストールとコマンドラインからの切り替え">[PowerShell]  PowerShell7のインストールとコマンドラインからの切り替え</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2025.11.16">2025.11.16</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/powershell">powershell</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>Windows11では、デフォルトのPowerShellは <code>version 5</code> 系です</p>
+
+<p><code>version 7</code> 系を入れるときのインストール方法と、コマンドラインでの切り替え方法とを記載しておきます</p>
+
+<p>前提環境：<br />
+- Windows11</p>
+
+<h1 id="powershell-7-のインストール">PowerShell 7 のインストール</h1>
+
+<ul>
+<li>Windowsのインストールガイド（公式）：<br />
+<a href="https://learn.microsoft.com/ja-jp/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.5">https://learn.microsoft.com/ja-jp/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.5</a></li>
+</ul>
+
+<p>上記に丁寧に記載されてるので私のブログに書かなくても良いのですけど<br />
+ログ付きにしておくので、誰かの参考になればと思います<br />
+わたしは <code>WinGet</code> で入れました</p>
+
+<h2 id="前提-デフォルトのpowershellのバージョンを調べておく">前提:デフォルトのPowerShellのバージョンを調べておく</h2>
+
+<p>5系でした</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">PS C<span style="color:#960050;background-color:#1e0010">:</span>\WINDOWS\System32&gt; $PSVersionTable
+
+Name                           Value
+----                           -----
+PSVersion                      5.1.26100.6899
+PSEdition                      Desktop
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
+BuildVersion                   10.0.26100.6899
+CLRVersion                     4.0.30319.42000
+WSManStackVersion              3.0
+PSRemotingProtocolVersion      2.3
+SerializationVersion           1.1.0.1</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="1-winget-でインストールする">1. <code>WinGet</code> でインストールする</h2>
+
+<pre><code>PS C:\WINDOWS\System32&gt; winget search Microsoft.PowerShell
+The `msstore` source requires that you view the following agreements before using.
+Terms of Transaction: https://aka.ms/microsoft-store-terms-of-transaction
+The source requires the current machine's 2-letter geographic region to be sent to the backend service to function properly (ex. &quot;US&quot;).
+
+Do you agree to all the source agreements terms?
+[Y] Yes  [N] No: yes
+Name               Id                           Version Source
+---------------------------------------------------------------
+PowerShell         Microsoft.PowerShell         7.5.4.0 winget
+PowerShell Preview Microsoft.PowerShell.Preview 7.6.0.5 winget
+PS C:\WINDOWS\System32&gt; winget install --id Microsoft.PowerShell --source winget
+Found PowerShell [Microsoft.PowerShell] Version 7.5.4.0
+This application is licensed to you by its owner.
+Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+Downloading https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/PowerShell-7.5.4-win-x64.msi
+  ██████████████████████████████   107 MB /  107 MB
+Successfully verified installer hash
+Starting package install...
+Successfully installed
+PS C:\WINDOWS\System32&gt;
+</code></pre>
+
+<p>上記の続きで、同じプロンプトに <code>$PSVersionTable</code> tと書いても、まだ <code>v5</code> のままです<br />
+<code>v7</code> のプロンプトに切り替えなければいけません<br />
+つまり PowerShellは <code>v5</code> と <code>v7</code> が共存できます</p>
+
+<h2 id="2-powershell-7を起動">2. PowerShell 7を起動</h2>
+
+<p>スタートメニューから <code>powershell</code> と入れると上部にはWindows11デフォルトのものが表示されます<br />
+よく見ると <code>PowerShell 7</code> も選択できるようになっているので、そちらを選択します</p>
+
+<p><img src="/pic/Switch-powershell_00.png" style="border:solid 5px #e6e6e6"/></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">PowerShell 7.5.4
+PS C<span style="color:#960050;background-color:#1e0010">:</span>\Users\sao&gt; $PSVersionTable
+
+Name                           Value
+----                           -----
+PSVersion                      7.5.4
+PSEdition                      Core
+GitCommitId                    7.5.4
+OS                             Microsoft Windows 10.0.26200
+Platform                       Win32NT
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0<span style="color:#960050;background-color:#1e0010">…</span>}
+PSRemotingProtocolVersion      2.3
+SerializationVersion           1.1.0.1
+WSManStackVersion              3.0
+
+PS C<span style="color:#960050;background-color:#1e0010">:</span>\Users\sao&gt;</code></pre></td></tr></table>
+</div>
+</div>
+<p>無事に <code>PowerShell 7</code> が利用できるようになりました！</p>
+
+<h1 id="powershell-5-7-cmd-のコマンドラインでの切り替え">PowerShell 5/ 7/ cmd のコマンドラインでの切り替え</h1>
+
+<p>ずばり、コマンドはこれです: <code>cmd/powershell/pwsh</code></p>
+
+<ul>
+<li><code>cmd</code> (Command Prompt)</li>
+<li><code>powershell</code>  (PowerShell 5)</li>
+<li><code>pwsh</code>  (PowerShell 7)</li>
+</ul>
+
+<h2 id="cmd-command-prompt">cmd: Command Prompt</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">PS C:\Users\sao<span style="color:#75715e">&gt; cmd</span>
+Microsoft Windows [Version 10.0.26200.6899]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\sao<span style="color:#75715e">&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="powershell-powershell-5">powershell: PowerShell 5</h2>
+
+<p>念のため、<code>$PSVersionTable</code> でバージョン確認</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">PS C<span style="color:#960050;background-color:#1e0010">:</span>\Users\sao&gt; powershell
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell <span style="color:#66d9ef">for</span> new features and improvements! https<span style="color:#960050;background-color:#1e0010">:</span>//aka.ms/PSWindows
+
+PS C<span style="color:#960050;background-color:#1e0010">:</span>\Users\sao&gt; $PSVersionTable
+
+Name                           Value
+----                           -----
+PSVersion                      5.1.26100.6899
+PSEdition                      Desktop
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
+BuildVersion                   10.0.26100.6899
+CLRVersion                     4.0.30319.42000
+WSManStackVersion              3.0
+PSRemotingProtocolVersion      2.3
+SerializationVersion           1.1.0.1</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="powershell-powershell-7">powershell: PowerShell 7</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C<span style="color:#960050;background-color:#1e0010">:</span>\Users\sao&gt;pwsh
+PowerShell 7.5.4
+PS C<span style="color:#960050;background-color:#1e0010">:</span>\Users\sao&gt; $PSVersionTable
+
+Name                           Value
+----                           -----
+PSVersion                      7.5.4
+PSEdition                      Core
+GitCommitId                    7.5.4
+OS                             Microsoft Windows 10.0.26200
+Platform                       Win32NT
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0<span style="color:#960050;background-color:#1e0010">…</span>}
+PSRemotingProtocolVersion      2.3
+SerializationVersion           1.1.0.1
+WSManStackVersion              3.0
+
+PS C<span style="color:#960050;background-color:#1e0010">:</span>\Users\sao&gt;</code></pre></td></tr></table>
+</div>
+</div>
+<p>この <code>pwsh</code> ってコマンドをよく忘れてしまい、何度も調べてるので、自分のブログに書きました</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2025%2f11%2f16%2fswitch-powershell%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bPowerShell%5d%20%20PowerShell7%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%a8%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e3%81%ae%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2025%2f11%2f16%2fswitch-powershell%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2025%2f11%2f16%2fswitch-powershell%2f&title=%5bPowerShell%5d%20%20PowerShell7%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%a8%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e3%81%ae%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2025/03/31/meetup-app9-cppvscsharp/" title="[勉強会] meetup app osaka@9を開催しました">[勉強会] meetup app osaka@9を開催しました</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2025.03.31">2025.03.31</time>
@@ -1770,101 +2044,6 @@ Windows だと、半日かけてもうまく動きませんでした＞＜。<br
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2022/08/03/add-gitlfs-file/" title="[Git] コミット済みのファイルを Git LFS 管理対象にしたいとき">[Git] コミット済みのファイルを Git LFS 管理対象にしたいとき</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2022.08.03">2022.08.03</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/git">git</a>
-        , 
-        
-        <a href="https://h-sao.com/tags/github">github</a>
-        , 
-        
-        <a href="https://h-sao.com/tags/gitlfs">gitlfs</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>バイナリファイルコミットしちゃたけど、これ <code>Git LFS</code> 管理対象にしたかったよねー。。。</p>
-
-<p>というときの作業メモです</p>
-
-<p>わたしの環境は <code>Windows</code> での動作確認になります</p>
-
-<p>1) <code>git lfs install</code> で <code>Git LFS</code> をインストールします<br />
-わたしの環境にはすでに入っていたみたい…</p>
-
-<pre><code>&gt;git lfs install
-Updated Git hooks.
-Git LFS initialized.
-</code></pre>
-
-<p>2) <code>git lfs version</code> でバージョンを確認しておく</p>
-
-<pre><code>&gt;git lfs version
-git-lfs/3.2.0 (GitHub; windows amd64; go 1.18.2)
-</code></pre>
-
-<p>3) <code>git lfs track</code> とすると、<code>.gitattributes</code> に格納されている対象データの情報が見れます</p>
-
-<p>例えばこんな感じ</p>
-
-<pre><code>&gt;git lfs track
-Listing tracked patterns
-    *.dll (.gitattributes)
-    *.exe (.gitattributes)
-</code></pre>
-
-<p>4) <code>git lfs track</code> でLFS管理に入れたいファイルを指定します</p>
-
-<pre><code>&gt;git lfs track &quot;*.o&quot;
-Tracking &quot;*.o&quot;
-</code></pre>
-
-<p>ファイル単体を指定したければ、直接指定すればOK</p>
-
-<pre><code>&gt;git lfs track &quot;aaa/bbb/ccc.bin&quot;
-</code></pre>
-
-<p>5) <code>.gitattributes</code> に追加した対象ファイルが記載されているので<br />
-それをコミット＆プッシュすればOK！</p>
-
-<p>6) まだLFS管理してなかったときにコミットしてしまったファイルは<br />
-いったん削除コミットをしてから、もう一度コミット＆プッシュするのが良さそうでした</p>
-
-<hr />
-
-<p>（参考リンク）</p>
-
-<ul>
-<li>Git LFS を使ってみる - すらりん日記<br />
-<a href="https://blog.techlab-xe.net/git-lfs-%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/">https://blog.techlab-xe.net/git-lfs-%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</a></li>
-<li>Git LFS について(オブジェクトとロック) - すらりん日記<br />
-<a href="https://blog.techlab-xe.net/git-lfs-object-and-lock/">https://blog.techlab-xe.net/git-lfs-object-and-lock/</a></li>
-</ul>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f08%2f03%2fadd-gitlfs-file%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bGit%5d%20%e3%82%b3%e3%83%9f%e3%83%83%e3%83%88%e6%b8%88%e3%81%bf%e3%81%ae%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%20Git%20LFS%20%e7%ae%a1%e7%90%86%e5%af%be%e8%b1%a1%e3%81%ab%e3%81%97%e3%81%9f%e3%81%84%e3%81%a8%e3%81%8d&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f08%2f03%2fadd-gitlfs-file%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f08%2f03%2fadd-gitlfs-file%2f&title=%5bGit%5d%20%e3%82%b3%e3%83%9f%e3%83%83%e3%83%88%e6%b8%88%e3%81%bf%e3%81%ae%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%20Git%20LFS%20%e7%ae%a1%e7%90%86%e5%af%be%e8%b1%a1%e3%81%ab%e3%81%97%e3%81%9f%e3%81%84%e3%81%a8%e3%81%8d" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -1934,6 +2113,12 @@ Tracking &quot;*.o&quot;
                 
                     
                         
+                            <a href="/blog/2025/11/16/switch-powershell/" class="list-group-item">[PowerShell]  PowerShell7のインストールとコマンドラインからの切り替え</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2025/03/31/meetup-app9-cppvscsharp/" class="list-group-item">[勉強会] meetup app osaka@9を開催しました</a><br>
                         
                     
@@ -1983,12 +2168,6 @@ Tracking &quot;*.o&quot;
                     
                         
                             <a href="/blog/2022/12/07/how-to-develop-hackerrank-for-vscode/" class="list-group-item">[C&#43;&#43;] VC&#43;&#43;でHackerRankの環境構築</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2022/08/03/add-gitlfs-file/" class="list-group-item">[Git] コミット済みのファイルを Git LFS 管理対象にしたいとき</a><br>
                         
                     
                 
@@ -2284,9 +2463,9 @@ Tracking &quot;*.o&quot;
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/powershell" style="font-size: 20px;">
+                    <a href="https://h-sao.com//tags/powershell" style="font-size: 23px;">
                     
-                        <span class="badge">4</span>
+                        <span class="badge">5</span>
                         powershell
                     </a>
                     </u> &nbsp; 

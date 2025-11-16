@@ -6,10 +6,28 @@
     <description>Recent content in Powershell on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 20 Oct 2017 19:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 16 Nov 2025 01:16:00 +0900</lastBuildDate>
     
 	<atom:link href="https://h-sao.com/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[PowerShell]  PowerShell7のインストールとコマンドラインからの切り替え</title>
+      <link>https://h-sao.com/blog/2025/11/16/switch-powershell/</link>
+      <pubDate>Sun, 16 Nov 2025 01:16:00 +0900</pubDate>
+      
+      <guid>https://h-sao.com/blog/2025/11/16/switch-powershell/</guid>
+      <description>Windows11では、デフォルトのPowerShellは version 5 系です
+version 7 系を入れるときのインストール方法と、コマンドラインでの切り替え方法とを記載しておきます
+前提環境：
+- Windows11
+PowerShell 7 のインストール  Windowsのインストールガイド（公式）：
+https://learn.microsoft.com/ja-jp/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.5  上記に丁寧に記載されてるので私のブログに書かなくても良いのですけど
+ログ付きにしておくので、誰かの参考になればと思います
+わたしは WinGet で入れました
+前提:デフォルトのPowerShellのバージョンを調べておく 5系でした
+1 2 3 4 5 6 7 8 9 10 11 12  PS C:\WINDOWS\System32&amp;gt; $PSVersionTable Name Value ---- ----- PSVersion 5.1.26100.6899 PSEdition Desktop PSCompatibleVersions {1.0, 2.0, 3.0, 4.0...} BuildVersion 10.0.26100.6899 CLRVersion 4.0.30319.42000 WSManStackVersion 3.0 PSRemotingProtocolVersion 2.3 SerializationVersion 1.1.0.1   1. WinGet でインストールする PS C:\WINDOWS\System32&amp;gt; winget search Microsoft.</description>
+    </item>
     
     <item>
       <title>[PowerShell] ZoneIDとPowerShellの実行ポリシー</title>
