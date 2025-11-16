@@ -8,12 +8,14 @@
             {{ .Content}}
             {{ partial "article-share" . }}
         </article>
+        {{/* Disqus removed due to ads
         {{ if .Site.DisqusShortname }}
         <div class="comments">
             <h3>{{ .Site.Data.l10n.comments.comments }}</h3>
             {{ template "_internal/disqus.html" . }}
         </div>
         {{ end }}
+        */}}
     </main>
     {{ partial "author" . }}
     {{ partial "posted-list" . }}
