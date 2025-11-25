@@ -6,10 +6,50 @@
     <description>Recent content in Unity on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 09 Dec 2022 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 25 Nov 2025 17:21:00 +0900</lastBuildDate>
     
 	<atom:link href="https://h-sao.com/tags/unity/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Unity] Unity Hubでremoveできないバージョンの削除方法</title>
+      <link>https://h-sao.com/blog/2025/11/25/fix-unity-hub-remove-issue/</link>
+      <pubDate>Tue, 25 Nov 2025 17:21:00 +0900</pubDate>
+      
+      <guid>https://h-sao.com/blog/2025/11/25/fix-unity-hub-remove-issue/</guid>
+      <description>Unity Hub からUnityの色んなバージョンをインストールしていると思うのですが
+たまに「Unityを手動インストールしてから、UnityHubに認識させる」
+というのをやるときがあると思います
+ないよーと思うかもしれませんが、この記事はそれがある人のための手順です
+エンジンバージョンの歯車メニューの項目 UnityHubのInstallsの中には、複数のUnityバージョンが存在できます
+UnityHubからUnityをインストールした場合
+歯車マークの Manage を押すと、こんな項目が出てきます
+けどもし、手動インストールしたものをUnityHubに認識させていたら、こんな項目になります
+手動インストールしたら、UnityHubから Add modules 出来ないんですよね
+手動インストールしてしまったけど
+UnityHubで管理したらよかった、モジュールもここから追加したいし
+いったん手動インストールのバージョンは削除しよう！
+と思って Remove From Hub を押下するのですが
+何も起こらないです
+あれ？どういうこと？
+手動でUnityをアンインストールする 手動で入れたので、手動で削除してみます
+さっきの歯車メニューで Show in Exproler を押すと、Unityの対象バージョンがインストールされているディレクトリが開きます
+その中に、Uninstall.exe があるので、それを起動して
+いったん削除したいUnityバージョンをアンインストールします
+その後、UnityHubに戻っても、まだ消えていないので、PCを再起動しましょう！
+そしたら、消したかったUnityバージョンがUnityHubから消えています！やった！
+UnityHubでインストールする インストールしたいバージョンが Official releases にあればいいですけど
+ない場合は、 Aechive から入れるようにします
+https://unity.com/releases/editor/archive
+このページの All versions に入れたいバージョンがすんなりあればいいけど、ない時もあります
+そんなときは、URLを推測して書いてみると、あったりします
+（それを使っていいかどうかはよく判らないですが、アクセスしてみたらありました）
+とにかく、対象のバージョンを見つけたら、See all のリンクをクリックして対象バージョンのページに行きます
+上のほうにある → INSTALL を選びましょう
+Manual installs の項目から exe などをダウンロードしてしまわないように気を付けてください
+これで一件落着です
+Remove from Hub が効かなくて焦ったので、よかった～</description>
+    </item>
     
     <item>
       <title>[C#] $文字を置換したい</title>

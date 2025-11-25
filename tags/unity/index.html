@@ -61,6 +61,107 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2025/11/25/fix-unity-hub-remove-issue/" title="[Unity] Unity Hubでremoveできないバージョンの削除方法">[Unity] Unity Hubでremoveできないバージョンの削除方法</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2025.11.25">2025.11.25</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/unity">unity</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>Unity Hub からUnityの色んなバージョンをインストールしていると思うのですが<br />
+たまに「Unityを手動インストールしてから、UnityHubに認識させる」<br />
+というのをやるときがあると思います</p>
+
+<p>ないよーと思うかもしれませんが、この記事はそれがある人のための手順です</p>
+
+<h2 id="エンジンバージョンの歯車メニューの項目">エンジンバージョンの歯車メニューの項目</h2>
+
+<p>UnityHubのInstallsの中には、複数のUnityバージョンが存在できます</p>
+
+<p>UnityHubからUnityをインストールした場合<br />
+歯車マークの <code>Manage</code> を押すと、こんな項目が出てきます</p>
+
+<p><img src="/pic/Fix-unity-hub-remove-issue_00.png" alt="" /></p>
+
+<p>けどもし、手動インストールしたものをUnityHubに認識させていたら、こんな項目になります</p>
+
+<p><img src="/pic/Fix-unity-hub-remove-issue_01.png" alt="" /></p>
+
+<p>手動インストールしたら、UnityHubから <code>Add modules</code> 出来ないんですよね</p>
+
+<p>手動インストールしてしまったけど<br />
+UnityHubで管理したらよかった、モジュールもここから追加したいし<br />
+いったん手動インストールのバージョンは削除しよう！</p>
+
+<p>と思って <code>Remove From Hub</code> を押下するのですが<br />
+何も起こらないです</p>
+
+<p>あれ？どういうこと？</p>
+
+<h2 id="手動でunityをアンインストールする">手動でUnityをアンインストールする</h2>
+
+<p>手動で入れたので、手動で削除してみます</p>
+
+<p>さっきの歯車メニューで <code>Show in Exproler</code> を押すと、Unityの対象バージョンがインストールされているディレクトリが開きます</p>
+
+<p>その中に、<code>Uninstall.exe</code> があるので、それを起動して<br />
+いったん削除したいUnityバージョンをアンインストールします</p>
+
+<p><img src="/pic/Fix-unity-hub-remove-issue_02.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p>その後、UnityHubに戻っても、まだ消えていないので、PCを再起動しましょう！</p>
+
+<p>そしたら、消したかったUnityバージョンがUnityHubから消えています！やった！</p>
+
+<h2 id="unityhubでインストールする">UnityHubでインストールする</h2>
+
+<p>インストールしたいバージョンが <code>Official releases</code> にあればいいですけど<br />
+ない場合は、 <code>Aechive</code> から入れるようにします</p>
+
+<p><a href="https://unity.com/releases/editor/archive">https://unity.com/releases/editor/archive</a></p>
+
+<p>このページの <code>All versions</code> に入れたいバージョンがすんなりあればいいけど、ない時もあります</p>
+
+<p>そんなときは、URLを推測して書いてみると、あったりします<br />
+（それを使っていいかどうかはよく判らないですが、アクセスしてみたらありました）</p>
+
+<p>とにかく、対象のバージョンを見つけたら、<code>See all</code> のリンクをクリックして対象バージョンのページに行きます<br />
+上のほうにある <code>→ INSTALL</code>  を選びましょう</p>
+
+<p><img src="/pic/Fix-unity-hub-remove-issue_03.png" style="border:solid 5px #e6e6e6"/></p>
+
+<p><code>Manual installs</code> の項目から exe などをダウンロードしてしまわないように気を付けてください</p>
+
+<p>これで一件落着です</p>
+
+<p><code>Remove from Hub</code> が効かなくて焦ったので、よかった～</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2025%2f11%2f25%2ffix-unity-hub-remove-issue%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bUnity%5d%20Unity%20Hub%e3%81%a7remove%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84%e3%83%90%e3%83%bc%e3%82%b8%e3%83%a7%e3%83%b3%e3%81%ae%e5%89%8a%e9%99%a4%e6%96%b9%e6%b3%95&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2025%2f11%2f25%2ffix-unity-hub-remove-issue%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2025%2f11%2f25%2ffix-unity-hub-remove-issue%2f&title=%5bUnity%5d%20Unity%20Hub%e3%81%a7remove%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84%e3%83%90%e3%83%bc%e3%82%b8%e3%83%a7%e3%83%b3%e3%81%ae%e5%89%8a%e9%99%a4%e6%96%b9%e6%b3%95" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2022/12/09/how-to-replace-daller-sign-on-unity/" title="[C#] $文字を置換したい">[C#] $文字を置換したい</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2022.12.09">2022.12.09</time>
@@ -726,223 +827,6 @@ C:/Users/(username)/AppData/RoamingLocalLow/Unity/Asset Store-5.x<br />
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2016/05/08/change-unity-window-size/" title="[Unity] PC実行時のWindowsサイズの設定の仕方＆起動時フック">[Unity] PC実行時のWindowsサイズの設定の仕方＆起動時フック</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.05.08">2016.05.08</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/unity">unity</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                
-
-<p>Unityのバグなのか、わたしの使い方が悪いのか？<br />
-PC実行時のウィンドウサイズの設定が、思うようにできなかったので<br />
-その解決メモです</p>
-
-<h1 id="pcで実行したら全画面">PCで実行したら全画面…</h1>
-
-<p>Unityのプロジェクトファイルを新規作成して</p>
-
-<blockquote>
-<p>&ldquo;File&rdquo; → &ldquo;Build &amp; Run&rdquo;</p>
-</blockquote>
-
-<p>を選択すると、ビルドが走り、実際に exe が実行されます</p>
-
-<p><img src="/pic/Change-Unity-window-size_01.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>へぇ、画面解像度( Screen resolution )とか、ここで変えることが出来るんだ～<br />
-と思って解像度設定を変更し、&rdquo;Play!&rdquo; で起動させると、いちおう思ったサイズで起動することが出来ます</p>
-
-<h1 id="unityプロジェクトに-plyaer-settings-がある">Unityプロジェクトに Plyaer Settings がある</h1>
-
-<p>ユーザに毎回ウィンドウサイズを選択させるのも、なんだかねぇ…ということで、ちゃんと設定したいと思います</p>
-
-<p>Unityのメニューの</p>
-
-<blockquote>
-<p>&ldquo;File&rdquo; → &ldquo;Build Settings&rdquo;</p>
-</blockquote>
-
-<p>Build Settings を選択すると、ビルドに関する設定が変更できるようです<br />
-下にある、&rdquo;Player Settings&rdquo; を選択すると、
-インスペクタウィンドウが出ます</p>
-
-<p><img src="/pic/Change-Unity-window-size_00.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>ここで、起動時の Player Settings が出来るようですが…</p>
-
-<p><img src="/pic/Change-Unity-window-size_02.png" alt="" /></p>
-
-<p>「Resolution」 の 「<strong>Default Is Full Screen</strong>」 のチェックボックスを外しましょう<br />
-ついでに、「Standalone Player Options」 の <strong>「Display Resolution Dialog」 を　「Disable」</strong>　にしておきます</p>
-
-<p>これで exe を実行するたびに 「FixSizeWindows Configuration」 は開かなくなります</p>
-
-<p>「Resolution」 には、「Default Screen Width/Height」 がありますが、、、<br />
-ここで設定を変えても、ウィンドウサイズは変わりません<br />
-（なんでやねん…＞＜）</p>
-
-<p>どうやら、「前回起動したときのウィンドウサイズ」で起動するみたいです…<br />
-Development Build にしても、しなくても、結果は一緒でした<br />
-初期起動のサイズは、ここじゃないのかな…(´・ω・｀)</p>
-
-<p>余談ですが、ここで変えた設定は、</p>
-
-<ul>
-<li>.\ProjectSettings\ProjectSettings.asset</li>
-</ul>
-
-<p>の中に、テキストファイルで保存されます</p>
-
-<h1 id="ウィンドウサイズはプログラムで変更">ウィンドウサイズはプログラムで変更</h1>
-
-<p>仕方がないので、スクリプトで記載します</p>
-
-<p>Unityのメニュー <strong>Assets &gt; Create &gt; C# Script</strong> で新規スクリプトを作ります</p>
-
-<p>わたしは適当に GameInitial と名付けました（Unity の Project 内に、GameInitial の C#ファイルが追加されます）</p>
-
-<h2 id="いーっちばん最初のゲーム起動時をフックしたい">いーっちばん最初のゲーム起動時をフックしたい？</h2>
-
-<p>もちろん、ウィンドウサイズを変更したいためです<br />
-解像度が小さい/大きいなど<br />
-起動したときに、クライアント端末によってウィンドウサイズを変えたいとかあると思います</p>
-
-<p>たぶん、現状の Unity 5.3系の最速フック方法は、<strong>RuntimeInitializeOnLoadMethod</strong> ではないかと…</p>
-
-<ul>
-<li>RuntimeInitializeOnLoadMethodAttribute<br />
-<a href="http://docs.unity3d.com/ScriptReference/RuntimeInitializeOnLoadMethodAttribute.html">http://docs.unity3d.com/ScriptReference/RuntimeInitializeOnLoadMethodAttribute.html</a></li>
-</ul>
-
-<p>ユーザがアクションを起こす前に動くらしいですが<br />
-実際やってみると、ロゴ起動画面の方が先に動くので<br />
-ほんとの意味の一番最初のウィンドウサイズは、ここでは遅いみたいです</p>
-
-<p>一応サンプルコード<br />
-MonoBehaviour は無くても動くみたいです<br />
-あと、オブジェクトなどにスクリプトをアタッチしなくてもOKです</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">using</span> UnityEngine;
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GameInitial</span> <span style="color:#75715e">//: MonoBehaviour
-</span><span style="color:#75715e"></span>{<span style="color:#a6e22e">
-</span><span style="color:#a6e22e">    [RuntimeInitializeOnLoadMethod]</span>
-    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> OnRuntimeMethodLoad()
-    {
-        Screen.SetResolution( <span style="color:#ae81ff">640</span>, <span style="color:#ae81ff">960</span>, <span style="color:#66d9ef">false</span>, <span style="color:#ae81ff">60</span>);
-
-    }
-
-    <span style="color:#75715e">//// Use this for initialization
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">//void Start()
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">//{
-</span><span style="color:#75715e"></span>
-    <span style="color:#75715e">//}
-</span><span style="color:#75715e"></span>
-    <span style="color:#75715e">//// Update is called once per frame
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">//void Update()
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">//{
-</span><span style="color:#75715e"></span>
-    <span style="color:#75715e">//}
-</span><span style="color:#75715e"></span>}</code></pre></td></tr></table>
-</div>
-</div>
-<p>自分が知らないだけかもしれませんが、 RuntimeInitializeOnLoadMethodAttribute より早い時点で自分の処理を差し込むことは出来ないみたい…</p>
-
-<h1 id="ウィンドウサイズを指定できるコマンドライン引数がある">ウィンドウサイズを指定できるコマンドライン引数がある！</h1>
-
-<p>結局、起動時のウィンドウサイズは結局どこで更新するんでしょうか…？</p>
-
-<p>実は、飛び道具的ですが、exe の引数に渡せるみたいです…！（そこか…＞＜</p>
-
-<ul>
-<li>「Unity スタンドアロンプレイヤーのコマンドライン引数」の項
-<a href="http://docs.unity3d.com/ja/current/Manual/CommandLineArguments.html">http://docs.unity3d.com/ja/current/Manual/CommandLineArguments.html</a></li>
-</ul>
-
-<p>自分で作った exe の引数に</p>
-
-<ul>
-<li>-screen-width ：幅</li>
-<li>-screen-height ：高さ</li>
-</ul>
-
-<p>を渡してあげればOKでした</p>
-
-<pre><code>&gt; xxx.exe -screen-width 300 -screen-height 300
-</code></pre>
-
-<p>小さいスクリーンサイズで起動したのちに…</p>
-
-<p><img src="/pic/Change-Unity-window-size_03.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>自分の指定した Screen.SetResolution サイズで起動</p>
-
-<p><img src="/pic/Change-Unity-window-size_04.png" style="border:solid 5px #e6e6e6"/></p>
-
-<p>つまり、引数に自分で好きな数値を渡せるようになってるので<br />
-それと、Screen.SetResolution の指定を同じ大きさにしておけば<br />
-最初から自分自身でサイズを調整できますね</p>
-
-<p>なんだろなー<br />
-なんで起動時のサイズくらい、すんなり設定できないんでしょうか…謎や～</p>
-
-<p>もしかしたら、無料版では起動時のロゴを外せないようにするために、プログラマは触れないようになってるのかなー？</p>
-
-<p>ともあれ、意図したことは出来るようになっているので、まぁ良しとします！</p>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f08%2fchange-unity-window-size%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bUnity%5d%20PC%e5%ae%9f%e8%a1%8c%e6%99%82%e3%81%aeWindows%e3%82%b5%e3%82%a4%e3%82%ba%e3%81%ae%e8%a8%ad%e5%ae%9a%e3%81%ae%e4%bb%95%e6%96%b9%ef%bc%86%e8%b5%b7%e5%8b%95%e6%99%82%e3%83%95%e3%83%83%e3%82%af&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f08%2fchange-unity-window-size%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2016%2f05%2f08%2fchange-unity-window-size%2f&title=%5bUnity%5d%20PC%e5%ae%9f%e8%a1%8c%e6%99%82%e3%81%aeWindows%e3%82%b5%e3%82%a4%e3%82%ba%e3%81%ae%e8%a8%ad%e5%ae%9a%e3%81%ae%e4%bb%95%e6%96%b9%ef%bc%86%e8%b5%b7%e5%8b%95%e6%99%82%e3%83%95%e3%83%83%e3%82%af" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
 
         <div class="pagination">
 <nav>
@@ -1013,6 +897,12 @@ MonoBehaviour は無くても動くみたいです<br />
                 
                     
                         
+                            <a href="/blog/2025/11/25/fix-unity-hub-remove-issue/" class="list-group-item">[Unity] Unity Hubでremoveできないバージョンの削除方法</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2025/11/16/switch-powershell/" class="list-group-item">[PowerShell]  PowerShell7のインストールとコマンドラインからの切り替え</a><br>
                         
                     
@@ -1062,12 +952,6 @@ MonoBehaviour は無くても動くみたいです<br />
                     
                         
                             <a href="/blog/2022/12/09/how-to-replace-daller-sign-on-unity/" class="list-group-item">[C#] $文字を置換したい</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2022/12/07/how-to-develop-hackerrank-for-vscode/" class="list-group-item">[C&#43;&#43;] VC&#43;&#43;でHackerRankの環境構築</a><br>
                         
                     
                 
@@ -1443,9 +1327,9 @@ MonoBehaviour は無くても動くみたいです<br />
                     
                     
                     <u>
-                    <a href="https://h-sao.com//tags/unity" style="font-size: 41px;">
+                    <a href="https://h-sao.com//tags/unity" style="font-size: 44px;">
                     
-                        <span class="badge">11</span>
+                        <span class="badge">12</span>
                         unity
                     </a>
                     </u> &nbsp; 
