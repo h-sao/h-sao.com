@@ -49,6 +49,132 @@
         
         
             
+<h1><a href="https://h-sao.com/blog/2025/12/27/how-to-install-claudecode/" title="[Claude] Windows への Claude Code インストール方法">[Claude] Windows への Claude Code インストール方法</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2025.12.27">2025.12.27</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/claudecode">claudecode</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+                
+
+<p>WindowsにClaude Codeをインストールしようとして、公式の <code>irm</code> の方法（PowerShell版）では上手くインストールが出来なかったので、その解決策です</p>
+
+<p>環境:<br />
+- Windows11
+- PowerShell 7</p>
+
+<h2 id="現象">現象</h2>
+
+<p>公式には、こんな記述があります</p>
+
+<p><a href="https://code.claude.com/docs/ja/setup">https://code.claude.com/docs/ja/setup</a></p>
+
+<pre><code>PS &gt; irm https://claude.ai/install.ps1 | iex
+</code></pre>
+
+<p>けどね、これを実行してもインストールされないのです（2025/12/27現在）</p>
+
+<p>インストールログはこれ</p>
+
+<pre><code>PS C:\my\dev&gt; irm https://claude.ai/install.ps1 | iex
+Setting up Claude Code...
+√ Claude Code successfully installed!
+  Version: 2.0.67
+  Location: C:\Users\Sao\.local\bin\claude.exe
+  Next: Run claude --help to get started
+‼ Setup notes:
+  • installMethod is native, but claude command not found at C:\Users\Sao\.local\bin\claude.exe
+  • Native installation exists but C:\Users\Sao\.local\bin is not in your PATH. Add it by opening: System Properties →
+   Environment Variables → Edit User PATH → New → Add the path above. Then restart your terminal.
+✅ Installation complete!
+PS C:\my\dev&gt; 
+</code></pre>
+
+<p><code>but claude command not found at C:\Users\Sao\.local\bin\claude.exe</code> とあって、確かにこの場所に実行ファイルが無いのです<br />
+なのに最後、<code>✅ Installation complete!</code> と表示される矛盾よ…</p>
+
+<p>別のWindowsのPC2台で試しましたが、2台とも同じ状況でして、ダメでした</p>
+
+<p>Everything ツールを使って、PC内をくまなく探しましたが、どこにも <code>claude.exe</code> が無いようです<br />
+なんでやねん…</p>
+
+<blockquote>
+<p>参考:<br />
+WindowsPCのローカルファイルを高速検索してくれる神ツール - <a href="https://www.voidtools.com/">https://www.voidtools.com/</a></p>
+</blockquote>
+
+<h2 id="解決策">解決策</h2>
+
+<p>こちらの方の記事を参考にして、wingetでインストールすることにしました！</p>
+
+<ul>
+<li>Claude Codeのネイティブ版をWindows 11にインストールする<br />
+<a href="https://qiita.com/charon/items/d51dc7c74339a795e9ee">https://qiita.com/charon/items/d51dc7c74339a795e9ee</a></li>
+</ul>
+
+<pre><code>PS &gt; winget install Anthropic.ClaudeCode
+</code></pre>
+
+<p>これでインストールすると、PowerShell再起動後に Claude Code がインストールされました！うれしい！！！</p>
+
+<p>参考までにインストールログです</p>
+
+<pre><code>PowerShell 7.5.4
+PS C:\Users\sao&gt; winget install Anthropic.ClaudeCode
+The `msstore` source requires that you view the following agreements before using.
+Terms of Transaction: https://aka.ms/microsoft-store-terms-of-transaction
+The source requires the current machine's 2-letter geographic region to be sent to the backend service to function properly (ex. &quot;US&quot;).
+
+Do you agree to all the source agreements terms?
+[Y] Yes  [N] No: y
+Found Claude Code [Anthropic.ClaudeCode] Version 2.0.65
+This application is licensed to you by its owner.
+Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+Downloading https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/2.0.65/win32-x64/claude.exe
+  ██████████████████████████████   205 MB /  205 MB
+Successfully verified installer hash
+Starting package install...
+Path environment variable modified; restart your shell to use the new value.
+Command line alias added: &quot;claude&quot;
+Successfully installed
+PS C:\Users\sao&gt;
+</code></pre>
+
+<p>動作確認は、とりあえずヘルプ表示でできます</p>
+
+<pre><code>PS &gt; claude --help
+</code></pre>
+
+<p>あーよかったよかった</p>
+
+<p>ちょっと前は、公式の irm 方式でも行けたのですが<br />
+なんかどっかが変わったのでしょうかね</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2025%2f12%2f27%2fhow-to-install-claudecode%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bClaude%5d%20Windows%20%e3%81%b8%e3%81%ae%20Claude%20Code%20%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%96%b9%e6%b3%95&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2025%2f12%2f27%2fhow-to-install-claudecode%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2025%2f12%2f27%2fhow-to-install-claudecode%2f&title=%5bClaude%5d%20Windows%20%e3%81%b8%e3%81%ae%20Claude%20Code%20%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%96%b9%e6%b3%95" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+            <hr>
+        
+            
 <h1><a href="https://h-sao.com/blog/2025/11/25/fix-unity-hub-remove-issue/" title="[Unity] Unity Hubでremoveできないバージョンの削除方法">[Unity] Unity Hubでremoveできないバージョンの削除方法</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2025.11.25">2025.11.25</time>
@@ -1768,81 +1894,6 @@ C++23 以降に向けた提案</strong> - C++ の歩き方 | cppmap<br />
 
             <hr>
         
-            
-<h1><a href="https://h-sao.com/blog/2022/12/09/how-to-replace-daller-sign-on-unity/" title="[C#] $文字を置換したい">[C#] $文字を置換したい</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2022.12.09">2022.12.09</time>
-    
-    &middot; 
-        
-        <a href="https://h-sao.com/tags/csharp">csharp</a>
-        , 
-        
-        <a href="https://h-sao.com/tags/unity">unity</a>
-        
-        
-    
-
-</span>
-</footer>
- </footer>
-                <p>ちょっとnewbie的ですが、<code>$</code> 文字をひっかけようとしてうまくいかなかったので、その時のメモです</p>
-
-<p>今回の開発環境はこちら</p>
-
-<ul>
-<li>Visual Studio 2019</li>
-<li>Windows10</li>
-<li>Unity 2021.3.0f1</li>
-</ul>
-
-<hr />
-
-<p>Unityで <code>string</code> 文字列の中の <code>$</code> 文字を置換使用を思いましたが、うまく出来ませんでした</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">text = text.Replace(<span style="color:#e6db74">&#34;\\$&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>);</code></pre></td></tr></table>
-</div>
-</div>
-<p>はて。。。なんでかな？</p>
-
-<p>調べてみて、こちらなら思った通りの動作になりました</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">text = Regex.Replace(text, <span style="color:#e6db74">&#34;\\$&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>);</code></pre></td></tr></table>
-</div>
-</div>
-<p>正規表現だとうまく行くみたい</p>
-
-<p>参考：</p>
-
-<ul>
-<li>Simple way to trim Dollar Sign if present in C# - stack overflow<br />
-<a href="https://stackoverflow.com/questions/154845/simple-way-to-trim-dollar-sign-if-present-in-c-sharp">https://stackoverflow.com/questions/154845/simple-way-to-trim-dollar-sign-if-present-in-c-sharp</a></li>
-</ul>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f12%2f09%2fhow-to-replace-daller-sign-on-unity%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=%5bC%23%5d%20%24%e6%96%87%e5%ad%97%e3%82%92%e7%bd%ae%e6%8f%9b%e3%81%97%e3%81%9f%e3%81%84&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f12%2f09%2fhow-to-replace-daller-sign-on-unity%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2022%2f12%2f09%2fhow-to-replace-daller-sign-on-unity%2f&title=%5bC%23%5d%20%24%e6%96%87%e5%ad%97%e3%82%92%e7%bd%ae%e6%8f%9b%e3%81%97%e3%81%9f%e3%81%84" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-            <hr>
-        
         <div class="pagination">
 <nav>
 
@@ -1912,6 +1963,12 @@ C++23 以降に向けた提案</strong> - C++ の歩き方 | cppmap<br />
                 
                     
                         
+                            <a href="/blog/2025/12/27/how-to-install-claudecode/" class="list-group-item">[Claude] Windows への Claude Code インストール方法</a><br>
+                        
+                    
+                
+                    
+                        
                             <a href="/blog/2025/11/25/fix-unity-hub-remove-issue/" class="list-group-item">[Unity] Unity Hubでremoveできないバージョンの削除方法</a><br>
                         
                     
@@ -1961,12 +2018,6 @@ C++23 以降に向けた提案</strong> - C++ の歩き方 | cppmap<br />
                     
                         
                             <a href="/blog/2023/03/03/using-inspect-pattern-matching/" class="list-group-item">[C&#43;&#43;] C&#43;&#43;の新しいパターンマッチ「inspect」</a><br>
-                        
-                    
-                
-                    
-                        
-                            <a href="/blog/2022/12/09/how-to-replace-daller-sign-on-unity/" class="list-group-item">[C#] $文字を置換したい</a><br>
                         
                     
                 
@@ -2036,6 +2087,16 @@ C++23 以降に向けた提案</strong> - C++ の歩き方 | cppmap<br />
                     
                         <span class="badge">1</span>
                         clang
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/claudecode" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        claudecode
                     </a>
                     </u> &nbsp; 
                     

@@ -1,0 +1,823 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Effectiveさお</title>
+        <meta name="author">
+        <meta name="description" content="The awesome blog of Sao Haruka.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.54.0" />
+        <link href="https://h-sao.com/post/index.xml" rel="alternate" type="application/rss+xml" title="Effectiveさお" />
+        <link href="https://h-sao.com/post/index.xml" rel="feed" type="application/rss+xml" title="Effectiveさお" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://h-sao.com/css/styles.css">
+        <link rel="icon" href="https://h-sao.com/favicon.ico">
+        <link rel="apple-touch-icon" href="https://h-sao.com/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://h-sao.com/css/highlightjs/monokai.css">
+        <script src="https://h-sao.com/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://h-sao.com/pic/SiteTop.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://h-sao.com/pic/SiteTop.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://h-sao.com/pic/SiteTop.jpg) no-repeat center center;
+         
+        }
+        </style>
+        
+        
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+            <h2><a href="http://h-sao.com">Effectiveさお</a></h2>
+          </div>
+        </header>
+        <div class="pankuzu-layer">
+            <a href="https://h-sao.com/about">About me</a>
+        </div>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://h-sao.com/" title="">&laquo; </a>
+            
+<h1><a href="https://h-sao.com/blog/2025/12/27/how-to-install-claudecode/" title="[Claude] Windows への Claude Code インストール方法">[Claude] Windows への Claude Code インストール方法</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2025.12.27">2025.12.27</time>
+    
+    &middot; 
+        
+        <a href="https://h-sao.com/tags/claudecode">claudecode</a>
+        
+        
+    
+
+</span>
+</footer>
+ </footer>
+            
+
+<p>WindowsにClaude Codeをインストールしようとして、公式の <code>irm</code> の方法（PowerShell版）では上手くインストールが出来なかったので、その解決策です</p>
+
+<p>環境:<br />
+- Windows11
+- PowerShell 7</p>
+
+<h2 id="現象">現象</h2>
+
+<p>公式には、こんな記述があります</p>
+
+<p><a href="https://code.claude.com/docs/ja/setup">https://code.claude.com/docs/ja/setup</a></p>
+
+<pre><code>PS &gt; irm https://claude.ai/install.ps1 | iex
+</code></pre>
+
+<p>けどね、これを実行してもインストールされないのです（2025/12/27現在）</p>
+
+<p>インストールログはこれ</p>
+
+<pre><code>PS C:\my\dev&gt; irm https://claude.ai/install.ps1 | iex
+Setting up Claude Code...
+√ Claude Code successfully installed!
+  Version: 2.0.67
+  Location: C:\Users\Sao\.local\bin\claude.exe
+  Next: Run claude --help to get started
+‼ Setup notes:
+  • installMethod is native, but claude command not found at C:\Users\Sao\.local\bin\claude.exe
+  • Native installation exists but C:\Users\Sao\.local\bin is not in your PATH. Add it by opening: System Properties →
+   Environment Variables → Edit User PATH → New → Add the path above. Then restart your terminal.
+✅ Installation complete!
+PS C:\my\dev&gt; 
+</code></pre>
+
+<p><code>but claude command not found at C:\Users\Sao\.local\bin\claude.exe</code> とあって、確かにこの場所に実行ファイルが無いのです<br />
+なのに最後、<code>✅ Installation complete!</code> と表示される矛盾よ…</p>
+
+<p>別のWindowsのPC2台で試しましたが、2台とも同じ状況でして、ダメでした</p>
+
+<p>Everything ツールを使って、PC内をくまなく探しましたが、どこにも <code>claude.exe</code> が無いようです<br />
+なんでやねん…</p>
+
+<blockquote>
+<p>参考:<br />
+WindowsPCのローカルファイルを高速検索してくれる神ツール - <a href="https://www.voidtools.com/">https://www.voidtools.com/</a></p>
+</blockquote>
+
+<h2 id="解決策">解決策</h2>
+
+<p>こちらの方の記事を参考にして、wingetでインストールすることにしました！</p>
+
+<ul>
+<li>Claude Codeのネイティブ版をWindows 11にインストールする<br />
+<a href="https://qiita.com/charon/items/d51dc7c74339a795e9ee">https://qiita.com/charon/items/d51dc7c74339a795e9ee</a></li>
+</ul>
+
+<pre><code>PS &gt; winget install Anthropic.ClaudeCode
+</code></pre>
+
+<p>これでインストールすると、PowerShell再起動後に Claude Code がインストールされました！うれしい！！！</p>
+
+<p>参考までにインストールログです</p>
+
+<pre><code>PowerShell 7.5.4
+PS C:\Users\sao&gt; winget install Anthropic.ClaudeCode
+The `msstore` source requires that you view the following agreements before using.
+Terms of Transaction: https://aka.ms/microsoft-store-terms-of-transaction
+The source requires the current machine's 2-letter geographic region to be sent to the backend service to function properly (ex. &quot;US&quot;).
+
+Do you agree to all the source agreements terms?
+[Y] Yes  [N] No: y
+Found Claude Code [Anthropic.ClaudeCode] Version 2.0.65
+This application is licensed to you by its owner.
+Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+Downloading https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/2.0.65/win32-x64/claude.exe
+  ██████████████████████████████   205 MB /  205 MB
+Successfully verified installer hash
+Starting package install...
+Path environment variable modified; restart your shell to use the new value.
+Command line alias added: &quot;claude&quot;
+Successfully installed
+PS C:\Users\sao&gt;
+</code></pre>
+
+<p>動作確認は、とりあえずヘルプ表示でできます</p>
+
+<pre><code>PS &gt; claude --help
+</code></pre>
+
+<p>あーよかったよかった</p>
+
+<p>ちょっと前は、公式の irm 方式でも行けたのですが<br />
+なんかどっかが変わったのでしょうかね</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fh-sao.com%2fblog%2f2025%2f12%2f27%2fhow-to-install-claudecode%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%5bClaude%5d%20Windows%20%e3%81%b8%e3%81%ae%20Claude%20Code%20%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%96%b9%e6%b3%95&amp;url=https%3a%2f%2fh-sao.com%2fblog%2f2025%2f12%2f27%2fhow-to-install-claudecode%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fh-sao.com%2fblog%2f2025%2f12%2f27%2fhow-to-install-claudecode%2f&title=%5bClaude%5d%20Windows%20%e3%81%b8%e3%81%ae%20Claude%20Code%20%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%96%b9%e6%b3%95" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://h-sao.com/pic/saoharuka128.png" alt="遥佐保/Sao Haruka" />
+  <p class="name"> 
+  <strong>遥佐保/Sao Haruka</strong></p>
+  <p class="address">Japan</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+<li><a href="//twitter.com/hr_sao" class="icon-twitter" target="_blank" title="Twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/h-sao" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://h-sao.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <p  class="address">
+    <a href="http://mvp.microsoft.com/ja-jp/mvp/Akiko%20Kawai-4027291" target="_blank">
+    <img src="https://h-sao.com/pic/MVPLogo.png"  width="120" border="0" alt="mvp_logo" hspace="5" /></a><br>
+	  Microsoft MVP for Developer Technologies [Jul,2018-Jun,2026]<br>
+	  Microsoft MVP for Windows Development<br> [Jan,2016-Jun,2018]<br>
+      Microsoft MVP for Windows Platform Development<br> [Jan,2015-Dec,2015]<br>
+      Microsoft MVP for Client Development<br> [Jan,2014-Dec,2014]<br>
+      Microsoft MVP for Client App Dev<br> [Jan,2010-Dec,2013]<br>
+  </p>
+  <br>
+</aside>
+
+
+    <aside class="posted-list">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Recent Posts</h2>
+            </div>
+            <div class="list-group">
+                
+                    
+                        
+                            <a href="/blog/2025/12/27/how-to-install-claudecode/" class="list-group-item">[Claude] Windows への Claude Code インストール方法</a><br>
+                        
+                    
+                
+                    
+                        
+                            <a href="/blog/2025/11/25/fix-unity-hub-remove-issue/" class="list-group-item">[Unity] Unity Hubでremoveできないバージョンの削除方法</a><br>
+                        
+                    
+                
+                    
+                        
+                            <a href="/blog/2025/11/16/switch-powershell/" class="list-group-item">[PowerShell]  PowerShell7のインストールとコマンドラインからの切り替え</a><br>
+                        
+                    
+                
+                    
+                        
+                            <a href="/blog/2025/03/31/meetup-app9-cppvscsharp/" class="list-group-item">[勉強会] meetup app osaka@9を開催しました</a><br>
+                        
+                    
+                
+                    
+                        
+                            <a href="/blog/2025/03/13/how-to-display-username-at-sing-in/" class="list-group-item">[Windows] サインイン時のデフォルトユーザー名の表示</a><br>
+                        
+                    
+                
+                    
+                        
+                            <a href="/blog/2024/09/18/how-to-update-github-submodule/" class="list-group-item">[Git] サブモジュールの更新メモ</a><br>
+                        
+                    
+                
+                    
+                        
+                            <a href="/blog/2024/07/12/to-be-rewarded-as-msmvp2024/" class="list-group-item">[MSMVP] 2024年7月 Microsoft MVP for Developer Technologies を再受賞しました</a><br>
+                        
+                    
+                
+                    
+                        
+                            <a href="/blog/2023/12/25/aboutsimulatorandusestdvariant/" class="list-group-item">[C&#43;&#43;] std::variantを使ってシミュレータでオートプレイさせる</a><br>
+                        
+                    
+                
+                    
+                        
+                            <a href="/blog/2023/03/21/how-to-change-us-layout-noreboot/" class="list-group-item">[US配列] 再起動なしにUS配列に変更するULE4JIS</a><br>
+                        
+                    
+                
+                    
+                        
+                            <a href="/blog/2023/03/03/using-inspect-pattern-matching/" class="list-group-item">[C&#43;&#43;] C&#43;&#43;の新しいパターンマッチ「inspect」</a><br>
+                        
+                    
+                
+            </div>
+
+            <div class="panel-heading">
+                <h2 class="panel-title">Tags</h2>
+            </div>
+            <div class="list-group">
+                    
+                    
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/anaconda" style="font-size: 14px;">
+                    
+                        <span class="badge">2</span>
+                        anaconda
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/android" style="font-size: 20px;">
+                    
+                        <span class="badge">4</span>
+                        android
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/asset" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        asset
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/bootcamp" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        bootcamp
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/chrome" style="font-size: 14px;">
+                    
+                        <span class="badge">2</span>
+                        chrome
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/clang" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        clang
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/claudecode" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        claudecode
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/community" style="font-size: 26px;">
+                    
+                        <span class="badge">6</span>
+                        community
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/cpp" style="font-size: 80px;">
+                    
+                        <span class="badge">24</span>
+                        cpp
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/cppcx" style="font-size: 14px;">
+                    
+                        <span class="badge">2</span>
+                        cppcx
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/csharp" style="font-size: 14px;">
+                    
+                        <span class="badge">2</span>
+                        csharp
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/diary" style="font-size: 38px;">
+                    
+                        <span class="badge">10</span>
+                        diary
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/docker" style="font-size: 14px;">
+                    
+                        <span class="badge">2</span>
+                        docker
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/ebisucpp" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        ebisucpp
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/english" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        english
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/git" style="font-size: 44px;">
+                    
+                        <span class="badge">12</span>
+                        git
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/gitextensions" style="font-size: 17px;">
+                    
+                        <span class="badge">3</span>
+                        gitextensions
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/github" style="font-size: 32px;">
+                    
+                        <span class="badge">8</span>
+                        github
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/gitlfs" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        gitlfs
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/hackerrank" style="font-size: 14px;">
+                    
+                        <span class="badge">2</span>
+                        hackerrank
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/hugo" style="font-size: 23px;">
+                    
+                        <span class="badge">5</span>
+                        hugo
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/hyper-v" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        hyper-v
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/mac" style="font-size: 41px;">
+                    
+                        <span class="badge">11</span>
+                        mac
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/macos" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        macos
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/maya" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        maya
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/opensource" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        opensource
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/oracle" style="font-size: 17px;">
+                    
+                        <span class="badge">3</span>
+                        oracle
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/outlook" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        outlook
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/pmp" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        pmp
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/powershell" style="font-size: 23px;">
+                    
+                        <span class="badge">5</span>
+                        powershell
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/python" style="font-size: 14px;">
+                    
+                        <span class="badge">2</span>
+                        python
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/security" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        security
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/shader" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        shader
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/sql" style="font-size: 14px;">
+                    
+                        <span class="badge">2</span>
+                        sql
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/ssh" style="font-size: 17px;">
+                    
+                        <span class="badge">3</span>
+                        ssh
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/tensorflow" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        tensorflow
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/ue4" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        ue4
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/unity" style="font-size: 44px;">
+                    
+                        <span class="badge">12</span>
+                        unity
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/utility" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        utility
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/visualstudio" style="font-size: 17px;">
+                    
+                        <span class="badge">3</span>
+                        visualstudio
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/wercker" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        wercker
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/windows" style="font-size: 29px;">
+                    
+                        <span class="badge">7</span>
+                        windows
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/windows10" style="font-size: 20px;">
+                    
+                        <span class="badge">4</span>
+                        windows10
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/windowsruntime" style="font-size: 14px;">
+                    
+                        <span class="badge">2</span>
+                        windowsruntime
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/windowsterminal" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        windowsterminal
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/xcode" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        xcode
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+                    
+                    <u>
+                    <a href="https://h-sao.com//tags/xiaomi" style="font-size: 11px;">
+                    
+                        <span class="badge">1</span>
+                        xiaomi
+                    </a>
+                    </u> &nbsp; 
+                    
+                    
+            </div>
+
+            <br>
+            <div class="panel-heading">
+                <h2 class="panel-title">GitHub Contributions</h2>
+                <a href="https://github.com/h-sao"><p  style="position:relative;
+                    width: 300px;
+                    height: 110px;
+                    overflow: hidden;">
+                    <img src="https://ghchart.rshah.org/h-sao" style="position:relative; left: -400px;">
+                </p></a>
+            </div>
+
+            <br>
+            <div class="panel-heading">
+                <h2 class="panel-title">Previous Blog Post</h2>
+            </div>
+            <div class="list-group">
+                <a href="http://blog.livedoor.jp/haruka_sao/" target="_blank">http://blog.livedoor.jp/haruka_sao/</a>
+            </div>
+
+            
+
+        </div>
+  <br><br>
+</aside>
+
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+      <a class="icon-rss" href="https://h-sao.com/post/index.xml" title="RSS"></a>
+      <p>&copy; 2025 &middot; Copyright © Sao Haruka<br> Powered by <a href="http://gohugo.io">Hugo</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/h-sao.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://h-sao.com/js/plugins.js"></script>
+
+
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount','UA-66721712-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

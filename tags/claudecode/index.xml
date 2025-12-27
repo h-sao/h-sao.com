@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Claudecode on Effectiveさお</title>
+    <link>https://h-sao.com/tags/claudecode/</link>
+    <description>Recent content in Claudecode on Effectiveさお</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sat, 27 Dec 2025 23:30:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://h-sao.com/tags/claudecode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Claude] Windows への Claude Code インストール方法</title>
+      <link>https://h-sao.com/blog/2025/12/27/how-to-install-claudecode/</link>
+      <pubDate>Sat, 27 Dec 2025 23:30:00 +0900</pubDate>
+      
+      <guid>https://h-sao.com/blog/2025/12/27/how-to-install-claudecode/</guid>
+      <description>WindowsにClaude Codeをインストールしようとして、公式の irm の方法（PowerShell版）では上手くインストールが出来なかったので、その解決策です
+環境:
+- Windows11 - PowerShell 7
+現象 公式には、こんな記述があります
+https://code.claude.com/docs/ja/setup
+PS &amp;gt; irm https://claude.ai/install.ps1 | iex  けどね、これを実行してもインストールされないのです（2025/12/27現在）
+インストールログはこれ
+PS C:\my\dev&amp;gt; irm https://claude.ai/install.ps1 | iex Setting up Claude Code... √ Claude Code successfully installed! Version: 2.0.67 Location: C:\Users\Sao\.local\bin\claude.exe Next: Run claude --help to get started ‼ Setup notes: • installMethod is native, but claude command not found at C:\Users\Sao\.local\bin\claude.exe • Native installation exists but C:\Users\Sao\.local\bin is not in your PATH.</description>
+    </item>
+    
+  </channel>
+</rss>
