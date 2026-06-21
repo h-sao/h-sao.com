@@ -6,10 +6,28 @@
     <description>Recent content in Posts on Effectiveさお</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 27 Dec 2025 23:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jun 2026 11:10:00 +0900</lastBuildDate>
     
 	<atom:link href="https://h-sao.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[勉強会] C&#43;&#43; breaktime 2026/Summer に参加しました</title>
+      <link>https://h-sao.com/blog/2026/06/21/cppbreaktime2026summer/</link>
+      <pubDate>Sun, 21 Jun 2026 11:10:00 +0900</pubDate>
+      
+      <guid>https://h-sao.com/blog/2026/06/21/cppbreaktime2026summer/</guid>
+      <description>2026/6/19 C++ breaktime 2026/Summer という勉強会に参加しました
+ C++ breaktime 2026/Summer
+https://cpp-osaka.connpass.com/event/393713/  わたしは「Unity Scripting Backend」というタイトルで発表しました
+ 「Unity Scripting Backend」発表資料
+https://speakerdeck.com/harukasao/unity-scripting-backend-c-plus-plus-breaktime-2026-summer  C++好きの方、これからC++やりたい学生の方、大阪に居たときからのコミュニティ仲間など、なんというか…自分と属性が近い感じがなんとも安心感ある勉強会でしたね
+わたしは開催を促したものの、ほとんどの主催関連のお仕事は @zbdk さんが進めて下さり、本当に本当に感謝感謝です
+わたしのセッションは、Unityのバックエンドの仕組みが気になって調べたことをまとめたのですが
+調べたことをまとめただけ！になってしまい、もうちょっとストーリー的なのが必要だったなと反省してます
+懇親会も大盛り上がりでした アルコールが美味しかった～♪
+また冬にやる予定なので、そのときはもっとバージョンアップした発表が出来るように頑張るぞ！と思いました！！！</description>
+    </item>
     
     <item>
       <title>[Claude] Windows への Claude Code インストール方法</title>
